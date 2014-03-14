@@ -1,25 +1,36 @@
-/*
-Copyright (c) 2005, code_tin
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-
-Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-Neither the name of the code_tin nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
-
 #include <stdio.h>
 #include <windows.h>
+#include <string.h>
 
-int main()
+int main(int argc, char* argv[])
 {
-	char FilePath[]=""; //modified bu jiangxin
-	//char FilePath[]="c:\\windows\\system32\\"; //the path of the logfile
+	char FilePath[]=""; //the path of the logfile
     char FileName[]="History.txt"; //the name of the logfile
     char cmdLine[] = "cmd.exe";
-    char LogFile[MAX_PATH];
+    char LogFile[MAX_PATH]; //the path_name of the logfile
+    int flag_time = 1; //the flag to display the time
+    if(argc > 1)
+    {
+    	int i; //just for the "for" loop;
+		for(i=1;i<argc;i++)
+    	{
+    		int n; //just for the judge
+			if((n=strncmp(argv[i],"-p",sizeof("-p")))==0)
+    		{
+    			i++;
+				strcpy(FilePath,argv[i]);
+    		}
+    		if((n=strncmp(argv[i],"-n",sizeof("-n")))==0)
+    		{
+    			i++;
+				strcpy(FileName,argv[i]);
+    		}
+    		if((n=strncmp(argv[i],"--ntime",sizeof("--ntime")))==0)
+    		{
+				flag_time = 0;
+    		}
+    	}
+    }
     strcpy(LogFile,FilePath);
     strcat(LogFile,FileName);
     FILE *fp;
@@ -46,10 +57,16 @@ int main()
     SYSTEMTIME SystemTime;
     //CMD开始时间
     GetLocalTime(&SystemTime);
-    fprintf(fp,"<%d-%d-%d %d:%d:%d:%d>%s",
-            SystemTime.wYear,SystemTime.wMonth,SystemTime.wDay,
-            SystemTime.wHour,SystemTime.wMinute,SystemTime.wSecond,SystemTime.wMilliseconds,
-            "---Open---\n"); //modified bu jiangxin
+    if(flag_time == 1)
+    {
+    	fprintf(fp,"<%d-%d-%d %d:%d:%d:%d>%s",
+		SystemTime.wYear,SystemTime.wMonth,SystemTime.wDay,SystemTime.wHour,SystemTime.wMinute,SystemTime.wSecond,SystemTime.wMilliseconds,"---Open---\n");
+    }
+    else if(flag_time == 0)
+    {
+    	fprintf(fp,"%s","---Open---\n");
+    }
+
     fclose(fp);
     while(1) {
         Sleep(100);
@@ -72,11 +89,17 @@ int main()
             GetLocalTime(&SystemTime);
             //记录运行过得命令
             fp = fopen(LogFile, "a");
-            if(fp != NULL) {
-                fprintf(fp,"<%d-%d-%d %d:%d:%d:%d>%s",
-                        SystemTime.wYear,SystemTime.wMonth,SystemTime.wDay,
-                        SystemTime.wHour,SystemTime.wMinute,SystemTime.wSecond,SystemTime.wMilliseconds,
-                        Buff); //modified bu jiangxin
+            if(fp != NULL)
+			{
+                if(flag_time == 1)
+                {
+                	fprintf(fp,"<%d-%d-%d %d:%d:%d:%d>%s",
+					SystemTime.wYear,SystemTime.wMonth,SystemTime.wDay,SystemTime.wHour,SystemTime.wMinute,SystemTime.wSecond,SystemTime.wMilliseconds,Buff); 
+                }
+                else if(flag_time == 0)
+                {
+                	fprintf(fp,"%s",Buff);
+                }
             }
             fclose(fp);
             //将命令传送到CMD上
@@ -88,10 +111,16 @@ int main()
     //CMD结束时间
     GetLocalTime(&SystemTime);
     fp = fopen(LogFile, "a");
-    fprintf(fp,"<%d-%d-%d %d:%d:%d:%d>%s",
-            SystemTime.wYear,SystemTime.wMonth,SystemTime.wDay,
-            SystemTime.wHour,SystemTime.wMinute,SystemTime.wSecond,SystemTime.wMilliseconds,
-            "---Close---\n"); //modified bu jiangxin
+    if(flag_time == 1)
+    {
+		fprintf(fp,"<%d-%d-%d %d:%d:%d:%d>%s",
+		SystemTime.wYear,SystemTime.wMonth,SystemTime.wDay,SystemTime.wHour,SystemTime.wMinute,SystemTime.wSecond,SystemTime.wMilliseconds,"---Close---\n"); 
+    }
+    else if(flag_time == 0)
+    {
+    	fprintf(fp,"%s","---Close---\n");
+    }
+ 
     fclose(fp);
     TerminateProcess(ProcessInformation.hProcess,0);
 

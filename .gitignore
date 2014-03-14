@@ -216,7 +216,7 @@ pip-log.txt
 
 
 #################
-## Eclipse
+## CodeBlock
 #################
 
 *.depend
@@ -225,3 +225,10 @@ pip-log.txt
 History.txt
 obj/
 bin/
+
+
+#################
+## DevC++
+#################
+*.exe
+log*
