@@ -32,10 +32,10 @@ FILES:
 	
 How TO USE:
 	Run the binary file named main, you can get the History.txt file which records the commands that you have ever used in the cmd windows.
-	However you can also use "Win-R" and input "PATH_OF_THE_MAIN_FILE/main PAHT_OF_THE_LOGFILE LOGFILE" to custom yourself need.
+	However you can also use "Win-R" and input "PATH_OF_THE_MAIN_FILE/main -p PAHT_OF_THE_LOGFILE -n LOGFILE" to custom yourself need.
 		PATH_OF_THE_MAIN_FILE: the path of the binary program main. (NO DEFAULT CHOICE)
 		PAHT_OF_THE_LOGFILE: the path where you want to put your logfile. (DEFAULT CHOICE IS THE DIRECTORY WHERE YOU ARE)
 		LOGFILE: the filename of your logfile. (DEFAULT CHOICE IS "History.txt")
-	By default the logfile can pick up the time at which you use each command in the cmd windows. However if you don't want keep the in the logfile,
-just input "PATH_OF_THE_MAIN_FILE/main PAHT_OF_THE_LOGFILE LOGFILE notime".
+	By default the logfile can pick up the time at which you use each command in the cmd windows. However if you don't want keep the in the logfile, just input the choice "--ntime".
+	By default the logfile can pick up the time with the accuracy of second. However if you want to pick up the time with the accuracy of millisecond, just input the choice "--mtime".
 	
