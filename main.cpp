@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
     
     SECURITY_ATTRIBUTES sa;
     sa.nLength=sizeof(SECURITY_ATTRIBUTES);
-    sa.lpSecurityDescriptor=0; 
+    sa.lpSecurityDescriptor = NULL; //let the system to give a default security descriptor to the pipe.
     sa.bInheritHandle=true;
     
     HANDLE hReadPipe1,hWritePipe1,hReadPipe2,hWritePipe2;
@@ -59,10 +59,11 @@ int main(int argc, char* argv[])
     si.wShowWindow = SW_HIDE;
     si.hStdInput = hReadPipe2;
     si.hStdOutput = si.hStdError = hWritePipe1;
+    
     PROCESS_INFORMATION ProcessInformation;
     ret=CreateProcess(NULL,cmdLine,NULL,NULL,1,0,NULL,NULL,&si,&ProcessInformation);
     unsigned long lBytesRead;
-    unsigned long lCmdLen=0;
+    unsigned long lCmdLen=0; //record the length of every command
     
     //CMD开始时间
     fprintf_info(flag_time,(char *)"---Open---\n",LogFile);
@@ -71,11 +72,13 @@ int main(int argc, char* argv[])
 	{
         Sleep(100);
         ret=PeekNamedPipe(hReadPipe1,Buff,204800,&lBytesRead,0,0);
-        if(lBytesRead)
+        if(lBytesRead) //if there exists data in the pipe
 		{
             ret=ReadFile(hReadPipe1,Buff,lBytesRead,&lBytesRead,0);
-            if(!ret)
-                break;
+            if(!ret) //if ReadFile fails then restart the "while" loop
+            {
+            	break;
+            }
             Buff[lBytesRead]='\0';
             strcpy(Buff,Buff+lCmdLen);
             printf("%s",Buff);
@@ -92,8 +95,10 @@ int main(int argc, char* argv[])
             fprintf_info(flag_time,Buff,LogFile);
             //将命令传送到CMD上
             ret=WriteFile(hWritePipe2,Buff,strlen(Buff),&lBytesRead,0);
-            if(!ret)
-                break;
+            if(!ret) //if ReadFile fails then restart the "while" loop
+            {
+            	break;
+            }
         }
     }
     //CMD结束时间
