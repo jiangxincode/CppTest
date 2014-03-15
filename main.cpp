@@ -6,10 +6,10 @@ void fprintf_info(int flag_time,char* info,char* LogFile);
 
 int main(int argc, char* argv[])
 {
-	char FilePath[]=""; //the path of the logfile
-    char FileName[]="History.txt"; //the name of the logfile
+	char FilePath[1024]=""; //the path of the logfile
+    char FileName[1024]="History.txt"; //the name of the logfile
     char cmdLine[] = "cmd.exe";
-    char LogFile[MAX_PATH]; //the path_name of the logfile
+    char LogFile[2048]; //the path_name of the logfile
     int flag_time = 1; //Display the time with default set
     
     if(argc > 1)
@@ -22,15 +22,11 @@ int main(int argc, char* argv[])
     		{
     			i++;
 				strcpy(FilePath,argv[i]);
-				printf("%s\n",FilePath);
     		}
     		else if((n=strncmp(argv[i],"-n",sizeof("-n")))==0) //set the filename of the logfile
     		{
-    			printf("%s\n",FilePath);
 				i++;
-    			printf("%s\n",FilePath);
 				strcpy(FileName,argv[i]);
-				printf("%s\n",FilePath);
     		}
     		else if((n=strncmp(argv[i],"--ntime",sizeof("--ntime")))==0) //pick up the time or not
     		{
@@ -44,13 +40,10 @@ int main(int argc, char* argv[])
     }
     strcpy(LogFile,FilePath);
     strcat(LogFile,FileName);
-    printf("%s",FilePath);
-    printf("%s",FileName);
-    printf("%s",LogFile);
     
     SECURITY_ATTRIBUTES sa;
     sa.nLength=sizeof(SECURITY_ATTRIBUTES);
-    sa.lpSecurityDescriptor=0;
+    sa.lpSecurityDescriptor=0; 
     sa.bInheritHandle=true;
     
     HANDLE hReadPipe1,hWritePipe1,hReadPipe2,hWritePipe2;
@@ -113,14 +106,13 @@ int main(int argc, char* argv[])
 
 void fprintf_info(int flag_time,char* info,char* LogFile)
 {
-    printf("%s",LogFile);
 	FILE *fp; //the decriptor of file
     SYSTEMTIME SystemTime;
 	GetLocalTime(&SystemTime);
 	fp = fopen(LogFile, "a");
 	if(fp == NULL)
 	{
-		printf("error!\n");
+		printf("error to open or create the LogFile,Please check the path and filename!\n");
 	}
 	if(flag_time == 0)
     {
