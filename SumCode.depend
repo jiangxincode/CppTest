@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1400747655 source:e:\temp\sumcode\function.cpp
+	"function.h"
+
+1400744451 e:\temp\sumcode\function.h
+	"base.h"
+
+1400744659 e:\temp\sumcode\base.h
+	<stdio.h>
+	<stdlib.h>
+	<errno.h>
+	<iostream>
+	<vector>
+	<string>
+	<iomanip>
+	<fstream>
+	<sys/types.h>
+	<dirent.h>
+	<windows.h>
+	<conio.h>
+
+1400748347 source:e:\temp\sumcode\main.cpp
+	"function.h"
+

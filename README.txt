@@ -23,3 +23,5 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 Log:
 	Version 0.01:
 		完成基本结构，能够实现基本操作。
+	Version 0.02:
+		实现目录更改功能，但还有一些bug待消除。
