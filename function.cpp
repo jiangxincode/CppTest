@@ -55,26 +55,51 @@ vector<string> ReadDir(string dirName)
     WIN32_FIND_DATA findData;
     vector<string> ret;
 
-    // print out the current directory name
-    //if( !GetFullPathName("*.*", 256, fullName, &fileName ) )
-    if( !GetFullPathName(dirName.c_str(), 256, fullName, &fileName ) )
+    if( !GetFullPathName(dirName.c_str(), 256, fullName, &fileName ) ) //将相对目录转化为绝对目录
         return ret;
-    cout << endl;
-    cout << "Directory - " << fullName << endl;
-    unsigned int i;
-    for(i=0;fullName[i]!='\0';i++)
+
+    cout << "\nDirectory - " << fullName << endl;
+    int i;
+
+    char suffix[MAXSUFFIXNUM][MAXSUFFIXLEN];
+
+    int i_suffix_num = 0;
+    char *p[i_suffix_num];
+    cout << "How many types that you want to test?" << endl;
+    cin >> i_suffix_num;
+    cout << "Input the type of your source code(separate with space):" << endl;
+    cout << "\n\t *.cpp *.h" << endl;
+
+    for(i=0;i<i_suffix_num;i++)
     {
-        cout << fullName[i];
+        cin >> suffix[i];
+        //cout << suffix[i];
     }
-    cout << i;
-    fullName[i] = '\\';
-    fullName[i+1] = '*';
-    fullName[i+2] = '.';
-    fullName[i+3] = '*';
-    fullName[i+4] = '\0';
-    // Loop through all files in the directory
-    //fileHandle = FindFirstFile("*.*", &findData );
-    fileHandle = FindFirstFile(fullName, &findData );
+    i=0;
+    do
+    {
+        i++;
+    }while(fullName[i]);
+    fullName[i++] = '\\';
+    for(int j=0;j<i_suffix_num;j++)
+    {
+        int temp = i;
+        for(int k=0;suffix[j][k]!='\0';k++)
+        {
+            fullName[i++] = suffix[j][k];
+            fullName[i+1] = '\0';
+        }
+        i = temp;
+        cout << fullName << endl;
+        p[j] = fullName;
+        //cout << p[j] << endl;
+
+    }
+    for(i=0;i<i_suffix_num;i++)
+{
+
+
+    fileHandle = FindFirstFile(p[i], &findData );
     while ( fileHandle != INVALID_HANDLE_VALUE )
     {
         // If the name is a directory,
@@ -95,32 +120,31 @@ vector<string> ReadDir(string dirName)
 
     // clean up and restore directory
     FindClose( fileHandle );
+}
     return ret;
 }
 //#endif
 
-int ProcessFile(string fileName,int& sum)
+long int ProcessFile(string fileName)
 {
-    // open input file
-    int counter = 0;
-    ifstream file (fileName.c_str());
-    // file opened?
-    if (! file)
+    long int counter = 0;
+    char c_temp;
+    ifstream file(fileName.c_str(),ios::in);
+
+    if (file.fail())
     {
-        // NO, abort program
-        cerr << "can't open input file \"" << fileName << "\"" << endl;
-        return (0);
+        cerr << "Can't open input file \"" << fileName << "\"" << endl;
+        return -1;
     }
 
-    char c;
-    while (file.get(c))
+    while (!file.eof())
     {
-        if( c == '\n')
+        file.get(c_temp);
+        if(c_temp == '\n')
         {
             counter++;
         }
     }
-    sum += counter;
     cout << fileName << "---->" << counter << endl;
     return counter;
 }

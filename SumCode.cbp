@@ -32,6 +32,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="base.h" />
+		<Unit filename="function.cpp" />
+		<Unit filename="function.h" />
+		<Unit filename="jiangxin.h" />
+		<Unit filename="libjiangxin.cpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

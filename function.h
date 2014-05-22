@@ -4,4 +4,4 @@ using namespace std;
 
 vector<string> ReadDir(string dirName);
 void PrintVec(vector<string> vecStr);
-int ProcessFile(string fileName,int& sum);
+long int ProcessFile(string fileName);

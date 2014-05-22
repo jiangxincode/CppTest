@@ -19,3 +19,8 @@
 #include <windows.h>
 #include <conio.h>
 #endif
+
+#define NDEBUG
+
+#define MAXSUFFIXNUM 100
+#define MAXSUFFIXLEN 10

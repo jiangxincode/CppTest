@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1400747655 source:e:\temp\sumcode\function.cpp
+1400774153 source:e:\temp\sumcode\function.cpp
 	"function.h"
 
-1400744451 e:\temp\sumcode\function.h
+1400769709 e:\temp\sumcode\function.h
 	"base.h"
 
-1400744659 e:\temp\sumcode\base.h
+1400772877 e:\temp\sumcode\base.h
 	<stdio.h>
 	<stdlib.h>
 	<errno.h>
@@ -19,6 +19,15 @@
 	<windows.h>
 	<conio.h>
 
-1400748347 source:e:\temp\sumcode\main.cpp
+1400771235 source:e:\temp\sumcode\main.cpp
 	"function.h"
+	"jiangxin.h"
+
+1400636964 source:e:\temp\sumcode\libjiangxin.cpp
+	"stdio.h"
+	"ctype.h"
+	"stdlib.h"
+	"jiangxin.h"
+
+1400637022 e:\temp\sumcode\jiangxin.h
 
