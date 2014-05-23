@@ -64,7 +64,7 @@ vector<string> ReadDir(string dirName)
     char suffix[MAXSUFFIXNUM][MAXSUFFIXLEN];
 
     int i_suffix_num = 0;
-    char *p[i_suffix_num];
+    char (*p)[256];
     cout << "How many types that you want to test?" << endl;
     cin >> i_suffix_num;
     cout << "Input the type of your source code(separate with space):" << endl;
