@@ -49,22 +49,22 @@ vector<string> ReadDir(string dirName)
 //#ifdef _WIN32
 vector<string> ReadDir(string dirName)
 {
-    char *fileName;
+    char *fileName; 
     char fullName[256];
     HANDLE fileHandle;
     WIN32_FIND_DATA findData;
     vector<string> ret;
+    char suffix[MAXSUFFIXNUM][MAXSUFFIXLEN];
+    int i_suffix_num = 0;
+    char *p[i_suffix_num];
 
     if( !GetFullPathName(dirName.c_str(), 256, fullName, &fileName ) ) //将相对目录转化为绝对目录
         return ret;
-
     cout << "\nDirectory - " << fullName << endl;
     int i;
 
-    char suffix[MAXSUFFIXNUM][MAXSUFFIXLEN];
 
-    int i_suffix_num = 0;
-    char *p[i_suffix_num];
+    
     cout << "How many types that you want to test?" << endl;
     cin >> i_suffix_num;
     cout << "Input the type of your source code(separate with space):" << endl;
@@ -96,31 +96,31 @@ vector<string> ReadDir(string dirName)
 
     }
     for(i=0;i<i_suffix_num;i++)
-{
-
-
-    fileHandle = FindFirstFile(p[i], &findData );
-    while ( fileHandle != INVALID_HANDLE_VALUE )
     {
-        // If the name is a directory,
-        // recursively walk it. Otherwise
-        // print the file's data
-        if( findData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY )
+    
+    
+        fileHandle = FindFirstFile(p[i], &findData );
+        while ( fileHandle != INVALID_HANDLE_VALUE )
         {
-            //ListDirectoryContents( findData.cFileName,fileMask );
+            // If the name is a directory,
+            // recursively walk it. Otherwise
+            // print the file's data
+            if( findData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY )
+            {
+                //ListDirectoryContents( findData.cFileName,fileMask );
+            }
+            else
+            {
+                ret.push_back(findData.cFileName);
+            }
+            // loop thru remaining entries in the dir
+            if (!FindNextFile( fileHandle, &findData ))
+                break;
         }
-        else
-        {
-            ret.push_back(findData.cFileName);
-        }
-        // loop thru remaining entries in the dir
-        if (!FindNextFile( fileHandle, &findData ))
-            break;
+    
+        // clean up and restore directory
+        FindClose( fileHandle );
     }
-
-    // clean up and restore directory
-    FindClose( fileHandle );
-}
     return ret;
 }
 //#endif
