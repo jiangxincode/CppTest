@@ -96,31 +96,31 @@ vector<string> ReadDir(string dirName)
 
     }
     for(i=0;i<i_suffix_num;i++)
-{
-
-
-    fileHandle = FindFirstFile(p[i], &findData );
-    while ( fileHandle != INVALID_HANDLE_VALUE )
     {
-        // If the name is a directory,
-        // recursively walk it. Otherwise
-        // print the file's data
-        if( findData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY )
+    
+    
+        fileHandle = FindFirstFile(p[i], &findData );
+        while ( fileHandle != INVALID_HANDLE_VALUE )
         {
-            //ListDirectoryContents( findData.cFileName,fileMask );
+            // If the name is a directory,
+            // recursively walk it. Otherwise
+            // print the file's data
+            if( findData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY )
+            {
+                //ListDirectoryContents( findData.cFileName,fileMask );
+            }
+            else
+            {
+                ret.push_back(findData.cFileName);
+            }
+            // loop thru remaining entries in the dir
+            if (!FindNextFile( fileHandle, &findData ))
+                break;
         }
-        else
-        {
-            ret.push_back(findData.cFileName);
-        }
-        // loop thru remaining entries in the dir
-        if (!FindNextFile( fileHandle, &findData ))
-            break;
+    
+        // clean up and restore directory
+        FindClose( fileHandle );
     }
-
-    // clean up and restore directory
-    FindClose( fileHandle );
-}
     return ret;
 }
 //#endif
