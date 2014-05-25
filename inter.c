@@ -2,29 +2,47 @@
 
 int main()
 {
-	pid_t pid;
-	printf("The inter_process exec successfully!\n");
-
-	sleep(7);	//等待所用总进程创建完毕
-
-	printf("所用总进程创建完毕\n\n\n");
+	int temp;
+	printf("The inter_process exec successfully!\n\n");
 	
-	printf("开始创建inter下的进程\n");
-
-/*start create The inter_control_process*/
-	if((pid=fork())<0)
+/*start引入共享内存*/
+	info *p_map;
+	key_t key;
+	int shmid;
+	if((key=ftok(".",1))<0)
 	{
-		perror("The inter_control_process can't create!\n");
+		perror("ftok error!\n");
+		exit(1);
 	}
-	else if(pid==0)
+	
+	shmid=shmget(key,BUFSZ,0666|IPC_CREAT);
+	if(shmid<0)
 	{
-		printf("The inter_control_process create successfully!\n");
-		if(execl("/home/jiangxin/Elevator/inter_control","inter_control",NULL)==-1)
-		{
-			perror("The inter_control exec error!\n");
+		perror("shmget error!\n");
+		exit(1);
+	}	
+	p_map=(info *)shmat(shmid,NULL,0);	//附加共享内存
+/*end引入共享内存*/
+	
+		puts("Please input the the destination:\n");
+		puts("1\t2\t3\t4\t5\n");
+		scanf("%d",&temp);
+		switch(temp){
+			case 1:p_map->destination=one;break;
+			case 2:p_map->destination=two;break;
+			case 3:p_map->destination=three;break;
+			case 4:p_map->destination=four;break;
+			case 5:p_map->destination=five;break;
+			default:puts("Error\n");break;
 		}
-	}
-/*end create The inter_control_process*/
-
+		puts("Please input the door status:\n");
+		puts("closed:1\topen:2\n");
+		scanf("%d",&temp);
+		switch(temp){
+			case 1:p_map->door=closed;break;
+			case 2:p_map->door=open;break;
+			default:puts("Error\n");break;
+		}
+	
 	return 0;
 }

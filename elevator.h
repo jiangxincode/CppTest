@@ -6,6 +6,7 @@
 #include<sys/types.h>
 #include<sys/ipc.h>
 #include<sys/shm.h>
+#include<sys/wait.h>
 
 #include<gtk/gtk.h>
 
@@ -18,7 +19,7 @@ enum FLOOR{
 };
 
 enum STATUS{
-	stop=1,up,down
+	stop=0,up,down
 };
 
 enum DOOR{
@@ -28,7 +29,10 @@ enum DOOR{
 typedef struct {
 	enum FLOOR current; //电梯当前所在楼层
 	enum FLOOR destination; //电梯目的楼层
+	enum FLOOR guest;	//乘客楼层
+	enum FLOOR whocare;	//作为中间变量
 	enum STATUS status; //电梯所处状态
+	enum STATUS icare;	//作为中间变量
 	enum DOOR door; //电梯们所处状态 
 }info;
 
