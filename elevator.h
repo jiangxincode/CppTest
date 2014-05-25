@@ -7,8 +7,11 @@
 #include<sys/ipc.h>
 #include<sys/shm.h>
 
+#include<gtk/gtk.h>
+
 #define MAXFLOOR 5
 #define BUFSZ 4096	//共享内存
+#define BUF_MAX 100	//缓冲区最的容纳字符数量
 
 enum FLOOR{
 	none,one=1,two,three,four,five

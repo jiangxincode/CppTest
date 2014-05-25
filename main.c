@@ -107,6 +107,21 @@ int main(int argc,char *argv[])
 		}
 	}
 /*end create floor_five_process*/
+	sleep(4);
+/*start create show_process*/
+	if((pid=fork())<0)
+	{
+		perror("Error!The show_process can't create!\n");
+	}
+	else if(pid==0)
+	{
+		printf("The show_process create successfully!\n");
+		if(execl("/home/jiangxin/Elevator/show","show",NULL)==-1)
+		{
+			perror("The show_process exec error!\n");
+		}
+	}
+/*end create show_five_process*/
 	while(1){
 	}
 	system("pause");

@@ -2,6 +2,6 @@
 
 int main()
 {
-	printf("The elevator_process exec successfully!\n");
+	printf("The floor_five_process exec successfully!\n");
 	return 0;
 }
