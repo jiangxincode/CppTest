@@ -130,7 +130,7 @@ int main(int argc,char *argv[])
 			else if(pid==0)
 			{
 				printf("The floor_five_process create successfully!\n");
-				if(execl("/home/jiangxin/Elevator/floor_four","floor_five",NULL)==-1)
+				if(execl("/home/jiangxin/Elevator/floor_five","floor_five",NULL)==-1)
 				{
 					perror("The floor_five_process exec error!\n");
 				}
@@ -175,6 +175,7 @@ int main(int argc,char *argv[])
 	/*end create elevator_process*/
 
 		//wait(NULL);
+		waitpid(pid,NULL,0);
 		
 	/*start create show_process*/
 		/*if((pid=fork())<0)

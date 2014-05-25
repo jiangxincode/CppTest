@@ -35,14 +35,7 @@ int main()
 			case 5:p_map->destination=five;break;
 			default:puts("Error\n");break;
 		}
-		puts("Please input the door status:\n");
-		puts("closed:1\topen:2\n");
-		scanf("%d",&temp);
-		switch(temp){
-			case 1:p_map->door=closed;break;
-			case 2:p_map->door=open;break;
-			default:puts("Error\n");break;
-		}
+
 	
 	return 0;
 }

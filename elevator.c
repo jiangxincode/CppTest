@@ -87,7 +87,17 @@ int main()
 	p_map->status=stop;
 	p_map->door=open;
 	sleep(1);
-	p_map->door=closed;
+	while(p_map->door==open)
+	{
+		puts("Please input the door status:\n");
+		puts("closed:1\topen:2\n");
+		scanf("%d",&temp);
+		switch(temp){
+			case 1:p_map->door=closed;break;
+			case 2:p_map->door=open;break;
+			default:puts("Error\n");break;
+		}
+	}
 	//p_map->destination=p_map->whocare;
 	p_map->status=p_map->icare;
 	if(p_map->status==down)
