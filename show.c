@@ -52,9 +52,9 @@ int main(int argc,char *argv[])
 		default:printinfo(buf_destination,"ERROR!");break;
 	}
 	switch(p_map->status){
-		case 1:printinfo(buf_status,"status:stop");break;
-		case 2:printinfo(buf_status,"status:up");break;
-		case 3:printinfo(buf_status,"status:down");break;
+		case 0:printinfo(buf_status,"status:stop");break;
+		case 1:printinfo(buf_status,"status:up");break;
+		case 2:printinfo(buf_status,"status:down");break;
 		default:printinfo(buf_status,"ERROR!");break;
 	}
 	switch(p_map->door){

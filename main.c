@@ -176,21 +176,6 @@ int main(int argc,char *argv[])
 
 		//wait(NULL);
 		waitpid(pid,NULL,0);
-		
-	/*start create show_process*/
-		/*if((pid=fork())<0)
-		{
-			perror("Error!The show_process can't create!\n");
-		}
-		else if(pid==0)
-		{
-			printf("The show_process create successfully!\n");
-			if(execl("/home/jiangxin/Elevator/show","show",NULL)==-1)
-			{
-				perror("The show_process exec error!\n");
-			}
-		}*/
-	/*end create show_five_process*/
 		sleep(10);
 
 	}
