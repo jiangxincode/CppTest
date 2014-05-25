@@ -176,8 +176,7 @@ int main(int argc,char *argv[])
 
 		//wait(NULL);
 		waitpid(pid,NULL,0);
-		system("sl");
-		sleep(1);
+		sleep(10);
 
 	}
 	return 0;
