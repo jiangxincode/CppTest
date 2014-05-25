@@ -8,7 +8,7 @@
 #include<sys/shm.h>
 
 #define MAXFLOOR 5
-#define SHMID 1441796
+#define BUFSZ 4096	//共享内存
 
 enum FLOOR{
 	none,one=1,two,three,four,five
