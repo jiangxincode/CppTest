@@ -8,6 +8,7 @@
 char jx_getchar(short option)
 {
     char ch,temp;
+	fflush(stdin); //清空输入流
     ch = getchar();
     if(ch == '\n') //直接输入回车，返回'\n'
         return '\n';

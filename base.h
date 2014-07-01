@@ -24,3 +24,4 @@
 
 #define MAXSUFFIXNUM 100
 #define MAXSUFFIXLEN 10
+#define BufferLength 256

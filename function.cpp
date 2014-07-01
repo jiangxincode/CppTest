@@ -49,33 +49,33 @@ vector<string> ReadDir(string dirName)
 //#ifdef _WIN32
 vector<string> ReadDir(string dirName)
 {
-    char *fileName;
-    char fullName[256];
+    LPSTR fileName;
+    TCHAR fullName[256];
     HANDLE fileHandle;
     WIN32_FIND_DATA findData;
     vector<string> ret;
 
-    if( !GetFullPathName(dirName.c_str(), 256, fullName, &fileName ) ) //将相对目录转化为绝对目录
+    if( !GetFullPathNameA(dirName.c_str(), BufferLength, fullName, &fileName ) ) //将相对目录转化为绝对目录
         return ret;
 
-    cout << "\nDirectory - " << fullName << endl;
-    int i;
+    cout << "\nDirectory - " << fullName << endl;;
 
-    char suffix[MAXSUFFIXNUM][MAXSUFFIXLEN];
+    CHAR suffix[MAXSUFFIXNUM][MAXSUFFIXLEN];
 
-    int i_suffix_num = 0;
-    char (*p)[256];
+    INT i_suffix_num = 0;
+    LPSTR p[MAXSUFFIXNUM];
+
     cout << "How many types that you want to test?" << endl;
     cin >> i_suffix_num;
     cout << "Input the type of your source code(separate with space):" << endl;
     cout << "\n\t *.cpp *.h" << endl;
 
-    for(i=0;i<i_suffix_num;i++)
+    for(INT i=0;i<i_suffix_num;i++)
     {
         cin >> suffix[i];
         //cout << suffix[i];
     }
-    i=0;
+    INT i=0;
     do
     {
         i++;
@@ -92,35 +92,34 @@ vector<string> ReadDir(string dirName)
         i = temp;
         cout << fullName << endl;
         p[j] = fullName;
-        //cout << p[j] << endl;
+        cout << p[j] << endl;
 
     }
     for(i=0;i<i_suffix_num;i++)
-{
+	{
+		fileHandle = FindFirstFileA(p[i], &findData );
+		cout << p[i] << endl;
+		while ( fileHandle != INVALID_HANDLE_VALUE )
+		{
+			// If the name is a directory,
+			// recursively walk it. Otherwise
+			// print the file's data
+			if( findData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY )
+			{
+				//ListDirectoryContents( findData.cFileName,fileMask );
+			}
+			else
+			{
+				ret.push_back(findData.cFileName);
+			}
+			// loop thru remaining entries in the dir
+			if (!FindNextFile( fileHandle, &findData ))
+				break;
+		}
 
-
-    fileHandle = FindFirstFile(p[i], &findData );
-    while ( fileHandle != INVALID_HANDLE_VALUE )
-    {
-        // If the name is a directory,
-        // recursively walk it. Otherwise
-        // print the file's data
-        if( findData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY )
-        {
-            //ListDirectoryContents( findData.cFileName,fileMask );
-        }
-        else
-        {
-            ret.push_back(findData.cFileName);
-        }
-        // loop thru remaining entries in the dir
-        if (!FindNextFile( fileHandle, &findData ))
-            break;
-    }
-
-    // clean up and restore directory
-    FindClose( fileHandle );
-}
+		// clean up and restore directory
+		FindClose( fileHandle );
+	}
     return ret;
 }
 //#endif

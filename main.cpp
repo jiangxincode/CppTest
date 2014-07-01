@@ -40,7 +40,8 @@ int main(int argc , char* argv[])
         cout << "Sum is: " << sum << endl;
 
         cout << "Continue/Exit(C/E): ";
-    }while((ch=jx_getchar((short)1))!='e');
+		ch=jx_getchar((short)1);
+    }while(ch != 'e');
 
     jx_PrintBye();
     return 0;
