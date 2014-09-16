@@ -2,10 +2,11 @@
 #include <numeric>
 #include <vector>
 #include <algorithm>
+#include <regex>
 
 using namespace std;
 
-int main0521()
+int main05211()
 {
     vector<int> vec(10,1);
     vector<int>::iterator it;
@@ -28,5 +29,15 @@ int main0521()
     {
         cout << str1 << endl;
     }
+    return 0;
+}
+
+int main05212()
+{
+    return 0;
+}
+int main0521()
+{
+    main05212();
     return 0;
 }
