@@ -50,11 +50,55 @@ bool isMatch(string str)
     }
 }
 
-int test_3_13()
+int main17300()
 {
     string expression;
     cin >> expression;
     cout << isMatch(expression);
+    return 0;
+}
+
+/*
+百度2014校园招聘-研发工程师笔试题
+给定一个如下格式的字符串(1,(2,3),(4,(5,6),7))
+括号内的元素可以是数字，也可以是另一个括号，
+请实现一个算法消除嵌套的括号，
+比如把上面的表达式变成：(1,2,3,4,5,6,7)
+如果表达式有误请报错。(15分)
+*/
+int main17304()
+{
+    string str = "(1,(2,3),(4,(5,6),7))";
+    string result = "";
+    stack<char> sta;
+    for(string::iterator it=str.begin();it!=str.end();it++)
+    {
+        char temp = *it;
+        if((temp == '(') && sta.empty())
+        {
+            result += temp;
+            sta.push(temp);
+        }
+        else if((temp == '(') && !sta.empty())
+        {
+            sta.push(temp);
+        }
+        else if((temp == ')') && sta.empty())
+        {
+            cerr << "Error!" << endl;
+            exit(1);
+        }
+        else if((temp == ')') && !sta.empty())
+        {
+            sta.pop();
+        }
+        else
+        {
+            result += temp;
+        }
+    }
+    result += ')';
+    cout << result << endl;
     return 0;
 }
 
@@ -171,9 +215,15 @@ void test_3_21()
     cout << result;
 }
 
+/*
+背包类似问题合集
+*/
+
+/*
+1.典型背包问题
+*/
 #define MAXNUM 100
-int w[MAXNUM];
-bool KNAP(int s,int n)
+bool KNAP(int s,int n, int w[])
 {
     bool flag = false;
 
@@ -192,14 +242,14 @@ bool KNAP(int s,int n)
 
     while(s > 0 && n >= 1)
     {
-        flag = KNAP(s,n-1);
+        flag = KNAP(s,n-1,w);
 
         if(flag)
         {
             return true;
         }
 
-        flag =  KNAP((s-w[n]),n-1);
+        flag =  KNAP((s-w[n]),n-1,w);
 
         if(flag)
         {
@@ -213,10 +263,11 @@ bool KNAP(int s,int n)
     return false;
 }
 
-int test_3_18()
+int main17301()
 {
     int n = 0,s=0;
     bool flag = false;
+    int w[MAXNUM];
     cout << "Input the weight of the bag can hold:" <<endl;
     cin >> s;
     cout << "Input the number of the objects" <<endl;
@@ -228,7 +279,7 @@ int test_3_18()
         cin >> w[i];
     }
 
-    flag = KNAP(s,n);
+    flag = KNAP(s,n,w);
 
     if(!flag)
     {
@@ -274,7 +325,9 @@ int find(int weight,int num,int *object,int *result)
 
     return find(weight,num-1,object,result);
 }
-int test_3_18_b()
+
+
+int main17302()
 {
     int weight,num;
     scanf("%d %d",&weight,&num);
@@ -308,8 +361,30 @@ int test_3_18_b()
     return 0;
 }
 
+/*
+给定一些硬币，求给定金额下，最少硬币的组合
+*/
+
+int main17303()
+{
+    int group;
+    cout << "How many groups of the coins: ";
+    cin >> group;
+    int *coin = new int[group];
+    for(int i=0;i<group;i++)
+    {
+        cin >> coin[i];
+    }
+    for(int i=0;i<group;i++)
+    {
+        cout << coin[i] << " ";
+    }
+    cout << endl;
+    delete []coin;
+    return 0;
+}
 int main1730()
 {
-    test_3_17();
+    main17304();
     return 0;
 }

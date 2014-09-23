@@ -21,19 +21,30 @@ class binary_tree
 protected:
     binary_node *root;
     int ref_val; //the mark for the ending of the binary tree
+
     void create_binary_tree(binary_node *&sub_tree);
     void create_binary_tree(binary_node *&sub_tree, string str);
+
     void destroy_binary_tree(binary_node *&sub_tree);
+
     void preorder(binary_node *sub_tree, void (*visit)(binary_node *node));
     void inorder(binary_node *sub_tree, void (*visit)(binary_node *node));
     void postorder(binary_node *sub_tree, void (*visit)(binary_node *node));
+    void levelorder(binary_node *sub_tree, void (*visit)(binary_node *node));
+
     void print_in_table(binary_node *sub_tree); //广义表形式输出
+
     virtual void get_min_max(binary_node *node, int &min, int &max);
+
     binary_node* get_parent(binary_node *sub_tree, binary_node *current);
+
     binary_node* find(binary_node *sub_tree, int target);
+
     int get_height(binary_node *sub_tree);
     int get_size(binary_node *sub_tree);
     int get_leaf_size(binary_node *sub_tree);
+
+    bool is_complete(binary_node *sub_tree);
 
 public:
     binary_tree():root(NULL),ref_val(-1) {}
@@ -67,6 +78,10 @@ public:
     void postorder(void (*visit)(binary_node *node))
     {
         postorder(root,visit);
+    }
+    void levelorder(void (*visit)(binary_node *node))
+    {
+        levelorder(root,visit);
     }
     void print_in_table()
     {
@@ -128,5 +143,9 @@ public:
     int get_leaf_size()
     {
         return get_leaf_size(root);
+    }
+    bool is_complete() //A complete binary tree or not
+    {
+        return is_complete(root);
     }
 };

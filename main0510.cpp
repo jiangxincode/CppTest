@@ -4,7 +4,8 @@
     Blog:
         http://blog.csdn.net/jiangxinnju
     function:
-    将单向链表reverse，如ABCD变成DCBA，只能搜索链表一次
+    将单向链表反转，如ABCD变成DCBA，只能搜索链表一次
+    百度笔试题
 */
 #include <iostream>
 

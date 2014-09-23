@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stack>
+#include <queue>
 #include <sstream>
 
 #include <cctype> // just for isdigit
@@ -116,6 +117,29 @@ void binary_tree::postorder(binary_node *sub_tree, void (*visit)(binary_node *no
     visit(sub_tree);
 }
 
+void binary_tree::levelorder(binary_node *sub_tree, void (*visit)(binary_node *node))
+{
+    queue<binary_node *> node_queue;
+    if(sub_tree == NULL)
+    {
+        return ;
+    }
+    node_queue.push(sub_tree);
+    while(!node_queue.empty())
+    {
+        binary_node *temp = node_queue.front();
+        visit(temp);
+        node_queue.pop();
+        if(temp->left_child)
+        {
+            node_queue.push(temp->left_child);
+        }
+        if(temp->right_child)
+        {
+            node_queue.push(temp->right_child);
+        }
+    }
+}
 void binary_tree::print_in_table(binary_node *sub_tree) //以广义表形式输出二叉树
 {
     if(sub_tree != NULL)
@@ -240,4 +264,56 @@ int binary_tree::get_leaf_size(binary_node *sub_tree)
     {
         return get_leaf_size(sub_tree->left_child) + get_leaf_size(sub_tree->right_child);
     }
+}
+
+/**
+ *采用广度优先遍历，从根节点开始，入队列，如果队列不为空，循环。
+ *遇到第一个没有左儿子或者右儿子的节点，设置标志位，
+ *如果之后再遇到有左/右儿子的节点，那么这不是一颗完全二叉树。
+ */
+bool binary_tree::is_complete(binary_node *sub_tree)
+{
+    queue<binary_node *> node_queue;
+    bool flag = false;
+    if(sub_tree == NULL)
+    {
+        return true;
+    }
+    node_queue.push(sub_tree);
+    while(!node_queue.empty())
+    {
+        binary_node *temp = node_queue.front();
+        node_queue.pop();
+        if(temp->left_child)
+        {
+            if(flag)
+            {
+                return false;
+            }
+            else
+            {
+                node_queue.push(temp->left_child);
+            }
+        }
+        else
+        {
+            flag = true;
+        }
+        if(temp->right_child)
+        {
+            if(flag)
+            {
+                return false;
+            }
+            else
+            {
+                node_queue.push(temp->right_child);
+            }
+        }
+        else
+        {
+            flag = true;
+        }
+    }
+    return true;
 }
