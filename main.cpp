@@ -1,5 +1,5 @@
 #include <iostream>
-#include "jiangxin.h"
+#include "main.h"
 
 using namespace std;
 
@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 {
     string ch;
     do{
-        main0539();
+        main003();
         cout << "\nGo on?(n/y)";
         cin >> ch;
     }while(ch == "y");

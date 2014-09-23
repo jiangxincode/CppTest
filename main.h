@@ -152,6 +152,8 @@ int main0536();
 int main0537();
 int main0538();
 int main0539();
+int main0540();
+int main0541();
 
 int main1000();
 

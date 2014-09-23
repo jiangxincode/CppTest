@@ -1,5 +1,5 @@
 /*
-²Î¿¼main0526
+main0526
 */
 #include <iostream>
 #include <iomanip>
