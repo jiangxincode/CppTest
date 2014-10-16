@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct  data_array
+struct data_array
 {
     long num;
     int score;
@@ -13,10 +13,10 @@ typedef  struct student
     struct student *next;
 } NODE;
 
-NODE * create1162(struct  data_array *array, int n);
-void display1162(NODE *head);
+static NODE * create(struct  data_array *array, int n);
+static void display(NODE *head);
 void copy_list(NODE *head1, NODE **head2);
-NODE *merge(NODE *head1, NODE *head2);
+static NODE *merge(NODE *head1, NODE *head2);
 NODE *del(NODE *head1, NODE *head2);
 NODE *insert(NODE *head,NODE *p0);
 
@@ -54,22 +54,23 @@ int main1162(void)
         nb++;
     }
 
-    heada=create1162(data_a,na);
+    heada=create(data_a,na);
     puts("a:");
-    display1162(heada);
-    headb=create1162(data_b,nb);
+    display(heada);
+    headb=create(data_b,nb);
     puts("b:");
     display(headb);
     copy_list(heada,&a_dup);
     copy_list(headb,&b_dup);
     heada=merge(heada,headb);
     puts("a:");
-    display1162(heada);
+    display(heada);
     b_dup=del(b_dup,a_dup);
     puts("b:");
-    display1162(b_dup);
+    display(b_dup);
+    return 0;
 }
-NODE * create1162(struct  data_array *array, int n)
+static NODE * create(struct  data_array *array, int n)
 {
     NODE *head=NULL,*p=NULL;
     int i;
@@ -122,7 +123,7 @@ NODE *insert(NODE *head,NODE *p0)
 
     return head;
 }
-void display1162(NODE *head)
+static void display(NODE *head)
 {
     NODE *p=NULL;
 
@@ -169,7 +170,7 @@ void copy_list(NODE *head1, NODE **head2)
     p1->next=NULL;
 }
 
-NODE * merge1162(NODE *head1, NODE *head2)
+static NODE * merge(NODE *head1, NODE *head2)
 {
     NODE *p1,*p2,*head,*p;
     p1=head1,p2=head2;

@@ -1,11 +1,13 @@
 #include<stdio.h>
 #include<math.h>
-#include<conio.h>
-void itoah(int x)
+void dec2hex(int x)
 {
     int a;
 
-    if(x/16>0) itoah(x/16);
+    if(x/16>0)
+    {
+        dec2hex(x/16);
+    }
 
     a=x%16;
 
@@ -19,8 +21,7 @@ main1102()
     int x;
     printf("in put a number:");
     scanf("%d",&x);
-    itoah(x);
-    getch();
+    dec2hex(x);
 }
 
 

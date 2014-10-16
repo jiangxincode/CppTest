@@ -12,22 +12,18 @@ int main10111(void)
     return 0;
 }
 
-int main10112(void)
+int main10112(void) //¥Ú”°≥À∑®±Ì
 {
     int row,col,result;
-    printf("\n");
-
     for(row=1; row<10; row++)
     {
-        for(col=1; col<10; col++)
+        for(col=1; col<=row; col++)
         {
             result=row*col;
             printf("%d*%d=%-5d",row,col,result);
         }
-
         printf("\n");
     }
-
     return 0;
 }
 
@@ -80,5 +76,6 @@ int main10117()
 
 int main1011()
 {
+    main10112();
     return 0;
 }

@@ -1,4 +1,20 @@
-/*
+/**
+阶乘相关问题
+*/
+
+/**
+求n阶阶乘问题的递归算法
+*/
+long int factorial(int n)
+{
+    if(n==0||n==1)
+    return 1;
+    else
+        return n*factorial(n-1);
+}
+
+
+/**
 模拟高精度阶乘手工计算:
     对于n!的计算，当n大于12时n!的计算结果已超出long int的最大值。
     例如15!=1307674368000 ，该运算结果无法用一个long int变量存储。
@@ -41,7 +57,8 @@ int fact(int n)
 
     return 1;
 }
-main1125()
+
+int main1125()
 {
     int n,k;
     printf("\nThe factorial number:");
@@ -49,4 +66,5 @@ main1125()
     k=fact(n);
 
     if(k==0) printf("OVERFLOW!!!");
+    return 0;
 }
