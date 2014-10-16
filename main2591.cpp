@@ -9,6 +9,7 @@
 #include <iostream>
 
 using namespace std;
+
 float atof(char *c)
 {
     float f=0,t=0,te=1;

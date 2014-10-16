@@ -178,7 +178,7 @@ int num(int n)/*返回操作数的长度*/
     string str_num = to_string(n);
     return str_num.length();
     //char p[10];
-    //itoa(n,p,10);/*把整型转换成字符串型*/
+    //itoa(n,p,10);
     //n=strlen(p);
     //return n;
 }

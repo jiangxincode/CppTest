@@ -19,9 +19,7 @@ public:
     bool push(int elem);
     int top();
     bool pop();
-
     void sort();
-
     bool is_empty();
     void print_heap();
 };

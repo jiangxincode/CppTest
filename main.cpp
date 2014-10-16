@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 {
     string ch;
     do{
-        main003();
+        main0553();
         cout << "\nGo on?(n/y)";
         cin >> ch;
     }while(ch == "y");

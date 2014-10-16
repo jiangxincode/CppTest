@@ -1,38 +1,38 @@
-/*
-实现、调试使用二分法查找字符串的函数功能
-（给定一个有序的字符串数组，查找其中是否包含指定字符串）。
-请设计实现函数，并设计简单的例子以进行测试。
+/**
+斐波拉契
+斐波那契
+Fibonacci
+f(1)=1
+f(2)=1
+f(n)=f(n-1)+f(n-2) n>2
 */
-#include <cstdio>
-#include <cctype>
-#include <cstring>
-char* Bin(char* sp[],char *str,int n,int *addr);
-int main2592()
+
+/**
+非递归计算
+*/
+int fibonacci_1(int n)
 {
-    int cn;
-    char *cp;
-    char *temp[] = {"li","qian","sun","zhao"};
-    cp = Bin(temp,"sun",4,&cn);
-    if(cp!=0)
-        printf("%d\n",cn+1);
-    return 0;
-}
-char* Bin(char* sp[],char *str,int n,int *addr)
-{
-    int left,right,mid;
-    left = 0;
-    right = n-1;
-    while(left<=right)
+    int i,s,s1,s2;
+    s1=1;/*s1用于保存f(n-1)的值*/
+    s2=1;/*s2用于保存f(n-2)的值*/
+    s=1;
+
+    for(i=3; i<=n; i++)
     {
-        mid = (left+right)/2;
-        if(strcmp(str,sp[mid]<0))
-            right = mid -1;
-        else if(strcmp(str,sp[mid])>0)
-            left = mid +1;
-        else
-        {
-            *addr = mid;
-            return (sp[mid]);
-        }
+        s=s1+s2;
+        s2=s1;
+        s1=s;
     }
+
+    return(s);
+}
+/**
+递归算法
+*/
+int fibonacci_2(int n)
+{
+    if(n==1||n==2)
+    return 1;
+    else
+    return fibonacci_2(n-1)+fibonacci_2(n-2);
 }
