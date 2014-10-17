@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<math.h>
-main1064()
+int main1064()
 {
     int p,c,k,t,r;
     double m;
@@ -38,6 +38,8 @@ main1064()
 
         p=p+1;
     }
+
+    return 0;
 }
 
 

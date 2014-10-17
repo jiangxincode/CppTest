@@ -2,8 +2,8 @@
 #include<math.h>
 #include<ctype.h>
 #include<string.h>
-#include<conio.h>
 #include<stdlib.h>
+
 typedef struct node
 {
     int x;
@@ -71,11 +71,12 @@ void free_all(NODE *head)
         free(p1);
     }
 }
-main1161()
+int main1161()
 {
     NODE *p1;
     p1=create();
     display1161(p1);
     free_all(p1);
+    return 0;
 }
 

@@ -8,7 +8,9 @@ int main1093()
     scanf("%d,%d",&m,&n);
 
     for(a=m; a<=n-2; a++)
-        if(b=prime(a)&&prime(a+2))
+        if(prime(a)&&prime(a+2))
             printf("(%d  %d)\n",a,a+2);
+
+    return 0;
 }
 

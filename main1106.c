@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<math.h>
-#include<conio.h>
+
 double term(double x,int n)
 {
     if(n==1)
@@ -21,11 +21,11 @@ double f1106(double x,double eps)
 
     return s;
 }
-main1106()
+int main1106()
 {
     double x,eps,sum;
     scanf("%lf%lf",&x,&eps);
     sum=f1106(x,eps);
     printf("x=%lf,eps=%lf,sum=%lf",x,eps,sum);
-    getch();
+    return 0;
 }

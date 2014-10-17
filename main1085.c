@@ -8,6 +8,7 @@ double f1(double x)
 int main1085()
 {
     double a=0,b=3,c,x,eps=1e-6;
+
     if(fabs(f1(a))<eps)
         x=a;
     else if(fabs(f1(b))<eps)

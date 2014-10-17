@@ -26,6 +26,8 @@ int main1116()
             if((k+1)%10==0)
                 printf("\n");
         }
+
+    return 0;
 }
 
 

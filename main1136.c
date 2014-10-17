@@ -11,7 +11,7 @@
       The saddle point is£ºa[0][3]
 */
 #include<stdio.h>
-main1136()
+int main1136()
 {
     int i,j,k,t=0,max,maxj;
     int a[4][4]= {{1,2,3,4,},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
@@ -37,4 +37,6 @@ main1136()
     }
 
     if(t==0) printf("There is no saddle point!\n");
+
+    return 0;
 }

@@ -16,4 +16,5 @@ int main1083()
     while(fabs(f)>eps||fabs(x-x1));
 
     printf("x=%f",x);
+    return 0;
 }

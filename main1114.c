@@ -18,5 +18,7 @@ int main1114()
 
     for(i=0; i<6; i++)
         printf("%d",b[i]);
+
+    return 0;
 }
 

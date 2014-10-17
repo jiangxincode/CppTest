@@ -1,6 +1,6 @@
 #include "stdio.h"
-#include "conio.h"
 #include "jiangxin.h"
+
 int f1117(int a[],int n,int *x,int *y)
 {
     int i,j;
@@ -30,7 +30,6 @@ int main1117()
         printf("%d-%d=%d\n",a[n],a[m],a[n]-a[m]);
     else  printf("not found!\n");
 
-    getch();
     return 0;
 }
 

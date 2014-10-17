@@ -11,7 +11,7 @@ double term1112(double x,int n)
 
     return y;
 }
-main1112()
+int main1112()
 {
     double x,y,s=0;
     int n=1;
@@ -26,6 +26,7 @@ main1112()
     while(fabs(y)>=1e-6);
 
     printf("\n x=%f,%f,%f",x,1/sqrt(1+x),s);
+    return 0;
 }
 
 

@@ -46,9 +46,10 @@ void replaceword(char s[])
         }
     }
 }
-main1141()
+int main1141()
 {
     char line[80]="I accuse your mistakes.";
     replaceword(line);
     puts(line);
+    return 0;
 }

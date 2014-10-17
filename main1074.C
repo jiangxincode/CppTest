@@ -55,4 +55,6 @@ int main1074()
         }
     }
     }
+
+    return 0;
 }

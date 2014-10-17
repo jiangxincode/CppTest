@@ -23,6 +23,8 @@ int main1092()
         if((m=huiwen(n))&&(a=huiwen(n*n)))
             printf("n=%d,%d^%d=%d\n",b,b,b,b*b);
     }
+
+    return 0;
 }
 
 

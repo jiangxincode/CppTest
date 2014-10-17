@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<ctype.h>
-#include<conio.h>
+
 int count1148(char a[], char w[][10], int n,int b[])
 {
     int i,j,k,p;
@@ -20,7 +20,7 @@ int count1148(char a[], char w[][10], int n,int b[])
 
     return 0;
 }
-main1148()
+int main1148()
 {
     char a[50]= {"this is a book, that is an apple"};
     char w[][10]= {"is","that"};
@@ -33,7 +33,7 @@ main1148()
         printf("%d\n",b[i]);
     }
 
-    getch();
+    return 0;
 }
 
 

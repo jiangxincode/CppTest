@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<ctype.h>
-#include<conio.h>
+
 int  delete(char s[][10],int n)
 {
     int i,j,k;
@@ -25,7 +25,7 @@ int  delete(char s[][10],int n)
 
     return k;
 }
-main1147()
+int main1147()
 {
     char a[][10]= {"a%1","_a12","aaa","$ss","1sss"};
     int d,i;
@@ -34,7 +34,7 @@ main1147()
     for(i=0; i<d; i++)
         puts(a[i]);
 
-    getch();
+    return 0;
 }
 
 

@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include<math.h>
-main1071()
+int main1071()
 {
-    double term=1,f,s,x;
+    double term=1,s,x;
     int n=1;
     printf("x=");
     scanf("%lf",&x);
@@ -17,4 +17,5 @@ main1071()
     }
 
     printf("%.5f",s);
+    return 0;
 }

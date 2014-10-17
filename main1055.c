@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<math.h>
+
 int main1055()
 {
     int a,b,c,d,*p;
@@ -18,7 +19,9 @@ int main1055()
             printf("%d is not a Armstrong number",*p);
     }
     else
-        printf("Please input another int number");
+        printf("Input error");
+
+    return 0;
 }
 
 

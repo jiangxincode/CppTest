@@ -16,5 +16,6 @@ int main1081()
                 }
 
     printf("%d",n);
+    return 0;
 }
 

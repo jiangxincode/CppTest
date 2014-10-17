@@ -18,5 +18,7 @@ int main1142()
     for(i=0; i<26; i++)
         if(a[i])
             printf("%c:%d",i+'a',a[i]);
+
+    return 0;
 }
 

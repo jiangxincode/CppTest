@@ -1,6 +1,6 @@
 #include<stdio.h>
-#include<conio.h>
-main1056()
+
+int main1056()
 {
     int i=100000,a,b,c,d,e,f;
 
@@ -19,5 +19,5 @@ main1056()
         i++;
     }
 
-    getch();
+    return 0;
 }

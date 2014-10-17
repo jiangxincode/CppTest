@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<math.h>
-#include<conio.h>
+
 double f1103(double x)
 {
     return x*x/4-sin(x);
@@ -15,8 +15,10 @@ double root(double a,double b)
         return root(a,(a+b)/2);
     else if(fabs(f1103((a+b)/2))>eps&&f1103((a+b)/2)*f1103(b)<0)
         return root((a+b)/2,b);
+    else
+        return 0.0; //for others
 }
-main1103()
+int main1103()
 {
     double a=1,b=2;
 
@@ -25,7 +27,7 @@ main1103()
     else
         printf("There is no root in this area");
 
-    getch();
+    return 0;
 }
 
 

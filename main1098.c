@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<math.h>
-#include<conio.h>
+
 int fanxushu(int p)
 {
     int d;
@@ -28,14 +28,14 @@ int f1098(long n,long *hw)
     if(i>10000)
         return -1;
 }
-main1098()
+int main1098()
 {
     int c;
     long b,a;
     scanf("%ld",&a);
     c=f1098(a,&b);
     printf("%ld  %d ",b,c);
-    getch();
+    return 0;
 }
 
 

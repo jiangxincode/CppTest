@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<math.h>
-main1115()
+int main1115()
 {
     int j,m=0,n1,n2,f,t[10],d[10];
     long x,y,i;
@@ -45,4 +45,6 @@ main1115()
 
         if(f) printf("\n%ld %ld",i,x);
     }
+
+    return 0;
 }

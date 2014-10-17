@@ -44,5 +44,6 @@ int main1122(void)
         printf("%5d",x[i]);
 
     printf("\n%d",count);
+    return 0;
 }
 

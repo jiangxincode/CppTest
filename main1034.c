@@ -1,24 +1,21 @@
 #include <stdio.h>
-#include <math.h>
+#include <math.h> // for fabs
+#include <stdlib.h> //for abs
 
+/**
+ * 输入一个浮点数，计算其绝对值
+ */
 int main1034()
 {
     double a;
-    scanf("Input annumber %ld",&a);
+    scanf("%lf",&a);
 
-    if(a==0)
-        printf("error,please input another number:");
+    if(a>0)
+        printf("sign:+\n");
     else
-    {
-        if(a>0)
-            printf("sign:+");
-        else
-            printf("sign:-");
+        printf("sign:-\n");
 
-        abs((int)a);
-        printf("integral part:%d",a);
-        fabs(a);
-        printf("decimal fraction part :%d",a);
-    }
+    abs((int)a); //计算整数和浮点数的绝对值
+    printf("%d, %lf\n",abs((int)a), fabs(a));
     return 0;
 }

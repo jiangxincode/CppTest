@@ -21,15 +21,15 @@ char a[20];
 int main1171()
 {
     puts("\n\n\n"
-           "\t*************************************************\n"
-           "\t*************************************************\n"
-           "\t*******     Weclome to notebook     *************\n"
-           "\t*************************************************\n"
-           "\t*************************************************\n"
-           "\t*******************  copyright @ jiangxin   *****\n"
-           "\t*************************************************\n"
-           "\t*************************************************\n"
-           "\n\n\n");
+         "\t*************************************************\n"
+         "\t*************************************************\n"
+         "\t*******     Weclome to notebook     *************\n"
+         "\t*************************************************\n"
+         "\t*************************************************\n"
+         "\t*******************  copyright @ jiangxin   *****\n"
+         "\t*************************************************\n"
+         "\t*************************************************\n"
+         "\n\n\n");
     puts("Input e if you want exit, Otherwise ANY KEY:");
     scanf("%s",a);
 
@@ -39,20 +39,21 @@ int main1171()
     }
 
     int m;
+
     do
     {
         puts("\n\n\n\n\n\n\n\n"
-               "\t**********************************\n"
-               "\t             1.新    建           \n"
-               "\t             2.保    存           \n"
-               "\t             3.打    开           \n"
-               "\t             4.版权说明           \n"
-               "\t             5.使用说明           \n"
-               "\t             6.退    出           \n"
-               "\t**********************************\n"
-               "\tPlease choose the function:\n\n\n\n\n");
-
+             "\t**********************************\n"
+             "\t             1.新    建           \n"
+             "\t             2.保    存           \n"
+             "\t             3.打    开           \n"
+             "\t             4.版权说明           \n"
+             "\t             5.使用说明           \n"
+             "\t             6.退    出           \n"
+             "\t**********************************\n"
+             "\tPlease choose the function:\n\n\n\n\n");
         scanf("%d",&m);
+
         while(m<1 || m>6)
         {
             printf("Error!\n");
@@ -62,11 +63,17 @@ int main1171()
 
         switch(m)
         {
-        case 1: f_new();break;
+        case 1:
+            f_new();
+            break;
 
-        case 2: f_save();break;
+        case 2:
+            f_save();
+            break;
 
-        case 3: f_open();break;
+        case 3:
+            f_open();
+            break;
 
         case 4:
         {
@@ -80,8 +87,10 @@ int main1171()
             puts("    copyright  @  蒋鑫(JX)");
             puts("Continue?(y/n)");
             scanf("%s",a);
+
             if(strncmp("n",a,1)==0)
                 return 0;
+
             break;
         }
 
@@ -97,13 +106,18 @@ int main1171()
             puts("\t\t\t\t   by jiangxin");
             puts("Continue?(y/n)");
             scanf("%s",a);
+
             if(strncmp("n",a,1)==0)
                 return 0;
+
             break;
         };
-        default: break;
+
+        default:
+            break;
         }
-    }while(m != 6);
+    }
+    while(m != 6);
 
     return 0;
 }
@@ -213,7 +227,6 @@ void f_open(void)
 
     printf("Hao many pieces of data you want to open?\n");
     scanf("%ld",&n);
-
     printf("关系\t名字\t性别\t手机\n");
 
     for(count=1; count<=n; count++)

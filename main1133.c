@@ -61,6 +61,7 @@ int main1133(void)
         printf("%4d",b[i]);
 
     printf("\n");
+    return 0;
 }
 
 

@@ -1,9 +1,8 @@
 #include<stdio.h>
 #include<math.h>
+
 int ye(int y)
 {
-    int t;
-
     if((y%4==0 && y%100!=0) || (y%400==0))
         return 1;
     else
@@ -36,6 +35,8 @@ int mo(int m, int y)
             return 28;
     }
     }
+
+    return 0;
 }
 int main1075()
 {

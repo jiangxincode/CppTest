@@ -31,5 +31,7 @@ int main1144()
 
     for(i=0; xx[i]; i++)
         printf("%c",xx[i]);
+
+    return 0;
 }
 

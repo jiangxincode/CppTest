@@ -1,6 +1,6 @@
 #include<stdio.h>
-#include<conio.h>
 #include<string.h>
+
 typedef struct
 {
     char  name[10], degree[10];
@@ -27,7 +27,8 @@ void sort(ST x[],int n,char key[][10],int m)
                     break;
                 }
 
-            if(con1>con2||con1==con2&&strcmp(x[j].name,x[j+1].name)<0)
+            if((con1>con2)
+               ||(con1==con2&&strcmp(x[j].name,x[j+1].name)<0))
             {
                 v=x[j];
                 x[j]=x[j+1];
@@ -46,6 +47,4 @@ void main1152()
 
     for(i=0; i<5; i++)
         printf("\n%s    %s",s[i].name,s[i].degree);
-
-    getch();
 }

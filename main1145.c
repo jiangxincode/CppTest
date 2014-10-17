@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<ctype.h>
-#include<conio.h>
+
 void FindLWord(char *a,char*b)
 {
     char p[50];
@@ -24,13 +24,13 @@ void FindLWord(char *a,char*b)
         }
     }
 }
-main1145()
+int main1145()
 {
     char a[20],b[2]= {0};
     gets(a);
     FindLWord(a,b);
     puts(b);
-    getch();
+    return 0;
 }
 
 

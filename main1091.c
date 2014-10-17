@@ -23,5 +23,7 @@ int main1091()
         if(d!=0)
             printf("%d----%d\n",n,d);
     }
+
+    return 0;
 }
 

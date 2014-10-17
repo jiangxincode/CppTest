@@ -3,7 +3,6 @@
 int main1072()
 {
     double low,s,pi;
-    int n;
     s=0;
     pi=2;
     low=0;
@@ -16,4 +15,5 @@ int main1072()
     }
 
     printf("%.5f",pi);
+    return 0;
 }

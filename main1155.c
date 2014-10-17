@@ -1,18 +1,22 @@
+/**
+ * 教材实验14，第5题
+ */
 #include<stdio.h>
 #include<string.h>
 #include<ctype.h>
-#include<conio.h>
+
 typedef struct
 {
     long id;
     char name[10];
     char sex[2];
 } PS;
-int detele(PS *p1,int m,PS *p2,int n)
+
+static int detele(PS *p1,int m,PS *p2,int n)
 {
     int i,j,k,p;
-    p=m;
 
+    p=m;
     for(i=0; i<p; i++)
     {
         for(j=0; j<n; j++)
@@ -31,7 +35,7 @@ int detele(PS *p1,int m,PS *p2,int n)
 
     return m;
 }
-int merge(PS *p1,int m,PS *p2,int n)
+static int merge(PS *p1,int m,PS *p2,int n)
 {
     int i,j,d;
     PS pp;
@@ -63,7 +67,7 @@ int merge(PS *p1,int m,PS *p2,int n)
 
     return m;
 }
-void sort1155(PS *p,int n)
+static void sort(PS *p,int n)
 {
     PS pp;
     int i,j;
@@ -71,7 +75,8 @@ void sort1155(PS *p,int n)
     for(i=0; i<n-1; i++)
         for(j=i+1; j<n; j++)
         {
-            if(strcmp(p[i].sex,p[j].sex)>0||strcmp(p[i].sex,p[j].sex)==0&&strcmp(p[i].name,p[j].name)>0)
+            if((strcmp(p[i].sex,p[j].sex)>0)||
+               (strcmp(p[i].sex,p[j].sex)==0&&strcmp(p[i].name,p[j].name)>0))
             {
                 pp=p[i];
                 p[i]=p[j];
@@ -79,10 +84,9 @@ void sort1155(PS *p,int n)
             }
         }
 }
-void display(PS *p,int n)
+static void display(PS *p,int n)
 {
     int i;
-
     for(i=0; i<n; i++)
     {
         printf("%3ld",p[i].id);
@@ -91,11 +95,19 @@ void display(PS *p,int n)
         printf("\n");
     }
 }
-main1155()
+int main1155()
 {
     int d,i,j;
-    PS a[7]= {{101,"tom","m"},{103,"marry","f"},{104,"mark","m"},{105,"julia","f"},{106,"sara","f"}},
-    b[8]= {{102,"mark","m"},{104,"mark","m"}},p[5];
+    PS a[5]= {
+        {101,"tom","m"},
+        {103,"marry","f"},
+        {104,"mark","m"},
+        {105,"julia","f"},
+        {106,"sara","f"}};
+    PS b[2]= {
+        {102,"mark","m"},
+        {104,"mark","m"}};
+    PS p[5];
     printf("a\n");
     display(a,5);
     printf("b\n");
@@ -110,10 +122,10 @@ main1155()
     i=merge(a,detele(a,5,b,2),b,2);
     printf("b\n");
     display(a,i-1);
-    sort1155(p,4);
+    sort(p,4);
     printf("a\n");
     display(p,4);
-    getch();
+    return 0;
 }
 
 

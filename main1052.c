@@ -1,6 +1,6 @@
 #include<stdio.h>
-#include<conio.h>
 #include<math.h>
+
 int main1052()
 {
     unsigned int a;
@@ -15,7 +15,6 @@ int main1052()
     }
 
     printf("%d",n);
-    getch();
     return 0;
 }
 

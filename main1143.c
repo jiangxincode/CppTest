@@ -30,6 +30,7 @@ int main1143()
         printf("%c",a[i]);
 
     printf("\n%d",count);
+    return 0;
 }
 
 

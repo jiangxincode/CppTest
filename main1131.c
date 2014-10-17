@@ -22,14 +22,14 @@ void localmax(int a[6][6],int b[6][6])
             for(k=-1; k<=1; k++)
                 for(m=-1; m<=1; m++)
                 {
-                    if(k==-1||k==1 && m==-1||m==1) continue;
+                    if((k==-1||k==1) && (m==-1||m==1)) continue;
 
                     if((k==0&&a[i][j]>a[i+m][j+k])||(m==0&&a[i][j]<a[i+m][j+k]))
                         b[i][j]=0;
                 }
         }
 }
-main1131()
+int main1131()
 {
     int b[6][6];
     int i,j,a[6][6]= {{0},{0,6,9,2,4},{0,3,6,8,5},{0,2,1,4,1},{0,6,2,9,4}};
@@ -57,4 +57,6 @@ main1131()
 
         printf("\n");
     }
+
+    return 0;
 }

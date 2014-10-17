@@ -51,6 +51,7 @@ int main1053()
         }
         while(x%111!=0||s<8);
     }
+
     return 0;
 }
 

@@ -1,6 +1,6 @@
 #include<stdio.h>
-#include<conio.h>
 #include<math.h>
+
 int main1061()
 {
     unsigned int a,s,n=2;
@@ -24,6 +24,7 @@ int main1061()
                 n++;
         }
     }
+    return 0;
 }
 
 

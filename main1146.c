@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<ctype.h>
-#include<conio.h>
+
 int  find1146(char(*s1)[10],int m,char(*s2)[10],int n,char(*s3)[10])
 {
     int i,j,k=0;

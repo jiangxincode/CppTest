@@ -12,8 +12,11 @@ char* reverse_str(char* str)
 {
     int i;
     char *start = str;
-    for(i=0;str[i]!='\0';i++); //get the length of the string
+
+    for(i=0; str[i]!='\0'; i++); //get the length of the string
+
     char *end = &str[--i];
+
     while(start < end) //Do not write start = end, otherwise if length is an even,start can not meet end
     {
         char temp = *end;
@@ -22,6 +25,7 @@ char* reverse_str(char* str)
         start ++;
         end --;
     }
+
     return str;
 }
 

@@ -39,6 +39,7 @@ int main1132(void)
     }
 
     printf("count=%d\n",count);
+    return 0;
 }
 
 

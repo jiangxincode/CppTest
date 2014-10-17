@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<math.h>
-#include<conio.h>
 #include "jiangxin.h"
 
 int  guest(int t)
@@ -12,8 +11,10 @@ int  guest(int t)
         if(prime(p)==1&&prime(t-p)==1&&p!=(t-p))
             printf("%d=%d+%d   ",t,p,t-p);
     }
+
+    return 0;
 }
-main1094()
+int main1094()
 {
     int d;
 
@@ -23,7 +24,5 @@ main1094()
             printf("%d  ",guest(d));
     }
 
-    getch();
+    return 0;
 }
-
-

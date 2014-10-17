@@ -16,12 +16,13 @@ void dec2hex(int x)
     else
         printf("%c",a-10+'A');
 }
-main1102()
+int main1102()
 {
     int x;
     printf("in put a number:");
     scanf("%d",&x);
     dec2hex(x);
+    return 0;
 }
 
 

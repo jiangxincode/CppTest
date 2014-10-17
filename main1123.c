@@ -85,6 +85,7 @@ int main1123(void)
 
     printf("\n");
     movesort(x,n);
+    return 0;
 }
 
 

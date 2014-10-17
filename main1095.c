@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<math.h>
-#include<conio.h>
+
 int f1095(int n)
 {
     int a,b,c;
@@ -16,8 +16,7 @@ int f1095(int n)
         else
             return 0;
     }
-
-    if(n>1000&&n<10000)
+    else if(n>=1000&&n<10000)
     {
         a=n/1000%10;
         b=n/100%10;
@@ -28,22 +27,26 @@ int f1095(int n)
         else
             return 0;
     }
+    else
+    {
+        return 0;
+    }
 }
-main1095()
+int main1095()
 {
     int i,m,n;
     printf("input two numbers 100<m<10000,100<n<10000,m<n");
     scanf("%d%d",&m,&n);
 
-    for(i=m; i<=n,i++;)
+    for(i=m; i<=n; i++)
     {
-        if(f1095(i)==1)
+        if(f1095(i))
         {
             printf("%d  ",i);
         }
     }
 
-    getch();
+    return 0;
 }
 
 

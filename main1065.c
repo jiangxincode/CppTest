@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<math.h>
-main1065()
+int main1065()
 {
     int a,b,c,x,y;
     a=1;
@@ -21,6 +21,8 @@ main1065()
 
         a=a+1;
     }
+
+    return 0;
 }
 
 

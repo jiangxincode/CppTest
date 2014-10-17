@@ -43,7 +43,7 @@ void joseph(int n,int m,int x[])
         }
     }
 }
-main1124()
+int main1124()
 {
     int a[100],n,m,i;
     printf("input the number of persons");
@@ -54,5 +54,7 @@ main1124()
 
     for(i=0; i<n; i++)
         printf("%d ",a[i]);
+
+    return 0;
 }
 

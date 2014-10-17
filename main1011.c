@@ -15,6 +15,7 @@ int main10111(void)
 int main10112(void) //打印乘法表
 {
     int row,col,result;
+
     for(row=1; row<10; row++)
     {
         for(col=1; col<=row; col++)
@@ -22,8 +23,10 @@ int main10112(void) //打印乘法表
             result=row*col;
             printf("%d*%d=%-5d",row,col,result);
         }
+
         printf("\n");
     }
+
     return 0;
 }
 
@@ -59,6 +62,7 @@ int main10115()
         printf("%f",d);
     else
         printf("%f",c);
+
     return 0;
 }
 

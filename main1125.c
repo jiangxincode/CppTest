@@ -8,7 +8,7 @@
 long int factorial(int n)
 {
     if(n==0||n==1)
-    return 1;
+        return 1;
     else
         return n*factorial(n-1);
 }
@@ -66,5 +66,6 @@ int main1125()
     k=fact(n);
 
     if(k==0) printf("OVERFLOW!!!");
+
     return 0;
 }

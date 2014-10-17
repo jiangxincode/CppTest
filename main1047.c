@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<conio.h>
+
 int main1047()
 {
     int n1,n2,n3,n=3,a;
@@ -20,7 +20,6 @@ int main1047()
         n++;
     }
 
-    getch();
     return 0;
 }
 

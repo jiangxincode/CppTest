@@ -1,6 +1,6 @@
 #include<stdio.h>
-#include<conio.h>
 #include<math.h>
+
 int main1045()
 {
     int a, n=1;
@@ -14,6 +14,7 @@ int main1045()
 
         n++;
     }
+
     return 0;
 }
 

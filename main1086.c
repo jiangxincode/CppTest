@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-#include <conio.h>
+
 double f(double x)
 {
     return exp(3*x)+pow(x,7);
@@ -21,6 +21,7 @@ double trapezoid(double x)
     }
 
     printf("s=%f",s*h);
+    return 0;
 }
 double rectangle(double x)
 {
@@ -37,6 +38,7 @@ double rectangle(double x)
     }
 
     printf("s=%f",s*h);
+    return 0;
 }
 double simpson(double x)
 {
@@ -53,6 +55,7 @@ double simpson(double x)
 
     s=(b-a)/2*(((f(a)+f(b))/2)+p+q);
     printf("s=%f",s);
+    return 0;
 }
 int main1086()
 {
@@ -66,7 +69,7 @@ int main1086()
     {
         printf("1:trapezoid\n2:rectangle\n3:simpson\n4:exit");
 
-        switch(c=getch())
+        switch(c=getchar())
         {
         case'1':
             y=trapezoid(x);
@@ -90,4 +93,6 @@ int main1086()
 
         printf("x=%f,y=%f",x,y);
     }
+
+    return 0;
 }

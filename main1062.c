@@ -1,6 +1,6 @@
 #include<stdio.h>
-
 #include<math.h>
+
 int main1062()
 {
     int a=2,p,n;
@@ -25,4 +25,6 @@ int main1062()
 
         a=a+1;
     }
+
+    return 0;
 }

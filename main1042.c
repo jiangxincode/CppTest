@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<conio.h>
+
 enum color {red,green,blue};
 int main1042()
 {
@@ -12,7 +12,6 @@ int main1042()
     p2=&G;
     p3=&B;
     printf("%d,%d,%d",p1,p2,p3);
-    getch();
     return 0;
 }
 

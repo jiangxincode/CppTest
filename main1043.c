@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<conio.h>
+
 int main1043()
 {
     char NAMEA,NAMEB;

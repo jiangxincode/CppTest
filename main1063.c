@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<math.h>
-main1063()
+int main1063()
 {
     int n,a,i=2;
 
@@ -22,6 +22,8 @@ main1063()
 
         i=i+1;
     }
+
+    return 0;
 }
 
 

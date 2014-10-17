@@ -1,7 +1,6 @@
-
 #include<stdio.h>
 #include<math.h>
-#include<conio.h>
+
 int main1054()
 {
     int a,max,sum,n=1;
