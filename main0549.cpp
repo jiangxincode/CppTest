@@ -10,7 +10,8 @@ int second_max(int arr[], int num)
 {
     int fir_max = arr[0];
     int sec_max = INT_MIN;
-    for(int i=0;i<num;i++)
+
+    for(int i=0; i<num; i++)
     {
         if(fir_max < arr[i])
         {
@@ -22,6 +23,7 @@ int second_max(int arr[], int num)
             sec_max = arr[i];
         }
     }
+
     return sec_max;
 }
 #define MAXNUM 20
@@ -29,14 +31,17 @@ int second_max(int arr[], int num)
 int main0549()
 {
     int arr[MAXNUM];
-    for(int i=0;i<MAXNUM;i++)
+
+    for(int i=0; i<MAXNUM; i++)
     {
         arr[i] = rand()%100;
     }
-    for(int i=0;i<MAXNUM;i++)
+
+    for(int i=0; i<MAXNUM; i++)
     {
         cout << arr[i] << " ";
     }
+
     cout <<  endl;
     cout << second_max(arr,MAXNUM) << " ";
     return 0;

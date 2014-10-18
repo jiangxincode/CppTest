@@ -26,13 +26,15 @@ int main0516()
     map<int,bool> map_lamp;
     int num;
     cin >> num;
-    for(int i=1;i<=num;i++)
+
+    for(int i=1; i<=num; i++)
     {
         map_lamp.insert(pair<int,bool>(i,false));
     }
-    for(int i=1;i<=num;i++)
+
+    for(int i=1; i<=num; i++)
     {
-        for(int j=1;j<=num;j++)
+        for(int j=1; j<=num; j++)
         {
             if(j%i == 0)
             {
@@ -49,13 +51,15 @@ int main0516()
     }
 
     int result = 0;
-    for(int i=1;i<=num;i++)
+
+    for(int i=1; i<=num; i++)
     {
         if(map_lamp[i] == true)
         {
             result ++;
         }
     }
+
     cout << result;
     return 0;
 }

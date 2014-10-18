@@ -12,6 +12,7 @@ int main2525()
     float f_miles = 0.0,f_price = 0.0;
     cout << "请输入行驶的公里数： ";
     cin >> f_miles;
+
     if(f_miles <= 3)
     {
         f_price = 9.0;
@@ -20,5 +21,7 @@ int main2525()
     {
         f_price = 9.0 +(f_miles-3)*2.4+2.0;
     }
+
     cout << "车费为： " << f_price;
+    return 0;
 }

@@ -49,15 +49,18 @@ int main0503()
     //多维数组中也经常用到cin.getline(字符数组，接收的字符数)的用法
     cout << "cin.get(字符数组，接收的字符数) is used in multidimensional array:" << endl;
     char array3[3][10];
-    for (int i = 0; i < 3; i ++)
+
+    for(int i = 0; i < 3; i ++)
     {
         cout << "请输入第" << i+1 << "行的字符串：" << endl;
         cin.getline(array3[i],10);
     }
-    for (int j = 0; j < 3; j ++)
+
+    for(int j = 0; j < 3; j ++)
     {
         cout << "第" << j+1 << "行：" << array3[j] << endl;
     }
+
 //4、getline(cin,str)的用法 接收一个可以包含空格的字符串(这儿是string类型的) 需要包含头文件#include <string>
     //getline(cin,str)是string流不是i/o流
     cout << "Test getline(cin,str):" << endl;
@@ -80,7 +83,6 @@ int main0503()
 //6、getchar(无参数) 接收一个字符 需要包含头文件#include <string>
     cout << "Test getchar(无参数)的用法：" << endl;
     char ch1;
-
     cout << "input a char:" << endl;
     ch1 = getchar(); // 不能写成getchar(ch1);
     cout << ch1 << "\n" << endl;

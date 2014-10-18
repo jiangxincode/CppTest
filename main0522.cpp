@@ -22,12 +22,13 @@ int main0522()
     string result;
     vector<int> vec1,vec2;
     cin >> time1 >> time2;
-
     string::size_type pos;
+
     while((pos=time1.find(":"))!=string::npos)
     {
         time1.replace(pos,1," ");
     }
+
     while((pos=time2.find(":"))!=string::npos)
     {
         time2.replace(pos,1," ");
@@ -36,10 +37,12 @@ int main0522()
     stringstream io1(time1);
     stringstream io2(time2);
     int temp;
+
     while(io1 >> temp)
     {
         vec1.push_back(temp);
     }
+
     while(io2 >> temp)
     {
         vec2.push_back(temp);
@@ -48,8 +51,6 @@ int main0522()
     int second = (vec1[2]+vec2[2])%60;
     int minute = (vec1[1]+vec2[1]+(vec1[2]+vec2[2])/60)%60;
     int hour = vec1[0]+vec2[0]+(vec1[1]+vec2[1]+(vec1[2]+vec2[2])/60)/60;
-
     cout << setfill('0') << setw(2) << hour << ":" << setw(2) << minute << ":" << setw(2) << second;
-
     return 0;
 }

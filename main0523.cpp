@@ -47,10 +47,12 @@ void backtrack(int n)
     {
         sum++;
         temp.clear();
+
         for(int j=1; j<=7; j++)
         {
             temp.push_back(x[j]);
         }
+
         result.push_back(temp);
     }
     else
@@ -58,6 +60,7 @@ void backtrack(int n)
         for(int j=1; j<=7; j++)
         {
             x[n]=j;
+
             if(monk[j].flag==0&&monk[j].spare[n]==1) //判断和尚j是否已经挑过水及和尚星期n是否有空
             {
                 monk[j].flag=1;
@@ -78,6 +81,7 @@ int main05231()
         {
             cin >> monk[i].spare[j];
         }
+
         monk[i].flag=0;
     }
 
@@ -85,22 +89,27 @@ int main05231()
     cout << sum << endl;
     vector<vector<int>>::iterator it1;
     vector<int>::iterator it2;
-    for(it1=result.begin();it1!=result.end();it1++)
+
+    for(it1=result.begin(); it1!=result.end(); it1++)
     {
         temp = *it1;
-        for(it2=temp.begin();it2!=temp.end();it2++)
+
+        for(it2=temp.begin(); it2!=temp.end(); it2++)
         {
             cout << *it2 << " ";
         }
+
         cout << endl;
     }
+
     return 0;
 }
 
 int main05232()
 {
-	int data[8][8];
-	int sum = 0;
+    int data[8][8];
+    int sum = 0;
+
     for(int i=1; i<=7; i++)
     {
         for(int j=1; j<=7; j++)
@@ -108,33 +117,41 @@ int main05232()
             cin >> data[i][j]; //第i个和尚第j天是否空闲
         }
     }
-	//利用全排列进行包里搜索，下面是全排列函数
-	string ooo="1234567";
-	vector<string> voo;
-	sort(ooo.begin(),ooo.end());
-	while(next_permutation(ooo.begin(),ooo.end()))
-	{
-		for(int i=1;i<=7;i++)
-		{
-			if((data[ooo[i-1]-'0'][i]) != 1)
-				break;
-			if(i==7)
+
+    //利用全排列进行包里搜索，下面是全排列函数
+    string ooo="1234567";
+    vector<string> voo;
+    sort(ooo.begin(),ooo.end());
+
+    while(next_permutation(ooo.begin(),ooo.end()))
+    {
+        for(int i=1; i<=7; i++)
+        {
+            if((data[ooo[i-1]-'0'][i]) != 1)
+                break;
+
+            if(i==7)
             {
                 voo.push_back(ooo);
                 sum ++;
             }
-		}
-	}
-	cout << sum << endl;
-	for(vector<string>::iterator it1=voo.begin();it1!=voo.end();it1++)
+        }
+    }
+
+    cout << sum << endl;
+
+    for(vector<string>::iterator it1=voo.begin(); it1!=voo.end(); it1++)
     {
         string temp = *it1;
-        for(string::iterator it2=temp.begin();it2!=temp.end();it2++)
+
+        for(string::iterator it2=temp.begin(); it2!=temp.end(); it2++)
         {
             cout << *it2 << " ";
         }
+
         cout << endl;
     }
+
     return 0;
 }
 int main0523()

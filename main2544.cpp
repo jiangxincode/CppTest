@@ -35,12 +35,14 @@ int hermit1(int n,int x)
     {
         int result;
         int h0=1,h1=2*x;
-        for(int i=2;i<=n;i++)
+
+        for(int i=2; i<=n; i++)
         {
             result = 2*x*h1-2*(i-1)*h0;
             h0=h1;
             h1=result;
         }
+
         return result;
     }
 }
@@ -48,9 +50,11 @@ int main2544()
 {
     int x=1;
     int n=10;
-    for(int i=0;i<=n;i++)
+
+    for(int i=0; i<=n; i++)
     {
         cout << "Method1: The result is: " << hermit1(i,x) << " when n=" << i << " and x=" << x << endl;
         cout << "Method2: The result is: " << hermit2(i,x) << " when n=" << i << " and x=" << x << endl;
     }
+    return 0;
 }

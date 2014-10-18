@@ -14,10 +14,12 @@ int main1560()
 int test_Ex_6_27(initializer_list<int> li)
 {
     int result = 0;
-    for(auto i = li.begin();i != li.end();i++)
+
+    for(auto i = li.begin(); i != li.end(); i++)
     {
         result += *i;
     }
+
     return result;
 }
 

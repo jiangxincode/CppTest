@@ -51,15 +51,20 @@ string Convert(string expr)
     string result = "";
     stack<char> op;
     op.push('#');
-    for(it=expr.begin();it!=expr.end();it++)
+
+    for(it=expr.begin(); it!=expr.end(); it++)
     {
         char temp = *it;
+
         if(isdigit(temp) || temp == '.')
         {
-            do{
+            do
+            {
                 result += temp;
                 temp = *(++it);
-            }while(isdigit(temp) || temp == '.');
+            }
+            while(isdigit(temp) || temp == '.');
+
             it --;
             result += "#";
         }
@@ -69,10 +74,12 @@ string Convert(string expr)
         }
         else if(getICP(temp) < getISP(op.top()))
         {
-            do{
+            do
+            {
                 result += op.top();
                 op.pop();
-            }while(getICP(temp) < getISP(op.top()));
+            }
+            while(getICP(temp) < getISP(op.top()));
 
             if(getICP(temp) == getISP(op.top()))
             {
@@ -88,11 +95,13 @@ string Convert(string expr)
             op.pop();
         }
     }
+
     while(op.top() != '#')
     {
         result += op.top();
         op.pop();
     }
+
     return result;
 }
 double Calculate(string expr)
@@ -100,16 +109,21 @@ double Calculate(string expr)
     double operand1,operand2;
     stack<double> operand;
     string::iterator it;
-    for(it=expr.begin();it!=expr.end();it++)
+
+    for(it=expr.begin(); it!=expr.end(); it++)
     {
         char c_temp = *it;
         string str = "";
+
         if(isdigit(c_temp) || c_temp == '.')
         {
-            do{
+            do
+            {
                 str += c_temp;
                 c_temp = *(++it);
-            }while(isdigit(c_temp) || c_temp == '.'); //因为数字都是以#号结束，所以迭代器无需回退
+            }
+            while(isdigit(c_temp) || c_temp == '.');  //因为数字都是以#号结束，所以迭代器无需回退
+
             stringstream io(str);
             double d_temp;
             io >> d_temp;
@@ -124,15 +138,29 @@ double Calculate(string expr)
 
             switch(c_temp)
             {
-                case '+': operand.push(operand1 + operand2);break;
-                case '-': operand.push(operand1 - operand2);break;
-                case '*': operand.push(operand1 * operand2);break;
-                case '/': operand.push(operand1 / operand2);break;
-                //case '%': operand.push(operand1 % operand2);break;
-                default: return -1;
+            case '+':
+                operand.push(operand1 + operand2);
+                break;
+
+            case '-':
+                operand.push(operand1 - operand2);
+                break;
+
+            case '*':
+                operand.push(operand1 * operand2);
+                break;
+
+            case '/':
+                operand.push(operand1 / operand2);
+                break;
+
+            //case '%': operand.push(operand1 % operand2);break;
+            default:
+                return -1;
             }
         }
     }
+
     return operand.top();
 }
 int main0524()

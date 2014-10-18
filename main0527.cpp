@@ -30,78 +30,98 @@ int main0527()
     int M,N;
     cin >> M >> N;
     int test[M][N];
-    for(int i=0;i<M;i++)
+
+    for(int i=0; i<M; i++)
     {
-        for(int j=0;j<N;j++)
+        for(int j=0; j<N; j++)
         {
             test[i][j] = rand()/100;
         }
     }
-    for(int i=0;i<M;i++)
+
+    for(int i=0; i<M; i++)
     {
-        for(int j=0;j<N;j++)
+        for(int j=0; j<N; j++)
         {
             cout << setw(5) << test[i][j] << " ";
         }
+
         cout << endl;
     }
+
     if(M <= N)
     {
-        for(int j=N-1;j>N-M;j--)
+        for(int j=N-1; j>N-M; j--)
         {
             int temp = j;
-            for(int i=0;temp<N;temp++,i++)
+
+            for(int i=0; temp<N; temp++,i++)
             {
                 cout << test[i][temp] << " ";
             }
+
             cout << endl;
         }
-        for(int j=N-M;j>=0;j--)
+
+        for(int j=N-M; j>=0; j--)
         {
             int temp = j;
-            for(int i=0;i<M;temp++,i++)
+
+            for(int i=0; i<M; temp++,i++)
             {
                 cout << test[i][temp] << " ";
             }
+
             cout << endl;
         }
-        for(int i=1;i<M;i++)
+
+        for(int i=1; i<M; i++)
         {
             int temp = i;
-            for(int j=0;temp < M;temp++,j++)
+
+            for(int j=0; temp < M; temp++,j++)
             {
                 cout << test[temp][j] << " ";
             }
+
             cout << endl;
         }
     }
     else
     {
-        for(int j=N-1;j>0;j--)
+        for(int j=N-1; j>0; j--)
         {
             int temp = j;
-            for(int i=0;temp<N;temp++,i++)
+
+            for(int i=0; temp<N; temp++,i++)
             {
                 cout << test[i][temp] << " ";
             }
+
             cout << endl;
         }
-        for(int i=0;i<N-1;i++)
+
+        for(int i=0; i<N-1; i++)
         {
             int temp = i;
-            for(int j=0;j<N;j++,temp++)
+
+            for(int j=0; j<N; j++,temp++)
             {
                 cout << test[temp][j] << " ";
             }
+
             cout << endl;
         }
-        for(int i=N-1;i<M;i++)
+
+        for(int i=N-1; i<M; i++)
         {
             int temp = i;
-            for(int j=0;temp<M;temp++,j++)
+
+            for(int j=0; temp<M; temp++,j++)
             {
                 cout << test[temp][j] << " ";
             }
+
             cout << endl;
         }
     }

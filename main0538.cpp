@@ -21,7 +21,7 @@ bool is_odd(int i)
 {
     return (i%2==0);
 }
-bool compare_bigger (int i,int j)
+bool compare_bigger(int i,int j)
 {
     if(i > j)
     {
@@ -35,6 +35,7 @@ bool compare_bigger (int i,int j)
 int main0538()
 {
     vector<int> coll;
+
     for(int i=0; i<10; i++)
     {
         coll.insert(coll.end(),i);
@@ -56,7 +57,6 @@ int main0538()
     cout << " ";
     cout << *max_element(coll.begin(),coll.end());
     cout << endl;
-
     deque<int> deq;
     deq = {1, 2, 7, 7, 6, 3, 9, 5, 7, 7, 7, 3, 6};
     deque<int>::iterator pos = search_n(deq.begin(),deq.end(),3,7);

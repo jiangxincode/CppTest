@@ -24,4 +24,5 @@ int ack(int m,int n)
 int main2545()
 {
     cout << ack(2,2);
+    return 0;
 }

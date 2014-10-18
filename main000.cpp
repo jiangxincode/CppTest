@@ -2,6 +2,6 @@
 //#include <algorithm>
 int main000()
 {
-	//std::sort()
-	return 0;
+    //std::sort()
+    return 0;
 }

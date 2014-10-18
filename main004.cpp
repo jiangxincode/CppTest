@@ -13,11 +13,13 @@ int main004()
     int input_temp;
     vector<int> vec;
     cin >> input_num;
-    for(int i=0;i<input_num;i++)
+
+    for(int i=0; i<input_num; i++)
     {
         cin >> input_temp;
         vec.insert(vec.end(),input_temp);
     }
+
     int min = *min_element(vec.begin(),vec.end());
     int max = *max_element(vec.begin(),vec.end());
     cout << min << " " << max;

@@ -19,11 +19,13 @@ int main05151()
 {
     int temp;
     vector<int> vec;
-    for(int i=0;i<10;i++)
+
+    for(int i=0; i<10; i++)
     {
         cin >> temp;
         vec.push_back(temp);
     }
+
     sort(vec.begin(),vec.end());
 
     if(*vec.begin() > 60)
@@ -31,7 +33,8 @@ int main05151()
         cout << 60;
         return 0;
     }
-    for(int i=100;i>0;i-=10)
+
+    for(int i=100; i>0; i-=10)
     {
         if(*(vec.begin()+4) > i)
         {
@@ -39,37 +42,45 @@ int main05151()
             return 0;
         }
     }
+
     return 0;
 }
 
 int main05152() //ÍøÉÏµÄ²Î¿¼
 {
-	int i = 0,grade=0,n=0,j=0,k=0;
-	double score[10];
-	for (i = 0; i < 10; i++)
-		cin >> score[i];
+    int i = 0,grade=0,n=0,j=0,k=0;
+    double score[10];
 
-	for (n =10; ; n--)
-	{
-		grade = n * 10;
-		for (i = 0; i < 10; i++)
-		{
-			if (score[i] >= grade)
-				j= j+1;
-		}
-		if (j >= 6)
-			break;
-		j = 0;
-	}
-	for (i = 0; i < 10; i++)
-	{
-		if (score[i]>60)
-			k = k + 1;
-	}
-	if (k == 10)
-		grade = 60;
-	cout << grade;
-	return 0;
+    for(i = 0; i < 10; i++)
+        cin >> score[i];
+
+    for(n =10; ; n--)
+    {
+        grade = n * 10;
+
+        for(i = 0; i < 10; i++)
+        {
+            if(score[i] >= grade)
+                j= j+1;
+        }
+
+        if(j >= 6)
+            break;
+
+        j = 0;
+    }
+
+    for(i = 0; i < 10; i++)
+    {
+        if(score[i]>60)
+            k = k + 1;
+    }
+
+    if(k == 10)
+        grade = 60;
+
+    cout << grade;
+    return 0;
 }
 
 int main0515()

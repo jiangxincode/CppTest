@@ -14,11 +14,12 @@ struct test
 
 int main05251()
 {
-    for(int i=0;i<4;i++)
+    for(int i=0; i<4; i++)
     {
         static int var1 = 0; //静态变量只在程序运行时初始化一次
         cout << var1++ << " ";
     }
+
     cout << endl;
     cout << sizeof(test); //static不算，char对其为4
     return 0;

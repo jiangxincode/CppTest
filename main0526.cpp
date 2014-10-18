@@ -20,7 +20,7 @@ class BinaryTree
 {
 public:
     BinaryTree():root(NULL) {}
-    BinaryTree(T value):root(NULL),RefValue(value){}
+    BinaryTree(T value):root(NULL),RefValue(value) {}
     //BinaryTree(BinaryTree<T>& s);
     //~BinaryTree(){destroy(root);}
     bool IsEmpty()
@@ -130,9 +130,12 @@ BinTreeNode<T> * BinaryTree<T>::Parent(BinTreeNode<T> *subTree,BinTreeNode<T> *c
 {
     if(subTree == NULL)
         return NULL;
+
     if(subTree->leftChild == current || subTree->rightChild == current)
         return subTree;
+
     BinTreeNode<T> *p;
+
     if(p = Parent(subTree->leftChild,current)!=NULL)
         return p;
     else
@@ -159,6 +162,7 @@ void BinaryTree<T>::CreateBinTree(istream& in,BinTreeNode<T> *&BT)
     int k;
     char ch;
     in >> ch;
+
     while(ch != '#')
     {
         switch(ch)
@@ -167,15 +171,19 @@ void BinaryTree<T>::CreateBinTree(istream& in,BinTreeNode<T> *&BT)
             s.push(p);
             k=1;
             break;
+
         case ')':
             t = s.top();
             s.pop();
             break;
+
         case ',':
             k = 2;
             break;
+
         default:
             p = new BinTreeNode<char>(ch);
+
             if(BT == NULL)
                 BT = p;
             else if(k == 1)
@@ -189,6 +197,7 @@ void BinaryTree<T>::CreateBinTree(istream& in,BinTreeNode<T> *&BT)
                 t->rightChild = p;
             }
         }
+
         in >> ch;
     }
 }
@@ -268,6 +277,7 @@ template <class T>
 void BinaryTree<T>::exchange(BinTreeNode<T> *ptr)
 {
     BinTreeNode<T> *temp;
+
     if(ptr->leftChild!=NULL||ptr->rightChild!=NULL)
     {
         temp = ptr->leftChild;
@@ -280,9 +290,9 @@ void BinaryTree<T>::exchange(BinTreeNode<T> *ptr)
 
 int main0526()
 {
-	cout << "Input the Tree:\n" << endl;
-	BinaryTree<char> mytree('#');
-	cin >> mytree;
-	cout << mytree;
-	return 0;
+    cout << "Input the Tree:\n" << endl;
+    BinaryTree<char> mytree('#');
+    cin >> mytree;
+    cout << mytree;
+    return 0;
 }

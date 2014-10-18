@@ -10,9 +10,13 @@ using namespace std;
 
 long atol(char *str) //字符串转长整形
 {
-    char c = *str;long value;
+    char c = *str;
+    long value;
+
     if(!isdigit(c)) str++; //判断有无正负号
+
     for(value = 0; *str != '\0'; value = value * 10 + (*str -'0'),str++);
+
     return c == '-' ? -value : value ;
 }
 
@@ -57,27 +61,6 @@ void stol1(const char * des, long& num, int base)
 }
 
 /**
-改了一下
-真的是微软的笔试题么？
-我只用了一行。
-*/
-#include <iostream>
-using namespace std;
-
-long str2long(char* p,long xxx=0L)
-{
-    return *p=='\0'?xxx:str2long(p,xxx*10+(*p+++0-'0'));
-}
-
-int main3()
-{
-    char *str="123456789",*p=str;
-    cout<<str2long(p);
-    getchar();
-    return 0;
-}
-
-/**
 用STL，四行
 */
 #include <sstream>
@@ -97,25 +80,6 @@ int main2()
 {
     string s = "-12356";
     cout<<ToLong(s);
-    return 0;
-}
-
-/**
-谢谢刚才上面的帖子提醒负数的问题，我更正了，还是只用一行：
-*/
-#include <iostream>
-using namespace std;
-
-long str2long(char* p,long xxx=0L,bool IsPositive=true)
-{
-    return *p=='\0'?(IsPositive?xxx:xxx*(-1)):(*p=='-'?str2long(++p,0L,false):str2long(p,xxx*10+*p+++0-'0',IsPositive));
-}
-
-int main1()
-{
-    char *str="-123456789",*p=str;
-    //cout<<str2long(p);
-    getchar();
     return 0;
 }
 

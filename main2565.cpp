@@ -27,25 +27,25 @@ int main2565()
     int num_of_data;
     int i_array[1024];
     int m,n;
-
     cout << "How many numbers do you want to input: ";
     cin >> num_of_data;
     cout << "Input the numbers,separate with space: " << endl;
-    for(int i=0;i<num_of_data;i++)
+
+    for(int i=0; i<num_of_data; i++)
     {
         cin >> i_array[i];
     }
+
     cout << "Input m and n,separate with space£» " << endl;
     cin >> m >> n;
-
     int i = 0;
+
     while(i_array[i]>=0)
     {
-        for(int j=0;j<(m+n);j++)
+        for(int j=0; j<(m+n); j++)
         {
             if(judge_pos(j,m,n)==i)
             {
-
                 if(i_array[j]>0)
                 {
                     int temp = i_array[i];
@@ -60,17 +60,19 @@ int main2565()
                     i=j;
                     break;
                 }
-
             }
         }
     }
-    for(int i=0;i<num_of_data;i++)
+
+    for(int i=0; i<num_of_data; i++)
     {
         if(i<(m+n))
         {
             i_array[i] *= (-1);
         }
+
         cout << i_array[i] << " ";
     }
+
     return 0;
 }

@@ -55,7 +55,7 @@ public:
     {
         printf("A2 :%d\n",data);
     }
-    void func(char *str)
+    void func(const char *str)
     {
         printf("A3 %s)\n",str);
     }
@@ -72,7 +72,7 @@ public:
     {
         printf("B2 :%d\n",data);
     }
-    void func(char *str)
+    void func(const char *str)
     {
         printf("B3 %s)\n",str);
     }

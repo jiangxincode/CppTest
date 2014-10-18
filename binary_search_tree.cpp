@@ -84,10 +84,12 @@ void binary_search_tree::remove(binary_node *& sub_tree)
     else if(p->left_child != NULL)
     {
         binary_node *q = p;
+
         while(q->right_child != NULL)
         {
             q = q->right_child;
         }
+
         p->data = q->data;
         p->count = q->count;
         remove(q);
@@ -95,10 +97,12 @@ void binary_search_tree::remove(binary_node *& sub_tree)
     else
     {
         binary_node *q = p;
+
         while(p->left_child != NULL)
         {
             q = q->left_child;
         }
+
         p->data = q->data;
         p->count = q->count;
         remove(q);
@@ -120,6 +124,7 @@ bool binary_search_tree::remove(binary_node *&sub_tree,int data)
             t = t->right_child;
         }
     }
+
     if(t == NULL)
     {
         return false; //Î´ÕÒµ½
@@ -128,22 +133,26 @@ bool binary_search_tree::remove(binary_node *&sub_tree,int data)
     {
         remove(t);
     }
+
     return true;
 }
 
 void binary_search_tree::get_min_max(binary_node *sub_tree, int &min, int &max)
 {
     binary_node *p = sub_tree;
+
     while(p->left_child != NULL)
     {
         p = p->left_child;
     }
-    min = p->data;
 
+    min = p->data;
     p = sub_tree;
+
     while(p->right_child != NULL)
     {
         p = p->right_child;
     }
+
     max = p->data;
 }

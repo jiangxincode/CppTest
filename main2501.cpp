@@ -23,11 +23,13 @@ void calc_GPA();
 int main2501()
 {
     calc_GPA();
+
     while(1)
     {
         cout << "You want to flush the content or to quit the program(f/q): ";
         char ch;
         cin >> ch;
+
         if(ch == 'f')
         {
             calc_GPA();
@@ -45,17 +47,18 @@ void calc_GPA()
     short credit,sum_credit=0;
     cout << "Input the score and credit,separate with space(quit with \"-1 -1\"): ";
     cin >> score >> credit;
+
     while(credit != -1)
     {
         sum_score_100 += score*credit;
         sum_score_5 += (score/10-5)*credit;
         sum_credit += credit;
         cout
-        << "Now your weighted average GPA is: "
-        << sum_score_100/sum_credit
-        <<" Or "
-        <<sum_score_5/sum_credit
-        << endl;
+                << "Now your weighted average GPA is: "
+                << sum_score_100/sum_credit
+                <<" Or "
+                <<sum_score_5/sum_credit
+                << endl;
         cout << endl;
         cout << "Input the score and credit,separate with space,(quit with \"-1 -1\"): ";
         cin >> score >> credit;

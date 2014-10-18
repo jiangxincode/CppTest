@@ -10,6 +10,7 @@ int main006()
 {
     float input_one,input_two;
     cin >> input_one >> input_two;
+
     if(abs(input_one-input_two) <= 1e-8)
     {
         cout << "yes";
@@ -18,5 +19,6 @@ int main006()
     {
         cout << "no";
     }
+
     return 0;
 }

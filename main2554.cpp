@@ -6,6 +6,7 @@ int fib1(int n)
 {
     if(n==1||n==2)
         return 1;
+
     return fib1(n-1)+fib1(n-2);
 }
 int fib2(int n)
@@ -13,6 +14,7 @@ int fib2(int n)
     int small = 1;
     int big = 1;
     int result = 1;
+
     while(n>2)
     {
         result = small + big;
@@ -20,8 +22,8 @@ int fib2(int n)
         big = result;
         n--;
     }
-    return result;
 
+    return result;
 }
 int main2554()
 {

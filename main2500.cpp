@@ -34,13 +34,13 @@ int main2500()
 {
     puts("请按提示操作");
     unsigned short ch = 0;
-
     char name[125];
     unsigned credit;
     unsigned num;
-
     NODE *head = NULL,*temp = NULL;
-    do{
+
+    do
+    {
         puts("按照课程名称排序，并显示(0)");
         puts("按照课程学分排序，并显示(1)");
         puts("按照选课人数排序，并显示(2)");
@@ -49,28 +49,48 @@ int main2500()
         puts("显示信息(9)");
         puts("退出(10)");
         scanf("%hu",&ch);
+
         switch(ch)
         {
-            case 0:head = sort(head,0);print(head);break;
-            case 1:head = sort(head,1);print(head);break;
-            case 2:head = sort(head,2);print(head);break;
-            case 3:head = create();break;
-            case 4:
-                temp = (NODE*)malloc(sizeof(NODE));
+        case 0:
+            head = sort(head,0);
+            print(head);
+            break;
 
-                puts("Input the name credit and num of the class: ");
-                scanf("%s %u %u",name,&credit,&num);
+        case 1:
+            head = sort(head,1);
+            print(head);
+            break;
 
-                strcpy(temp->name,name);
-                temp->credit = credit;
-                temp->num = num;
-                temp->next = head;
-                head = temp;
-                break;
-            case 9:print(head);break;
-            case 10:break;
+        case 2:
+            head = sort(head,2);
+            print(head);
+            break;
+
+        case 3:
+            head = create();
+            break;
+
+        case 4:
+            temp = (NODE*)malloc(sizeof(NODE));
+            puts("Input the name credit and num of the class: ");
+            scanf("%s %u %u",name,&credit,&num);
+            strcpy(temp->name,name);
+            temp->credit = credit;
+            temp->num = num;
+            temp->next = head;
+            head = temp;
+            break;
+
+        case 9:
+            print(head);
+            break;
+
+        case 10:
+            break;
         }
-    }while(ch != 5);
+    }
+    while(ch != 5);
 
     delete_List(head);
     return 0;
@@ -82,7 +102,9 @@ NODE* create(void)
     unsigned credit;
     unsigned num;
     int n=0;
-    do{
+
+    do
+    {
         puts("Input the name credit and num of the class: ");
         scanf("%s %u %u",name,&credit,&num);
 
@@ -90,9 +112,9 @@ NODE* create(void)
         {
             break;
         }
+
         n ++;
         p1 = (NODE*)malloc(sizeof(NODE));
-
         strcpy(p1->name,name);
         p1->credit = credit;
         p1->num = num;
@@ -107,7 +129,8 @@ NODE* create(void)
             p2->next = p1;
             p2 = p1;
         }
-    }while(1);
+    }
+    while(1);
 
     return head;
 }
@@ -119,6 +142,7 @@ void delete_List(NODE* head)
     {
         return ;
     }
+
     while(head != NULL)
     {
         p1 = head;
@@ -129,12 +153,15 @@ void delete_List(NODE* head)
 void print(NODE* head)
 {
     NODE* p = NULL;
+
     if(head == NULL)
     {
         printf("\nlist null\n");
         return ;
     }
+
     p = head;
+
     while(p != NULL)
     {
         printf("\n%s,%u,%u\n",p->name,p->credit,p->num);
@@ -155,26 +182,32 @@ void print_node(NODE *node)
 NODE* search(NODE* head,char* name)
 {
     NODE *p = NULL;
+
     if(head == NULL)
     {
         printf("\nlist null!\n");
         return NULL;
     }
+
     p = head;
+
     while(p != NULL)
     {
         if(!strcmp(name,p->name))
         {
             return p;
         }
+
         p = p->next;
     }
+
     printf("\nNot Found!\n");
     return NULL;
 }
 NODE* insert(NODE* head,NODE* p0,unsigned short method)
 {
     NODE *p1 = NULL,*p2 = NULL;
+
     if(head == NULL)
     {
         head = p0;
@@ -183,6 +216,7 @@ NODE* insert(NODE* head,NODE* p0,unsigned short method)
     else
     {
         p1 = head;
+
         if(method == 0) //sorted by the name;
         {
             while((strcmp(p0->name,p1->name)>0) && (p1->next!=NULL))
@@ -190,6 +224,7 @@ NODE* insert(NODE* head,NODE* p0,unsigned short method)
                 p2 = p1;
                 p1 = p1->next;
             }
+
             if(p1 == head && (strcmp(p0->name,p1->name)<0))
             {
                 p0->next = head;
@@ -213,6 +248,7 @@ NODE* insert(NODE* head,NODE* p0,unsigned short method)
                 p2 = p1;
                 p1 = p1->next;
             }
+
             if(p1 == head && (p0->credit < p1->credit))
             {
                 p0->next = head;
@@ -236,6 +272,7 @@ NODE* insert(NODE* head,NODE* p0,unsigned short method)
                 p2 = p1;
                 p1 = p1->next;
             }
+
             if(p1 == head && (p0->num < p1->num))
             {
                 p0->next = head;
@@ -257,6 +294,7 @@ NODE* insert(NODE* head,NODE* p0,unsigned short method)
             puts("Wrong parameter!");
         }
     }
+
     return head;
 }
 NODE* creat_seq(void)
@@ -270,18 +308,22 @@ NODE* delete_Node(NODE* head,char* name)
 NODE* sort(NODE* head,unsigned short method)
 {
     NODE *p = NULL,*temp = NULL;
+
     if(head == NULL)
     {
         printf("\nlist null!\n");
         return NULL;
     }
+
     p = head->next;
     head->next = NULL;
+
     while(p!=NULL)
     {
         temp = p->next;
         head = insert(head,p,method);
         p = temp;
     }
+
     return head;
 }

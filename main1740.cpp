@@ -14,9 +14,9 @@ void test_4_12_a()
     char ch; //a temp char for fflushing the stdin
     int min,max; //storge the min and max value of the array
     int flag_exist = 0; //if a result exists, then the variable is 1
-
     cout << "Input the size of the array(LINE ROW):" << endl;
     cin >> line >> row;
+
     while((ch=getchar()!='\n') && (ch!=EOF)); //fflush the stdin
 
     int A[line][row]; //storge the origin array
@@ -26,22 +26,25 @@ void test_4_12_a()
     for(int i=0; i<line; i++) //get the array data from the keybord
     {
         cout<<"Input data of the line "<<i+1<<" ("<<row<<" integers)"<<endl;
+
         for(int j=0; j<row; j++)
         {
             cin >> A[i][j];
         }
+
         while((ch=getchar()!='\n') && (ch!=EOF)); //fflush the stdin
     }
 
     cout << endl;
-
     cout << "Check your input:" << endl;
+
     for(int i=0; i<line; i++)
     {
         for(int j=0; j<row; j++)
         {
             cout << A[i][j] << "\t";
         }
+
         cout << endl;
     }
 
@@ -50,6 +53,7 @@ void test_4_12_a()
         min=A[i][0];
         B[i][0]=0;
         int m=0;
+
         for(int j=1; j<row; j++)
         {
             if(A[i][j]<min)
@@ -63,6 +67,7 @@ void test_4_12_a()
                 B[i][++m] = j;
             }
         }
+
         B[i][++m] = flag_end;
     }
 
@@ -71,6 +76,7 @@ void test_4_12_a()
         max=A[0][j];
         C[j][0]=0;
         int n=0;
+
         for(int i=1; i<line; i++)
         {
             if(A[i][j]>max)
@@ -84,30 +90,33 @@ void test_4_12_a()
                 C[j][++n] = i;
             }
         }
+
         C[j][++n] = flag_end;
     }
 
     cout << endl;
-
     cout << "The smallest position of every line:" <<endl;
+
     for(int i=0; i<line; i++)
     {
         for(int j=0; B[i][j]!=flag_end; j++)
         {
             cout << B[i][j] << "\t";
         }
+
         cout << endl;
     }
 
     cout << endl;
-
     cout << "The biggest position of every row:" <<endl;
+
     for(int j=0; j<row; j++)
     {
         for(int i=0; C[j][i]!=flag_end; i++)
         {
             cout << C[j][i] << "\t";
         }
+
         cout << endl;
     }
 
@@ -125,10 +134,12 @@ void test_4_12_a()
             }
         }
     }
+
     if(flag_exist == 0)
     {
         cout << "No pairs meet the requirement!";
     }
+
     cout << endl;
 }
 void test_4_12_b()
@@ -142,11 +153,13 @@ void test_4_12_b()
     for(int i=0; i<line; i++) //输出数据
     {
         cout << "Input the data of line " << (i+1) <<": ";
+
         for(int j=0; j<row; j++)
         {
             cin >> array_source[i][j];
         }
     }
+
     cout << endl;
 
     for(int i=0; i<line; i++) //输出
@@ -155,6 +168,7 @@ void test_4_12_b()
         {
             cout << array_source[i][j] << " ";
         }
+
         cout << endl;
     }
 
@@ -165,11 +179,13 @@ void test_4_12_b()
             array_target[i][j] = 0;
         }
     }
+
     cout << endl;
 
     for(int i=0; i<line; i++) //找到每行最小的那些列
     {
         int min = array_source[i][0];
+
         for(int j=0; j<row; j++)
         {
             if(array_source[i][j] < min)
@@ -177,6 +193,7 @@ void test_4_12_b()
                 min = array_source[i][j];
             }
         }
+
         for(int j=0; j<row; j++)
         {
             if(array_source[i][j] == min)
@@ -185,9 +202,11 @@ void test_4_12_b()
             }
         }
     }
+
     for(int j=0; j<row; j++) //找到每列最大的那些行
     {
         int max = array_source[0][j];
+
         for(int i=0; i<line; i++)
         {
             if(array_source[i][j] > max)
@@ -195,6 +214,7 @@ void test_4_12_b()
                 max = array_source[i][j];
             }
         }
+
         for(int i=0; i<line; i++)
         {
             if(array_source[i][j] == max)
@@ -210,10 +230,12 @@ void test_4_12_b()
         {
             cout << array_target[i][j] << " ";
         }
+
         cout << endl;
     }
 
     int exist = 0;
+
     for(int i=0; i<line; i++)
     {
         for(int j=0; j<row; j++)
@@ -225,6 +247,7 @@ void test_4_12_b()
             }
         }
     }
+
     if(exist == 0)
     {
         cout << "No data proper!!" << endl;
@@ -244,11 +267,13 @@ void test_4_12_c()
     for(int i=0; i<line; i++) //输出数据
     {
         cout << "Input the data of line " << (i+1) <<": ";
+
         for(int j=0; j<row; j++)
         {
             cin >> array_source[i][j];
         }
     }
+
     cout << endl;
 
     for(int i=0; i<line; i++) //输出
@@ -257,6 +282,7 @@ void test_4_12_c()
         {
             cout << array_source[i][j] << " ";
         }
+
         cout << endl;
     }
 
@@ -267,11 +293,13 @@ void test_4_12_c()
             array_target[i][j] = 0;
         }
     }
-    for(int i=0;i<line;i++) //初始化array_line
+
+    for(int i=0; i<line; i++) //初始化array_line
     {
         array_line[i] = 0;
     }
-    for(int j=0;j<row;j++) //初始化array_row
+
+    for(int j=0; j<row; j++) //初始化array_row
     {
         array_row[j] = 0;
     }
@@ -280,6 +308,7 @@ void test_4_12_c()
     {
         int min = array_source[i][0];
         int m = 1;
+
         for(int j=0; j<row; j++)
         {
             if(array_source[i][j] < min)
@@ -291,13 +320,16 @@ void test_4_12_c()
             {
                 array_target[i][j] += m;
             }
+
             array_line[i] = m;
         }
     }
+
     for(int j=0; j<row; j++) //找到每列最大的那些行
     {
         int max = array_source[0][j];
         int n = 1;
+
         for(int i=0; i<line; i++)
         {
             if(array_source[i][j] > max)
@@ -309,6 +341,7 @@ void test_4_12_c()
             {
                 array_target[i][j] += n;
             }
+
             array_row[j] = n;
         }
     }
@@ -319,10 +352,12 @@ void test_4_12_c()
         {
             cout << array_target[i][j] << " ";
         }
+
         cout << endl;
     }
 
     int exist = 0;
+
     for(int i=0; i<line; i++)
     {
         for(int j=0; j<row; j++)
@@ -334,6 +369,7 @@ void test_4_12_c()
             }
         }
     }
+
     if(exist == 0)
     {
         cout << "No data proper!!" << endl;
@@ -344,13 +380,16 @@ void test_4_13()
 {
     string str = "asdffdsa";
     string str_reverse = "";
-    for(auto it=(str.rend()-1);it!=(str.rbegin()-1);it--)
+
+    for(auto it=(str.rend()-1); it!=(str.rbegin()-1); it--)
     {
         str_reverse += *it;
     }
+
     cout << str_reverse << endl;
     cout << str_reverse << endl;
     cout << str;
+
     if(str == str_reverse)
     {
         cout << "是一个回文字符串" << endl;
@@ -370,10 +409,12 @@ void test_4_14()
     cin >> t;
     cout << "Input the string v:" << endl;
     cin >> v;
+
     while((idx=s.string::find(t)) != string::npos)
     {
         s=s.string::replace(idx,t.string::length(),v);
     }
+
     cout << s << endl;
 }
 
@@ -381,10 +422,12 @@ void test_4_15()
 {
     string str = "ajkfsldksldjfiejagjklaellgjlanvalurekfklaghlejlakjglagklgjlekagej";
     map<char,int> map_char;
+
     for(auto ch : str)
     {
         ++map_char[ch];
     }
+
     for(auto ch : map_char)
     {
         cout << ch.first << ": " << ch.second << endl;

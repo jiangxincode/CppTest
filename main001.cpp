@@ -17,26 +17,29 @@ bool compmax(int a,int b)
 #define MAXNUM 20
 int main001()
 {
-
     int test[MAXNUM];
-    for(int i=0;i<MAXNUM;i++)
+
+    for(int i=0; i<MAXNUM; i++)
     {
         test[i] = rand()%100;
     }
-    for(int i=0;i<MAXNUM;i++)
+
+    for(int i=0; i<MAXNUM; i++)
     {
         cout << test[i] << " ";
     }
+
     cout << endl;
     heap h1(test, MAXNUM, compmax);
     h1.print_heap();
-    for(int i=0;i<20;i++)
+
+    for(int i=0; i<20; i++)
     {
         h1.push(rand()%100);
         h1.print_heap();
     }
+
     h1.sort();
     h1.print_heap();
     return 0;
-
 }

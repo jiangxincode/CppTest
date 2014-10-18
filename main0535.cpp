@@ -19,41 +19,47 @@ int main0535()
     int *maxArr = new int[maxSize];
     int *minArr = new int[minSize];
 
-    for(int i=0;i<maxSize;i++) //生成随机数据
+    for(int i=0; i<maxSize; i++) //生成随机数据
     {
         maxArr[i] = rand()%50;
     }
-    for(int i=0;i<minSize;i++)
+
+    for(int i=0; i<minSize; i++)
     {
         minArr[i] = rand()%50;
     }
 
-    for(int i=0;i<maxSize;i++) //输出
+    for(int i=0; i<maxSize; i++) //输出
     {
         cout << maxArr[i] << " ";
     }
+
     cout << endl;
-    for(int i=0;i<minSize;i++)
+
+    for(int i=0; i<minSize; i++)
     {
         cout << minArr[i] << " ";
     }
-    cout << endl;
 
+    cout << endl;
     qsort(maxArr,maxSize,sizeof(int),comp);
     qsort(minArr,minSize,sizeof(int),comp);
 
-    for(int i=0;i<maxSize;i++) //输出
+    for(int i=0; i<maxSize; i++) //输出
     {
         cout << maxArr[i] << " ";
     }
+
     cout << endl;
-    for(int i=0;i<minSize;i++)
+
+    for(int i=0; i<minSize; i++)
     {
         cout << minArr[i] << " ";
     }
+
     cout << endl;
 
-    for(int i=0;i<minSize;i++)
+    for(int i=0; i<minSize; i++)
     {
         if(bsearch((minArr+i),maxArr,maxSize,sizeof(int),comp))
         {
@@ -61,6 +67,7 @@ int main0535()
             return 1;
         }
     }
+
     delete []maxArr;
     delete []minArr;
     cout << "false";

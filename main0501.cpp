@@ -8,6 +8,7 @@ void FindOne(char *input)
 {
     int HashTable[256] = {0};
     int length = 0;
+
     for(int i=0; input[i]!='\0'; i++)
     {
         HashTable[input[i]-'\0']++;

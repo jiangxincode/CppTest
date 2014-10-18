@@ -29,17 +29,13 @@ int main002()
     //cout << endl;
     //p = b_tree.find(35);
     //cout << p->data << endl;
-
     //p = b_tree.get_parent(p);
     //cout << p->data << endl;
-
     //p = b_tree.get_right_child(p);
     //cout << p->data << endl;
-
     //cout << b_tree.get_height() << endl;
     //cout << b_tree.get_size() << endl;
     //cout << b_tree.get_leaf_size() << endl;
-
     //binary_search_tree bs_tree;
     //bs_tree.create_binary_tree("53(17(09,45(23,)),78(65,87(81,94)))");
     //bs_tree.print_in_table();
@@ -62,7 +58,6 @@ int main002()
     //bs_tree.remove(max);
     //bs_tree.print_in_table();
     //cout << boolalpha << bs_tree.is_binary_search_tree() << endl;
-
     //b_tree.preorder(print);
     //cout << endl;
     //b_tree.inorder(print);

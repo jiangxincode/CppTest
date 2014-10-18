@@ -28,9 +28,10 @@ int main015()
     int X0,Y0;
     map<int,int> map_result;
     cin >> X0 >> Y0;
-    for(int P=X0;P<=Y0;P+=X0)
+
+    for(int P=X0; P<=Y0; P+=X0)
     {
-        for(int Q=X0;Q<=Y0;Q+=X0)
+        for(int Q=X0; Q<=Y0; Q+=X0)
         {
             if((gcd(P,Q)==X0) && (lcm(P,Q)==Y0))
             {
@@ -38,6 +39,7 @@ int main015()
             }
         }
     }
+
 //    for(map<int,int>::iterator it=map_result.begin();it!=map_result.end();it++)
 //    {
 //        cout << it->first << " " << it->second << endl;

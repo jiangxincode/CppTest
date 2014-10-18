@@ -26,10 +26,12 @@ int calc_num2(int year)
 int main2543()
 {
     int year = 10;
-    for(int i=1;i<=year;i++)
+
+    for(int i=1; i<=year; i++)
     {
         cout << "Method 1: The number is: " << calc_num1(i) << " in year " << i << endl;
         cout << "Method 2: The number is: " << calc_num2(i) << " in year " << i << endl;
     }
+
     return 0;
 }

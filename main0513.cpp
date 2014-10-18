@@ -37,7 +37,9 @@ char *ptr = expr;
 int InitStack(Stack *s) /*构造运算符栈*/
 {
     s->base=(char *)malloc(STACK_INIT_SIZE*sizeof(char));
+
     if(!s->base) return ERROR;
+
     s->top=s->base;
     s->stacksize=STACK_INIT_SIZE;
     return OK;
@@ -45,7 +47,9 @@ int InitStack(Stack *s) /*构造运算符栈*/
 int InitStack2(Stack2 *s) /*构造操作数栈*/
 {
     s->base=(int *)malloc(STACK_INIT_SIZE*sizeof(int));
+
     if(!s->base) return ERROR;
+
     s->stacksize=STACK_INIT_SIZE;
     s->top=s->base;
     return OK;
@@ -105,56 +109,71 @@ char Precede(char c1,char c2)
         '>', '>', '>', '>', '!', '>', '>',
         '<', '<', '<', '<', '<', '!', '='
     };
+
     switch(c1)
     {
     /* i为下面array的横标 */
     case '+' :
         i=0;
         break;
+
     case '-' :
         i=1;
         break;
+
     case '*' :
         i=2;
         break;
+
     case '/' :
         i=3;
         break;
+
     case '(' :
         i=4;
         break;
+
     case ')' :
         i=5;
         break;
+
     case '#' :
         i=6;
         break;
     }
+
     switch(c2)
     {
     /* j为下面array的纵标 */
     case '+' :
         j=0;
         break;
+
     case '-' :
         j=1;
         break;
+
     case '*' :
         j=2;
         break;
+
     case '/' :
         j=3;
         break;
+
     case '(' :
         j=4;
         break;
+
     case ')' :
         j=5;
         break;
+
     case '#' :
         j=6;
         break;
     }
+
     return (array[7*i+j]); /* 返回运算符 */
 }
 /*操作函数 */
@@ -164,13 +183,17 @@ int Operate(int a,char op,int b)
     {
     case '+' :
         return (a+b);
+
     case '-' :
         return (a-b);
+
     case '*' :
         return (a*b);
+
     case '/' :
         return (a/b);
     }
+
     return 0;
 }
 int num(int n)/*返回操作数的长度*/
@@ -189,11 +212,13 @@ int EvalExpr()/*主要操作函数 */
     int n,m;
     int a,b;
     c = *ptr++;
+
     while(c!='#'||GetTop(OPTR)!='#')
     {
         if(!In(c))
         {
             if(!In(*(ptr-1))) ptr=ptr-1;
+
             m=atoi(ptr);/*取字符串前面的数字段*/
             n=num(m);
             Push2(&OPND,m);
@@ -207,10 +232,12 @@ int EvalExpr()/*主要操作函数 */
                 Push(&OPTR,c);
                 c = *ptr++;
                 break;
+
             case '=':
                 //x=Pop(&OPTR);
                 c = *ptr++;
                 break;
+
             case '>':
                 theta=Pop(&OPTR);
                 b=Pop2(&OPND);
@@ -219,16 +246,19 @@ int EvalExpr()/*主要操作函数 */
                 break;
             }
     }
+
     return GetTop2(OPND);
 }
 int main0513()
 {
     printf("请输入正确的表达式:");
+
     do
     {
         gets(expr);
     }
     while(!*expr);
+
     InitStack(&OPTR); /* 初始化运算符栈 */
     Push(&OPTR,'#'); /* 将#压入运算符栈 */
     InitStack2(&OPND); /* 初始化操作数栈 */

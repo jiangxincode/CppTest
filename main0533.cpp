@@ -32,18 +32,21 @@ int main0533()
     {
         cout << arr[i] << " ";
     }
+
     cout << endl;
 
-    for(int i=0;i<MAXNUM;i++)   //
+    for(int i=0; i<MAXNUM; i++) //
     {
-        for(int j=i;j<MAXNUM;j++)
+        for(int j=i; j<MAXNUM; j++)
         {
-            for(int k=i;k<=j;k++)
+            for(int k=i; k<=j; k++)
             {
                 cout << arr[k] << " ";
             }
+
             cout << endl;
         }
+
         cout << endl;
     }
 

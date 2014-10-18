@@ -33,14 +33,17 @@ Forest *search_charactor(Forest *root, int value) //在此层进行文字的查找
     else
     {
         root = root->child;
+
         while(root && (root->value != value))
             root = root->sibling;
+
         return root;
     }
 }
 Forest *insert_charactor(Forest *root, int value)
 {
     Forest *tmpcell, *tmp;
+
     if(root->child == NULL)
     {
         tmpcell = (Forest *)malloc(sizeof(Forest));
@@ -54,11 +57,13 @@ Forest *insert_charactor(Forest *root, int value)
     else
     {
         tmp = root->child;
+
         while(tmp && (tmp->value != value)) //沿兄弟节点遍历
         {
             root = tmp;
             tmp = tmp->sibling;
         }
+
         if(tmp)return tmp; //找到了相同字符
         else
         {
@@ -81,11 +86,11 @@ void dic_init()
     unsigned char buffer[MAXWORDLENGTH] = {0};
     long int value;
     Forest *root, *tmpcell;
-
     char p_dic_path[PATHLENGTH];
     puts("Input the directory of the dictionary");
     scanf("%s", p_dic_path);
     fp = fopen(p_dic_path, "r");
+
     while(NULL == fp)
     {
         perror("Can't find the dictionary\n");
@@ -96,6 +101,7 @@ void dic_init()
     while(!feof(fp))
     {
         fscanf(fp, "%s\n", buffer);
+
         //printf("%s\n",buffer);
         if(128 > buffer[0])
         {
@@ -105,17 +111,16 @@ void dic_init()
         {
             value = buffer[0]*256+buffer[1];
         }
+
         if(HashTable[value] == NULL)
         {
-
             tmpcell = (Forest *)malloc(sizeof(Forest));
-
             tmpcell->value = value;
-
             tmpcell->child = NULL;
             tmpcell->sibling = NULL;
             HashTable[value] = tmpcell;
         }
+
         if(128 > buffer[0])
         {
             tmpcell->is_Chinese = 0;
@@ -126,8 +131,8 @@ void dic_init()
             tmpcell->is_Chinese = 1;
             i = 2;
         }
-        root = HashTable[value];
 
+        root = HashTable[value];
 
         //printf("%d %d\n",buffer[i],buffer[i]);
         while(1)
@@ -150,12 +155,13 @@ void dic_init()
             }
         }
     }
-    fclose(fp);
 
+    fclose(fp);
 }
 void free_forest(Forest *root)/*递归释放森令各节点*/
 {
     Forest *tmp;
+
     if(root == NULL) return ;
     else
     {
@@ -167,7 +173,7 @@ void free_forest(Forest *root)/*递归释放森令各节点*/
 }
 void free_hash()/*释放hash和后面的根*/
 {
-    for(int i=0;i<MAXVALUE;i++)
+    for(int i=0; i<MAXVALUE; i++)
     {
         free_forest(HashTable[i]);
     }
@@ -181,14 +187,17 @@ void file_split(const char *filename)
     Forest *root;
     FILE *fp = fopen(filename, "r");
     printf("filename :%s\n", filename);
+
     if(fp == NULL)
     {
         printf("No file\n");
         return ;
     }
+
     while(!feof(fp))
     {
         ch[0] = fgetc(fp);
+
         if(ch[0] < 128) //非中文字符直接输出,并将前面匹配的中文词输出
         {
             str[str_pos] = 0;
@@ -200,6 +209,7 @@ void file_split(const char *filename)
         {
             ch[1] = fgetc(fp);
             value = ch[0] * 256 + ch[1];
+
             if(str_pos == 0) //中文词的首字
             {
                 root = HashTable[value];
@@ -210,10 +220,12 @@ void file_split(const char *filename)
             else //中文词的非首字
             {
                 root = search_charactor(root, value);
+
                 if(root == NULL) //没有匹配该词
                 {
                     str[lasteof] = 0;
                     printf("[%s]", str);
+
                     if(str_pos != 2) //如果不是中文词的第二个字
                     {
                         if(str_pos == lasteof) //如果该中文词仅含中文字符则仅回退一个中文字符
@@ -223,18 +235,21 @@ void file_split(const char *filename)
                     }
                     else //如果是中文词的第二个字
                         fseek(fp, -2, SEEK_CUR);
+
                     str_pos = 0;
                 }
                 else //若匹配直接存储
                 {
                     str[str_pos++] = ch[0];
                     str[str_pos++] = ch[1];
+
                     if(root->is_Chinese == 1) /*若是一个中文词，记录下最后的位置*/
                         lasteof = str_pos;
                 }
             }
         }
     }
+
     fclose(fp);
     return ;
 }

@@ -164,6 +164,7 @@ int BSearch(int a[],int key,int n)
     while(low<=high)
     {
         mid=(low+high)/2;
+
         if(a[mid]==key)
         {
             return mid;

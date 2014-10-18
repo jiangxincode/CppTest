@@ -23,6 +23,7 @@ struct stu *creatlist(int n)
     h = (struct stu *)malloc(sizeof(struct stu));
     h->next = NULL;
     p=h;
+
     for(i=0; i<n; i++)
     {
         s = (struct stu *)malloc(sizeof(struct stu));
@@ -32,17 +33,20 @@ struct stu *creatlist(int n)
         s->next = NULL;
         p = s;
     }
+
     printf("Create successful!");
     return(h);
 }
 void deletelist(struct stu *s,int a)
 {
     struct stu *p;
+
     while(s->age!=a)
     {
         p = s;
         s = s->next;
     }
+
     if(s==NULL)
         printf("The record is not exist.");
     else
@@ -54,6 +58,7 @@ void deletelist(struct stu *s,int a)
 void display(struct stu *s)
 {
     s = s->next;
+
     while(s!=NULL)
     {
         printf("%s %c %d %d\n",s->name,s->sex,s->no,s->age);

@@ -20,13 +20,13 @@ int main0510()
 {
     NODE *head = new NODE; //建立附加头结点
     head->next = NULL;
-
     /*创建链表*/
     NODE *current,*previous;
     previous = head;
     char input;
     cout << "Input your list table NODE data,end with '#':";
     cin >> input;
+
     while(input != '#')
     {
         current = new NODE;
@@ -40,17 +40,19 @@ int main0510()
 
     /*输出链表*/
     current = head->next;
+
     while(current != NULL)
     {
         cout << current->data << " ";
         current = current->next;
     }
-    cout << endl;
 
+    cout << endl;
     /*倒转链表*/
     current = head->next;
     NODE *p = current->next;
     NODE *q = p->next;
+
     while(q != NULL)
     {
         p->next = current;
@@ -58,18 +60,20 @@ int main0510()
         p = q;
         q = q->next;
     }
+
     p->next = current;
     current = p;
     head->next->next = NULL;
     head->next = current;
-
     /*输出链表*/
     current = head->next;
+
     while(current != NULL)
     {
         cout << current->data << " ";
         current = current->next;
     }
+
     return 0;
 }
 

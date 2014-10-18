@@ -9,11 +9,13 @@ using namespace std;
 int digit(int integer,int position)
 {
     int result;
-    for(int i=0;i<position;i++)
+
+    for(int i=0; i<position; i++)
     {
         result = integer % 10;
         integer /= 10;
     }
+
     return result;
 }
 int main2542()
@@ -22,5 +24,6 @@ int main2542()
     cout << "Input the integer and the position: ";
     cin >> i_integer >> i_position;
     cout << digit(i_integer,i_position);
+    return 0;
 }
 

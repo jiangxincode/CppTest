@@ -40,6 +40,7 @@ bool calc(int result,int target,int seq)
     {
         cout << "-" << seq;
     }
+
     return false;
 }
 int main0520()
@@ -48,12 +49,14 @@ int main0520()
     string temp[(int)pow(3,8)];
     int num = 0;
     string source = "123456789";
-    for(int i=2;i<9;i++)
+
+    for(int i=2; i<9; i++)
     {
         temp[num++] = source.insert(i,"");
         temp[num++] = source.insert(i,"+");
         temp[num++] = source.insert(i,"-");
     }
+
     cin >> target;
     calc(1,target,2);
     cout << "1";

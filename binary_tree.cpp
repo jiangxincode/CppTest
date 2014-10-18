@@ -13,6 +13,7 @@ void binary_tree::create_binary_tree(binary_node *&sub_tree) //×¢ÒâÕâÀïÒ»¶¨Òª´«Ò
 {
     int input;
     cin >> input;
+
     if(input != ref_val)
     {
         sub_tree = new binary_node(input);
@@ -31,42 +32,60 @@ void binary_tree::create_binary_tree(binary_node *&sub_tree, string str)
     stack<binary_node *> sta;
     binary_node *p, *t;
     int k;
-    for(it=str.begin();it!=str.end();it++)
+
+    for(it=str.begin(); it!=str.end(); it++)
     {
         char c_temp = *it;
         string str_temp = "";
+
         switch(c_temp)
         {
-            case '(': sta.push(p);k=1;break;
-            case ')': t = sta.top();sta.pop();break;
-            case ',': k = 2;break;
-            default:
-                do{
-                    str_temp += c_temp;
-                    if(it!=str.end()-1)
-                    {
-                        c_temp = *(++it);
-                    }
-                }while(isdigit(c_temp));
-                it --;
-                stringstream io(str_temp);
-                int i_temp;
-                io >> i_temp;
-                p = new binary_node(i_temp);
-                if(sub_tree == NULL)
+        case '(':
+            sta.push(p);
+            k=1;
+            break;
+
+        case ')':
+            t = sta.top();
+            sta.pop();
+            break;
+
+        case ',':
+            k = 2;
+            break;
+
+        default:
+            do
+            {
+                str_temp += c_temp;
+
+                if(it!=str.end()-1)
                 {
-                    sub_tree = p;
+                    c_temp = *(++it);
                 }
-                else if(k == 1)
-                {
-                    t = sta.top();
-                    t->left_child = p;
-                }
-                else
-                {
-                    t = sta.top();
-                    t->right_child = p;
-                }
+            }
+            while(isdigit(c_temp));
+
+            it --;
+            stringstream io(str_temp);
+            int i_temp;
+            io >> i_temp;
+            p = new binary_node(i_temp);
+
+            if(sub_tree == NULL)
+            {
+                sub_tree = p;
+            }
+            else if(k == 1)
+            {
+                t = sta.top();
+                t->left_child = p;
+            }
+            else
+            {
+                t = sta.top();
+                t->right_child = p;
+            }
         }
     }
 }
@@ -90,6 +109,7 @@ void binary_tree::preorder(binary_node *sub_tree, void (*visit)(binary_node *nod
     {
         return ;
     }
+
     visit(sub_tree);
     preorder(sub_tree->left_child,visit);
     preorder(sub_tree->right_child,visit);
@@ -101,6 +121,7 @@ void binary_tree::inorder(binary_node *sub_tree, void (*visit)(binary_node *node
     {
         return ;
     }
+
     inorder(sub_tree->left_child,visit);
     visit(sub_tree);
     inorder(sub_tree->right_child,visit);
@@ -112,6 +133,7 @@ void binary_tree::postorder(binary_node *sub_tree, void (*visit)(binary_node *no
     {
         return ;
     }
+
     postorder(sub_tree->left_child,visit);
     postorder(sub_tree->right_child,visit);
     visit(sub_tree);
@@ -120,20 +142,25 @@ void binary_tree::postorder(binary_node *sub_tree, void (*visit)(binary_node *no
 void binary_tree::levelorder(binary_node *sub_tree, void (*visit)(binary_node *node))
 {
     queue<binary_node *> node_queue;
+
     if(sub_tree == NULL)
     {
         return ;
     }
+
     node_queue.push(sub_tree);
+
     while(!node_queue.empty())
     {
         binary_node *temp = node_queue.front();
         visit(temp);
         node_queue.pop();
+
         if(temp->left_child)
         {
             node_queue.push(temp->left_child);
         }
+
         if(temp->right_child)
         {
             node_queue.push(temp->right_child);
@@ -150,10 +177,12 @@ void binary_tree::print_in_table(binary_node *sub_tree) //ÒÔ¹ãÒå±íĞÎÊ½Êä³ö¶ş²æÊ÷
         {
             cout<<'(';
             print_in_table(sub_tree->left_child);
+
             if(sub_tree->right_child!=NULL)
             {
                 cout<<',';
             }
+
             print_in_table(sub_tree->right_child);
             cout<<')';
         }
@@ -165,6 +194,7 @@ void binary_tree::get_min_max(binary_node *node, int &min, int &max)
     {
         return ;
     }
+
     if(node->data < min)
     {
         min = node->data;
@@ -173,6 +203,7 @@ void binary_tree::get_min_max(binary_node *node, int &min, int &max)
     {
         max = node->data;
     }
+
     get_min_max(node->left_child,min,max);
     get_min_max(node->right_child,min,max);
 }
@@ -181,6 +212,7 @@ void binary_tree::get_min_max(binary_node *node, int &min, int &max)
 binary_node* binary_tree::get_parent(binary_node *sub_tree, binary_node *current)
 {
     binary_node *p;
+
     if((sub_tree == NULL) || (sub_tree == current) || (sub_tree == NULL))
     {
         return NULL;
@@ -202,6 +234,7 @@ binary_node* binary_tree::get_parent(binary_node *sub_tree, binary_node *current
 binary_node* binary_tree::find(binary_node *sub_tree, int target)
 {
     binary_node *p;
+
     if(sub_tree == NULL)
     {
         return NULL;
@@ -275,15 +308,19 @@ bool binary_tree::is_complete(binary_node *sub_tree)
 {
     queue<binary_node *> node_queue;
     bool flag = false;
+
     if(sub_tree == NULL)
     {
         return true;
     }
+
     node_queue.push(sub_tree);
+
     while(!node_queue.empty())
     {
         binary_node *temp = node_queue.front();
         node_queue.pop();
+
         if(temp->left_child)
         {
             if(flag)
@@ -299,6 +336,7 @@ bool binary_tree::is_complete(binary_node *sub_tree)
         {
             flag = true;
         }
+
         if(temp->right_child)
         {
             if(flag)
@@ -315,5 +353,6 @@ bool binary_tree::is_complete(binary_node *sub_tree)
             flag = true;
         }
     }
+
     return true;
 }

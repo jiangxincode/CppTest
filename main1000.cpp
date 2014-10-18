@@ -70,19 +70,23 @@ bool IntSet::IsEqual(IntSet x)
     for(auto i : int_set)
     {
         auto result = find(x.int_set.cbegin(),x.int_set.cend(),i);
+
         if(result == x.int_set.cend())
         {
             return false;
         }
     }
+
     for(auto i : x.int_set)
     {
         auto result = find(int_set.cbegin(),int_set.cend(),i);
+
         if(result == int_set.cend())
         {
             return false;
         }
     }
+
     return true;
 }
 IntSet IntSet::union2(IntSet x,IntSet y)
@@ -90,11 +94,13 @@ IntSet IntSet::union2(IntSet x,IntSet y)
     for(auto i : x.int_set)
     {
         auto result = find(y.int_set.cbegin(),y.int_set.cend(),i);
+
         if(result != y.int_set.cend())
         {
             int_set.insert(i);
         }
     }
+
     return int_set;
 }
 IntSet IntSet::incorporate2(IntSet x,IntSet y)
@@ -103,10 +109,12 @@ IntSet IntSet::incorporate2(IntSet x,IntSet y)
     {
         int_set.insert(i);
     }
+
     for(auto i : y.int_set)
     {
         int_set.insert(i);
     }
+
     return int_set;
 }
 
@@ -114,12 +122,16 @@ int main1000()
 {
     IntSet s1, s2, s3, s4;
     int x;
+
     for(cin >> x; x != 0; cin >> x)
         s1.insert(x);//在 s1 中插入元素
+
     for(cin >> x; x != 0; cin >> x)
         s2.insert(x);//在 s2 中插入元素
+
     if(s1.IsEqual(s2))//比较 s1 与 s2 是否相等
         cout << " s1 is equal s2 ";
+
     s3 = s3.union2(s1, s2);//求 s1 与 s2 的交
     s4 = s4.incorporate2(s1, s2);//求 s1  与 s2 的并
     cout << "\ns1:";

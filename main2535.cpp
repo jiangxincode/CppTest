@@ -12,6 +12,7 @@ int main2535()
     short hour,minute;
     cout << "Input the HOUR and MINUTE: ";
     cin >> hour >> minute;
+
     if(hour <= 12 && hour >=0)
     {
         cout << "The time is: " << hour << ":" << minute << "am";
@@ -20,4 +21,5 @@ int main2535()
     {
         cout << "The time is: " << hour%12 << ":" << minute << "pm";
     }
+    return 0;
 }

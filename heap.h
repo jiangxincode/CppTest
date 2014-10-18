@@ -14,7 +14,10 @@ private:
 public:
     heap(int size, bool (*comp)(int,int));
     heap(int arr[], int n, bool (*comp)(int,int));
-    ~heap(){delete []heap_p;}
+    ~heap()
+    {
+        delete []heap_p;
+    }
 
     bool push(int elem);
     int top();

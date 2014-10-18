@@ -12,13 +12,14 @@ int main0518()
     int input;
     int rinput = 0;
     cin >> input;
-
     int temp = input;
+
     while(temp != 0)
     {
         rinput = 10*rinput+(temp%10);
         temp /= 10;
     }
+
     if(input == rinput)
     {
         cout << 1;
@@ -27,5 +28,6 @@ int main0518()
     {
         cout << 0;
     }
+
     return 0;
 }

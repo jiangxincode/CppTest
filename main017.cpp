@@ -10,18 +10,21 @@ int main017()
     int input;
     cin >> input;
     int i;
-    for(i=2;i*i<=input;i++)
+
+    for(i=2; i*i<=input; i++)
     {
         if(input%i==0)
         {
             break;
         }
     }
+
     if((i*i>input) && (input>2))
     {
         cout << "\\t";
         return 0;
     }
+
     cout << "\\n";
     return 0;
 }

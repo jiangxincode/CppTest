@@ -13,21 +13,26 @@ int main2564()
     int i_array_1[100] = {2,2,2,3,4,4,5,6,6,6,6,7,7,8,9,9,10,10,10};
     set<int> my_set;
     int i_array_2[100] = {};
-    for(int i=0;i_array_1[i]!=0;i++)
+
+    for(int i=0; i_array_1[i]!=0; i++)
     {
         cout << i_array_1[i] << " ";
         my_set.insert(i_array_1[i]);
     }
+
     cout << endl;
     int array_end = 0;
+
     for(int elem:my_set) //需要编译器支持C11标准
     {
         i_array_2[array_end] = elem;
         array_end++;
     }
-    for(int i=0;i_array_2[i]!=0;i++)
+
+    for(int i=0; i_array_2[i]!=0; i++)
     {
         cout << i_array_2[i] << " ";
     }
+
     return 0;
 }

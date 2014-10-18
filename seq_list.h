@@ -71,6 +71,7 @@ SeqList<T>::SeqList(int sz)
         maxSize=sz;
         last=-1;
         data=new T[maxSize];
+
         if(data==NULL)
         {
             cerr<<"´æ´¢·ÖÅä´íÎó£¡"<<endl;
@@ -85,11 +86,13 @@ SeqList<T>::SeqList(SeqList<T>& L)
     maxSize=L.Size();
     last=L.Length()-1;
     data=new T[maxSize];
+
     if(data==NULL)
     {
         cerr<<"´æ´¢·ÖÅä´íÎó"<<endl;
         exit(1);
     }
+
     for(int i=1; i<=last+1; i++)
     {
         data[i-1]=L.getData(i);

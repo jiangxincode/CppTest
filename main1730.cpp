@@ -71,9 +71,11 @@ int main17304()
     string str = "(1,(2,3),(4,(5,6),7))";
     string result = "";
     stack<char> sta;
-    for(string::iterator it=str.begin();it!=str.end();it++)
+
+    for(string::iterator it=str.begin(); it!=str.end(); it++)
     {
         char temp = *it;
+
         if((temp == '(') && sta.empty())
         {
             result += temp;
@@ -97,6 +99,7 @@ int main17304()
             result += temp;
         }
     }
+
     result += ')';
     cout << result << endl;
     return 0;
@@ -154,8 +157,10 @@ void Queen::Print(int n)
         {
             cout << (j==q[i]?"Q ":"* ");
         }
+
         cout<<endl;
     }
+
     cout<<endl;
 }
 int Queen::Check(int k,int j)
@@ -168,6 +173,7 @@ int Queen::Check(int k,int j)
         if((q[i]==j) || abs(i-k)==abs(q[i]-j))
             return 0;
     }
+
     return 1;
 }
 
@@ -371,14 +377,17 @@ int main17303()
     cout << "How many groups of the coins: ";
     cin >> group;
     int *coin = new int[group];
-    for(int i=0;i<group;i++)
+
+    for(int i=0; i<group; i++)
     {
         cin >> coin[i];
     }
-    for(int i=0;i<group;i++)
+
+    for(int i=0; i<group; i++)
     {
         cout << coin[i] << " ";
     }
+
     cout << endl;
     delete []coin;
     return 0;

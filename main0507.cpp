@@ -13,6 +13,7 @@ void uppers(char *s,char *us)
         else
             *us = *s;
     }
+
     *us = '\0';
 }
 void main0507()

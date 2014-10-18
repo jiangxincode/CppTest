@@ -16,7 +16,7 @@ void ResetTheTime(int *year,int *month,int *date,int *hour,int *minute,int*secon
             *minute < 0 ||*minute > 59|| *second <0 || *second >60)
         return;
 
-    if(*year%400 == 0 || *year%100 != 0 && *year%4 == 0)
+    if((*year%400 == 0) || (*year%100 != 0 && *year%4 == 0))
         dayOfMonth[1] = 29;
 
     if(*second >= 60)

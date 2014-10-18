@@ -20,16 +20,19 @@ bool check(struct node* head)
     }
 
     struct node *slow=head;
+
     struct node *fast=head;
 
     while((fast!=NULL) && (fast->next!=NULL))
     {
         slow=slow->next;
         fast=fast->next->next;
+
         if(slow==fast) //指针可以直接比较
         {
             return true;
         }
     }
+
     return false;
 }

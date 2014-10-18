@@ -4,16 +4,18 @@
 输入： 长整型的数
 输出： 若为回文数返回值为1 esle 0
 ******************************************************************/
-unsigned char Symmetry (long n)
+unsigned char Symmetry(long n)
 {
     long i,temp;
     i=n;
     temp=0;
+
     while(i) //不用出现长度问题,将数按高低位掉换
     {
         temp=temp*10+i%10;
         i/=10;
     }
+
     return(temp==n);
 }
 
@@ -39,31 +41,31 @@ unsigned IsSymmetry_1(char *s)
     long nTemp = 0;
 
     /*判断输入是否为空*/
-    if (*s == '\0')
+    if(*s == '\0')
         return 1;
 
     /*将字符串转换为正整数*/
-    while (*p != '\0')
+    while(*p != '\0')
     {
         /*判断字符是否为数字*/
-        if (*p<'0' || *p>'9')
+        if(*p<'0' || *p>'9')
             return 2;
 
         /*判断正整数是否溢出*/
-        if ((*p-'0') > (4294967295-(nNumber*10)))
+        if((*p-'0') > (4294967295-(nNumber*10)))
             return 4;
 
         nNumber = (*p-'0') + (nNumber * 10);
-
         p++;
     }
 
     /*将数字逆序组合，直接抄楼上高手的代码，莫怪，呵呵*/
     n = nNumber;
+
     while(n)
     {
         /*判断正整数是否溢出*/
-        if ((n%10) > (4294967295-(nTemp*10)))
+        if((n%10) > (4294967295-(nTemp*10)))
             return 3;
 
         nTemp = nTemp*10 + n%10;
@@ -71,7 +73,7 @@ unsigned IsSymmetry_1(char *s)
     }
 
     /*比较逆序数和原序数是否相等*/
-    if (nNumber != nTemp)
+    if(nNumber != nTemp)
         return 3;
 
     return 0;
@@ -98,14 +100,14 @@ unsigned IsSymmetry_2(char *s)
     int i = 0;
 
     /*判断输入是否为空*/
-    if (*s == '\0')
+    if(*s == '\0')
         return 1;
 
     /*得到字符串长度*/
-    while (*p != '\0')
+    while(*p != '\0')
     {
         /*判断字符是否为数字*/
-        if (*p<'0' || *p>'9')
+        if(*p<'0' || *p>'9')
             return 2;
 
         nLen++;
@@ -113,22 +115,25 @@ unsigned IsSymmetry_2(char *s)
     }
 
     /*长度不为奇数，不为回文数字*/
-    if (nLen%2 == 0)
+    if(nLen%2 == 0)
         return 4;
 
     /*长度为1，即为回文数字*/
-    if (nLen == 1)
+    if(nLen == 1)
         return 0;
 
     /*依次比较对应字符是否相同*/
     p = s;
     i = nLen/2 - 1;
-    while (i)
+
+    while(i)
     {
-        if (*(p+i) != *(p+nLen-i-1))
+        if(*(p+i) != *(p+nLen-i-1))
             return 3;
+
         i--;
     }
+
     return 0;
 }
 

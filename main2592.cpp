@@ -32,7 +32,7 @@ int fibonacci_1(int n)
 int fibonacci_2(int n)
 {
     if(n==1||n==2)
-    return 1;
+        return 1;
     else
-    return fibonacci_2(n-1)+fibonacci_2(n-2);
+        return fibonacci_2(n-1)+fibonacci_2(n-2);
 }

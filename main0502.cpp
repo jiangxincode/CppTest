@@ -19,8 +19,10 @@ int main0502()
 int test_string_one() //第一个程序：输入的是整数
 {
     int num;
+
     while(cin>>num)
         cout << num << " ";
+
     return 0;
 }
 /*
@@ -38,8 +40,10 @@ int test_string_one() //第一个程序：输入的是整数
 int test_string_two() //第二个程序：输入的是字符串
 {
     string word;
+
     while(cin>>word)
         cout << word << " ";
+
     return 0;
 }
 /*

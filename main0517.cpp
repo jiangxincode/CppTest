@@ -68,7 +68,6 @@ void creat(vexnode ga[])
         p->adjvex=i-1;
         p->next=NULL;
         ga[i].link=p;
-
         p=(edgenode*)malloc(sizeof(edgenode));
         p->adjvex=i+1;
         p->next=NULL;
@@ -80,7 +79,6 @@ void creat(vexnode ga[])
             p->adjvex=SUBWAY_A+4;
             p->next=NULL;
             ga[i].link->next->next=p;
-
             p=(edgenode*)malloc(sizeof(edgenode));
             p->adjvex=SUBWAY_A+5;
             p->next=NULL;
@@ -92,7 +90,6 @@ void creat(vexnode ga[])
             p->adjvex=SUBWAY_A+9;
             p->next=NULL;
             ga[i].link->next->next=p;
-
             p=(edgenode*)malloc(sizeof(edgenode));
             p->adjvex=SUBWAY_A+10;
             p->next=NULL;
@@ -104,17 +101,14 @@ void creat(vexnode ga[])
     p->adjvex=SUBWAY_A-1;
     p->next=NULL;
     ga[0].link=p;
-
     p=(edgenode*)malloc(sizeof(edgenode));
     p->adjvex=1;
     p->next=NULL;
     ga[0].link->next=p;
-
     p=(edgenode*)malloc(sizeof(edgenode));
     p->adjvex=SUBWAY_A-2;
     p->next=NULL;
     ga[SUBWAY_A-1].link=p;
-
     p=(edgenode*)malloc(sizeof(edgenode));
     p->adjvex=0;
     p->next=NULL;
@@ -128,7 +122,6 @@ void creat(vexnode ga[])
         p->adjvex=SUBWAY_A+i-1;
         p->next=NULL;
         ga[i+SUBWAY_A].link=p;
-
         p=(edgenode*)malloc(sizeof(edgenode));
         p->adjvex=SUBWAY_A+i+1;
         p->next=NULL;
@@ -139,47 +132,38 @@ void creat(vexnode ga[])
     p->adjvex=SUBWAY_A+3;
     p->next=NULL;
     ga[SUBWAY_A+4].link=p;
-
     p=(edgenode*)malloc(sizeof(edgenode));
     p->adjvex=9;
     p->next=NULL;
     ga[SUBWAY_A+4].link->next=p;
-
     p=(edgenode*)malloc(sizeof(edgenode));
     p->adjvex=9;
     p->next=NULL;
     ga[SUBWAY_A+5].link=p;
-
     p=(edgenode*)malloc(sizeof(edgenode));
     p->adjvex=SUBWAY_A+6;
     p->next=NULL;
     ga[SUBWAY_A+5].link->next=p;
-
     p=(edgenode*)malloc(sizeof(edgenode));
     p->adjvex=SUBWAY_A+8;
     p->next=NULL;
     ga[SUBWAY_A+9].link=p;
-
     p=(edgenode*)malloc(sizeof(edgenode));
     p->adjvex=14;
     p->next=NULL;
     ga[SUBWAY_A+9].link->next=p;
-
     p=(edgenode*)malloc(sizeof(edgenode));
     p->adjvex=14;
     p->next=NULL;
     ga[SUBWAY_A+10].link=p;
-
     p=(edgenode*)malloc(sizeof(edgenode));
     p->adjvex=SUBWAY_A+11;
     p->next=NULL;
     ga[SUBWAY_A+10].link->next=p;
-
     p=(edgenode*)malloc(sizeof(edgenode));
     p->adjvex=SUBWAY_A+1;
     p->next=NULL;
     ga[SUBWAY_A].link=p;
-
     p=(edgenode*)malloc(sizeof(edgenode));
     p->adjvex=SUBWAY_A+SUBWAY_B-2;
     p->next=NULL;
@@ -196,6 +180,7 @@ void creat(vexnode ga[])
             printf("->%s",ga[s->adjvex].name);
             s=s->next;
         }
+
         printf("\n");
     }
 }
@@ -210,9 +195,11 @@ int main0517()
     while(scanf("%s%s",str[0],str[1])!=EOF)
     {
         int temp=0;
+
         for(i=0; i<MAX; i++)
         {
             ga[i].flag=true;
+
             if(!strcmp(str[0],ga[i].name))
             {
                 temp=i;
@@ -268,6 +255,7 @@ int main0517()
 
             printf("\n");
         }
+
         printf("%d\n",count);
     }
 

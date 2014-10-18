@@ -25,9 +25,10 @@ int adwords_number);
 
 using namespace std;
 
-struct topic_info_t{
-	int topic_id;
-	float topic_pr;
+struct topic_info_t
+{
+    int topic_id;
+    float topic_pr;
 };
 
 float max_sim(const vector<topic_info_t> &query_topic_info,
@@ -35,18 +36,22 @@ float max_sim(const vector<topic_info_t> &query_topic_info,
               int adwords_number)
 {
     float max = 0;
-    for(int i=0;i<adwords_number;i++)
+
+    for(int i=0; i<adwords_number; i++)
     {
         float sim = 0;
-        for(vector<topic_info_t>::size_type j=0;j<query_topic_info.size();j++)
+
+        for(vector<topic_info_t>::size_type j=0; j<query_topic_info.size(); j++)
         {
             sim += query_topic_info[j].topic_pr+adwords_topic_info[i][j].topic_pr;
         }
+
         if(sim > max)
         {
             max = sim;
         }
     }
+
     return max;
 }
 int main0532()

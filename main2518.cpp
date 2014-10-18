@@ -8,6 +8,7 @@ int main2518()
     int a,b,c;
     cin >> a >> b >> c;
     float delta = b * b - 4 * a * c;
+
     if(delta >= 0)
     {
         float result1 = (-b + sqrt(delta)) / float(2*a);
@@ -18,4 +19,5 @@ int main2518()
     {
         cout << "No result";
     }
+    return 0;
 }

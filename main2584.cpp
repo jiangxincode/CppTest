@@ -19,6 +19,7 @@ int main2584()
     auto str_num_end = str_num.end();
     auto str_num_reverse_begin = str_num_reverse.begin();
     reverse_copy(str_num_begin,str_num_end,str_num_reverse_begin);
+
     if(str_num == str_num_reverse)
     {
         cout << "The num: " << i_num << " is a palindrome number";
@@ -27,4 +28,5 @@ int main2584()
     {
         cout << "The num: " << i_num << " isn't a palindrome number";
     }
+    return 0;
 }

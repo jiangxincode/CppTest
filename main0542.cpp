@@ -19,11 +19,13 @@ int main05421()
     cout << "Input query: " << endl;
     cin >> query;
     string::size_type len = 0;
+
     for(string::size_type i=0; i<query.length(); i++)
     {
         for(string::size_type j=query.length()-1; j>i; j--)
         {
             string temp = query.substr(i,j);
+
             if(text.find(temp) != string::npos)
             {
                 if((j-i)>len)
@@ -33,6 +35,7 @@ int main05421()
             }
         }
     }
+
     cout << len;
     return 0;
 }

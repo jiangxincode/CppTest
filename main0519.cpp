@@ -18,6 +18,7 @@ int main0519()
     vector<string> vec;
     stringstream io(str);
     string temp;
+
     while(io >> temp)
     {
         vec.push_back(temp);
@@ -25,13 +26,16 @@ int main0519()
 
     string sub;
     cin >> sub;
-    for(vector<string>::iterator it=vec.begin();it!=vec.end();it++)
+
+    for(vector<string>::iterator it=vec.begin(); it!=vec.end(); it++)
     {
         temp = *it;
+
         if(temp.find(sub)!=string::npos)
         {
             cout << temp << " ";
         }
     }
+
     return 0;
 }

@@ -49,6 +49,7 @@ void shift2(char *str, int length, int shift_bit) //less space, more time
 {
     int count = 0;
     int i = 0;
+
     if(shift_bit >= 0) //shift left
     {
         while(count < length)
