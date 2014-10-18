@@ -27,18 +27,19 @@ int main1135()
     int n; //矩阵的阶
     int k; //代表从1到n*n之间的数
     int i,j; //用于循环变量
-
     scanf("%d",&n);
+
     if(n%2 == 0) //判断是否为奇数
     {
         perror("Invalid input, need a odd number.");
         exit(1);
     }
+
     int matrix[n][n]; //用来存储魔方数组
 
-    for(i=0;i<n;i++) //初始化数组
+    for(i=0; i<n; i++) //初始化数组
     {
-        for(j=0;j<n;j++)
+        for(j=0; j<n; j++)
         {
             matrix[i][j] = 0;
         }
@@ -48,22 +49,23 @@ int main1135()
      * 只要对i,j进行++操作，就要对n取模
      * 只要对i,j进行--操作，就要先加n，然后对n取模
      */
-    for(i=0,j=n/2,k=1;k<=n*n;i--,j++,k++)
+    for(i=0,j=n/2,k=1; k<=n*n; i--,j++,k++)
     {
         i = (i+n)%n;
         j = j%n;
+
         if(k != 1) //不是填充数值1
         {
             if(matrix[i][j] != 0)
             {
                 i ++; //恢复循环中对i,j的操作
                 j --;
-
                 i ++; //取当前位置的下一个位置
                 i = i%n;
                 j = (j+n)%n;
             }
         }
+
         matrix[i][j] = k;
     }
 
@@ -73,6 +75,7 @@ int main1135()
         {
             printf("%d\t",matrix[i][j]);
         }
+
         printf("\n");
     }
 

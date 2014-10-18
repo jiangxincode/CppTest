@@ -24,6 +24,7 @@ int main1061()
                 n++;
         }
     }
+
     return 0;
 }
 

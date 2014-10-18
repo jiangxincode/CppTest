@@ -22,8 +22,10 @@ int stoi(char *str)
         {
             return -1; //·ÇÊý×Ö×Ö·û
         }
+
         result = result*10+(str[i]-'0');
     }
+
     return result;
 }
 
@@ -57,6 +59,7 @@ int main1151(int argc,char*argv[])
             printf("%d ",arr[i]);
         }
     }
+
     printf("\n");
 
     for(i=0; i<count; i++)
@@ -64,6 +67,7 @@ int main1151(int argc,char*argv[])
         if(!prime(arr[i]))
             printf("%d ",arr[i]);
     }
+
     printf("\n");
     return 0;
 }

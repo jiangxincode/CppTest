@@ -28,7 +28,7 @@ void sort(ST x[],int n,char key[][10],int m)
                 }
 
             if((con1>con2)
-        ||(con1==con2&&strcmp(x[j].name,x[j+1].name)<0))
+                    ||(con1==con2&&strcmp(x[j].name,x[j+1].name)<0))
             {
                 v=x[j];
                 x[j]=x[j+1];

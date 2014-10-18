@@ -10,7 +10,6 @@ int main00021()
     char *str_num = "1234";
     int i_num = atoi(str_num);
     printf("string:%s,int:%d",str_num,i_num);
-
     return 0;
 }
 

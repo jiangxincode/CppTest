@@ -11,17 +11,14 @@ int distribute(int n,int count)
     {
         return 1;
     }
-
     else if((count<=5)&&(n%5!=1))
     {
         return 0;
     }
-
     else
     {
         return distribute(n/5*4,count+1);
     }
-
 }
 int main1104()
 {
