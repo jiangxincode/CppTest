@@ -24,8 +24,8 @@ int main1148()
 {
     char a[50]= {"this is a book, that is an apple"};
     char w[][10]= {"is","that"};
-    int d,i,b[20]= {0};
-    d=count1148(a,w,2,b);
+    int i,b[20]= {0};
+    count1148(a,w,2,b);
 
     for(i=0; i<2; i++)
     {

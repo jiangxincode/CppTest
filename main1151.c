@@ -1,47 +1,69 @@
-#include<stdio.h>
-#include<string.h>
-#include<ctype.h>
-#include<math.h>
+/**
+ * 教材实验13 第7题
+ */
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+#include <stdlib.h>
+
 #include "jiangxin.h"
-int *stoi(char*str)
+
+#define MAX_NUM 100
+
+int stoi(char *str)
 {
-    int a[100]= {0},i;
+    int result = 0;
+    int i;
 
-    for(i=0; a[i]!=0; i++)
+    for(i=0; str[i]!='\0'; i++)
     {
-        a[i]=str[i]-32;
+        if(!isdigit(str[i]))
+        {
+            return -1; //非数字字符
+        }
+        result = result*10+(str[i]-'0');
     }
-
-    return a;
+    return result;
 }
 
 int main1151(int argc,char*argv[])
 {
-    int a[100],i;
+    int arr[MAX_NUM];
+    int i,j;
+    int count = 0;
 
-    for(i=0; i<argc; i++)
+    if(argc > MAX_NUM)
     {
-        a[i]=stoi(argv);
-        printf("%d",a[i]);
+        printf("too many arguments!");
+        exit(1);
     }
 
+    for(i=1,j=0; i<argc; i++)
+    {
+        if(stoi(argv[i]) != -1)
+        {
+            count ++;
+            arr[j++] = stoi(argv[i]);
+        }
+    }
+
+    printf("%d\n",count);
+
+    for(i=0; i<count; i++)
+    {
+        if(prime(arr[i]))
+        {
+            printf("%d ",arr[i]);
+        }
+    }
     printf("\n");
 
-    for(i=0; a[i]!=0; i++)
+    for(i=0; i<count; i++)
     {
-        if(prime(i))
-            printf("%d",a[i]);
-
-        printf("\n");
+        if(!prime(arr[i]))
+            printf("%d ",arr[i]);
     }
-
-    for(i=0; a[i]!=0; i++)
-    {
-        if(!prime(i))
-            printf("%d",a[i]);
-
-        printf("\n");
-    }
-
+    printf("\n");
     return 0;
 }

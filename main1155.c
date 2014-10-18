@@ -15,8 +15,8 @@ typedef struct
 static int detele(PS *p1,int m,PS *p2,int n)
 {
     int i,j,k,p;
-
     p=m;
+
     for(i=0; i<p; i++)
     {
         for(j=0; j<n; j++)
@@ -76,7 +76,7 @@ static void sort(PS *p,int n)
         for(j=i+1; j<n; j++)
         {
             if((strcmp(p[i].sex,p[j].sex)>0)||
-               (strcmp(p[i].sex,p[j].sex)==0&&strcmp(p[i].name,p[j].name)>0))
+                    (strcmp(p[i].sex,p[j].sex)==0&&strcmp(p[i].name,p[j].name)>0))
             {
                 pp=p[i];
                 p[i]=p[j];
@@ -87,6 +87,7 @@ static void sort(PS *p,int n)
 static void display(PS *p,int n)
 {
     int i;
+
     for(i=0; i<n; i++)
     {
         printf("%3ld",p[i].id);
@@ -98,15 +99,19 @@ static void display(PS *p,int n)
 int main1155()
 {
     int d,i,j;
-    PS a[5]= {
+    PS a[5]=
+    {
         {101,"tom","m"},
         {103,"marry","f"},
         {104,"mark","m"},
         {105,"julia","f"},
-        {106,"sara","f"}};
-    PS b[2]= {
+        {106,"sara","f"}
+    };
+    PS b[2]=
+    {
         {102,"mark","m"},
-        {104,"mark","m"}};
+        {104,"mark","m"}
+    };
     PS p[5];
     printf("a\n");
     display(a,5);

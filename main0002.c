@@ -1,4 +1,7 @@
-//字符串与数字相互转换
+/**
+ * 字符串与数字相互转换
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -7,13 +10,15 @@ int main00021()
     char *str_num = "1234";
     int i_num = atoi(str_num);
     printf("string:%s,int:%d",str_num,i_num);
+
     return 0;
 }
 
 /**
-该方法从int转成char *是不推荐的，被iso取消，但是大部分系统支持，
-主要优点是可以改变进制
-*/
+ * 该方法从int转成char *是不推荐的，被iso取消，但是大部分系统支持，
+ * 主要优点是可以改变进制
+ */
+/*
 int main00022()
 {
     int i;
@@ -28,8 +33,11 @@ int main00022()
     printf("binary: %s\n",buffer);
     return 0;
 }
+*/
 
-//已知从0点开始的秒数(seconds) ，计算出字符串"H:M:S",  其中H是小时, M＝分钟，S＝秒
+/**
+ * 已知从0点开始的秒数(seconds) ，计算出字符串"H:M:S",  其中H是小时, M＝分钟，S＝秒
+ */
 int main00023()
 {
     int H, M, S,seconds;
@@ -56,6 +64,6 @@ int main00023()
 
 int main0002()
 {
-    main00022();
+    main00023();
     return 0;
 }

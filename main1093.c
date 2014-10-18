@@ -1,9 +1,11 @@
 #include<stdio.h>
 #include<math.h>
+
 #include "jiangxin.h"
+
 int main1093()
 {
-    int m,n,a,b;
+    int m,n,a;
     printf("Input two int numbers");
     scanf("%d,%d",&m,&n);
 

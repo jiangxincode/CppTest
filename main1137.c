@@ -3,7 +3,7 @@
 #include<time.h>
 int main1137()
 {
-    int a[9][9]= {0};
+    int a[9][9]= {{0}};
     int i,j,m,n1,n2,n3,n;
     srand((signed)time(NULL));
 
