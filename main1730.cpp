@@ -72,7 +72,7 @@ int main17304()
     string result = "";
     stack<char> sta;
 
-    for(string::iterator it=str.begin(); it!=str.end(); it++)
+    for(string::iterator it=str.begin(); it!=str.end(); ++it)
     {
         char temp = *it;
 

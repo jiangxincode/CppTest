@@ -10,6 +10,7 @@ using namespace std;
 #include <vector>
 #include <memory>
 
+/*
 class StrBlog
 {
 public:
@@ -123,5 +124,5 @@ int main1620()
     test_Ex_12_1();
     return 0;
 }
-
+*/
 

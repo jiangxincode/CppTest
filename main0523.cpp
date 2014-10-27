@@ -22,7 +22,7 @@ output:
 输出第一行为可行方案的数目，以后每行输出一种方案，每一种方案代表从周一到周五的和尚编号
 */
 
-#include<iostream>
+#include <iostream>
 #include <vector>
 #include <string>
 #include <algorithm>
@@ -90,11 +90,11 @@ int main05231()
     vector<vector<int>>::iterator it1;
     vector<int>::iterator it2;
 
-    for(it1=result.begin(); it1!=result.end(); it1++)
+    for(it1=result.begin(); it1!=result.end(); ++it1)
     {
         temp = *it1;
 
-        for(it2=temp.begin(); it2!=temp.end(); it2++)
+        for(it2=temp.begin(); it2!=temp.end(); ++it2)
         {
             cout << *it2 << " ";
         }
@@ -140,11 +140,11 @@ int main05232()
 
     cout << sum << endl;
 
-    for(vector<string>::iterator it1=voo.begin(); it1!=voo.end(); it1++)
+    for(vector<string>::iterator it1=voo.begin(); it1!=voo.end(); ++it1)
     {
         string temp = *it1;
 
-        for(string::iterator it2=temp.begin(); it2!=temp.end(); it2++)
+        for(string::iterator it2=temp.begin(); it2!=temp.end(); ++it2)
         {
             cout << *it2 << " ";
         }

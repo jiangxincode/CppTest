@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Test" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Test" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Test" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-std=c++11" />
+			<Add option="-Wall" />
+			<Add option="-ansi" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="LinkedSet.h" />
+		<Unit filename="binary_search_tree.cpp" />
+		<Unit filename="binary_search_tree.h" />
+		<Unit filename="binary_tree.cpp" />
+		<Unit filename="binary_tree.h" />
+		<Unit filename="circ_list.h" />
+		<Unit filename="hash.h" />
+		<Unit filename="heap.cpp" />
+		<Unit filename="heap.h" />
+		<Unit filename="jiangxin.h" />
+		<Unit filename="linear_list.h" />
+		<Unit filename="linked_list.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="main.h" />
+		<Unit filename="main000.cpp" />
+		<Unit filename="main001.cpp" />
+		<Unit filename="main002.cpp" />
+		<Unit filename="main003.cpp" />
+		<Unit filename="main004.cpp" />
+		<Unit filename="main005.cpp" />
+		<Unit filename="main006.cpp" />
+		<Unit filename="main007.cpp" />
+		<Unit filename="main008.cpp" />
+		<Unit filename="main009.cpp" />
+		<Unit filename="main010.cpp" />
+		<Unit filename="main011.cpp" />
+		<Unit filename="main012.cpp" />
+		<Unit filename="main013.cpp" />
+		<Unit filename="main014.cpp" />
+		<Unit filename="main015.cpp" />
+		<Unit filename="main016.cpp" />
+		<Unit filename="main017.cpp" />
+		<Unit filename="main0500.cpp" />
+		<Unit filename="main0501.cpp" />
+		<Unit filename="main0502.cpp" />
+		<Unit filename="main0503.cpp" />
+		<Unit filename="main0504.cpp" />
+		<Unit filename="main0505.cpp" />
+		<Unit filename="main0506.cpp" />
+		<Unit filename="main0507.cpp" />
+		<Unit filename="main0508.cpp" />
+		<Unit filename="main0509.cpp" />
+		<Unit filename="main0510.cpp" />
+		<Unit filename="main0511.cpp" />
+		<Unit filename="main0512.cpp" />
+		<Unit filename="main0513.cpp" />
+		<Unit filename="main0514.cpp" />
+		<Unit filename="main0515.cpp" />
+		<Unit filename="main0516.cpp" />
+		<Unit filename="main0517.cpp" />
+		<Unit filename="main0518.cpp" />
+		<Unit filename="main0519.cpp" />
+		<Unit filename="main0520.cpp" />
+		<Unit filename="main0521.cpp" />
+		<Unit filename="main0522.cpp" />
+		<Unit filename="main0523.cpp" />
+		<Unit filename="main0524.cpp" />
+		<Unit filename="main0525.cpp" />
+		<Unit filename="main0526.cpp" />
+		<Unit filename="main0527.cpp" />
+		<Unit filename="main0528.cpp" />
+		<Unit filename="main0529.cpp" />
+		<Unit filename="main0530.cpp" />
+		<Unit filename="main0531.cpp" />
+		<Unit filename="main0532.cpp" />
+		<Unit filename="main0533.cpp" />
+		<Unit filename="main0534.cpp" />
+		<Unit filename="main0535.cpp" />
+		<Unit filename="main0536.cpp" />
+		<Unit filename="main0537.cpp" />
+		<Unit filename="main0538.cpp" />
+		<Unit filename="main0539.cpp" />
+		<Unit filename="main0540.cpp" />
+		<Unit filename="main0541.cpp" />
+		<Unit filename="main0542.cpp" />
+		<Unit filename="main0543.cpp" />
+		<Unit filename="main0544.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0545.cpp" />
+		<Unit filename="main0546.cpp" />
+		<Unit filename="main0547.cpp" />
+		<Unit filename="main0548.cpp" />
+		<Unit filename="main0549.cpp" />
+		<Unit filename="main0550.cpp" />
+		<Unit filename="main0551.cpp" />
+		<Unit filename="main0552.cpp" />
+		<Unit filename="main0553.cpp" />
+		<Unit filename="main0554.cpp" />
+		<Unit filename="main0555.cpp" />
+		<Unit filename="main1000.cpp" />
+		<Unit filename="main1550.cpp" />
+		<Unit filename="main1560.cpp" />
+		<Unit filename="main1590.cpp" />
+		<Unit filename="main1610.cpp" />
+		<Unit filename="main1620.cpp" />
+		<Unit filename="main1730.cpp" />
+		<Unit filename="main1740.cpp" />
+		<Unit filename="main1760.cpp" />
+		<Unit filename="main1800.cpp" />
+		<Unit filename="main2000.cpp" />
+		<Unit filename="main2001.cpp" />
+		<Unit filename="main2500.cpp" />
+		<Unit filename="main2501.cpp" />
+		<Unit filename="main2516.cpp" />
+		<Unit filename="main2517.cpp" />
+		<Unit filename="main2518.cpp" />
+		<Unit filename="main2519.cpp" />
+		<Unit filename="main2525.cpp" />
+		<Unit filename="main2526.cpp" />
+		<Unit filename="main2527.cpp" />
+		<Unit filename="main2528.cpp" />
+		<Unit filename="main2534.cpp" />
+		<Unit filename="main2535.cpp" />
+		<Unit filename="main2542.cpp" />
+		<Unit filename="main2543.cpp" />
+		<Unit filename="main2544.cpp" />
+		<Unit filename="main2545.cpp" />
+		<Unit filename="main2554.cpp" />
+		<Unit filename="main2564.cpp" />
+		<Unit filename="main2565.cpp" />
+		<Unit filename="main2566.cpp" />
+		<Unit filename="main2572.cpp" />
+		<Unit filename="main2579.cpp" />
+		<Unit filename="main2583.cpp" />
+		<Unit filename="main2584.cpp" />
+		<Unit filename="main2585.cpp" />
+		<Unit filename="main2591.cpp" />
+		<Unit filename="main2592.cpp" />
+		<Unit filename="seq_list.h" />
+		<Unit filename="static_list.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

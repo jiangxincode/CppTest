@@ -23,7 +23,7 @@ int main010()
     //注意既然下面要使用反向迭代器，所以类型也要声明为方向迭代器
     vector<string>::reverse_iterator pos;
 
-    for(pos=vec.rbegin(); pos!=vec.rend(); pos++) //主要反向迭代器一定要++不是--
+    for(pos=vec.rbegin(); pos!=vec.rend(); ++pos) //主要反向迭代器一定要++不是--
     {
         cout << *pos << " ";
     }

@@ -26,7 +26,7 @@ int main0530()
     cout << bin << endl;
     string::reverse_iterator r_it;
 
-    for(r_it = bin.rbegin(); r_it!=bin.rend(); r_it++)
+    for(r_it = bin.rbegin(); r_it!=bin.rend(); ++r_it)
     {
         cout << *r_it;
     }

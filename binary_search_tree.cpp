@@ -127,7 +127,7 @@ bool binary_search_tree::remove(binary_node *&sub_tree,int data)
 
     if(t == NULL)
     {
-        return false; //Î´ÕÒµ½
+        return false; //§ß¨f§å§â¨g¨o
     }
     else
     {

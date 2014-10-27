@@ -27,7 +27,7 @@ int main0519()
     string sub;
     cin >> sub;
 
-    for(vector<string>::iterator it=vec.begin(); it!=vec.end(); it++)
+    for(vector<string>::iterator it=vec.begin(); it!=vec.end(); ++it)
     {
         temp = *it;
 

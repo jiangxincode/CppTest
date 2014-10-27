@@ -11,7 +11,7 @@ int main05211()
     vector<int> vec(10,1);
     vector<int>::iterator it;
 
-    for(it=vec.begin(); it!=vec.end(); it++)
+    for(it=vec.begin(); it!=vec.end(); ++it)
     {
         cout << *it << " ";
     }
@@ -19,7 +19,7 @@ int main05211()
     cout << endl;
     iota(vec.begin(),vec.end(),0);
 
-    for(it=vec.begin(); it!=vec.end(); it++)
+    for(it=vec.begin(); it!=vec.end(); ++it)
     {
         cout << *it << " ";
     }

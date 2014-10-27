@@ -24,7 +24,7 @@ int main005()
     vector<int>::iterator it; //注意此处it的声明方法
     int sum = 0;
 
-    for(it=vec.begin(); it!=vec.end(); it++)
+    for(it=vec.begin(); it!=vec.end(); ++it)
     {
         sum += *it;
     }

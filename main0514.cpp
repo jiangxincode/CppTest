@@ -97,7 +97,7 @@ int main05145() //读取以逗号为分隔符的数值
         vec.push_back(temp);
     }
 
-    for(vector<int>::iterator it=vec.begin(); it!=vec.end(); it++)
+    for(vector<int>::iterator it=vec.begin(); it!=vec.end(); ++it)
     {
         cout << *it << " ";
     }

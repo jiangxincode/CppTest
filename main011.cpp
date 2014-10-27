@@ -27,7 +27,7 @@ int main011()
     cout << vec.size() << endl;
     vector<int>::iterator pos;
 
-    for(pos=vec.begin(); pos!=vec.end(); pos++)
+    for(pos=vec.begin(); pos!=vec.end(); ++pos)
     {
         cout << *pos << " ";
     }

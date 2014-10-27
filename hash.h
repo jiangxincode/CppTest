@@ -4,50 +4,50 @@
 #include <stdlib.h>
 class HashTable
 {
-    //æ•£åˆ—è¡¨ç±»å®šä¹‰
+    //É¢ÁÐ±íÀà¶¨Òå
 public:
-    enum KindOfEntry { Active, Empty, Deleted };			//è¡¨é¡¹åˆ†ç±» (æ´»åŠ¨ / ç©º / åˆ )
+    enum KindOfEntry { Active, Empty, Deleted };			//±íÏî·ÖÀà (»î¶¯ / ¿Õ / É¾)
     HashTable() : TableSize(DefaultSize)
     {
-        ht = new HashEntry[TableSize];    //æž„é€ å‡½æ•°
+        ht = new HashEntry[TableSize];    //¹¹Ôìº¯Êý
     }
     ~HashTable()
     {
-        delete [ ] ht;    //æžæž„å‡½æ•°
+        delete [ ] ht;    //Îö¹¹º¯Êý
     }
-    int Find-Ins(const char * id);					//åœ¨æ•£åˆ—è¡¨ä¸­æœç´¢æ ‡è¯†ç¬¦id
+    int Find-Ins(const char * id);					//ÔÚÉ¢ÁÐ±íÖÐËÑË÷±êÊ¶·ûid
     void HashSort();
 private:
     struct HashEntry
     {
-        //è¡¨é¡¹å®šä¹‰
-        Type Element;								//è¡¨é¡¹çš„æ•°æ®, å³è¡¨é¡¹çš„å…³é”®ç 
-        KindOfEntry info;							//ä¸‰ç§çŠ¶æ€: Active, Empty, Deleted
-        HashEntry() : info(Empty) { }					//è¡¨é¡¹æž„é€ å‡½æ•°, ç½®ç©º
+        //±íÏî¶¨Òå
+        Type Element;								//±íÏîµÄÊý¾Ý, ¼´±íÏîµÄ¹Ø¼üÂë
+        KindOfEntry info;							//ÈýÖÖ×´Ì¬: Active, Empty, Deleted
+        HashEntry() : info(Empty) { }					//±íÏî¹¹Ôìº¯Êý, ÖÃ¿Õ
     };
-    HashEntry *ht;								//æ•£åˆ—è¡¨å­˜å‚¨æ•°ç»„
-    int TableSize;								//æœ€å¤§æ¡¶æ•°
+    HashEntry *ht;								//É¢ÁÐ±í´æ´¢Êý×é
+    int TableSize;								//×î´óÍ°Êý
     int FindPos(string s) const
     {
-        return atoi(*s) - 32;    //æ•£åˆ—å‡½æ•°
+        return atoi(*s) - 32;    //É¢ÁÐº¯Êý
     }
 }
 
 int HashTable :: Find-Ins(const char * id)
 {
-    int i = FindPos(id),  j = i; 						//iæ˜¯è®¡ç®—å‡ºæ¥çš„æ•£åˆ—åœ°å€
+    int i = FindPos(id),  j = i; 						//iÊÇ¼ÆËã³öÀ´µÄÉ¢ÁÐµØÖ·
 
     while(ht[j].info != Empty && strcmp(ht[j].Element, id) != 0)
     {
-        //å†²çª
-        j = (j + 1) % TableSize;						//å½“åšå¾ªçŽ¯è¡¨å¤„ç†, æ‰¾ä¸‹ä¸€ä¸ªç©ºæ¡¶
+        //³åÍ»
+        j = (j + 1) % TableSize;						//µ±×öÑ­»·±í´¦Àí, ÕÒÏÂÒ»¸ö¿ÕÍ°
 
-        if(j == i) return -TableSize;					//è½¬ä¸€åœˆå›žåˆ°å¼€å§‹ç‚¹, è¡¨å·²æ»¡, å¤±è´¥
+        if(j == i) return -TableSize;					//×ªÒ»È¦»Øµ½¿ªÊ¼µã, ±íÒÑÂú, Ê§°Ü
     }
 
     if(ht[j].info != Active)
     {
-        //æ’å…¥
+        //²åÈë
         if(j > i)
         {
             while(int k = j; k > i; k--)
@@ -57,24 +57,24 @@ int HashTable :: Find-Ins(const char * id)
             }
 
             ht[i].Element = id;
-            ht[i].info = Active;  			//æ’å…¥
+            ht[i].info = Active;  			//²åÈë
         }
         else
         {
             HashEntry temp;
-            ã€€ã€€ã€€   temp.Element = ht[TableSize-1].Element;
+            temp.Element = ht[TableSize-1].Element;
             temp.info = ht[TableSize-1].info;
 
-            ã€€ã€€ã€€   while(int k = TableSize-1; k > i; k--)
+            while(int k = TableSize-1; k > i; k--)
             {
                 ht[k].Element = ht[k-1].Element;
                 ht[k].info = ht[k-1].info;
             }
 
             ht[i].Element = id;
-            ht[i].info = Active;  			//æ’å…¥
+            ht[i].info = Active;  			//²åÈë
 
-            ã€€ã€€ã€€   while(int k = j; k > 0; k--)
+            while(int k=j; k>0; k--)
             {
                 ht[k].Element = ht[k-1].Element;
                 ht[k].info = ht[k-1].info;
@@ -91,23 +91,19 @@ int HashTable :: Find-Ins(const char * id)
     {
         int n, i;
         char * str;
-        ã€€ã€€ã€€   cin >> n >> str;
+        cin >> n >> str;
 
-        ã€€ã€€ã€€   for(i = 0; i < n; i++)
+        for(i = 0; i < n; i++)
         {
-
-            ã€€ã€€ã€€	if(Find-Ins(str) == - Tablesize)
+            if(Find-Ins(str) == - Tablesize)
             {
-                cout << "è¡¨å·²æ»¡" << endl;
+                cout << "±íÒÑÂú" << endl;
                 break;
             }
 
             cin >> str;
-            ã€€ã€€ã€€
         }
 
-        ã€€ã€€ã€€   for(i = 0; i < TableSize; i++)
-            ã€€ã€€ã€€	if(ht[i].info == Active) cout << ht[i].Element << endl;
-
-        ã€€ã€€ã€€
+        for(i = 0; i < TableSize; i++)
+            if(ht[i].info == Active) cout << ht[i].Element << endl;
     }

@@ -1,139 +1,68 @@
-/***************************************************************
-函数名称：Symmetry
-功能： 判断一个数时候为回文数(121,35653)
-输入： 长整型的数
-输出： 若为回文数返回值为1 esle 0
-******************************************************************/
-unsigned char Symmetry(long n)
-{
-    long i,temp;
-    i=n;
-    temp=0;
+#include <iostream>
+#include <string>
+#include <algorithm>
 
-    while(i) //不用出现长度问题,将数按高低位掉换
-    {
-        temp=temp*10+i%10;
-        i/=10;
-    }
-
-    return(temp==n);
-}
+using namespace std;
 
 /**
-方法一
-功能：
-判断字符串是否为回文数字
-实现：
-先将字符串转换为正整数，再将正整数逆序组合为新的正整数，两数相同则为回文数字
-输入：
-char *s：待判断的字符串
-输出：
-无
-返回：
-0：正确；1：待判断的字符串为空；2：待判断的字符串不为数字；
-3：字符串不为回文数字；4：待判断的字符串溢出
-*/
-unsigned IsSymmetry_1(char *s)
+ * 判断一个长整数为回文数
+ * 测试用例：
+ * input output
+ * 12321 1
+ * 12345 0
+ */
+bool palindrome1(long num)
 {
-    char *p = s;
-    long nNumber = 0;
-    long n = 0;
-    long nTemp = 0;
+    long num_reverse,temp;
+    temp=num;
+    num_reverse=0;
 
-    /*判断输入是否为空*/
-    if(*s == '\0')
+    while(temp)
+    {
+        temp=num_reverse*10+temp%10;
+        temp/=10;
+    }
+
+    return(num==num_reverse);
+}
+
+int palindrome2(long num)
+{
+    string str = to_string(num);
+    string str_reverse = str;
+    reverse_copy(str.begin(),str.end(),str_reverse.begin());
+    if(str == str_reverse)
+    {
         return 1;
-
-    /*将字符串转换为正整数*/
-    while(*p != '\0')
-    {
-        /*判断字符是否为数字*/
-        if(*p<'0' || *p>'9')
-            return 2;
-
-        /*判断正整数是否溢出*/
-        if((*p-'0') > (4294967295-(nNumber*10)))
-            return 4;
-
-        nNumber = (*p-'0') + (nNumber * 10);
-        p++;
     }
-
-    /*将数字逆序组合，直接抄楼上高手的代码，莫怪，呵呵*/
-    n = nNumber;
-
-    while(n)
+    else
     {
-        /*判断正整数是否溢出*/
-        if((n%10) > (4294967295-(nTemp*10)))
-            return 3;
-
-        nTemp = nTemp*10 + n%10;
-        n /= 10;
+        return 0;
     }
-
-    /*比较逆序数和原序数是否相等*/
-    if(nNumber != nTemp)
-        return 3;
-
     return 0;
 }
-
-
 /**
-功能：
-    判断字符串是否为回文数字
-实现：
-    先得到字符串的长度，再依次比较字符串的对应位字符是否相同
-输入：
-    char *s：待判断的字符串
-返回：
-    0：正确；
-    1：待判断的字符串为空；
-    2：待判断的字符串不为数字；
-    3：字符串不为回文数字
+ * 判断字符串是否为回文数字
+ * 最好使用string，不用考虑最后的'\0'
 */
-unsigned IsSymmetry_2(char *s)
+int palindrome(const char *str)
 {
-    char *p = s;
-    int nLen = 0;
-    int i = 0;
-
-    /*判断输入是否为空*/
-    if(*s == '\0')
+    string str_origin(str);
+    string str_reverse(str_origin);
+    reverse_copy(str_origin.begin(),str_origin.end(),str_reverse.begin());
+    if(str_origin == str_reverse)
+    {
         return 1;
-
-    /*得到字符串长度*/
-    while(*p != '\0')
-    {
-        /*判断字符是否为数字*/
-        if(*p<'0' || *p>'9')
-            return 2;
-
-        nLen++;
-        p++;
     }
-
-    /*长度不为奇数，不为回文数字*/
-    if(nLen%2 == 0)
-        return 4;
-
-    /*长度为1，即为回文数字*/
-    if(nLen == 1)
+    else
+    {
         return 0;
-
-    /*依次比较对应字符是否相同*/
-    p = s;
-    i = nLen/2 - 1;
-
-    while(i)
-    {
-        if(*(p+i) != *(p+nLen-i-1))
-            return 3;
-
-        i--;
     }
+}
 
+
+int main0508()
+{
     return 0;
 }
 

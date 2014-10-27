@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <cstdlib>
 
@@ -8,12 +7,11 @@
 
 using namespace std;
 
-/*
-约瑟夫问题
-华为面试
-输入游戏者人数、开始的序号数和报数间隔
-num start interval
-*/
+
+/**
+ * 约瑟夫问题（华为面试）
+ * 输入游戏者人数、开始的序号数（从哪个人开始）和报数间隔
+ */
 int main0031()
 {
     int num; //the numbers of the players

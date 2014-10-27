@@ -22,7 +22,7 @@ int main012()
 
     sort(vec.begin(),vec.end());
 
-    for(vector<int>::iterator it=vec.begin(); it!=vec.end(); it++)
+    for(vector<int>::iterator it=vec.begin(); it!=vec.end(); ++it)
     {
         cout << *it << " ";
     }

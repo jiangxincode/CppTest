@@ -52,7 +52,7 @@ string Convert(string expr)
     stack<char> op;
     op.push('#');
 
-    for(it=expr.begin(); it!=expr.end(); it++)
+    for(it=expr.begin(); it!=expr.end(); ++it)
     {
         char temp = *it;
 
@@ -65,7 +65,7 @@ string Convert(string expr)
             }
             while(isdigit(temp) || temp == '.');
 
-            it --;
+            --it;
             result += "#";
         }
         else if(getICP(temp) > getISP(op.top()))
@@ -110,7 +110,7 @@ double Calculate(string expr)
     stack<double> operand;
     string::iterator it;
 
-    for(it=expr.begin(); it!=expr.end(); it++)
+    for(it=expr.begin(); it!=expr.end(); ++it)
     {
         char c_temp = *it;
         string str = "";

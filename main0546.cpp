@@ -54,7 +54,7 @@ int main0546()
 
         map<int,int>::iterator it;
 
-        for(it=age_map.begin(); it!=age_map.end(); it++)
+        for(it=age_map.begin(); it!=age_map.end(); ++it)
         {
             pair<int,int> temp = *it;
 

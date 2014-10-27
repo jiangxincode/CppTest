@@ -33,7 +33,7 @@ void binary_tree::create_binary_tree(binary_node *&sub_tree, string str)
     binary_node *p, *t;
     int k;
 
-    for(it=str.begin(); it!=str.end(); it++)
+    for(it=str.begin(); it!=str.end(); ++it)
     {
         char c_temp = *it;
         string str_temp = "";
@@ -66,7 +66,7 @@ void binary_tree::create_binary_tree(binary_node *&sub_tree, string str)
             }
             while(isdigit(c_temp));
 
-            it --;
+            --it;
             stringstream io(str_temp);
             int i_temp;
             io >> i_temp;
