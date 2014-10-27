@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 
     do
     {
-        main0544();
+        main0507();
         cout << "\nGo on?(n/y)";
         cin >> ch;
     }

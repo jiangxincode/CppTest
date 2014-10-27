@@ -1,25 +1,3 @@
-/**
-回收文件标记为可删除(注意编码)或者
-//delete
-0000:Test
-0001-0499:ACM(000-499)
-0500-1499:一些小程序
-1500-1699:C++ Primer 15n0 for chapter n 16n0 for chapter 10+n
-1700-1999:Data Structure
-2000-2499:一些比较大的程序
-2500-2599:程序设计基础，2014暑假
-    origin:111150034+蒋鑫+i_j now:main25ij
-    origin:111150034+蒋鑫+10 now:main2500
-    origin:111150034+蒋鑫+综合 now:main2501
-unsolved: 1620 1800 0520
-
-对于scanf的说明
-    32位int 11位宽(-2147483648~+2147483647)
-    32位unsigned 10位宽(0~4294967295)
-    float/double 20位宽
-    char *(%s) 根据实际内存容量设置
-*/
-
 int main000();
 int main001();
 int main002();

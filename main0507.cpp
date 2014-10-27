@@ -1,10 +1,11 @@
-/*
-实现一个函数，把一个字符串中的字符从小写转为大写。
-*/
+/**
+ * 实现一个函数，把一个字符串中的字符从小写转为大写。
+ */
 
-#include "stdio.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-void uppers(char *s,char *us)
+void uppers(const char *s,char *us)
 {
     for(; *s!='\0'; s++,us++)
     {
@@ -18,12 +19,11 @@ void uppers(char *s,char *us)
 }
 void main0507()
 {
-    char *s,*us = NULL;
-    char ss[20];
+    char source[20];
     printf("Please input a string:\n");
-    scanf("%s",ss);
-    s = ss;
-    uppers(s,us);
-    printf("The result is:\n%s\n",us);
+    scanf("%s",source);
+    char *target = (char *)malloc(sizeof(source));
+    uppers(source,target);
+    printf("The result is:\n%s\n",target);
 }
 

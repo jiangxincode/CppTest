@@ -6,7 +6,7 @@ int main013()
 {
     int N,M=1;
     int numerator,denominator;
-    int sum;
+    int sum = 0;
     cin >> N;
 
     for(; sum<N; M++)
