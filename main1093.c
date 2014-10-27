@@ -7,7 +7,7 @@ int main1093()
 {
     int m,n,a;
     printf("Input two int numbers");
-    scanf("%d,%d",&m,&n);
+    scanf("%11d,%11d",&m,&n);
 
     for(a=m; a<=n-2; a++)
         if(prime(a)&&prime(a+2))

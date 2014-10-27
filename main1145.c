@@ -27,7 +27,7 @@ void FindLWord(char *a,char*b)
 int main1145()
 {
     char a[20],b[2]= {0};
-    gets(a);
+    fgets(a,20,stdin);
     FindLWord(a,b);
     puts(b);
     return 0;

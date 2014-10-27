@@ -2,15 +2,15 @@
 #include<math.h>
 int main1115()
 {
-    int j,m=0,n1,n2,f,t[10],d[10];
+    int j,m=0,n1,n2,t[10],d[10];
     long x,y,i;
-    scanf("%d%d",&n1,&n2);
+    scanf("%11d%11d",&n1,&n2);
 
     for(i=n1; i<=n2; i++)
     {
         for(j=0; j<10; j++)d[j]=0;
 
-        f=1;
+        int f=1;
 
         for(j=2; j<i; j++)
             if(i%j==0)

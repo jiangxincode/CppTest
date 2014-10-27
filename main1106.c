@@ -24,7 +24,7 @@ double f1106(double x,double eps)
 int main1106()
 {
     double x,eps,sum;
-    scanf("%lf%lf",&x,&eps);
+    scanf("%20lf%20lf",&x,&eps);
     sum=f1106(x,eps);
     printf("x=%lf,eps=%lf,sum=%lf",x,eps,sum);
     return 0;

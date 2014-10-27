@@ -11,7 +11,7 @@ int main1042()
     p1=&R;
     p2=&G;
     p3=&B;
-    printf("%d,%d,%d",p1,p2,p3);
+    printf("%d,%d,%d",*p1,*p2,*p3);
     return 0;
 }
 

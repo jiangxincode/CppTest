@@ -2,8 +2,8 @@
 int main1022()
 {
     int a,b,c,d,e,f;
-    printf("input 3 interger");
-    scanf("%d,%d",&a,&b);
+    printf("input 2 interger");
+    scanf("%11d%11d",&a,&b);
     c=a+b;
     d=a-b;
     e=a*b;

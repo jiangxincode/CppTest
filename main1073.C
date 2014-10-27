@@ -1,28 +1,34 @@
-#include<stdio.h>
-#include<math.h>
+#include <stdio.h>
+#include <math.h>
+
+#define eps (1e-8)
+
 int main1073()
 {
-    double x,eps,s=1,term=1,hx,g,f;
-    int n;
-    printf("x=");
-    scanf("%lf",&x);
-    printf("eps=");
-    scanf("%lf",&eps);
-    hx=exp(-x);
-    g=(x*x+1+(1/x))*hx-(1/x);
+    double x = 0.0;
+    scanf("%10lf",&x); //最大支持10位字段宽度
 
-    while(fabs(s)>eps)
+    double left=(x*x+1+(1/x))*exp(-1*x)-(1/x);
+
+    int n = 1;
+
+    double item = (-1)*x/2;
+    double right = item;
+
+    //item(n) = ((-1)^n)*(n^3)*(x^n)/(n+1)!
+    //item(n+1) = ((-1)^(n+1))*((n+1)^3)*(x^(n+1))/(n+2)!
+    //item(n+1) = (-1)*((n+1)^3)*x/(n^3)/(n+2)
+    while(fabs(item)>eps)
     {
-        term=(-1)*term*(x/(n+1));
-        s=s*term*n*n*n;
-        f=f+s;
+        item *= (-1)*((n+1)*(n+1)*(n+1))*x/(n*n*n)/(n+2);
+        right += item;
         n++;
     }
 
-    if(fabs(f-g)/(fabs(f)+fabs(g))<1e-6)
-        printf("right x=%f f=%.5f g=%.5f",x,f,g);
+    if(fabs(right-left)/(fabs(right)+fabs(left))<1e-6)
+        printf("right!\nx=%.20f\nleft=%.20f\nright=%.20f",x,left,right);
     else
-        printf("wrong x=%f f=%.5f g=%.5f",x,f,g);
+        printf("wrong!");
 
     return 0;
 }

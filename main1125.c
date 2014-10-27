@@ -53,7 +53,7 @@ int fact(int n)
         if(m[10-1]>9) return 0;
     }
 
-    for(i=10; j>=0; j--) printf("%d",m[j]);
+    for(j=9; j>=0; j--) printf("%d",m[j]);
 
     return 1;
 }
@@ -62,7 +62,7 @@ int main1125()
 {
     int n,k;
     printf("\nThe factorial number:");
-    scanf("%d",&n);
+    scanf("%11d",&n);
     k=fact(n);
 
     if(k==0) printf("OVERFLOW!!!");

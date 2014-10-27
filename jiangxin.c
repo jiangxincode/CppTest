@@ -10,15 +10,13 @@
 
 char jx_getchar(short option)
 {
-    char ch,temp;
-    ch = getchar();
-
+    int temp;
+    char ch = getchar();
     if(ch == '\n') //直接输入回车，返回'\n'
         return '\n';
     else if((temp=getchar())!='\n') //输入一些字符（不止一个），然后回车，清除所有字符后返回'\n'
     {
         while((temp=getchar())!='\n' && temp!=EOF);
-
         return '\n';
     }
     else //输入一个字符，软后回车，无须清除，大小写转换后直接返回
@@ -71,6 +69,10 @@ int prime(int n)
 {
     int t,i;
 
+    if(n <= 1)
+    {
+        return 0;
+    }
     for(i=2,t=0; i<n; i++)
     {
         if((n%i)==0)

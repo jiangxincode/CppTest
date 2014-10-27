@@ -1,11 +1,3 @@
-/**
-0000-0999:平时练习题
-1000-1199:C语言程序设计, 2012
-    origin:7-4.c now:main1074
-    origin:12-5.c now:main1125
-    实验教材为《C语言程序设计教程学习指导》
-*/
-
 int main0000(); //just for test
 int main0001();
 int main0002();
@@ -117,11 +109,6 @@ int main1154();
 int main1155();
 int main1161();
 int main1162();
-int main1171();
-
-
-
-
 int main1171();
 
 

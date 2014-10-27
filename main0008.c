@@ -1,8 +1,6 @@
 /*
 美团网2014年招聘笔试题
-5.
 利用两个stack模拟queue
-(剑指offer上的原题，九度oj有专门的练习)
 */
 
 #include <stdio.h>
@@ -56,11 +54,11 @@ void popQueue(stack *s1, stack *s2)
 int main0008(void)
 {
     int data, n;
-    stack *s1, *s2;
     char str[5];
 
-    while(scanf("%d", &n) != EOF)
+    while(scanf("%11d", &n) != EOF)
     {
+        stack *s1, *s2;
         // 初始化
         s1 = (stack *)malloc(sizeof(stack));
         s2 = (stack *)malloc(sizeof(stack));
@@ -68,11 +66,11 @@ int main0008(void)
 
         while(n --)
         {
-            scanf("%s", str);
+            scanf("%4s", str);
 
             if(strcmp(str, "PUSH") == 0)    // 入队列
             {
-                scanf("%d", &data);
+                scanf("%11d", &data);
                 pushQueue(s1, data);
             }
             else        // 出队列

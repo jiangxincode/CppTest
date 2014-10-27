@@ -5,7 +5,7 @@ int main1051()
     double x,m,p;
     int n=0;
     printf("Input a double number x:\n");
-    scanf("%lf",&x);
+    scanf("%20lf",&x);
     p=fabs(x);
 
     if(p>0.1&&p<1)

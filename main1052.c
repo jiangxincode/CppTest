@@ -6,7 +6,7 @@ int main1052()
     unsigned int a;
     int n=1;
     printf("Input a unsigned int number:\n");
-    scanf("%d",&a);
+    scanf("%10u",&a);
 
     while(a>=10)
     {

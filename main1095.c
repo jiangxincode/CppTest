@@ -36,7 +36,7 @@ int main1095()
 {
     int i,m,n;
     printf("input two numbers 100<m<10000,100<n<10000,m<n");
-    scanf("%d%d",&m,&n);
+    scanf("%11d%11d",&m,&n);
 
     for(i=m; i<=n; i++)
     {

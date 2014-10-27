@@ -26,7 +26,7 @@ int main1144()
 {
     int i;
     char xx[100]= {0};
-    gets(xx);
+    fgets(xx,100,stdin);
     f1144(xx);
 
     for(i=0; xx[i]; i++)

@@ -4,7 +4,7 @@ int main1047()
 {
     int n1,n2,n3,n=3,a;
     printf("input numbers:");
-    scanf("%d%d%d",&n1,&n2,&a);
+    scanf("%11d%11d%11d",&n1,&n2,&a);
     printf("%d %d ",n1,n2);
 
     while(n<=a)

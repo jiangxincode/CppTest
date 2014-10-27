@@ -17,7 +17,7 @@ int main1097()
     double m,n,l,k;
     char p;
     printf("input a fushu :");
-    scanf("%lf%lf%lf%lf%c",&m,&n,&l,&k,&p);
+    scanf("%20lf%20lf%20lf%20lf%c",&m,&n,&l,&k,&p);
     fun(p,m,n,l,k);
     return 0;
 }

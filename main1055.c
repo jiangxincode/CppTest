@@ -1,26 +1,53 @@
-#include<stdio.h>
-#include<math.h>
+/**
+ * 所谓Armstrong数，就是n位数的各位数的n次方之和等于该数
+ * 要求判断编写一个函数判断某个正整数是否是一个Armstrong数
+ */
+#include <stdio.h>
+#include <math.h>
+#include <limits.h>
 
+#define MAX_DIGITS 11
+
+int is_armstrong(int num)
+{
+    int temp = num;
+    int result = 0;
+    int bit_count = 0; //数字的位数
+    int bit[MAX_DIGITS]; //存放各位数字
+
+    if(num <= 0) //只对正整数进行判断
+    {
+        return 0;
+    }
+
+    for(int i=0;i<MAX_DIGITS;i++) //初始化
+    {
+        bit[i] = -1;
+    }
+    while(temp)
+    {
+        bit[bit_count++] = temp%10;
+        temp /= 10;
+    }
+    for(int i=0;bit[i]!=-1;i++)
+    {
+        result += pow(bit[i],bit_count);
+    }
+    if(result == num)
+    {
+        return 1;
+    }
+    else return 0;
+}
 int main1055()
 {
-    int a,b,c,d,*p;
-    scanf("%d",&a);
-    p=&a;
-
-    if(a<1000&&a>99)
+    for(int i=0;i<INT_MAX;i++)
     {
-        b=a/100;
-        d=a%10;
-        c=(a-100*b-d)/10;
-
-        if(a==(pow(b,3)+pow(c,3)+pow(d,3)))
-            printf("%d is a Armstrong number",*p);
-        else
-            printf("%d is not a Armstrong number",*p);
+        if(is_armstrong(i))
+        {
+            printf("%d\n",i);
+        }
     }
-    else
-        printf("Input error");
-
     return 0;
 }
 

@@ -4,11 +4,11 @@ int main1074()
 {
     int y,m,d;
     printf("year=");
-    scanf("%d",&y);
+    scanf("%11d",&y);
     printf("month=");
-    scanf("%d",&m);
+    scanf("%11d",&m);
     printf("day=");
-    scanf("%d",&d);
+    scanf("%11d",&d);
 
     switch(m)
     {

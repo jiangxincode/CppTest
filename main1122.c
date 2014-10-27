@@ -36,7 +36,7 @@ int main1122(void)
     int x[10],n=10,i=0,count;
 
     for(i=0; i<10; i++)
-        scanf("%d",&x[i]);
+        scanf("%11d",&x[i]);
 
     count=mpsort(x,n);
 

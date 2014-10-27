@@ -1,9 +1,8 @@
-/*
-美团网2014年招聘笔试题
-百度2014软件研发笔试题
-6.
-一个m*n的矩阵，从左到右从上到下都是递增的，给一个数elem，求是否在矩阵中，
-给出思路和代码（杨氏矩阵）
+/**
+ * 美团网2014年招聘笔试题
+ * 百度2014软件研发笔试题
+ * 杨氏矩阵
+ * 一个m*n的矩阵，从左到右从上到下都是递增的，给一个数elem，求是否在矩阵中
 */
 
 #include <stdio.h>
@@ -43,7 +42,7 @@ int main0007()
 {
     int i, j, key, n, m, **matrix;
     // 构造矩阵
-    scanf("%d %d", &n, &m);
+    scanf("%11d %11d", &n, &m);
     matrix = (int **)malloc(sizeof(int *) * n);
 
     for(i = 0; i < n; i ++)
@@ -52,11 +51,11 @@ int main0007()
     for(i = 0; i < n; i ++)
     {
         for(j = 0; j < m; j ++)
-            scanf("%d", &matrix[i][j]);
+            scanf("%11d", &matrix[i][j]);
     }
 
     // 查询数据
-    while(scanf("%d", &key) != EOF)
+    while(scanf("%11d", &key) != EOF)
     {
         findKey(matrix, n, m, key);
     }

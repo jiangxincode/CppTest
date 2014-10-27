@@ -36,23 +36,25 @@ int main1162(void)
 
     while(!feof(fp))
     {
-        fscanf(fp,"%ld%d",&data_a[na].num,&data_a[na].score);
+        fscanf(fp,"%11ld%11d",&data_a[na].num,&data_a[na].score);
         na++;
     }
+    fclose(fp);
 
     fp=fopen("b.txt","r");
 
     if(fp==NULL)
     {
-        puts("can't open a.txt");
+        puts("can't open b.txt");
         exit(1);
     }
 
     while(!feof(fp))
     {
-        fscanf(fp,"%ld%d",&data_b[nb].num,&data_b[nb].score);
+        fscanf(fp,"%11ld%11d",&data_b[nb].num,&data_b[nb].score);
         nb++;
     }
+    fclose(fp);
 
     heada=create(data_a,na);
     puts("a:");
@@ -72,12 +74,12 @@ int main1162(void)
 }
 static NODE * create(struct  data_array *array, int n)
 {
-    NODE *head=NULL,*p=NULL;
+    NODE *head=NULL;
     int i;
 
     for(i=0; i<n; i++)
     {
-        p=(NODE *)malloc(sizeof(NODE));
+        NODE *p=(NODE *)malloc(sizeof(NODE));
         p->num=array[i].num, p->score=array[i].score;
         p->next=NULL;
         head=insert(head,p);
@@ -87,7 +89,7 @@ static NODE * create(struct  data_array *array, int n)
 }
 NODE *insert(NODE *head,NODE *p0)
 {
-    NODE *p1=NULL,*p2=NULL;
+    NODE *p1=NULL;
 
     if(head==NULL)
     {
@@ -97,6 +99,7 @@ NODE *insert(NODE *head,NODE *p0)
     else
     {
         p1=head;
+        NODE *p2=NULL;
 
         while((p0->num>p1->num) && (p1->next!=NULL))
         {
@@ -206,13 +209,12 @@ static NODE * merge(NODE *head1, NODE *head2)
 NODE * del(NODE *head1, NODE *head2)
 {
     NODE *p1,*p2,*p0;
-    int flag;
     p0=p1=head1;
 
     while(p1!=NULL)
     {
         p2=head2;
-        flag=0;
+        int flag=0;
 
         while(p2!=NULL)
         {

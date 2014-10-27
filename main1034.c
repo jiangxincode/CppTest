@@ -8,14 +8,13 @@
 int main1034()
 {
     double a;
-    scanf("%lf",&a);
+    scanf("%20lf",&a);
 
     if(a>0)
         printf("sign:+\n");
     else
         printf("sign:-\n");
 
-    abs((int)a); //计算整数和浮点数的绝对值
     printf("%d, %lf\n",abs((int)a), fabs(a));
     return 0;
 }

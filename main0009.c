@@ -120,19 +120,19 @@ node* reverseK(node *head, int k)
 int main0009()
 {
     int i, n, k, data;
-    node *head, *newhead;
+    node *head;
 
-    while(scanf("%d %d", &n, &k) != EOF)
+    while(scanf("%11d%11d", &n, &k) != EOF)
     {
         for(i = 0, head = NULL; i < n; i ++)
         {
-            scanf("%d", &data);
+            scanf("%11d", &data);
             createList(&head, data);
         }
 
         printLink(head);
-        newhead = reverseK(head, k);
-        printLink(newhead);
+        head = reverseK(head, k);
+        printLink(head);
     }
 
     return 0;

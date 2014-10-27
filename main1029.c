@@ -2,7 +2,7 @@
 int main1029()
 {
     int a,b,c,d;
-    scanf("%d,%d,%d",&a,&b,&c);
+    scanf("%11d%11d%11d",&a,&b,&c);
 
     if(a>b)
     {

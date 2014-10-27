@@ -14,13 +14,12 @@ int fanxushu(int p)
 }
 int f1098(long n,long *hw)
 {
-    int i=0,m;
+    int i=0;
 
     while(i<10000&&fanxushu(n)!=n)
     {
         i++;
-        m=n+fanxushu(n);
-        n=m;
+        n=n+fanxushu(n);
     }
 
     return i;
@@ -32,9 +31,9 @@ int main1098()
 {
     int c;
     long b,a;
-    scanf("%ld",&a);
+    scanf("%11ld",&a);
     c=f1098(a,&b);
-    printf("%ld  %d ",b,c);
+    printf("%11ld  %11d ",b,c);
     return 0;
 }
 

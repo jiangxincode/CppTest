@@ -27,7 +27,7 @@ int main1135()
     int n; //矩阵的阶
     int k; //代表从1到n*n之间的数
     int i,j; //用于循环变量
-    scanf("%d",&n);
+    scanf("%11d",&n);
 
     if(n%2 == 0) //判断是否为奇数
     {

@@ -4,7 +4,7 @@ int main1114()
     int a[6],b[6]= {0},i,j;
 
     for(i=0; i<6; i++)
-        scanf("%d",&a[i]);
+        scanf("%11d",&a[i]);
 
     for(i=0; i<6; i++)
         for(j=0; j<i; j++)

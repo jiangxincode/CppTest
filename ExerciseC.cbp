@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="ExerciseC" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/ExerciseC" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/ExerciseC" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-std=c99" />
+		</Compiler>
+		<Unit filename="jiangxin.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="jiangxin.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main.h" />
+		<Unit filename="main0000.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0001.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0002.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0003.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0004.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0005.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0006.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0007.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0008.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0009.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0010.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0011.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0012.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0013.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1011.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1013.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1021.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1022.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1023.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1024.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1025.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1026.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1027.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1028.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1029.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1031.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1032.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1033.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1034.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1036.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1037.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1038.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1039.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1041.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1042.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1043.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1044.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1045.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1046.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1047.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1048.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1051.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1052.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1053.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1054.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1055.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1056.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1061.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1062.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1063.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1064.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1065.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1071.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1072.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1073.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1074.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1075.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1081.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1082.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1083.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1084.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1085.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1086.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1091.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1092.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1093.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1094.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1095.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1096.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1097.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1098.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1101.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1102.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1103.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1104.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1105.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1106.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1111.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1112.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1113.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1114.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1115.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1116.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1117.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1121.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1122.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1123.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1124.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1125.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1131.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1132.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1133.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1134.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1135.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1136.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1137.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1141.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1142.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1143.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1144.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1145.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1146.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1147.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1148.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1151.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1152.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1153.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1154.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1155.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1161.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1162.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main1171.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

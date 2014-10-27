@@ -2,10 +2,10 @@
 #include<math.h>
 int main1071()
 {
-    double term=1,s,x;
+    double term,s,x;
     int n=1;
     printf("x=");
-    scanf("%lf",&x);
+    scanf("%20lf",&x);
     s=x;
     term=x;
 

@@ -40,17 +40,17 @@ int mo(int m, int y)
 }
 int main1075()
 {
-    int i,j,y,m,d,s=0,t,week;
+    int i,j,y,m,d,s=0,week;
     printf("year=");
-    scanf("%d",&y);
+    scanf("%11d",&y);
     printf("month=");
-    scanf("%d",&m);
+    scanf("%11d",&m);
     printf("day=");
-    scanf("%d",&d);
+    scanf("%11d",&d);
 
     for(i=1990; i<y; i++)
     {
-        t=ye(i);
+        int t=ye(i);
 
         if(t==1)
             s=s+366;

@@ -20,7 +20,7 @@ int main1105()
     double a,b;
     int n;
     printf("in put n");
-    scanf("%d",&n);
+    scanf("%11d",&n);
     a=-PI/2;
     b=PI/2;
     printf("%lf",f1105(a,b,n,cos));

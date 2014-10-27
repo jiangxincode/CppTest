@@ -1,42 +1,20 @@
-#include<stdio.h>
-#include<math.h>
+/**
+ * 实验5 实验内容第2题
+ */
+
+#include <stdio.h>
+#include <math.h>
+#include "jiangxin.h"
+
 int main1064()
 {
-    int p,c,k,t,r;
-    double m;
-    p=2;
-    c=5;
-
-    while(c>0)
+    for(int i=0;i<20;i++)
     {
-        k=2;
-        m=pow(2,p)-1;
-        t=0;
-        r=0;
-
-        while(k<p)
+        int m = pow(2,i)-1;
+        if(prime(i) && prime(m))
         {
-            if(p%k==0)
-                t=t+1;
-
-            k=k+1;
+            printf("%d ",m);
         }
-
-        while(k<m)
-        {
-            if((int)m%k==0)
-                r=r+1;
-
-            k=k+1;
-        }
-
-        if(t==0&&r==0)
-        {
-            printf("%d \n",(int)m);
-            c=c-1;
-        }
-
-        p=p+1;
     }
 
     return 0;

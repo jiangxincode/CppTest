@@ -2,11 +2,10 @@
 #include<math.h>
 int search(int x[],int low,int high,int key)
 {
-    int mid;
 
     while(low<=high)
     {
-        mid=(low+high)/2;
+        int mid=(low+high)/2;
 
         if(x[mid]==key)
             return mid;
@@ -22,7 +21,7 @@ int main1121(void)
 {
     int xx[]= {5,23,28,34,43,45,56,60,67,90},i,key;
     printf("Input an int number:\n");
-    scanf("%d",&key);
+    scanf("%11d",&key);
     i=search(xx,0,9,key);
 
     if(i==-1)

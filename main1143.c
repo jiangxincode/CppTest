@@ -23,7 +23,7 @@ int main1143()
 {
     int count,i;
     char a[100]= {0};
-    gets(a);
+    fgets(a,100,stdin);
     count=f1143(a);
 
     for(i=0; a[i]; i++)

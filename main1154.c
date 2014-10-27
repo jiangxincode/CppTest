@@ -10,7 +10,7 @@ int main1154()
 {
     int x;
     printf("Please input a date like \"2011-12-24\"\n");
-    scanf("%d-%d-%d",&s1.year,&s1.month,&s1.day);
+    scanf("%11d-%11d-%11d",&s1.year,&s1.month,&s1.day);
 
     if(s1.year<0)
         printf("An error");

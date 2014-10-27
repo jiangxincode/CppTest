@@ -7,6 +7,7 @@
 void f_new(void);
 void f_save(void);
 void f_open(void);
+
 typedef struct
 {
     int type;
@@ -31,7 +32,7 @@ int main1171()
          "\t*************************************************\n"
          "\n\n\n");
     puts("Input e if you want exit, Otherwise ANY KEY:");
-    scanf("%s",a);
+    scanf("%19s",a);
 
     if(!strncmp(a,"e",1))
     {
@@ -52,13 +53,13 @@ int main1171()
              "\t             6.退    出           \n"
              "\t**********************************\n"
              "\tPlease choose the function:\n\n\n\n\n");
-        scanf("%d",&m);
+        scanf("%11d",&m);
 
         while(m<1 || m>6)
         {
             printf("Error!\n");
             printf("Please input again\n");
-            scanf("%d",&m);
+            scanf("%11d",&m);
         };
 
         switch(m)
@@ -86,7 +87,7 @@ int main1171()
             puts("    本程序的一切解释权归蒋鑫所有");
             puts("    copyright  @  蒋鑫(JX)");
             puts("Continue?(y/n)");
-            scanf("%s",a);
+            scanf("%19s",a);
 
             if(strncmp("n",a,1)==0)
                 return 0;
@@ -105,7 +106,7 @@ int main1171()
             puts("    若果你对本程序有任何建议请发送到1027980638@qq.com.");
             puts("\t\t\t\t   by jiangxin");
             puts("Continue?(y/n)");
-            scanf("%s",a);
+            scanf("%19s",a);
 
             if(strncmp("n",a,1)==0)
                 return 0;
@@ -121,7 +122,7 @@ int main1171()
 
     return 0;
 }
-/*void f_new(void)
+/**
 　　新建文件函数。功能：清空data数组中数据(例如：将全局变量count置为0表示数组中有效记录数量位0),提示用户进入建立新记录的输入状态，
 给出每一输入项目的提示信息，接收用户输入的数据并保存到data数组中。data数组中每增加一条记录count变量自增1。
 允许用户一次性输入多条记录，输入结束后返回上层函数。*/
@@ -129,37 +130,37 @@ void f_new(void)
 {
     printf("You can input the data following the reference.\n");
     printf("How many pieces of your data?\n");
-    scanf("%ld",&n);
+    scanf("%11ld",&n);
 
     for(count=1; count<=n; count++)
     {
         printf("\n\nNow you can input the data %ld\n",count);
         printf("Please input the type:\n");
         printf("1 for 亲属\n2 for 朋友\n3 for 同事\n4 for 同学\n5 for 其它\n");
-        scanf("%d",&data[count].type);
+        scanf("%11d",&data[count].type);
         printf("Please input the name:\n(In Chinese!)\n");
 
         if(count==1)
             printf("If you don't understand why you should input in Chinese,please input why,otherwise input according reference:\n");
 
-        scanf("%s",data[count].name);
+        scanf("%19s",data[count].name);
 
         if(strncmp("why",data[count].name,3)==0)
         {
             printf("其实这是由于我自己的技术能力有限，如果你输入英文名字的话，在以后的保存和输出时很难实现对齐功能，因为对于普通的中国人来说");
             printf("名字只是两个或者三个字（少数民族同胞除外），这样利用制表符很容易实现对齐功能，而用英文名字字母数量不同，很难对齐。");
             printf("\n现在可以输入了吧。用中文！！\n");
-            scanf("%s",data[count].name);
+            scanf("%19s",data[count].name);
         }
 
         printf("Please input the sex:\n");
         printf("m for 男\nf for 女\n");
-        scanf("%s",data[count].sex);
+        scanf("%1s",data[count].sex);
         printf("Please input the phone:\n");
-        scanf("%s",data[count].phone);
+        scanf("%19s",data[count].phone);
     }
 }
-/*void f_save(void)
+/**
 保存文件函数
 功能：将data数组中全部有效记录（记录数保存在count中）保存到磁盘数据文件中(文件名及保存位置在运行程序时由用户输入)。
 保存完毕后显示报告信息，返回上层函数。*/
@@ -168,7 +169,7 @@ void f_save(void)
     FILE *fp;
     char TYPE[20],SEX[10];
     printf("Input name of the file you want to save this data in:\n");
-    scanf("%s",a);
+    scanf("%19s",a);
     fp=fopen(a,"w");
 
     for(count=1; count<=n; count++)
@@ -209,7 +210,7 @@ void f_save(void)
     fclose(fp);
     printf("You have saved the data successfully!\n");
 }
-/*void f_open(void)
+/**
 打开文件函数。
 功能：清空data数组(count变量置为0)。从指定盘的数据文件((文件名及保存位置在运行程序时由用户输入)中读入全部数据保存到data数组。
 data数组每存入一条新记录count变量自增1 。将新读入的data数组中全部数据显示在屏幕上（一行显示一条记录）。按任意键则返回上层函数。*/
@@ -218,7 +219,7 @@ void f_open(void)
     FILE *fp;
     char TYPE[20],SEX[10];
     printf("Input the name of the file you want open:\n");
-    scanf("%s",a);
+    scanf("%19s",a);
 
     if((fp=fopen(a,"r"))==NULL)
     {
@@ -226,7 +227,7 @@ void f_open(void)
     }
 
     printf("Hao many pieces of data you want to open?\n");
-    scanf("%ld",&n);
+    scanf("%11ld",&n);
     printf("关系\t名字\t性别\t手机\n");
 
     for(count=1; count<=n; count++)
@@ -261,7 +262,7 @@ void f_open(void)
         else
             strcpy(SEX,"未知");
 
-        fscanf(fp,"%s%s%s%s",TYPE,data[count].name,SEX,data[count].phone);
+        fscanf(fp,"%19s%19s%1s%19s",TYPE,data[count].name,SEX,data[count].phone);
         printf("%s\t%s\t%s\t%s\n",TYPE,data[count].name,SEX,data[count].phone);
     }
 

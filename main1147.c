@@ -2,7 +2,7 @@
 #include<string.h>
 #include<ctype.h>
 
-int  delete(char s[][10],int n)
+int  my_delete(char s[][10],int n)
 {
     int i,j,k;
 
@@ -29,7 +29,7 @@ int main1147()
 {
     char a[][10]= {"a%1","_a12","aaa","$ss","1sss"};
     int d,i;
-    d=delete(a,5);
+    d=my_delete(a,5);
 
     for(i=0; i<d; i++)
         puts(a[i]);

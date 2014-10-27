@@ -3,14 +3,14 @@
 
 double integral(double a,double b,double n)
 {
-    double d,e,c,h,m=0;
+    double e,h,m=0;
     int i;
     h=(b-a)/n;
 
     for(i=1; i<n; i++)
     {
-        d=a+i*h;
-        c=cos(d)+sin(d);
+        double d=a+i*h;
+        double c=cos(d)+sin(d);
         m=m+c;
     }
 
@@ -20,7 +20,7 @@ double integral(double a,double b,double n)
 int main1096()
 {
     double t,p,k;
-    scanf("%lf%lf%lf",&t,&p,&k);
+    scanf("%20lf%20lf%20lf",&t,&p,&k);
     printf("s=%lf",integral(t,p,k));
     return 0;
 }

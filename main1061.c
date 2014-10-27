@@ -1,27 +1,25 @@
-#include<stdio.h>
-#include<math.h>
+/**
+ * 实验4 实验内容第6题 分解合数
+ */
+#include <stdio.h>
+#include <math.h>
 
 int main1061()
 {
-    unsigned int a,s,n=2;
+    unsigned int num,n=2;
     printf("Please input a int number;\n");
-    scanf("%d",&a);
+    scanf("%12u",&num);
 
-    if(a>=100)
-        printf("Please input another smaller int number:\n");
-    else
+    while(n<=num)
     {
-        s=a;
-
-        while(n<=a)
+        if(num%n==0)
         {
-            if(s%n==0)
-            {
-                printf("%d\n",n);
-                s=s/n;
-            }
-            else
-                n++;
+            printf("%u\n",n);
+            num=num/n;
+        }
+        else
+        {
+            n++;
         }
     }
 

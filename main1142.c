@@ -6,7 +6,7 @@ int main1142()
 {
     int a[26]= {0},i;
     char s[100],ch;
-    gets(s);
+    fgets(s,100,stdin);
 
     for(i=0; s[i]; i++)
         if(isalpha(s[i]))

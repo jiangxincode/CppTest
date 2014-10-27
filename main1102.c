@@ -20,7 +20,7 @@ int main1102()
 {
     int x;
     printf("in put a number:");
-    scanf("%d",&x);
+    scanf("%11d",&x);
     dec2hex(x);
     return 0;
 }

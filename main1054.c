@@ -6,13 +6,13 @@ int main1054()
     int a,max,sum,n=1;
     float ave;
     printf("Input ten int number:\n");
-    scanf("%d",&a);
+    scanf("%11d",&a);
     max=a;
     sum=a;
 
     while(n<=9)
     {
-        scanf("%d",&a);
+        scanf("%11d",&a);
 
         if(a>max)
             max=a;

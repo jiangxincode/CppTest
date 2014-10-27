@@ -14,14 +14,12 @@ int find(int n)
 }
 int main1091()
 {
-    int n,d;
+    int n;
 
     for(n=1000; n<10000; n++)
     {
-        d=find(n);
-
-        if(d!=0)
-            printf("%d----%d\n",n,d);
+        if(find(n)!=0)
+            printf("%d----%d\n",n,find(n));
     }
 
     return 0;

@@ -2,7 +2,7 @@
 int main1033()
 {
     unsigned int a,b,n,mode;
-    scanf("%u",&a);
+    scanf("%10u",&a);
     n=16;
     b=a;
     mode=0x8000;

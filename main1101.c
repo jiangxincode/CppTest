@@ -15,7 +15,7 @@ int main1101()
     double x;
     int y;
     printf("in put x,y  ");
-    scanf("%lf%d",&x,&y);
+    scanf("%20lf%11d",&x,&y);
     printf("%lf",power(x,y));
     return 0;
 }

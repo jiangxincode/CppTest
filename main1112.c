@@ -15,7 +15,7 @@ int main1112()
 {
     double x,y,s=0;
     int n=1;
-    scanf("%lf",&x);
+    scanf("%20lf",&x);
 
     do
     {

@@ -17,7 +17,7 @@ NODE *create(void)
     do
     {
         printf("Input the date of the member %d:\n",++i);
-        scanf("%d",&num);
+        scanf("%11d",&num);
 
         if(num==0)
             break;
@@ -53,20 +53,18 @@ void display1161(NODE *head)
 
     while(p!=NULL)
     {
-        printf("The date of the member %d:%d\tThe first address:%x \n",++i,p->x,p);
+        printf("The date of the member %d:%d\tThe first address:%s \n",++i,p->x,p);
         p=p->next;
     }
 }
 void free_all(NODE *head)
 {
-    NODE *p1=NULL;
-
     if(head==NULL)
         return;
 
     while(head!=NULL)
     {
-        p1=head;
+        NODE *p1=head;
         head=head->next;
         free(p1);
     }

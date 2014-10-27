@@ -2,7 +2,7 @@
 int main1113()
 {
     int t,m,i,j,a,x[10]= {0,1,2,3,4,5,6,7,8,9};
-    scanf("%d%d",&t,&m);
+    scanf("%11d%11d",&t,&m);
 
     if(t==0)
         for(i=0; i<m; i++)

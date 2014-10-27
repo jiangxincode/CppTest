@@ -36,7 +36,7 @@ int main0011()
 {
     char str[MAX_LENGTH];
     char *reverse;
-    scanf("%s",str);
+    scanf("%99s",str);
     printf("%s\n",str);
     reverse = reverse_str(str);
     printf("%s\n",reverse);

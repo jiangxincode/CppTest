@@ -1,26 +1,15 @@
-#include<stdio.h>
-#include<math.h>
+#include <stdio.h>
+#include <math.h>
+#include "jiangxin.h"
+
 int main1063()
 {
-    int n,a,i=2;
-
-    while(i<=100)
+    for(int i=0;i<1000;i++)
     {
-        a=2;
-        n=0;
-
-        while(a<i)
+        if(prime(i))
         {
-            if(i%a==0)
-                n=n+1;
-
-            a=a+1;
-        }
-
-        if(n==0)
             printf("%d ",i);
-
-        i=i+1;
+        }
     }
 
     return 0;
