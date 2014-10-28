@@ -50,10 +50,8 @@ public:
     IntSet incorporate2(IntSet x,IntSet y);
 };
 IntSet::IntSet() {}
-IntSet::IntSet(set<int> x)
-{
-    int_set = x;
-}
+IntSet::IntSet(set<int> x):int_set(x){}
+
 void IntSet::insert(int x)
 {
     int_set.insert(x);

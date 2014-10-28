@@ -66,6 +66,7 @@ void freeTG(TG* total)
 
         count++;
     }
+    free(an);
 }
 
 int main0511()

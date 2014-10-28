@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1414395650 source:e:\temp\cpp\test\main.cpp
+1414457733 source:e:\temp\cpp\test\main.cpp
 	<iostream>
 	"main.h"
 
@@ -15,13 +15,12 @@
 	<iomanip>
 	"binary_search_tree.h"
 
-1414395884 source:e:\temp\cpp\test\main003.cpp
+1414396172 source:e:\temp\cpp\test\main003.cpp
 	<iostream>
 	<cstdlib>
 	"linked_list.h"
 	"seq_list.h"
 	"static_list.h"
-	<iostream>
 
 1413597951 source:e:\temp\cpp\test\main004.cpp
 	<iostream>
@@ -84,7 +83,7 @@
 1413597951 source:e:\temp\cpp\test\main017.cpp
 	<iostream>
 
-1413597949 source:e:\temp\cpp\test\main1000.cpp
+1414461665 source:e:\temp\cpp\test\main1000.cpp
 	"intset.h"
 	<iostream>
 	<iostream>
@@ -109,7 +108,7 @@
 	<iostream>
 	<string>
 
-1413597952 source:e:\temp\cpp\test\main0503.cpp
+1414461573 source:e:\temp\cpp\test\main0503.cpp
 	<iostream>
 	<string>
 	<cstdio>
@@ -138,7 +137,7 @@
 	<string>
 	<algorithm>
 
-1413597950 source:e:\temp\cpp\test\main0511.cpp
+1414461371 source:e:\temp\cpp\test\main0511.cpp
 	<stdio.h>
 	<stdlib.h>
 	<malloc.h>
@@ -428,11 +427,11 @@
 	<iostream>
 	<cstdlib>
 
-1413597948 source:e:\temp\cpp\test\main0534.cpp
+1414461195 source:e:\temp\cpp\test\main0534.cpp
 	<iostream>
 	<cstdlib>
 
-1413597948 source:e:\temp\cpp\test\main0535.cpp
+1414461153 source:e:\temp\cpp\test\main0535.cpp
 	<iostream>
 	<cstdlib>
 
@@ -459,7 +458,7 @@
 	<vector>
 	<deque>
 
-1413597950 source:e:\temp\cpp\test\main0539.cpp
+1414461273 source:e:\temp\cpp\test\main0539.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -489,12 +488,12 @@
 
 1409827566 e:\temp\cpp\test\staticlist.h
 
-1413597950 source:e:\temp\cpp\test\main0542.cpp
+1414461011 source:e:\temp\cpp\test\main0542.cpp
 	<iostream>
 	<string>
-	<string.h>
-	<stdlib.h>
-	<stdio.h>
+	<cstring>
+	<cstdlib>
+	<cstdio>
 
 1414395438 e:\temp\cpp\test\main.h
 

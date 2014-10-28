@@ -64,6 +64,8 @@ int main0535()
         if(bsearch((minArr+i),maxArr,maxSize,sizeof(int),comp))
         {
             cout << "True";
+            delete []maxArr;
+            delete []minArr;
             return 1;
         }
     }

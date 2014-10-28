@@ -32,6 +32,7 @@ int main0534()
     {
         cout << place[i] << " ";
     }
+    delete []arr;
 
     return 0;
 }

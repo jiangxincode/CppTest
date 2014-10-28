@@ -43,6 +43,7 @@ void shift1(char *str, int length, int shift_bit) //less time,more space
     {
         str[i] = result[i];
     }
+    delete []result;
 }
 
 void shift2(char *str, int length, int shift_bit) //less space, more time

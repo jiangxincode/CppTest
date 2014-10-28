@@ -32,7 +32,7 @@ int main0503()
     cout << "Test cin.get(字符数组，接收的字符数):" << endl;
     char array1[20];
     cout << "Input a char array:" << endl;
-    ch = cin.get(); //把之前输入的回车符号滤去
+    cin.get(); //把之前输入的回车符号滤去
     cin.get(array1,10);
     cout << array1 << "\n" << endl;
     //注:cin.get(无参数)主要用来舍弃输入流中不需要的字符 或者舍弃回车
