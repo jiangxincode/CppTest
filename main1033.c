@@ -1,4 +1,4 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 int main1033()
 {
     unsigned int a,b,n,mode;

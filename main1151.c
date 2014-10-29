@@ -1,5 +1,5 @@
-/**
- * ½Ì²ÄÊµÑé13 µÚ7Ìâ
+ï»¿/**
+ * æ•™æå®éªŒ13 ç¬¬7é¢˜
  */
 #include <stdio.h>
 #include <string.h>
@@ -20,7 +20,7 @@ int stoi(char *str)
     {
         if(!isdigit(str[i]))
         {
-            return -1; //·ÇÊı×Ö×Ö·û
+            return -1; //éæ•°å­—å­—ç¬¦
         }
 
         result = result*10+(str[i]-'0');

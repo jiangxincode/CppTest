@@ -1,4 +1,4 @@
-#include<stdio.h>
+﻿#include<stdio.h>
 int main1114()
 {
     int a[6],b[6]= {0},i,j;

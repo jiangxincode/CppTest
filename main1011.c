@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include<math.h>
 
 int main10111(void)
@@ -12,7 +12,7 @@ int main10111(void)
     return 0;
 }
 
-int main10112(void) //´òÓ¡³Ë·¨±í
+int main10112(void) //æ‰“å°ä¹˜æ³•è¡¨
 {
     int row,col,result;
 
@@ -44,7 +44,7 @@ float main10114()
     float a,b;
     scanf("%20f",&a);
     b=sqrt(a);
-    printf("%fµÄÆ½·½¸ùÊÇ£º%f",a,b);
+    printf("%fçš„å¹³æ–¹æ ¹æ˜¯ï¼š%f",a,b);
     return 0;
 }
 

@@ -1,4 +1,4 @@
-#include<stdio.h>
+﻿#include<stdio.h>
 int *count1111(char *ch_p)
 {
     static int num=0;

@@ -1,6 +1,6 @@
-/*
-ÃÀÍÅÍø2014ÄêÕĞÆ¸±ÊÊÔÌâ
-ÀûÓÃÁ½¸östackÄ£Äâqueue
+ï»¿/*
+ç¾å›¢ç½‘2014å¹´æ‹›è˜ç¬”è¯•é¢˜
+åˆ©ç”¨ä¸¤ä¸ªstackæ¨¡æ‹Ÿqueue
 */
 
 #include <stdio.h>
@@ -14,7 +14,7 @@ typedef struct stack
 } stack;
 
 /**
- * Èë¶Ó²Ù×÷
+ * å…¥é˜Ÿæ“ä½œ
  *
  * T = O(1)
  *
@@ -25,7 +25,7 @@ void pushQueue(stack *s1, int data)
 }
 
 /**
- * ³ö¶Ó²Ù×÷
+ * å‡ºé˜Ÿæ“ä½œ
  *
  * T = O(n)
  *
@@ -59,7 +59,7 @@ int main0008(void)
     while(scanf("%11d", &n) != EOF)
     {
         stack *s1, *s2;
-        // ³õÊ¼»¯
+        // åˆå§‹åŒ–
         s1 = (stack *)malloc(sizeof(stack));
         s2 = (stack *)malloc(sizeof(stack));
         s1->top = s2->top = 0;
@@ -68,12 +68,12 @@ int main0008(void)
         {
             scanf("%4s", str);
 
-            if(strcmp(str, "PUSH") == 0)    // Èë¶ÓÁĞ
+            if(strcmp(str, "PUSH") == 0)    // å…¥é˜Ÿåˆ—
             {
                 scanf("%11d", &data);
                 pushQueue(s1, data);
             }
-            else        // ³ö¶ÓÁĞ
+            else        // å‡ºé˜Ÿåˆ—
             {
                 popQueue(s1, s2);
             }

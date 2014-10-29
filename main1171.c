@@ -1,4 +1,4 @@
-#include<stdio.h>
+ï»¿#include<stdio.h>
 #include<math.h>
 #include<ctype.h>
 #include<string.h>
@@ -45,12 +45,12 @@ int main1171()
     {
         puts("\n\n\n\n\n\n\n\n"
              "\t**********************************\n"
-             "\t             1.ÐÂ    ½¨           \n"
-             "\t             2.±£    ´æ           \n"
-             "\t             3.´ò    ¿ª           \n"
-             "\t             4.°æÈ¨ËµÃ÷           \n"
-             "\t             5.Ê¹ÓÃËµÃ÷           \n"
-             "\t             6.ÍË    ³ö           \n"
+             "\t             1.æ–°    å»º           \n"
+             "\t             2.ä¿    å­˜           \n"
+             "\t             3.æ‰“    å¼€           \n"
+             "\t             4.ç‰ˆæƒè¯´æ˜Ž           \n"
+             "\t             5.ä½¿ç”¨è¯´æ˜Ž           \n"
+             "\t             6.é€€    å‡º           \n"
              "\t**********************************\n"
              "\tPlease choose the function:\n\n\n\n\n");
         scanf("%11d",&m);
@@ -78,14 +78,14 @@ int main1171()
 
         case 4:
         {
-            puts("    ±¾³ÌÐòÓÉÄÏ¾©´óÑ§µØÇò¿ÆÑ§Óë¹¤³ÌÑ§ÔºµÄ½¯öÎÖÆ×÷¡£");
-            puts("    Èç¹ûÄãÊ¹ÓÃ±¾³ÌÐò¼´´ú±íÒÑ¾­ÍêÈ«Í¬Òâ±¾Ô¼¶¨£¬·ñÔòÇëÎðÊ¹ÓÃ¡£");
-            puts("    ÇëÄú²»ÒªÎ´¾­ÔÊÐíÉÃ×Ô¸´ÖÆ£¬ÐÞ¸Ä£¬´«²¥±¾³ÌÐò¡£");
-            puts("    ±¾³ÌÐò½öÓÃÓÚ¸öÈËÓéÀÖÑÐ¾¿Ê¹ÓÃ£¬Í¬Ê±±¾³ÌÐòÉÐÔÚµ÷ÊÔÖ®ÖÐ£¬Ò»´ÎÔÚÊ¹ÓÃ¹ý³ÌÖÐ¶ÔÄãÔì³ÉµÄËðÊ§¸Å²»¸ºÔð¡£");
-            puts("    ¾ßÌåËðÊ§°üÀ¨µ«²»ÏÞÓÚ£º");
-            puts("    ×ÊÁÏ¶ªÊ§£¬µçÄÔºÚÆÁ£¬À¶ÆÁ»òËÀ»ú¡£");
-            puts("    ±¾³ÌÐòµÄÒ»ÇÐ½âÊÍÈ¨¹é½¯öÎËùÓÐ");
-            puts("    copyright  @  ½¯öÎ(JX)");
+            puts("    æœ¬ç¨‹åºç”±å—äº¬å¤§å­¦åœ°çƒç§‘å­¦ä¸Žå·¥ç¨‹å­¦é™¢çš„è’‹é‘«åˆ¶ä½œã€‚");
+            puts("    å¦‚æžœä½ ä½¿ç”¨æœ¬ç¨‹åºå³ä»£è¡¨å·²ç»å®Œå…¨åŒæ„æœ¬çº¦å®šï¼Œå¦åˆ™è¯·å‹¿ä½¿ç”¨ã€‚");
+            puts("    è¯·æ‚¨ä¸è¦æœªç»å…è®¸æ“…è‡ªå¤åˆ¶ï¼Œä¿®æ”¹ï¼Œä¼ æ’­æœ¬ç¨‹åºã€‚");
+            puts("    æœ¬ç¨‹åºä»…ç”¨äºŽä¸ªäººå¨±ä¹ç ”ç©¶ä½¿ç”¨ï¼ŒåŒæ—¶æœ¬ç¨‹åºå°šåœ¨è°ƒè¯•ä¹‹ä¸­ï¼Œä¸€æ¬¡åœ¨ä½¿ç”¨è¿‡ç¨‹ä¸­å¯¹ä½ é€ æˆçš„æŸå¤±æ¦‚ä¸è´Ÿè´£ã€‚");
+            puts("    å…·ä½“æŸå¤±åŒ…æ‹¬ä½†ä¸é™äºŽï¼š");
+            puts("    èµ„æ–™ä¸¢å¤±ï¼Œç”µè„‘é»‘å±ï¼Œè“å±æˆ–æ­»æœºã€‚");
+            puts("    æœ¬ç¨‹åºçš„ä¸€åˆ‡è§£é‡Šæƒå½’è’‹é‘«æ‰€æœ‰");
+            puts("    copyright  @  è’‹é‘«(JX)");
             puts("Continue?(y/n)");
             scanf("%19s",a);
 
@@ -97,13 +97,13 @@ int main1171()
 
         case 5:
         {
-            puts("    ±¾³ÌÐò¿ÉÒÔÐÂ½¨£¬´æ´¢£¬´ò¿ªÁªÏµÈËÐÅÏ¢¡£");
-            puts("    ÈôÊÇ´ò¿ªÁªÏµÈËÐÅÏ¢ÔòÐÅÏ¢±ØÐë°´ÕÕ¹Ì¶¨¸ñÊ½£º¹ØÏµ  ÐÕÃû  ÐÔ±ð  ÊÖ»úºÅÂë¡£ÆäÖÐÐÕÃû×îºÃÊÇÒÔÖÐÎÄ´æ´¢µÄ¡£");
-            puts("    ±¾³ÌÐòÖÐÊ¹ÓÃ´óÁ¿ÖÐÎÄÌáÊ¾·û£¬ËùÒÔ½¨ÒéÔÚvcµÈÖ§³ÖÖÐÎÄµÄ±àÒëÆ÷ÖÐÊ¹ÓÃ£¬·ñÔò»áµ¼ÖÂÂÒÂëµÈ´íÎó¡£");
-            puts("    ÔÚ´æ´¢ºÍ´ò¿ªÁªÏµÈËÐÅÏ¢ÎÄ¼þÊ±ÐèÒªÖ¸³öÎÄ¼þÃû£¬´ËÊ±Òª×¢ÒâÊäÈëÎÄ¼þÍØÕ¹Ãû£¬·ñÔò»á´æ´¢»ò´ò¿ªÊ§°Ü¡£");
-            puts("    Ê¹ÓÃÊ±ÇëÑÏ¸ñ°´ÕÕÌáÊ¾Óï²Ù×÷£¬·ñÔò»áÔì³ÉÄúµÄÐÅÏ¢ÊÜËð¡£");
-            puts("    ±¾³ÌÐòÉÐÔÚµ÷ÊÔ½×¶Î£¬³öÏÖ´íÎóÔÚËùÄÑÃâ£¬ÇëÎðÍÂÔã£¡£¡");
-            puts("    Èô¹ûÄã¶Ô±¾³ÌÐòÓÐÈÎºÎ½¨ÒéÇë·¢ËÍµ½1027980638@qq.com.");
+            puts("    æœ¬ç¨‹åºå¯ä»¥æ–°å»ºï¼Œå­˜å‚¨ï¼Œæ‰“å¼€è”ç³»äººä¿¡æ¯ã€‚");
+            puts("    è‹¥æ˜¯æ‰“å¼€è”ç³»äººä¿¡æ¯åˆ™ä¿¡æ¯å¿…é¡»æŒ‰ç…§å›ºå®šæ ¼å¼ï¼šå…³ç³»  å§“å  æ€§åˆ«  æ‰‹æœºå·ç ã€‚å…¶ä¸­å§“åæœ€å¥½æ˜¯ä»¥ä¸­æ–‡å­˜å‚¨çš„ã€‚");
+            puts("    æœ¬ç¨‹åºä¸­ä½¿ç”¨å¤§é‡ä¸­æ–‡æç¤ºç¬¦ï¼Œæ‰€ä»¥å»ºè®®åœ¨vcç­‰æ”¯æŒä¸­æ–‡çš„ç¼–è¯‘å™¨ä¸­ä½¿ç”¨ï¼Œå¦åˆ™ä¼šå¯¼è‡´ä¹±ç ç­‰é”™è¯¯ã€‚");
+            puts("    åœ¨å­˜å‚¨å’Œæ‰“å¼€è”ç³»äººä¿¡æ¯æ–‡ä»¶æ—¶éœ€è¦æŒ‡å‡ºæ–‡ä»¶åï¼Œæ­¤æ—¶è¦æ³¨æ„è¾“å…¥æ–‡ä»¶æ‹“å±•åï¼Œå¦åˆ™ä¼šå­˜å‚¨æˆ–æ‰“å¼€å¤±è´¥ã€‚");
+            puts("    ä½¿ç”¨æ—¶è¯·ä¸¥æ ¼æŒ‰ç…§æç¤ºè¯­æ“ä½œï¼Œå¦åˆ™ä¼šé€ æˆæ‚¨çš„ä¿¡æ¯å—æŸã€‚");
+            puts("    æœ¬ç¨‹åºå°šåœ¨è°ƒè¯•é˜¶æ®µï¼Œå‡ºçŽ°é”™è¯¯åœ¨æ‰€éš¾å…ï¼Œè¯·å‹¿åç³Ÿï¼ï¼");
+            puts("    è‹¥æžœä½ å¯¹æœ¬ç¨‹åºæœ‰ä»»ä½•å»ºè®®è¯·å‘é€åˆ°1027980638@qq.com.");
             puts("\t\t\t\t   by jiangxin");
             puts("Continue?(y/n)");
             scanf("%19s",a);
@@ -123,9 +123,9 @@ int main1171()
     return 0;
 }
 /**
-¡¡¡¡ÐÂ½¨ÎÄ¼þº¯Êý¡£¹¦ÄÜ£ºÇå¿ÕdataÊý×éÖÐÊý¾Ý(ÀýÈç£º½«È«¾Ö±äÁ¿countÖÃÎª0±íÊ¾Êý×éÖÐÓÐÐ§¼ÇÂ¼ÊýÁ¿Î»0),ÌáÊ¾ÓÃ»§½øÈë½¨Á¢ÐÂ¼ÇÂ¼µÄÊäÈë×´Ì¬£¬
-¸ø³öÃ¿Ò»ÊäÈëÏîÄ¿µÄÌáÊ¾ÐÅÏ¢£¬½ÓÊÕÓÃ»§ÊäÈëµÄÊý¾Ý²¢±£´æµ½dataÊý×éÖÐ¡£dataÊý×éÖÐÃ¿Ôö¼ÓÒ»Ìõ¼ÇÂ¼count±äÁ¿×ÔÔö1¡£
-ÔÊÐíÓÃ»§Ò»´ÎÐÔÊäÈë¶àÌõ¼ÇÂ¼£¬ÊäÈë½áÊøºó·µ»ØÉÏ²ãº¯Êý¡£*/
+ã€€ã€€æ–°å»ºæ–‡ä»¶å‡½æ•°ã€‚åŠŸèƒ½ï¼šæ¸…ç©ºdataæ•°ç»„ä¸­æ•°æ®(ä¾‹å¦‚ï¼šå°†å…¨å±€å˜é‡countç½®ä¸º0è¡¨ç¤ºæ•°ç»„ä¸­æœ‰æ•ˆè®°å½•æ•°é‡ä½0),æç¤ºç”¨æˆ·è¿›å…¥å»ºç«‹æ–°è®°å½•çš„è¾“å…¥çŠ¶æ€ï¼Œ
+ç»™å‡ºæ¯ä¸€è¾“å…¥é¡¹ç›®çš„æç¤ºä¿¡æ¯ï¼ŒæŽ¥æ”¶ç”¨æˆ·è¾“å…¥çš„æ•°æ®å¹¶ä¿å­˜åˆ°dataæ•°ç»„ä¸­ã€‚dataæ•°ç»„ä¸­æ¯å¢žåŠ ä¸€æ¡è®°å½•countå˜é‡è‡ªå¢ž1ã€‚
+å…è®¸ç”¨æˆ·ä¸€æ¬¡æ€§è¾“å…¥å¤šæ¡è®°å½•ï¼Œè¾“å…¥ç»“æŸåŽè¿”å›žä¸Šå±‚å‡½æ•°ã€‚*/
 void f_new(void)
 {
     printf("You can input the data following the reference.\n");
@@ -136,7 +136,7 @@ void f_new(void)
     {
         printf("\n\nNow you can input the data %ld\n",count);
         printf("Please input the type:\n");
-        printf("1 for Ç×Êô\n2 for ÅóÓÑ\n3 for Í¬ÊÂ\n4 for Í¬Ñ§\n5 for ÆäËü\n");
+        printf("1 for äº²å±ž\n2 for æœ‹å‹\n3 for åŒäº‹\n4 for åŒå­¦\n5 for å…¶å®ƒ\n");
         scanf("%11d",&data[count].type);
         printf("Please input the name:\n(In Chinese!)\n");
 
@@ -147,23 +147,23 @@ void f_new(void)
 
         if(strncmp("why",data[count].name,3)==0)
         {
-            printf("ÆäÊµÕâÊÇÓÉÓÚÎÒ×Ô¼ºµÄ¼¼ÊõÄÜÁ¦ÓÐÏÞ£¬Èç¹ûÄãÊäÈëÓ¢ÎÄÃû×ÖµÄ»°£¬ÔÚÒÔºóµÄ±£´æºÍÊä³öÊ±ºÜÄÑÊµÏÖ¶ÔÆë¹¦ÄÜ£¬ÒòÎª¶ÔÓÚÆÕÍ¨µÄÖÐ¹úÈËÀ´Ëµ");
-            printf("Ãû×ÖÖ»ÊÇÁ½¸ö»òÕßÈý¸ö×Ö£¨ÉÙÊýÃñ×åÍ¬°û³ýÍâ£©£¬ÕâÑùÀûÓÃÖÆ±í·ûºÜÈÝÒ×ÊµÏÖ¶ÔÆë¹¦ÄÜ£¬¶øÓÃÓ¢ÎÄÃû×Ö×ÖÄ¸ÊýÁ¿²»Í¬£¬ºÜÄÑ¶ÔÆë¡£");
-            printf("\nÏÖÔÚ¿ÉÒÔÊäÈëÁË°É¡£ÓÃÖÐÎÄ£¡£¡\n");
+            printf("å…¶å®žè¿™æ˜¯ç”±äºŽæˆ‘è‡ªå·±çš„æŠ€æœ¯èƒ½åŠ›æœ‰é™ï¼Œå¦‚æžœä½ è¾“å…¥è‹±æ–‡åå­—çš„è¯ï¼Œåœ¨ä»¥åŽçš„ä¿å­˜å’Œè¾“å‡ºæ—¶å¾ˆéš¾å®žçŽ°å¯¹é½åŠŸèƒ½ï¼Œå› ä¸ºå¯¹äºŽæ™®é€šçš„ä¸­å›½äººæ¥è¯´");
+            printf("åå­—åªæ˜¯ä¸¤ä¸ªæˆ–è€…ä¸‰ä¸ªå­—ï¼ˆå°‘æ•°æ°‘æ—åŒèƒžé™¤å¤–ï¼‰ï¼Œè¿™æ ·åˆ©ç”¨åˆ¶è¡¨ç¬¦å¾ˆå®¹æ˜“å®žçŽ°å¯¹é½åŠŸèƒ½ï¼Œè€Œç”¨è‹±æ–‡åå­—å­—æ¯æ•°é‡ä¸åŒï¼Œå¾ˆéš¾å¯¹é½ã€‚");
+            printf("\nçŽ°åœ¨å¯ä»¥è¾“å…¥äº†å§ã€‚ç”¨ä¸­æ–‡ï¼ï¼\n");
             scanf("%19s",data[count].name);
         }
 
         printf("Please input the sex:\n");
-        printf("m for ÄÐ\nf for Å®\n");
+        printf("m for ç”·\nf for å¥³\n");
         scanf("%1s",data[count].sex);
         printf("Please input the phone:\n");
         scanf("%19s",data[count].phone);
     }
 }
 /**
-±£´æÎÄ¼þº¯Êý
-¹¦ÄÜ£º½«dataÊý×éÖÐÈ«²¿ÓÐÐ§¼ÇÂ¼£¨¼ÇÂ¼Êý±£´æÔÚcountÖÐ£©±£´æµ½´ÅÅÌÊý¾ÝÎÄ¼þÖÐ(ÎÄ¼þÃû¼°±£´æÎ»ÖÃÔÚÔËÐÐ³ÌÐòÊ±ÓÉÓÃ»§ÊäÈë)¡£
-±£´æÍê±ÏºóÏÔÊ¾±¨¸æÐÅÏ¢£¬·µ»ØÉÏ²ãº¯Êý¡£*/
+ä¿å­˜æ–‡ä»¶å‡½æ•°
+åŠŸèƒ½ï¼šå°†dataæ•°ç»„ä¸­å…¨éƒ¨æœ‰æ•ˆè®°å½•ï¼ˆè®°å½•æ•°ä¿å­˜åœ¨countä¸­ï¼‰ä¿å­˜åˆ°ç£ç›˜æ•°æ®æ–‡ä»¶ä¸­(æ–‡ä»¶ååŠä¿å­˜ä½ç½®åœ¨è¿è¡Œç¨‹åºæ—¶ç”±ç”¨æˆ·è¾“å…¥)ã€‚
+ä¿å­˜å®Œæ¯•åŽæ˜¾ç¤ºæŠ¥å‘Šä¿¡æ¯ï¼Œè¿”å›žä¸Šå±‚å‡½æ•°ã€‚*/
 void f_save(void)
 {
     FILE *fp;
@@ -177,32 +177,32 @@ void f_save(void)
         switch(data[count].type)
         {
         case 1:
-            strcpy(TYPE,"Ç×Êô");
+            strcpy(TYPE,"äº²å±ž");
             break;
 
         case 2:
-            strcpy(TYPE,"ÅóÓÑ");
+            strcpy(TYPE,"æœ‹å‹");
             break;
 
         case 3:
-            strcpy(TYPE,"Í¬ÊÂ");
+            strcpy(TYPE,"åŒäº‹");
             break;
 
         case 4:
-            strcpy(TYPE,"Í¬Ñ§");
+            strcpy(TYPE,"åŒå­¦");
             break;
 
         default:
-            strcpy(TYPE,"ÆäËû");
+            strcpy(TYPE,"å…¶ä»–");
             break;
         }
 
         if(strncmp(data[count].sex,"m",1)==0)
-            strcpy(SEX,"ÄÐ");
+            strcpy(SEX,"ç”·");
         else if(strncmp(data[count].sex,"f",1)==0)
-            strcpy(SEX,"Å®");
+            strcpy(SEX,"å¥³");
         else
-            strcpy(SEX,"Î´Öª");
+            strcpy(SEX,"æœªçŸ¥");
 
         fprintf(fp,"%s\t%s\t%s\t%s\n",TYPE,data[count].name,SEX,data[count].phone);
     }
@@ -211,9 +211,9 @@ void f_save(void)
     printf("You have saved the data successfully!\n");
 }
 /**
-´ò¿ªÎÄ¼þº¯Êý¡£
-¹¦ÄÜ£ºÇå¿ÕdataÊý×é(count±äÁ¿ÖÃÎª0)¡£´ÓÖ¸¶¨ÅÌµÄÊý¾ÝÎÄ¼þ((ÎÄ¼þÃû¼°±£´æÎ»ÖÃÔÚÔËÐÐ³ÌÐòÊ±ÓÉÓÃ»§ÊäÈë)ÖÐ¶ÁÈëÈ«²¿Êý¾Ý±£´æµ½dataÊý×é¡£
-dataÊý×éÃ¿´æÈëÒ»ÌõÐÂ¼ÇÂ¼count±äÁ¿×ÔÔö1 ¡£½«ÐÂ¶ÁÈëµÄdataÊý×éÖÐÈ«²¿Êý¾ÝÏÔÊ¾ÔÚÆÁÄ»ÉÏ£¨Ò»ÐÐÏÔÊ¾Ò»Ìõ¼ÇÂ¼£©¡£°´ÈÎÒâ¼üÔò·µ»ØÉÏ²ãº¯Êý¡£*/
+æ‰“å¼€æ–‡ä»¶å‡½æ•°ã€‚
+åŠŸèƒ½ï¼šæ¸…ç©ºdataæ•°ç»„(countå˜é‡ç½®ä¸º0)ã€‚ä»ŽæŒ‡å®šç›˜çš„æ•°æ®æ–‡ä»¶((æ–‡ä»¶ååŠä¿å­˜ä½ç½®åœ¨è¿è¡Œç¨‹åºæ—¶ç”±ç”¨æˆ·è¾“å…¥)ä¸­è¯»å…¥å…¨éƒ¨æ•°æ®ä¿å­˜åˆ°dataæ•°ç»„ã€‚
+dataæ•°ç»„æ¯å­˜å…¥ä¸€æ¡æ–°è®°å½•countå˜é‡è‡ªå¢ž1 ã€‚å°†æ–°è¯»å…¥çš„dataæ•°ç»„ä¸­å…¨éƒ¨æ•°æ®æ˜¾ç¤ºåœ¨å±å¹•ä¸Šï¼ˆä¸€è¡Œæ˜¾ç¤ºä¸€æ¡è®°å½•ï¼‰ã€‚æŒ‰ä»»æ„é”®åˆ™è¿”å›žä¸Šå±‚å‡½æ•°ã€‚*/
 void f_open(void)
 {
     FILE *fp;
@@ -228,39 +228,39 @@ void f_open(void)
 
     printf("Hao many pieces of data you want to open?\n");
     scanf("%11ld",&n);
-    printf("¹ØÏµ\tÃû×Ö\tÐÔ±ð\tÊÖ»ú\n");
+    printf("å…³ç³»\tåå­—\tæ€§åˆ«\tæ‰‹æœº\n");
 
     for(count=1; count<=n; count++)
     {
         switch(data[count].type)
         {
         case 1:
-            strcpy(TYPE,"Ç×Êô");
+            strcpy(TYPE,"äº²å±ž");
             break;
 
         case 2:
-            strcpy(TYPE,"ÅóÓÑ");
+            strcpy(TYPE,"æœ‹å‹");
             break;
 
         case 3:
-            strcpy(TYPE,"Í¬ÊÂ");
+            strcpy(TYPE,"åŒäº‹");
             break;
 
         case 4:
-            strcpy(TYPE,"Í¬Ñ§");
+            strcpy(TYPE,"åŒå­¦");
             break;
 
         default:
-            strcpy(TYPE,"ÆäËû");
+            strcpy(TYPE,"å…¶ä»–");
             break;
         }
 
         if(strncmp(data[count].sex,"m",1)==0)
-            strcpy(SEX,"ÄÐ");
+            strcpy(SEX,"ç”·");
         else if(strncmp(data[count].sex,"f",1)==0)
-            strcpy(SEX,"Å®");
+            strcpy(SEX,"å¥³");
         else
-            strcpy(SEX,"Î´Öª");
+            strcpy(SEX,"æœªçŸ¥");
 
         fscanf(fp,"%19s%19s%1s%19s",TYPE,data[count].name,SEX,data[count].phone);
         printf("%s\t%s\t%s\t%s\n",TYPE,data[count].name,SEX,data[count].phone);

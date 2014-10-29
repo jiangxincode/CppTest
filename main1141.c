@@ -1,16 +1,16 @@
-/*
-¡¾³ÌÐò¹¦ÄÜ¡¿
- replacewordº¯ÊýµÄ¹¦ÄÜÊÇ¶ÔsÖ¸ÏòµÄÊý×éËù´æ´¢µÄÒ»¸öÓ¢ÎÄ¾ä×ÓÖÐµÄÃ¿¸öµ¥´Ê×÷ÈçÏÂ´¦Àí£º
- ÔÚword_tabÊý×éÖÐ²éÕÒ¸Ãµ¥´Ê£¬ÈôÎ´ÕÒµ½Ôò±£³ÖÔ­µ¥´Ê²»±ä£»
- ÈôÕÒµ½ÔòÓÃword_tabÊý×éÖÐ¸Ãµ¥´ÊºóÃæµÄµÚÒ»¸öµ¥´ÊÌæ»»¾ä×ÓÖÐµÄÔ­µ¥´Ê
- £¨Èç¹û¸Ãµ¥´ÊÊÇword_tabÊý×éÖÐµÄ×îºóÒ»¸öµ¥´ÊÔòÓÃµÚÒ»¸öµ¥´ÊÌæ»»£©¡£
-¡¾²âÊÔÊý¾ÝÓëÔËÐÐ½á¹û¡¿
- ²âÊÔÊý¾Ý£ºI accuse your mistakes.
- Êä³ö½á¹û£ºI forgive your mistakes.
-¡¾ÒªÇó¡¿
-1£®¸ù¾ÝÌâÄ¿ÒªÇó¼°³ÌÐòÖÐÓï¾äÖ®¼äµÄÂß¼­¹ØÏµ¶Ô³ÌÐòÖÐµÄ´íÎó½øÐÐÐÞ¸Ä¡£
-2£®¸Ä´íÊ±£¬¿ÉÒÔÐÞ¸ÄÓï¾äÖÐµÄÒ»²¿·ÖÄÚÈÝ£¬µ÷ÕûÓï¾ä´ÎÐò£¬
-   Ôö¼ÓÉÙÁ¿µÄÉùÃ÷»ò±àÒëÔ¤´¦ÀíÃüÁî£¬µ«²»ÄÜÔö¼ÓÆäËûÓï¾ä£¬Ò²²»ÄÜÉ¾È¥ÕûÌõÓï¾ä¡£
+ï»¿/*
+ã€ç¨‹åºåŠŸèƒ½ã€‘
+ replacewordå‡½æ•°çš„åŠŸèƒ½æ˜¯å¯¹sæŒ‡å‘çš„æ•°ç»„æ‰€å­˜å‚¨çš„ä¸€ä¸ªè‹±æ–‡å¥å­ä¸­çš„æ¯ä¸ªå•è¯ä½œå¦‚ä¸‹å¤„ç†ï¼š
+ åœ¨word_tabæ•°ç»„ä¸­æŸ¥æ‰¾è¯¥å•è¯ï¼Œè‹¥æœªæ‰¾åˆ°åˆ™ä¿æŒåŽŸå•è¯ä¸å˜ï¼›
+ è‹¥æ‰¾åˆ°åˆ™ç”¨word_tabæ•°ç»„ä¸­è¯¥å•è¯åŽé¢çš„ç¬¬ä¸€ä¸ªå•è¯æ›¿æ¢å¥å­ä¸­çš„åŽŸå•è¯
+ ï¼ˆå¦‚æžœè¯¥å•è¯æ˜¯word_tabæ•°ç»„ä¸­çš„æœ€åŽä¸€ä¸ªå•è¯åˆ™ç”¨ç¬¬ä¸€ä¸ªå•è¯æ›¿æ¢ï¼‰ã€‚
+ã€æµ‹è¯•æ•°æ®ä¸Žè¿è¡Œç»“æžœã€‘
+ æµ‹è¯•æ•°æ®ï¼šI accuse your mistakes.
+ è¾“å‡ºç»“æžœï¼šI forgive your mistakes.
+ã€è¦æ±‚ã€‘
+1ï¼Žæ ¹æ®é¢˜ç›®è¦æ±‚åŠç¨‹åºä¸­è¯­å¥ä¹‹é—´çš„é€»è¾‘å…³ç³»å¯¹ç¨‹åºä¸­çš„é”™è¯¯è¿›è¡Œä¿®æ”¹ã€‚
+2ï¼Žæ”¹é”™æ—¶ï¼Œå¯ä»¥ä¿®æ”¹è¯­å¥ä¸­çš„ä¸€éƒ¨åˆ†å†…å®¹ï¼Œè°ƒæ•´è¯­å¥æ¬¡åºï¼Œ
+   å¢žåŠ å°‘é‡çš„å£°æ˜Žæˆ–ç¼–è¯‘é¢„å¤„ç†å‘½ä»¤ï¼Œä½†ä¸èƒ½å¢žåŠ å…¶ä»–è¯­å¥ï¼Œä¹Ÿä¸èƒ½åˆ åŽ»æ•´æ¡è¯­å¥ã€‚
 */
 #include<stdio.h>
 #include<string.h>

@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <math.h>
 
 #define eps (1e-8)
@@ -6,7 +6,7 @@
 int main1073()
 {
     double x = 0.0;
-    scanf("%10lf",&x); //×î´óÖ§³Ö10Î»×Ö¶Î¿í¶È
+    scanf("%10lf",&x); //æœ€å¤§æ”¯æŒ10ä½å­—æ®µå®½åº¦
 
     double left=(x*x+1+(1/x))*exp(-1*x)-(1/x);
 

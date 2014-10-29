@@ -1,4 +1,4 @@
-#include<stdio.h>
+﻿#include<stdio.h>
 #include<math.h>
 
 double integral(double a,double b,double n)

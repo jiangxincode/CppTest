@@ -1,6 +1,6 @@
-/**
- * ËùÎ½ArmstrongÊı£¬¾ÍÊÇnÎ»ÊıµÄ¸÷Î»ÊıµÄn´Î·½Ö®ºÍµÈÓÚ¸ÃÊı
- * ÒªÇóÅĞ¶Ï±àĞ´Ò»¸öº¯ÊıÅĞ¶ÏÄ³¸öÕıÕûÊıÊÇ·ñÊÇÒ»¸öArmstrongÊı
+ï»¿/**
+ * æ‰€è°“Armstrongæ•°ï¼Œå°±æ˜¯nä½æ•°çš„å„ä½æ•°çš„næ¬¡æ–¹ä¹‹å’Œç­‰äºè¯¥æ•°
+ * è¦æ±‚åˆ¤æ–­ç¼–å†™ä¸€ä¸ªå‡½æ•°åˆ¤æ–­æŸä¸ªæ­£æ•´æ•°æ˜¯å¦æ˜¯ä¸€ä¸ªArmstrongæ•°
  */
 #include <stdio.h>
 #include <math.h>
@@ -12,15 +12,15 @@ int is_armstrong(int num)
 {
     int temp = num;
     int result = 0;
-    int bit_count = 0; //Êı×ÖµÄÎ»Êı
-    int bit[MAX_DIGITS]; //´æ·Å¸÷Î»Êı×Ö
+    int bit_count = 0; //æ•°å­—çš„ä½æ•°
+    int bit[MAX_DIGITS]; //å­˜æ”¾å„ä½æ•°å­—
 
-    if(num <= 0) //Ö»¶ÔÕıÕûÊı½øĞĞÅĞ¶Ï
+    if(num <= 0) //åªå¯¹æ­£æ•´æ•°è¿›è¡Œåˆ¤æ–­
     {
         return 0;
     }
 
-    for(int i=0;i<MAX_DIGITS;i++) //³õÊ¼»¯
+    for(int i=0;i<MAX_DIGITS;i++) //åˆå§‹åŒ–
     {
         bit[i] = -1;
     }

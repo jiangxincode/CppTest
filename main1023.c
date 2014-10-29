@@ -1,7 +1,7 @@
-#include<stdio.h>
+﻿#include<stdio.h>
 
 /**
- * ��֤���������ȵ����ƣ������ʵ���йأ�
+ * 验证变量名长度的限制（与具体实现有关）
  */
 int main1023()
 {

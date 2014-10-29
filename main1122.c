@@ -1,4 +1,4 @@
-#include<stdio.h>
+ï»¿#include<stdio.h>
 #include<math.h>
 #include "jiangxin.h"
 int mpsort(int x[],int a)
@@ -7,7 +7,7 @@ int mpsort(int x[],int a)
 
     for(i=1; i<a; i++)
     {
-        if(x[i]%2==0&&x[i]>x[m])/*Èç¹ûµÚÒ»¸öÊýÒ»¸ö±È½Ï´óµÄÆæÊýÔõÃ´°ì£¿*/
+        if(x[i]%2==0&&x[i]>x[m])/*å¦‚æžœç¬¬ä¸€ä¸ªæ•°ä¸€ä¸ªæ¯”è¾ƒå¤§çš„å¥‡æ•°æ€Žä¹ˆåŠžï¼Ÿ*/
             m=i;
     }
 

@@ -1,9 +1,9 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <math.h> // for fabs
 #include <stdlib.h> //for abs
 
 /**
- * ÊäÈëÒ»¸ö¸¡µãÊı£¬¼ÆËãÆä¾ø¶ÔÖµ
+ * è¾“å…¥ä¸€ä¸ªæµ®ç‚¹æ•°ï¼Œè®¡ç®—å…¶ç»å¯¹å€¼
  */
 int main1034()
 {

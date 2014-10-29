@@ -1,4 +1,4 @@
-#include<stdio.h>
+﻿#include<stdio.h>
 #include<math.h>
 int search(int x[],int low,int high,int key)
 {

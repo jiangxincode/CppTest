@@ -1,4 +1,4 @@
-#include "stdio.h"
+﻿#include "stdio.h"
 #include "jiangxin.h"
 
 int f1117(int a[],int n,int *x,int *y)

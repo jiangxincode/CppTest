@@ -1,15 +1,15 @@
-/**
- * ÃÀÍÅÍø2014ÄêÕĞÆ¸±ÊÊÔÌâ
- * °Ù¶È2014Èí¼şÑĞ·¢±ÊÊÔÌâ
- * ÑîÊÏ¾ØÕó
- * Ò»¸öm*nµÄ¾ØÕó£¬´Ó×óµ½ÓÒ´ÓÉÏµ½ÏÂ¶¼ÊÇµİÔöµÄ£¬¸øÒ»¸öÊıelem£¬ÇóÊÇ·ñÔÚ¾ØÕóÖĞ
+ï»¿/**
+ * ç¾å›¢ç½‘2014å¹´æ‹›è˜ç¬”è¯•é¢˜
+ * ç™¾åº¦2014è½¯ä»¶ç ”å‘ç¬”è¯•é¢˜
+ * æ¨æ°çŸ©é˜µ
+ * ä¸€ä¸ªm*nçš„çŸ©é˜µï¼Œä»å·¦åˆ°å³ä»ä¸Šåˆ°ä¸‹éƒ½æ˜¯é€’å¢çš„ï¼Œç»™ä¸€ä¸ªæ•°elemï¼Œæ±‚æ˜¯å¦åœ¨çŸ©é˜µä¸­
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 
 /**
- * ÓĞĞò¾ØÕó²éÕÒ
+ * æœ‰åºçŸ©é˜µæŸ¥æ‰¾
  *
  * T = O(n + n)
  *
@@ -22,7 +22,7 @@ void findKey(int **matrix, int n, int m, int key)
     {
         if(matrix[row][col] == key)
         {
-            printf("µÚ%dĞĞ£¬µÚ%dÁĞ\n", row + 1, col + 1);
+            printf("ç¬¬%dè¡Œï¼Œç¬¬%dåˆ—\n", row + 1, col + 1);
             break;
         }
         else if(matrix[row][col] > key)
@@ -35,13 +35,13 @@ void findKey(int **matrix, int n, int m, int key)
         }
     }
 
-    printf("²»´æÔÚ!\n");
+    printf("ä¸å­˜åœ¨!\n");
 }
 
 int main0007()
 {
     int i, j, key, n, m, **matrix;
-    // ¹¹Ôì¾ØÕó
+    // æ„é€ çŸ©é˜µ
     scanf("%11d %11d", &n, &m);
     matrix = (int **)malloc(sizeof(int *) * n);
 
@@ -54,7 +54,7 @@ int main0007()
             scanf("%11d", &matrix[i][j]);
     }
 
-    // ²éÑ¯Êı¾İ
+    // æŸ¥è¯¢æ•°æ®
     while(scanf("%11d", &key) != EOF)
     {
         findKey(matrix, n, m, key);

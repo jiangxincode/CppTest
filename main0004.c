@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 
 void jx_swap_integer(int* i_num1,int* i_num2,short method)
@@ -9,19 +9,19 @@ void jx_swap_integer(int* i_num1,int* i_num2,short method)
         *i_num1 = *i_num2;
         *i_num2 = temp;
     }
-    else if(method == 1) //½»»»Á½¸öÕûĞÍ±äÁ¿µÄÖµ£¬²»ÒıÈëµÚÈı¸ö±äÁ¿
+    else if(method == 1) //äº¤æ¢ä¸¤ä¸ªæ•´å‹å˜é‡çš„å€¼ï¼Œä¸å¼•å…¥ç¬¬ä¸‰ä¸ªå˜é‡
     {
         *i_num1 = *i_num1 + *i_num2;
         *i_num2 = *i_num1 - *i_num2;
         *i_num1 = *i_num1 - *i_num2;
     }
-    else if(method == 2) //½»»»Á½¸öÕûĞÍ±äÁ¿µÄÖµ£¬²»ÒıÈëµÚÈı¸ö±äÁ¿
+    else if(method == 2) //äº¤æ¢ä¸¤ä¸ªæ•´å‹å˜é‡çš„å€¼ï¼Œä¸å¼•å…¥ç¬¬ä¸‰ä¸ªå˜é‡
     {
         *i_num2 = *i_num2 - *i_num1;
         *i_num1 = *i_num2 + *i_num1;
         *i_num2 = *i_num1 - *i_num2;
     }
-    else if(method == 3) //½»»»Á½¸öÕûĞÍ±äÁ¿µÄÖµ£¬²»ÒıÈëµÚÈı¸ö±äÁ¿
+    else if(method == 3) //äº¤æ¢ä¸¤ä¸ªæ•´å‹å˜é‡çš„å€¼ï¼Œä¸å¼•å…¥ç¬¬ä¸‰ä¸ªå˜é‡
     {
         *i_num1 = *i_num1 ^ *i_num2;
         *i_num2 = *i_num1 ^ *i_num2;

@@ -1,4 +1,4 @@
-#include<stdio.h>
+﻿#include<stdio.h>
 #include<math.h>
 
 void fun(char op,double a,double b,double c,double d)

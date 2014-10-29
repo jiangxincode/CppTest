@@ -39,3 +39,7 @@ http://github.com/jiangxincode
 * Redundant code: Found a statement that begins with numeric constant.
 * %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'.
 * Array 'm[10]' accessed at index 10, which is out of bounds.
+
+### Version 1.02
+
+* 将所有文件设置为UTF-8编码，设置codeblocks默认编码为UTF-8,便于生成doxyblocks生成文档。

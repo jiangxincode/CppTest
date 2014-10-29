@@ -1,23 +1,23 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 
 int main0013()
 {
     /**
-     * ÑéÖ¤ÊÇ·ñ¿ÉÒÔÍ¨¹ıÆäËüÖ¸ÕëÀ´ĞŞ¸Ä³£Á¿Ö¸Õë£¨Ò»¸öÖ¸Ïò³£Á¿µÄÖ¸Õë£©
+     * éªŒè¯æ˜¯å¦å¯ä»¥é€šè¿‡å…¶å®ƒæŒ‡é’ˆæ¥ä¿®æ”¹å¸¸é‡æŒ‡é’ˆï¼ˆä¸€ä¸ªæŒ‡å‘å¸¸é‡çš„æŒ‡é’ˆï¼‰
      */
     /*
         const int a = 10;
         int *ptr_a = &a; //warning: initialization discards 'const' qualifier from pointer target type
-        *ptr_a = 20; //ËäÈ»Ö®Ç°±¨warning£¬µ«ÊÇÒÀÈ»¿ÉÒÔĞŞ¸ÄÆäÖµ
-        printf("%d\n",a); //´Ë´¦Êä³ö20
+        *ptr_a = 20; //è™½ç„¶ä¹‹å‰æŠ¥warningï¼Œä½†æ˜¯ä¾ç„¶å¯ä»¥ä¿®æ”¹å…¶å€¼
+        printf("%d\n",a); //æ­¤å¤„è¾“å‡º20
     */
     /**
-     * ÑéÖ¤¶ÔÖ¸Õë½øĞĞsizeof()ÔËËãµÄÖµ
+     * éªŒè¯å¯¹æŒ‡é’ˆè¿›è¡Œsizeof()è¿ç®—çš„å€¼
      */
     char str[100] = "hello";
     char *p = str;
-    printf("%d\n",sizeof(p));  //´Ë´¦Êä³ö4
-    printf("%d\n",sizeof(char));  //´Ë´¦Êä³ö1
+    printf("%d\n",sizeof(p));  //æ­¤å¤„è¾“å‡º4
+    printf("%d\n",sizeof(char));  //æ­¤å¤„è¾“å‡º1
     return 0;
 }

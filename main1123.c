@@ -1,13 +1,13 @@
-/*
-±à³ÌÒªÇó£º
-1.±àÐ´º¯Êývoid movesort(int x[],int n)£¬¶ÔxÖ¸ÏòµÄÊý×éÇ°n¸öÔªËØ×öÈçÏÂ´¦Àí:
-(1)½«ÆäÖÐµÄËùÓÐÆæÊýÒÆµ½Êý×éÇ°°ë²¿·Ö´æ´¢£¬ËùÓÐÅ¼ÊýÒÆµ½Êý×éºó°ë²¿·Ö´æ´¢£»
-(2)¶ÔÊý×éÇ°°ë²¿·ÖËùÓÐÆæÊý½µÐòÅÅÐò£¬ºó°ë²¿·ÖËùÓÐÅ¼ÊýÉýÐòÅÅÐò¡£
-2.±àÐ´mainº¯Êý£¬ÉùÃ÷Ò»Î¬Êý×éa²¢ÓÃ²âÊÔÊý¾Ý³õÊ¼»¯£¬µ÷ÓÃmovesortº¯Êý¶ÔaÊý×éÈ«²¿ÔªËØ×öÊý¾Ý´¦Àí£¬
-Êä³ö´¦ÀíºóaÊý×éÖÐÈ«²¿Êý¾Ý¡£
-²âÊÔÊý¾Ý¼°Êä³ö½á¹û:
-   ´¦ÀíÇ°aÊý×é£º 1  2  3  4  5  6
-   ´¦ÀíºóaÊý×é£º 5  3  1  2  4  6
+ï»¿/*
+ç¼–ç¨‹è¦æ±‚ï¼š
+1.ç¼–å†™å‡½æ•°void movesort(int x[],int n)ï¼Œå¯¹xæŒ‡å‘çš„æ•°ç»„å‰nä¸ªå…ƒç´ åšå¦‚ä¸‹å¤„ç†:
+(1)å°†å…¶ä¸­çš„æ‰€æœ‰å¥‡æ•°ç§»åˆ°æ•°ç»„å‰åŠéƒ¨åˆ†å­˜å‚¨ï¼Œæ‰€æœ‰å¶æ•°ç§»åˆ°æ•°ç»„åŽåŠéƒ¨åˆ†å­˜å‚¨ï¼›
+(2)å¯¹æ•°ç»„å‰åŠéƒ¨åˆ†æ‰€æœ‰å¥‡æ•°é™åºæŽ’åºï¼ŒåŽåŠéƒ¨åˆ†æ‰€æœ‰å¶æ•°å‡åºæŽ’åºã€‚
+2.ç¼–å†™mainå‡½æ•°ï¼Œå£°æ˜Žä¸€ç»´æ•°ç»„aå¹¶ç”¨æµ‹è¯•æ•°æ®åˆå§‹åŒ–ï¼Œè°ƒç”¨movesortå‡½æ•°å¯¹aæ•°ç»„å…¨éƒ¨å…ƒç´ åšæ•°æ®å¤„ç†ï¼Œ
+è¾“å‡ºå¤„ç†åŽaæ•°ç»„ä¸­å…¨éƒ¨æ•°æ®ã€‚
+æµ‹è¯•æ•°æ®åŠè¾“å‡ºç»“æžœ:
+   å¤„ç†å‰aæ•°ç»„ï¼š 1  2  3  4  5  6
+   å¤„ç†åŽaæ•°ç»„ï¼š 5  3  1  2  4  6
 */
 #include<stdio.h>
 #include<math.h>
@@ -15,7 +15,7 @@ void movesort(int x[],int n)
 {
     int i,j,t,k,count,flag,a[3]= {0},b[3]= {0};
 
-    /*°ÑÊý×éx[6]ÖÐµÄÆæÊý·Åµ½a[3]ÖÐ,Å¼Êý·Åµ½b[3]ÖÐ*/
+    /*æŠŠæ•°ç»„x[6]ä¸­çš„å¥‡æ•°æ”¾åˆ°a[3]ä¸­,å¶æ•°æ”¾åˆ°b[3]ä¸­*/
     for(i=0,k=0,count=0; i<n; i++)
     {
         if(x[i]%2!=0)
@@ -30,7 +30,7 @@ void movesort(int x[],int n)
         }
     }
 
-    /*°ÑÊý×éa[3]ÖÐµÄÊý°´½µÐòÅÅÁÐ*/
+    /*æŠŠæ•°ç»„a[3]ä¸­çš„æ•°æŒ‰é™åºæŽ’åˆ—*/
     for(i=0; i<k-1; i++)
     {
         flag=1;
@@ -48,11 +48,11 @@ void movesort(int x[],int n)
             break;
     }
 
-    /*°ÑÊý×éa[3]ÖÐµÄÊýÒÀ´ÎÊä³ö*/
+    /*æŠŠæ•°ç»„a[3]ä¸­çš„æ•°ä¾æ¬¡è¾“å‡º*/
     for(i=0; i<k; i++)
         printf("%d ",a[i]);
 
-    /*°ÑÊý×éb[3]ÖÐµÄÊý°´ÉýÐòÅÅÁÐ*/
+    /*æŠŠæ•°ç»„b[3]ä¸­çš„æ•°æŒ‰å‡åºæŽ’åˆ—*/
     for(i=0; i<count-1; i++)
     {
         flag=1;
@@ -70,7 +70,7 @@ void movesort(int x[],int n)
             break;
     }
 
-    /*°ÑÊý×éb[3]ÖÐµÄÊýÒÀ´ÎÊä³ö*/
+    /*æŠŠæ•°ç»„b[3]ä¸­çš„æ•°ä¾æ¬¡è¾“å‡º*/
     for(i=0; i<3; i++)
         printf("%d ",b[i]);
 

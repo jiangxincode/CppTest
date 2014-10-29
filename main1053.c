@@ -1,4 +1,4 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 
@@ -17,9 +17,9 @@ int main1053()
 
     do
     {
-        int a=x/100%10; //��λ
-        int b=x/10%10; //ʮλ
-        int c=x/1%10; //��λ
+        int a=x/100%10; //百位
+        int b=x/10%10; //十位
+        int c=x/1%10; //个位
 
         int t;
         if(a<=b)

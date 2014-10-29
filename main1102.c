@@ -1,4 +1,4 @@
-#include<stdio.h>
+﻿#include<stdio.h>
 #include<math.h>
 void dec2hex(int x)
 {

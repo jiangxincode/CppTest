@@ -1,4 +1,4 @@
-#include<stdio.h>
+﻿#include<stdio.h>
 int main1025()
 {
     int a=-123,b=123;

@@ -1,4 +1,4 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 int main1082()
 {
     int P,E,A,R;

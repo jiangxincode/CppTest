@@ -1,5 +1,5 @@
-/**
- * ºï×Ó·ÖÌÒÎÊÌâ
+ï»¿/**
+ * çŒ´å­åˆ†æ¡ƒé—®é¢˜
  */
 
 #include <stdio.h>
@@ -22,8 +22,8 @@ int distribute(int n,int count)
 }
 int main1104()
 {
-    int n; //ÌÒ×ÓÊıÁ¿
-    int count=1; //ºï×ÓµÄĞòºÅ
+    int n; //æ¡ƒå­æ•°é‡
+    int count=1; //çŒ´å­çš„åºå·
 
     for(n=1;; n++)
     {

@@ -1,4 +1,4 @@
-#include<stdio.h>
+﻿#include<stdio.h>
 int Union(int (*a)[6],int res[]);
 
 int main1134(void)

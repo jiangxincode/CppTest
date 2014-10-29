@@ -1,4 +1,4 @@
-#include<stdio.h>
+﻿#include<stdio.h>
 #include "jiangxin.h"
 int countvalue(int aa[])
 {

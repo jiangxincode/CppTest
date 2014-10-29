@@ -1,4 +1,4 @@
-#include<stdio.h>
+﻿#include<stdio.h>
 int find(int n)
 {
     int d,m;
