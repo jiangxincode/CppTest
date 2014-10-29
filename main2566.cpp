@@ -1,6 +1,6 @@
-/*
-����һ������Ϊ100�����飬���е����������������������Χ��1~100�����������������еļ���ֵ�ͼ�Сֵ��
-������ֵ��ָĳԪ�ص�ֵ�������ҵ�ֵ���󣬼�Сֵ��ָĳԪ�ص�ֵ�������ҵ�ֵ��С����
+﻿/*
+生成一个长度为100的数组，其中的数据由随机函数产生（范围在1~100），编程求出其中所有的极大值和极小值。
+（极大值是指某元素的值比它左右的值都大，极小值是指某元素的值比它左右的值都小。）
 */
 #include <iostream>
 #include <cstdlib>
@@ -16,14 +16,14 @@ int main2566()
         i_array[i] = rand();
     }
 
-    cout << "������ݣ�" << endl;
+    cout << "随机数据：" << endl;
 
     for(int i=0; i<100; i++)
     {
         cout << i_array[i] << " ";
     }
 
-    cout << "����ֵ��" << endl;
+    cout << "极大值：" << endl;
 
     for(int i=0,j=1,k=2; k<100; i++,j++,k++)
     {
@@ -34,7 +34,7 @@ int main2566()
     }
 
     cout << endl;
-    cout << "��Сֵ��" << endl;
+    cout << "极小值：" << endl;
 
     for(int i=0,j=1,k=2; k<100; i++,j++,k++)
     {

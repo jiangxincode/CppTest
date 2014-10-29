@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <stack>
 
 #include <cstdlib>
@@ -93,7 +93,7 @@ protected:
     }
     friend ostream& operator<< (ostream& out,BinaryTree<T>& Tree)
     {
-        out << "¶þ²æÊýµÄÇ°Ðò±éÀú\n";
+        out << "äºŒå‰æ•°çš„å‰åºéåŽ†\n";
         Tree.Traverse(Tree.root,out);
         out << endl;
         return out;

@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <string>
@@ -12,7 +12,7 @@ using namespace std;
 #define STACK_INIT_SIZE 100
 #define STACKINCREMENT 20
 
-/* ¶¨Òå×Ö·ûÀàĞÍÕ» */
+/* å®šä¹‰å­—ç¬¦ç±»å‹æ ˆ */
 typedef struct
 {
     int stacksize;
@@ -20,7 +20,7 @@ typedef struct
     char *top;
 } Stack;
 
-/* ¶¨ÒåÕûĞÍÕ» */
+/* å®šä¹‰æ•´å‹æ ˆ */
 typedef struct
 {
     int stacksize;
@@ -28,13 +28,13 @@ typedef struct
     int *top;
 } Stack2;
 
-/* È«¾Ö±äÁ¿ */
-Stack OPTR;/* ¶¨ÒåÔËËã·ûÕ»*/
-Stack2 OPND; /* ¶¨Òå²Ù×÷ÊıÕ» */
-char expr[255] = ""; /* ´æ·Å±í´ïÊ½´® */
+/* å…¨å±€å˜é‡ */
+Stack OPTR;/* å®šä¹‰è¿ç®—ç¬¦æ ˆ*/
+Stack2 OPND; /* å®šä¹‰æ“ä½œæ•°æ ˆ */
+char expr[255] = ""; /* å­˜æ”¾è¡¨è¾¾å¼ä¸² */
 char *ptr = expr;
 
-int InitStack(Stack *s) /*¹¹ÔìÔËËã·ûÕ»*/
+int InitStack(Stack *s) /*æ„é€ è¿ç®—ç¬¦æ ˆ*/
 {
     s->base=(char *)malloc(STACK_INIT_SIZE*sizeof(char));
 
@@ -44,7 +44,7 @@ int InitStack(Stack *s) /*¹¹ÔìÔËËã·ûÕ»*/
     s->stacksize=STACK_INIT_SIZE;
     return OK;
 }
-int InitStack2(Stack2 *s) /*¹¹Ôì²Ù×÷ÊıÕ»*/
+int InitStack2(Stack2 *s) /*æ„é€ æ“ä½œæ•°æ ˆ*/
 {
     s->base=(int *)malloc(STACK_INIT_SIZE*sizeof(int));
 
@@ -55,47 +55,47 @@ int InitStack2(Stack2 *s) /*¹¹Ôì²Ù×÷ÊıÕ»*/
     return OK;
 }
 
-int In(char ch) /*ÅĞ¶Ï×Ö·ûÊÇ·ñÊÇÔËËã·û£¬ÔËËã·û¼´·µ»Ø1*/
+int In(char ch) /*åˆ¤æ–­å­—ç¬¦æ˜¯å¦æ˜¯è¿ç®—ç¬¦ï¼Œè¿ç®—ç¬¦å³è¿”å›1*/
 {
     return(ch=='+'||ch=='-'||ch=='*'||ch=='/'||ch=='('||ch==')'||ch=='#');
 }
-int Push(Stack *s,char ch) /*ÔËËã·ûÕ»²åÈëchÎªĞÂµÄÕ»¶¥ÔªËØ*/
+int Push(Stack *s,char ch) /*è¿ç®—ç¬¦æ ˆæ’å…¥chä¸ºæ–°çš„æ ˆé¡¶å…ƒç´ */
 {
     *s->top=ch;
     s->top++;
     return 0;
 }
-int Push2(Stack2 *s,int ch)/*²Ù×÷ÊıÕ»²åÈëchÎªĞÂµÄÕ»¶¥ÔªËØ */
+int Push2(Stack2 *s,int ch)/*æ“ä½œæ•°æ ˆæ’å…¥chä¸ºæ–°çš„æ ˆé¡¶å…ƒç´  */
 {
     *s->top=ch;
     s->top++;
     return 0;
 }
-char Pop(Stack *s) /*É¾³ıÔËËã·ûÕ»sµÄÕ»¶¥ÔªËØ£¬ÓÃp·µ»ØÆäÖµ*/
+char Pop(Stack *s) /*åˆ é™¤è¿ç®—ç¬¦æ ˆsçš„æ ˆé¡¶å…ƒç´ ï¼Œç”¨pè¿”å›å…¶å€¼*/
 {
     char p;
     s->top--;
     p=*s->top;
     return p;
 }
-int Pop2(Stack2 *s)/*É¾³ı²Ù×÷ÊıÕ»sµÄÕ»¶¥ÔªËØ£¬ÓÃp·µ»ØÆäÖµ */
+int Pop2(Stack2 *s)/*åˆ é™¤æ“ä½œæ•°æ ˆsçš„æ ˆé¡¶å…ƒç´ ï¼Œç”¨pè¿”å›å…¶å€¼ */
 {
     int p;
     s->top--;
     p=*s->top;
     return p;
 }
-char GetTop(Stack s)/*ÓÃp·µ»ØÔËËã·ûÕ»sµÄÕ»¶¥ÔªËØ*/
+char GetTop(Stack s)/*ç”¨pè¿”å›è¿ç®—ç¬¦æ ˆsçš„æ ˆé¡¶å…ƒç´ */
 {
     char p=*(s.top-1);
     return p;
 }
-int GetTop2(Stack2 s) /*ÓÃp·µ»Ø²Ù×÷ÊıÕ»sµÄÕ»¶¥ÔªËØ*/
+int GetTop2(Stack2 s) /*ç”¨pè¿”å›æ“ä½œæ•°æ ˆsçš„æ ˆé¡¶å…ƒç´ */
 {
     int p=*(s.top-1);
     return p;
 }
-/* ÅĞ¶ÏÔËËã·ûÓÅÏÈÈ¨£¬·µ»ØÓÅÏÈÈ¨¸ßµÄ */
+/* åˆ¤æ–­è¿ç®—ç¬¦ä¼˜å…ˆæƒï¼Œè¿”å›ä¼˜å…ˆæƒé«˜çš„ */
 char Precede(char c1,char c2)
 {
     int i=0,j=0;
@@ -112,7 +112,7 @@ char Precede(char c1,char c2)
 
     switch(c1)
     {
-    /* iÎªÏÂÃæarrayµÄºá±ê */
+    /* iä¸ºä¸‹é¢arrayçš„æ¨ªæ ‡ */
     case '+' :
         i=0;
         break;
@@ -144,7 +144,7 @@ char Precede(char c1,char c2)
 
     switch(c2)
     {
-    /* jÎªÏÂÃæarrayµÄ×İ±ê */
+    /* jä¸ºä¸‹é¢arrayçš„çºµæ ‡ */
     case '+' :
         j=0;
         break;
@@ -174,9 +174,9 @@ char Precede(char c1,char c2)
         break;
     }
 
-    return (array[7*i+j]); /* ·µ»ØÔËËã·û */
+    return (array[7*i+j]); /* è¿”å›è¿ç®—ç¬¦ */
 }
-/*²Ù×÷º¯Êı */
+/*æ“ä½œå‡½æ•° */
 int Operate(int a,char op,int b)
 {
     switch(op)
@@ -196,7 +196,7 @@ int Operate(int a,char op,int b)
 
     return 0;
 }
-int num(int n)/*·µ»Ø²Ù×÷ÊıµÄ³¤¶È*/
+int num(int n)/*è¿”å›æ“ä½œæ•°çš„é•¿åº¦*/
 {
     string str_num = to_string(n);
     return str_num.length();
@@ -205,7 +205,7 @@ int num(int n)/*·µ»Ø²Ù×÷ÊıµÄ³¤¶È*/
     //n=strlen(p);
     //return n;
 }
-int EvalExpr()/*Ö÷Òª²Ù×÷º¯Êı */
+int EvalExpr()/*ä¸»è¦æ“ä½œå‡½æ•° */
 {
     char c,theta;
     //char x;
@@ -219,7 +219,7 @@ int EvalExpr()/*Ö÷Òª²Ù×÷º¯Êı */
         {
             if(!In(*(ptr-1))) ptr=ptr-1;
 
-            m=atoi(ptr);/*È¡×Ö·û´®Ç°ÃæµÄÊı×Ö¶Î*/
+            m=atoi(ptr);/*å–å­—ç¬¦ä¸²å‰é¢çš„æ•°å­—æ®µ*/
             n=num(m);
             Push2(&OPND,m);
             ptr=ptr+n;
@@ -251,7 +251,7 @@ int EvalExpr()/*Ö÷Òª²Ù×÷º¯Êı */
 }
 int main0513()
 {
-    printf("ÇëÊäÈëÕıÈ·µÄ±í´ïÊ½:");
+    printf("è¯·è¾“å…¥æ­£ç¡®çš„è¡¨è¾¾å¼:");
 
     do
     {
@@ -259,10 +259,10 @@ int main0513()
     }
     while(!*expr);
 
-    InitStack(&OPTR); /* ³õÊ¼»¯ÔËËã·ûÕ» */
-    Push(&OPTR,'#'); /* ½«#Ñ¹ÈëÔËËã·ûÕ» */
-    InitStack2(&OPND); /* ³õÊ¼»¯²Ù×÷ÊıÕ» */
-    printf("±í´ïÊ½½á¹ûÎª:%d\n", EvalExpr());
+    InitStack(&OPTR); /* åˆå§‹åŒ–è¿ç®—ç¬¦æ ˆ */
+    Push(&OPTR,'#'); /* å°†#å‹å…¥è¿ç®—ç¬¦æ ˆ */
+    InitStack2(&OPND); /* åˆå§‹åŒ–æ“ä½œæ•°æ ˆ */
+    printf("è¡¨è¾¾å¼ç»“æœä¸º:%d\n", EvalExpr());
     return 0;
 }
 

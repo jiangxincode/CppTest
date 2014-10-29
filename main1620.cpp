@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <memory>
 #include <string>
 #include <exception>
@@ -19,10 +19,10 @@ public:
     StrBlog(std::initializer_list<std::string> il);
     size_type size() const {return data->size();}
     bool empty() const {return data->empty();}
-    // Ìí¼ÓºÍÉ¾³ýÔªËØ
+    // æ·»åŠ å’Œåˆ é™¤å…ƒç´ 
     void push_back(const std::string &t) {data->push_back(t);}
     void pop_back();
-    // ÔªËØ·ÃÎÊ
+    // å…ƒç´ è®¿é—®
     std::string& front();
     std::string& back();
     friend class StrBlogPtr;

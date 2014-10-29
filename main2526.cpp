@@ -1,6 +1,6 @@
-/*
-��switch���ʵ�֣�
-�Ӽ�������һ�����ڵ�ĳһ��(��0��ʾ�����죻��1��ʾ����һ����)��������Ӧ��Ӣ�ﵥ�ʡ�
+﻿/*
+用switch语句实现：
+从键盘输入一个星期的某一天(用0表示星期天；用1表示星期一；…)，输出其对应的英语单词。
 */
 #include <iostream>
 using namespace std;
@@ -8,7 +8,7 @@ int main2526()
 {
     short s_day;
     string str_day;
-    cout << "������һ�����ڵ�ĳһ�죺 ";
+    cout << "请输入一个星期的某一天： ";
     cin >> s_day;
 
     switch(s_day)

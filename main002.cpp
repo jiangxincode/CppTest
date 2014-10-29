@@ -1,4 +1,4 @@
-/*
+﻿/*
 main0526
 */
 #include <iostream>

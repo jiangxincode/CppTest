@@ -1,5 +1,5 @@
-/*
-¸ø¶¨Ò»Ğ©Ó²±Ò£¬Çó¸ø¶¨½ğ¶îÏÂ£¬×îÉÙÓ²±ÒµÄ×éºÏ
+ï»¿/*
+ç»™å®šä¸€äº›ç¡¬å¸ï¼Œæ±‚ç»™å®šé‡‘é¢ä¸‹ï¼Œæœ€å°‘ç¡¬å¸çš„ç»„åˆ
 */
 
 #include <iostream>
@@ -41,7 +41,7 @@ void print(int backtrace[], int acount)
 void minChange(int coin[],int n, int acount)
 {
     int a[1000];
-    int backtrace[1000]; //backtrace[n]£¬ÔÚ×ÜÊıÎªnÊ±£¬Ñ¡ÔñµÄ×îºóÒ»¸öÁãÇ®µÄÃæ¶î
+    int backtrace[1000]; //backtrace[n]ï¼Œåœ¨æ€»æ•°ä¸ºnæ—¶ï¼Œé€‰æ‹©çš„æœ€åä¸€ä¸ªé›¶é’±çš„é¢é¢
     a[0] = 0;
 
     for(int i=1; i < 1000; ++i)

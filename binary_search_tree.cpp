@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include "binary_search_tree.h"
 
 using namespace std;
@@ -127,7 +127,7 @@ bool binary_search_tree::remove(binary_node *&sub_tree,int data)
 
     if(t == NULL)
     {
-        return false; //§ß¨f§å§â¨g¨o
+        return false; //æ‰¶ç‹„æ‰¹æŠŠç‹‚çŸ£
     }
     else
     {

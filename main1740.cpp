@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <map>
 #include <string>
 
@@ -151,7 +151,7 @@ void test_4_12_b()
     int array_source[line][row];
     int array_target[line][row];
 
-    for(int i=0; i<line; i++) //�������
+    for(int i=0; i<line; i++) //输出数据
     {
         cout << "Input the data of line " << (i+1) <<": ";
 
@@ -163,7 +163,7 @@ void test_4_12_b()
 
     cout << endl;
 
-    for(int i=0; i<line; i++) //���
+    for(int i=0; i<line; i++) //输出
     {
         for(int j=0; j<row; j++)
         {
@@ -173,7 +173,7 @@ void test_4_12_b()
         cout << endl;
     }
 
-    for(int i=0; i<line; i++) //��ʼ��array_target
+    for(int i=0; i<line; i++) //初始化array_target
     {
         for(int j=0; j<row; j++)
         {
@@ -183,7 +183,7 @@ void test_4_12_b()
 
     cout << endl;
 
-    for(int i=0; i<line; i++) //�ҵ�ÿ����С����Щ��
+    for(int i=0; i<line; i++) //找到每行最小的那些列
     {
         int min = array_source[i][0];
 
@@ -204,7 +204,7 @@ void test_4_12_b()
         }
     }
 
-    for(int j=0; j<row; j++) //�ҵ�ÿ��������Щ��
+    for(int j=0; j<row; j++) //找到每列最大的那些行
     {
         int max = array_source[0][j];
 
@@ -265,7 +265,7 @@ void test_4_12_c()
     int array_line[line];
     int array_row[row];
 
-    for(int i=0; i<line; i++) //�������
+    for(int i=0; i<line; i++) //输出数据
     {
         cout << "Input the data of line " << (i+1) <<": ";
 
@@ -277,7 +277,7 @@ void test_4_12_c()
 
     cout << endl;
 
-    for(int i=0; i<line; i++) //���
+    for(int i=0; i<line; i++) //输出
     {
         for(int j=0; j<row; j++)
         {
@@ -287,7 +287,7 @@ void test_4_12_c()
         cout << endl;
     }
 
-    for(int i=0; i<line; i++) //��ʼ��array_target
+    for(int i=0; i<line; i++) //初始化array_target
     {
         for(int j=0; j<row; j++)
         {
@@ -295,17 +295,17 @@ void test_4_12_c()
         }
     }
 
-    for(int i=0; i<line; i++) //��ʼ��array_line
+    for(int i=0; i<line; i++) //初始化array_line
     {
         array_line[i] = 0;
     }
 
-    for(int j=0; j<row; j++) //��ʼ��array_row
+    for(int j=0; j<row; j++) //初始化array_row
     {
         array_row[j] = 0;
     }
 
-    for(int i=0; i<line; i++) //�ҵ�ÿ����С����Щ��
+    for(int i=0; i<line; i++) //找到每行最小的那些列
     {
         int min = array_source[i][0];
         int m = 1;
@@ -326,7 +326,7 @@ void test_4_12_c()
         }
     }
 
-    for(int j=0; j<row; j++) //�ҵ�ÿ��������Щ��
+    for(int j=0; j<row; j++) //找到每列最大的那些行
     {
         int max = array_source[0][j];
         int n = 1;
@@ -378,13 +378,13 @@ void test_4_12_c()
 }
 
 /*
-��ά����ľֲ����㶨�����£�
-������һ����ά�����е�Ԫ�أ�����Ԫ�ص�ֵ��������2������Ԫ�ص�ֵ��С
-���ұ�������2������Ԫ�ص�ֵ������Ƹ�Ԫ����һ���ֲ����㡣
-λ�ھ���սǺͱ߽��Ԫ�طֱ�ֻ��2����3������Ԫ�ء�
-����localmin���β�aָ���������飬bָ��������顣
-�ú����Ĺ������ҳ��������������оֲ����㣬
-�����������ĳ��Ԫ���Ǿֲ����㣬������������ͬλ�ô���Ԫ����1��������0��
+二维数组的局部鞍点定义如下：
+对任意一个二维数组中的元素，若该元素的值比其上下2个相邻元素的值都小
+并且比其左右2个相邻元素的值都大，则称该元素是一个局部鞍点。
+位于矩阵拐角和边界的元素分别只有2个和3个相邻元素。
+函数localmin的形参a指向输入数组，b指向输出数组。
+该函数的功能是找出输入数组中所有局部鞍点，
+若输入数组的某个元素是局部鞍点，则将输出数组的相同位置处的元素置1；否则置0。
 */
 #include <stdio.h>
 #define MIN -32768
@@ -441,17 +441,17 @@ int test_4_12_d()
 }
 
 
-/*�ҳ�һ����ά�����е����а��㲢�����
-  ��һ������Ԫ�ص�ֵ�������е����ֵ��ͬʱ�������е���Сֵ��������Ԫ�ؾ��ǰ��㡣
-  һ����ά�����п���û�а��㣬Ҳ�����ж�����㡣
-  ���Ҫ�� ��дmain����������һ����ά����a���ò��Ծ����ʼ����������a�в��Ұ���,����ҵ������а���λ�á�
-  ���Ծ���:
+/*找出一个二维数组中的所有鞍点并输出。
+  若一个数组元素的值是所在行的最大值，同时是所在列的最小值，该数组元素就是鞍点。
+  一个二维数组中可能没有鞍点，也可能有多个鞍点。
+  编程要求： 编写main函数。声明一个二维数组a并用测试矩阵初始化，在数组a中查找鞍点,输出找到的所有鞍点位置。
+  测试矩阵:
        1    2    3    4
        5    6    7    8
        9   10  11   12
        13 14  15   16
-    ��������
-      The saddle point is��a[0][3]
+    输出结果：
+      The saddle point is：a[0][3]
 */
 #include<stdio.h>
 int test_4_12_e()

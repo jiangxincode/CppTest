@@ -1,4 +1,4 @@
-//KMP
+ï»¿//KMP
 #include <cstring>
 #include <iostream>
 
@@ -12,7 +12,7 @@ int* GetNextVal(const char *s, int &len)
     int j = -1;
     next[0] = -1;
 
-    while(i<len) //×¢ÒâÕâÀï¸úKMPº¯ÊýÀïÃæµÄ²»Í¬
+    while(i<len) //æ³¨æ„è¿™é‡Œè·ŸKMPå‡½æ•°é‡Œé¢çš„ä¸åŒ
     {
         if(j==-1 || s[i]==s[j])
         {

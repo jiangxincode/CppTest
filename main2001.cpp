@@ -1,9 +1,9 @@
-/***********************************************
+ï»¿/***********************************************
 ChineseWordSegmentation
-ÖĞÎÄ·Ö´ÊÊ¹ÓÃÕûÊı½øĞĞÅĞ¶Ï
-ÔÚÄ¿Â¼ÏÂµÄword.txtÊÇÖĞÎÄ´ÊµÄ´ÊµäÎÄ¼ş
-³ÌĞò¶ÔÍ¬Ò»Ä¿Â¼ÏÂµÄarticle.txt½øĞĞ·Ö¸î
-³ÌĞòÊµÏÖ:µÚÒ»¸öÖĞÎÄ×ÖÓÃhash±í½øĞĞ²éÕÒ£¬Ö®ºó½øĞĞÉ­ÁÖµÄËÑË÷
+ä¸­æ–‡åˆ†è¯ä½¿ç”¨æ•´æ•°è¿›è¡Œåˆ¤æ–­
+åœ¨ç›®å½•ä¸‹çš„word.txtæ˜¯ä¸­æ–‡è¯çš„è¯å…¸æ–‡ä»¶
+ç¨‹åºå¯¹åŒä¸€ç›®å½•ä¸‹çš„article.txtè¿›è¡Œåˆ†å‰²
+ç¨‹åºå®ç°:ç¬¬ä¸€ä¸ªä¸­æ–‡å­—ç”¨hashè¡¨è¿›è¡ŒæŸ¥æ‰¾ï¼Œä¹‹åè¿›è¡Œæ£®æ—çš„æœç´¢
 ***********************************************/
 
 #include <stdio.h>
@@ -14,19 +14,19 @@ ChineseWordSegmentation
 #define MAXWORDLENGTH 60
 
 void dic_init();
-void free_hash();/*ÊÍ·ÅhashºÍºóÃæµÄ¸ù*/
+void free_hash();/*é‡Šæ”¾hashå’Œåé¢çš„æ ¹*/
 void file_split(const char *filename);
 
 typedef struct Forest //the structure for forest
 {
     long int value;
-    struct Forest *child, *sibling; //×ÓÅ®½ÚµãºÍĞÖµÜ½Úµã
-    short int is_Chinese; //ÖĞÎÄ´ÊµÄ±ê¼Ç
+    struct Forest *child, *sibling; //å­å¥³èŠ‚ç‚¹å’Œå…„å¼ŸèŠ‚ç‚¹
+    short int is_Chinese; //ä¸­æ–‡è¯çš„æ ‡è®°
 } Forest;
 
-Forest *HashTable[MAXVALUE] = {NULL}; //µÚÒ»¸ö×ÖµÄ¸ù½áµãÓÃÊı×é´æ´¢
+Forest *HashTable[MAXVALUE] = {NULL}; //ç¬¬ä¸€ä¸ªå­—çš„æ ¹ç»“ç‚¹ç”¨æ•°ç»„å­˜å‚¨
 
-Forest *search_charactor(Forest *root, int value) //ÔÚ´Ë²ã½øĞĞÎÄ×ÖµÄ²éÕÒ
+Forest *search_charactor(Forest *root, int value) //åœ¨æ­¤å±‚è¿›è¡Œæ–‡å­—çš„æŸ¥æ‰¾
 {
     if(root == NULL)
         return root;
@@ -58,13 +58,13 @@ Forest *insert_charactor(Forest *root, int value)
     {
         tmp = root->child;
 
-        while(tmp && (tmp->value != value)) //ÑØĞÖµÜ½Úµã±éÀú
+        while(tmp && (tmp->value != value)) //æ²¿å…„å¼ŸèŠ‚ç‚¹éå†
         {
             root = tmp;
             tmp = tmp->sibling;
         }
 
-        if(tmp)return tmp; //ÕÒµ½ÁËÏàÍ¬×Ö·û
+        if(tmp)return tmp; //æ‰¾åˆ°äº†ç›¸åŒå­—ç¬¦
         else
         {
             tmpcell = (Forest *)malloc(sizeof(Forest));
@@ -77,7 +77,7 @@ Forest *insert_charactor(Forest *root, int value)
     }
 }
 /**
-´Êµä³õÊ¼»¯£ºÖĞÎÄ×ÖµÚÒ»²ãÓÃhash²éÕÒ²¢ÕÒµ½¸ù£¬ºóÃæÓÃÉ­ÁÖ½øĞĞ²éÕÒ
+è¯å…¸åˆå§‹åŒ–ï¼šä¸­æ–‡å­—ç¬¬ä¸€å±‚ç”¨hashæŸ¥æ‰¾å¹¶æ‰¾åˆ°æ ¹ï¼Œåé¢ç”¨æ£®æ—è¿›è¡ŒæŸ¥æ‰¾
 **/
 void dic_init()
 {
@@ -158,7 +158,7 @@ void dic_init()
 
     fclose(fp);
 }
-void free_forest(Forest *root)/*µİ¹éÊÍ·ÅÉ­Áî¸÷½Úµã*/
+void free_forest(Forest *root)/*é€’å½’é‡Šæ”¾æ£®ä»¤å„èŠ‚ç‚¹*/
 {
     Forest *tmp;
 
@@ -171,7 +171,7 @@ void free_forest(Forest *root)/*µİ¹éÊÍ·ÅÉ­Áî¸÷½Úµã*/
         free_forest(tmp);
     }
 }
-void free_hash()/*ÊÍ·ÅhashºÍºóÃæµÄ¸ù*/
+void free_hash()/*é‡Šæ”¾hashå’Œåé¢çš„æ ¹*/
 {
     for(int i=0; i<MAXVALUE; i++)
     {
@@ -180,8 +180,8 @@ void free_hash()/*ÊÍ·ÅhashºÍºóÃæµÄ¸ù*/
 }
 void file_split(const char *filename)
 {
-    int lasteof = 0; //¼ÇÂ¼×îºóÒ»¸öÆ¥ÅäµÄ´Ê
-    int str_pos = 0; //strµÄÎ»ÖÃ
+    int lasteof = 0; //è®°å½•æœ€åä¸€ä¸ªåŒ¹é…çš„è¯
+    int str_pos = 0; //strçš„ä½ç½®
     int value;
     unsigned char str[20] = {0}, ch[2] = {0};
     Forest *root;
@@ -198,52 +198,52 @@ void file_split(const char *filename)
     {
         ch[0] = fgetc(fp);
 
-        if(ch[0] < 128) //·ÇÖĞÎÄ×Ö·ûÖ±½ÓÊä³ö,²¢½«Ç°ÃæÆ¥ÅäµÄÖĞÎÄ´ÊÊä³ö
+        if(ch[0] < 128) //éä¸­æ–‡å­—ç¬¦ç›´æ¥è¾“å‡º,å¹¶å°†å‰é¢åŒ¹é…çš„ä¸­æ–‡è¯è¾“å‡º
         {
             str[str_pos] = 0;
             printf("%s", str);
             str_pos = 0;
             putchar(ch[0]);
         }
-        else //ÖĞÎÄ×Ö·ûĞèÒª¶ÁÁ½¸ö×Ö½Ú
+        else //ä¸­æ–‡å­—ç¬¦éœ€è¦è¯»ä¸¤ä¸ªå­—èŠ‚
         {
             ch[1] = fgetc(fp);
             value = ch[0] * 256 + ch[1];
 
-            if(str_pos == 0) //ÖĞÎÄ´ÊµÄÊ××Ö
+            if(str_pos == 0) //ä¸­æ–‡è¯çš„é¦–å­—
             {
                 root = HashTable[value];
                 str[str_pos++] = ch[0];
                 str[str_pos++] = ch[1];
                 lasteof = 2;
             }
-            else //ÖĞÎÄ´ÊµÄ·ÇÊ××Ö
+            else //ä¸­æ–‡è¯çš„éé¦–å­—
             {
                 root = search_charactor(root, value);
 
-                if(root == NULL) //Ã»ÓĞÆ¥Åä¸Ã´Ê
+                if(root == NULL) //æ²¡æœ‰åŒ¹é…è¯¥è¯
                 {
                     str[lasteof] = 0;
                     printf("[%s]", str);
 
-                    if(str_pos != 2) //Èç¹û²»ÊÇÖĞÎÄ´ÊµÄµÚ¶ş¸ö×Ö
+                    if(str_pos != 2) //å¦‚æœä¸æ˜¯ä¸­æ–‡è¯çš„ç¬¬äºŒä¸ªå­—
                     {
-                        if(str_pos == lasteof) //Èç¹û¸ÃÖĞÎÄ´Ê½öº¬ÖĞÎÄ×Ö·ûÔò½ö»ØÍËÒ»¸öÖĞÎÄ×Ö·û
+                        if(str_pos == lasteof) //å¦‚æœè¯¥ä¸­æ–‡è¯ä»…å«ä¸­æ–‡å­—ç¬¦åˆ™ä»…å›é€€ä¸€ä¸ªä¸­æ–‡å­—ç¬¦
                             fseek(fp, -2, SEEK_CUR);
-                        else //Èç¹û¸ÃÖĞÎÄ´Ê°üº¬ASCII×Ö·ûÔò½ö»ØÍËÄ©Î²Èô¸É¸öÓ¢ÎÄ×Ö·û
+                        else //å¦‚æœè¯¥ä¸­æ–‡è¯åŒ…å«ASCIIå­—ç¬¦åˆ™ä»…å›é€€æœ«å°¾è‹¥å¹²ä¸ªè‹±æ–‡å­—ç¬¦
                             fseek(fp, -(str_pos - lasteof), SEEK_CUR);
                     }
-                    else //Èç¹ûÊÇÖĞÎÄ´ÊµÄµÚ¶ş¸ö×Ö
+                    else //å¦‚æœæ˜¯ä¸­æ–‡è¯çš„ç¬¬äºŒä¸ªå­—
                         fseek(fp, -2, SEEK_CUR);
 
                     str_pos = 0;
                 }
-                else //ÈôÆ¥ÅäÖ±½Ó´æ´¢
+                else //è‹¥åŒ¹é…ç›´æ¥å­˜å‚¨
                 {
                     str[str_pos++] = ch[0];
                     str[str_pos++] = ch[1];
 
-                    if(root->is_Chinese == 1) /*ÈôÊÇÒ»¸öÖĞÎÄ´Ê£¬¼ÇÂ¼ÏÂ×îºóµÄÎ»ÖÃ*/
+                    if(root->is_Chinese == 1) /*è‹¥æ˜¯ä¸€ä¸ªä¸­æ–‡è¯ï¼Œè®°å½•ä¸‹æœ€åçš„ä½ç½®*/
                         lasteof = str_pos;
                 }
             }

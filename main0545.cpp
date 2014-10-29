@@ -1,6 +1,6 @@
-/**
-Î¢Èí±ÊÊÔÌâ
-Ö»ÓÃ4ĞĞ´úÂë±àĞ´³öÒ»¸ö´Ó×Ö·û´®µ½³¤ÕûĞÎµÄ×ª»»º¯Êı
+ï»¿/**
+å¾®è½¯ç¬”è¯•é¢˜
+åªç”¨4è¡Œä»£ç ç¼–å†™å‡ºä¸€ä¸ªä»å­—ç¬¦ä¸²åˆ°é•¿æ•´å½¢çš„è½¬æ¢å‡½æ•°
 */
 
 #include <cctype>
@@ -8,12 +8,12 @@
 
 using namespace std;
 
-long atol(char *str) //×Ö·û´®×ª³¤ÕûĞÎ
+long atol(char *str) //å­—ç¬¦ä¸²è½¬é•¿æ•´å½¢
 {
     char c = *str;
     long value;
 
-    if(!isdigit(c)) str++; //ÅĞ¶ÏÓĞÎŞÕı¸ººÅ
+    if(!isdigit(c)) str++; //åˆ¤æ–­æœ‰æ— æ­£è´Ÿå·
 
     for(value = 0; *str != '\0'; value = value * 10 + (*str -'0'),str++);
 
@@ -29,7 +29,7 @@ void stol(const char * des, long& num)
     }
 }
 /**
-num Òª³õÊ¼»¯Îª0
+num è¦åˆå§‹åŒ–ä¸º0
 */
 
 void stol0(const char * des, long& num)
@@ -61,7 +61,7 @@ void stol1(const char * des, long& num, int base)
 }
 
 /**
-ÓÃSTL£¬ËÄĞĞ
+ç”¨STLï¼Œå››è¡Œ
 */
 #include <sstream>
 #include <iostream>

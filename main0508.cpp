@@ -1,12 +1,12 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <string>
 #include <algorithm>
 
 using namespace std;
 
 /**
- * ÅĞ¶ÏÒ»¸ö³¤ÕûÊıÎª»ØÎÄÊı
- * ²âÊÔÓÃÀı£º
+ * åˆ¤æ–­ä¸€ä¸ªé•¿æ•´æ•°ä¸ºå›æ–‡æ•°
+ * æµ‹è¯•ç”¨ä¾‹ï¼š
  * input output
  * 12321 1
  * 12345 0
@@ -42,8 +42,8 @@ int palindrome2(long num)
     return 0;
 }
 /**
- * ÅĞ¶Ï×Ö·û´®ÊÇ·ñÎª»ØÎÄÊı×Ö
- * ×îºÃÊ¹ÓÃstring£¬²»ÓÃ¿¼ÂÇ×îºóµÄ'\0'
+ * åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦ä¸ºå›æ–‡æ•°å­—
+ * æœ€å¥½ä½¿ç”¨stringï¼Œä¸ç”¨è€ƒè™‘æœ€åçš„'\0'
 */
 int palindrome(const char *str)
 {

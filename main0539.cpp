@@ -1,7 +1,7 @@
-/*
-Ç÷ÊÆ¿Æ¼¼2013ÃæÊÔÌâ
-1£ºÊ×ÏÈÉÏÀ´ÏÈĞ´ÁË¸öĞ¡³ÌĞò£¬ºÜ¼òµ¥£¬¿ÉÊÇĞ´ÍêÁË£¬ÃæÊÔ¹Ù¸øÎÒÖ¸³öÒ»¶ÑÎÊÌâ£¬ÓÃÖ¸ÕëÃ»ÅĞ¿Õ£¬ÓÃÊı×éÃ»¶¯Ì¬·ÖÅäÄÚ´æ
-ÊäÈë£º"abcdefgh" Ñ­»·ÒÆÎ»3Î»Êä³ö "defghabc"
+ï»¿/*
+è¶‹åŠ¿ç§‘æŠ€2013é¢è¯•é¢˜
+1ï¼šé¦–å…ˆä¸Šæ¥å…ˆå†™äº†ä¸ªå°ç¨‹åºï¼Œå¾ˆç®€å•ï¼Œå¯æ˜¯å†™å®Œäº†ï¼Œé¢è¯•å®˜ç»™æˆ‘æŒ‡å‡ºä¸€å †é—®é¢˜ï¼Œç”¨æŒ‡é’ˆæ²¡åˆ¤ç©ºï¼Œç”¨æ•°ç»„æ²¡åŠ¨æ€åˆ†é…å†…å­˜
+è¾“å…¥ï¼š"abcdefgh" å¾ªç¯ç§»ä½3ä½è¾“å‡º "defghabc"
 */
 #include <iostream>
 #include <cstdlib>
@@ -74,10 +74,9 @@ void shift2(char *str, int length, int shift_bit) //less space, more time
         }
     }
 }
-#define BUFFSIZE 100
 int main0539()
 {
-    char *str = (char*)malloc(sizeof(char)*BUFFSIZE);
+    char str[BUFSIZ];
     scanf("%s",str);
     shift2(str,strlen(str),-3);
     cout << str;

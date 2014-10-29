@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include "main.h"
 
 using namespace std;
@@ -6,7 +6,6 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     string ch;
-
     do
     {
         main0542();

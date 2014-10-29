@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 http://wikioi.com/problem/1012/
 */
 #include <iostream>
@@ -15,13 +15,13 @@ int gcd(int min,int max)
     }
     else
     {
-        return gcd(max%min,min); //Å£¶Ùµü´úÏà³ı·¨
+        return gcd(max%min,min); //ç‰›é¡¿è¿­ä»£ç›¸é™¤æ³•
     }
 }
 
 int lcm(int min,int max)
 {
-    return min*max/gcd(min,max); //×îĞ¡¹«±¶ÊıÎªÁ½ÕßÖ®»ı³ıÒÔÁ½ÕßµÄ×î´ó¹«Ô¼Êı
+    return min*max/gcd(min,max); //æœ€å°å…¬å€æ•°ä¸ºä¸¤è€…ä¹‹ç§¯é™¤ä»¥ä¸¤è€…çš„æœ€å¤§å…¬çº¦æ•°
 }
 int main015()
 {
@@ -35,7 +35,7 @@ int main015()
         {
             if((gcd(P,Q)==X0) && (lcm(P,Q)==Y0))
             {
-                map_result.insert(pair<int,int>(P,Q)); //×¢ÒâpairµÄÓÃ·¨
+                map_result.insert(pair<int,int>(P,Q)); //æ³¨æ„pairçš„ç”¨æ³•
             }
         }
     }

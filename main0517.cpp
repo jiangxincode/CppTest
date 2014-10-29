@@ -1,16 +1,16 @@
-/*
-»ªÎª¹«Ë¾2014½ìÐ£Ô°ÕÐÆ¸Èí¼þÀàÉÏ»ú¿¼ÊÔÑùÌâ
-ÒÑÖª2ÌõµØÌúÏßÂ·£¬ÆäÖÐAÎª»·Ïß£¬BÎª¶«Î÷ÏòÏßÂ·£¬ÏßÂ·¶¼ÊÇË«ÏòµÄ¡£
-¾­¹ýµÄÕ¾µãÃû·Ö±ðÈçÏÂ£¬Á½ÌõÏß½»²æµÄ»»³ËµãÓÃT1¡¢T2±íÊ¾¡£
-±àÐ´³ÌÐò£¬ÈÎÒâÊäÈëÁ½¸öÕ¾µãÃû³Æ£¬Êä³ö³Ë×øµØÌú×îÉÙÐèÒª¾­¹ýµÄ³µÕ¾ÊýÁ¿
-£¨º¬ÊäÈëµÄÆðµãºÍÖÕµã£¬»»³ËÕ¾µãÖ»¼ÆËãÒ»´Î£©¡£
-µØÌúÏßA£¨»·Ïß£©¾­¹ý³µÕ¾£ºA1 A2 A3 A4 A5 A6 A7 A8 A9 T1 A10 A11 A12 A13 T2 A14 A15 A16 A17 A18
-µØÌúÏßB£¨Ö±Ïß£©¾­¹ý³µÕ¾£ºB1 B2 B3 B4 B5 T1 B6 B7 B8 B9 B10 T2 B11 B12 B13 B14 B15
+ï»¿/*
+åŽä¸ºå…¬å¸2014å±Šæ ¡å›­æ‹›è˜è½¯ä»¶ç±»ä¸Šæœºè€ƒè¯•æ ·é¢˜
+å·²çŸ¥2æ¡åœ°é“çº¿è·¯ï¼Œå…¶ä¸­Aä¸ºçŽ¯çº¿ï¼ŒBä¸ºä¸œè¥¿å‘çº¿è·¯ï¼Œçº¿è·¯éƒ½æ˜¯åŒå‘çš„ã€‚
+ç»è¿‡çš„ç«™ç‚¹ååˆ†åˆ«å¦‚ä¸‹ï¼Œä¸¤æ¡çº¿äº¤å‰çš„æ¢ä¹˜ç‚¹ç”¨T1ã€T2è¡¨ç¤ºã€‚
+ç¼–å†™ç¨‹åºï¼Œä»»æ„è¾“å…¥ä¸¤ä¸ªç«™ç‚¹åç§°ï¼Œè¾“å‡ºä¹˜ååœ°é“æœ€å°‘éœ€è¦ç»è¿‡çš„è½¦ç«™æ•°é‡
+ï¼ˆå«è¾“å…¥çš„èµ·ç‚¹å’Œç»ˆç‚¹ï¼Œæ¢ä¹˜ç«™ç‚¹åªè®¡ç®—ä¸€æ¬¡ï¼‰ã€‚
+åœ°é“çº¿Aï¼ˆçŽ¯çº¿ï¼‰ç»è¿‡è½¦ç«™ï¼šA1 A2 A3 A4 A5 A6 A7 A8 A9 T1 A10 A11 A12 A13 T2 A14 A15 A16 A17 A18
+åœ°é“çº¿Bï¼ˆç›´çº¿ï¼‰ç»è¿‡è½¦ç«™ï¼šB1 B2 B3 B4 B5 T1 B6 B7 B8 B9 B10 T2 B11 B12 B13 B14 B15
 
-ÊäÈë£ºÊäÈëÁ½¸ö²»Í¬µÄÕ¾Ãû
-Êä³ö£ºÊä³ö×îÉÙ¾­¹ýµÄÕ¾Êý,º¬ÊäÈëµÄÆðµãºÍÖÕµã£¬»»³ËÕ¾µãÖ»¼ÆËãÒ»´Î
-ÊäÈëÑùÀý£ºA1 A3
-Êä³öÑùÀý£º3
+è¾“å…¥ï¼šè¾“å…¥ä¸¤ä¸ªä¸åŒçš„ç«™å
+è¾“å‡ºï¼šè¾“å‡ºæœ€å°‘ç»è¿‡çš„ç«™æ•°,å«è¾“å…¥çš„èµ·ç‚¹å’Œç»ˆç‚¹ï¼Œæ¢ä¹˜ç«™ç‚¹åªè®¡ç®—ä¸€æ¬¡
+è¾“å…¥æ ·ä¾‹ï¼šA1 A3
+è¾“å‡ºæ ·ä¾‹ï¼š3
 */
 
 #include <cstdio>
@@ -62,7 +62,7 @@ void creat(vexnode ga[])
         }
     }
 
-    for(i=1; i<SUBWAY_A-1; i++) //AµØÌú½¨ÁÚ½Ó±í
+    for(i=1; i<SUBWAY_A-1; i++) //Aåœ°é“å»ºé‚»æŽ¥è¡¨
     {
         p=(edgenode*)malloc(sizeof(edgenode));
         p->adjvex=i-1;
@@ -114,7 +114,7 @@ void creat(vexnode ga[])
     p->next=NULL;
     ga[SUBWAY_A-1].link->next=p;
 
-    for(i=1; i<SUBWAY_B-1; i++) //BµØÌú½¨ÁÚ½Ó±í
+    for(i=1; i<SUBWAY_B-1; i++) //Båœ°é“å»ºé‚»æŽ¥è¡¨
     {
         if(i==4||i==5||i==9||i==10) continue;
 
@@ -169,7 +169,7 @@ void creat(vexnode ga[])
     p->next=NULL;
     ga[SUBWAY_A+SUBWAY_B-1].link=p;
 
-    for(i=0; i<MAX; i++) //´òÓ¡¸÷ÁÚ½Ó½Úµã
+    for(i=0; i<MAX; i++) //æ‰“å°å„é‚»æŽ¥èŠ‚ç‚¹
     {
         printf("%s:",ga[i].name);
         edgenode *s;
@@ -220,7 +220,7 @@ int main0517()
 
             count++;
             printf("************************\n");
-            printf("µÚ%d²ãËÑË÷£º",count);
+            printf("ç¬¬%då±‚æœç´¢ï¼š",count);
             int temp_end=end;
 
             while(start<temp_end)

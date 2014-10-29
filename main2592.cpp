@@ -1,29 +1,25 @@
-/**
- * ì³²¨À­Æõ/ì³²¨ÄÇÆõ/Fibonacci/Fib
- * f(1)=1
- * f(2)=1
- * f(n)=f(n-1)+f(n-2) n>2
- */
-
-#include <iostream>
+ï»¿#include <iostream>
 #include <cerrno>
 #include <cstring>
 
 using namespace std;
 
-/**
- * ·Çµİ¹é¼ÆËã
- * Õı³£¼ÆËã·µ»ØÊµ¼Ê½á¹û£¬·ñÔò·µ»Ø-1
- * Í¬Ê±ÉèÖÃerrnoµÄÖµ
- * ÊäÈëĞ¡ÓÚ0:EDOM
- * ÊäÈë¹ı´ó£¬µ¼ÖÂ½á¹ûÒç³ö:ERANGE
+/** \brief æ–æ³¢æ‹‰å¥‘/æ–æ³¢é‚£å¥‘/Fibonacci/Fib
+ * f(1)=1
+ * f(2)=1
+ * f(n)=f(n-1)+f(n-2) n>2
+ * \param éè´Ÿæ•´æ•°n
+ * \return æ­£å¸¸æƒ…å†µä¸‹è¿”å›å®é™…ç»“æœï¼Œå‡ºé”™è¿”å›-1
+ * è¾“å…¥å°äº0:EDOM
+ * è¾“å…¥è¿‡å¤§ï¼Œå¯¼è‡´ç»“æœæº¢å‡º:ERANGE
  */
+
 int fibonacci(int n)
 {
-    errno = 0; //Çå³şerrno
+    errno = 0; //æ¸…é™¤errno
     int result;
     int smaller = 0,bigger = 1;
-    if(n < 0) //´íÎóÊäÈë
+    if(n < 0) //é”™è¯¯è¾“å…¥
     {
         errno = EDOM;
         return -1;
@@ -42,8 +38,8 @@ int fibonacci(int n)
         {
             result = smaller+bigger;
             /**
-             * ËµÃ÷ÔÚÉÏ´Îresult = smaller+bigger·¢ÉúÁËÉÏÒç£¬
-             * resultÒ»¶¨±ÈsmallerºÍbigger¶¼Ğ¡
+             * è¯´æ˜åœ¨ä¸Šæ¬¡result = smaller+biggerå‘ç”Ÿäº†ä¸Šæº¢ï¼Œ
+             * resultä¸€å®šæ¯”smallerå’Œbiggeréƒ½å°
              */
             if(result < smaller)
             {
@@ -59,8 +55,8 @@ int fibonacci(int n)
     return result;
 }
 /**
-µİ¹éËã·¨
-*/
+ * é€’å½’ç®—æ³•
+ */
 int fibonacci_2(int n)
 {
     if(n==1||n==2)

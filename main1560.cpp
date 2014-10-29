@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <initializer_list>
 
 using namespace std;
@@ -25,11 +25,11 @@ int test_Ex_6_27(initializer_list<int> li)
 
 /*****************************************************************
 Ex_6_28:
-elemÊÇÒ»¸ö¶ÔstringµÄ³£ÒýÓÃÀàÐÍ¡£
+elemæ˜¯ä¸€ä¸ªå¯¹stringçš„å¸¸å¼•ç”¨ç±»åž‹ã€‚
 
 Ex_6_29:
-¸öÈË¾õµÃÉùÃ÷²»ÉùÃ÷³ÉÒýÓÃÀàÐÍÎÞËùÎ½£¬Ê×ÏÈ¼ÓÈë²»²ÉÓÃÒýÓÃÀàÐÍ£¬¾Í»á
-²úÉú¿½±´µÄ¿ªÏú£¬Èç¹û²»¿¼ÂÇÕâÖÖ¿ªÏúµÄ»°£¬Á½ÕßÓ¦¸ÃÊÇÍêÈ«ÏàÍ¬µÄ£¬¼°Ê±ÎÒÃÇ
-²ÉÓÃÒýÓÃÀàÐÍ£¬Ò²²»»á¸Ä±äinitializer_listµÄÖµ£¬ÒòÎªËüÃÇÓÀÔ¶ÊÇ³£Á¿Öµ£¬¶øÇÒ£¬
-ÎÒÃÇÎÒÃÇÔÚ²ÉÓÃÒýÓÃÀàÐÍÊ±³£³£¼ÓÉÏconstÏÞ¶¨¡£
+ä¸ªäººè§‰å¾—å£°æ˜Žä¸å£°æ˜Žæˆå¼•ç”¨ç±»åž‹æ— æ‰€è°“ï¼Œé¦–å…ˆåŠ å…¥ä¸é‡‡ç”¨å¼•ç”¨ç±»åž‹ï¼Œå°±ä¼š
+äº§ç”Ÿæ‹·è´çš„å¼€é”€ï¼Œå¦‚æžœä¸è€ƒè™‘è¿™ç§å¼€é”€çš„è¯ï¼Œä¸¤è€…åº”è¯¥æ˜¯å®Œå…¨ç›¸åŒçš„ï¼ŒåŠæ—¶æˆ‘ä»¬
+é‡‡ç”¨å¼•ç”¨ç±»åž‹ï¼Œä¹Ÿä¸ä¼šæ”¹å˜initializer_listçš„å€¼ï¼Œå› ä¸ºå®ƒä»¬æ°¸è¿œæ˜¯å¸¸é‡å€¼ï¼Œè€Œä¸”ï¼Œ
+æˆ‘ä»¬æˆ‘ä»¬åœ¨é‡‡ç”¨å¼•ç”¨ç±»åž‹æ—¶å¸¸å¸¸åŠ ä¸Šconsté™å®šã€‚
 *****************************************************************/

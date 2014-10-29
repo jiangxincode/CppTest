@@ -1,9 +1,9 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <cstdio>
 using namespace std;
 
 #define MAXINPUTLENGTH 256
-//ÔÚÒ»¸ö×Ö·û´®ÖĞÕÒµ½ËùÓĞÖ»³öÏÖÒ»´ÎµÄ×Ö·û,²ÉÓÃhash±í£¬¸´ÔÓµÄÎªO(n)
+//åœ¨ä¸€ä¸ªå­—ç¬¦ä¸²ä¸­æ‰¾åˆ°æ‰€æœ‰åªå‡ºç°ä¸€æ¬¡çš„å­—ç¬¦,é‡‡ç”¨hashè¡¨ï¼Œå¤æ‚çš„ä¸ºO(n)
 void FindOne(char *input)
 {
     int HashTable[256] = {0};

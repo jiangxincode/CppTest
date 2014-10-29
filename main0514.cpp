@@ -1,4 +1,4 @@
-// sstringµÄÊ¹ÓÃ½âÎö
+ï»¿// sstringçš„ä½¿ç”¨è§£æ
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -18,7 +18,7 @@ int main05141()
     int age2;
     istringstream is(os.str());
     is >> name2 >> age2;
-    cout << name2 << " " << age2 << endl; //´ÓstringstreamÖĞ½âÎö¶ÔÏóµÄÊ±ºò£¬ÒÔ¿Õ¸ñºÍ»Ø³µ¼üÎª·Ö¸ô·û
+    cout << name2 << " " << age2 << endl; //ä»stringstreamä¸­è§£æå¯¹è±¡çš„æ—¶å€™ï¼Œä»¥ç©ºæ ¼å’Œå›è½¦é”®ä¸ºåˆ†éš”ç¬¦
     return 0;
 }
 
@@ -46,7 +46,7 @@ int main05143()
     io << "345";
     io >> i;
     cout << i << endl;
-    io.clear(); //×¢Òâ£ºÈç¹û×ö¶à´ÎÊı¾İ×ª»»£»±ØĞëµ÷ÓÃclear()À´ÉèÖÃ×ª»»Ä£Ê½
+    io.clear(); //æ³¨æ„ï¼šå¦‚æœåšå¤šæ¬¡æ•°æ®è½¬æ¢ï¼›å¿…é¡»è°ƒç”¨clear()æ¥è®¾ç½®è½¬æ¢æ¨¡å¼
     io << true;
     io >> i;
     cout << i << endl;
@@ -58,7 +58,7 @@ int main05144()
     char buf[20];
     stringstream io;
     io << 888;
-    io >> buf;  // Ö±½Ó½«ÊıÊä³öµ½buf×Ö·ûÊı×éÖĞ
+    io >> buf;  // ç›´æ¥å°†æ•°è¾“å‡ºåˆ°bufå­—ç¬¦æ•°ç»„ä¸­
 
     for(int i=0; buf[i]!='\0'; i++)
     {
@@ -69,23 +69,23 @@ int main05144()
     return 0;
 }
 
-int main05145() //¶ÁÈ¡ÒÔ¶ººÅÎª·Ö¸ô·ûµÄÊıÖµ
+int main05145() //è¯»å–ä»¥é€—å·ä¸ºåˆ†éš”ç¬¦çš„æ•°å€¼
 {
     string input = "23,45,78,90,89";
     int temp;
     vector<int> vec;
     /*
-    ²»ÄÜÊ¹ÓÃ£º
+    ä¸èƒ½ä½¿ç”¨ï¼š
     stringstream io(input.replace(input.begin(),input.end(),',',' '));
-    Ô­Òò¿ÉÒÔ²éÏÂreplaceµÄÓÃ·¨£¬Ëü²»ÊÇ½«ÖÆ¶¨×Ö·û´®×ª»»ÎªÁíÒ»¸ö×Ö·û´®£¬¶øÊÇ
-    ½«ÖÆ¶¨·¶Î§µÄ×Ö·û´®×ª»¯ÎªÁíÒ»¸ö×Ö·û´®¡£
-    Ò²²»ÄÜÊ¹ÓÃ£º
+    åŸå› å¯ä»¥æŸ¥ä¸‹replaceçš„ç”¨æ³•ï¼Œå®ƒä¸æ˜¯å°†åˆ¶å®šå­—ç¬¦ä¸²è½¬æ¢ä¸ºå¦ä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œè€Œæ˜¯
+    å°†åˆ¶å®šèŒƒå›´çš„å­—ç¬¦ä¸²è½¬åŒ–ä¸ºå¦ä¸€ä¸ªå­—ç¬¦ä¸²ã€‚
+    ä¹Ÿä¸èƒ½ä½¿ç”¨ï¼š
     replace(input.begin(),input.end(),string(","),string(" "));
-    algorithm²»Ö§³Öreplace
+    algorithmä¸æ”¯æŒreplace
     */
     string::size_type pos;
 
-    while((pos = input.find(","))!=string::npos) //´Ë´¦¶ººÅºÍ¿Õ¸ñÒ²±ØĞëÊ¹ÓÃ×Ö·û´®£¬¶ø²»ÄÜÊÇ×Ö·û£¬ÒòÎªÃ»ÓĞÖØÔØ¡£
+    while((pos = input.find(","))!=string::npos) //æ­¤å¤„é€—å·å’Œç©ºæ ¼ä¹Ÿå¿…é¡»ä½¿ç”¨å­—ç¬¦ä¸²ï¼Œè€Œä¸èƒ½æ˜¯å­—ç¬¦ï¼Œå› ä¸ºæ²¡æœ‰é‡è½½ã€‚
     {
         input.replace(pos,1," ");
     }

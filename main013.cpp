@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 
 using namespace std;
 
@@ -14,7 +14,7 @@ int main013()
         sum += M;
     }
 
-    M --;//×¢ÒâÁ½ÕßµÄË³Ğò
+    M --;//æ³¨æ„ä¸¤è€…çš„é¡ºåº
     sum -= M;
 
     if(M%2 == 1)

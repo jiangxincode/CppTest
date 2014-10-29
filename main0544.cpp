@@ -1,5 +1,5 @@
-/**
- * ¹ØÓÚÅÅĞòËã·¨µÄÒ»Ğ©Ğ¡³ÌĞò
+ï»¿/**
+ * å…³äºæ’åºç®—æ³•çš„ä¸€äº›å°ç¨‹åº
  */
 
 
@@ -11,7 +11,7 @@
 
 using namespace std;
 
-/*Ã°ÅİÅÅĞò*/
+/*å†’æ³¡æ’åº*/
 void bubblesort(int *arr, int n)
 {
     bool flag;
@@ -38,7 +38,7 @@ void bubblesort(int *arr, int n)
     }
 }
 
-/*²åÈëÅÅĞò*/
+/*æ’å…¥æ’åº*/
 void insertsort(int *arr, int n)
 {
     for(int i=1; i<n; i++)
@@ -58,7 +58,7 @@ void insertsort(int *arr, int n)
         }
     }
 }
-/*¿ìËÙÅÅĞò*/
+/*å¿«é€Ÿæ’åº*/
 int partion(int *arr, const int left, const int right)
 {
     int pivotpos = left;
@@ -93,7 +93,7 @@ void quicksort(int *arr, int left, int right)
     }
 }
 
-/*Ï£¶ûÅÅĞò*/
+/*å¸Œå°”æ’åº*/
 void shellsort(int *arr, int length)
 {
     int gap = length;
@@ -116,11 +116,11 @@ void shellsort(int *arr, int length)
 
 }
 
-/*¹é²¢ÅÅĞò*/
+/*å½’å¹¶æ’åº*/
 void merge(int *arr, int left, int mid, int right)
 {
     int temp[NUM];
-    for(int i=left;i<=right;i++) //¸´ÖÆÊı×é
+    for(int i=left;i<=right;i++) //å¤åˆ¶æ•°ç»„
     {
         temp[i] = arr[i];
     }

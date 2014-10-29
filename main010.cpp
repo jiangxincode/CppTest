@@ -1,8 +1,8 @@
-/*
+ï»¿/*
 http://wikioi.com/problem/1205/
 */
 #include <iostream>
-#include <sstream> //×¢ÒâÊÇsstream£¬²»ÊÇstringstring
+#include <sstream> //æ³¨æ„æ˜¯sstreamï¼Œä¸æ˜¯stringstring
 #include <string>
 #include <vector>
 
@@ -11,7 +11,7 @@ using namespace std;
 int main010()
 {
     string word, str_input;
-    getline(cin, str_input); //×¢ÒâgetlineµÄÓÃ·¨
+    getline(cin, str_input); //æ³¨æ„getlineçš„ç”¨æ³•
     vector<string> vec;
     stringstream strstr_input(str_input);
 
@@ -20,10 +20,10 @@ int main010()
         vec.push_back(word);
     }
 
-    //×¢Òâ¼ÈÈ»ÏÂÃæÒªÊ¹ÓÃ·´Ïòµü´úÆ÷£¬ËùÒÔÀàĞÍÒ²ÒªÉùÃ÷Îª·½Ïòµü´úÆ÷
+    //æ³¨æ„æ—¢ç„¶ä¸‹é¢è¦ä½¿ç”¨åå‘è¿­ä»£å™¨ï¼Œæ‰€ä»¥ç±»å‹ä¹Ÿè¦å£°æ˜ä¸ºæ–¹å‘è¿­ä»£å™¨
     vector<string>::reverse_iterator pos;
 
-    for(pos=vec.rbegin(); pos!=vec.rend(); ++pos) //Ö÷Òª·´Ïòµü´úÆ÷Ò»¶¨Òª++²»ÊÇ--
+    for(pos=vec.rbegin(); pos!=vec.rend(); ++pos) //ä¸»è¦åå‘è¿­ä»£å™¨ä¸€å®šè¦++ä¸æ˜¯--
     {
         cout << *pos << " ";
     }

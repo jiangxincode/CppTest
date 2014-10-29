@@ -1,6 +1,6 @@
-/**
- * Á½¸ö½Ï³¤µÄµ¥ÏòÁ´±íaºÍb£¬ÎªÁËÕÒ³ö¼°ÚÀµ¥noedÂú×ãnode in a²¢ÇÒnode in b
- * ±¾·½·¨Ëã·¨µÄ¿Õ¼ä¸´ÔÓ¶ÈO(1)£¬Ê±¼ä¸´ÔÓ¶ÈO(m+n)
+ï»¿/**
+ * ä¸¤ä¸ªè¾ƒé•¿çš„å•å‘é“¾è¡¨aå’Œbï¼Œä¸ºäº†æ‰¾å‡ºåŠè¯¶å•noedæ»¡è¶³node in aå¹¶ä¸”node in b
+ * æœ¬æ–¹æ³•ç®—æ³•çš„ç©ºé—´å¤æ‚åº¦O(1)ï¼Œæ—¶é—´å¤æ‚åº¦O(m+n)
  */
 
 #include <stdlib.h>
@@ -11,8 +11,8 @@ struct node
     node *next;
 };
 /**
- * ·µ»ØÁ´±íµÄ³¤¶È
- * Á´±íÎª¿Õ ·µ»Ø0
+ * è¿”å›é“¾è¡¨çš„é•¿åº¦
+ * é“¾è¡¨ä¸ºç©º è¿”å›0
  */
 size_t listLen(node * p)
 {
@@ -27,8 +27,8 @@ size_t listLen(node * p)
     return num;
 }
 /**
- * Èç¹ûÕÒµ½ÁËÔò·µ»ØÖ¸Õë Ö¸Ïò¹«¹²½Úµã
- * Èç¹û²»´æÔÚÔò·µ»Ø¿ÕÖ¸Õë
+ * å¦‚æœæ‰¾åˆ°äº†åˆ™è¿”å›æŒ‡é’ˆ æŒ‡å‘å…¬å…±èŠ‚ç‚¹
+ * å¦‚æœä¸å­˜åœ¨åˆ™è¿”å›ç©ºæŒ‡é’ˆ
  */
 node * findFirstCommonNode(node * pheada, node * pheadb)
 {
@@ -37,7 +37,7 @@ node * findFirstCommonNode(node * pheada, node * pheadb)
     node * plistA = pheada;
     node * plistB = pheadb;
 
-    //µ÷Õû³¤¶È,plistA Ö¸Ïò½Ï³¤µÄÒ»¸ö
+    //è°ƒæ•´é•¿åº¦,plistA æŒ‡å‘è¾ƒé•¿çš„ä¸€ä¸ª
     if(lenA < lenB)
     {
         plistB = pheada;
@@ -53,7 +53,7 @@ node * findFirstCommonNode(node * pheada, node * pheadb)
         --lenA;
     }
 
-    //Ò»Ñù³¤ÁË,Ñ°ÕÒ¹«¹²½Úµã
+    //ä¸€æ ·é•¿äº†,å¯»æ‰¾å…¬å…±èŠ‚ç‚¹
     while(plistA!=NULL && plistA != plistB)
     {
         plistA = plistA->next;

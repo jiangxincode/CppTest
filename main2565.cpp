@@ -1,6 +1,6 @@
-/*
-²»ÒıÈëĞÂµÄÊı×é£¬ÊµÏÖÊı×éÔªËØ½»»»Î»ÖÃº¯Êı£ºvoid swap(int a[], int m, int n);
-±ÈÈç£¬ÉèmÎª3£¬nÎª4£¬aÖĞµÄÊı¾İÎª£º1 2 3 4 5 6 7£¬º¯ÊıÖ´ĞĞºó£¬aÖĞµÄÊı¾İÎª£º4 5 6 7 1 2 3¡£
+ï»¿/*
+ä¸å¼•å…¥æ–°çš„æ•°ç»„ï¼Œå®ç°æ•°ç»„å…ƒç´ äº¤æ¢ä½ç½®å‡½æ•°ï¼švoid swap(int a[], int m, int n);
+æ¯”å¦‚ï¼Œè®¾mä¸º3ï¼Œnä¸º4ï¼Œaä¸­çš„æ•°æ®ä¸ºï¼š1 2 3 4 5 6 7ï¼Œå‡½æ•°æ‰§è¡Œåï¼Œaä¸­çš„æ•°æ®ä¸ºï¼š4 5 6 7 1 2 3ã€‚
 */
 #include <iostream>
 #include <unistd.h>
@@ -36,7 +36,7 @@ int main2565()
         cin >> i_array[i];
     }
 
-    cout << "Input m and n,separate with space£» " << endl;
+    cout << "Input m and n,separate with spaceï¼› " << endl;
     cin >> m >> n;
     int i = 0;
 

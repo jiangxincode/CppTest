@@ -1,11 +1,11 @@
-/**
- * 2015 ����Ͱ� �����з�����ʦ ���߱���
- * Longest Common String ������Ӵ�
- * ����һ��query��һ��text
- * Ҫ����text���ҳ���ͬ����˳������������query�е���������еĳ��ȡ�
- * ���磬 queryΪ��acbac����textΪ��acaccbabb����
- * ��ôtext�еġ�cba��Ϊ�������������query�е���ĸ���У�
- * ��ˣ����ؽ��Ӧ��Ϊ�䳤��3
+﻿/**
+ * 2015 阿里巴巴 数据研发工程师 在线笔试
+ * Longest Common String 最长公共子串
+ * 给定一个query和一个text
+ * 要求在text中找出以同样的顺序连续出现在query中的最长连续序列的长度。
+ * 例如， query为“acbac”，text为“acaccbabb”，
+ * 那么text中的“cba”为最长的连续出现在query中的字母序列，
+ * 因此，返回结果应该为其长度3
  */
 
 #include <iostream>
@@ -31,7 +31,7 @@ int LCS1(const string& text, const string& query)
             {
                 if((j-i)>len)
                 {
-                    len = j - i + 1; //i��jλ��֮�й���(j-i+1)��Ԫ��
+                    len = j - i + 1; //i和j位置之中共有(j-i+1)个元素
                 }
             }
         }
@@ -41,16 +41,16 @@ int LCS1(const string& text, const string& query)
 
 
 /**
- * �㷨�Ļ���˼�룺���þ���Խ�ԭ����ʵ��
- * ���ַ�ƥ���ʱ�򣬲��Ǽ򵥵ĸ���ӦԪ�ظ���1�����������Ͻ�Ԫ�ص�ֵ��1
- * ��������Ǳ�������Ǿ�����ֵ����Ԫ�ص�λ�ã��ھ������ɵĹ��������ж�
- * ��ǰ���ɵ�Ԫ�ص�ֵ�ǲ������ģ��ݴ����ı��Ǳ�����ֵ����ô��������ɵ�ʱ
- * ���ƥ���Ӵ���λ�úͳ��Ⱦ��Ѿ������ˡ�
+ * 算法的基本思想：利用矩阵对角原理来实现
+ * 当字符匹配的时候，不是简单的给相应元素赋上1，而是其左上角元素的值加1
+ * 用两个标记变量来标记矩阵中值最大的元素的位置，在矩阵生成的过程中来判断
+ * 当前生成的元素的值是不是最大的，据此来改变标记变量的值，那么到矩阵完成的时
+ * 候，最长匹配子串的位置和长度就已经出来了。
 
- * ����
- * �ַ���1��21232523311324
- * �ַ���2��312123223445
- * ����c�ı仯���Ϊ��
+ * 输入
+ * 字符串1：21232523311324
+ * 字符串2：312123223445
+ * 数组c的变化情况为：
  * 0 0 1 0 1 0 1 1 0 0 0 0
  * 0 1 0 2 0 0 0 0 0 0 0 0
  * 0 0 2 0 3 0 1 1 0 0 0 0
@@ -65,8 +65,8 @@ int LCS1(const string& text, const string& query)
  * 1 0 0 0 0 1 0 0 1 0 0 0
  * 0 0 1 0 1 0 2 1 0 0 0 0
  * 0 0 0 0 0 0 0 0 0 1 1 0
- * ����14����1�ĳ��ȣ�������12����2�ĳ��ȣ�
- * ��Ӵ�Ϊ:21232
+ * 长：14（串1的长度），宽：12（串2的长度）
+ * 最长子串为:21232
  */
 
 int LCS2(const char left[],const char right[],int &pos)
@@ -76,7 +76,7 @@ int LCS2(const char left[],const char right[],int &pos)
 
     for(size_t i=0; i<strlen(left); i++)
     {
-        for(int j=strlen(right)-1; j>=0; j--) //�˴�����ʹ��size_t
+        for(int j=strlen(right)-1; j>=0; j--) //此处不能使用size_t
         {
             if(left[i] == right[j])
             {
@@ -103,9 +103,9 @@ int LCS2(const char left[],const char right[],int &pos)
 }
 
 
-void GetMaxCommStr(char *s1,char *s2,char *s3)//s1��s2 ΪҪ�Աȵ������ַ�����
+void GetMaxCommStr(char *s1,char *s2,char *s3)//s1、s2 为要对比的俩个字符串，
 {
-    //s3�����洢���Ĺ����ַ���
+    //s3用来存储最大的公共字符串
     // char *s1=stra,  *s2=strb;
     char len1 = strlen(s1);
     char len2 = strlen(s2);
@@ -115,23 +115,23 @@ void GetMaxCommStr(char *s1,char *s2,char *s3)//s1��s2 ΪҪ�Աȵ������ַ�����
     {
         for(int j = 0; j < len2; j++)
         {
-            if(s1[i] == s2[j])     //�ҵ��˵�һ����ȵ�
+            if(s1[i] == s2[j])     //找到了第一个相等的
             {
-                int as = i, bs = j, count = 1; //�����һ����ȵ��׵�ַ
+                int as = i, bs = j, count = 1; //保存第一个相等的首地址
 
-                while((as+1<len1) && (bs+1<len2) && (s1[++as] == s2[++bs]))     //���������ȳ���
+                while((as+1<len1) && (bs+1<len2) && (s1[++as] == s2[++bs]))     //查找最大相等长度
                     count++;
 
-                if(count > maxlen)  //���������󳤶������
+                if(count > maxlen)  //如果大于最大长度则更新
                 {
                     maxlen = count;
-                    //r1=i;             //�洢�������ַ�������ʼλ
+                    //r1=i;             //存储公共子字符串的起始位
                 }
             }
         }
     }
 
-    if(maxlen>0)  //�й������ַ���
+    if(maxlen>0)  //有公共子字符串
     {
         for(int i=0; i<maxlen; i++)
         {

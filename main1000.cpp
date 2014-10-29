@@ -1,9 +1,9 @@
-/*
-�Ͼ���ѧ��������� 2009 �ϻ�����
-�Ͼ���ѧ�����ϵ 2009 �긴�Ե�һ�μ����ϻ����죬����Ϊ VC++6.0������ʱ��һ��Сʱ��
-�ϻ�����ֻ��һ�⣬������Ŀ�����ģ����� 50 �֣����벻ͨ�� 0 �ִ��������������ϸ�ڲ��ꡣ
-�����ֻҪ�����ļ� intset.h�� intset.cpp���ڰ��涨������һ���ļ����С�
-Ҫ��дһ���������ϵ��࣬�ֱ���� intset.h  �� intset.cpp �У���ʵ�����г����ܡ�
+﻿/*
+南京大学计算机考研 2009 上机试题
+南京大学计算机系 2009 年复试第一次加入上机考察，环境为 VC++6.0。考试时间一个小时。
+上机考题只有一题，具体题目在下文，满分 50 分，编译不通过 0 分处理，具体的评分细节不详。
+做完后只要两个文件 intset.h和 intset.cpp放在按规定建立的一个文件夹中。
+要求写一个整数集合的类，分别放在 intset.h  和 intset.cpp 中，以实现下列程序功能。
 
 #include "intset.h"
 #include <iostream>
@@ -13,14 +13,14 @@ int main()
 {
     IntSet s1, s2, s3, s4;
     int x;
-    for(cin >> x; x != 0; cin >> x) s1.insert(x);//�� s1 �в���Ԫ��
-    for(cin >> x; x != 0; cin >> x) s2.insert(x);//�� s2 �в���Ԫ��
-    if(s1.IsEqual(s2))//�Ƚ� s1 �� s2 �Ƿ����
+    for(cin >> x; x != 0; cin >> x) s1.insert(x);//在 s1 中插入元素
+    for(cin >> x; x != 0; cin >> x) s2.insert(x);//在 s2 中插入元素
+    if(s1.IsEqual(s2))//比较 s1 与 s2 是否相等
         cout << " s1 is equal s2 ";
-    s3 = s3.union2(s1, s2);//�� s1 �� s2 �Ľ�
-    s4 = s4.incorporate2(s1, s2);//�� s1  �� s2 �Ĳ�
+    s3 = s3.union2(s1, s2);//求 s1 与 s2 的交
+    s4 = s4.incorporate2(s1, s2);//求 s1  与 s2 的并
     cout << "\ns1:";
-    s1.print();//��� s1  �е�Ԫ�� cout << "\ns2:";
+    s1.print();//输出 s1  中的元素 cout << "\ns2:";
     s2.print();
     cout << "\ns3:";
     s3.print();
@@ -30,7 +30,7 @@ int main()
 }
 */
 
-//ע��Ϊ�˲��Է��㣬û�в���inset.h��������һ���ļ���
+//注：为了测试方便，没有采用inset.h，都放在一个文件了
 #include <iostream>
 #include <algorithm>
 #include <set>
@@ -122,18 +122,18 @@ int main1000()
     int x;
 
     for(cin >> x; x != 0; cin >> x)
-        s1.insert(x);//�� s1 �в���Ԫ��
+        s1.insert(x);//在 s1 中插入元素
 
     for(cin >> x; x != 0; cin >> x)
-        s2.insert(x);//�� s2 �в���Ԫ��
+        s2.insert(x);//在 s2 中插入元素
 
-    if(s1.IsEqual(s2))//�Ƚ� s1 �� s2 �Ƿ����
+    if(s1.IsEqual(s2))//比较 s1 与 s2 是否相等
         cout << " s1 is equal s2 ";
 
-    s3 = s3.union2(s1, s2);//�� s1 �� s2 �Ľ�
-    s4 = s4.incorporate2(s1, s2);//�� s1  �� s2 �Ĳ�
+    s3 = s3.union2(s1, s2);//求 s1 与 s2 的交
+    s4 = s4.incorporate2(s1, s2);//求 s1  与 s2 的并
     cout << "\ns1:";
-    s1.print();//��� s1  �е�Ԫ��
+    s1.print();//输出 s1  中的元素
     cout << "\ns2:";
     s2.print();
     cout << "\ns3:";

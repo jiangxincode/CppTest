@@ -1,6 +1,6 @@
-/*
-������ˮ
-ĳ������7������:������ˮ��Ϊ�˺����������ܳ�ͻ����Ҫ�滮ÿ�������ˮ�ĺ��С�
+﻿/**
+和尚挑水
+某寺庙里7个和尚:轮流挑水，为了和其他任务不能冲突，需要规划每天进行挑水的和尚。
 
 input:
 0 1 0 1 0 0 0
@@ -17,9 +17,9 @@ output:
 5 6 3 1 4 2 7
 5 6 7 1 4 2 3
 
-ע�ͣ�
-�����еĵ�i�д�����i������һ�����п���ʱ�������������һ������
-�����һ��Ϊ���з�������Ŀ���Ժ�ÿ�����һ�ַ�����ÿһ�ַ�����������һ������ĺ��б��
+注释：
+输入中的第i行代表第i个和尚一周内有空闲时间的天数，从周一到周日
+输出第一行为可行方案的数目，以后每行输出一种方案，每一种方案代表从周一到周五的和尚编号
 */
 
 #include <iostream>
@@ -31,15 +31,15 @@ using namespace std;
 
 struct st
 {
-    int spare[8]; //�洢���еĿ���ʱ�䣬spare[i]=0��ʾ����iû�п��У�spare[i]=1��ʾ����i����,����spare[0]����
-    int flag; //���ڱ�Ǻ��б������Ƿ��Ѿ���������flag��0��ʾû����ˮ��flag��1��ʾ�Ѿ�����ˮ
+    int spare[8]; //存储和尚的空闲时间，spare[i]=0表示星期i没有空闲，spare[i]=1表示星期i空闲,其中spare[0]不用
+    int flag; //用于标记和尚本周内是否已经工作过，flag＝0表示没挑过水，flag＝1表示已经挑过水
 } monk[8];
 
-int x[8]; //ÿ�찲�ŵĺ��б�ţ�����x[0]����
-int sum=0; //sum����ͳ�ƹ��ж����ַ���
+int x[8]; //每天安排的和尚编号，其中x[0]弃用
+int sum=0; //sum用于统计共有多少种方案
 vector<vector<int>> result;
 vector<int> temp;
-//�������ܣ���˷����n������7��Ľ⣨����n��7��ֱ����ĸ�����
+//函数功能：回朔求解第n天至第7天的解（即第n～7天分别安排哪个和尚
 void backtrack(int n)
 {
     //int j;
@@ -61,7 +61,7 @@ void backtrack(int n)
         {
             x[n]=j;
 
-            if(monk[j].flag==0&&monk[j].spare[n]==1) //�жϺ���j�Ƿ��Ѿ�����ˮ����������n�Ƿ��п�
+            if(monk[j].flag==0&&monk[j].spare[n]==1) //判断和尚j是否已经挑过水及和尚星期n是否有空
             {
                 monk[j].flag=1;
                 backtrack(n+1);
@@ -76,7 +76,7 @@ int main05231()
 {
     for(int i=1; i<=7; i++)
     {
-        //��ʼ�����еĿ���ʱ��,��ʼ��ʱ����ȫ��û����ˮ��flag��Ϊ0
+        //初始化和尚的空闲时间,初始化时和尚全部没挑过水即flag都为0
         for(int j=1; j<=7; j++)
         {
             cin >> monk[i].spare[j];
@@ -114,11 +114,11 @@ int main05232()
     {
         for(int j=1; j<=7; j++)
         {
-            cin >> data[i][j]; //��i�����е�j���Ƿ����
+            cin >> data[i][j]; //第i个和尚第j天是否空闲
         }
     }
 
-    //����ȫ���н��а���������������ȫ���к���
+    //利用全排列进行包里搜索，下面是全排列函数
     string ooo="1234567";
     vector<string> voo;
     sort(ooo.begin(),ooo.end());

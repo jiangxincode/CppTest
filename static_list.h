@@ -1,4 +1,4 @@
-
+﻿
 //静态链表的定义
 const int maxSize = 100; //the size of static list
 

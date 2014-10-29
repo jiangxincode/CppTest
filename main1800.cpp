@@ -1,17 +1,17 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <cstring>
 
 using namespace std;
 
-/* trieµÄ½ÚµãÀàĞÍ */
-template <int Size> //SizeÎª×Ö·û±íµÄ´óĞ¡
+/* trieçš„èŠ‚ç‚¹ç±»å‹ */
+template <int Size> //Sizeä¸ºå­—ç¬¦è¡¨çš„å¤§å°
 struct trie_node
 {
-    bool terminable; //µ±Ç°½ÚµãÊÇ·ñ¿ÉÒÔ×÷Îª×Ö·û´®µÄ½áÎ²
-    int node; //×Ó½ÚµãµÄ¸öÊı
-    trie_node *child[Size]; //Ö¸Ïò×Ó½ÚµãÖ¸Õë
+    bool terminable; //å½“å‰èŠ‚ç‚¹æ˜¯å¦å¯ä»¥ä½œä¸ºå­—ç¬¦ä¸²çš„ç»“å°¾
+    int node; //å­èŠ‚ç‚¹çš„ä¸ªæ•°
+    trie_node *child[Size]; //æŒ‡å‘å­èŠ‚ç‚¹æŒ‡é’ˆ
 
-    /* ¹¹Ôìº¯Êı */
+    /* æ„é€ å‡½æ•° */
     trie_node() : terminable(false), node(0)
     {
         memset(child, 0, sizeof(child));
@@ -19,24 +19,24 @@ struct trie_node
 };
 
 /* trie */
-template <int Size, typename Index> //SizeÎª×Ö·û±íµÄ´óĞ¡£¬IndexÎª×Ö·û±íµÄ¹şÏ£º¯Êı
+template <int Size, typename Index> //Sizeä¸ºå­—ç¬¦è¡¨çš„å¤§å°ï¼ŒIndexä¸ºå­—ç¬¦è¡¨çš„å“ˆå¸Œå‡½æ•°
 class trie
 {
 public:
-    /* ¶¨ÒåÀàĞÍ±ğÃû */
+    /* å®šä¹‰ç±»å‹åˆ«å */
     typedef trie_node<Size> node_type;
     typedef trie_node<Size>* link_type;
 
-    /* ¹¹Ôìº¯Êı */
+    /* æ„é€ å‡½æ•° */
     trie(Index i = Index()) : index(i) { }
 
-    /* Îö¹¹º¯Êı */
+    /* ææ„å‡½æ•° */
     ~trie()
     {
         clear();
     }
 
-    /* Çå¿Õ */
+    /* æ¸…ç©º */
     void clear()
     {
         clear_node(root);
@@ -44,30 +44,30 @@ public:
             root.child[i] = 0;
     }
 
-    /* ²åÈë×Ö·û´® */
+    /* æ’å…¥å­—ç¬¦ä¸² */
     template <typename Iterator>
     void insert(Iterator begin, Iterator end)
     {
-        link_type cur = &root; //µ±Ç°½ÚµãÉèÖÃÎª¸ù½Úµã
+        link_type cur = &root; //å½“å‰èŠ‚ç‚¹è®¾ç½®ä¸ºæ ¹èŠ‚ç‚¹
         for (; begin != end; ++begin)
         {
-            if (!cur->child[index[*begin]]) //Èôµ±Ç°×Ö·ûÕÒ²»µ½Æ¥Åä£¬ÔòĞÂ½¨½Úµã
+            if (!cur->child[index[*begin]]) //è‹¥å½“å‰å­—ç¬¦æ‰¾ä¸åˆ°åŒ¹é…ï¼Œåˆ™æ–°å»ºèŠ‚ç‚¹
             {
                 cur->child[index[*begin]] = new node_type;
-                ++cur->node; //µ±Ç°½ÚµãµÄ×Ó½ÚµãÊı¼ÓÒ»
+                ++cur->node; //å½“å‰èŠ‚ç‚¹çš„å­èŠ‚ç‚¹æ•°åŠ ä¸€
             }
-            cur = cur->child[index[*begin]]; //½«µ±Ç°½ÚµãÉèÖÃÎªµ±Ç°×Ö·û¶ÔÓ¦µÄ×Ó½Úµã
+            cur = cur->child[index[*begin]]; //å°†å½“å‰èŠ‚ç‚¹è®¾ç½®ä¸ºå½“å‰å­—ç¬¦å¯¹åº”çš„å­èŠ‚ç‚¹
         }
-        cur->terminable = true; //ÉèÖÃ´æ·Å×îºóÒ»¸ö×Ö·ûµÄ½ÚµãµÄ¿ÉÖÕÖ¹±êÖ¾ÎªÕæ
+        cur->terminable = true; //è®¾ç½®å­˜æ”¾æœ€åä¸€ä¸ªå­—ç¬¦çš„èŠ‚ç‚¹çš„å¯ç»ˆæ­¢æ ‡å¿—ä¸ºçœŸ
     }
 
-    /* ²åÈë×Ö·û´®£¬Õë¶ÔC·ç¸ñ×Ö·û´®µÄÖØÔØ°æ±¾ */
+    /* æ’å…¥å­—ç¬¦ä¸²ï¼Œé’ˆå¯¹Cé£æ ¼å­—ç¬¦ä¸²çš„é‡è½½ç‰ˆæœ¬ */
     void insert(const char *str)
     {
         insert(str, str + strlen(str));
     }
 
-    /* ²éÕÒ×Ö·û´®£¬Ëã·¨ºÍ²åÈëÀàËÆ */
+    /* æŸ¥æ‰¾å­—ç¬¦ä¸²ï¼Œç®—æ³•å’Œæ’å…¥ç±»ä¼¼ */
     template <typename Iterator>
     bool find(Iterator begin, Iterator end)
     {
@@ -81,28 +81,28 @@ public:
         return cur->terminable;
     }
 
-    /* ²éÕÒ×Ö·û´®£¬Õë¶ÔC·ç¸ñ×Ö·û´®µÄÖØÔØ°æ±¾ */
+    /* æŸ¥æ‰¾å­—ç¬¦ä¸²ï¼Œé’ˆå¯¹Cé£æ ¼å­—ç¬¦ä¸²çš„é‡è½½ç‰ˆæœ¬ */
     bool find(const char *str)
     {
         return find(str, str + strlen(str));
     }
 
-    /* É¾³ı×Ö·û´® */
+    /* åˆ é™¤å­—ç¬¦ä¸² */
     template <typename Iterator>
     bool erase(Iterator begin, Iterator end)
     {
-        bool result; //ÓÃÓÚ´æ·ÅËÑË÷½á¹û
+        bool result; //ç”¨äºå­˜æ”¾æœç´¢ç»“æœ
         erase_node(begin, end, root, result);
         return result;
     }
 
-    /* É¾³ı×Ö·û´®£¬Õë¶ÔC·ç¸ñ×Ö·û´®µÄÖØÔØ°æ±¾ */
+    /* åˆ é™¤å­—ç¬¦ä¸²ï¼Œé’ˆå¯¹Cé£æ ¼å­—ç¬¦ä¸²çš„é‡è½½ç‰ˆæœ¬ */
     bool erase(char *str)
     {
         return erase(str, str + strlen(str));
     }
 
-    /* °´×ÖµäĞò±éÀúµ¥´ÊÊ÷ */
+    /* æŒ‰å­—å…¸åºéå†å•è¯æ ‘ */
     template <typename Functor>
     void traverse(Functor &execute = Functor())
     {
@@ -110,7 +110,7 @@ public:
     }
 
 private:
-    /* ·ÃÎÊÄ³½áµã¼°Æä×Ó½áµã */
+    /* è®¿é—®æŸç»“ç‚¹åŠå…¶å­ç»“ç‚¹ */
     template <typename Functor>
     void visit_node(node_type cur, Functor &execute)
     {
@@ -121,7 +121,7 @@ private:
             visit_node(*cur.child[i], execute);
         }
     }
-    /* Çå³ıÄ³¸ö½ÚµãµÄËùÓĞ×Ó½Úµã */
+    /* æ¸…é™¤æŸä¸ªèŠ‚ç‚¹çš„æ‰€æœ‰å­èŠ‚ç‚¹ */
     void clear_node(node_type cur)
     {
         for (int i = 0; i < Size; ++i)
@@ -134,33 +134,33 @@ private:
         }
     }
 
-    /* ±ßËÑË÷±ßÉ¾³ıÈßÓà½Úµã£¬·µ»ØÖµÓÃÓÚÏòÆä¸¸½ÚµãÉùÃ÷ÊÇ·ñ¸ÃÉ¾³ı¸Ã½Úµã */
+    /* è¾¹æœç´¢è¾¹åˆ é™¤å†—ä½™èŠ‚ç‚¹ï¼Œè¿”å›å€¼ç”¨äºå‘å…¶çˆ¶èŠ‚ç‚¹å£°æ˜æ˜¯å¦è¯¥åˆ é™¤è¯¥èŠ‚ç‚¹ */
     template <typename Iterator>
     bool erase_node(Iterator begin, Iterator end, node_type &cur, bool &result)
     {
-        if (begin == end) //µ±µ½´ï×Ö·û´®½áÎ²£ºµİ¹éµÄÖÕÖ¹Ìõ¼ş
+        if (begin == end) //å½“åˆ°è¾¾å­—ç¬¦ä¸²ç»“å°¾ï¼šé€’å½’çš„ç»ˆæ­¢æ¡ä»¶
         {
-            result = cur.terminable; //Èç¹ûµ±Ç°½Úµã¿ÉÒÔ×÷ÎªÖÕÖ¹×Ö·û£¬ÄÇÃ´½á¹ûÎªÕæ
-            cur.terminable = false;  //ÉèÖÃ¸Ã½ÚµãÎª²»¿É×÷ÎªÖÕÖ¹×Ö·û£¬¼´É¾³ı¸Ã×Ö·û´®
-            return cur.node == 0;    //Èô¸Ã½ÚµãÎªÊ÷Ò¶£¬ÄÇÃ´Í¨ÖªÆä¸¸½ÚµãÉ¾³ıËü
+            result = cur.terminable; //å¦‚æœå½“å‰èŠ‚ç‚¹å¯ä»¥ä½œä¸ºç»ˆæ­¢å­—ç¬¦ï¼Œé‚£ä¹ˆç»“æœä¸ºçœŸ
+            cur.terminable = false;  //è®¾ç½®è¯¥èŠ‚ç‚¹ä¸ºä¸å¯ä½œä¸ºç»ˆæ­¢å­—ç¬¦ï¼Œå³åˆ é™¤è¯¥å­—ç¬¦ä¸²
+            return cur.node == 0;    //è‹¥è¯¥èŠ‚ç‚¹ä¸ºæ ‘å¶ï¼Œé‚£ä¹ˆé€šçŸ¥å…¶çˆ¶èŠ‚ç‚¹åˆ é™¤å®ƒ
         }
-        //µ±ÎŞ·¨Æ¥Åäµ±Ç°×Ö·ûÊ±£¬½«½á¹ûÉèÎª¼Ù²¢·µ»Ø¼Ù£¬¼´Í¨ÖªÆä¸¸½Úµã²»ÒªÉ¾³ıËü
+        //å½“æ— æ³•åŒ¹é…å½“å‰å­—ç¬¦æ—¶ï¼Œå°†ç»“æœè®¾ä¸ºå‡å¹¶è¿”å›å‡ï¼Œå³é€šçŸ¥å…¶çˆ¶èŠ‚ç‚¹ä¸è¦åˆ é™¤å®ƒ
         if (cur.child[index[*begin]] == 0) return result = false;
-        //ÅĞ¶ÏÊÇ·ñÓ¦¸ÃÉ¾³ı¸Ã×Ó½Úµã
+        //åˆ¤æ–­æ˜¯å¦åº”è¯¥åˆ é™¤è¯¥å­èŠ‚ç‚¹
         else if (erase_node((++begin)--, end, *(cur.child[index[*begin]]), result))
         {
-            delete cur.child[index[*begin]]; //É¾³ı¸Ã×Ó½Úµã
-            cur.child[index[*begin]] = 0; //×Ó½ÚµãÊı¼õÒ»
-            //Èôµ±Ç°½ÚµãÎªÊ÷Ò¶£¬ÄÇÃ´Í¨ÖªÆä¸¸½ÚµãÉ¾³ıËü
+            delete cur.child[index[*begin]]; //åˆ é™¤è¯¥å­èŠ‚ç‚¹
+            cur.child[index[*begin]] = 0; //å­èŠ‚ç‚¹æ•°å‡ä¸€
+            //è‹¥å½“å‰èŠ‚ç‚¹ä¸ºæ ‘å¶ï¼Œé‚£ä¹ˆé€šçŸ¥å…¶çˆ¶èŠ‚ç‚¹åˆ é™¤å®ƒ
             if (--cur.node == 0 && cur.terminable == false) return true;
         }
-        return false; //ÆäËûÇé¿ö¶¼·µ»Ø¼Ù
+        return false; //å…¶ä»–æƒ…å†µéƒ½è¿”å›å‡
     }
 
-    /* ¸ù½Úµã */
+    /* æ ¹èŠ‚ç‚¹ */
     node_type root;
 
-    /* ½«×Ö·û×ª»»ÎªË÷ÒıµÄ×ª»»±í»òº¯Êı¶ÔÏó */
+    /* å°†å­—ç¬¦è½¬æ¢ä¸ºç´¢å¼•çš„è½¬æ¢è¡¨æˆ–å‡½æ•°å¯¹è±¡ */
     Index index;
 };
 

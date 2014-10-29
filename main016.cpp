@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 http://wikioi.com/problem/1212/
 */
 #include <iostream>
@@ -13,7 +13,7 @@ int gcd016(int min,int max)
     }
     else
     {
-        return gcd016(max%min,min); //Å£¶Ùµü´úÏà³ý·¨
+        return gcd016(max%min,min); //ç‰›é¡¿è¿­ä»£ç›¸é™¤æ³•
     }
 }
 

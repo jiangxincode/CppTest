@@ -1,5 +1,5 @@
-/**
-ÎÄ¼şÖĞÓĞÒ»×éÕûÊı£¬ÒªÇóÅÅĞòºóÊä³öµ½ÁíÒ»¸öÎÄ¼şÖĞ
+ï»¿/**
+æ–‡ä»¶ä¸­æœ‰ä¸€ç»„æ•´æ•°ï¼Œè¦æ±‚æ’åºåè¾“å‡ºåˆ°å¦ä¸€ä¸ªæ–‡ä»¶ä¸­
 */
 #include <iostream>
 #include <fstream>
@@ -10,7 +10,7 @@ using namespace std;
 void Order(vector<int>& data) //bubble sort
 {
     int count = data.size() ;
-    int tag = false ; // ÉèÖÃÊÇ·ñĞèÒª¼ÌĞøÃ°ÅİµÄ±êÖ¾Î»
+    int tag = false ; // è®¾ç½®æ˜¯å¦éœ€è¦ç»§ç»­å†’æ³¡çš„æ ‡å¿—ä½
 
     for(int i = 0 ; i < count ; i++)
     {
@@ -49,7 +49,7 @@ void main0552(void)
         data.push_back(temp);
     }
 
-    in.close(); //¹Ø±ÕÊäÈëÎÄ¼şÁ÷
+    in.close(); //å…³é—­è¾“å…¥æ–‡ä»¶æµ
     Order(data);
     ofstream out("c:\\result.txt");
 
@@ -62,6 +62,6 @@ void main0552(void)
     for(vector<int>::size_type i = 0 ; i < data.size() ; i++)
         out<<data[i]<<" ";
 
-    out.close(); //¹Ø±ÕÊä³öÎÄ¼şÁ÷
+    out.close(); //å…³é—­è¾“å‡ºæ–‡ä»¶æµ
 }
 

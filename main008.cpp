@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 http://wikioi.com/problem/2235/
 */
 #include <iostream>
@@ -11,7 +11,7 @@ int main008()
     float discount;
     int result;
     cin >> price >> discount;
-    //¼Û¸ñÓëÕÛ¿ÛÂÊ¼ÆËãµÃµ½½á¹û£¬½á¹û±£Áôµ½10Î»
+    //ä»·æ ¼ä¸æŠ˜æ‰£ç‡è®¡ç®—å¾—åˆ°ç»“æœï¼Œç»“æœä¿ç•™åˆ°10ä½
     result = ((int)(price*(discount/10)+5))/10*10;
     cout << result;
     return 0;

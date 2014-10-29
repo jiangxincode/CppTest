@@ -1,9 +1,9 @@
-/*
-2006�껪Ϊ�з�����Ա����(2006��10��29�������ɶ����ӿƼ���ѧ������Ŀ)
-��Ŀ���������Ĺ���100�����򳡣�ÿ����λ����������1��100�ĳ��أ�����ĳ��ر�ű����������ģ�
-��������Ѿ���������λռ�ã��Ͳ����ٴ�ʹ�ã����ҵ�λ��ʹ���곡�غ����黹��
-�����һ��������ϵͳ(c���ԣ���
-����ʱ5���ӣ�
+﻿/*
+2006年华为研发类笔试编程题(2006年10月29日晚，成都电子科技大学考试题目)
+题目：网球中心共有100个网球场，每个单位可以来申请1到100的场地，申请的场地编号必须是连续的，
+如果场地已经被其他单位占用，就不能再次使用，而且单位在使用完场地后必须归还。
+请设计一个完整的系统(c语言）。
+（限时5分钟）
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,8 +13,8 @@
 struct TennisGround
 {
     int num;
-    //�˴�֮����ʹ��const�޶�������Ϊ�����ʹ�ã�����agentName = " "�����㱨����
-    //��Ϊ���ַ�������ת����char *�ǲ������ġ�
+    //此处之所以使用const限定，是因为如果不使用，类似agentName = " "的语句汇报警告
+    //因为把字符串常量转换成char *是不合理的。
     const char *agentName;
 };
 
@@ -57,7 +57,7 @@ void freeTG(TG* total)
     char *an = (char*)malloc(sizeof(char)*10);
     printf("please input agentName you want to free:");
     scanf("%s", an);
-    int count = 1; //��ʹ��0��
+    int count = 1; //不使用0号
 
     while(count <= 100)
     {
@@ -73,7 +73,7 @@ int main0511()
 {
     int i;
     int sw;
-    TG *total = (TG*)malloc(sizeof(TG)*101);//��ʹ�õ�0��
+    TG *total = (TG*)malloc(sizeof(TG)*101);//不使用第0号
 
     for(i=1; i<=100; i++) //init
     {

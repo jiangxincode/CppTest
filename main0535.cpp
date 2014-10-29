@@ -1,7 +1,7 @@
-/*
-�ж������������Ƿ�����ͬ������
-�ٶȱ�����
-˼·��������Ȼ��������н϶̵������е�ÿ��Ԫ�أ��ڽϳ���������ʹ�ö��ֲ��ҡ�
+﻿/*
+判断两个数组中是否有相同的数字
+百度笔试题
+思路：先排序，然后遍历其中较短的数组中的每个元素，在较长的数组中使用二分查找。
 */
 #include <iostream>
 #include <cstdlib>
@@ -19,7 +19,7 @@ int main0535()
     int *maxArr = new int[maxSize];
     int *minArr = new int[minSize];
 
-    for(int i=0; i<maxSize; i++) //�����������
+    for(int i=0; i<maxSize; i++) //生成随机数据
     {
         maxArr[i] = rand()%50;
     }
@@ -29,7 +29,7 @@ int main0535()
         minArr[i] = rand()%50;
     }
 
-    for(int i=0; i<maxSize; i++) //���
+    for(int i=0; i<maxSize; i++) //输出
     {
         cout << maxArr[i] << " ";
     }
@@ -45,7 +45,7 @@ int main0535()
     qsort(maxArr,maxSize,sizeof(int),comp);
     qsort(minArr,minSize,sizeof(int),comp);
 
-    for(int i=0; i<maxSize; i++) //���
+    for(int i=0; i<maxSize; i++) //输出
     {
         cout << maxArr[i] << " ";
     }

@@ -1,6 +1,6 @@
-/**
-΢�� microsoft
-дһ�������ҳ�һ�����������У��ڶ������
+﻿/**
+微软 microsoft
+写一个函数找出一个整数数组中，第二大的数
 */
 #include <iostream>
 #include <climits>

@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <map>
 #include <set>
 
@@ -6,7 +6,7 @@ using namespace std;
 
 void test_map()
 {
-    // Í³¼ÆÃ¿¸öµ¥´ÊÔÚÊäÈëÖĞ³öÏÖµÄ´ÎÊı
+    // ç»Ÿè®¡æ¯ä¸ªå•è¯åœ¨è¾“å…¥ä¸­å‡ºç°çš„æ¬¡æ•°
     map<string,size_t> word_count;
     string word;
 
@@ -23,7 +23,7 @@ void test_map()
 
 void test_set()
 {
-    // Í³¼ÆÊäÈëÖĞÅÅ³ıÌØ¶¨µ¥´ÊµÄÃ¿¸öµ¥´Ê³öÏÖµÄ´ÎÊı
+    // ç»Ÿè®¡è¾“å…¥ä¸­æ’é™¤ç‰¹å®šå•è¯çš„æ¯ä¸ªå•è¯å‡ºç°çš„æ¬¡æ•°
     map<string,size_t> word_count;
     set<string> exclude = {"The","But","And","Or","An","A","the","but","and","or","an","a"};
     string word;

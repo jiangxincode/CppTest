@@ -1,4 +1,4 @@
-/*
+﻿/*
 http://wikioi.com/problem/1160/
 */
 #include <iostream>

@@ -53,3 +53,11 @@ http://github.com/jiangxincode
 * Variable 'int_set' is assigned in constructor body. Consider performing initialization in initialization list.
 * Function parameter 'query' should be passed by reference.
 * scanf without field width limits can crash with huge input data.
+
+### Version 1.02
+
+* 去除所有.h文件中的using namespace std;
+
+### Version 1.03
+
+* 将所有文件设置为UTF-8编码，设置codeblocks默认编码为UTF-8,便于生成doxyblocks生成文档。

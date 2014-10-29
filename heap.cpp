@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include "heap.h"
 
 using namespace std;
@@ -54,7 +54,7 @@ void heap::shift_down(int begin, int end)
 
     while(j <= end)
     {
-        if((j < end) && (p_fun(heap_p[j+1],heap_p[j]))) //ÕÒµ½×óÓÒ×ÓÊ÷µÄ½ÏÐ¡Öµ£¬warning:j<m
+        if((j < end) && (p_fun(heap_p[j+1],heap_p[j]))) //æ‰¾åˆ°å·¦å³å­æ ‘çš„è¾ƒå°å€¼ï¼Œwarning:j<m
         {
             j ++;
         }
@@ -99,7 +99,7 @@ void heap::shift_up(int begin)
 
 bool heap::push(int elem)
 {
-    if(max_size == current_size) //Èç¹û¶ÑÒÑÂú£¬Ôò´ÓÐÂ¿ª±Ù¶Ô¿Õ¼ä
+    if(max_size == current_size) //å¦‚æžœå †å·²æ»¡ï¼Œåˆ™ä»Žæ–°å¼€è¾Ÿå¯¹ç©ºé—´
     {
         max_size = 2*max_size;
         int *temp = new int[max_size];
@@ -120,7 +120,7 @@ bool heap::push(int elem)
     }
 
     heap_p[current_size] = elem;
-    shift_up(current_size); //×¢ÒâÏà¶ÔË³Ðò
+    shift_up(current_size); //æ³¨æ„ç›¸å¯¹é¡ºåº
     current_size ++;
     return true;
 }

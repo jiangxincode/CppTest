@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 http://wikioi.com/problem/1075/
 */
 #include <iostream>
@@ -21,9 +21,9 @@ int main011()
     }
 
     sort(vec.begin(),vec.end());
-    //×¢ÒâÈ¥ÖØµÄ·½·¨
+    //æ³¨æ„å»é‡çš„æ–¹æ³•
     vector<int>::iterator unique_it = unique(vec.begin(),vec.end());
-    vec.erase(unique_it,vec.end()); //´Ë´¦Ò»¶¨ÒªÉ¾³ı£¡
+    vec.erase(unique_it,vec.end()); //æ­¤å¤„ä¸€å®šè¦åˆ é™¤ï¼
     cout << vec.size() << endl;
     vector<int>::iterator pos;
 

@@ -1,3 +1,6 @@
+﻿#ifndef MAIN_H
+#define MAIN_H
+
 int main000();
 int main001();
 int main002();
@@ -88,3 +91,5 @@ int main2585();
 int main2591();
 int main2592();
 
+
+#endif // MAIN_H

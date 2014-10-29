@@ -1,8 +1,8 @@
-#include <iostream>
+ï»¿#include <iostream>
 
 using namespace std;
 
-int main0500() //ÇóÁ½¸öÕûÊıÖ®ºÍ£¬ÒªÇóÔÚº¯ÊıÌåÄÚ²»µÃÊ¹ÓÃ+¡¢-¡¢*¡¢/ËÄÔòÔËËã·ûºÅ
+int main0500() //æ±‚ä¸¤ä¸ªæ•´æ•°ä¹‹å’Œï¼Œè¦æ±‚åœ¨å‡½æ•°ä½“å†…ä¸å¾—ä½¿ç”¨+ã€-ã€*ã€/å››åˆ™è¿ç®—ç¬¦å·
 {
     int i_num1,i_num2; // The numbers that user inputs
     cout << "Input two int nums like this: 34 56 Enter" << endl;
@@ -10,9 +10,9 @@ int main0500() //ÇóÁ½¸öÕûÊıÖ®ºÍ£¬ÒªÇóÔÚº¯ÊıÌåÄÚ²»µÃÊ¹ÓÃ+¡¢-¡¢*¡¢/ËÄÔòÔËËã·ûºÅ
 
     while(i_num2 !=0)
     {
-        int temp = i_num1; //ÏÈ½«¸÷bitÎ»Ïà¼Ó£¬²»¼Æ½øÎ»£¬ÕâÒ»²½¿ÉÒÔÓÃm^nÊµÏÖ
+        int temp = i_num1; //å…ˆå°†å„bitä½ç›¸åŠ ï¼Œä¸è®¡è¿›ä½ï¼Œè¿™ä¸€æ­¥å¯ä»¥ç”¨m^nå®ç°
         i_num1 = i_num1 ^ i_num2;
-        i_num2 = (temp & i_num2) << 1; //¿ÉµÃµ½½øÎ»ºóÒª¼ÓµÄ1µÄÎ»ÖÃ
+        i_num2 = (temp & i_num2) << 1; //å¯å¾—åˆ°è¿›ä½åè¦åŠ çš„1çš„ä½ç½®
     }
 
     cout << "The result of is: " << i_num1 << endl;

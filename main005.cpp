@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 http://wikioi.com/problem/1202/
 */
 #include <iostream>
@@ -21,7 +21,7 @@ int main005()
     }
 
     //int sum = accumulate(vec.begin(),vec.end(),0);
-    vector<int>::iterator it; //×¢Òâ´Ë´¦itµÄÉùÃ÷·½·¨
+    vector<int>::iterator it; //æ³¨æ„æ­¤å¤„itçš„å£°æ˜æ–¹æ³•
     int sum = 0;
 
     for(it=vec.begin(); it!=vec.end(); ++it)

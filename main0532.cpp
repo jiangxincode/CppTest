@@ -1,25 +1,25 @@
-/*
-°Ù¶È2014Ð£Ô°ÕÐÆ¸-ÑÐ·¢¹¤³ÌÊ¦±ÊÊÔÌâ
-ÏàËÆ¶È¼ÆËãÓÃÓÚºâÁ¿¶ÔÏóÖ®¼äµÄÏàËÆ¶È£¬ÔÚÊý¾ÝÍÚ¾ò£¬×ÔÈ»ÓïÑÔ´¦ÀíÖÐÊÇÒ»¸ö»ù´¡ÐÔ¼ÆËã¡£
-ÔÚ¹ã¸æ¼ìË÷·þÎñÖÐÍùÍùÒ²»áÅÐ¶ÏÍøÃñ¼ìË÷QueryºÍ¹ã¸æAdwordµÄÖ÷ÌâÏàËÆ¶È¡£
-¼ÙÉèQuery»òÕßAdwordµÄÖ÷ÌâÊôÐÔ¶¨ÒåÎªÒ»¸ö³¤¶ÈÎª10000µÄ¸¡µãÊý×éPr[10000]
-£¨³ÆÖ®ÎªÖ÷Ìâ¸ÅÂÊÊý×é£©£¬
-ÆäÖÐPr[i]±íÊ¾Query»òÕßAdwordÊôÓÚÖ÷ÌâIdÎªiµÄ¸ÅÂÊ£¬
-¶øQueryºÍAdwordµÄÏàËÆ¶È¼ò»¯¶¨ÒåÎªÁ½ÕßÖ÷Ìâ¸ÅÂÊÊý×éµÄÄÚ»ý£¬
-¼´sim(Query,Adword)=sum(QueryPr[i]*AdwordPr[i])(0<=i<10000)£¬
-ÔÚÊµ¼ÊÓ¦ÓÃ³¡¾°ÖÐ£¬ÓÉÓÚ´ó¶àÊýÖ÷ÌâµÄ¸ÅÂÊ¶¼Îª0£¬ËùÒÔÖ÷Ìâ¸ÅÂÊÊý×éÍùÍù±È½ÏÏ¡Êè£¬
-ÔÚÊµÏÖÊ±»áÒÔÒ»¸ö½ô´ÕÐÍÊý×étopic_info_t[]µÄ·½Ê½±£´æ£¬
-ÆäÖÐ100<=Êý×é´óÐ¡<=1000£¬²¢°´ÕÕtopic_idµÝÔöÅÅÁÐ£¬0<=topic_id<10000,0<topic_pr<1.
+ï»¿/*
+ç™¾åº¦2014æ ¡å›­æ‹›è˜-ç ”å‘å·¥ç¨‹å¸ˆç¬”è¯•é¢˜
+ç›¸ä¼¼åº¦è®¡ç®—ç”¨äºŽè¡¡é‡å¯¹è±¡ä¹‹é—´çš„ç›¸ä¼¼åº¦ï¼Œåœ¨æ•°æ®æŒ–æŽ˜ï¼Œè‡ªç„¶è¯­è¨€å¤„ç†ä¸­æ˜¯ä¸€ä¸ªåŸºç¡€æ€§è®¡ç®—ã€‚
+åœ¨å¹¿å‘Šæ£€ç´¢æœåŠ¡ä¸­å¾€å¾€ä¹Ÿä¼šåˆ¤æ–­ç½‘æ°‘æ£€ç´¢Queryå’Œå¹¿å‘ŠAdwordçš„ä¸»é¢˜ç›¸ä¼¼åº¦ã€‚
+å‡è®¾Queryæˆ–è€…Adwordçš„ä¸»é¢˜å±žæ€§å®šä¹‰ä¸ºä¸€ä¸ªé•¿åº¦ä¸º10000çš„æµ®ç‚¹æ•°ç»„Pr[10000]
+ï¼ˆç§°ä¹‹ä¸ºä¸»é¢˜æ¦‚çŽ‡æ•°ç»„ï¼‰ï¼Œ
+å…¶ä¸­Pr[i]è¡¨ç¤ºQueryæˆ–è€…Adwordå±žäºŽä¸»é¢˜Idä¸ºiçš„æ¦‚çŽ‡ï¼Œ
+è€ŒQueryå’ŒAdwordçš„ç›¸ä¼¼åº¦ç®€åŒ–å®šä¹‰ä¸ºä¸¤è€…ä¸»é¢˜æ¦‚çŽ‡æ•°ç»„çš„å†…ç§¯ï¼Œ
+å³sim(Query,Adword)=sum(QueryPr[i]*AdwordPr[i])(0<=i<10000)ï¼Œ
+åœ¨å®žé™…åº”ç”¨åœºæ™¯ä¸­ï¼Œç”±äºŽå¤§å¤šæ•°ä¸»é¢˜çš„æ¦‚çŽ‡éƒ½ä¸º0ï¼Œæ‰€ä»¥ä¸»é¢˜æ¦‚çŽ‡æ•°ç»„å¾€å¾€æ¯”è¾ƒç¨€ç–ï¼Œ
+åœ¨å®žçŽ°æ—¶ä¼šä»¥ä¸€ä¸ªç´§å‡‘åž‹æ•°ç»„topic_info_t[]çš„æ–¹å¼ä¿å­˜ï¼Œ
+å…¶ä¸­100<=æ•°ç»„å¤§å°<=1000ï¼Œå¹¶æŒ‰ç…§topic_idé€’å¢žæŽ’åˆ—ï¼Œ0<=topic_id<10000,0<topic_pr<1.
 struct topic_info_t{
 	int topic_id;
 	float topic_pr;
 };
-ÏÖÔÚ¸ø³öQueryµÄtopic_info_tÊý×éºÍN(N>=5000)¸öAdwordsµÄtopic_info_tÊý×é£¬
-ÏÖÒªÇó³öQueryÓëAdwordsµÄÏàËÆ¶È×î´óÖµ£¬¼´max(sim(Query,Adword[i]))(0<=i<N).
+çŽ°åœ¨ç»™å‡ºQueryçš„topic_info_tæ•°ç»„å’ŒN(N>=5000)ä¸ªAdwordsçš„topic_info_tæ•°ç»„ï¼Œ
+çŽ°è¦æ±‚å‡ºQueryä¸ŽAdwordsçš„ç›¸ä¼¼åº¦æœ€å¤§å€¼ï¼Œå³max(sim(Query,Adword[i]))(0<=i<N).
 float max_sim(const vector<topic_info_t> &query_topic_info,
 const vector<topic_info_t> adwords_topic_info[],
 int adwords_number);
-±àÐ´´úÂëÇóÊ±¼ä¸´ÔÓ¶È×îµÍµÄËã·¨£¬²¢¸ø³öÊ±¼ä¸´ÔÓ¶È·ÖÎö¡£
+ç¼–å†™ä»£ç æ±‚æ—¶é—´å¤æ‚åº¦æœ€ä½Žçš„ç®—æ³•ï¼Œå¹¶ç»™å‡ºæ—¶é—´å¤æ‚åº¦åˆ†æžã€‚
 */
 #include <vector>
 

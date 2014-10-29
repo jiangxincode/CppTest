@@ -1,14 +1,12 @@
-#include <string>
+ï»¿#include <string>
 
 #include <cstdlib> //just for NULL
 #include <climits> //just for INT_MAX and INT_MIN
 
-using namespace std;
-
 struct binary_node
 {
     int data;
-    int count; //¼ÆÊı£¬²åÈëÏàÍ¬ÔªËØ£¬ÔòµİÔö
+    int count; //è®¡æ•°ï¼Œæ’å…¥ç›¸åŒå…ƒç´ ï¼Œåˆ™é€’å¢
     binary_node *left_child, *right_child;
     binary_node *parent;
     binary_node():data(0),count(1),left_child(NULL),right_child(NULL) {}
@@ -23,7 +21,7 @@ protected:
     int ref_val; //the mark for the ending of the binary tree
 
     void create_binary_tree(binary_node *&sub_tree);
-    void create_binary_tree(binary_node *&sub_tree, string str);
+    void create_binary_tree(binary_node *&sub_tree, std::string str);
 
     void destroy_binary_tree(binary_node *&sub_tree);
 
@@ -32,7 +30,7 @@ protected:
     void postorder(binary_node *sub_tree, void (*visit)(binary_node *node));
     void levelorder(binary_node *sub_tree, void (*visit)(binary_node *node));
 
-    void print_in_table(binary_node *sub_tree); //¹ãÒå±íĞÎÊ½Êä³ö
+    void print_in_table(binary_node *sub_tree); //å¹¿ä¹‰è¡¨å½¢å¼è¾“å‡º
 
     virtual void get_min_max(binary_node *node, int &min, int &max);
 
@@ -62,7 +60,7 @@ public:
     {
         create_binary_tree(root);
     }
-    void create_binary_tree(string str)
+    void create_binary_tree(std::string str)
     {
         create_binary_tree(root,str);
     }
@@ -105,13 +103,13 @@ public:
     int get_min()
     {
         int min = INT_MAX;
-        int max = INT_MAX; //¼õÉÙ×î´óÖµµÄ²Ù×÷
+        int max = INT_MAX; //å‡å°‘æœ€å¤§å€¼çš„æ“ä½œ
         get_min_max(root,min,max);
         return min;
     }
     int get_max()
     {
-        int min = INT_MIN; //¼õÉÙ×îĞ¡ÖµµÄ²Ù×÷
+        int min = INT_MIN; //å‡å°‘æœ€å°å€¼çš„æ“ä½œ
         int max = INT_MIN;
         get_min_max(root,min,max);
         return max;

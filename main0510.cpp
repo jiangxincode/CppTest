@@ -1,11 +1,11 @@
-/*
+ï»¿/*
     author:
         jiangxin
     Blog:
         http://blog.csdn.net/jiangxinnju
     function:
-    ½«µ¥ÏòÁ´±í·´×ª£¬ÈçABCD±ä³ÉDCBA£¬Ö»ÄÜËÑË÷Á´±íÒ»´Î
-    °Ù¶È±ÊÊÔÌâ
+    å°†å•å‘é“¾è¡¨åè½¬ï¼Œå¦‚ABCDå˜æˆDCBAï¼Œåªèƒ½æœç´¢é“¾è¡¨ä¸€æ¬¡
+    ç™¾åº¦ç¬”è¯•é¢˜
 */
 #include <iostream>
 
@@ -18,9 +18,9 @@ struct node
 typedef struct node NODE;
 int main0510()
 {
-    NODE *head = new NODE; //½¨Á¢¸½¼ÓÍ·½áµã
+    NODE *head = new NODE; //å»ºç«‹é™„åŠ å¤´ç»“ç‚¹
     head->next = NULL;
-    /*´´½¨Á´±í*/
+    /*åˆ›å»ºé“¾è¡¨*/
     NODE *current,*previous;
     previous = head;
     char input;
@@ -38,7 +38,7 @@ int main0510()
         cin >> input;
     }
 
-    /*Êä³öÁ´±í*/
+    /*è¾“å‡ºé“¾è¡¨*/
     current = head->next;
 
     while(current != NULL)
@@ -48,7 +48,7 @@ int main0510()
     }
 
     cout << endl;
-    /*µ¹×ªÁ´±í*/
+    /*å€’è½¬é“¾è¡¨*/
     current = head->next;
     NODE *p = current->next;
     NODE *q = p->next;
@@ -65,7 +65,7 @@ int main0510()
     current = p;
     head->next->next = NULL;
     head->next = current;
-    /*Êä³öÁ´±í*/
+    /*è¾“å‡ºé“¾è¡¨*/
     current = head->next;
 
     while(current != NULL)

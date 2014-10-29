@@ -1,91 +1,91 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <string>
 #include <cstdio>
 
 using namespace std;
 
-//¹ØÓÚcin cin.getline cin.get getline gets getchar µÄÓÃ·¨ÊµÀı
+//å…³äºcin cin.getline cin.get getline gets getchar çš„ç”¨æ³•å®ä¾‹
 int main0503()
 {
-//1¡¢cin>>
-    //method one£¬ Ò²¾ÍÊÇ×î³£ÓÃµÄ·½·¨ ÊäÈëÒ»¸öÊı×Ö
-    cout << "Test cin>> ÓÃ·¨1£º" << endl;
+//1ã€cin>>
+    //method oneï¼Œ ä¹Ÿå°±æ˜¯æœ€å¸¸ç”¨çš„æ–¹æ³• è¾“å…¥ä¸€ä¸ªæ•°å­—
+    cout << "Test cin>> ç”¨æ³•1ï¼š" << endl;
     int a,b;
     cout << "input two integer:" << endl;
     cin >> a >> b;
     cout << "SUM =" << a + b << "\n" << endl;
-    //method two£¬ÊäÈëÒ»¸ö×Ö·û´®£¬Óöµ½¡°¿Õ¸ñ »Ø³µ Tab¡±¶¼½áÊø
-    cout << "Test cin>>ÓÃ·¨2£º" << endl;
+    //method twoï¼Œè¾“å…¥ä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œé‡åˆ°â€œç©ºæ ¼ å›è½¦ Tabâ€éƒ½ç»“æŸ
+    cout << "Test cin>>ç”¨æ³•2ï¼š" << endl;
     char array[10];
     cout << "input a char array:" << endl;
     cin >> array;
     cout << array << "\n" << endl;
-//2¡¢cin.get()
-    //one cin.get(×Ö·û±äÁ¿Ãû) ¿ÉÒÔÓÃÀ´½ÓÊÕ×Ö·û
-    cout << "Test cin.get(×Ö·û±äÁ¿Ãû)£º" << endl;
+//2ã€cin.get()
+    //one cin.get(å­—ç¬¦å˜é‡å) å¯ä»¥ç”¨æ¥æ¥æ”¶å­—ç¬¦
+    cout << "Test cin.get(å­—ç¬¦å˜é‡å)ï¼š" << endl;
     char ch;
     cout << "Input a char:" << endl;
-    cin.get(); //°ÑÖ®Ç°ÊäÈëµÄ»Ø³µ·ûºÅÂËÈ¥
+    cin.get(); //æŠŠä¹‹å‰è¾“å…¥çš„å›è½¦ç¬¦å·æ»¤å»
     ch = cin.get(); //or cin.get(ch);
     cout << ch << "\n" << endl;
-    //two cin.get(×Ö·ûÊı×é£¬½ÓÊÕµÄ×Ö·ûÊı) ÓÃÀ´½ÓÊÕÒ»ĞĞ×Ö·û´®¿ÉÒÔ½ÓÊÕ¿Õ¸ñ
-    cout << "Test cin.get(×Ö·ûÊı×é£¬½ÓÊÕµÄ×Ö·ûÊı):" << endl;
+    //two cin.get(å­—ç¬¦æ•°ç»„ï¼Œæ¥æ”¶çš„å­—ç¬¦æ•°) ç”¨æ¥æ¥æ”¶ä¸€è¡Œå­—ç¬¦ä¸²å¯ä»¥æ¥æ”¶ç©ºæ ¼
+    cout << "Test cin.get(å­—ç¬¦æ•°ç»„ï¼Œæ¥æ”¶çš„å­—ç¬¦æ•°):" << endl;
     char array1[20];
     cout << "Input a char array:" << endl;
-    cin.get(); //°ÑÖ®Ç°ÊäÈëµÄ»Ø³µ·ûºÅÂËÈ¥
+    cin.get(); //æŠŠä¹‹å‰è¾“å…¥çš„å›è½¦ç¬¦å·æ»¤å»
     cin.get(array1,10);
     cout << array1 << "\n" << endl;
-    //×¢:cin.get(ÎŞ²ÎÊı)Ö÷ÒªÓÃÀ´ÉáÆúÊäÈëÁ÷ÖĞ²»ĞèÒªµÄ×Ö·û »òÕßÉáÆú»Ø³µ
-    //´Ó¶øÃÖ²¹ÁËcin.get(×Ö·ûÊı×é£¬½ÓÊÕµÄ×Ö·ûÊı)µÄ²»×ã
-//3¡¢cin.getline(cin,str)  ½ÓÊÕÒ»¸ö×Ö·û´® ¿ÉÒÔ½ÓÊÕ¿Õ¸ñ
-    cout << "Test cin.getline() µÄÓÃ·¨£º" << endl;
+    //æ³¨:cin.get(æ— å‚æ•°)ä¸»è¦ç”¨æ¥èˆå¼ƒè¾“å…¥æµä¸­ä¸éœ€è¦çš„å­—ç¬¦ æˆ–è€…èˆå¼ƒå›è½¦
+    //ä»è€Œå¼¥è¡¥äº†cin.get(å­—ç¬¦æ•°ç»„ï¼Œæ¥æ”¶çš„å­—ç¬¦æ•°)çš„ä¸è¶³
+//3ã€cin.getline(cin,str)  æ¥æ”¶ä¸€ä¸ªå­—ç¬¦ä¸² å¯ä»¥æ¥æ”¶ç©ºæ ¼
+    cout << "Test cin.getline() çš„ç”¨æ³•ï¼š" << endl;
     char array2[20];
     cout << "Input a char array:" << endl;
-    ch = cin.get(); //°ÑÖ®Ç°ÊäÈëµÄ»Ø³µ·ûºÅÂËÈ¥
+    ch = cin.get(); //æŠŠä¹‹å‰è¾“å…¥çš„å›è½¦ç¬¦å·æ»¤å»
     cin.getline(array2,20);
     cout << array2 << "\n" << endl;
-    //Êµ¼ÊÉÏcin.get(×Ö·ûÊı×é£¬½ÓÊÕµÄ×Ö·ûÊı) ºÍcin.getline(×Ö·ûÊı×é£¬½ÓÊÕµÄ×Ö·ûÊı)
-    //ÓĞÈı¸ö²ÎÊıcin.getline(×Ö·ûÊı×é£¬½ÓÊÕ×Ö·ûÊı£¬½áÊø×Ö·û) µÚÈı¸ö²ÎÊıÄ¬ÈÏÊÇ'\0'
-    //¶àÎ¬Êı×éÖĞÒ²¾­³£ÓÃµ½cin.getline(×Ö·ûÊı×é£¬½ÓÊÕµÄ×Ö·ûÊı)µÄÓÃ·¨
-    cout << "cin.get(×Ö·ûÊı×é£¬½ÓÊÕµÄ×Ö·ûÊı) is used in multidimensional array:" << endl;
+    //å®é™…ä¸Šcin.get(å­—ç¬¦æ•°ç»„ï¼Œæ¥æ”¶çš„å­—ç¬¦æ•°) å’Œcin.getline(å­—ç¬¦æ•°ç»„ï¼Œæ¥æ”¶çš„å­—ç¬¦æ•°)
+    //æœ‰ä¸‰ä¸ªå‚æ•°cin.getline(å­—ç¬¦æ•°ç»„ï¼Œæ¥æ”¶å­—ç¬¦æ•°ï¼Œç»“æŸå­—ç¬¦) ç¬¬ä¸‰ä¸ªå‚æ•°é»˜è®¤æ˜¯'\0'
+    //å¤šç»´æ•°ç»„ä¸­ä¹Ÿç»å¸¸ç”¨åˆ°cin.getline(å­—ç¬¦æ•°ç»„ï¼Œæ¥æ”¶çš„å­—ç¬¦æ•°)çš„ç”¨æ³•
+    cout << "cin.get(å­—ç¬¦æ•°ç»„ï¼Œæ¥æ”¶çš„å­—ç¬¦æ•°) is used in multidimensional array:" << endl;
     char array3[3][10];
 
     for(int i = 0; i < 3; i ++)
     {
-        cout << "ÇëÊäÈëµÚ" << i+1 << "ĞĞµÄ×Ö·û´®£º" << endl;
+        cout << "è¯·è¾“å…¥ç¬¬" << i+1 << "è¡Œçš„å­—ç¬¦ä¸²ï¼š" << endl;
         cin.getline(array3[i],10);
     }
 
     for(int j = 0; j < 3; j ++)
     {
-        cout << "µÚ" << j+1 << "ĞĞ£º" << array3[j] << endl;
+        cout << "ç¬¬" << j+1 << "è¡Œï¼š" << array3[j] << endl;
     }
 
-//4¡¢getline(cin,str)µÄÓÃ·¨ ½ÓÊÕÒ»¸ö¿ÉÒÔ°üº¬¿Õ¸ñµÄ×Ö·û´®(Õâ¶ùÊÇstringÀàĞÍµÄ) ĞèÒª°üº¬Í·ÎÄ¼ş#include <string>
-    //getline(cin,str)ÊÇstringÁ÷²»ÊÇi/oÁ÷
+//4ã€getline(cin,str)çš„ç”¨æ³• æ¥æ”¶ä¸€ä¸ªå¯ä»¥åŒ…å«ç©ºæ ¼çš„å­—ç¬¦ä¸²(è¿™å„¿æ˜¯stringç±»å‹çš„) éœ€è¦åŒ…å«å¤´æ–‡ä»¶#include <string>
+    //getline(cin,str)æ˜¯stringæµä¸æ˜¯i/oæµ
     cout << "Test getline(cin,str):" << endl;
     string str;
     cout << "Input a string:" << endl;
-    //ch = cin.get(); //°ÑÖ®Ç°ÊäÈëµÄ»Ø³µ·ûºÅÂËÈ¥
+    //ch = cin.get(); //æŠŠä¹‹å‰è¾“å…¥çš„å›è½¦ç¬¦å·æ»¤å»
     getline(cin,str);
     cout << str << "\n" << endl;
-//5¡¢gets(char *) ½ÓÊÕÒ»¸ö¿ÉÒÔ°üº¬¿Õ¸ñµÄ×Ö·û´® ĞèÒª°üº¬Í·ÎÄ¼ş#include <string>
-    cout << "Test gets(char *)µÄÓÃ·¨" << endl;
+//5ã€gets(char *) æ¥æ”¶ä¸€ä¸ªå¯ä»¥åŒ…å«ç©ºæ ¼çš„å­—ç¬¦ä¸² éœ€è¦åŒ…å«å¤´æ–‡ä»¶#include <string>
+    cout << "Test gets(char *)çš„ç”¨æ³•" << endl;
     char array4[20];
     cout << "input a char array:" << endl;
-    ch = cin.get(); //°ÑÖ®Ç°ÊäÈëµÄ»Ø³µ·ûºÅÂËÈ¥
+    ch = cin.get(); //æŠŠä¹‹å‰è¾“å…¥çš„å›è½¦ç¬¦å·æ»¤å»
     gets(array4);
     //The gets function reads a line from the standard input stream stdin and stores it in buffer.
     //The line consists of all characters up to and including the first newline character ('\n').
     //gets then replaces the newline character with a null character ('\0') before returning the line
     cout << array4 << "\n" << endl;
-    //gets(char *)Ò²¿ÉÒÔÓÃÔÚ¶àÎ¬Êı×éÀïÃæ ¸úcin.getline()ÓÃ·¨ÀàËÆ
-//6¡¢getchar(ÎŞ²ÎÊı) ½ÓÊÕÒ»¸ö×Ö·û ĞèÒª°üº¬Í·ÎÄ¼ş#include <string>
-    cout << "Test getchar(ÎŞ²ÎÊı)µÄÓÃ·¨£º" << endl;
+    //gets(char *)ä¹Ÿå¯ä»¥ç”¨åœ¨å¤šç»´æ•°ç»„é‡Œé¢ è·Ÿcin.getline()ç”¨æ³•ç±»ä¼¼
+//6ã€getchar(æ— å‚æ•°) æ¥æ”¶ä¸€ä¸ªå­—ç¬¦ éœ€è¦åŒ…å«å¤´æ–‡ä»¶#include <string>
+    cout << "Test getchar(æ— å‚æ•°)çš„ç”¨æ³•ï¼š" << endl;
     char ch1;
     cout << "input a char:" << endl;
-    ch1 = getchar(); // ²»ÄÜĞ´³Égetchar(ch1);
+    ch1 = getchar(); // ä¸èƒ½å†™æˆgetchar(ch1);
     cout << ch1 << "\n" << endl;
-    //getchar()ÊÇCµÄº¯Êı C++ÊÇ¼æÈİC ËùÒÔÒ²¿ÉÒÔÊ¹ÓÃ µ«¾¡Á¿²»ÓÃ»òÉÙÓÃ
+    //getchar()æ˜¯Cçš„å‡½æ•° C++æ˜¯å…¼å®¹C æ‰€ä»¥ä¹Ÿå¯ä»¥ä½¿ç”¨ ä½†å°½é‡ä¸ç”¨æˆ–å°‘ç”¨
     return 0;
 }

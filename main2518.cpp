@@ -1,10 +1,10 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <cstdio>
 #include <cmath>
 using namespace std;
 int main2518()
 {
-    cout << "ÇëÊäÈëa,b,cµÄÖµ£º";
+    cout << "è¯·è¾“å…¥a,b,cçš„å€¼ï¼š";
     int a,b,c;
     cin >> a >> b >> c;
     float delta = b * b - 4 * a * c;

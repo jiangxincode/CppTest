@@ -1,6 +1,6 @@
-/*
-��Ϊ
-���´����ǰ�һ���ַ�����ת���硰abcd��������Ϊ��dcba��
+﻿/*
+华为
+以下代码是把一个字符串反转，如“abcd”倒序后变为“dcba”
 */
 #include <iostream>
 #include <cstring>

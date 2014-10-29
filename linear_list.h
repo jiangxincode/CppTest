@@ -1,4 +1,4 @@
-//线性表的定义
+﻿//线性表的定义
 #ifndef LINEARLIST_H
 #define LINEARLIST_H
 

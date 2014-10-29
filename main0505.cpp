@@ -1,14 +1,14 @@
-/*
+﻿/*
     author:
         jiangxin
     Blog:
         http://blog.csdn.net/jiangxinnju
     function:
-    int A[nSize]����������������0�������0������
-    дһ������int Func(int* A, int nSize)��
-    ʹA��0�������棬��0������������ǰ�沢��������
-    ����ֵΪԭ�����е�һ��Ԫ��Ϊ0���±ꡣ
-    (�����ܲ�ʹ�ø����ռ��ҿ���Ч�ʼ��쳣���⣬ע�͹淶�Ҹ������˼·)
+    int A[nSize]，其中隐藏着若干0，其余非0整数，
+    写一个函数int Func(int* A, int nSize)，
+    使A把0移至后面，非0整数移至数组前面并保持有序，
+    返回值为原数据中第一个元素为0的下标。
+    (尽可能不使用辅助空间且考虑效率及异常问题，注释规范且给出设计思路)
 
 */
 #include <iostream>
@@ -19,20 +19,20 @@ using namespace std;
 #define ARRAYSZIE 100
 int Func(int* A,int nSize)
 {
-    int *p_zero = A; //ָ���ʼ����ֵ
-    int *p_unzero = A; //ָ�����ķ���ֵ
+    int *p_zero = A; //指向最开始的零值
+    int *p_unzero = A; //指向最后的非零值
 
     while(1)
     {
         for(int i=(p_zero-A); i<nSize; i++)
         {
-            if(A[i] == 0) //�ҵ���һ����ֵ
+            if(A[i] == 0) //找到第一个零值
             {
                 p_zero = &A[i];
                 break;
             }
 
-            if(i == nSize-1) //û���ҵ���ֵ��˵��ȫ��Ϊ����ֵ
+            if(i == nSize-1) //没有找到零值，说明全部为非零值
             {
                 return -1;
             }
@@ -40,13 +40,13 @@ int Func(int* A,int nSize)
 
         for(int i=(p_zero-A+1); i<nSize; i++)
         {
-            if(A[i] != 0) //�ҵ���ֵ֮��ĵ�һ������ֵ
+            if(A[i] != 0) //找到零值之后的第一个非零值
             {
                 p_unzero = &A[i];
                 break;
             }
 
-            if(i == nSize-1) //û���ҵ���һ������ֵ��˵��ȫ��Ϊ��ֵ�������Ѿ��������
+            if(i == nSize-1) //没有找到下一个非零值，说明全部为零值，或者已经排序完毕
             {
                 return (p_zero-A);
             }
@@ -65,7 +65,7 @@ void main0505()
 
     for(int i=0; i<ARRAYSZIE; i++)
     {
-        A[i] = d(e); //�������0��1ֵ
+        A[i] = d(e); //随机产生0和1值
     }
 
     for(int i=0; i<ARRAYSZIE; i++)

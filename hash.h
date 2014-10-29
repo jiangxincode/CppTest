@@ -1,53 +1,54 @@
-#define DefaultSize 1000
-#include <iostream.h>
-#include <string.h>
-#include <stdlib.h>
+ï»¿#define DefaultSize 1000
+#include <iostream>
+#include <cstring>
+#include <cstdlib>
+
 class HashTable
 {
-    //É¢ÁÐ±íÀà¶¨Òå
+    //æ•£åˆ—è¡¨ç±»å®šä¹‰
 public:
-    enum KindOfEntry { Active, Empty, Deleted };			//±íÏî·ÖÀà (»î¶¯ / ¿Õ / É¾)
+    enum KindOfEntry { Active, Empty, Deleted };			//è¡¨é¡¹åˆ†ç±» (æ´»åŠ¨ / ç©º / åˆ )
     HashTable() : TableSize(DefaultSize)
     {
-        ht = new HashEntry[TableSize];    //¹¹Ôìº¯Êý
+        ht = new HashEntry[TableSize];    //æž„é€ å‡½æ•°
     }
     ~HashTable()
     {
-        delete [ ] ht;    //Îö¹¹º¯Êý
+        delete [ ] ht;    //æžæž„å‡½æ•°
     }
-    int Find-Ins(const char * id);					//ÔÚÉ¢ÁÐ±íÖÐËÑË÷±êÊ¶·ûid
+    int Find-Ins(const char * id);					//åœ¨æ•£åˆ—è¡¨ä¸­æœç´¢æ ‡è¯†ç¬¦id
     void HashSort();
 private:
     struct HashEntry
     {
-        //±íÏî¶¨Òå
-        Type Element;								//±íÏîµÄÊý¾Ý, ¼´±íÏîµÄ¹Ø¼üÂë
-        KindOfEntry info;							//ÈýÖÖ×´Ì¬: Active, Empty, Deleted
-        HashEntry() : info(Empty) { }					//±íÏî¹¹Ôìº¯Êý, ÖÃ¿Õ
+        //è¡¨é¡¹å®šä¹‰
+        Type Element;								//è¡¨é¡¹çš„æ•°æ®, å³è¡¨é¡¹çš„å…³é”®ç 
+        KindOfEntry info;							//ä¸‰ç§çŠ¶æ€: Active, Empty, Deleted
+        HashEntry() : info(Empty) { }					//è¡¨é¡¹æž„é€ å‡½æ•°, ç½®ç©º
     };
-    HashEntry *ht;								//É¢ÁÐ±í´æ´¢Êý×é
-    int TableSize;								//×î´óÍ°Êý
+    HashEntry *ht;								//æ•£åˆ—è¡¨å­˜å‚¨æ•°ç»„
+    int TableSize;								//æœ€å¤§æ¡¶æ•°
     int FindPos(string s) const
     {
-        return atoi(*s) - 32;    //É¢ÁÐº¯Êý
+        return atoi(*s) - 32;    //æ•£åˆ—å‡½æ•°
     }
 }
 
 int HashTable :: Find-Ins(const char * id)
 {
-    int i = FindPos(id),  j = i; 						//iÊÇ¼ÆËã³öÀ´µÄÉ¢ÁÐµØÖ·
+    int i = FindPos(id),  j = i; 						//iæ˜¯è®¡ç®—å‡ºæ¥çš„æ•£åˆ—åœ°å€
 
     while(ht[j].info != Empty && strcmp(ht[j].Element, id) != 0)
     {
-        //³åÍ»
-        j = (j + 1) % TableSize;						//µ±×öÑ­»·±í´¦Àí, ÕÒÏÂÒ»¸ö¿ÕÍ°
+        //å†²çª
+        j = (j + 1) % TableSize;						//å½“åšå¾ªçŽ¯è¡¨å¤„ç†, æ‰¾ä¸‹ä¸€ä¸ªç©ºæ¡¶
 
-        if(j == i) return -TableSize;					//×ªÒ»È¦»Øµ½¿ªÊ¼µã, ±íÒÑÂú, Ê§°Ü
+        if(j == i) return -TableSize;					//è½¬ä¸€åœˆå›žåˆ°å¼€å§‹ç‚¹, è¡¨å·²æ»¡, å¤±è´¥
     }
 
     if(ht[j].info != Active)
     {
-        //²åÈë
+        //æ’å…¥
         if(j > i)
         {
             while(int k = j; k > i; k--)
@@ -57,7 +58,7 @@ int HashTable :: Find-Ins(const char * id)
             }
 
             ht[i].Element = id;
-            ht[i].info = Active;  			//²åÈë
+            ht[i].info = Active;  			//æ’å…¥
         }
         else
         {
@@ -72,7 +73,7 @@ int HashTable :: Find-Ins(const char * id)
             }
 
             ht[i].Element = id;
-            ht[i].info = Active;  			//²åÈë
+            ht[i].info = Active;  			//æ’å…¥
 
             while(int k=j; k>0; k--)
             {
@@ -97,7 +98,7 @@ int HashTable :: Find-Ins(const char * id)
         {
             if(Find-Ins(str) == - Tablesize)
             {
-                cout << "±íÒÑÂú" << endl;
+                cout << "è¡¨å·²æ»¡" << endl;
                 break;
             }
 

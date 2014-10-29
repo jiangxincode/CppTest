@@ -1,4 +1,4 @@
-//Ò»Ğ©»ù´¡ÖªÊ¶ÑéÖ¤
+ï»¿//ä¸€äº›åŸºç¡€çŸ¥è¯†éªŒè¯
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -16,12 +16,12 @@ int main05251()
 {
     for(int i=0; i<4; i++)
     {
-        static int var1 = 0; //¾²Ì¬±äÁ¿Ö»ÔÚ³ÌĞòÔËĞĞÊ±³õÊ¼»¯Ò»´Î
+        static int var1 = 0; //é™æ€å˜é‡åªåœ¨ç¨‹åºè¿è¡Œæ—¶åˆå§‹åŒ–ä¸€æ¬¡
         cout << var1++ << " ";
     }
 
     cout << endl;
-    cout << sizeof(test); //static²»Ëã£¬char¶ÔÆäÎª4
+    cout << sizeof(test); //staticä¸ç®—ï¼Œcharå¯¹å…¶ä¸º4
     return 0;
 }
 int main0525()

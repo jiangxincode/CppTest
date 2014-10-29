@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <stack>
 #include <queue>
 #include <sstream>
@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void binary_tree::create_binary_tree(binary_node *&sub_tree) //×¢ÒâÕâÀïÒ»¶¨Òª´«ÒıÓÃ
+void binary_tree::create_binary_tree(binary_node *&sub_tree) //æ³¨æ„è¿™é‡Œä¸€å®šè¦ä¼ å¼•ç”¨
 {
     int input;
     cin >> input;
@@ -167,7 +167,7 @@ void binary_tree::levelorder(binary_node *sub_tree, void (*visit)(binary_node *n
         }
     }
 }
-void binary_tree::print_in_table(binary_node *sub_tree) //ÒÔ¹ãÒå±íĞÎÊ½Êä³ö¶ş²æÊ÷
+void binary_tree::print_in_table(binary_node *sub_tree) //ä»¥å¹¿ä¹‰è¡¨å½¢å¼è¾“å‡ºäºŒå‰æ ‘
 {
     if(sub_tree != NULL)
     {
@@ -300,9 +300,9 @@ int binary_tree::get_leaf_size(binary_node *sub_tree)
 }
 
 /**
- *²ÉÓÃ¹ã¶ÈÓÅÏÈ±éÀú£¬´Ó¸ù½Úµã¿ªÊ¼£¬Èë¶ÓÁĞ£¬Èç¹û¶ÓÁĞ²»Îª¿Õ£¬Ñ­»·¡£
- *Óöµ½µÚÒ»¸öÃ»ÓĞ×ó¶ù×Ó»òÕßÓÒ¶ù×ÓµÄ½Úµã£¬ÉèÖÃ±êÖ¾Î»£¬
- *Èç¹ûÖ®ºóÔÙÓöµ½ÓĞ×ó/ÓÒ¶ù×ÓµÄ½Úµã£¬ÄÇÃ´Õâ²»ÊÇÒ»¿ÅÍêÈ«¶ş²æÊ÷¡£
+ *é‡‡ç”¨å¹¿åº¦ä¼˜å…ˆéå†ï¼Œä»æ ¹èŠ‚ç‚¹å¼€å§‹ï¼Œå…¥é˜Ÿåˆ—ï¼Œå¦‚æœé˜Ÿåˆ—ä¸ä¸ºç©ºï¼Œå¾ªç¯ã€‚
+ *é‡åˆ°ç¬¬ä¸€ä¸ªæ²¡æœ‰å·¦å„¿å­æˆ–è€…å³å„¿å­çš„èŠ‚ç‚¹ï¼Œè®¾ç½®æ ‡å¿—ä½ï¼Œ
+ *å¦‚æœä¹‹åå†é‡åˆ°æœ‰å·¦/å³å„¿å­çš„èŠ‚ç‚¹ï¼Œé‚£ä¹ˆè¿™ä¸æ˜¯ä¸€é¢—å®Œå…¨äºŒå‰æ ‘ã€‚
  */
 bool binary_tree::is_complete(binary_node *sub_tree)
 {

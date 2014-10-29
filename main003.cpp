@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <cstdlib>
 
 #include "linked_list.h"
@@ -9,15 +9,15 @@ using namespace std;
 
 
 /**
- * Ô¼Éª·òÎÊÌâ£¨»ªÎªÃæÊÔ£©
- * ÊäÈëÓÎÏ·ÕßÈËÊı¡¢¿ªÊ¼µÄĞòºÅÊı£¨´ÓÄÄ¸öÈË¿ªÊ¼£©ºÍ±¨Êı¼ä¸ô
+ * çº¦ç‘Ÿå¤«é—®é¢˜ï¼ˆåä¸ºé¢è¯•ï¼‰
+ * è¾“å…¥æ¸¸æˆè€…äººæ•°ã€å¼€å§‹çš„åºå·æ•°ï¼ˆä»å“ªä¸ªäººå¼€å§‹ï¼‰å’ŒæŠ¥æ•°é—´éš”
  */
 int main0031()
 {
     int num; //the numbers of the players
     int start; //from which player to start
     int interval; //count to which number to quit
-    cout<<"ÊäÈëÓÎÏ·ÕßÈËÊı¡¢¿ªÊ¼µÄĞòºÅÊıºÍ±¨Êı¼ä¸ô£º"<<endl;
+    cout<<"è¾“å…¥æ¸¸æˆè€…äººæ•°ã€å¼€å§‹çš„åºå·æ•°å’ŒæŠ¥æ•°é—´éš”ï¼š"<<endl;
     cin >> num >> start >> interval;
 
     if((num<1) || (start<1) || (start>num) || (interval<1) || (interval>num))
@@ -46,7 +46,7 @@ int main0031()
                 j++;
         }
 
-        cout << "³öÁĞµÄÈËÊÇ£º" << player[i] << endl;
+        cout << "å‡ºåˆ—çš„äººæ˜¯ï¼š" << player[i] << endl;
         player[i] = 0;
         k++;
     }
@@ -81,7 +81,7 @@ int main2_12()
 
                 if(current == NULL)
                 {
-                    cerr<<"´æ´¢·ÖÅä´íÎó"<<endl;
+                    cerr<<"å­˜å‚¨åˆ†é…é”™è¯¯"<<endl;
                 }
 
                 current_c->link = current;
@@ -94,7 +94,7 @@ int main2_12()
 
                 if(current == NULL)
                 {
-                    cerr<<"´æ´¢·ÖÅä´íÎó"<<endl;
+                    cerr<<"å­˜å‚¨åˆ†é…é”™è¯¯"<<endl;
                 }
 
                 current_c->link = current;
@@ -119,7 +119,7 @@ int main2_12()
 
         if(current == NULL)
         {
-            cerr<<"´æ´¢·ÖÅä´íÎó"<<endl;
+            cerr<<"å­˜å‚¨åˆ†é…é”™è¯¯"<<endl;
         }
 
         current_c->link = current;
@@ -147,13 +147,13 @@ typedef struct node NODE;
 
 int main0032()
 {
-    /*¼ÙÉè¹²ÓĞnÈË£¬´ÓµÚs¸öÈË¿ªÊ¼ÊıÊı£¬Ã¿Êıµ½m¸ÃÈË³öÁĞ£¬ºóÃæµÄÈËÖØĞÂ¿ªÊ¼Êı£¬ÖªµÀÈ«²¿ÈË³öÁĞ*/
+    /*å‡è®¾å…±æœ‰näººï¼Œä»ç¬¬sä¸ªäººå¼€å§‹æ•°æ•°ï¼Œæ¯æ•°åˆ°mè¯¥äººå‡ºåˆ—ï¼Œåé¢çš„äººé‡æ–°å¼€å§‹æ•°ï¼ŒçŸ¥é“å…¨éƒ¨äººå‡ºåˆ—*/
     int n,s,m;
     NODE *head = NULL,*last,*current,*prev;
     cout << "Input the n,s,m(separate with space):";
     cin >> n >> s >> m;
 
-    for(int i=1; i<=n; i++) //½¨Á¢Ñ­»·Á´±í
+    for(int i=1; i<=n; i++) //å»ºç«‹å¾ªç¯é“¾è¡¨
     {
         current = new NODE;
         current->seq = i;
@@ -171,7 +171,7 @@ int main0032()
         }
     }
 
-    current = head; //±éÀúÑ­»·Á´±í£¬Êä³öĞòÁĞ
+    current = head; //éå†å¾ªç¯é“¾è¡¨ï¼Œè¾“å‡ºåºåˆ—
 
     do
     {
@@ -180,7 +180,7 @@ int main0032()
     }
     while(current!=head);
 
-    current = head; //½«currentÖÃÓÚµÚs¸öÎ»ÖÃ
+    current = head; //å°†currentç½®äºç¬¬sä¸ªä½ç½®
 
     for(int i=1; i<s; i++)
     {
@@ -189,7 +189,7 @@ int main0032()
 
     cout << endl;
 
-    for(int i=1; i<=n; i++) //¹²Ñ­»·nÂÖ£¬µÃµ½Ò»¸öÕûÌåµÄÊä³öĞòÁĞ
+    for(int i=1; i<=n; i++) //å…±å¾ªç¯nè½®ï¼Œå¾—åˆ°ä¸€ä¸ªæ•´ä½“çš„è¾“å‡ºåºåˆ—
     {
         for(int j=1; j<m; j++)
         {

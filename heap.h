@@ -1,4 +1,4 @@
-#define DEFAULT_SIZE 10
+ï»¿#define DEFAULT_SIZE 10
 
 class heap
 {
@@ -6,7 +6,7 @@ private:
     int current_size;
     int max_size;
     int *heap_p;
-    bool (*p_fun)(int, int); //½ÓÊÜÒ»¸ö¶şÔªÎ½´Êº¯Êı£¬À´¾ö¶¨ÊÇ½¨Á¢×îĞ¡¶Ñ»¹ÊÇ×î´ó¶Ñ
+    bool (*p_fun)(int, int); //æ¥å—ä¸€ä¸ªäºŒå…ƒè°“è¯å‡½æ•°ï¼Œæ¥å†³å®šæ˜¯å»ºç«‹æœ€å°å †è¿˜æ˜¯æœ€å¤§å †
 
     void shift_down(int begin,int end);
     void shift_up(int begin);
