@@ -9,8 +9,9 @@ struct binary_node
     int count; //计数，插入相同元素，则递增
     binary_node *left_child, *right_child;
     binary_node *parent;
-    binary_node():data(0),count(1),left_child(NULL),right_child(NULL) {}
-    binary_node(int D, binary_node *L = NULL, binary_node *R = NULL):data(D),count(1),left_child(R),right_child(R) {}
+    binary_node():data(0),count(1),left_child(NULL),right_child(NULL),parent(NULL) {}
+    binary_node(int D, binary_node *L = NULL, binary_node *R = NULL, binary_node *P = NULL)
+    :data(D),count(1),left_child(R),right_child(R),parent(P) {}
 };
 
 class binary_tree

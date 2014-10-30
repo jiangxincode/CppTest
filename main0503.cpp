@@ -74,7 +74,7 @@ int main0503()
     char array4[20];
     cout << "input a char array:" << endl;
     cin.get(); //把之前输入的回车符号滤去
-    gets(array4);
+    fgets(array4,20,stdin);
     //The gets function reads a line from the standard input stream stdin and stores it in buffer.
     //The line consists of all characters up to and including the first newline character ('\n').
     //gets then replaces the newline character with a null character ('\0') before returning the line

@@ -76,3 +76,11 @@ http://github.com/jiangxincode
 * Unused variable: result
 * Variable 'ch' is assigned a value that is never used.
 * Member variable 'LinkNode<int>::data' is not initialized in the constructor.
+
+### Version 1.05
+
+通过CppCheck检查，修复以下问题：
+
+* Member variable 'binary_node::parent' is not initialized in the constructor.
+* Obsolete function 'gets' called. It is recommended to use the function 'fgets' instead.
+* Storing getchar() return value in char variable and then comparing with EOF.

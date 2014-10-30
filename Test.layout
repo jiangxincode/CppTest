@@ -1,34 +1,175 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="main2544.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1114" topLine="40" />
-		</Cursor>
-	</File>
-	<File name="main0527.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1394" topLine="60" />
-		</Cursor>
-	</File>
 	<File name="main2000.cpp" open="0" top="0" tabpos="30" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="134" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main0512.cpp" open="0" top="0" tabpos="27" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main0500.cpp" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="99" topLine="0" />
+			<Cursor1 position="625" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main008.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main2585.cpp" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="347" topLine="0" />
+			<Cursor1 position="257" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main2583.cpp" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main0533.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="266" topLine="0" />
+			<Cursor1 position="4" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main2001.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main0501.cpp" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="589" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="heap.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="37" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="main0550.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="11" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main2501.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="698" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="main0508.cpp" open="0" top="0" tabpos="23" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="93" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="linear_list.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="9573" topLine="191" />
+		</Cursor>
+		<Folding>
+			<Collapse line="142" />
+			<Collapse line="159" />
+			<Collapse line="179" />
+			<Collapse line="197" />
+			<Collapse line="210" />
+			<Collapse line="225" />
+			<Collapse line="241" />
+			<Collapse line="259" />
+			<Collapse line="276" />
+			<Collapse line="293" />
+			<Collapse line="314" />
+			<Collapse line="331" />
+			<Collapse line="345" />
+			<Collapse line="365" />
+		</Folding>
+	</File>
+	<File name="main2534.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1049" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="main1590.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="236" topLine="51" />
+		</Cursor>
+	</File>
+	<File name="main1620.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2766" topLine="109" />
+		</Cursor>
+	</File>
+	<File name="main0515.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="551" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="237" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main2592.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="341" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main0539.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1762" topLine="65" />
+		</Cursor>
+	</File>
+	<File name="main2500.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main0516.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="731" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="LinkedSet.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="81" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main0547.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="319" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main2518.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="516" topLine="4" />
+		</Cursor>
+	</File>
+	<File name="main0514.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2332" topLine="90" />
+		</Cursor>
+	</File>
+	<File name="main.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="48" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main003.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4784" topLine="43" />
+		</Cursor>
+	</File>
+	<File name="main2526.cpp" open="0" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="215" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main0518.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main0555.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="binary_search_tree.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="87" topLine="11" />
+		</Cursor>
+	</File>
+	<File name="main015.cpp" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="332" topLine="3" />
 		</Cursor>
 	</File>
 	<File name="main0534.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -36,12 +177,107 @@
 			<Cursor1 position="715" topLine="18" />
 		</Cursor>
 	</File>
-	<File name="main2001.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main002.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2642" topLine="95" />
+			<Cursor1 position="12" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main0518.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main0503.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1710" topLine="36" />
+		</Cursor>
+	</File>
+	<File name="main000.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="23" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main0544.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="212" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="main0526.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="391" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main0512.cpp" open="0" top="0" tabpos="27" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="99" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main001.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="19" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main0531.cpp" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main0527.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1394" topLine="60" />
+		</Cursor>
+	</File>
+	<File name="main004.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="35" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main0524.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2380" topLine="103" />
+		</Cursor>
+	</File>
+	<File name="main011.cpp" open="0" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="631" topLine="17" />
+		</Cursor>
+	</File>
+	<File name="main0530.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="474" topLine="16" />
+		</Cursor>
+	</File>
+	<File name="main0517.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5259" topLine="182" />
+		</Cursor>
+	</File>
+	<File name="main005.cpp" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="536" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="main0525.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="240" topLine="16" />
+		</Cursor>
+	</File>
+	<File name="main013.cpp" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="128" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="main2545.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="512" topLine="8" />
+		</Cursor>
+	</File>
+	<File name="main0546.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1142" topLine="47" />
+		</Cursor>
+	</File>
+	<File name="main0519.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="619" topLine="22" />
+		</Cursor>
+	</File>
+	<File name="main0513.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="8" topLine="0" />
 		</Cursor>
@@ -51,169 +287,19 @@
 			<Cursor1 position="194" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main2554.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="15" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main0540.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1019" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main2500.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3246" topLine="117" />
-		</Cursor>
-	</File>
-	<File name="main0510.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="277" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main011.cpp" open="0" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="631" topLine="17" />
-		</Cursor>
-	</File>
-	<File name="main2545.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="512" topLine="8" />
-		</Cursor>
-	</File>
-	<File name="main0541.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="851" topLine="30" />
-		</Cursor>
-	</File>
-	<File name="main2501.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="698" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="main015.cpp" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="332" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="main003.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1152" topLine="48" />
-		</Cursor>
-	</File>
-	<File name="static_list.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="218" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main0528.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="286" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main0501.cpp" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="589" topLine="6" />
-		</Cursor>
-	</File>
-	<File name="main010.cpp" open="0" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="622" topLine="13" />
-		</Cursor>
-	</File>
-	<File name="main0529.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="126" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main1550.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="573" topLine="117" />
-		</Cursor>
-	</File>
-	<File name="main0503.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1230" topLine="27" />
-		</Cursor>
-	</File>
-	<File name="main012.cpp" open="0" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="477" topLine="12" />
-		</Cursor>
-	</File>
-	<File name="main0532.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main1800.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5258" topLine="167" />
-		</Cursor>
-	</File>
-	<File name="main0507.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="350" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="237" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main2527.cpp" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="8" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main0542.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4355" topLine="138" />
-		</Cursor>
-	</File>
-	<File name="main2516.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="179" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main0514.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2332" topLine="90" />
-		</Cursor>
-	</File>
-	<File name="main001.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="19" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="main2564.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="364" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main0555.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main0549.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1897" topLine="24" />
+			<Cursor1 position="832" topLine="26" />
 		</Cursor>
 	</File>
-	<File name="main0516.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main0504.cpp" open="0" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="731" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main002.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="12" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main2572.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3306" topLine="122" />
-		</Cursor>
-	</File>
-	<File name="main1610.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="207" topLine="29" />
+			<Cursor1 position="19" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="binary_search_tree.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -221,24 +307,29 @@
 			<Cursor1 position="184" topLine="139" />
 		</Cursor>
 	</File>
-	<File name="main0519.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main0545.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="619" topLine="22" />
+			<Cursor1 position="1600" topLine="73" />
 		</Cursor>
 	</File>
-	<File name="main0550.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main008.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="11" topLine="0" />
+			<Cursor1 position="347" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main004.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="static_list.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="35" topLine="0" />
+			<Cursor1 position="218" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main2535.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main0548.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="611" topLine="5" />
+			<Cursor1 position="248" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main0505.cpp" open="0" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1443" topLine="32" />
 		</Cursor>
 	</File>
 	<File name="binary_tree.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -246,44 +337,54 @@
 			<Cursor1 position="1512" topLine="59" />
 		</Cursor>
 	</File>
-	<File name="main2542.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main1550.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="569" topLine="9" />
+			<Cursor1 position="573" topLine="117" />
 		</Cursor>
 	</File>
-	<File name="main0521.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main012.cpp" open="0" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="355" topLine="10" />
+			<Cursor1 position="477" topLine="12" />
 		</Cursor>
 	</File>
-	<File name="main2526.cpp" open="0" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main1000.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="215" topLine="0" />
+			<Cursor1 position="1655" topLine="37" />
 		</Cursor>
 	</File>
-	<File name="main005.cpp" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main0507.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="536" topLine="15" />
+			<Cursor1 position="8" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main2517.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="binary_tree.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="453" topLine="9" />
+			<Cursor1 position="128" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="binary_search_tree.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main0540.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="87" topLine="11" />
+			<Cursor1 position="1019" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main016.cpp" open="0" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main007.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="84" topLine="0" />
+			<Cursor1 position="247" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main2518.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main0538.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="516" topLine="4" />
+			<Cursor1 position="447" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="main0502.cpp" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="300" topLine="16" />
+		</Cursor>
+	</File>
+	<File name="main0536.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="640" topLine="48" />
 		</Cursor>
 	</File>
 	<File name="main006.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -291,19 +392,99 @@
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main2592.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main0528.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="341" topLine="0" />
+			<Cursor1 position="286" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main2525.cpp" open="0" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main0523.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="310" topLine="0" />
+			<Cursor1 position="673" topLine="17" />
 		</Cursor>
 	</File>
-	<File name="circ_list.h" open="1" top="1" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="circ_list.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1264" topLine="0" />
+			<Cursor1 position="269" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main0542.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4355" topLine="138" />
+		</Cursor>
+	</File>
+	<File name="main010.cpp" open="0" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="622" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="main2517.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="453" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="main0520.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1329" topLine="46" />
+		</Cursor>
+	</File>
+	<File name="main0541.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="851" topLine="30" />
+		</Cursor>
+	</File>
+	<File name="main2543.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="500" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="main2527.cpp" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main0506.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main0543.cpp" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="577" topLine="1" />
+		</Cursor>
+	</File>
+	<File name="main2542.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="569" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="main1730.cpp" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5420" topLine="234" />
+		</Cursor>
+	</File>
+	<File name="main0509.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main2579.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="700" topLine="14" />
+		</Cursor>
+	</File>
+	<File name="main2554.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="15" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main1610.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="207" topLine="29" />
+		</Cursor>
+	</File>
+	<File name="main0510.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="277" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="main2565.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -311,22 +492,27 @@
 			<Cursor1 position="509" topLine="5" />
 		</Cursor>
 	</File>
-	<File name="main0515.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main0537.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="551" topLine="0" />
+			<Cursor1 position="1077" topLine="68" />
 		</Cursor>
 	</File>
-	<File name="main0544.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main2591.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3551" topLine="173" />
+			<Cursor1 position="3742" topLine="178" />
 		</Cursor>
 	</File>
-	<File name="main.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main1760.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="48" topLine="0" />
+			<Cursor1 position="220" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main2584.cpp" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main014.cpp" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="265" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main2572.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="8" topLine="0" />
 		</Cursor>
@@ -336,106 +522,9 @@
 			<Cursor1 position="1194" topLine="25" />
 		</Cursor>
 	</File>
-	<File name="main2534.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main2516.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1049" topLine="21" />
-		</Cursor>
-	</File>
-	<File name="main0511.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="507" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main0545.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1600" topLine="73" />
-		</Cursor>
-	</File>
-	<File name="linear_list.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="138" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="28" />
-			<Collapse line="32" />
-			<Collapse line="36" />
-			<Collapse line="42" />
-			<Collapse line="52" />
-			<Collapse line="61" />
-			<Collapse line="65" />
-			<Collapse line="157" />
-			<Collapse line="174" />
-			<Collapse line="308" />
-			<Collapse line="329" />
-			<Collapse line="346" />
-			<Collapse line="360" />
-			<Collapse line="380" />
-			<Collapse line="406" />
-		</Folding>
-	</File>
-	<File name="main0509.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="8" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main2585.cpp" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="257" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main0520.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="319" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main0546.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1142" topLine="47" />
-		</Cursor>
-	</File>
-	<File name="main000.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="23" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main0523.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="673" topLine="17" />
-		</Cursor>
-	</File>
-	<File name="main0513.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3222" topLine="159" />
-		</Cursor>
-	</File>
-	<File name="main0548.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="248" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main0526.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="391" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main0522.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="816" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main1560.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="262" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main007.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="247" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main013.cpp" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="128" topLine="3" />
+			<Cursor1 position="179" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="main017.cpp" open="0" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -443,174 +532,14 @@
 			<Cursor1 position="386" topLine="9" />
 		</Cursor>
 	</File>
-	<File name="main0547.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main2535.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="319" topLine="0" />
+			<Cursor1 position="611" topLine="5" />
 		</Cursor>
 	</File>
-	<File name="main0502.cpp" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main0529.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="300" topLine="16" />
-		</Cursor>
-	</File>
-	<File name="main0543.cpp" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="577" topLine="1" />
-		</Cursor>
-	</File>
-	<File name="main1000.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1655" topLine="37" />
-		</Cursor>
-	</File>
-	<File name="main0508.cpp" open="0" top="0" tabpos="23" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="93" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main2543.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="500" topLine="6" />
-		</Cursor>
-	</File>
-	<File name="main0536.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="640" topLine="48" />
-		</Cursor>
-	</File>
-	<File name="main0551.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="239" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main0500.cpp" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="625" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main0531.cpp" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main1590.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="236" topLine="51" />
-		</Cursor>
-	</File>
-	<File name="main0517.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2200" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="binary_tree.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="128" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main0537.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1077" topLine="68" />
-		</Cursor>
-	</File>
-	<File name="main1730.cpp" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1711" topLine="71" />
-		</Cursor>
-	</File>
-	<File name="main0524.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2380" topLine="103" />
-		</Cursor>
-	</File>
-	<File name="hash.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="104" topLine="91" />
-		</Cursor>
-	</File>
-	<File name="main0535.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1396" topLine="58" />
-		</Cursor>
-	</File>
-	<File name="main1740.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="10562" topLine="450" />
-		</Cursor>
-	</File>
-	<File name="main014.cpp" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="265" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main2528.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="598" topLine="7" />
-		</Cursor>
-	</File>
-	<File name="main0533.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main0504.cpp" open="0" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="19" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="LinkedSet.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="81" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main2579.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="700" topLine="14" />
-		</Cursor>
-	</File>
-	<File name="main0530.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="474" topLine="16" />
-		</Cursor>
-	</File>
-	<File name="main1760.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="220" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main0505.cpp" open="0" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1443" topLine="32" />
-		</Cursor>
-	</File>
-	<File name="heap.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1970" topLine="90" />
-		</Cursor>
-	</File>
-	<File name="main2591.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2478" topLine="199" />
-		</Cursor>
-	</File>
-	<File name="main0538.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="447" topLine="15" />
-		</Cursor>
-	</File>
-	<File name="main1620.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2766" topLine="109" />
-		</Cursor>
-	</File>
-	<File name="main0506.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="609" topLine="62" />
-		</Cursor>
-	</File>
-	<File name="heap.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="37" topLine="9" />
+			<Cursor1 position="2820" topLine="159" />
 		</Cursor>
 	</File>
 	<File name="main2566.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -618,19 +547,94 @@
 			<Cursor1 position="1061" topLine="27" />
 		</Cursor>
 	</File>
-	<File name="main0539.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main2525.cpp" open="0" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1760" topLine="0" />
+			<Cursor1 position="310" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main0549.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main0511.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="832" topLine="26" />
+			<Cursor1 position="8" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main0525.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main2544.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="161" topLine="0" />
+			<Cursor1 position="1114" topLine="40" />
+		</Cursor>
+	</File>
+	<File name="main0532.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main1740.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="10698" topLine="443" />
+		</Cursor>
+	</File>
+	<File name="main0522.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="886" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="heap.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1970" topLine="90" />
+		</Cursor>
+	</File>
+	<File name="main2583.cpp" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="266" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main0551.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="239" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main2519.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main0521.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="355" topLine="10" />
+		</Cursor>
+	</File>
+	<File name="hash.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="104" topLine="91" />
+		</Cursor>
+	</File>
+	<File name="main2528.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="598" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="main0535.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1396" topLine="58" />
+		</Cursor>
+	</File>
+	<File name="main1800.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5258" topLine="167" />
+		</Cursor>
+	</File>
+	<File name="main016.cpp" open="0" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="84" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main2584.cpp" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main1560.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="262" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

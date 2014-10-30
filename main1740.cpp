@@ -10,7 +10,7 @@ void test_4_12_a()
 {
     int line,row; //the lines and rows of the array
     int flag_end = 10000; //a flag for the end of loop
-    char ch; //a temp char for fflushing the stdin
+    int ch; //a temp char for fflushing the stdin
     int flag_exist = 0; //if a result exists, then the variable is 1
     cout << "Input the size of the array(LINE ROW):" << endl;
     cin >> line >> row;
