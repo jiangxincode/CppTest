@@ -26,10 +26,11 @@ int second_max(int arr[], int num)
 
     return sec_max;
 }
-#define MAXNUM 20
+
 
 int main0549()
 {
+    const int MAXNUM = 20;
     int arr[MAXNUM];
 
     for(int i=0; i<MAXNUM; i++)

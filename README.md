@@ -13,6 +13,8 @@ http://github.com/jiangxincode
 * CppCheckResults.xml //cppcheck
 * Test.cppcheck //cppcheck
 
+* data/ 一些数据文件，包括项目logo，Doxyfile（Doxywizard配置文件）等
+
 * main.c主函数
 * main.h主头文件
 
@@ -38,6 +40,7 @@ http://github.com/jiangxincode
 	* char *(%s) 根据实际内存容量设置
 
 * //delete:表示已删除可重用
+* //problem:表示存在问题
 
 
 ## 版本改动
@@ -84,3 +87,10 @@ http://github.com/jiangxincode
 * Member variable 'binary_node::parent' is not initialized in the constructor.
 * Obsolete function 'gets' called. It is recommended to use the function 'fgets' instead.
 * Storing getchar() return value in char variable and then comparing with EOF.
+
+### Version 1.06
+
+* 增加部分注释
+* struct or union member 'test::i_var' is never used
+* 去除了全部宏变量，使用局部const常量或者全局static const常量（限制在本文件中）代替
+* 修复hash类

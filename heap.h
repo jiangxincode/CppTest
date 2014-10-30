@@ -1,6 +1,4 @@
-﻿#define DEFAULT_SIZE 10
-
-class heap
+﻿class heap
 {
 private:
     int current_size;

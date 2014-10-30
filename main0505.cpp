@@ -16,7 +16,6 @@
 
 using namespace std;
 
-#define ARRAYSZIE 100
 int Func(int* A,int nSize)
 {
     int *p_zero = A; //指向最开始的零值
@@ -59,6 +58,7 @@ int Func(int* A,int nSize)
 }
 void main0505()
 {
+    const int ARRAYSZIE = 100;
     int A[ARRAYSZIE];
     default_random_engine e;
     uniform_int_distribution<> d(0,1);

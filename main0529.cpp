@@ -6,7 +6,7 @@
 
 using namespace std;
 
-#define MAXNUM 1000
+static const int MAXNUM = 1000;
 
 /**
 二分查找x是否在一个有序数组中，返回其在数组中最先出现的位置（从0开始）

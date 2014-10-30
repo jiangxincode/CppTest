@@ -14,9 +14,9 @@ bool compmax(int a,int b)
     return (b < a)?true:false;
 }
 
-#define MAXNUM 20
 int main001()
 {
+    const int MAXNUM = 20;
     int test[MAXNUM];
 
     for(int i=0; i<MAXNUM; i++)

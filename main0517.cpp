@@ -22,9 +22,9 @@
 
 using namespace std;
 
-#define MAX 35
-#define SUBWAY_A 20
-#define SUBWAY_B 15
+static const int MAX = 35;
+static const int SUBWAY_A = 20;
+static const int SUBWAY_B = 15;
 
 typedef struct node
 {

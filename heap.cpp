@@ -3,6 +3,8 @@
 
 using namespace std;
 
+static const int DEFAULT_SIZE = 10;
+
 heap::heap(int size, bool (*comp)(int,int))
 {
     p_fun = comp;

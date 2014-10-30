@@ -7,7 +7,7 @@
 
 using namespace std;
 
-#define MAX_LENGTH 100
+static const int MAX_LENGTH = 100;
 
 int squeeze(char s1[], const char s2[])
 {

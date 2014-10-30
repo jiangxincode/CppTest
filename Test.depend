@@ -2,7 +2,7 @@
 1414556290 source:e:\temp\cpp\test\main.cpp
 	"main.h"
 
-1414556290 source:e:\temp\cpp\test\main001.cpp
+1414685795 source:e:\temp\cpp\test\main001.cpp
 	<cstdlib>
 	"heap.h"
 
@@ -92,7 +92,7 @@
 
 1414556290 source:e:\temp\cpp\test\main0500.cpp
 
-1414556290 source:e:\temp\cpp\test\main0501.cpp
+1414685687 source:e:\temp\cpp\test\main0501.cpp
 	<cstdio>
 
 1414556290 source:e:\temp\cpp\test\main0502.cpp
@@ -106,7 +106,7 @@
 
 1414556290 source:e:\temp\cpp\test\main0504.cpp
 
-1414556290 source:e:\temp\cpp\test\main0505.cpp
+1414683529 source:e:\temp\cpp\test\main0505.cpp
 	<iostream>
 	<random>
 
@@ -150,16 +150,17 @@
 
 1413689808 source:e:\temp\cpp\test\cpplib.cpp
 
-1414654232 source:e:\temp\cpp\test\main1730.cpp
+1414686242 source:e:\temp\cpp\test\main1730.cpp
 	<stack>
 	<string>
 	<cstring>
 	<cstdio>
 
-1414654973 source:e:\temp\cpp\test\main1740.cpp
+1414685585 source:e:\temp\cpp\test\main1740.cpp
 	<iomanip>
 	<map>
 	<string>
+	<climits>
 
 1414556290 source:e:\temp\cpp\test\main1800.cpp
 	<cstring>
@@ -181,7 +182,7 @@
 	<utility>
 	<map>
 
-1414643825 source:e:\temp\cpp\test\main0517.cpp
+1414685288 source:e:\temp\cpp\test\main0517.cpp
 	<cstdio>
 	<cstring>
 	<cstdlib>
@@ -225,8 +226,7 @@
 	<sstream>
 	<cctype>
 
-1414556290 source:e:\temp\cpp\test\main0525.cpp
-	<iostream>
+1414675778 source:e:\temp\cpp\test\main0525.cpp
 	<string>
 	<sstream>
 
@@ -326,7 +326,7 @@
 
 1414556290 source:e:\temp\cpp\test\main2584.cpp
 
-1414556290 source:e:\temp\cpp\test\main2585.cpp
+1414685638 source:e:\temp\cpp\test\main2585.cpp
 	<cstdio>
 	<iostream>
 
@@ -348,7 +348,7 @@
 1414556290 source:e:\temp\cpp\test\main0528.cpp
 	<iostream>
 
-1414655022 source:e:\temp\cpp\test\main0529.cpp
+1414685935 source:e:\temp\cpp\test\main0529.cpp
 	<iostream>
 	<cstdio>
 	<cctype>
@@ -366,7 +366,7 @@
 1414556290 source:e:\temp\cpp\test\main0532.cpp
 	<vector>
 
-1414556290 source:e:\temp\cpp\test\main0533.cpp
+1414685981 source:e:\temp\cpp\test\main0533.cpp
 	<iostream>
 	<cstdlib>
 
@@ -389,10 +389,10 @@
 	<iostream>
 	<string>
 
-1414556290 source:e:\temp\cpp\test\heap.cpp
+1414683774 source:e:\temp\cpp\test\heap.cpp
 	"heap.h"
 
-1414556290 e:\temp\cpp\test\heap.h
+1414683727 e:\temp\cpp\test\heap.h
 
 1414556290 source:e:\temp\cpp\test\main0538.cpp
 	<algorithm>
@@ -452,10 +452,7 @@
 
 1414556290 source:e:\temp\cpp\test\main0543.cpp
 
-1414656062 source:e:\temp\cpp\test\main0544.cpp
-	<iostream>
-	<cstdlib>
-	<iomanip>
+1414673608 source:e:\temp\cpp\test\main0544.cpp
 
 1414556290 source:e:\temp\cpp\test\main0545.cpp
 	<cctype>
@@ -475,7 +472,7 @@
 1414556290 source:e:\temp\cpp\test\main0548.cpp
 	<cstdlib>
 
-1414556290 source:e:\temp\cpp\test\main0549.cpp
+1414685849 source:e:\temp\cpp\test\main0549.cpp
 	<iostream>
 	<climits>
 
@@ -511,4 +508,13 @@
 	<stdlib.h>
 
 1414642365 source:e:\temp\cpp\test\main0555.cpp
+
+1414685166 source:e:\temp\cpp\test\hash.cpp
+	<cstring>
+	<cstdlib>
+	"hash.h"
+
+1414685006 e:\temp\cpp\test\hash.h
+	<string>
+	<cstdlib>
 

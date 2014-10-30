@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <map>
 #include <string>
+#include <climits>
 
 using namespace std;
 
@@ -383,8 +384,7 @@ void test_4_12_c()
 该函数的功能是找出输入数组中所有局部鞍点，
 若输入数组的某个元素是局部鞍点，则将输出数组的相同位置处的元素置1；否则置0。
 */
-#define MIN -32768
-#define MAX 32767
+
 void localmax(int a[6][6],int b[6][6])
 {
     int i,j,k,m;
@@ -411,10 +411,10 @@ int test_4_12_d()
 
     for(j=0; j<6; j++)
     {
-        a[0][j]=MAX;
-        a[j][0]=MIN;
-        a[5][j]=MAX;
-        a[j][5]=MIN;
+        a[0][j]=INT_MAX;
+        a[j][0]=INT_MIN;
+        a[5][j]=INT_MAX;
+        a[j][5]=INT_MIN;
     }
 
     localmax(a,b);

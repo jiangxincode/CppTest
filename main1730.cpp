@@ -111,7 +111,7 @@ int main17304()
 在8X8格的国际象棋上摆放八个皇后，使其不能互相攻击，
 即任意两个皇后都不能处于同一行、同一列或同一斜线上，问有多少种摆法。
 */
-#define N 100
+static const int N = 100;
 class Queen
 {
 public:
@@ -228,7 +228,8 @@ void test_3_21()
 /*
 1.典型背包问题
 */
-#define MAXNUM 100
+static const int MAXNUM = 100;
+
 bool KNAP(int s,int n, int w[])
 {
     if(s == 0)

@@ -2,7 +2,6 @@
 #include <cstdio>
 using namespace std;
 
-#define MAXINPUTLENGTH 256
 //在一个字符串中找到所有只出现一次的字符,采用hash表，复杂的为O(n)
 void FindOne(char *input)
 {

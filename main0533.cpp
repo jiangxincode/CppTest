@@ -17,10 +17,11 @@ AllParts( A, n )   //A[1]...A[n]
 
 using namespace std;
 
-#define MAXNUM 10
+
 
 int main0533()
 {
+    const int MAXNUM = 10;
     int arr[MAXNUM];
 
     for(int i=0; i<MAXNUM; i++)
