@@ -192,7 +192,7 @@ int main0517()
     int i;
     char str[2][10];
 
-    while(scanf("%s%s",str[0],str[1])!=EOF)
+    while(scanf("%9s%9s",str[0],str[1])!=EOF)
     {
         int temp=0;
 

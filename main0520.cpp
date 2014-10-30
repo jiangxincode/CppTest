@@ -43,6 +43,7 @@ bool calc(int result,int target,int seq)
 
     return false;
 }
+/**
 int main0520()
 {
     int target;
@@ -62,3 +63,4 @@ int main0520()
     cout << "1";
     return 0;
 }
+*/

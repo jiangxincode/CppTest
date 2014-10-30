@@ -43,9 +43,7 @@
 		<Unit filename="hash.h" />
 		<Unit filename="heap.cpp" />
 		<Unit filename="heap.h" />
-		<Unit filename="jiangxin.h" />
 		<Unit filename="linear_list.h" />
-		<Unit filename="linked_list.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="main.h" />
 		<Unit filename="main000.cpp" />
@@ -163,7 +161,6 @@
 		<Unit filename="main2585.cpp" />
 		<Unit filename="main2591.cpp" />
 		<Unit filename="main2592.cpp" />
-		<Unit filename="seq_list.h" />
 		<Unit filename="static_list.h" />
 		<Extensions>
 			<code_completion />

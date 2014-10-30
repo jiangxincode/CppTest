@@ -1,8 +1,7 @@
-﻿/*
-趋势科技笔试题
-*/
+﻿/**
+ * 趋势科技笔试题（改错）
+ */
 
-/*改错*/
 #include <iostream>
 
 using namespace std;

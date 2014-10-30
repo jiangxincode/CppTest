@@ -1,9 +1,7 @@
 ﻿#include <iostream>
+#include <iomanip>
 #include <map>
 #include <string>
-
-#include <cstdio>
-#include <cstdlib>
 
 using namespace std;
 
@@ -13,7 +11,6 @@ void test_4_12_a()
     int line,row; //the lines and rows of the array
     int flag_end = 10000; //a flag for the end of loop
     char ch; //a temp char for fflushing the stdin
-    int min,max; //storge the min and max value of the array
     int flag_exist = 0; //if a result exists, then the variable is 1
     cout << "Input the size of the array(LINE ROW):" << endl;
     cin >> line >> row;
@@ -51,7 +48,7 @@ void test_4_12_a()
 
     for(int i=0; i<line; i++) //get the min position of every line
     {
-        min=A[i][0];
+        int min=A[i][0];
         B[i][0]=0;
         int m=0;
 
@@ -74,7 +71,7 @@ void test_4_12_a()
 
     for(int j=0; j<row; j++) //get the max position of every row
     {
-        max=A[0][j];
+        int max=A[0][j];
         C[j][0]=0;
         int n=0;
 
@@ -386,7 +383,6 @@ void test_4_12_c()
 该函数的功能是找出输入数组中所有局部鞍点，
 若输入数组的某个元素是局部鞍点，则将输出数组的相同位置处的元素置1；否则置0。
 */
-#include <stdio.h>
 #define MIN -32768
 #define MAX 32767
 void localmax(int a[6][6],int b[6][6])
@@ -425,16 +421,22 @@ int test_4_12_d()
 
     for(i=1; i<=4; i++)
     {
-        for(j=1; j<=4; j++)  printf("%8d",a[i][j]);
+        for(j=1; j<=4; j++)
+        {
+            cout << setw(8) << a[i][j];
+        }
 
-        printf("\n");
+        cout << endl;
     }
 
     for(i=1; i<=4; i++)
     {
-        for(j=1; j<=4; j++)  printf("%8d",b[i][j]);
+        for(j=1; j<=4; j++)
+        {
+            cout << setw(8) << b[i][j];
+        }
 
-        printf("\n");
+        cout << endl;
     }
 
     return 0;
@@ -453,20 +455,24 @@ int test_4_12_d()
     输出结果：
       The saddle point is：a[0][3]
 */
-#include<stdio.h>
+
 int test_4_12_e()
 {
-    int i,j,k,t=0,max,maxj;
+    int k,t=0;
     int a[4][4]= {{1,2,3,4,},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
 
-    for(i=0; i<4; i++)
+    for(int i=0; i<4; i++)
     {
-        max=a[i][0];
-        j=0;
+        int max=a[i][0];
+        int maxj;
+        int j=0;
 
         for(j=0; j<4; j++)
             if(a[i][j]>max)
-                max=a[i][j],maxj=j;
+            {
+                max=a[i][j];
+                maxj=j;
+            }
 
         for(k=0; k<4; k++)
             if(a[k][maxj]<max)
@@ -474,12 +480,12 @@ int test_4_12_e()
 
         if(k>=4)
         {
-            printf("The saddle point is a[%d][%d]\n",i,maxj);
+            cout << i << " " << maxj << endl;
             t=1;
         }
     }
 
-    if(t==0) printf("There is no saddle point!\n");
+    if(t==0) cout << "There is no saddle point!" << endl;
 
     return 0;
 }

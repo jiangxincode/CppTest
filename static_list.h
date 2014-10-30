@@ -1,6 +1,5 @@
 ﻿
 //静态链表的定义
-const int maxSize = 100; //the size of static list
 
 template <class T>
 struct SLinkNode
@@ -12,7 +11,7 @@ struct SLinkNode
 template <class T>
 class StaticList
 {
-    SLinkNode<T> elem[maxSize];
+    SLinkNode<T> elem[BUFSIZ];
     int avil; //the head address that can be destributed currently
 public:
     void InitList();
@@ -31,12 +30,12 @@ void StaticList<T>::InitList()
     elem[0]=-1;
     avil = 1;
 
-    for(int i=0; i<maxSize-1; i++)
+    for(int i=0; i<BUFSIZ-1; i++)
     {
         elem[i].link=i+1;
     }
 
-    elem[maxSize-1].link=-1;
+    elem[BUFSIZ-1].link=-1;
 }
 
 template <class T>

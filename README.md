@@ -61,3 +61,18 @@ http://github.com/jiangxincode
 ### Version 1.03
 
 * 将所有文件设置为UTF-8编码，设置codeblocks默认编码为UTF-8,便于生成doxyblocks生成文档。
+
+### Version 1.04
+
+* 设置工程logo，用于完善文档
+* 删除main2572
+* 部分文件重新用C++格式代替C格式
+* 部分文件移入ExerciseC
+
+通过CppCheck检查，修复以下问题：
+
+* scanf without field width limits can crash with huge input data.
+* The scope of the variable 'flag' can be reduced.
+* Unused variable: result
+* Variable 'ch' is assigned a value that is never used.
+* Member variable 'LinkNode<int>::data' is not initialized in the constructor.

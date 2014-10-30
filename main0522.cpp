@@ -19,7 +19,6 @@ using namespace std;
 int main0522()
 {
     string time1,time2;
-    string result;
     vector<int> vec1,vec2;
     cin >> time1 >> time2;
     string::size_type pos;

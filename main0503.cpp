@@ -41,7 +41,7 @@ int main0503()
     cout << "Test cin.getline() 的用法：" << endl;
     char array2[20];
     cout << "Input a char array:" << endl;
-    ch = cin.get(); //把之前输入的回车符号滤去
+    cin.get(); //把之前输入的回车符号滤去
     cin.getline(array2,20);
     cout << array2 << "\n" << endl;
     //实际上cin.get(字符数组，接收的字符数) 和cin.getline(字符数组，接收的字符数)
@@ -73,7 +73,7 @@ int main0503()
     cout << "Test gets(char *)的用法" << endl;
     char array4[20];
     cout << "input a char array:" << endl;
-    ch = cin.get(); //把之前输入的回车符号滤去
+    cin.get(); //把之前输入的回车符号滤去
     gets(array4);
     //The gets function reads a line from the standard input stream stdin and stores it in buffer.
     //The line consists of all characters up to and including the first newline character ('\n').

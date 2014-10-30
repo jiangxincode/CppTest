@@ -231,8 +231,6 @@ void test_3_21()
 #define MAXNUM 100
 bool KNAP(int s,int n, int w[])
 {
-    bool flag = false;
-
     if(s == 0)
     {
         return true;
@@ -248,7 +246,7 @@ bool KNAP(int s,int n, int w[])
 
     while(s > 0 && n >= 1)
     {
-        flag = KNAP(s,n-1,w);
+        bool flag = KNAP(s,n-1,w);
 
         if(flag)
         {
@@ -336,7 +334,7 @@ int find(int weight,int num,int *object,int *result)
 int main17302()
 {
     int weight,num;
-    scanf("%d %d",&weight,&num);
+    cin >> weight >> num;
     int *object = new int[num]; //动态数组一定要释放
     int *result = new int[num];
 
@@ -347,7 +345,7 @@ int main17302()
 
     for(int i=0; i<num; i++)
     {
-        scanf("%d",object+i);
+        cin >> *(object+i);
     }
 
     if(find(weight,num,object,result))

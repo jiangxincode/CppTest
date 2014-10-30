@@ -89,12 +89,12 @@ int main05291()
 */
 int Bin(const char* sp[],const char *str,const int n)
 {
-    int left = 0,right = n-1,mid;
+    int left = 0,right = n-1;
     int pos = -1;
 
     while(left <= right)
     {
-        mid = (left+right)/2;
+        int mid = (left+right)/2;
 
         if(strcmp(str,sp[mid])<0)
         {
@@ -157,13 +157,13 @@ int BSearch(int a[],int x,int low,int high)
 */
 int BSearch(int a[],int key,int n)
 {
-    int low,high,mid;
+    int low,high;
     low=0;
     high=n-1;
 
     while(low<=high)
     {
-        mid=(low+high)/2;
+        int mid=(low+high)/2;
 
         if(a[mid]==key)
         {

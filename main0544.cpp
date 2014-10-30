@@ -14,11 +14,10 @@ using namespace std;
 /*冒泡排序*/
 void bubblesort(int *arr, int n)
 {
-    bool flag;
 
     for(int i=1; i<n; i++)
     {
-        flag = false;
+        bool flag = false;
 
         for(int j=n-1; j>=i; j--)
         {

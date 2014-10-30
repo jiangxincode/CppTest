@@ -1,8 +1,7 @@
 ﻿#include <iostream>
 #include <cstdlib>
 
-#include "linked_list.h"
-#include "seq_list.h"
+#include "linear_list.h"
 #include "static_list.h"
 
 using namespace std;
@@ -56,7 +55,7 @@ int main0031()
 
 int main2_12()
 {
-    List<int> A,B,C;
+    linked_list<int> A,B,C;
     LinkNode<int> *current_a,*current_b,*current_c;
     LinkNode<int> *current;
     int temp = 1000;
@@ -210,7 +209,7 @@ int main0032()
 
 int main2_20()
 {
-    List<int> A,odd,even;
+    linked_list<int> A,odd,even;
     LinkNode<int> *current_a,*current_odd,*current_even;
     LinkNode<int> *current;
     int temp = 1000;

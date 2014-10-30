@@ -167,7 +167,7 @@ int time_convert()
     char ctime[10];
     char *time_str;
     puts("Input the seconds");
-    scanf("%d",&seconds);
+    scanf("%11d",&seconds);
     H=seconds/3600;
     M=(seconds%3600)/60;
     S=(seconds%3600)%60;
@@ -178,8 +178,8 @@ int time_convert()
     char str[] = "15.455";
     int i;
     float fp;
-    sscanf(str, "%d", &i); // 将字符串转换成整数   i = 15
-    sscanf(str, "%f", &fp); // 将字符串转换成浮点数 fp = 15.455000
+    sscanf(str, "%11d", &i); // 将字符串转换成整数   i = 15
+    sscanf(str, "%20f", &fp); // 将字符串转换成浮点数 fp = 15.455000
     printf("Integer: = %d ", i+1);
     printf("Real: = %f ", fp+1);
     return 0;

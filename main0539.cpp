@@ -77,7 +77,7 @@ void shift2(char *str, int length, int shift_bit) //less space, more time
 int main0539()
 {
     char str[BUFSIZ];
-    scanf("%s",str);
+    cin >> str;
     shift2(str,strlen(str),-3);
     cout << str;
     return 0;
