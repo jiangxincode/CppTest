@@ -5,7 +5,8 @@ typedef struct
 {
     char  name[10], degree[10];
 } ST;
-void sort(ST x[],int n,char key[][10],int m)
+
+static void sort(ST x[],int n,char key[][10],int m)
 {
     int i,j,k,con1,con2;
     ST v;

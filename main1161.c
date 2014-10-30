@@ -9,7 +9,8 @@ typedef struct node
     int x;
     struct node *next;
 } NODE;
-NODE *create(void)
+
+static NODE *create(void)
 {
     int num,i=0;
     NODE *p1,*p2,*head=NULL;

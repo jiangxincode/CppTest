@@ -1,6 +1,7 @@
 ﻿#include<stdio.h>
 #include<math.h>
-int search(int x[],int low,int high,int key)
+
+static int search(int x[],int low,int high,int key)
 {
 
     while(low<=high)

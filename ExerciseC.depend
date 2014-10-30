@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1414377865 source:e:\temp\cpp\exercisec\jiangxin.c
+1414556523 source:e:\temp\cpp\exercisec\jiangxin.c
 	<stdio.h>
 	<ctype.h>
 	<stdlib.h>
@@ -8,126 +8,102 @@
 	<math.h>
 	"jiangxin.h"
 
-1410878696 e:\temp\cpp\exercisec\jiangxin.h
-	<stdbool.h>
+1414556523 e:\temp\cpp\exercisec\jiangxin.h
 
-1413470026 source:e:\temp\cpp\exercisec\main0000.c
-	<string.h>
+1414556523 source:e:\temp\cpp\exercisec\main0000.c
 	<stdio.h>
 	<stdlib.h>
 
-1410877081 source:e:\temp\cpp\exercisec\main0001.c
-	<stdlib.h>
+1414556523 source:e:\temp\cpp\exercisec\main0001.c
 	<stdio.h>
 	<time.h>
 	"jiangxin.h"
 
-1410877080 source:e:\temp\cpp\exercisec\main0003.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main0003.c
 	<math.h>
 	<string.h>
 
-1413168130 source:e:\temp\cpp\exercisec\main0004.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main0004.c
 	<stdlib.h>
 
-1413821502 source:e:\temp\cpp\exercisec\main0005.c
+1414556523 source:e:\temp\cpp\exercisec\main0005.c
 	<stdio.h>
 	<limits.h>
 
-1413819412 source:e:\temp\cpp\exercisec\main0006.c
+1414556523 source:e:\temp\cpp\exercisec\main0006.c
 	<stdio.h>
 	<stdlib.h>
 
-1413966043 source:e:\temp\cpp\exercisec\main0007.c
+1414556523 source:e:\temp\cpp\exercisec\main0007.c
 	<stdio.h>
 	<stdlib.h>
 
-1414375633 source:e:\temp\cpp\exercisec\main0008.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-
-1413966976 source:e:\temp\cpp\exercisec\main0009.c
+1414556523 source:e:\temp\cpp\exercisec\main0008.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1410862983 source:e:\temp\cpp\exercisec\main0010.c
-
-1413967049 source:e:\temp\cpp\exercisec\main0011.c
-	<stdio.h>
-
-1411458922 source:e:\temp\cpp\exercisec\main0012.c
-	<stdio.h>
-
-1413535930 source:e:\temp\cpp\exercisec\main0013.c
+1414556523 source:e:\temp\cpp\exercisec\main0009.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 
-1413967255 source:e:\temp\cpp\exercisec\main1011.c
+1414556523 source:e:\temp\cpp\exercisec\main0010.c
+
+1414556523 source:e:\temp\cpp\exercisec\main0011.c
 	<stdio.h>
+
+1414556523 source:e:\temp\cpp\exercisec\main0012.c
+	<stdio.h>
+
+1414556523 source:e:\temp\cpp\exercisec\main0013.c
+	<stdlib.h>
+
+1414556523 source:e:\temp\cpp\exercisec\main1011.c
 	<math.h>
 
-1410879546 source:e:\temp\cpp\exercisec\main1013.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1013.c
 
-1413967435 source:e:\temp\cpp\exercisec\main1021.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1021.c
 
-1413967475 source:e:\temp\cpp\exercisec\main1022.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1022.c
 
-1413532799 source:e:\temp\cpp\exercisec\main1023.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1023.c
 
-1410880206 source:e:\temp\cpp\exercisec\main1024.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1024.c
 
-1410880206 source:e:\temp\cpp\exercisec\main1025.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1025.c
 
-1410880206 source:e:\temp\cpp\exercisec\main1026.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1026.c
 
-1413967541 source:e:\temp\cpp\exercisec\main1027.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1027.c
 
-1413967594 source:e:\temp\cpp\exercisec\main1028.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1028.c
 
-1413967617 source:e:\temp\cpp\exercisec\main1029.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1029.c
 
-1410880887 source:e:\temp\cpp\exercisec\main1031.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1031.c
 
-1413967811 source:e:\temp\cpp\exercisec\main1032.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1032.c
 
-1413967810 source:e:\temp\cpp\exercisec\main1033.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1033.c
 
-1413967863 source:e:\temp\cpp\exercisec\main1034.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1034.c
 	<math.h>
 	<stdlib.h>
 
 1413967959 source:e:\temp\cpp\exercisec\main1036.c
 
-1413968122 source:e:\temp\cpp\exercisec\main1037.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1037.c
 	<math.h>
 
 1413968152 source:e:\temp\cpp\exercisec\main1038.c
 
 1413968183 source:e:\temp\cpp\exercisec\main1039.c
 
-1410880248 source:e:\temp\cpp\exercisec\main1041.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1041.c
 
-1413968251 source:e:\temp\cpp\exercisec\main1042.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1042.c
 
 1413968305 source:e:\temp\cpp\exercisec\main1043.c
 
@@ -135,254 +111,206 @@
 
 1413968369 source:e:\temp\cpp\exercisec\main1045.c
 
-1413968412 source:e:\temp\cpp\exercisec\main1046.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1046.c
 	<math.h>
 
-1413968433 source:e:\temp\cpp\exercisec\main1047.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1047.c
 
-1413535929 source:e:\temp\cpp\exercisec\main1048.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1048.c
 
-1413968453 source:e:\temp\cpp\exercisec\main1051.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1051.c
 	<math.h>
 
-1414375724 source:e:\temp\cpp\exercisec\main1052.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1052.c
 	<math.h>
 
-1413968860 source:e:\temp\cpp\exercisec\main1053.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1053.c
 	<math.h>
 	<stdlib.h>
 
-1413968886 source:e:\temp\cpp\exercisec\main1054.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1054.c
 	<math.h>
 
-1414376841 source:e:\temp\cpp\exercisec\main1055.c
+1414556523 source:e:\temp\cpp\exercisec\main1055.c
 	<stdio.h>
 	<math.h>
 	<limits.h>
 
 1414376965 source:e:\temp\cpp\exercisec\main1056.c
 
-1414380887 source:e:\temp\cpp\exercisec\main1061.c
+1414556523 source:e:\temp\cpp\exercisec\main1061.c
 	<stdio.h>
 	<math.h>
 
-1414377616 source:e:\temp\cpp\exercisec\main1062.c
+1414556523 source:e:\temp\cpp\exercisec\main1062.c
 	<stdio.h>
 	<math.h>
 
-1414377780 source:e:\temp\cpp\exercisec\main1063.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1063.c
 	<math.h>
 	"jiangxin.h"
 
-1414378307 source:e:\temp\cpp\exercisec\main1064.c
+1414556523 source:e:\temp\cpp\exercisec\main1064.c
 	<stdio.h>
 	<math.h>
 	"jiangxin.h"
 
 1414378381 source:e:\temp\cpp\exercisec\main1065.c
 
-1414379641 source:e:\temp\cpp\exercisec\main1071.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1071.c
 	<math.h>
 
-1413534003 source:e:\temp\cpp\exercisec\main1072.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1072.c
 	<math.h>
 
-1413965332 source:e:\temp\cpp\exercisec\main1073.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1073.c
 	<math.h>
 
-1414378573 source:e:\temp\cpp\exercisec\main1074.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1074.c
 	<math.h>
 
-1414378610 source:e:\temp\cpp\exercisec\main1075.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1075.c
 	<math.h>
 
-1413534003 source:e:\temp\cpp\exercisec\main1081.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1081.c
 
-1413535929 source:e:\temp\cpp\exercisec\main1082.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1082.c
 
-1414378666 source:e:\temp\cpp\exercisec\main1083.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1083.c
 	<math.h>
 
-1410878400 source:e:\temp\cpp\exercisec\main1084.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1084.c
 	<math.h>
 
-1413535929 source:e:\temp\cpp\exercisec\main1085.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1085.c
 	<math.h>
 
-1414380972 source:e:\temp\cpp\exercisec\main1086.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1086.c
 	<math.h>
 
-1414379824 source:e:\temp\cpp\exercisec\main1091.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1091.c
 
-1414379866 source:e:\temp\cpp\exercisec\main1092.c
+1414556523 source:e:\temp\cpp\exercisec\main1092.c
 
-1413535930 source:e:\temp\cpp\exercisec\main1094.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1094.c
 	<math.h>
 	"jiangxin.h"
 
-1414379736 source:e:\temp\cpp\exercisec\main1095.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1095.c
 	<math.h>
 
-1414381591 source:e:\temp\cpp\exercisec\main1096.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1096.c
 	<math.h>
 
-1414379736 source:e:\temp\cpp\exercisec\main1097.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1097.c
 	<math.h>
 
-1414381498 source:e:\temp\cpp\exercisec\main1098.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1098.c
 	<math.h>
 
-1414379723 source:e:\temp\cpp\exercisec\main1101.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1101.c
 	<math.h>
 
-1414379750 source:e:\temp\cpp\exercisec\main1102.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1102.c
 	<math.h>
 
-1413535930 source:e:\temp\cpp\exercisec\main1103.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1103.c
 	<math.h>
 
-1414379641 source:e:\temp\cpp\exercisec\main1105.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1105.c
 	<math.h>
 
-1414379641 source:e:\temp\cpp\exercisec\main1106.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1106.c
 	<math.h>
 
-1410880328 source:e:\temp\cpp\exercisec\main1111.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1111.c
 
-1414379641 source:e:\temp\cpp\exercisec\main1112.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1112.c
 	<math.h>
 
-1414379641 source:e:\temp\cpp\exercisec\main1113.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1113.c
 
-1414379641 source:e:\temp\cpp\exercisec\main1114.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1114.c
 
-1414381026 source:e:\temp\cpp\exercisec\main1115.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1115.c
 	<math.h>
 
-1413535931 source:e:\temp\cpp\exercisec\main1116.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1116.c
 	"jiangxin.h"
 
-1413532799 source:e:\temp\cpp\exercisec\main1117.c
-	"stdio.h"
+1414556523 source:e:\temp\cpp\exercisec\main1117.c
 	"jiangxin.h"
 
-1414381054 source:e:\temp\cpp\exercisec\main1121.c
-	<stdio.h>
+1414643484 source:e:\temp\cpp\exercisec\main1121.c
 	<math.h>
 
-1414379641 source:e:\temp\cpp\exercisec\main1122.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1122.c
 	<math.h>
 	"jiangxin.h"
 
-1413534002 source:e:\temp\cpp\exercisec\main1123.c
+1414556523 source:e:\temp\cpp\exercisec\main1123.c
 	<stdio.h>
 	<math.h>
 
-1413629148 source:e:\temp\cpp\exercisec\main1124.c
+1414556523 source:e:\temp\cpp\exercisec\main1124.c
 
-1414381324 source:e:\temp\cpp\exercisec\main1125.c
+1414556523 source:e:\temp\cpp\exercisec\main1125.c
 	<stdio.h>
 
-1414380357 source:e:\temp\cpp\exercisec\main1131.c
+1414556523 source:e:\temp\cpp\exercisec\main1131.c
 
-1413534003 source:e:\temp\cpp\exercisec\main1132.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1132.c
 	"jiangxin.h"
 
-1413595365 source:e:\temp\cpp\exercisec\main1133.c
+1414556523 source:e:\temp\cpp\exercisec\main1133.c
 	<stdio.h>
 
-1413534187 source:e:\temp\cpp\exercisec\main1134.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1134.c
 
-1414379641 source:e:\temp\cpp\exercisec\main1135.c
+1414556523 source:e:\temp\cpp\exercisec\main1135.c
 	<stdio.h>
 	<stdlib.h>
 
-1414380371 source:e:\temp\cpp\exercisec\main1136.c
+1414556523 source:e:\temp\cpp\exercisec\main1136.c
 
-1413595644 source:e:\temp\cpp\exercisec\main1137.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1137.c
 	<stdlib.h>
 	<time.h>
 
-1413534003 source:e:\temp\cpp\exercisec\main1141.c
+1414556523 source:e:\temp\cpp\exercisec\main1141.c
 	<stdio.h>
 	<string.h>
 	<ctype.h>
 
-1414380499 source:e:\temp\cpp\exercisec\main1142.c
+1414556523 source:e:\temp\cpp\exercisec\main1142.c
 	<stdio.h>
 	<ctype.h>
 
-1414380600 source:e:\temp\cpp\exercisec\main1143.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1143.c
 	<string.h>
 	<ctype.h>
 
-1414380658 source:e:\temp\cpp\exercisec\main1144.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1144.c
 	<string.h>
 	<ctype.h>
 
-1414380658 source:e:\temp\cpp\exercisec\main1145.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1145.c
 	<string.h>
 	<ctype.h>
 
-1413532799 source:e:\temp\cpp\exercisec\main1146.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1146.c
 	<string.h>
 	<ctype.h>
 
-1414381777 source:e:\temp\cpp\exercisec\main1147.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1147.c
 	<string.h>
 	<ctype.h>
 
-1413595644 source:e:\temp\cpp\exercisec\main1148.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1148.c
 	<string.h>
 	<ctype.h>
 
-1413596122 source:e:\temp\cpp\exercisec\main1151.c
+1414556523 source:e:\temp\cpp\exercisec\main1151.c
 	<stdio.h>
 	<string.h>
 	<ctype.h>
@@ -390,60 +318,87 @@
 	<stdlib.h>
 	"jiangxin.h"
 
-1413596122 source:e:\temp\cpp\exercisec\main1152.c
-	<stdio.h>
+1414643497 source:e:\temp\cpp\exercisec\main1152.c
 	<string.h>
 
-1414381454 source:e:\temp\cpp\exercisec\main1153.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1153.c
 	<string.h>
 
-1414379270 source:e:\temp\cpp\exercisec\main1154.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1154.c
 	<math.h>
 	<ctype.h>
 	<string.h>
 
-1413536222 source:e:\temp\cpp\exercisec\main1155.c
+1414556523 source:e:\temp\cpp\exercisec\main1155.c
 	<stdio.h>
 	<string.h>
 	<ctype.h>
 
-1414381713 source:e:\temp\cpp\exercisec\main1161.c
-	<stdio.h>
+1414643515 source:e:\temp\cpp\exercisec\main1161.c
 	<math.h>
 	<ctype.h>
 	<string.h>
 	<stdlib.h>
 
-1414381288 source:e:\temp\cpp\exercisec\main1162.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1162.c
 	<stdlib.h>
 
-1414379641 source:e:\temp\cpp\exercisec\main1171.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1171.c
 	<math.h>
 	<ctype.h>
 	<string.h>
 	<stdlib.h>
 
-1414378198 source:e:\temp\cpp\exercisec\main.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main.c
 	<math.h>
 	<stdlib.h>
 	"main.h"
 	"jiangxin.h"
 
-1414383752 e:\temp\cpp\exercisec\main.h
+1414556523 e:\temp\cpp\exercisec\main.h
 
-1413766696 source:e:\temp\cpp\exercisec\main0002.c
+1414556523 source:e:\temp\cpp\exercisec\main0002.c
 
-1414379736 source:e:\temp\cpp\exercisec\main1093.c
-	<stdio.h>
+1414556523 source:e:\temp\cpp\exercisec\main1093.c
 	<math.h>
 	"jiangxin.h"
 
-1413596122 source:e:\temp\cpp\exercisec\main1104.c
+1414556523 source:e:\temp\cpp\exercisec\main1104.c
 	<stdio.h>
 	<math.h>
+
+1414642071 source:e:\temp\cpp\exercisec\main0014.c
+	"stdio.h"
+	"stdlib.h"
+
+1414642164 source:e:\temp\cpp\exercisec\main0015.c
+	<stdio.h>
+	<stdlib.h>
+
+1414642246 source:e:\temp\cpp\exercisec\main0016.c
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+	<string.h>
+
+1414642739 source:e:\temp\cpp\exercisec\main0017.c
+	<stdlib.h>
+	<string.h>
+	<string.h>
+
+1414642378 source:e:\temp\cpp\exercisec\main0018.c
+	<stdio.h>
+	<errno.h>
+
+1414642502 source:e:\temp\cpp\exercisec\main0019.c
+	<stdio.h>
+	<malloc.h>
+
+1414642618 source:e:\temp\cpp\exercisec\main0020.c
+	<stdio.h>
+
+1414643439 source:e:\temp\cpp\exercisec\main0021.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
 

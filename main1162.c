@@ -18,7 +18,7 @@ static void display(NODE *head);
 void copy_list(NODE *head1, NODE **head2);
 static NODE *merge(NODE *head1, NODE *head2);
 NODE *del(NODE *head1, NODE *head2);
-NODE *insert(NODE *head,NODE *p0);
+static NODE *insert(NODE *head,NODE *p0);
 
 int main1162(void)
 {
@@ -87,7 +87,8 @@ static NODE * create(struct  data_array *array, int n)
 
     return head;
 }
-NODE *insert(NODE *head,NODE *p0)
+
+static NODE *insert(NODE *head,NODE *p0)
 {
     NODE *p1=NULL;
 
