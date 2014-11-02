@@ -4,8 +4,8 @@
 #include <string.h>
 
 
-#define OK 1
-#define ERROR -1
+//#define OK 1
+//#define ERROR -1
 #define STACK_INIT_SIZE 100
 #define STACKINCREMENT 20
 
@@ -35,21 +35,21 @@ int InitStack(Stack *s) /*构造运算符栈*/
 {
     s->base=(char *)malloc(STACK_INIT_SIZE*sizeof(char));
 
-    if(!s->base) return ERROR;
+    if(!s->base) return -1;
 
     s->top=s->base;
     s->stacksize=STACK_INIT_SIZE;
-    return OK;
+    return 1; //OK
 }
 int InitStack2(Stack2 *s) /*构造操作数栈*/
 {
     s->base=(int *)malloc(STACK_INIT_SIZE*sizeof(int));
 
-    if(!s->base) return ERROR;
+    if(!s->base) return -1;
 
     s->stacksize=STACK_INIT_SIZE;
     s->top=s->base;
-    return OK;
+    return 1;
 }
 
 int In(char ch) /*判断字符是否是运算符，运算符即返回1*/

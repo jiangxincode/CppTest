@@ -6,10 +6,10 @@
 #include <math.h>
 #include <limits.h>
 
-#define MAX_DIGITS 11
 
 int is_armstrong(int num)
 {
+    int MAX_DIGITS = 11; //don't change
     int temp = num;
     int result = 0;
     int bit_count = 0; //数字的位数
@@ -39,6 +39,7 @@ int is_armstrong(int num)
     }
     else return 0;
 }
+
 int main1055()
 {
     for(int i=0;i<INT_MAX;i++)

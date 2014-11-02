@@ -9,8 +9,6 @@
 
 #include "jiangxin.h"
 
-#define MAX_NUM 100
-
 int stoi(char *str)
 {
     int result = 0;
@@ -31,6 +29,7 @@ int stoi(char *str)
 
 int main1151(int argc,char*argv[])
 {
+    const int MAX_NUM = 100;
     int arr[MAX_NUM];
     int i,j;
     int count = 0;

@@ -1,7 +1,6 @@
 ﻿#include<stdio.h>
 #include<math.h>
 
-#define PI 3.1415926
 
 double f1105(double a,double b,int n,double(*p)(double))
 {
@@ -17,6 +16,7 @@ double f1105(double a,double b,int n,double(*p)(double))
 }
 int main1105()
 {
+    static const double PI = 3.14159;
     double a,b;
     int n;
     printf("in put n");

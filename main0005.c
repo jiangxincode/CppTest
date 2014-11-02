@@ -7,14 +7,12 @@
 #include <stdio.h>
 #include <limits.h>
 
-#define N 100
-
 int main0005()
 {
     int min = INT_MAX, max = INT_MIN;
     int n = 0; //记录输入的数字个数
     int ch = '\0';
-    int array[N] = {0};
+    int array[100] = {0};
 
     while(ch != '\n')
     {

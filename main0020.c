@@ -11,11 +11,11 @@ int main25191()
     printf("%.2f,%.2f",mj,C);
     return 0;
 }
-#define PI 3.14159
 
 int main25192()
 
 {
+    static const double PI = 3.14159;
     double r, s, l;
     printf("Please input the radius of a circle(cm):");
     scanf("%lf", &r);

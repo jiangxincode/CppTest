@@ -82,6 +82,30 @@
 		<Unit filename="main0013.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="main0014.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0015.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0016.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0017.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0018.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0019.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0020.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0021.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main1011.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -127,31 +151,13 @@
 		<Unit filename="main1034.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="main1036.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="main1037.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="main1038.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="main1039.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main1041.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main1042.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="main1043.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="main1044.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="main1045.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main1046.c">
@@ -178,9 +184,6 @@
 		<Unit filename="main1055.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="main1056.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="main1061.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -191,9 +194,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main1064.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="main1065.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main1071.c">

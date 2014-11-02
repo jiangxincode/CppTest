@@ -7,7 +7,6 @@
 */
 void jx_float_exp(char *str,int n)
 {
-#define MAX_RESULT 1000
     char a[10000];
     long int b[10000];
     int k,h,m,i,j,z,g,t,q;

@@ -31,10 +31,10 @@ char* reverse_str(char* str)
 
 
 #include <stdio.h>
-#define MAX_LENGTH 100
+
 int main0011()
 {
-    char str[MAX_LENGTH];
+    char str[100];
     char *reverse;
     scanf("%99s",str);
     printf("%s\n",str);

@@ -1,10 +1,9 @@
 ﻿#include <stdio.h>
 #include <math.h>
 
-#define eps (1e-8)
-
 int main1073()
 {
+    double eps = 1e-8;
     double x = 0.0;
     scanf("%10lf",&x); //最大支持10位字段宽度
 

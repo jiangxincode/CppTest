@@ -1,11 +1,11 @@
-﻿/*
-一个学生的信息是：姓名，学号，性别，年龄等信息，
-用一个链表，把这些学生信息连在一起，
-给出一个age, 在些链表中删除学生年龄等于age的学生信息。
-*/
+﻿/**
+ * 一个学生的信息是：姓名，学号，性别，年龄等信息，
+ * 用一个链表，把这些学生信息连在一起，
+ * 给出一个age, 在些链表中删除学生年龄等于age的学生信息。
+ */
 
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 struct stu
 {
@@ -14,69 +14,110 @@ struct stu
     int no;
     int age;
     struct stu * next;
-}*linklist;
+};
 
-struct stu *creatlist(int n)
+/** \brief 创建链表
+ *
+ * \param n 学生人数
+ * \return 创建成功则返回所创建链表的头结点，否则返回NULL
+ *
+ */
+
+struct stu *create_list(int n)
 {
-    int i;
-    struct stu *h,*p,*s; //h为头结点，p为前一结点，s为当前结点
-    h = (struct stu *)malloc(sizeof(struct stu));
-    h->next = NULL;
-    p=h;
-
-    for(i=0; i<n; i++)
+    if(n <= 0)
     {
-        s = (struct stu *)malloc(sizeof(struct stu));
-        p->next = s;
-        printf("Please input the information of the student: name sex no age \n");
-        scanf("%s %c %d %d",s->name,&s->sex,&s->no,&s->age);
-        s->next = NULL;
-        p = s;
+        return NULL;
+    }
+    struct stu *head,*previous,*current; //head为头结点，previous为前一结点，current为当前结点
+    head = (struct stu *)malloc(sizeof(struct stu));
+    printf("Please input the information of the student: name sex no age:\n");
+    scanf("%s %c %d %d",head->name,&(head->sex),&(head->no),&(head->age));
+    head->next = NULL;
+    previous = head;
+
+    for(int i=1; i<n; i++)
+    {
+        current = (struct stu *)malloc(sizeof(struct stu));
+        previous->next = current;
+        printf("Please input the information of the student: name sex no age:\n");
+        scanf("%s %c %d %d",current->name,&(current->sex),&(current->no),&(current->age));
+        current->next = NULL;
+        previous = current;
     }
 
-    printf("Create successful!");
-    return(h);
+    return(head);
 }
-void deletelist(struct stu *s,int a)
+
+/** \brief 删除指定年龄的节点
+ *
+ * \param list 所要操作的链表
+ * \param age 指定需要删除的年龄
+ * \return 返回新的链表头结点
+ *
+ */
+
+struct stu* delete_node(struct stu *list,int age)
 {
-    struct stu *p;
+    struct stu *previous = list;
 
-    while(s->age!=a)
+    while((previous->age == age) && (previous != NULL))
     {
-        p = s;
-        s = s->next;
+        struct stu *temp = previous;
+        previous = previous->next;
+        free(temp);
     }
+    if(previous == NULL)
+    {
+        return NULL;
+    }
+    list = previous; //设置新的头结点
 
-    if(s==NULL)
-        printf("The record is not exist.");
-    else
+    struct stu *current = previous->next;
+    while(current != NULL)
     {
-        p->next = s->next;
-        printf("Delete successful!");
+        if(current->age == age)
+        {
+            previous->next = current->next;
+            free(current);
+            current = previous->next;
+        }
+        else
+        {
+            previous = current;
+            current = current->next;
+        }
     }
+    return list;
 }
-void display(struct stu *s)
-{
-    s = s->next;
 
-    while(s!=NULL)
+/** \brief 打印链表
+ *
+ * \param list 待打印链表
+ * \return 无
+ *
+ */
+
+void display_list(struct stu *list)
+{
+    while(list != NULL)
     {
-        printf("%s %c %d %d\n",s->name,s->sex,s->no,s->age);
-        s = s->next;
+        printf("%s %c %d %d\n",list->name,list->sex,list->no,list->age);
+        list = list->next;
     }
 }
 void main0014()
 {
     struct stu *s;
     int n,age;
-    printf("Please input the length of seqlist:\n");
+    printf("Please input the length of the list:\n");
     scanf("%d",&n);
-    s = creatlist(n);
-    display(s);
+    s = create_list(n);
+    display_list(s);
     printf("Please input the age:\n");
     scanf("%d",&age);
-    deletelist(s,age);
-    display(s);
+    s = delete_node(s,age);
+    display_list(s);
 }
 
 

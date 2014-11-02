@@ -47,3 +47,7 @@ http://github.com/jiangxincode
 ### Version 1.03
 
 * 接受部分从Test工程中移入的文件
+
+### Version 1.04
+
+* 去除大部分非必须全局变量
