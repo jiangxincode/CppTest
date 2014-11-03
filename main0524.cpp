@@ -170,4 +170,3 @@ int main0524()
     cout << Calculate(str);
     return 0;
 }
-

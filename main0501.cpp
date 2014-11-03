@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include <cstdio>
+
 using namespace std;
 
 //在一个字符串中找到所有只出现一次的字符,采用hash表，复杂的为O(n)
@@ -19,7 +19,7 @@ void FindOne(char *input)
     {
         if(HashTable[i] == 1)
         {
-            printf("%c ",i);
+            cout << i << " ";
             //cout << '\0' + input[i] << " ";
         }
     }

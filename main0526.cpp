@@ -2,7 +2,6 @@
 #include <stack>
 
 #include <cstdlib>
-#include <cstdio>
 
 using namespace std;
 

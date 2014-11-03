@@ -1,5 +1,4 @@
-﻿#include <cstdio>
-#include <iostream>
+﻿#include <iostream>
 #include "LinkedSet.h"
 
 using namespace std;

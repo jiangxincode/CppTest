@@ -2,7 +2,6 @@
  * 编写一个函数int squeeze(char s1[], const char s2[])
  * 它从字符串s1中删除所有在s2里出现过的字符，并返回删除的字符个数
 */
-#include <cstdio>
 #include <iostream>
 
 using namespace std;

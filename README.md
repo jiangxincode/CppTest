@@ -42,6 +42,12 @@ http://github.com/jiangxincode
 * //delete:表示已删除可重用
 * //problem:表示存在问题
 
+## 将要进行的改进
+
+* 继续使用cppcheck修复潜藏bug
+* 完善公共类
+* 利用doxygen产生的文档整理各种命名
+* 逐步去除std带来的混乱
 
 ## 版本改动
 
@@ -94,3 +100,8 @@ http://github.com/jiangxincode
 * struct or union member 'test::i_var' is never used
 * 去除了全部宏变量，使用局部const常量或者全局static const常量（限制在本文件中）代替
 * 修复hash类
+
+### Version 1.07
+
+* 去除所有cstdio/stdio.h
+* 去除部分cstdlib/stdlib.h

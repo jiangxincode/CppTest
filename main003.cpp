@@ -241,14 +241,11 @@ int main2_20()
         current_a = current_a->link;
     }
 
-    printf("\033[31mThe Previous linkedlist is:\n\033[0m");
-    //cout<<"The Previous linkedlist is:"<<endl;
+    cout<<"The Previous linkedlist is:"<<endl;
     A.output();
-    printf("\033[31mThe odd linkedlist is:\n\033[0m");
-    //cout<<"The odd linkedlist is:"<<endl;
+    cout<<"The odd linkedlist is:"<<endl;
     odd.output();
-    printf("\033[31mThe even linkedlist is:\n\033[0m");
-    //cout<<"The even linkedlist is:"<<endl;
+    cout<<"The even linkedlist is:"<<endl;
     even.output();
     return 0;
 }

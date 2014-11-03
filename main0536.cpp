@@ -37,8 +37,7 @@ int main05361()
 但是如果该函数为虚函数，则调用该派生类自己的成员函数。(B2 :1)
 2) 如果以派生类的指针指向基类对象，则必须事先做明显的转型操作，但是这种做法很危险。
 */
-#include <cstdio>
-using namespace std;
+
 class A
 {
 public:

@@ -1,5 +1,7 @@
-﻿#include <cstdio>
+﻿#include <iostream>
+
 using namespace std;
+
 int main2517()
 {
     int i,j,k;
@@ -7,23 +9,23 @@ int main2517()
     for(i=0; i<=3; i++)
     {
         for(j=0; j<=2-i; j++)
-            printf(" ");
+            cout << " ";
 
         for(k=0; k<=2*i; k++)
-            printf("*");
+            cout << "*";
 
-        printf("\n");
+        cout << endl;
     }
 
     for(i=0; i<=2; i++)
     {
         for(j=0; j<=i; j++)
-            printf(" ");
+            cout << " ";
 
         for(k=0; k<=4-2*i; k++)
-            printf("*");
+            cout << "*";
 
-        printf("\n");
+        cout << endl;
     }
     return 0;
 }

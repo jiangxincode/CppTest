@@ -13,10 +13,9 @@
 输出样例：3
 */
 
-#include <cstdio>
 #include <cstring>
-#include <cstdlib>
 
+#include <iostream>
 #include <queue>
 #include <vector>
 
@@ -171,17 +170,17 @@ void creat(vexnode ga[])
 
     for(i=0; i<MAX; i++) //打印各邻接节点
     {
-        printf("%s:",ga[i].name);
+        cout << ga[i].name;
         edgenode *s;
         s=ga[i].link;
 
         while(s!=NULL)
         {
-            printf("->%s",ga[s->adjvex].name);
+            cout << "->" << ga[s->adjvex].name;
             s=s->next;
         }
 
-        printf("\n");
+        cout << endl;
     }
 }
 
@@ -219,14 +218,13 @@ int main0517()
             if(find_flag) break;
 
             count++;
-            printf("************************\n");
-            printf("第%d层搜索：",count);
+            cout << "************************" << endl;
+            cout << "第" << count << "层搜索：";
             int temp_end=end;
 
             while(start<temp_end)
             {
-                printf("%s ",q.front().name);
-
+                cout << q.front().name << " ";
                 if(!strcmp(q.front().name,str[1]))
                 {
                     find_flag=true;
@@ -243,7 +241,6 @@ int main0517()
                         q.push(ga[s->adjvex]);
                         ga[s->adjvex].flag=false;
                         end++;
-                        //printf("%s ",ga[s->adjvex].name);
                     }
 
                     s=s->next;
@@ -253,10 +250,10 @@ int main0517()
                 start++;
             }
 
-            printf("\n");
+            cout << endl;
         }
 
-        printf("%d\n",count);
+        cout << count << endl;
     }
 
     return 0;

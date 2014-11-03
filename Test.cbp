@@ -40,6 +40,7 @@
 		<Unit filename="binary_tree.cpp" />
 		<Unit filename="binary_tree.h" />
 		<Unit filename="circ_list.h" />
+		<Unit filename="hash.cpp" />
 		<Unit filename="hash.h" />
 		<Unit filename="heap.cpp" />
 		<Unit filename="heap.h" />
@@ -70,7 +71,6 @@
 		<Unit filename="main0503.cpp" />
 		<Unit filename="main0504.cpp" />
 		<Unit filename="main0505.cpp" />
-		<Unit filename="main0506.cpp" />
 		<Unit filename="main0507.cpp" />
 		<Unit filename="main0508.cpp" />
 		<Unit filename="main0509.cpp" />
