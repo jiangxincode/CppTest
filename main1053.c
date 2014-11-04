@@ -20,8 +20,8 @@ int main1053()
         int a=x/100%10; //百位
         int b=x/10%10; //十位
         int c=x/1%10; //个位
-
         int t;
+
         if(a<=b)
         {
             t=a;

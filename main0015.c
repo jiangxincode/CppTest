@@ -21,7 +21,7 @@ void main0015()
 {
     char source[20];
     printf("Please input a string:\n");
-    scanf("%s",source);
+    scanf("%19s",source);
     char *target = (char *)malloc(sizeof(source));
     uppers(source,target);
     printf("The result is:\n%s\n",target);

@@ -250,7 +250,7 @@ int main0017()
 
     do
     {
-        gets(expr);
+        fgets(expr,BUFSIZ,stdin);
     }
     while(!*expr);
 

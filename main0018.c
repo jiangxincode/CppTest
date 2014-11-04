@@ -56,7 +56,6 @@ int add(int a, int b)
  */
 int multiply(int a, int b)
 {
-
     int sign_of_a = 1, result = 0, i = 0;
 
     /* Keep the sign of multiplier off the loop sentinel. */
@@ -72,9 +71,11 @@ int multiply(int a, int b)
     while(i++ < a)
     {
         result = add(result, b);
+
         if(errno == ERANGE)
             break;
     }
+
     return result * sign_of_a;
 }
 int main0018()
@@ -90,7 +91,9 @@ int main0018()
     {
         printf("%d\n", result); /* Small operands: safe. */
     }
+
     result = multiply(49, -972);
+
     if(errno == ERANGE)
     {
         perror("Uh oh");
@@ -99,5 +102,6 @@ int main0018()
     {
         printf("%d\n", result);
     }
+
     return 0;
 }

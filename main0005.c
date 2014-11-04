@@ -42,6 +42,7 @@ int main0005()
             result ++;
         }
     }
+
     printf("%d",result);
     return 0;
 }

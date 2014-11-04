@@ -67,8 +67,8 @@ int main1086()
     while(t)
     {
         printf("1:trapezoid\n2:rectangle\n3:simpson\n4:exit");
-
         char c=getchar();
+
         switch(c)
         {
         case'1':

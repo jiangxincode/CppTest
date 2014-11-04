@@ -6,11 +6,8 @@ int main1073()
     double eps = 1e-8;
     double x = 0.0;
     scanf("%10lf",&x); //最大支持10位字段宽度
-
     double left=(x*x+1+(1/x))*exp(-1*x)-(1/x);
-
     int n = 1;
-
     double item = (-1)*x/2;
     double right = item;
 

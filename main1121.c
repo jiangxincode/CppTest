@@ -3,7 +3,6 @@
 
 static int search(int x[],int low,int high,int key)
 {
-
     while(low<=high)
     {
         int mid=(low+high)/2;

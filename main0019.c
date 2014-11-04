@@ -85,22 +85,22 @@ void dic_init()
     int i;
     unsigned char buffer[MAXWORDLENGTH] = {0};
     long int value;
-    Forest *root, *tmpcell;
+    Forest *tmpcell;
     char p_dic_path[PATHLENGTH];
     puts("Input the directory of the dictionary");
-    scanf("%s", p_dic_path);
+    scanf("%49s", p_dic_path);
     fp = fopen(p_dic_path, "r");
 
     while(NULL == fp)
     {
         perror("Can't find the dictionary\n");
-        scanf("%s", p_dic_path);
+        scanf("%49s", p_dic_path);
         fp = fopen(p_dic_path, "r");
     }
 
     while(!feof(fp))
     {
-        fscanf(fp, "%s\n", buffer);
+        fscanf(fp, "%59s\n", buffer);
 
         //printf("%s\n",buffer);
         if(128 > buffer[0])
@@ -132,7 +132,7 @@ void dic_init()
             i = 2;
         }
 
-        root = HashTable[value];
+        Forest *root = HashTable[value];
 
         //printf("%d %d\n",buffer[i],buffer[i]);
         while(1)
@@ -160,12 +160,10 @@ void dic_init()
 }
 void free_forest(Forest *root)/*递归释放森令各节点*/
 {
-    Forest *tmp;
-
     if(root == NULL) return ;
     else
     {
-        tmp = root->sibling;
+        Forest *tmp = root->sibling;
         free_forest(root->child);
         free(root);
         free_forest(tmp);

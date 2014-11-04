@@ -51,3 +51,10 @@ http://github.com/jiangxincode
 ### Version 1.04
 
 * 去除大部分非必须全局变量
+
+### Version 1.05
+
+* scanf without field width limits can crash with huge input data on some versions of libc.
+* 接受部分从Test工程中移入的文件
+* The scope of the variable 'count' can be reduced.
+* Obsolete function 'gets' called. It is recommended to use the function 'fgets' instead.

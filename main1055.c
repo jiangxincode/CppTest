@@ -20,19 +20,22 @@ int is_armstrong(int num)
         return 0;
     }
 
-    for(int i=0;i<MAX_DIGITS;i++) //初始化
+    for(int i=0; i<MAX_DIGITS; i++) //初始化
     {
         bit[i] = -1;
     }
+
     while(temp)
     {
         bit[bit_count++] = temp%10;
         temp /= 10;
     }
-    for(int i=0;bit[i]!=-1;i++)
+
+    for(int i=0; bit[i]!=-1; i++)
     {
         result += pow(bit[i],bit_count);
     }
+
     if(result == num)
     {
         return 1;
@@ -42,13 +45,14 @@ int is_armstrong(int num)
 
 int main1055()
 {
-    for(int i=0;i<INT_MAX;i++)
+    for(int i=0; i<INT_MAX; i++)
     {
         if(is_armstrong(i))
         {
             printf("%d\n",i);
         }
     }
+
     return 0;
 }
 

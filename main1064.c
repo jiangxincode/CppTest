@@ -8,9 +8,10 @@
 
 int main1064()
 {
-    for(int i=0;i<20;i++)
+    for(int i=0; i<20; i++)
     {
         int m = pow(2,i)-1;
+
         if(prime(i) && prime(m))
         {
             printf("%d ",m);

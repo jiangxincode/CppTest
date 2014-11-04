@@ -27,15 +27,14 @@ void mallocTG(TG *total)
 {
     // size: how many tennis grounds do you want to get
     // start: start from which tennis ground
-    // count: from start to the number that you really get
-    int size, start, count = 0;
+    int size, start;
     char *agentName = (char*)malloc(sizeof(char)*10);
     printf("Please input your agentName:");
-    scanf("%s", agentName);
+    scanf("%9s", agentName);
     printf("Please input the size of the TennisGround(1-100):");
-    scanf("%d", &size);
+    scanf("%11d", &size);
     printf("Please input the TennisGround number you want to start(1-100):");
-    scanf("%d", &start);
+    scanf("%11d", &start);
 
     if(strcmp((total+start)->agentName," ")!=0)
     {
@@ -44,6 +43,7 @@ void mallocTG(TG *total)
     }
     else
     {
+        int count = 0; // count: from start to the number that you really get
         while(count < size)
         {
             (total+start+count)->agentName = agentName;
@@ -56,7 +56,7 @@ void freeTG(TG* total)
 {
     char *an = (char*)malloc(sizeof(char)*10);
     printf("please input agentName you want to free:");
-    scanf("%s", an);
+    scanf("%9s", an);
     int count = 1; //不使用0号
 
     while(count <= 100)
@@ -66,6 +66,7 @@ void freeTG(TG* total)
 
         count++;
     }
+
     free(an);
 }
 
@@ -96,7 +97,7 @@ int main0016()
         printf("\n");
         printf("**************************************************\n");
         printf("Please input your choosen:(1-malloc,2-free):");
-        scanf("%d", &sw);
+        scanf("%11d", &sw);
 
         if(sw == 1)
             mallocTG(total);

@@ -39,8 +39,8 @@ int main1162(void)
         fscanf(fp,"%11ld%11d",&data_a[na].num,&data_a[na].score);
         na++;
     }
-    fclose(fp);
 
+    fclose(fp);
     fp=fopen("b.txt","r");
 
     if(fp==NULL)
@@ -54,8 +54,8 @@ int main1162(void)
         fscanf(fp,"%11ld%11d",&data_b[nb].num,&data_b[nb].score);
         nb++;
     }
-    fclose(fp);
 
+    fclose(fp);
     heada=create(data_a,na);
     puts("a:");
     display(heada);
