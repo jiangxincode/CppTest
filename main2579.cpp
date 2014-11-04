@@ -30,5 +30,6 @@ int main2579()
     {
         cout << vec_num[i] << " ";
     }
+
     return 0;
 }

@@ -19,6 +19,7 @@ int fibonacci(int n)
     errno = 0; //清除errno
     int result;
     int smaller = 0,bigger = 1;
+
     if(n < 0) //错误输入
     {
         errno = EDOM;
@@ -34,9 +35,10 @@ int fibonacci(int n)
     }
     else
     {
-        for(int i=2;i<=n;i++)
+        for(int i=2; i<=n; i++)
         {
             result = smaller+bigger;
+
             /**
              * 说明在上次result = smaller+bigger发生了上溢，
              * result一定比smaller和bigger都小
@@ -46,9 +48,9 @@ int fibonacci(int n)
                 errno = ERANGE;
                 return -1;
             }
+
             smaller = bigger;
             bigger = result;
-
         }
     }
 
@@ -67,7 +69,7 @@ int fibonacci_2(int n)
 
 int main2592()
 {
-    for(int i=-100;i<100;i++)
+    for(int i=-100; i<100; i++)
     {
         int result = fibonacci(i);
         cout << i << ": " << result << " " << ((result==-1)?strerror(errno):"") << endl;

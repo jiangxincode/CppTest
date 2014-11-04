@@ -31,6 +31,7 @@ int palindrome2(long num)
     string str = to_string(num);
     string str_reverse = str;
     reverse_copy(str.begin(),str.end(),str_reverse.begin());
+
     if(str == str_reverse)
     {
         return 1;
@@ -39,6 +40,7 @@ int palindrome2(long num)
     {
         return 0;
     }
+
     return 0;
 }
 /**
@@ -50,6 +52,7 @@ int palindrome(const char *str)
     string str_origin(str);
     string str_reverse(str_origin);
     reverse_copy(str_origin.begin(),str_origin.end(),str_reverse.begin());
+
     if(str_origin == str_reverse)
     {
         return 1;

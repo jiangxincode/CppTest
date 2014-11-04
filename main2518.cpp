@@ -12,11 +12,12 @@ int main2518()
     {
         float result1 = (-b + sqrt(delta)) / float(2*a);
         float result2 = (-b - sqrt(delta)) / float(2*a);
-        printf("result1 is %.2f and result2 is %.2f",result1, result2);
+        cout << "result1 is " << result1 << " and result2 is " << result2;
     }
     else
     {
         cout << "No result";
     }
+
     return 0;
 }

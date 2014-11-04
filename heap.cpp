@@ -181,5 +181,6 @@ void heap::print_heap()
     {
         cout << heap_p[i] << " ";
     }
+
     cout << endl;
 }

@@ -40,7 +40,8 @@ public:
     void clear()
     {
         clear_node(root);
-        for (int i = 0; i < Size; ++i)
+
+        for(int i = 0; i < Size; ++i)
             root.child[i] = 0;
     }
 
@@ -49,15 +50,18 @@ public:
     void insert(Iterator begin, Iterator end)
     {
         link_type cur = &root; //当前节点设置为根节点
-        for (; begin != end; ++begin)
+
+        for(; begin != end; ++begin)
         {
-            if (!cur->child[index[*begin]]) //若当前字符找不到匹配，则新建节点
+            if(!cur->child[index[*begin]])  //若当前字符找不到匹配，则新建节点
             {
                 cur->child[index[*begin]] = new node_type;
                 ++cur->node; //当前节点的子节点数加一
             }
+
             cur = cur->child[index[*begin]]; //将当前节点设置为当前字符对应的子节点
         }
+
         cur->terminable = true; //设置存放最后一个字符的节点的可终止标志为真
     }
 
@@ -72,12 +76,15 @@ public:
     bool find(Iterator begin, Iterator end)
     {
         link_type cur = &root;
-        for (; begin != end; ++begin)
+
+        for(; begin != end; ++begin)
         {
-            if (!cur->child[index[*begin]])
+            if(!cur->child[index[*begin]])
                 return false;
+
             cur = cur->child[index[*begin]];
         }
+
         return cur->terminable;
     }
 
@@ -115,22 +122,26 @@ private:
     void visit_node(node_type cur, Functor &execute)
     {
         execute(cur);
-        for (int i = 0; i < Size; ++i)
+
+        for(int i = 0; i < Size; ++i)
         {
-            if (cur.child[i] == 0) continue;
+            if(cur.child[i] == 0) continue;
+
             visit_node(*cur.child[i], execute);
         }
     }
     /* 清除某个节点的所有子节点 */
     void clear_node(node_type cur)
     {
-        for (int i = 0; i < Size; ++i)
+        for(int i = 0; i < Size; ++i)
         {
-            if (cur.child[i] == 0) continue;
+            if(cur.child[i] == 0) continue;
+
             clear_node(*cur.child[i]);
             delete cur.child[i];
             cur.child[i] = 0;
-            if (--cur.node == 0) break;
+
+            if(--cur.node == 0) break;
         }
     }
 
@@ -138,22 +149,25 @@ private:
     template <typename Iterator>
     bool erase_node(Iterator begin, Iterator end, node_type &cur, bool &result)
     {
-        if (begin == end) //当到达字符串结尾：递归的终止条件
+        if(begin == end)  //当到达字符串结尾：递归的终止条件
         {
             result = cur.terminable; //如果当前节点可以作为终止字符，那么结果为真
             cur.terminable = false;  //设置该节点为不可作为终止字符，即删除该字符串
             return cur.node == 0;    //若该节点为树叶，那么通知其父节点删除它
         }
+
         //当无法匹配当前字符时，将结果设为假并返回假，即通知其父节点不要删除它
-        if (cur.child[index[*begin]] == 0) return result = false;
+        if(cur.child[index[*begin]] == 0) return result = false;
         //判断是否应该删除该子节点
-        else if (erase_node((++begin)--, end, *(cur.child[index[*begin]]), result))
+        else if(erase_node((++begin)--, end, *(cur.child[index[*begin]]), result))
         {
             delete cur.child[index[*begin]]; //删除该子节点
             cur.child[index[*begin]] = 0; //子节点数减一
+
             //若当前节点为树叶，那么通知其父节点删除它
-            if (--cur.node == 0 && cur.terminable == false) return true;
+            if(--cur.node == 0 && cur.terminable == false) return true;
         }
+
         return false; //其他情况都返回假
     }
 

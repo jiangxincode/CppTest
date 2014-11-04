@@ -191,7 +191,7 @@ int main0517()
     int i;
     char str[2][10];
 
-    while(scanf("%9s%9s",str[0],str[1])!=EOF)
+    while(cin >> str[0] >> str[1])
     {
         int temp=0;
 
@@ -225,6 +225,7 @@ int main0517()
             while(start<temp_end)
             {
                 cout << q.front().name << " ";
+
                 if(!strcmp(q.front().name,str[1]))
                 {
                     find_flag=true;

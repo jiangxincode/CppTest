@@ -34,11 +34,14 @@ int squeeze(char s1[], const char s2[])
             str[k++] = s1[i];
         }
     }
+
     str[k] = '\0';
-    for(i=0;i<k;i++)
+
+    for(i=0; i<k; i++)
     {
         s1[i] = str[i];
     }
+
     return count;
 }
 

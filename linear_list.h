@@ -6,8 +6,8 @@ template <class T>
 class linear_list
 {
 public:
-    linear_list(){}
-    ~linear_list(){}
+    linear_list() {}
+    ~linear_list() {}
     virtual int size()const=0; //获取表的最大容量
     virtual int length()const=0; //获取表长度
     virtual bool empty()const=0; //判表空
@@ -82,14 +82,14 @@ struct LinkNode //链表节点类的定义
 {
     T data; //数据域
     LinkNode<T> *link; //链指针域
-    LinkNode(const T& item,LinkNode<T> *ptr=NULL):data(item),link(ptr){} //构造函数（初始化指针成员和数据）
+    LinkNode(const T& item,LinkNode<T> *ptr=NULL):data(item),link(ptr) {} //构造函数（初始化指针成员和数据）
 };
 
 template <class T>
 class linked_list:public linear_list<T>
 {
 public:
-    linked_list():first(NULL){}
+    linked_list():first(NULL) {}
     linked_list(const T& x)
     {
         first = new LinkNode<T>(x);
@@ -100,7 +100,10 @@ public:
         make_empty();   //析构函数
     }
     void make_empty(); //将链表置为空表
-    int size()const{return 0;}
+    int size()const
+    {
+        return 0;
+    }
     int length()const; //计算链表的长度
     LinkNode<T> *getHead()const
     {

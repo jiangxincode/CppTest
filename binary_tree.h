@@ -11,7 +11,7 @@ struct binary_node
     binary_node *parent;
     binary_node():data(0),count(1),left_child(NULL),right_child(NULL),parent(NULL) {}
     binary_node(int D, binary_node *L = NULL, binary_node *R = NULL, binary_node *P = NULL)
-    :data(D),count(1),left_child(R),right_child(R),parent(P) {}
+        :data(D),count(1),left_child(R),right_child(R),parent(P) {}
 };
 
 class binary_tree

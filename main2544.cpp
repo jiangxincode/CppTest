@@ -56,5 +56,6 @@ int main2544()
         cout << "Method1: The result is: " << hermit1(i,x) << " when n=" << i << " and x=" << x << endl;
         cout << "Method2: The result is: " << hermit2(i,x) << " when n=" << i << " and x=" << x << endl;
     }
+
     return 0;
 }

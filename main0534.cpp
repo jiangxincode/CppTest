@@ -32,7 +32,7 @@ int main0534()
     {
         cout << place[i] << " ";
     }
-    delete []arr;
 
+    delete []arr;
     return 0;
 }

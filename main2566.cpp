@@ -43,5 +43,6 @@ int main2566()
             cout << i_array[j] << " ";
         }
     }
+
     return 0;
 }

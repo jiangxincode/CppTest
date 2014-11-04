@@ -47,15 +47,15 @@ public:
     };
     virtual void func(int data)
     {
-        printf("A1 :%d\n",data);
+        cout << "A1 :" << data << endl;
     }
     virtual void func(int data) const
     {
-        printf("A2 :%d\n",data);
+        cout << "A2 :" << data << endl;
     }
     void func(const char *str)
     {
-        printf("A3 %s)\n",str);
+        cout << "A3 " << str << endl;
     }
 };
 
@@ -64,15 +64,15 @@ class B:public A
 public:
     void func()
     {
-        printf("B1 :%s\n","");
+        cout << "B1 :" << endl;
     }
     void func(int data)
     {
-        printf("B2 :%d\n",data);
+        cout << "B2 :" << data << endl;
     }
     void func(const char *str)
     {
-        printf("B3 %s)\n",str);
+        cout << "B3 :" << str << endl;
     }
 };
 

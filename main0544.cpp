@@ -10,7 +10,6 @@
 
 void bubblesort(int *arr, int n)
 {
-
     for(int i=1; i<n; i++)
     {
         bool flag = false;
@@ -128,23 +127,30 @@ void quicksort(int *arr, int left, int right)
 void shellsort(int *arr, int length)
 {
     int gap = length;
-    do {
+
+    do
+    {
         gap = gap/3+1;
-        for(int i=gap;i<length;i++)
+
+        for(int i=gap; i<length; i++)
         {
             if(arr[i] < arr[i-gap])
             {
                 int temp = arr[i];
                 int j = i-gap;
-                do {
+
+                do
+                {
                     arr[j+gap] = arr[j];
                     j = j-gap;
-                }while(j>=0 && temp<arr[j]);
+                }
+                while(j>=0 && temp<arr[j]);
+
                 arr[j+gap] = temp;
             }
         }
-    } while(gap>1);
-
+    }
+    while(gap>1);
 }
 
 
@@ -161,13 +167,16 @@ void shellsort(int *arr, int length)
 void merge(int *arr, int left, int mid, int right)
 {
     int *temp = new int[right-left+1];
-    for(int i=left;i<=right;i++) //复制数组
+
+    for(int i=left; i<=right; i++) //复制数组
     {
         temp[i] = arr[i];
     }
+
     int s1 = left;
     int s2 = mid+1;
     int t = left;
+
     while((s1<=mid) && (s2<=right))
     {
         if(temp[s1]<=temp[s2])
@@ -179,14 +188,17 @@ void merge(int *arr, int left, int mid, int right)
             arr[t++] = temp[s2++];
         }
     }
+
     while(s1 <= mid)
     {
         arr[t++] = temp[s1++];
     }
+
     while(s2 <= right)
     {
         arr[t++] = temp[s2++];
     }
+
     delete []temp;
 }
 
@@ -205,6 +217,7 @@ void mergesort(int *arr, int left, int right)
     {
         return ;
     }
+
     int mid = (left+right)/2;
     mergesort(arr,left,mid);
     mergesort(arr,mid+1,right);

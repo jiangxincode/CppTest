@@ -105,3 +105,8 @@ http://github.com/jiangxincode
 
 * 去除所有cstdio/stdio.h
 * 去除部分cstdlib/stdlib.h
+
+### Version 1.08
+
+* 去除所有printf/scanf
+* 部分文件移入Exercise

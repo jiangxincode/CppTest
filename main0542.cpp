@@ -35,6 +35,7 @@ int LCS1(const string& text, const string& query)
             }
         }
     }
+
     return len;
 }
 
@@ -137,9 +138,9 @@ void GetMaxCommStr(char *s1,char *s2,char *s3)//s1、s2 为要对比的俩个字
             *(s3+i)=*(s1+i);
         }
 
-        printf("maxlen is %d\n",maxlen);
-        printf("len1 is %d\n",len1);
-        printf("len2 is %d\n",len2);
+        cout << "maxlen is " << maxlen << endl;
+        cout << "len1 is " << len1 << endl;
+        cout << "len2 is " << len2 << endl;
     }
 }
 
@@ -149,16 +150,15 @@ int main05423()
     char stra[80]="iojhklgklskljklngvnkldg";
     char strb[80]="kldfjjsfgjlkjgldakfga;";
     GetMaxCommStr(stra,strb,strd);
-    printf("stra is: %s\n",stra);
-    printf("strb is: %s\n",strb);
-    printf("strd is: %s\n",strd);
+    cout << "stra is: " << stra << endl;
+    cout << "strb is: " << strb << endl;
+    cout << "strd is: " << strd << endl;
     return 0;
 }
 
 int main0542()
 {
     cout << LCS1("hello","llohghdfja") << endl;
-
     int pos;
     cout << LCS2("hello","llohghdfja",pos) << endl;
     cout << pos << endl;

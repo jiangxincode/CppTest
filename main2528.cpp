@@ -23,5 +23,6 @@ int main2528()
         cout << "\nInput d1,d2 and d3: ";
         cin >> d1 >> d2 >> d3;
     }
+
     return 0;
 }
