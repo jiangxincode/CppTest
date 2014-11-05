@@ -25,6 +25,15 @@ http://github.com/jiangxincode
 * CppCheckResults.xml //cppcheck
 * ExerciseC.cppcheck //cppcheck
 
+## 待修复问题
+
+* 增加注释
+* 规范化代码结构
+* 综合链表问题
+* 综合主要数据结构
+* 合并常用函数
+* 减少全局变量和宏定义数量
+* 各种检测工具check
 
 ## 版本改动
 
@@ -58,3 +67,7 @@ http://github.com/jiangxincode
 * 接受部分从Test工程中移入的文件
 * The scope of the variable 'count' can be reduced.
 * Obsolete function 'gets' called. It is recommended to use the function 'fgets' instead.
+
+### Version 1.06
+
+* 修改doxygen设置，屏蔽部分测试函数

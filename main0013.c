@@ -1,6 +1,7 @@
 ﻿#include <stdio.h>
 #include <stdlib.h>
 
+/** \cond */
 int main0013()
 {
     /**
@@ -21,3 +22,4 @@ int main0013()
     printf("%d\n",sizeof(char));  //此处输出1
     return 0;
 }
+/** \endcond */

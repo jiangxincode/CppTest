@@ -1,4 +1,5 @@
-﻿/*
+﻿
+/*
 美团网2014年招聘笔试题
 利用两个stack模拟queue
 */
@@ -50,7 +51,7 @@ void popQueue(stack *s1, stack *s2)
     }
 }
 
-
+/** \cond */
 int main0008(void)
 {
     int data, n;
@@ -85,3 +86,4 @@ int main0008(void)
 
     return 0;
 }
+/** \endcond */

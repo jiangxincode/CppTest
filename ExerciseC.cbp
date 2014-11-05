@@ -106,6 +106,12 @@
 		<Unit filename="main0021.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="main0022.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main0023.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main1011.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -232,9 +238,6 @@
 		<Unit filename="main1091.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="main1092.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="main1093.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -305,9 +308,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main1125.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="main1131.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main1132.c">

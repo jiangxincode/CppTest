@@ -7,7 +7,7 @@
 将首指针指向下一个，将尾指针指向前一个，交换指针指向的元素，然后重复执行，
 直到首尾指针相遇。
 */
-
+#include <stdio.h>
 char* reverse_str(char* str)
 {
     int i;
@@ -29,9 +29,7 @@ char* reverse_str(char* str)
     return str;
 }
 
-
-#include <stdio.h>
-
+/** \cond */
 int main0011()
 {
     char str[100];
@@ -42,3 +40,4 @@ int main0011()
     printf("%s\n",reverse);
     return 0;
 }
+/** \endcond */

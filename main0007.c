@@ -38,6 +38,7 @@ void findKey(int **matrix, int n, int m, int key)
     printf("不存在!\n");
 }
 
+/** \cond */
 int main0007()
 {
     int i, j, key, n, m, **matrix;
@@ -62,3 +63,4 @@ int main0007()
 
     return 0;
 }
+/** \endcond */

@@ -78,6 +78,8 @@ int multiply(int a, int b)
 
     return result * sign_of_a;
 }
+
+/** \cond */
 int main0018()
 {
     int result; /* Operands too huge: sure overflow. */
@@ -105,3 +107,4 @@ int main0018()
 
     return 0;
 }
+/** \endcond */

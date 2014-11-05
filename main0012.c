@@ -24,9 +24,11 @@ void show(FUN1 p, FUN2 fun, int arg1, int *arg2)
     printf("%d\n", *arg2);
 }
 
+/** \cond */
 int main0012()
 {
     int a;
     show(inc, multi, 10, &a);
     return 0;
 }
+/** \endcond */

@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <limits.h>
 
+/** \cond */
 int main0005()
 {
     int min = INT_MAX, max = INT_MIN;
@@ -46,3 +47,4 @@ int main0005()
     printf("%d",result);
     return 0;
 }
+/** \endcond */

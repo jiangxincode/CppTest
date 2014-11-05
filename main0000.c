@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/** \cond */
 int main0000()
 {
     char*src="hello,world";
@@ -17,4 +18,4 @@ int main0000()
     printf("%s",dest);
     return 0;
 }
-
+/** \endcond */

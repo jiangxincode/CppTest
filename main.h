@@ -11,6 +11,14 @@ int main0011();
 int main0012();
 int main0013();
 int main0014();
+int main0015();
+int main0016();
+int main0017();
+int main0018();
+int main0019();
+int main0020();
+int main0021();
+int main0022();
 
 int main1011();
 int main1013();

@@ -113,6 +113,8 @@ void display_list(struct stu *list)
         list = list->next;
     }
 }
+
+/** \cond */
 void main0014()
 {
     struct stu *s;
@@ -126,5 +128,5 @@ void main0014()
     s = delete_node(s,age);
     display_list(s);
 }
-
+/** \endcond */
 

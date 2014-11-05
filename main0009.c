@@ -1,4 +1,4 @@
-﻿/*
+﻿/**
 美团网2014年招聘笔试题
 3.
 k链表翻转。
@@ -12,6 +12,7 @@ k链表翻转。
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 typedef struct node
 {
@@ -116,7 +117,48 @@ node* reverseK(node *head, int k)
     return newhead;
 }
 
+/**如何判断两个单向链表是否有相交，并找出交点。
+给出两个链表的头指针pHead1 和 pHead2 ，写一个函数判断两条链表有没交叉点
+*/
+node* checkLink(node* pHead1,node* pHead2)
+{
+     node *p1=pHead1,*p2=pHead2;
+     int i=1,j=1;
+     if(p1==NULL || p2==NULL)
+        return NULL;
+     if(p1==p2)
+        return p1;
+     while(p1->next!=NULL)
+     {
+        p1=p1->next;
+        i++;
+     }
+     while(p2->next!=NULL)
+     {
+        p2=p2->next;
+        j++;
+     }
+     if(p1==p2)
+        return NULL;
+     else
+     {
+        for(int k=0;k<fabs(p1-p2);k++)
+        {
+              if(i>j)
+                     p1=p1->next;
+              else
+                     p2=p2->next;
+        }
+        while(p1!=p2)
+        {
+              p1=p1->next;
+              p2=p2->next;
+        }
+        return p1;
+     }
+}
 
+/** \cond */
 int main0009()
 {
     int i, n, k, data;
@@ -137,3 +179,4 @@ int main0009()
 
     return 0;
 }
+/** \endcond */

@@ -29,6 +29,7 @@ void jx_swap_integer(int* i_num1,int* i_num2,short method)
     }
 }
 
+/** \cond */
 int main0004()
 {
     int a=15,b=17;
@@ -36,4 +37,4 @@ int main0004()
     printf("%d,%d",a,b);
     return 0;
 }
-
+/** \endcond */

@@ -11,6 +11,8 @@ int comp(const void *a, const void *b)
 {
     return *(int*)a - *(int*)b;
 }
+
+/** \cond */
 int main0006()
 {
     const int N = 5;
@@ -38,3 +40,4 @@ int main0006()
     printf("%d %d",lower,higher);
     return 0;
 }
+/** \endcond */

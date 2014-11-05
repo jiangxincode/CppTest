@@ -1,4 +1,4 @@
-﻿#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <string.h>
@@ -244,6 +244,8 @@ int EvalExpr()/*主要操作函数 */
 
     return GetTop2(OPND);
 }
+
+/** \cond */
 int main0017()
 {
     printf("请输入正确的表达式:");
@@ -260,7 +262,4 @@ int main0017()
     printf("表达式结果为:%d\n", EvalExpr());
     return 0;
 }
-
-
-
-
+/** \endcond */
