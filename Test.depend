@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1415031557 source:e:\temp\cpp\test\main.cpp
+1417515157 source:e:\temp\cpp\test\main.cpp
 	"main.h"
 
 1414685795 source:e:\temp\cpp\test\main001.cpp
@@ -54,7 +54,7 @@
 	<vector>
 	<algorithm>
 
-1415030551 source:e:\temp\cpp\test\main000.cpp
+1417519687 source:e:\temp\cpp\test\main000.cpp
 
 1414556290 source:e:\temp\cpp\test\main012.cpp
 	<iostream>
@@ -276,8 +276,7 @@
 1414556290 source:e:\temp\cpp\test\main2534.cpp
 	<iostream>
 
-1415031558 source:e:\temp\cpp\test\main2535.cpp
-	<iostream>
+1415147582 source:e:\temp\cpp\test\main2535.cpp
 
 1414556290 source:e:\temp\cpp\test\main2542.cpp
 	<iostream>
@@ -462,7 +461,7 @@
 	<iostream>
 	<climits>
 
-1414556290 source:e:\temp\cpp\test\main0550.cpp
+1415537454 source:e:\temp\cpp\test\main0550.cpp
 
 1414556290 source:e:\temp\cpp\test\main0551.cpp
 	<stdlib.h>
@@ -502,4 +501,17 @@
 1414685006 e:\temp\cpp\test\hash.h
 	<string>
 	<cstdlib>
+
+1415790196 source:e:\temp\cpp\test\sort.cpp
+	"sort.h"
+
+1415789769 e:\temp\cpp\test\sort.h
+
+1414685795 source:e:\temp\cpp\test\test_heap.cpp
+	<cstdlib>
+	"heap.h"
+
+1417097991 source:e:\temp\cpp\test\test_binary_search_tree.cpp
+	<iomanip>
+	"binary_search_tree.h"
 

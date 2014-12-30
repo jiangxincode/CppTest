@@ -3,26 +3,14 @@
 
 using namespace std;
 
-int fun(int x)
-{
-    int coutnx = 0;
-
-    while(x)
-    {
-        coutnx ++;
-        x = x&(x-1);
-    }
-
-    return coutnx;
-}
+/** \cond */
 int main(int argc, char *argv[])
 {
     string ch;
 
     do
     {
-        short a[100];
-        cout << sizeof(a);
+        //main000();
         cout << "\nGo on?(n/y)";
         cin >> ch;
     }
@@ -30,4 +18,4 @@ int main(int argc, char *argv[])
 
     return 0;
 }
-
+/** \endcond */

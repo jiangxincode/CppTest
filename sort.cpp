@@ -1,5 +1,7 @@
 ﻿#include <iostream>
 
+#include "sort.h"
+
 /** \brief 冒泡排序
  *
  * \param arr 指向待排序数组的指针
@@ -224,13 +226,7 @@ void mergesort(int *arr, int left, int right)
     merge(arr, left, mid, right);
 }
 
-/** \brief 测试本文件中的所有排序函数
- *
- * \param 无
- * \return 成功返回0
- *
- */
-
+/** \cond */
 int main0544()
 {
     const int NUM = 20;
@@ -260,5 +256,5 @@ int main0544()
 
     return 0;
 }
-
+/** \endcond */
 

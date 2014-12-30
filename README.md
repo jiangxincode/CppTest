@@ -109,4 +109,9 @@ http://github.com/jiangxincode
 ### Version 1.08
 
 * 去除所有printf/scanf
-* 部分文件移入Exercise
+* 部分文件移入ExerciseC
+
+### Version 1.09
+
+* 将排序函数单独列出
+* 把有关堆和树的部分列出

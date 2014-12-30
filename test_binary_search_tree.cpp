@@ -1,7 +1,4 @@
-﻿/*
-main0526
-*/
-#include <iostream>
+﻿#include <iostream>
 #include <iomanip>
 
 #include "binary_search_tree.h"

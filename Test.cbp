@@ -48,8 +48,6 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="main.h" />
 		<Unit filename="main000.cpp" />
-		<Unit filename="main001.cpp" />
-		<Unit filename="main002.cpp" />
 		<Unit filename="main003.cpp" />
 		<Unit filename="main004.cpp" />
 		<Unit filename="main005.cpp" />
@@ -108,9 +106,6 @@
 		<Unit filename="main0541.cpp" />
 		<Unit filename="main0542.cpp" />
 		<Unit filename="main0543.cpp" />
-		<Unit filename="main0544.cpp">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="main0545.cpp" />
 		<Unit filename="main0546.cpp" />
 		<Unit filename="main0547.cpp" />
@@ -121,7 +116,6 @@
 		<Unit filename="main0552.cpp" />
 		<Unit filename="main0553.cpp" />
 		<Unit filename="main0554.cpp" />
-		<Unit filename="main0555.cpp" />
 		<Unit filename="main1000.cpp" />
 		<Unit filename="main1550.cpp" />
 		<Unit filename="main1560.cpp" />
@@ -161,7 +155,13 @@
 		<Unit filename="main2585.cpp" />
 		<Unit filename="main2591.cpp" />
 		<Unit filename="main2592.cpp" />
+		<Unit filename="sort.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="sort.h" />
 		<Unit filename="static_list.h" />
+		<Unit filename="test_binary_search_tree.cpp" />
+		<Unit filename="test_heap.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
