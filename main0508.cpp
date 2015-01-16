@@ -19,7 +19,7 @@ bool palindrome1(long num)
 
     while(temp)
     {
-        temp=num_reverse*10+temp%10;
+        num_reverse=num_reverse*10+temp%10;
         temp/=10;
     }
 
@@ -66,6 +66,13 @@ int palindrome(const char *str)
 
 int main0508()
 {
-    return 0;
+	for(int i=0;i<100;i++)
+	{
+		if(palindrome1(i))
+		{
+			cout << i << endl;
+		}
+	}
+	return 0;
 }
 

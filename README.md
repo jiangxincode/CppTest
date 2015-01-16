@@ -26,12 +26,12 @@ http://github.com/jiangxincode
 * 1700-1999:Data Structure
 * 2000-2499:一些比较大的程序
 * 2500-2599:程序设计基础，2014暑假
+* 4000-5000:华为练习题（额外增加oj.h）
 
 	* origin:111150034+蒋鑫+i_j now:main25ij
 	* origin:111150034+蒋鑫+10 now:main2500
 	* origin:111150034+蒋鑫+综合 now:main2501
 
-* unsolved: 1620 1800 0520
 
 * 对于scanf的说明
 	* 32位int 11位宽(-2147483648~+2147483647)
@@ -41,6 +41,8 @@ http://github.com/jiangxincode
 
 * //delete:表示已删除可重用
 * //problem:表示存在问题
+* //unsolved: 表示未解决问题
+* //warning: 表示需要注意问题
 
 ## 将要进行的改进
 
@@ -115,3 +117,8 @@ http://github.com/jiangxincode
 
 * 将排序函数单独列出
 * 把有关堆和树的部分列出
+
+### Version 1.10
+
+* 联系华为OJ
+* 修改之前的部分代码

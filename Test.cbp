@@ -155,6 +155,13 @@
 		<Unit filename="main2585.cpp" />
 		<Unit filename="main2591.cpp" />
 		<Unit filename="main2592.cpp" />
+		<Unit filename="main4348.cpp" />
+		<Unit filename="main4352.cpp" />
+		<Unit filename="main4356.cpp" />
+		<Unit filename="main4357.cpp" />
+		<Unit filename="main4423.cpp" />
+		<Unit filename="main4428.cpp" />
+		<Unit filename="oj.h" />
 		<Unit filename="sort.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
