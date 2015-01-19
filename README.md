@@ -10,6 +10,21 @@ http://github.com/jiangxincode
 * ExerciseC.depend //codeblocks
 * ExerciseC.layout //codeblocks
 
+* .ccc/ //Cccc(C and C++ Code Counter)产生的关于代码信息的相关文件
+
+* .git/ //git
+* .gitattributes //git
+* .gitignore //git
+
+* CppCheckResults.xml //cppcheck
+* ExerciseC.cppcheck //cppcheck
+
+* include/ //glib所用的头文件glib-dev_2.28.8-1_win32
+* lib/ //glib所使用的库文件glib-dev_2.28.8-1_win32
+
+* bin/ //可运行二进制文件
+* obj/ //中间obj文件
+
 * main.c主函数
 * main.h主头文件
 
@@ -21,9 +36,6 @@ http://github.com/jiangxincode
 	* origin:7-4.c now:main1074
 	* origin:12-5.c now:main1125
 * //delete:表示已删除可重用
-
-* CppCheckResults.xml //cppcheck
-* ExerciseC.cppcheck //cppcheck
 
 ## 待修复问题
 
@@ -71,3 +83,11 @@ http://github.com/jiangxincode
 ### Version 1.06
 
 * 修改doxygen设置，屏蔽部分测试函数
+
+### Version 1.07
+
+* 使用GLib重构部分代码。
+
+### Version 1.08
+
+* 整理文件

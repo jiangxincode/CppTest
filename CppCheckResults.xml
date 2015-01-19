@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<results />
+<results>
+    <error file="main0001.c" line="9" id="unusedStructMember" severity="style" msg="struct or union member &apos;info::Var1&apos; is never used." />
+    <error file="main0001.c" line="10" id="unusedStructMember" severity="style" msg="struct or union member &apos;info::Var2&apos; is never used." />
+    <error file="main0001.c" line="11" id="unusedStructMember" severity="style" msg="struct or union member &apos;info::Var3&apos; is never used." />
+    <error file="main0014.c" line="37" id="uninitdata" severity="error" msg="Memory is allocated but not initialized: head" />
+    <error id="toomanyconfigs" severity="style" msg="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time. For more details, use --enable=information." />
+</results>

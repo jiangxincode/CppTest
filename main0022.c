@@ -197,15 +197,15 @@ int main0022()
     * 该方法从int转成char *是不推荐的，被iso取消，但是大部分系统支持，
     * 主要优点是可以改变进制
     */
-    int i;
-    char buffer [33];
-    printf("Enter a number: ");
-    scanf("%d",&i);
-    itoa(i,buffer,10);
-    printf("decimal: %s\n",buffer);
-    itoa(i,buffer,16);
-    printf("hexadecimal: %s\n",buffer);
-    itoa(i,buffer,2);
-    printf("binary: %s\n",buffer);
+//    int i;
+//    char buffer [33];
+//    printf("Enter a number: ");
+//    scanf("%d",&i);
+//    itoa(i,buffer,10);
+//    printf("decimal: %s\n",buffer);
+//    itoa(i,buffer,16);
+//    printf("hexadecimal: %s\n",buffer);
+//    itoa(i,buffer,2);
+//    printf("binary: %s\n",buffer);
     return 0;
 }

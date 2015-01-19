@@ -4,9 +4,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
-#include <stdbool.h>
-#include <string.h>
-#include <math.h>
+
 #include "jiangxin.h"
 
 char jx_getchar(short option)
@@ -70,20 +68,20 @@ void jx_print_author_info()
 
 int prime(int n)
 {
-    int t,i;
+    int flag = 0,i;
 
     if(n <= 1)
     {
         return 0;
     }
 
-    for(i=2,t=0; i<n; i++)
+    for(i=2; i<n; i++)
     {
         if((n%i)==0)
-            t=t+1;
+            flag++;
     }
 
-    if(t==0)
+    if(flag == 0)
         return 1;
     else
         return 0;

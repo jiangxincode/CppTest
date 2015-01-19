@@ -17,16 +17,16 @@ void dic_init();
 void free_hash();/*释放hash和后面的根*/
 void file_split(const char *filename);
 
-typedef struct Forest //the structure for forest
+typedef struct _forest
 {
     long int value;
-    struct Forest *child, *sibling; //子女节点和兄弟节点
+    struct _forest *child, *sibling;
     short int is_Chinese; //中文词的标记
-} Forest;
+} forest;
 
-Forest *HashTable[MAXVALUE] = {NULL}; //第一个字的根结点用数组存储
+forest *HashTable[MAXVALUE] = {NULL}; //第一个字的根结点用数组存储
 
-Forest *search_charactor(Forest *root, int value) //在此层进行文字的查找
+forest *search_charactor(forest *root, int value) //在此层进行文字的查找
 {
     if(root == NULL)
         return root;
@@ -40,13 +40,13 @@ Forest *search_charactor(Forest *root, int value) //在此层进行文字的查�
         return root;
     }
 }
-Forest *insert_charactor(Forest *root, int value)
+forest *insert_charactor(forest *root, int value)
 {
-    Forest *tmpcell, *tmp;
+    forest *tmpcell, *tmp;
 
     if(root->child == NULL)
     {
-        tmpcell = (Forest *)malloc(sizeof(Forest));
+        tmpcell = (forest *)malloc(sizeof(forest));
         tmpcell->value = value;
         tmpcell->child = NULL;
         tmpcell->sibling = NULL;
@@ -67,7 +67,7 @@ Forest *insert_charactor(Forest *root, int value)
         if(tmp)return tmp; //找到了相同字符
         else
         {
-            tmpcell = (Forest *)malloc(sizeof(Forest));
+            tmpcell = (forest *)malloc(sizeof(forest));
             tmpcell->value = value;
             tmpcell->child = NULL;
             tmpcell->sibling = NULL;
@@ -76,16 +76,22 @@ Forest *insert_charactor(Forest *root, int value)
         }
     }
 }
-/**
-词典初始化：中文字第一层用hash查找并找到根，后面用森林进行查找
-**/
+
+/** \brief 词典初始化：中文字第一层用hash查找并找到根，后面用森林进行查找
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+
 void dic_init()
 {
     FILE *fp;
     int i;
     unsigned char buffer[MAXWORDLENGTH] = {0};
     long int value;
-    Forest *tmpcell;
+    forest *tmpcell;
     char p_dic_path[PATHLENGTH];
     puts("Input the directory of the dictionary");
     scanf("%49s", p_dic_path);
@@ -114,7 +120,7 @@ void dic_init()
 
         if(HashTable[value] == NULL)
         {
-            tmpcell = (Forest *)malloc(sizeof(Forest));
+            tmpcell = (forest *)malloc(sizeof(forest));
             tmpcell->value = value;
             tmpcell->child = NULL;
             tmpcell->sibling = NULL;
@@ -132,7 +138,7 @@ void dic_init()
             i = 2;
         }
 
-        Forest *root = HashTable[value];
+        forest *root = HashTable[value];
 
         //printf("%d %d\n",buffer[i],buffer[i]);
         while(1)
@@ -158,12 +164,12 @@ void dic_init()
 
     fclose(fp);
 }
-void free_forest(Forest *root)/*递归释放森令各节点*/
+void free_forest(forest *root)/*递归释放森令各节点*/
 {
     if(root == NULL) return ;
     else
     {
-        Forest *tmp = root->sibling;
+        forest *tmp = root->sibling;
         free_forest(root->child);
         free(root);
         free_forest(tmp);
@@ -182,7 +188,7 @@ void file_split(const char *filename)
     int str_pos = 0; //str的位置
     int value;
     unsigned char str[20] = {0}, ch[2] = {0};
-    Forest *root;
+    forest *root;
     FILE *fp = fopen(filename, "r");
     printf("filename :%s\n", filename);
 
@@ -257,7 +263,6 @@ int main0019()
     dic_init();
     file_split(filename);
     free_hash();
-    getchar();
     return 0;
 }
 

@@ -196,7 +196,7 @@ int Operate(int a,char op,int b)
 int num(int n)/*返回操作数的长度*/
 {
     char p[10];
-    itoa(n,p,10);
+    sprintf(p,"%d",n);
     n=strlen(p);
     return n;
 }
