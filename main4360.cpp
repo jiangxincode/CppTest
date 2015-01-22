@@ -42,6 +42,7 @@ int main4360()
 	int nArrayCount = 0 ;
 	OutputRotundityArea(fResArray, nArrayCount);
 	cout << nArrayCount << " " << fResArray[0] << " " << fResArray[1] << endl;
+	return 0;
 
 // 	CPPUNIT_ASSERT(2 == nArrayCount);
 // 	CPPUNIT_ASSERT(fabs(50.24 -fResArray[0])<0.001);

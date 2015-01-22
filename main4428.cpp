@@ -20,34 +20,37 @@
  */
 unsigned int Continumax(char** pOutputstr,  char* intputstr)
 {
-	int maxLength = 0;
-	int maxLengthIndex = -1;
-	int currentLength = 0;
-	for(unsigned i=0;i<strlen(intputstr);i++)
-	{
-		if(isdigit(*(intputstr+i)))
-		{
-			if((++currentLength)>=maxLength)
-			{
-				maxLength = currentLength;
-				maxLengthIndex = i;
-			}
-		}
-		else
-		{
-			currentLength = 0;
-		}
-	}
-	char* temp = (char*)malloc(sizeof(char)*(maxLength+1));
-	for(int i=maxLength-1;i>=0;i--)
-	{
-		temp[i] = intputstr[maxLengthIndex--];
-	}
-	temp[maxLength] = '\0';
+    int maxLength = 0;
+    int maxLengthIndex = -1;
+    int currentLength = 0;
 
-	/**
+    for(unsigned i=0; i<strlen(intputstr); i++)
+    {
+        if(isdigit(*(intputstr+i)))
+        {
+            if((++currentLength)>=maxLength)
+            {
+                maxLength = currentLength;
+                maxLengthIndex = i;
+            }
+        }
+        else
+        {
+            currentLength = 0;
+        }
+    }
+
+    char* temp = (char*)malloc(sizeof(char)*(maxLength+1));
+
+    for(int i=maxLength-1; i>=0; i--)
+    {
+        temp[i] = intputstr[maxLengthIndex--];
+    }
+
+    temp[maxLength] = '\0';
+    /**
      * pOutputstr = &temp;是不正确的，因为虽然temp是在堆区，但是对其取地址之后这个地址是在栈区，调用之后消失
-	 */
-	*pOutputstr = temp;
-	return maxLength;
+     */
+    *pOutputstr = temp;
+    return maxLength;
 }

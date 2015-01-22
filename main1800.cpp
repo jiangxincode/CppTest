@@ -105,7 +105,7 @@ public:
     }
 
     /* 删除字符串，针对C风格字符串的重载版本 */
-    bool erase(char *str)
+    bool erase(const char *str)
     {
         return erase(str, str + strlen(str));
     }

@@ -26,11 +26,17 @@ http://github.com/jiangxincode
 * 1700-1999:Data Structure
 * 2000-2499:一些比较大的程序
 * 2500-2599:程序设计基础，2014暑假
-* 4000-5000:华为练习题（额外增加oj.h）
 
 	* origin:111150034+蒋鑫+i_j now:main25ij
 	* origin:111150034+蒋鑫+10 now:main2500
 	* origin:111150034+蒋鑫+综合 now:main2501
+
+* 4000-5000:华为练习题（额外增加oj.h）如果OJ中编号有低于4000或者高于等于5000的在编号之前加4例如
+
+	* 编号1569->main41569
+	* 编号4234->main4234
+	* 编号5453->main45453
+
 
 
 * 对于scanf的说明
@@ -120,5 +126,10 @@ http://github.com/jiangxincode
 
 ### Version 1.10
 
-* 联系华为OJ
+* 练习华为OJ
+* 修改之前的部分代码
+
+### Version 1.11
+
+* 练习华为OJ
 * 修改之前的部分代码

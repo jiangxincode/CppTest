@@ -40,7 +40,7 @@ int ProcessString( char * strInput,char chSrc,char chDes ,char * strOutput)
 
 int main4393()
 {
-    char strInput[] = "d545a";
+    char strInput[] = "d545";
 
 	//char strSrc[] = "d545c";
 	char strOutput[10] = "";

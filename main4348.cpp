@@ -47,9 +47,9 @@ void RangeArray(int * pArray,unsigned int  m, unsigned int  n,unsigned int  i)
     for(unsigned int j=n-1;j>=i-1;j--) //注意此处一定要倒序
     {
         row = j;
-        for(int i=0;i<m;i++)
+        for(unsigned int i=0;i<m;i++)
         {
-            for(int j=0;j<n;j++)
+            for(unsigned int j=0;j<n;j++)
             {
                 cout << *(pArray+i*n+j) << " ";
             }
@@ -91,7 +91,7 @@ int main4348()
 //        cout << endl;
 //    }
 
-    int pArray[4][3] = {1,2,3,2,3,4,2,3,1,1,3,1};
+    int pArray[4][3] = {{1,2,3},{2,3,4},{2,3,1},{1,3,1}};
     RangeArray(&pArray[0][0],4,3,2);
     for(unsigned int i=0;i<4;i++)
     {
@@ -104,7 +104,7 @@ int main4348()
 
     cout << endl;
 
-    int RetArray[4][3] = {1,2,3,2,3,1,1,3,1,2,3,4};
+    int RetArray[4][3] = {{1,2,3},{2,3,1},{1,3,1},{2,3,4}};
     for(unsigned int i=0;i<4;i++)
     {
         for(unsigned int j=0;j<3;j++)

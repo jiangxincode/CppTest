@@ -8,7 +8,8 @@ using namespace std;
 
 /*
 Description
-         给定一个字符串，将字符串中所有和前面重复多余的字符删除，其余字符保留，输出处理后的字符串。需要保证字符出现的先后顺序。
+         给定一个字符串，将字符串中所有和前面重复多余的字符删除，其余字符保留，
+         输出处理后的字符串。需要保证字符出现的先后顺序。
 Prototype
          int GetResult(const char *input, char *output)
 Input Param
@@ -65,7 +66,7 @@ int GetResult(const char *input, char *output)
 int main4363()
 {
     char result[1024] = {0};
-    cout << GetResult("abadcbad",result) << " " << result << endl;
+    cout << GetResult("abcabcdeabc",result) << " " << result << endl;
 //    CPPUNIT_ASSERT(GetResult("abadcbad",result) == 0);
 //    CPPUNIT_ASSERT(strcmp(result, "abdc")==0);
     return 0;

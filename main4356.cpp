@@ -23,7 +23,7 @@ using namespace std;
     1：IP1与IP2属于同一子网络；
 */
 
-int IsSameSubNetwork(char * pcIp1, char * pcIp2, char * pcSubNetworkMask)
+int IsSameSubNetwork(const char * pcIp1, const char * pcIp2, const char * pcSubNetworkMask)
 {
     /*在这里实现功能*/
     vector<unsigned int> pcIpVec1;
@@ -89,4 +89,5 @@ int IsSameSubNetwork(char * pcIp1, char * pcIp2, char * pcSubNetworkMask)
 int main4536()
 {
     cout << IsSameSubNetwork("192.168.0.1", "192.168.0.254", "255.255.255.0") << endl;
+    return 0;
 }
