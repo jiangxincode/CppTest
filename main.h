@@ -21,6 +21,8 @@ int main0021();
 int main0022();
 int main0023();
 int main0024();
+int main0025();
+int main0026();
 
 
 int main1011();
