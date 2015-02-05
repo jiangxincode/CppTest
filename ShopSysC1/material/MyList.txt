@@ -1,0 +1,173 @@
+#include <stdio.h>
+#include <string.h>
+#include <malloc.h>
+#include "api.h"
+
+/*************************************************
+Function      : CreateList
+Description   : 创建链表头节点
+Return        : 链表的头指针
+*************************************************/
+HistoryInfoNode* CreateList(void)
+{
+    HistoryInfoNode *pHead = NULL;
+
+    pHead = (HistoryInfoNode *)malloc(sizeof(HistoryInfoNode));
+    if (NULL == pHead)
+    {
+        api_parksys_ret(OP_INTERNAL_ERR);
+        return NULL;
+    }
+
+    memset(&(pHead->NodeData),0,sizeof(pHead->NodeData));
+    pHead->pNext = NULL;
+    return pHead;
+}
+
+
+/*************************************************
+Function      : FindNodeByCardNo
+Description   : 根据卡号，查找某个节点
+Input         : pHead 链表的头节点指针
+                要查找的车牌号
+Return        : 正确:返回指定节点的指针
+                失败:返回空指针
+*************************************************/
+HistoryInfoNode* FindNodeByCardNo(HistoryInfoNode *pHead, UL ulAutoNo)
+{
+    HistoryInfoNode *pNode = NULL;
+
+    if ((NULL == pHead) || (MAX_AUTONO < ulAutoNo || (MIN_AUTONO>ulAutoNo)))
+    {
+        api_parksys_ret(OP_INTERNAL_ERR);
+        return NULL;
+    }
+
+    pNode = pHead->pNext;
+    while ((NULL != pNode))
+    {
+        if (pNode->NodeData.AutoNo ==  ulAutoNo)
+        {
+            break;
+        }
+        pNode = pNode->pNext;
+    }
+
+    return pNode;
+}
+
+/*****************************************************************************
+ 函 数 名  : RemoveNodeByCardNo
+ 功能描述  : 检查基本参数是否满足
+ 输入参数  : 无
+ 输出参数  : 无
+ 返 回 值  : 无
+*****************************************************************************/
+bool RemoveNodeByCardNo(HistoryInfoNode* pHead,UL ulAutoNo)
+{
+    if ((NULL == pHead) || (MAX_AUTONO < ulAutoNo || (MIN_AUTONO>ulAutoNo)))
+    {
+        api_parksys_ret(OP_INTERNAL_ERR);
+        return false;
+    }
+    HistoryInfoNode *pTemp = NULL;
+    HistoryInfoNode *pFormer = NULL;
+    pFormer = pHead;
+    pTemp   = pHead->pNext;
+    while (NULL!=pTemp)
+    {
+        pTemp = pTemp->pNext;
+        if (ulAutoNo == pFormer->pNext->NodeData.AutoNo)
+        {
+            free(pFormer->pNext);
+            pFormer->pNext = pTemp;    
+        }
+        else
+        {
+            pFormer = pFormer->pNext;
+        }
+    }
+    pFormer = NULL;
+    return true;
+}
+
+/*************************************************
+Function      : PushBackNode
+Description   : 向链表中尾部插入某个节点
+Input         : pHead        链表的头节点指针
+                pCardInfo    消费记录信息
+Output        : 无
+Return        : 正确:返回头节点指针
+                失败:返回空指针
+*************************************************/
+HistoryInfoNode* PushBackNode(HistoryInfoNode *pHead,  ParkingAutoHistoryInfo *pParkInfo,HistoryInfoNode** pSaveNode)
+{
+    HistoryInfoNode* pNode      = NULL;
+    HistoryInfoNode* pNewNode   = NULL;
+
+    if ((NULL == pHead) || (NULL == pParkInfo))
+    {
+        api_parksys_ret(OP_INTERNAL_ERR);
+        return NULL;
+    }
+
+    pNode = pHead;
+    while (pNode->pNext != NULL)
+    {
+        pNode = pNode->pNext;
+    }
+
+    pNewNode = (HistoryInfoNode *)malloc(sizeof(HistoryInfoNode));
+    if (NULL == pNewNode)
+    {
+        api_parksys_ret(OP_INTERNAL_ERR);
+        return NULL;
+    }
+
+    pNode->pNext     = pNewNode;
+    *pSaveNode = pNewNode;
+    pNewNode->pNext = NULL;
+
+    memcpy(&(pNewNode->NodeData), pParkInfo, sizeof(ParkingAutoHistoryInfo));
+
+    return pHead;
+}
+
+
+/*************************************************
+Function      : RemoveList
+Description   : 删除整个链表,保留头指针
+Input         : pHead 链表的头节点指针
+Return        : 正确:TRUE
+                失败:FALSE
+*************************************************/
+bool RemoveList(HistoryInfoNode *pHead)
+{
+    HistoryInfoNode *pNode = NULL;
+    HistoryInfoNode *pTemp = NULL;
+
+    if (NULL == pHead)
+    {
+        return false;
+    }
+
+    pNode = pHead;
+    pTemp = pNode->pNext;
+    if (NULL == pTemp)
+    {
+        free(pNode);
+    }
+    else
+    {
+        while (NULL != pTemp)
+        {
+            free(pNode);
+            pNode = pTemp;
+            pTemp = pTemp->pNext;
+        }
+        free(pNode);
+    }
+    pNode = NULL;
+    return true;
+}
+
