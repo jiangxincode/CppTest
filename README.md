@@ -133,3 +133,8 @@ http://github.com/jiangxincode
 
 * 练习华为OJ
 * 修改之前的部分代码
+
+### Version 1.12
+
+* 去除部分cppcheck检查选项
+* 将所有代码移至src文件夹
