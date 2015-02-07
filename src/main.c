@@ -4,7 +4,7 @@
 /** \cond */
 int main(int argc,char* argv[])
 {
-    main0026();
+    main1022();
     return 0;
 }
 /** \endcond */

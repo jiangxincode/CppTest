@@ -203,8 +203,6 @@ NODE* search(NODE* head,char* name)
 }
 NODE* insert(NODE* head,NODE* p0,unsigned short method)
 {
-
-
     if(head == NULL)
     {
         head = p0;

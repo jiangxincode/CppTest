@@ -8,7 +8,7 @@ void f_new(void);
 void f_save(void);
 void f_open(void);
 
-typedef struct
+typedef struct _PERSON_
 {
     int type;
     char name[20];

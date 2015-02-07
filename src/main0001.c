@@ -15,6 +15,8 @@ int main0001()
 {
     int length = sizeof(INFO);
     printf("%d", length);
+    INFO info;
+    printf("%d %c %d", info.Var1, info.Var2, info.Var3);
     return 0;
 }
 

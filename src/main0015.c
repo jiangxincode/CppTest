@@ -16,8 +16,10 @@ char* strltou(char *des, const char *src)
     {
         return NULL;
     }
+
     char *p_des = des;
     const char *p_src = src;
+
     for(; *p_src!='\0'; p_src++,p_des++)
     {
         if((*p_src>='a') && (*p_src<='z'))
@@ -29,6 +31,7 @@ char* strltou(char *des, const char *src)
             *p_des = *p_src;
         }
     }
+
     *p_des = '\0';
     return des;
 }
@@ -47,8 +50,10 @@ char* strutol(char *des, const char *src)
     {
         return NULL;
     }
+
     char *p_des = des;
     const char *p_src = src;
+
     for(; *p_src!='\0'; p_src++,p_des++)
     {
         if((*p_src>='A') && (*p_src<='Z'))
@@ -60,6 +65,7 @@ char* strutol(char *des, const char *src)
             *p_des = *p_src;
         }
     }
+
     *p_des = '\0';
     return des;
 }

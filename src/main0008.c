@@ -1,8 +1,7 @@
-﻿
-/*
-美团网2014年招聘笔试题
-利用两个stack模拟queue
-*/
+﻿/**
+ * 美团网2014年招聘笔试题
+ * 利用两个stack模拟queue
+ */
 
 #include <stdio.h>
 #include <stdlib.h>

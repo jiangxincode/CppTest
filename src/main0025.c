@@ -125,9 +125,8 @@ int QueuePush(Queue **q,long i)
 
 int main0025()
 {
-    int time,i,j,inStack,inQueue;
+    int time,i,j;
     long num;
-    char state;
     Stack part;
     Queue *H,*p,*temp,*temp2;
     H=InitQueue();
@@ -138,12 +137,13 @@ int main0025()
 
     while(1)
     {
-        inStack=inQueue=0;
+        int inStack = 0;
+        int inQueue = 0;
         temp=H;
         printf("\n--------------------停车场管理系统---------------------------\n");
         printf("请选择\n\n\t\t(A或a)汽车到达和已到汽车查询\n\t\t(L或l)汽车离开\n\t\t(Q或q)程序退出\n");
         printf("\n-------------------------------------------------------------\n您的选择是:");
-        state=getche();
+        char state = getche();
 
         if(state=='a'||state=='A'||state=='l'||state=='L')
         {
@@ -217,7 +217,7 @@ int main0025()
                     if(H->next==NULL)p=H;
 
                     StackPush(&part,num,time);
-                    printf("\n停车场空出一位置。场外等候的%d号汽车入站了!\n",num);
+                    printf("\n停车场空出一位置。场外等候的%ld号汽车入站了!\n",num);
                 }//如果车站外有车，入站
             }
             else     //不在车站中
@@ -236,7 +236,7 @@ int main0025()
 
                 if(inQueue)
                 {
-                    printf("\n汽车在停车场外,不收费\n",i);
+                    printf("\n汽车%d在停车场外,不收费\n",i);
                     temp2->next=temp->next;
 
                     if(temp==p)p=temp2;

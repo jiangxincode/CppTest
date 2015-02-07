@@ -6,6 +6,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 struct stu
 {
@@ -33,7 +34,11 @@ struct stu *create_list(int n)
     struct stu *head,*previous,*current; //head为头结点，previous为前一结点，current为当前结点
 
     printf("Please input the information of the student: name sex no age:\n");
+
     head = (struct stu *)malloc(sizeof(struct stu));
+
+    memset(head, 0, sizeof(struct stu));
+
     scanf("%19s %c %11d %11d",head->name,&(head->sex),&(head->no),&(head->age));
 
     head->next = NULL;

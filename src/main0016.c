@@ -44,6 +44,7 @@ void mallocTG(TG *total)
     else
     {
         int count = 0; // count: from start to the number that you really get
+
         while(count < size)
         {
             (total+start+count)->agentName = agentName;

@@ -10,20 +10,27 @@ http://github.com/jiangxincode
 * ExerciseC.depend //codeblocks
 * ExerciseC.layout //codeblocks
 
-* .ccc/ //Cccc(C and C++ Code Counter)产生的关于代码信息的相关文件
+* bin/ //可运行二进制文件 不同步
+* obj/ //中间obj文件 不同步
+
+* .ccc/ //Cccc(C and C++ Code Counter)产生的关于代码信息的相关文件 不同步
 
 * .git/ //git
 * .gitattributes //git
 * .gitignore //git
 
-* CppCheckResults.xml //cppcheck
-* ExerciseC.cppcheck //cppcheck
+* CppCheckResults.xml //cppcheck 不同步
+* ExerciseC.cppcheck //cppcheck 不同步
 
-* include/ //glib所用的头文件glib-dev_2.28.8-1_win32
-* lib/ //glib所使用的库文件glib-dev_2.28.8-1_win32
+* include/ //glib所用的头文件glib-dev_2.28.8-1_win32 不同步
+* lib/ //glib所使用的库文件glib-dev_2.28.8-1_win32 不同步
 
-* bin/ //可运行二进制文件
-* obj/ //中间obj文件
+* temp/ //临时输出文件所在的文件夹 不同步
+* data/ //测试输入文件以及其他需要长期存储的文件
+
+* SI_PROJECT/ //SourceInsight文件夹 不同步
+
+* src/ //所有源文件所在文件夹
 
 * main.c主函数
 * main.h主头文件
@@ -35,6 +42,7 @@ http://github.com/jiangxincode
 * 1000-1199:C语言程序设计, 2012 实验教材为《C语言程序设计教程学习指导》
 	* origin:7-4.c now:main1074
 	* origin:12-5.c now:main1125
+
 * //delete:表示已删除可重用
 
 ## 待修复问题
@@ -92,6 +100,10 @@ http://github.com/jiangxincode
 
 * 整理文件
 
-### Version 1.08
+### Version 1.09
 
 * 添加了部分文件
+* 将所有源码改至src文件夹，方便source insight的使用
+* 去除所有cppcheck检查警告
+* 整理了README.md和.gitignore文件
+
