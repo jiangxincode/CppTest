@@ -296,11 +296,10 @@ void opDestroyCardProc(int iCardNo)
         apiPrintErrInfo(E99); //E99:系统内部错误
         return;
     }
-    else if(iCardNo == 0)
+    else if(iCardNo == 0) //注销所有票卡
     {
         if(RemoveList(g_historyInfoNodeHead) != RET_OK)
         {
-            apiPrintErrInfo(E99); //E99:系统内部错误
             return;
         }
         for(int i=0;i<MAX_CARD_NUMBERS;i++)
@@ -308,16 +307,31 @@ void opDestroyCardProc(int iCardNo)
             if(g_CardStatusInfo[i] == CARD_VALID)
             {
                 apiDeleteLog(i);
+                g_CardStatusInfo[i] = CARD_UNVAILD;
             }
         }
+        apiPrintOpStatusInfo(I22, 0, 0);
     }
-    else
+    else //注销特定票卡
     {
-        if(g_CardStatusInfo[iCardNo] == CARD_VALID)
+        if(g_CardStatusInfo[iCardNo] == CARD_VALID) //该卡未注销
         {
+            if(RemoveNodeByCardNo(g_historyInfoNodeHead,iCardNo) == NULL)
+            {
+                return;
+            }
             apiDeleteLog(iCardNo);
+            g_CardStatusInfo[iCardNo] = CARD_UNVAILD;
+            apiPrintOpStatusInfo(I22, iCardNo,0);
+        }
+        else //该卡已注销
+        {
+            apiPrintErrInfo(E22);
+            return;
         }
     }
+
+    
 }
 
 

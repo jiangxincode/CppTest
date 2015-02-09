@@ -1,9 +1,10 @@
-#include "stdio.h"
-#include "string.h"
-#include "stdlib.h"
-#include "SubwayList.h"
-#include "malloc.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <malloc.h>
 #include <stdarg.h>
+
+#include "SubwayList.h"
 
 /*************************************************
 Function      : CreateList
@@ -103,7 +104,7 @@ HistoryInfoNode* PushBackNode(HistoryInfoNode *pHead, HistoryItem *pCardInfo)
 
 /*************************************************
 Function      : RemoveNodeByCardNo
-Description   : 从链表中删除指定卡号的记录
+Description   : 从链表中删除指定卡号的所有记录
 Input         : pHead       链表的头节点指针
                 iCradNo     待删除的节点的卡号
 Return        : 正确:返回链表头节点的指针
@@ -119,29 +120,20 @@ HistoryInfoNode* RemoveNodeByCardNo(HistoryInfoNode *pHead, int iCardNo)
         return NULL;
     }
     
-    HistoryInfoNode* pNode = NULL;
-    pNode = pHead;
+    HistoryInfoNode *pNode = pHead;
     while (pNode->pNext != NULL)
     {
         if (pNode->pNext->data.nCardNo == iCardNo)
         {
-            break;
+            HistoryInfoNode *pDelNode = pNode->pNext;
+            pNode->pNext = pDelNode->pNext;
+            free(pDelNode);
         }
-        pNode = pNode->pNext;
+        else
+        {
+            pNode = pNode->pNext;
+        }
     }
-
-    HistoryInfoNode* pDelNode = NULL;
-    pDelNode = pNode->pNext;
-    if (pDelNode == NULL)
-    {
-        apiPrintErrInfo(E99); //E99:系统内部错误
-        return NULL;
-    }
-
-    pNode->pNext = pDelNode->pNext;
-    free(pDelNode);
-
-    pDelNode = NULL;
 
     return pHead;
 }
