@@ -1,6 +1,10 @@
 SI_PROJECT/
+
 Debug/
+
 *.bak
-*.opt
 ~$*.doc
+
+*.opt
 *.sdf
+*.opensdf
