@@ -42,12 +42,10 @@ HistoryInfoNode* FindNodeByCardNo(HistoryInfoNode *pHead, int iCardNo)
     //该函数只负责处理正常结点(1-9)，对于卡号为0的通配情况需要调用函数自己处理
     if((pHead == NULL) || (iCardNo <= 0) || (iCardNo >= MAX_CARD_NUMBERS))
     {
-        apiPrintErrInfo(E99); //E99:系统内部错误
         return NULL;
     }
 
-    HistoryInfoNode *pNode = NULL;
-    pNode = pHead->pNext;
+    HistoryInfoNode *pNode = pHead->pNext;
     while (pNode != NULL)
     {
         if (pNode->data.nCardNo == iCardNo)

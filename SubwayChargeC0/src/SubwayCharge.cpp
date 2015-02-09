@@ -156,7 +156,10 @@ void opQueryLogProc(QueryCond_ST* pstQueryCond)
 		apiPrintErrInfo(E99); //E99:系统内部错误
 		return;
 	}
-	int nTimeDiff = apiTimeDiff(pstQueryCond->nStartHour,pstQueryCond->nStartMinute,pstQueryCond->nEndHour,pstQueryCond->nEndMinute);
+	int nTimeDiff = apiTimeDiff(pstQueryCond->nStartHour,
+        pstQueryCond->nStartMinute,
+        pstQueryCond->nEndHour,
+        pstQueryCond->nEndMinute);
 	//查询终止时间是否大于查询开始时间
 	if(nTimeDiff > 0)
 	{
@@ -166,8 +169,10 @@ void opQueryLogProc(QueryCond_ST* pstQueryCond)
 
 	LogItem_ST tmpLogItem[MAX_LOG_RECORD_NUM];
 	memset(tmpLogItem, 0, sizeof(LogItem_ST) * MAX_LOG_RECORD_NUM);
+    
 	int i = 0, j = 0;
 	int nLogItemCnt = 0; //记录条目数
+	
 	LogItem_ST *pLogAddr = apiGetLogAddr();
 	int nItems = apiGetLogNum();
 	
@@ -238,10 +243,11 @@ void opQueryHistoryChargeListProc(int iCardNo)
     //memset(pHistoryChargeList, 0, MAX_LOG_RECORD_NUM*sizeof(HistoryItem));
 
     int count = 0;
+	FILE *fp = fopen(FILE_NAME, "w+");
     if((iCardNo < 0) || (iCardNo >= MAX_CARD_NUMBERS))
     {
         apiPrintErrInfo(E99); //E99:系统内部错误
-    }
+    } 
     else if(iCardNo == 0)
     {
         for(int i=1;i<MAX_CARD_NUMBERS;i++)
@@ -251,29 +257,32 @@ void opQueryHistoryChargeListProc(int iCardNo)
             
             while(node != NULL)
             {
-                if(FindNodeByCardNo(node,i) != NULL)
+                node= FindNodeByCardNo(node,i);
+                if(node != NULL)
                 {
                     count++;
-                    //注意此处应该使用->pNext
-                    apiPrintHistoryChargeList(&(node->pNext->data));
+                    apiPrintHistoryChargeList(&(node->data));
+                    PrintToFile(fp, node->data);
                 }
-                node = node->pNext;
             }
         }
     }
     else
     {
         HistoryInfoNode *node = g_historyInfoNodeHead;
+        
         while(node != NULL)
         {
-            if(FindNodeByCardNo(node,iCardNo) != NULL)
+            node = FindNodeByCardNo(node, iCardNo);
+            if(node!= NULL)
             {
                 count++;
-                apiPrintHistoryChargeList(&(node->pNext->data));
+                apiPrintHistoryChargeList(&(node->data));
+                PrintToFile(fp, node->data);
             }
-            node = node->pNext;
         }
     }
+    fclose(fp);
     if(count <= 0)
     {
         apiPrintErrInfo(E21);
@@ -685,6 +694,27 @@ int IsCheckTimeValid(QueryCond_ST* pstQueryCond, LogItem_ST *logAddr)
 
 }
 
+void PrintToFile(FILE *fp, HistoryItem hisItem)
+{
+    fprintf(fp, "卡号:%d ", hisItem.nCardNo);
+    switch(hisItem.enCardType)
+    {
+        case CARDTYPE_A:fprintf(fp, "卡类型:单程票 ");break;
+        case CARDTYPE_B:fprintf(fp, "卡类型:老年卡 ");break;
+        case CARDTYPE_C:fprintf(fp, "卡类型:普通卡 ");break;
+        default:break;
+    }
+    fprintf(fp, "进站时间:%02d:%02d 进站名称:%s 出站时间:%02d:%02d 出站名称:%s 费用:%d",
+                        hisItem.nInHour,
+                        hisItem.nInMin,
+                        hisItem.sInStation,
+                        hisItem.nOutHour,
+                        hisItem.nOutMin,
+                        hisItem.sOutStation,
+                        hisItem.nMoney);
+    fprintf(fp, "\n");
+    
+}
 
 
 

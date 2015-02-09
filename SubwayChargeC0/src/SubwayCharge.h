@@ -158,5 +158,8 @@ void SortByCardID(LogItem_ST logItems[], int nItems);
 *****************************************************************************/
 int IsCheckTimeValid(QueryCond_ST* pstQueryCond, LogItem_ST *logAddr);
 
+
+void PrintToFile(FILE *fp, HistoryItem hisItem);
+
 #endif /* __SUBWAYCHARGE_H__ */
 
