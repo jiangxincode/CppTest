@@ -89,10 +89,6 @@ LINK32=link.exe
 
 SOURCE=.\src\SubwayCharge.cpp
 # End Source File
-# Begin Source File
-
-SOURCE=.\src\SubwayList.cpp
-# End Source File
 # End Group
 # Begin Group "Header Files"
 
@@ -104,10 +100,6 @@ SOURCE=.\src\api.h
 # Begin Source File
 
 SOURCE=.\src\SubwayCharge.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\src\SubwayList.h
 # End Source File
 # End Group
 # Begin Group "Resource Files"

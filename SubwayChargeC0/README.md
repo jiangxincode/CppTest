@@ -23,6 +23,9 @@
 
 * 修改了opQueryHistoryChargeListProc函数，实现了写文件功能
 
+## Version 0.06
+* 优化了程序结构，合并了部分文件
+
 # 待处理问题
 
 * 对日志数量和链表最大长度问题进行检查
