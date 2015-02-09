@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
+
 #include "api.h"
 #include "list.h"
 
@@ -12,15 +13,17 @@ QUERY_RESULTNode* CreateList(void)
 {
     QUERY_RESULTNode *pHead = NULL;
     pHead = (QUERY_RESULTNode *)malloc(sizeof(QUERY_RESULTNode));
-    if (NULL == pHead)
+    if (pHead == NULL) //系统内部错误
     {
         api_print_result(E999);
         return NULL;
     }
-    pHead->data.Index=0;
-    pHead->data.Fee=0;
-    pHead->data.Score=20;
+
+    memset(pHead, 0, sizeof(QUERY_RESULTNode)); //初始化头结点
+
+    pHead->data.Index=0; //标志头结点
     pHead->pNext = NULL;
+
     return pHead;
 }
 
@@ -36,26 +39,26 @@ Return        : 正确:返回头节点指针
 *************************************************/
 QUERY_RESULTNode* PushBackNode(QUERY_RESULTNode *pHeadNode, QueryResult *pInfo)
 {
-    QUERY_RESULTNode *pTemp=NULL;
-    QUERY_RESULTNode *pNewNode=NULL;
+    QUERY_RESULTNode *pTemp = NULL;
+    QUERY_RESULTNode *pNewNode = NULL;
     
-    if((NULL == pInfo)||(NULL == pHeadNode))
+    if((pInfo == NULL)||( pHeadNode == NULL)) //系统内部错误
     {
         api_print_result(E999);
         return NULL;
     }
     
     pNewNode = (QUERY_RESULTNode *)malloc(sizeof(QUERY_RESULTNode));
-    if(NULL == pNewNode)
+    if(pNewNode == NULL) //系统内部错误
     {
         api_print_result(E999);
         return NULL;
     }
+    memcpy(&(pNewNode->data),pInfo,sizeof(QueryResult));
 
-    memcpy(&pNewNode->data,pInfo,sizeof(QueryResult));
     pTemp = pHeadNode;
 
-    while(NULL != pTemp->pNext)/* 找到尾结点 */
+    while(pTemp->pNext != NULL)/* 找到尾结点 */
     {
         pTemp = pTemp->pNext;
     }

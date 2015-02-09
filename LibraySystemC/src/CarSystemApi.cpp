@@ -5,8 +5,8 @@
 #include "car.h"
 
 
-#define MAX_COMMAND_NUM 3
-#define MAX_COMMAND_LENGTH 128
+#define MAX_COMMAND_NUM 3 //输入命令最大子段数
+#define MAX_COMMAND_LENGTH 128 //输入命令每个子段的最大长度
 
 /*****************************************************************************
 函 数 名  : api_print_result
@@ -76,23 +76,28 @@ void api_print_result(enum OP_RST_INFO enResultCode)
 void api_print_query_info(QueryResult *pResult)
 {
     printf("<<---------- 违规信息%d---------->>\n", pResult->Index);
+
     printf("违规时间 = %d\n", pResult->Time);
+
     switch(pResult->Reason)
     {
-    case 0:printf("违规原因 = 违章停车\n");break;
-    case 1:printf("违规原因 = 超速\n");break;
-    case 2:printf("违规原因 = 闯红灯\n");break;
-    case 3:printf("违规原因 = 超载\n");break;
-    case 4:printf("违规原因 = 醉酒驾车\n");break;
-    default:printf("参数错误\n");break;
+    case PECCANCY_TYPE_0:printf("违规原因 = 违章停车\n");break;
+    case PECCANCY_TYPE_1:printf("违规原因 = 超速\n");break;
+    case PECCANCY_TYPE_2:printf("违规原因 = 闯红灯\n");break;
+    case PECCANCY_TYPE_3:printf("违规原因 = 超载\n");break;
+    case PECCANCY_TYPE_4:printf("违规原因 = 醉酒驾车\n");break;
+    default:printf("无效参数\n");break;
     }
+
     printf("罚款金额 = %d\n", pResult->Fee);
+
     switch(pResult->PayFlag)
     {
-    case 0:printf("已缴纳罚款 = 否\n");break;
-    case 1:printf("已缴纳罚款 = 是\n");break;
-    default:printf("参数错误\n");break;
+    case STAT_NO_PAY:printf("已缴纳罚款 = 否\n");break;
+    case STAT_HAVE_PAY:printf("已缴纳罚款 = 是\n");break;
+    default:printf("无效参数\n");break;
     }
+
     printf("剩余积分 = %d\n", pResult->Score);
 
     return;
@@ -169,6 +174,7 @@ void api_server_start(int argc, char* argv[])
         }
         else
         {
+            printf("无效参数\n");
             continue;
         }
     }
