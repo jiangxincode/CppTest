@@ -18,7 +18,7 @@
 /*宏定义考生根据需要补充*/
 #define MAX_CARD_NUMBERS (10)
 
-#define FILE_NAME ("SubwayCharge.txt")
+#define FILE_NAME ("temp/SubwayCharge.txt")
 
 
 /*结构定义考生根据需要补充*/

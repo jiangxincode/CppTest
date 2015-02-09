@@ -42,7 +42,8 @@ void opResetProc(void)
 	{
 		if(RemoveList(g_historyInfoNodeHead) != RET_OK)
 		{
-			return; //错误信息由RemoveList函数进行输出
+            apiPrintErrInfo(E99); //E99:系统内部错误
+            return; //错误信息由RemoveList函数进行输出
 		}
 		g_historyInfoNodeHead = NULL;
 	}
@@ -50,12 +51,12 @@ void opResetProc(void)
 	g_historyInfoNodeHead = CreateList(); //创建历史消费记录链表
 	if(g_historyInfoNodeHead == NULL)
 	{
-		return; //错误信息由CreateList函数进行输出
+        apiPrintErrInfo(E99); //E99:系统内部错误
+        return;
 	}
 	
 
-	FILE *fp = NULL;
-	fp = fopen(FILE_NAME, "w+"); //检测文件是否存在，如果不存在则创建，如果存在则清空 
+	FILE *fp = fopen(FILE_NAME, "w+"); //检测文件是否存在，如果不存在则创建，如果存在则清空 
 	if(fp == NULL)
 	{
 		apiPrintErrInfo(E99); //E99:系统内部错误
@@ -131,6 +132,7 @@ void opChargeProc(TravelInfo_ST* pstTravelInfo)
     if(nChargePrice == -1)
     {
         apiPrintErrInfo(E99); //E99:系统内部错误
+        return;
     }
     
 	//进行扣费，并将扣费记录写入链表尾
@@ -246,6 +248,7 @@ void opQueryHistoryChargeListProc(int iCardNo)
     if((iCardNo < 0) || (iCardNo >= MAX_CARD_NUMBERS))
     {
         apiPrintErrInfo(E99); //E99:系统内部错误
+        return;
     } 
     else if(iCardNo == 0)
     {
@@ -308,6 +311,7 @@ void opDestroyCardProc(int iCardNo)
     {
         if(RemoveList(g_historyInfoNodeHead) != RET_OK)
         {
+            apiPrintErrInfo(E99); //E99:系统内部错误
             return;
         }
         for(int i=0;i<MAX_CARD_NUMBERS;i++)
@@ -326,6 +330,7 @@ void opDestroyCardProc(int iCardNo)
         {
             if(RemoveNodeByCardNo(g_historyInfoNodeHead,iCardNo) == NULL)
             {
+                apiPrintErrInfo(E99); //E99:系统内部错误
                 return;
             }
             apiDeleteLog(iCardNo);
@@ -735,7 +740,6 @@ HistoryInfoNode* CreateList(void)
     pHead = (HistoryInfoNode *)malloc(sizeof(HistoryInfoNode));
     if (pHead == NULL)
     {
-        apiPrintErrInfo(E99); //E99:系统内部错误
         return NULL;
     }
 
@@ -831,7 +835,6 @@ HistoryInfoNode* RemoveNodeByCardNo(HistoryInfoNode *pHead, int iCardNo)
     //该函数只负责处理正常结点(1-9)，对于卡号为0的通配情况需要调用函数自己处理
     if ((pHead == NULL) || (iCardNo <= 0) || (iCardNo >= MAX_CARD_NUMBERS))
     {
-        apiPrintErrInfo(E99); //E99:系统内部错误
         return NULL;
     }
     
@@ -866,15 +869,12 @@ int RemoveList(HistoryInfoNode *pHead)
     //由于链表存在头结点，所以正常情况下pHead不可能为NULL，即使还没有向链表中插入记录
     if (pHead == NULL)
     {
-        apiPrintErrInfo(E99); //E99:系统内部错误
         return RET_ERROR;
     }
     
-    HistoryInfoNode *pNode = NULL;
-    HistoryInfoNode *pb = NULL;
-    pNode = pHead;
+    HistoryInfoNode *pNode = pHead;
+    HistoryInfoNode *pb = pNode->pNext;
 
-    pb = pNode->pNext;
     if (pb == NULL)
     {
         free(pNode);
@@ -889,8 +889,6 @@ int RemoveList(HistoryInfoNode *pHead)
         }
         free(pNode);
     }
-
-    pNode = NULL;
 
     return RET_OK;
 }
