@@ -2,6 +2,8 @@ SI_PROJECT/
 
 Debug/
 
+temp/
+
 *.bak
 ~$*.doc
 
