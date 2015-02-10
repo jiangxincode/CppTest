@@ -72,9 +72,54 @@ extern "C"{
 // 银行能够发生贷款的份数限制
 #define  BANK_LOAN_COUNT_LIMIT   5
 
+
+/* -----------------------
+供考生自定义的结构类型
+------------------------ */
+typedef struct
+{
+    int grantMoney; //已发放贷款金额
+    int grantNum; //已发放贷款笔数
+}BankInfo;
+
+typedef struct
+{
+    int loanIndex; //贷款编号
+    LoanStatus status; //状态
+    Reason reason; //失败原因
+    int principal; //贷款本金澹(万元)
+    int monthAll; //还款期数(月)
+    float salary; //贷款人月薪
+    float actualMonthRate; //实际月利率
+    int allMoney; //需还款本息总金额
+    int ownMoney; //需个人还款本息总金额
+    int loanNo; //申请顺序流水号
+    int reqTime; //申请时间
+    int checkTime; //审查时间
+    int grantTime; //发放时间
+}AllInfo;
+
+
+/* -----------------------
+供考生自定义的宏变量
+------------------------ */
+#define MAX_APPLY_AMOUNT (LOANID_MAX-LOANID_MIN+1) //最大申请次数
+#define MONTH_EVERY_YEAR 12 //每年有12个月
+#define MONEY_UNIT_TRANSFORM 10000 //贷款金额单位转换澹(万元->元)
+#define MAX_FUND 100 //住房公积金最大金额澹(万元)
+#define MIN_FUND 0 //住房公积金最小金额(万元)
+
+
 /* -----------------------
 供考生自定义实现的函数
 ------------------------ */
+int CalcBeforeQuery(int principal, int years, float *actualMonthRate, int *allMoney);
+int CalcAfterQuery(int loanIdx, int month, int fund, int lstTime);
+int Request(int loanIdx, float salary, int principal, int years, int reqTime);
+int Check(int loanIdx, float salary, int principal, int years, int reqTime);
+int Release(int loanIdx, float salary, int principal, int years, int reqTime);
+void LoanRate(LoanInfo *QueryLoadInfo, int fund);
+
 
 /* 系统初始化命令 */
 void CmdReset();

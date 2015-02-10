@@ -94,6 +94,10 @@ LINK32=link.exe
 
 SOURCE=.\src\Loan.cpp
 # End Source File
+# Begin Source File
+
+SOURCE=.\src\loaning_rate.cpp
+# End Source File
 # End Group
 # Begin Group "Header Files"
 

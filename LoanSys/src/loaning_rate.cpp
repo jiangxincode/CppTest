@@ -1,4 +1,5 @@
 #include "api.h"
+#include "Loan.h"
 
 /*****************************************************************************
  函 数 名  : LoanRate
@@ -57,7 +58,7 @@ void LoanRate(LoanInfo *QueryLoadInfo, int fund)
 
 	/* ---------- 4.计算个人还款本息总金额 ----------*/
 	/* 个人还款本息总金额=还款本息总金额-住房公积金还款金额*50% */
-	QueryLoadInfo.ownMoney = QueryLoadInfo.allMoney - (fund * 10000 / 2);
+	QueryLoadInfo->ownMoney = QueryLoadInfo->allMoney - (fund * 10000 / 2);
 }
 
 
