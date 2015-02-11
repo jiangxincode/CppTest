@@ -79,7 +79,7 @@ extern "C"{
 typedef struct
 {
     int grantMoney; //已发放贷款金额
-    int grantNum; //已发放贷款笔数
+    int grantNum; //已发放贷款笔数(万元)
 }BankInfo;
 
 typedef struct
@@ -90,9 +90,6 @@ typedef struct
     int principal; //贷款本金澹(万元)
     int monthAll; //还款期数(月)
     float salary; //贷款人月薪
-    float actualMonthRate; //实际月利率
-    int allMoney; //需还款本息总金额
-    int ownMoney; //需个人还款本息总金额
     int loanNo; //申请顺序流水号
     int reqTime; //申请时间
     int checkTime; //审查时间
@@ -108,16 +105,16 @@ typedef struct
 #define MONEY_UNIT_TRANSFORM 10000 //贷款金额单位转换澹(万元->元)
 #define MAX_FUND 100 //住房公积金最大金额澹(万元)
 #define MIN_FUND 0 //住房公积金最小金额(万元)
+#define MIN_REPAY_DATE 1 //最小还款日期(月)
+#define MAX_REPAY_DATE 240 //最大还款日期(月)
 
 
 /* -----------------------
 供考生自定义实现的函数
 ------------------------ */
-int CalcBeforeQuery(int principal, int years, float *actualMonthRate, int *allMoney);
-int CalcAfterQuery(int loanIdx, int month, int fund, int lstTime);
 int Request(int loanIdx, float salary, int principal, int years, int reqTime);
-int Check(int loanIdx, float salary, int principal, int years, int reqTime);
-int Release(int loanIdx, float salary, int principal, int years, int reqTime);
+int Check(int loanIdx, float salary, int principal, int years, int reqTime, int flag);
+int Release(int loanIdx, float salary, int principal, int years, int reqTime, int flag);
 void LoanRate(LoanInfo *QueryLoadInfo, int fund);
 
 

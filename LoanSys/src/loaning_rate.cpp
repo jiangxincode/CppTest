@@ -50,7 +50,7 @@ void LoanRate(LoanInfo *QueryLoadInfo, int fund)
 
 	/* ---------- 3.计算本息总金额 ----------*/
 	/* 还款总利息=贷款本金*实际月利率*(还款期数+1)/2 */
-	AllInterest = QueryLoadInfo->principal * 10000 * (QueryLoadInfo->rate / 1000) * (QueryLoadInfo->monthAll + 1) / 2;
+	AllInterest = QueryLoadInfo->principal * 10000 * ((float)QueryLoadInfo->rate / 1000) * (QueryLoadInfo->monthAll + 1) / 2;
 
 	/* 还款本息总金额=贷款本金+还款总利息 */
 	QueryLoadInfo->allMoney = QueryLoadInfo->principal * 10000 + AllInterest;
