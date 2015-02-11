@@ -6,6 +6,7 @@ temp/
 
 *.bak
 ~$*.doc
+*.orig
 
 *.opt
 *.sdf
