@@ -22,8 +22,15 @@ http://github.com/jiangxincode
 * 0000:Test
 * 0001-0499:ACM(000-499)
 * 0500-1499:一些小程序
-* 1500-1699:C++ Primer 15n0 for chapter n 16n0 for chapter 10+n
+* 1500-1699:C++ Primer
+
+	* 15n0 for chapter n 16n0 for chapter 10+n
+
 * 1700-1999:Data Structure
+
+	* 第i章->main(17+i)
+	* 部分常用数据结构总结到特定文件
+
 * 2000-2499:一些比较大的程序
 * 2500-2599:程序设计基础，2014暑假
 
@@ -31,11 +38,6 @@ http://github.com/jiangxincode
 	* origin:111150034+蒋鑫+10 now:main2500
 	* origin:111150034+蒋鑫+综合 now:main2501
 
-* 4000-5000:华为练习题（额外增加oj.h）如果OJ中编号有低于4000或者高于等于5000的在编号之前加4例如
-
-	* 编号1569->main41569
-	* 编号4234->main4234
-	* 编号5453->main45453
 
 
 
@@ -138,3 +140,8 @@ http://github.com/jiangxincode
 
 * 去除部分cppcheck检查选项
 * 将所有代码移至src文件夹
+
+### Version 1.13
+
+* 去除所有华为OJ题
+* 修改了本README

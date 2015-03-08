@@ -104,7 +104,7 @@ int main17304()
     return 0;
 }
 
-/*
+/**
 八皇后问题，是一个古老而著名的问题，是回溯算法的典型案例。
 该问题是国际西洋棋棋手马克斯·贝瑟尔于1848年提出：
 在8X8格的国际象棋上摆放八个皇后，使其不能互相攻击，
@@ -116,7 +116,7 @@ class Queen
 public:
     Queen()
     {
-        count=0;
+        count = 0;
     }
     void Print(int n); //输出皇后的排列，打出的数字为每个皇后的坐标
     int Check(int i,int k); //判断位置是否符合要求
@@ -130,22 +130,23 @@ private:
     int count;
 };
 
-//计算出皇后的排列，k是当前皇后数量，n是数量上限
+/**计算出皇后的排列，k是当前皇后数量，n是数量上限*/
 void Queen::Queens(int k,int n)
 {
     if(k>n) //如果达到要求的数量输出皇后排列
     {
         count ++;
         Print(n);
+        return;
     }
-    else //否则在适当的位置添加一个新皇后
+
+    for(int j=1; j<=n; j++)
     {
-        for(int j=1; j<=n; j++)
-            if(Check(k,j)) //判断第k个皇后放置在第j列是否满足条件
-            {
-                q[k]=j; //记录第k个皇后在第几列
-                Queens(k+1,n); //放置下一行的皇后
-            }
+        if(Check(k,j)) //判断第k个皇后放置在第j列是否满足条件
+        {
+            q[k]=j; //记录第k个皇后在第几列
+            Queens(k+1,n); //放置下一行的皇后
+        }
     }
 }
 void Queen::Print(int n)
@@ -365,33 +366,8 @@ int main17302()
     return 0;
 }
 
-/*
-给定一些硬币，求给定金额下，最少硬币的组合
-*/
-
-int main17303()
-{
-    int group;
-    cout << "How many groups of the coins: ";
-    cin >> group;
-    int *coin = new int[group];
-
-    for(int i=0; i<group; i++)
-    {
-        cin >> coin[i];
-    }
-
-    for(int i=0; i<group; i++)
-    {
-        cout << coin[i] << " ";
-    }
-
-    cout << endl;
-    delete []coin;
-    return 0;
-}
 int main1730()
 {
-    main17304();
+    test_3_17();
     return 0;
 }
