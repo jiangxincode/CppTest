@@ -48,6 +48,22 @@
 
 
 
+
+
+
+
+
+
+
+# ShoppingSys日志
+
+## Version 0.01
+
+* 基本完成，通过了所有给出的单元测试
+
+
+
+
 # ShopSysC1日志
 
 ## Version 0.01

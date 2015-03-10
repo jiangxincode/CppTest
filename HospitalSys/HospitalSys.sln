@@ -5,6 +5,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HospitalSys", "HospitalSys.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShoppingSys", "..\ShoppingSys\ShoppingSys.vcxproj", "{E7E40A38-C4CA-4073-A1A2-F4F3BEB73F46}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShopSysC1", "..\ShopSysC1\ShopSysC1.vcxproj", "{3C68374F-8B60-4A3C-BFA5-2444B793100A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibraySystemC", "..\LibraySystemC\LibraySystemC.vcxproj", "{34FE0377-23A8-49CF-A50D-12F71C07BAE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -19,6 +23,14 @@ Global
 		{E7E40A38-C4CA-4073-A1A2-F4F3BEB73F46}.Debug|Win32.Build.0 = Debug|Win32
 		{E7E40A38-C4CA-4073-A1A2-F4F3BEB73F46}.Release|Win32.ActiveCfg = Release|Win32
 		{E7E40A38-C4CA-4073-A1A2-F4F3BEB73F46}.Release|Win32.Build.0 = Release|Win32
+		{3C68374F-8B60-4A3C-BFA5-2444B793100A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3C68374F-8B60-4A3C-BFA5-2444B793100A}.Debug|Win32.Build.0 = Debug|Win32
+		{3C68374F-8B60-4A3C-BFA5-2444B793100A}.Release|Win32.ActiveCfg = Release|Win32
+		{3C68374F-8B60-4A3C-BFA5-2444B793100A}.Release|Win32.Build.0 = Release|Win32
+		{34FE0377-23A8-49CF-A50D-12F71C07BAE8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{34FE0377-23A8-49CF-A50D-12F71C07BAE8}.Debug|Win32.Build.0 = Debug|Win32
+		{34FE0377-23A8-49CF-A50D-12F71C07BAE8}.Release|Win32.ActiveCfg = Release|Win32
+		{34FE0377-23A8-49CF-A50D-12F71C07BAE8}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
