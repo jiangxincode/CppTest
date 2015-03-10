@@ -78,8 +78,8 @@ extern "C"{
 ------------------------ */
 typedef struct
 {
-    int grantMoney; //已发放贷款金额
-    int grantNum; //已发放贷款笔数(万元)
+    int grantMoney; //已发放贷款金额(万元)
+    int grantNum; //已发放贷款笔数
 }BankInfo;
 
 typedef struct

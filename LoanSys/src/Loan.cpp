@@ -14,7 +14,7 @@ AllInfo *allInfoCopy = NULL;
 int systemTime = 0; //系统时间
 int checkQueueTime = 0; //审核贷款队列时间
 int releaseQueueTime = 0; //发放贷款队列时间
-int loanNo = 0; //申请顺序流水号
+int loanNo = 0; //申请顺序流水号，重新申请时会更新流水号
 int count = 0; //实际贷款笔数
 
 void main(int argc, char* argv[])
@@ -150,9 +150,9 @@ void CmdLst(int loanIdx, int month, int fund, int lstTime)
     /*拷贝allInfo和bankInfo信息到allInfoCopy和bankInfoCopy中*/
     memcpy(allInfoCopy,allInfo,sizeof(AllInfo)*(MAX_APPLY_AMOUNT+1));
 
+    /*更新时间，注意此处不要更新系统时间*/
     checkQueueTime = lstTime - systemTime;
     releaseQueueTime = lstTime - systemTime;
-    systemTime = lstTime;
 
     int flag = 0; //标志是否找到相应记录
 
@@ -291,6 +291,7 @@ int Request(int loanIdx, float salary, int principal, int years, int reqTime)
         allInfo[count].monthAll = years * MONTH_EVERY_YEAR;
         allInfo[count].loanNo = loanNo;
         allInfo[count].reqTime = reqTime;
+        allInfo[count].salary = salary;
     }
     else //重新申请
     {
@@ -300,6 +301,7 @@ int Request(int loanIdx, float salary, int principal, int years, int reqTime)
         allInfo[seq].monthAll = years * MONTH_EVERY_YEAR;
         allInfo[seq].loanNo = loanNo;
         allInfo[seq].reqTime = reqTime;
+        allInfo[seq].salary = salary;
     }
 
     return 0;
@@ -323,22 +325,22 @@ int Check(int loanIdx, float salary, int principal, int years, int reqTime, int 
 
     while(checkQueueTime > 0)
     {
-        int minApplyTime = INT_MAX;
+        int minReqTime = INT_MAX;
         int minLoanNo = INT_MAX;
         int index = 0;
 
         /*找到待审查贷款*/
-        for(int i=0; i<=count; i++)
+        for(int i=1; i<=count; i++)
         {
             if(p1[i].status == WAIT_CHECK)
             {
-                if(p1[i].reqTime < minApplyTime)
+                if(p1[i].reqTime < minReqTime)
                 {
-                    minApplyTime = p1[i].reqTime;
+                    minReqTime = p1[i].reqTime;
                     minLoanNo = p1[i].loanNo;
                     index = i;
                 }
-                if((p1[i].reqTime == minApplyTime) &&
+                if((p1[i].reqTime == minReqTime) &&
                         (p1[i].loanNo < minLoanNo))
                 {
                     minLoanNo = p1[i].loanNo;
@@ -429,7 +431,7 @@ int Release(int loanIdx, float salary, int principal, int years, int reqTime, in
         int index = 0;
 
         /*找到待发放贷款*/
-        for(int i=0; i<=count; i++)
+        for(int i=1; i<=count; i++)
         {
             if(p1[i].status == WAIT_GRANT)
             {
@@ -468,6 +470,7 @@ int Release(int loanIdx, float salary, int principal, int years, int reqTime, in
             }
 
             p1[index].status = SUCC_GRANT;
+            
             bankInfo->grantMoney += p1[index].principal;
             bankInfo->grantNum++;
             

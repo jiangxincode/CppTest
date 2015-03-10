@@ -1,13 +1,17 @@
-SI_PROJECT/
-
-Debug/
-
-temp/
+**/Debug/
+**/temp/
+**/SI_PROJECT/
 
 *.bak
 ~$*.doc
 *.orig
 
-*.opt
-*.sdf
+
+
 *.opensdf
+*.sdf
+*.opt
+*.suo
+*.filters
+*.ncb
+*.plg
