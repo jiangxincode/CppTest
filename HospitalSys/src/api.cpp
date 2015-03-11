@@ -1,24 +1,37 @@
+#include "stdio.h"
+#include "string.h"
+#include "malloc.h"
+#include "stdlib.h"
+
 #include "api.h"
 
 /*****************************************************************************
- å‡½ æ•° å  : libOutputStr
- åŠŸèƒ½æè¿°  : å†…éƒ¨å‡½æ•°: è€ƒè¯•ç³»ç»Ÿçš„è¾“å‡ºæ‰“å°å‡½æ•°ï¼Œè€ƒç”Ÿæ— é¡»å…³æ³¨
- è¾“å…¥å‚æ•°  : pcStr  è¾“å‡ºæ‰“å°å­—ç¬¦ä¸²
+ º¯ Êı Ãû  : libOutputStr
+ ¹¦ÄÜÃèÊö  : ÄÚ²¿º¯Êı: ¿¼ÊÔÏµÍ³µÄÊä³ö´òÓ¡º¯Êı£¬¿¼ÉúÎŞĞë¹Ø×¢
+ ÊäÈë²ÎÊı  : pcStr  Êä³ö´òÓ¡×Ö·û´®
 *****************************************************************************/
 void libOutputStr(char* pcStr);
 
 /*****************************************************************************
- å‡½ æ•° å  : cmd_process
- åŠŸèƒ½æè¿°  : ç³»ç»Ÿè°ƒç”¨çš„å‡½æ•°,è€ƒç”Ÿæ— éœ€å…³æ³¨
+ º¯ Êı Ãû  : cmd_process
+ ¹¦ÄÜÃèÊö  : ÏµÍ³µ÷ÓÃµÄº¯Êı,¿¼ÉúÎŞĞè¹Ø×¢
 *****************************************************************************/
 void cmd_process(int argc, char* argv[]);
 
 int main(int argc, char* argv[])
 {
+#ifdef OI_OUTPUT
     cmd_process(argc,argv);
+#else
+    while(true)
+    {
+        cmd_process(argc,argv);
+    }
+#endif
     return 0;
 }
-//æ‰§è¡Œå‘½ä»¤å‡½æ•°
+
+//Ö´ĞĞÃüÁîº¯Êı
 void cmd_dispatch(char *pszCmd)
 {
     char    Buff1[32];
@@ -36,13 +49,13 @@ void cmd_dispatch(char *pszCmd)
     memset(Buff1, 0, sizeof(Buff1));
     memset(Buff2, 0, sizeof(Buff2));
     memset(Buff3, 0, sizeof(Buff3));
-    //è‹¥ä¸ºiåˆ™æ‰§è¡Œåˆå§‹åŒ–å‡½æ•°
+    //ÈôÎªiÔòÖ´ĞĞ³õÊ¼»¯º¯Êı
     if (p == strstr(p, "i"))
     {
         OpInit();
         return;
     }
- //è‹¥ä¸ºæŒ‚å·ï¼Œåˆ™Buff1å­˜å‚¨æŒ‚å·çš„ç—…äººçš„IDï¼Œå¹¶æ‰§è¡ŒæŒ‚å·å‡½æ•°
+    //ÈôÎª¹ÒºÅ£¬ÔòBuff1´æ´¢¹ÒºÅµÄ²¡ÈËµÄID£¬²¢Ö´ĞĞ¹ÒºÅº¯Êı
     else if (p == strstr(p, "reg_"))
     {
         GetParaCount = sscanf(p, "reg_%s", Buff1);
@@ -52,13 +65,13 @@ void cmd_dispatch(char *pszCmd)
             return;
         }
     }
- //è‹¥ä¸ºè¯Šæ²»ï¼Œåˆ™æ‰§è¡Œè¯Šæ²»å‡½æ•°
+    //ÈôÎªÕïÖÎ£¬ÔòÖ´ĞĞÕïÖÎº¯Êı
     else if (p == strstr(p, "diag"))
     {
         OpDiag();
         return;
     }
- //è‹¥ä¸ºç¼´è´¹åˆ™è®©ç—…äººBuff1è¿›è¡Œç¼´è´¹ã€‚
+    //ÈôÎª½É·ÑÔòÈÃ²¡ÈËBuff1½øĞĞ½É·Ñ¡£
     else if (p == strstr(p, "pay"))
     {
         GetParaCount = sscanf(p, "pay_%s", Buff1);
@@ -71,17 +84,18 @@ void cmd_dispatch(char *pszCmd)
     else if (p == strstr(p, "qu"))
     {
         GetParaCount = sscanf(p, "qu_%d-%s", &tmpParaA, Buff1);
-  //è‹¥ä¸ºæŸ¥è¯¢å‘½ä»¤åˆ™æ‰§è¡ŒæŸ¥è¯¢ï¼Œå½“tmpParaAä¸º0ï¼Œbuffer1==dctæ˜¯è¡¨ç¤ºè¡¨ç¤ºæŸ¥è¯¢åŒ»ç”Ÿå½“å‰çš„ç—…äººæ’é˜Ÿæƒ…å†µ
-  //è‹¥tmpParaAä¸º1ï¼Œbuffer1==patIDåˆ™è¡¨ç¤ºæŸ¥è¯¢IDä¸ºpat01çš„ç—…äººä¿¡æ¯ã€‚
+        //ÈôÎª²éÑ¯ÃüÁîÔòÖ´ĞĞ²éÑ¯£¬µ±tmpParaAÎª0£¬buffer1==dctÊÇ±íÊ¾±íÊ¾²éÑ¯Ò½Éúµ±Ç°µÄ²¡ÈËÅÅ¶ÓÇé¿ö
+        //ÈôtmpParaAÎª1£¬buffer1==patIDÔò±íÊ¾²éÑ¯IDÎªpat01µÄ²¡ÈËĞÅÏ¢¡£
         if (2 == GetParaCount)
         {
             OpQuery((QueryType)tmpParaA, Buff1);
             return;
         }
     }
-    libOutputStr("æ— æ•ˆå‘½ä»¤");
+    libOutputStr("ÎŞĞ§ÃüÁî");
     return;
 }
+
 void user_cmdproc(char *pszCmd, int iLen)
 {
     if (NULL == pszCmd)
@@ -91,53 +105,56 @@ void user_cmdproc(char *pszCmd, int iLen)
     cmd_dispatch(pszCmd);
     return;
 }
+
 void api_print_operation_result(OpRet opRet)
 {
     switch (opRet)
     {
         case E000_INITITIAL_SUCC:
-            libOutputStr("E000"); //:åˆå§‹åŒ–æˆåŠŸ
+            libOutputStr("E000"); //:³õÊ¼»¯³É¹¦
             break;
         case E002_DIAGNOSE_NOT_END:
-            libOutputStr("E002"); //:æœ¬æ¬¡çœ‹ç—…æœªç»“æŸ
+            libOutputStr("E002"); //:±¾´Î¿´²¡Î´½áÊø
             break;
         case E003_QUEUE_EXCEED_OF_PER_DOCTOR:
-            libOutputStr("E003");  //:åŒ»ç”Ÿæ’é˜Ÿäººæ•°è¾¾åˆ°ä¸Šé™
+            libOutputStr("E003");  //:Ò½ÉúÅÅ¶ÓÈËÊı´ïµ½ÉÏÏŞ
             break;
         case E004_LACK_FEE_FOR_REGISTER:
-            libOutputStr("E004"); //:æ— è¶³å¤ŸæŒ‚å·è´¹ç”¨
+            libOutputStr("E004"); //:ÎŞ×ã¹»¹ÒºÅ·ÑÓÃ
             break;
         case E005_DIAGNOSE_SUCC:
-            libOutputStr("E005"); //:è¯Šæ²»æˆåŠŸ
+            libOutputStr("E005"); //:ÕïÖÎ³É¹¦
             break;
         case E006_NO_PATIENT_IN_QUEUE:
-            libOutputStr("E006"); //:æ— ç—…äººæ’é˜Ÿ
+            libOutputStr("E006"); //:ÎŞ²¡ÈËÅÅ¶Ó
             break;
         case E007_PAY_SUCC:
-            libOutputStr("E007"); //:ç¼´è´¹æˆåŠŸ
+            libOutputStr("E007"); //:½É·Ñ³É¹¦
             break;
         case E008_BALANCE_NOT_ENOUGH:
-            libOutputStr("E008"); //:ä½™é¢ä¸è¶³
+            libOutputStr("E008"); //:Óà¶î²»×ã
             break;
         case E014_PATIENT_NOT_BE_PAY_STATUS:
-            libOutputStr("E014"); //:æ— è¯¥ç—…äººå¾…ç¼´è´¹
+            libOutputStr("E014"); //:ÎŞ¸Ã²¡ÈË´ı½É·Ñ
             break;
         case E016_NO_PATIENT_IN_HOSP:
-            libOutputStr("E016"); //:æœ¬é™¢æ— è¯¥ç—…äºº
+            libOutputStr("E016"); //:±¾ÔºÎŞ¸Ã²¡ÈË
             break;
         case E017_DCT_DIAG_NOBODY:
-            libOutputStr("E017"); //:åŒ»ç”Ÿå°šæœªè¯Šæ–­è¿‡ä»»ä½•ç—…äºº
+            libOutputStr("E017"); //:Ò½ÉúÉĞÎ´Õï¶Ï¹ıÈÎºÎ²¡ÈË
             break;
         default:
             break;
     }
     return;
 }
+
 void api_print_register_succ(void)
 {
-    libOutputStr("E001"); //:æŒ‚å·æˆåŠŸ
+    libOutputStr("E001"); //:¹ÒºÅ³É¹¦
     return;
 }
+
 void api_print_patient_query_info(const char *pPatientId, PatientStatus patientStatus, int sequence, int insureBalance, int creditBalance)
 {
     char pBuff[512];
@@ -149,17 +166,17 @@ void api_print_patient_query_info(const char *pPatientId, PatientStatus patientS
     switch (patientStatus)
     {
         case PS_IN_QUEUE:
-            sprintf(pBuff, "E012:%s 1 %d,%d,%d",  //å¾…å°±è¯Š æ’åœ¨ç¬¬%dä½,ç¤¾ä¿å¸æˆ·ä½™é¢:%d,ç°é‡‘å¸æˆ·ä½™é¢:%d
+            sprintf(pBuff, "E012:%s 1 %d,%d,%d",  //´ı¾ÍÕï ÅÅÔÚµÚ%dÎ»,Éç±£ÕÊ»§Óà¶î:%d,ÏÖ½ğÕÊ»§Óà¶î:%d
                     pPatientId, sequence, insureBalance, creditBalance);
             libOutputStr(pBuff);
             break;
         case PS_IDLE:
-            sprintf(pBuff, "E012:%s 0 %d,%d",//æœªæŒ‚å· ç¤¾ä¿å¸æˆ·ä½™é¢:%d,ç°é‡‘å¸æˆ·ä½™é¢:%d
+            sprintf(pBuff, "E012:%s 0 %d,%d",//Î´¹ÒºÅ Éç±£ÕÊ»§Óà¶î:%d,ÏÖ½ğÕÊ»§Óà¶î:%d
                     pPatientId, insureBalance, creditBalance);
             libOutputStr(pBuff);
             break;
         case PS_WAIT_PAY:
-            sprintf(pBuff, "E012:%s 2 %d,%d", //å¾…ç¼´è´¹ ç¤¾ä¿å¸æˆ·ä½™é¢:%d,ç°é‡‘å¸æˆ·ä½™é¢:%d
+            sprintf(pBuff, "E012:%s 2 %d,%d", //´ı½É·Ñ Éç±£ÕÊ»§Óà¶î:%d,ÏÖ½ğÕÊ»§Óà¶î:%d
                     pPatientId, insureBalance, creditBalance);
             libOutputStr(pBuff);
             break;
@@ -168,6 +185,7 @@ void api_print_patient_query_info(const char *pPatientId, PatientStatus patientS
     }
     return;
 }
+
 void api_print_doctor_query_info(DoctorQueue *pDoctorQueue)
 {
     char pBuff[512];
@@ -178,12 +196,12 @@ void api_print_doctor_query_info(DoctorQueue *pDoctorQueue)
     memset(pBuff, 0, sizeof(pBuff));
     if (0 == pDoctorQueue->queueNum)
     {
-        libOutputStr("E013:dct 0"); //æ— äººæ’é˜Ÿ
+        libOutputStr("E013:dct 0"); //ÎŞÈËÅÅ¶Ó
     }
     else
     {
         int i;
-        sprintf(pBuff, "E013:dct"); //ç­‰å¾…é˜Ÿåˆ—
+        sprintf(pBuff, "E013:dct"); //µÈ´ı¶ÓÁĞ
         for (i = 0; i < pDoctorQueue->queueNum; i++)
         {
             strcat(pBuff, " ");
@@ -193,12 +211,13 @@ void api_print_doctor_query_info(DoctorQueue *pDoctorQueue)
     }
     return;
 }
+
 /*****************************************************************************
- å‡½ æ•° å  : libOutputStr
- åŠŸèƒ½æè¿°  : å†…éƒ¨å‡½æ•°: è€ƒè¯•ç³»ç»Ÿçš„è¾“å‡ºæ‰“å°å‡½æ•°
- è¾“å…¥å‚æ•°  : pcStr  è¾“å‡ºæ‰“å°å­—ç¬¦ä¸²
- è¾“å‡ºå‚æ•°  : æ— 
- è¿” å› å€¼  : æ— 
+ º¯ Êı Ãû  : libOutputStr
+ ¹¦ÄÜÃèÊö  : ÄÚ²¿º¯Êı: ¿¼ÊÔÏµÍ³µÄÊä³ö´òÓ¡º¯Êı
+ ÊäÈë²ÎÊı  : pcStr  Êä³ö´òÓ¡×Ö·û´®
+ Êä³ö²ÎÊı  : ÎŞ
+ ·µ »Ø Öµ  : ÎŞ
 *****************************************************************************/
 void libOutputStr(char* pcStr)
 {
@@ -209,17 +228,17 @@ void libOutputStr(char* pcStr)
 }
 
 /*****************************************************************************
- å‡½ æ•° å  : cmd_process
- åŠŸèƒ½æè¿°  : ç³»ç»Ÿè°ƒç”¨å‡½æ•°
- è¾“å…¥å‚æ•°  : æ— 
- è¾“å‡ºå‚æ•°  : æ— 
- è¿” å› å€¼  : æ— 
+ º¯ Êı Ãû  : cmd_process
+ ¹¦ÄÜÃèÊö  : ÏµÍ³µ÷ÓÃº¯Êı
+ ÊäÈë²ÎÊı  : ÎŞ
+ Êä³ö²ÎÊı  : ÎŞ
+ ·µ »Ø Öµ  : ÎŞ
 *****************************************************************************/
 void cmd_process(int argc, char* argv[])
 {
     char *pszCmd = NULL;
     int iCmdNum =0;
-//å†…å­˜åˆ†é…å¤±è´¥ï¼Œé€€å‡ºå‡½æ•°
+    //ÄÚ´æ·ÖÅäÊ§°Ü£¬ÍË³öº¯Êı
     pszCmd = (char*)malloc(CMD_LEN);
     if (NULL == pszCmd)
     {
@@ -227,12 +246,12 @@ void cmd_process(int argc, char* argv[])
     }
 
 #ifdef _WIN32
-//    while (true)
+    //    while (true)
 #endif
     {
         iCmdNum =0;
         memset(pszCmd, 0, CMD_LEN);
-  //è·å–å‘½ä»¤pszCmdã€‚
+        //»ñÈ¡ÃüÁîpszCmd¡£
         iCmdNum = scanf("%s", pszCmd);
         pszCmd[CMD_LEN-1] = 0;
         if (1 == iCmdNum)
@@ -240,13 +259,13 @@ void cmd_process(int argc, char* argv[])
             char *pComma = pszCmd;
             char *pCmdStartPos = pszCmd;
             char pszCmdBuffer[512];
-            // å¤šå‘½ä»¤ä»¥é€—å·åˆ†å‰²
+            // ¶àÃüÁîÒÔ¶ººÅ·Ö¸î
             pComma = strstr(pCmdStartPos, CMD_SEPARATRIX);
-   //å­˜åœ¨å¤šå‘½ä»¤æ—¶å¤„ç†æ–¹æ³•
+            //´æÔÚ¶àÃüÁîÊ±´¦Àí·½·¨
             while (NULL != pComma)
             {
                 size_t uiCpyLen = 0;
-    //é’ˆå¯¹å­˜åœ¨å¤šä¸ªé€—å·çš„é—®é¢˜ï¼Œä¸€ç›´æ‰¾åˆ°ç¬¬ä¸€ä¸ªä¸ä¸ºé€—å·çš„ä½ç½®pCmdStartPosï¼ŒpCommaä¸ºpCmdStartPosåçš„ç¬¬ä¸€ä¸ªé€—å·çš„ä½ç½®
+                //Õë¶Ô´æÔÚ¶à¸ö¶ººÅµÄÎÊÌâ£¬Ò»Ö±ÕÒµ½µÚÒ»¸ö²»Îª¶ººÅµÄÎ»ÖÃpCmdStartPos£¬pCommaÎªpCmdStartPosºóµÄµÚÒ»¸ö¶ººÅµÄÎ»ÖÃ
                 if (pComma == pCmdStartPos)
                 {
                     pCmdStartPos = pComma+1;
@@ -254,11 +273,11 @@ void cmd_process(int argc, char* argv[])
                     continue;
                 }
                 memset(pszCmdBuffer, 0, sizeof(pszCmdBuffer));
-    //uiCpyLenä¸ºç¬¬ä¸€ä¸ªå‘½ä»¤çš„é•¿åº¦ï¼Œå¹¶å°†ç¬¬ä¸€ä¸ªå‘½ä»¤å¤åˆ¶ç»™pszCmdBufferã€‚
+                //uiCpyLenÎªµÚÒ»¸öÃüÁîµÄ³¤¶È£¬²¢½«µÚÒ»¸öÃüÁî¸´ÖÆ¸øpszCmdBuffer¡£
                 uiCpyLen = min(sizeof(pszCmdBuffer), (size_t)(pComma - pCmdStartPos));
 
                 strncpy(pszCmdBuffer, pCmdStartPos, uiCpyLen);
-    //æ‰§è¡ŒpszCmdBufferå‘½ä»¤æ‰€å¯¹åº”çš„æ“ä½œ
+                //Ö´ĞĞpszCmdBufferÃüÁîËù¶ÔÓ¦µÄ²Ù×÷
                 cmd_dispatch(pszCmdBuffer);
 
                 pCmdStartPos = pComma+1;

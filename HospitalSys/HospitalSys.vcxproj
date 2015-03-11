@@ -43,6 +43,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
+      <AdditionalOptions>/D _CRT_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -63,7 +64,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\api.cpp" />
-    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\HospitalSys.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\api.h" />

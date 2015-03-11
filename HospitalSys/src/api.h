@@ -1,131 +1,138 @@
-#include "stdio.h"
-#include "string.h"
-#include "malloc.h"
-#include "stdlib.h"
+#ifndef __API_H__
+#define __API_H__
+
 #ifdef __cplusplus
 extern "C"{
 #endif /* __cplusplus */
-//æœ¬æ–‡ä»¶ä¸­çš„å®ã€ç»“æ„ä½“ã€APIå‡½æ•°ä¾›è€ƒç”Ÿä½¿ç”¨ï¼Œä½†ä¸éœ€æ›´æ”¹
+
+//±¾ÎÄ¼şÖĞµÄºê¡¢½á¹¹Ìå¡¢APIº¯Êı¹©¿¼ÉúÊ¹ÓÃ£¬µ«²»Ğè¸ü¸Ä
 #define min(a,b)    (((a) < (b)) ? (a) : (b))
-//åŒ»ç”Ÿåˆå§‹ä¿¡æ¯çš„è®°å½•æ•°
+
+//Ò½Éú³õÊ¼ĞÅÏ¢µÄ¼ÇÂ¼Êı
 #define MAX_DOCTOR_RECORD       1
-//ç—…äººåˆå§‹ä¿¡æ¯çš„è®°å½•æ•°
+
+//²¡ÈË³õÊ¼ĞÅÏ¢µÄ¼ÇÂ¼Êı
 #define MAX_PATIENT_RECORD      6
-//åŒ»ç”Ÿå…è®¸æ’é˜Ÿå°±è¯Šçš„ç—…äººæœ€å¤§æ•°é‡
+
+//Ò½ÉúÔÊĞíÅÅ¶Ó¾ÍÕïµÄ²¡ÈË×î´óÊıÁ¿
 #define MAX_DOCTOR_CAPABILITY   4
-//æŒ‚å·è´¹
+
+//¹ÒºÅ·Ñ
 #define REG_FEE                 10
-//å¤„æ–¹è´¹
+
+//´¦·½·Ñ
 #define DIAG_FEE                50
-//å‘½åå­—ç¬¦ä¸²æœ€å¤§é•¿åº¦
+
+//ÃüÃû×Ö·û´®×î´ó³¤¶È
 #define CMD_LEN                 10000
-//å‘½ä»¤åˆ†éš”ç¬¦
+
+//ÃüÁî·Ö¸ô·û
 #define CMD_SEPARATRIX          ","
-#define true 1
-//æ“ä½œç å®šä¹‰
+
+//²Ù×÷Âë¶¨Òå
 typedef enum _OpRet
 {
-    E000_INITITIAL_SUCC             = 0, //E000:åˆå§‹åŒ–æˆåŠŸ
-    E002_DIAGNOSE_NOT_END           = 2, //E002:æœ¬æ¬¡çœ‹ç—…æœªç»“æŸ
-    E003_QUEUE_EXCEED_OF_PER_DOCTOR = 3, //E003:åŒ»ç”Ÿæ’é˜Ÿäººæ•°è¾¾åˆ°ä¸Šé™
-    E004_LACK_FEE_FOR_REGISTER      = 4, //E004:æ— è¶³å¤ŸæŒ‚å·è´¹ç”¨
-    E005_DIAGNOSE_SUCC              = 5, //E005:è¯Šæ²»æˆåŠŸ
-    E006_NO_PATIENT_IN_QUEUE        = 6, //E006:æ— ç—…äººæ’é˜Ÿ
-    E007_PAY_SUCC                   = 7, //E007:ç¼´è´¹æˆåŠŸ
-    E008_BALANCE_NOT_ENOUGH         = 8, //E008:ä½™é¢ä¸è¶³
-    E014_PATIENT_NOT_BE_PAY_STATUS  = 14, //E014:æ— è¯¥ç—…äººå¾…ç¼´è´¹
-    E016_NO_PATIENT_IN_HOSP         = 16, //E016:æœ¬é™¢æ— è¯¥ç—…äºº
-    E017_DCT_DIAG_NOBODY            = 17, //E017:åŒ»ç”Ÿå°šæœªè¯Šæ–­è¿‡ä»»ä½•ç—…äºº
+    E000_INITITIAL_SUCC             = 0, //E000:³õÊ¼»¯³É¹¦
+    E002_DIAGNOSE_NOT_END           = 2, //E002:±¾´Î¿´²¡Î´½áÊø
+    E003_QUEUE_EXCEED_OF_PER_DOCTOR = 3, //E003:Ò½ÉúÅÅ¶ÓÈËÊı´ïµ½ÉÏÏŞ
+    E004_LACK_FEE_FOR_REGISTER      = 4, //E004:ÎŞ×ã¹»¹ÒºÅ·ÑÓÃ
+    E005_DIAGNOSE_SUCC              = 5, //E005:ÕïÖÎ³É¹¦
+    E006_NO_PATIENT_IN_QUEUE        = 6, //E006:ÎŞ²¡ÈËÅÅ¶Ó
+    E007_PAY_SUCC                   = 7, //E007:½É·Ñ³É¹¦
+    E008_BALANCE_NOT_ENOUGH         = 8, //E008:Óà¶î²»×ã
+    E014_PATIENT_NOT_BE_PAY_STATUS  = 14, //E014:ÎŞ¸Ã²¡ÈË´ı½É·Ñ
+    E016_NO_PATIENT_IN_HOSP         = 16, //E016:±¾ÔºÎŞ¸Ã²¡ÈË
+    E017_DCT_DIAG_NOBODY            = 17, //E017:Ò½ÉúÉĞÎ´Õï¶Ï¹ıÈÎºÎ²¡ÈË
 }OpRet;
-//ç—…äººå°±è¯Šçš„çŠ¶æ€
-typedef enum
+
+//²¡ÈË¾ÍÕïµÄ×´Ì¬
+typedef enum _PatientStatus
 {
-    PS_IDLE,    //æœªæŒ‚å·
-    PS_IN_QUEUE,//å¾…å°±è¯Š
-    PS_WAIT_PAY,//å¾…ç¼´è´¹
+    PS_IDLE,    //Î´¹ÒºÅ
+    PS_IN_QUEUE,//´ı¾ÍÕï
+    PS_WAIT_PAY,//´ı½É·Ñ
 }PatientStatus;
-//ç—…äººç±»å‹
-typedef enum
+
+//²¡ÈËÀàĞÍ
+typedef enum _PayMethod
 {
-    PM_CREDIT,  //æ— ç¤¾ä¿ç—…äºº
-    PM_INSURE,  //æœ‰ç¤¾ä¿ç—…äºº
- //åœ¨æŒ‚å·å’Œç¼´è´¹æ˜¯æœ‰åŒºåˆ«
+    PM_CREDIT,  //ÎŞÉç±£²¡ÈË
+    PM_INSURE,  //ÓĞÉç±£²¡ÈË
+ //ÔÚ¹ÒºÅºÍ½É·ÑÊÇÓĞÇø±ğ
 }PayMethod;
-//æŸ¥è¯¢æ–¹å¼
-typedef enum
+
+//²éÑ¯·½Ê½
+typedef enum _QueryType
 {
-    Q_DOCTOR,   //æŒ‰åŒ»ç”ŸIDæŸ¥è¯¢
-    Q_PATIENT,  //æŒ‰ç—…äººIDæŸ¥è¯¢
+    Q_DOCTOR,   //°´Ò½ÉúID²éÑ¯
+    Q_PATIENT,  //°´²¡ÈËID²éÑ¯
 }QueryType;
-//å•æ¡çš„ç—…äººåˆå§‹ä¿¡æ¯è®°å½•
-struct PatientIni
-{
-    const char *patientId;  //ç—…äººID
-    int patientLevel;       //ç—…äººç±»å‹
-    int creditBalance;      //ç°é‡‘é‡‘é¢
-    int insureBalance;      //ç¤¾ä¿é‡‘é¢
-};
-//æŸ¥è¯¢åŒ»ç”Ÿçš„ä¿¡æ¯ç»“æœ
+
+//µ¥ÌõµÄ²¡ÈË³õÊ¼ĞÅÏ¢¼ÇÂ¼
 typedef struct
 {
-    int queueNum;                               //æ’é˜Ÿçš„ç—…äººæ•°é‡
-    char *pPatientIdInfo[MAX_DOCTOR_CAPABILITY];//æ’é˜Ÿçš„ç—…äººIDåˆ—è¡¨
- //ç”¨æŒ‡é’ˆæ•°ç»„ï¼ŒQueue->pPatientIdInfo[0]è¡¨ç¤ºçš„ä¸ºæ’åœ¨ç¬¬ä¸€ä½çš„ç—…äººã€‚
-}DoctorQueue;
-//ç—…äººä¿¡æ¯ï¼Œæµ‹è¯•çš„ä¾æ®ï¼Œè€ƒç”Ÿä¸å…è®¸æ›´æ”¹å…¶æ•°å€¼
-static struct PatientIni gPatientIniCfg[] =
+    const char *patientId;  //²¡ÈËID
+    int patientLevel;       //²¡ÈËÀàĞÍ
+    int creditBalance;      //ÏÖ½ğ½ğ¶î
+    int insureBalance;      //Éç±£½ğ¶î
+}PatientIni;
+
+//²éÑ¯Ò½ÉúµÄĞÅÏ¢½á¹û
+typedef struct
 {
-    //ç—…äººID  ç—…äººç±»å‹ ç°é‡‘é‡‘é¢ ç¤¾ä¿é‡‘é¢
-    {"pat01", 0,       100,     0  ,},
-    {"pat02", 1,       100,     100,},
-    {"pat03", 0,       100,     0  ,},
-    {"pat04", 1,       100,     50 ,},
-    {"pat05", 1,       10 ,     10 ,},
-    {"pat06", 1,       20 ,     10 ,},
-};
-static PatientStatus Status[]={PS_IDLE,PS_IDLE,PS_IDLE,PS_IDLE,PS_IDLE,PS_IDLE};
-static DoctorQueue Queue={0,""};
+    int queueNum;                               //ÅÅ¶ÓµÄ²¡ÈËÊıÁ¿
+    char *pPatientIdInfo[MAX_DOCTOR_CAPABILITY];//ÅÅ¶ÓµÄ²¡ÈËIDÁĞ±í
+ //ÓÃÖ¸ÕëÊı×é£¬Queue->pPatientIdInfo[0]±íÊ¾µÄÎªÅÅÔÚµÚÒ»Î»µÄ²¡ÈË¡£
+}DoctorQueue;
+
+
+
 /*****************************************************************************
- å‡½ æ•° å  : api_print_operation_result
- åŠŸèƒ½æè¿°  : ç³»ç»Ÿæä¾›çš„å‡½æ•°,ä¾›è€ƒç”Ÿè°ƒç”¨,æ‰“å°æ“ä½œç»“æœä¿¡æ¯
- è¾“å…¥å‚æ•°  : OpRet opRet æ“ä½œç å®šä¹‰
+ º¯ Êı Ãû  : api_print_operation_result
+ ¹¦ÄÜÃèÊö  : ÏµÍ³Ìá¹©µÄº¯Êı,¹©¿¼Éúµ÷ÓÃ,´òÓ¡²Ù×÷½á¹ûĞÅÏ¢
+ ÊäÈë²ÎÊı  : OpRet opRet ²Ù×÷Âë¶¨Òå
 *****************************************************************************/
 void api_print_operation_result(OpRet opRet);
+
 /*****************************************************************************
- å‡½ æ•° å  : api_print_register_succ
- åŠŸèƒ½æè¿°  : ç³»ç»Ÿæä¾›çš„å‡½æ•°,ä¾›è€ƒç”Ÿè°ƒç”¨,æŒ‚å·æˆåŠŸè¿”å›çš„ä¿¡æ¯
+ º¯ Êı Ãû  : api_print_register_succ
+ ¹¦ÄÜÃèÊö  : ÏµÍ³Ìá¹©µÄº¯Êı,¹©¿¼Éúµ÷ÓÃ,¹ÒºÅ³É¹¦·µ»ØµÄĞÅÏ¢
 *****************************************************************************/
 void api_print_register_succ(void);
+
 /*****************************************************************************
- å‡½ æ•° å  : api_print_patient_query_info
- åŠŸèƒ½æè¿°  : ç³»ç»Ÿæä¾›çš„å‡½æ•°,ä¾›è€ƒç”Ÿè°ƒç”¨,æŒ‰ç…§ç—…äººæ–¹å¼æŸ¥è¯¢çš„ç»“æœ
- è¾“å…¥å‚æ•°  : const char *pPatientId ç—…äººID
-             PatientStatus patientStatus ç—…äººå°±è¯Šçš„çŠ¶æ€
-             int sequence ç—…äººæ­£åœ¨æ’é˜Ÿå°±è¯Šæ—¶çš„åºå·,ä»…åœ¨patientStatusä¸ºPS_IN_QUEUEæœ‰æ•ˆ
-                          patientStatusä¸ºå…¶ä»–å€¼æ—¶sequenceå¯ä»¥è¾“å…¥ä»»æ„å€¼
-             int insureBalance ç¤¾ä¿å¸æˆ·ä½™é¢
-             int creditBalance ç°é‡‘å¸æˆ·ä½™é¢
+ º¯ Êı Ãû  : api_print_patient_query_info
+ ¹¦ÄÜÃèÊö  : ÏµÍ³Ìá¹©µÄº¯Êı,¹©¿¼Éúµ÷ÓÃ,°´ÕÕ²¡ÈË·½Ê½²éÑ¯µÄ½á¹û
+ ÊäÈë²ÎÊı  : const char *pPatientId ²¡ÈËID
+             PatientStatus patientStatus ²¡ÈË¾ÍÕïµÄ×´Ì¬
+             int sequence ²¡ÈËÕıÔÚÅÅ¶Ó¾ÍÕïÊ±µÄĞòºÅ,½öÔÚpatientStatusÎªPS_IN_QUEUEÓĞĞ§
+                          patientStatusÎªÆäËûÖµÊ±sequence¿ÉÒÔÊäÈëÈÎÒâÖµ
+             int insureBalance Éç±£ÕÊ»§Óà¶î
+             int creditBalance ÏÖ½ğÕÊ»§Óà¶î
 *****************************************************************************/
 void api_print_patient_query_info(const char *pPatientId,
                                   PatientStatus patientStatus,
                                   int sequence,
                                   int insureBalance,
                                   int creditBalance);
+
 /*****************************************************************************
- å‡½ æ•° å  : api_print_doctor_query_info
- åŠŸèƒ½æè¿°  : ç³»ç»Ÿæä¾›çš„å‡½æ•°,ä¾›è€ƒç”Ÿè°ƒç”¨,æŒ‰ç…§åŒ»ç”Ÿæ–¹å¼æŸ¥è¯¢çš„ç»“æœ
- è¾“å…¥å‚æ•°  : DoctorQueue *pDoctorQueue åŒ»ç”Ÿåä¸‹çš„ç—…äººæ’é˜Ÿæƒ…å†µ
+ º¯ Êı Ãû  : api_print_doctor_query_info
+ ¹¦ÄÜÃèÊö  : ÏµÍ³Ìá¹©µÄº¯Êı,¹©¿¼Éúµ÷ÓÃ,°´ÕÕÒ½Éú·½Ê½²éÑ¯µÄ½á¹û
+ ÊäÈë²ÎÊı  : DoctorQueue *pDoctorQueue Ò½ÉúÃûÏÂµÄ²¡ÈËÅÅ¶ÓÇé¿ö
 *****************************************************************************/
 void api_print_doctor_query_info(DoctorQueue *pDoctorQueue);
 
-//éœ€è€ƒç”Ÿå®ç°çš„å‡½æ•°å£°æ˜ BEGIN
+//Ğè¿¼ÉúÊµÏÖµÄº¯ÊıÉùÃ÷ BEGIN
 void OpInit(void);
 void OpRegister(const char *pPatientId);
 void OpDiag();
 void OpPay(const char *pPatientId);
 void OpQuery(QueryType queryType, const char *pQueryId);
-//éœ€è€ƒç”Ÿå®ç°çš„å‡½æ•°å£°æ˜ END
+//Ğè¿¼ÉúÊµÏÖµÄº¯ÊıÉùÃ÷ END
 
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */
+
+#endif /* __API_H__ */

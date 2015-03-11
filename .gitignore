@@ -3,8 +3,10 @@
 **/SI_PROJECT/
 
 *.bak
+~$*.docx
 ~$*.doc
 *.orig
+*.tmp
 
 
 
