@@ -4,7 +4,13 @@
 
 #include "jiangxin.h"
 
-char jx_getchar(short option)
+/** \brief 对C语言标准库中的getchar函数的封装
+ *
+ * \param TRANSFORM option: TOLOWER TOUPPER
+ * \return 返回接受到的字符
+ *
+ */
+char jx_getchar(TRANSFORM option)
 {
     int temp;
     char ch = getchar();
@@ -21,11 +27,11 @@ char jx_getchar(short option)
     {
         switch(option)
         {
-        case 1:
+        case TOLOWER:
             ch = tolower(ch);
             break;
 
-        case 2:
+        case TOUPPER:
             ch = toupper(ch);
             break;
 
@@ -37,10 +43,23 @@ char jx_getchar(short option)
         return ch;
     }
 }
-void jx_print_bye(void)
+
+/** \brief 打印退出信息
+ *
+ * \param void
+ * \return void
+ *
+ */
+void jx_print_bye()
 {
     puts("\nThanks for your use!");
 }
+
+/** \brief 打印作者信息
+ *
+ * \return void
+ *
+ */
 void jx_print_author_info()
 {
     puts("Do you want to see the detail infomation about the program(Y/N):");
@@ -63,9 +82,17 @@ void jx_print_author_info()
     }
 }
 
+/** \brief 判断一个正整数是否为素数
+ *
+ * \param int n 带判断的正整数
+ * \return 0 不是素数
+ *         1 是素数
+ *
+ */
 int prime(int n)
 {
-    int flag = 0,i;
+    int flag = 0;
+    int i = 0;
 
     if(n <= 1)
     {

@@ -107,3 +107,6 @@ http://github.com/jiangxincode
 * 去除所有cppcheck检查警告
 * 整理了README.md和.gitignore文件
 
+### Version 1.10
+
+* 规划了程序结构

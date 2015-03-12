@@ -1,6 +1,8 @@
 ﻿#include<stdio.h>
 #include<math.h>
+
 #include "jiangxin.h"
+
 int mpsort(int x[],int a)
 {
     int i,j,m=0,n,count,t;

@@ -1,5 +1,6 @@
 ﻿#include<stdio.h>
 #include "jiangxin.h"
+
 int countvalue(int aa[])
 {
     int i,k=0;

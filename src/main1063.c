@@ -1,5 +1,6 @@
 ﻿#include <stdio.h>
 #include <math.h>
+
 #include "jiangxin.h"
 
 int main1063()

@@ -1,5 +1,7 @@
 ﻿#include<stdio.h>
+
 #include "jiangxin.h"
+
 int qiusushu(int n)
 {
     for(n=n+1;; n++)

@@ -17,6 +17,7 @@ int main1022()
     {
         divide = a / b;
     }
+
     printf("%d+%d=%d,%d-%d=%d,%d*%d=%d,%d/%d=%d",a,b,add,a,b,minus,a,b,multiply,a,b,divide);
     return 0;
 }
