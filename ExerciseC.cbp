@@ -131,6 +131,30 @@
 		<Unit filename="src/main0026.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/main0027.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/main0028.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/main0029.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/main0030.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/main0031.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/main0032.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/main0033.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/main0034.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/main1011.c">
 			<Option compilerVar="CC" />
 		</Unit>
