@@ -23,4 +23,6 @@ public:
     void sort();
     bool is_empty();
     void print_heap();
+    int at(int index);
+    int size();
 };

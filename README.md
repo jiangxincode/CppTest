@@ -159,3 +159,7 @@ http://github.com/jiangxincode
 ### Version 1.15
 
 * 完成对sort.cpp的单元测试
+
+### Version 1.16
+
+* 完成heap.cpp的单元测试

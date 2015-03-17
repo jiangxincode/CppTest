@@ -179,8 +179,16 @@ void heap::print_heap()
 {
     for(int i=0; i<current_size; i++)
     {
-        cout << heap_p[i] << " ";
+        cout << heap_p[i] << ",";
     }
+}
 
-    cout << endl;
+int heap::at(int index)
+{
+    return heap_p[index];
+}
+
+int heap::size()
+{
+    return current_size;
 }
