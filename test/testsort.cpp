@@ -2,10 +2,6 @@
 #include <gtest/gtest.h>
 #include <stdlib.h>
 
-/*
- * mergesort uses recursion, so if the MAX_RANDOM_NUM is too big, it will produce segment error.
- * comment that test case if necessary.
- */
 #define MAX_RANDOM_NUM 10000
 
 class SortTest:public testing::Test
@@ -66,13 +62,22 @@ TEST_F(SortTest, shellsort_test)
     }
 }
 
-//TEST_F(SortTest, mergesort_test)
-//{
-//    mergesort(p_random, 0, MAX_RANDOM_NUM-1);
-//    for(int i=0;i<MAX_RANDOM_NUM-1;i++)
-//    {
-//        EXPECT_LE(p_random[i],p_random[i+1]);
-//    }
-//}
+TEST_F(SortTest, mergesort_recursive_test)
+{
+    mergesort_recursive(p_random, 0, MAX_RANDOM_NUM-1);
+    for(int i=0;i<MAX_RANDOM_NUM-1;i++)
+    {
+        EXPECT_LE(p_random[i],p_random[i+1]);
+    }
+}
+
+TEST_F(SortTest, mergesort_test)
+{
+    mergesort(p_random, MAX_RANDOM_NUM);
+    for(int i=0;i<MAX_RANDOM_NUM-1;i++)
+    {
+        EXPECT_LE(p_random[i],p_random[i+1]);
+    }
+}
 
 

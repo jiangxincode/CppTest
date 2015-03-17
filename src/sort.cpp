@@ -168,7 +168,7 @@ void shellsort(int *arr, int length)
 
 void merge(int *arr, int left, int mid, int right)
 {
-    int *temp = (int*)malloc(sizeof(int)*(right-left+1));
+    int *temp = (int*)malloc(sizeof(int)*(right+1)); //注意此处是right+1，不是right-left+1
 
     for(int i=left; i<=right; i++) //复制数组
     {
@@ -204,7 +204,7 @@ void merge(int *arr, int left, int mid, int right)
     free(temp);
 }
 
-/** \brief 归并排序
+/** \brief 归并排序(递归版本)
  *
  * \param arr 指向待排序数组的指针
  * \param left 数组最左端元素序号
@@ -213,7 +213,7 @@ void merge(int *arr, int left, int mid, int right)
  *
  */
 
-void mergesort(int *arr, int left, int right)
+void mergesort_recursive(int *arr, int left, int right)
 {
     if(left >= right)
     {
@@ -221,7 +221,38 @@ void mergesort(int *arr, int left, int right)
     }
 
     int mid = (left+right)/2;
-    mergesort(arr,left,mid);
-    mergesort(arr,mid+1,right);
+    mergesort_recursive(arr,left,mid);
+    mergesort_recursive(arr,mid+1,right);
     merge(arr, left, mid, right);
+}
+
+/** \brief 归并排序(非递归版本)
+ *
+ * \param arr 指向待排序数组的指针
+ * \param n 待排序数组元素的个数
+ * \return 无返回值
+ *
+ */
+
+void mergesort(int *arr, int n)
+{
+    int size = 1;
+    while(size < n)
+    {
+        int low = 0;
+        while(low + size < n)
+        {
+            int mid = low + size - 1;
+            int high = mid + size;
+
+            if(high > n-1) //第二个序列个数不足size
+            {
+                high = n-1;
+            }
+
+            merge(arr,low,mid,high);
+            low = high + 1; //下一次归并时第一关序列的下界
+        }
+        size *= 2; //范围扩大一倍
+    }
 }
