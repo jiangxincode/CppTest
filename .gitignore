@@ -5,3 +5,4 @@ doxygen/
 .cccc/
 *.layout
 *.depend
+CppCheckResults.xml
