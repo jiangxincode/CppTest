@@ -1,15 +1,78 @@
 #include "../src/sort.h"
 #include <gtest/gtest.h>
+#include <stdlib.h>
 
-TEST(testbubblesort, testbubblesort1)
+/*
+ * mergesort uses recursion, so if the MAX_RANDOM_NUM is too big, it will produce segment error.
+ * comment that test case if necessary.
+ */
+#define MAX_RANDOM_NUM 10000
+
+class SortTest:public testing::Test
 {
-    int data[10] = {10,12,4,6,7,3,8,50,39,20};
-    int result[10] = {3,4,6,7,8,10,12,20,39,50};
-    bubblesort(data, 10);
-    for(int i=0;i<10;i++)
+protected:
+    virtual void SetUp()
     {
-        EXPECT_EQ(data[i], result[i]);
+        p_random = (int*)malloc(sizeof(int)*MAX_RANDOM_NUM);
+        srand(1); //set the seed of the rand engine.
+        for(int i=0;i<MAX_RANDOM_NUM;i++)
+        {
+            p_random[i] = rand();
+        }
+    }
+
+    virtual void TearDown()
+    {
+        free(p_random);
+    }
+    int* p_random;
+};
+
+
+
+TEST_F(SortTest, bubblesor_test)
+{
+    bubblesort(p_random, MAX_RANDOM_NUM);
+    for(int i=0;i<MAX_RANDOM_NUM-1;i++)
+    {
+        EXPECT_LE(p_random[i],p_random[i+1]);
     }
 }
+
+TEST_F(SortTest, insertsort_test)
+{
+    insertsort(p_random, MAX_RANDOM_NUM);
+    for(int i=0;i<MAX_RANDOM_NUM-1;i++)
+    {
+        EXPECT_LE(p_random[i],p_random[i+1]);
+    }
+}
+
+TEST_F(SortTest, quicksort_test)
+{
+    quicksort(p_random, 0, MAX_RANDOM_NUM-1);
+    for(int i=0;i<MAX_RANDOM_NUM-1;i++)
+    {
+        EXPECT_LE(p_random[i],p_random[i+1]);
+    }
+}
+
+TEST_F(SortTest, shellsort_test)
+{
+    shellsort(p_random, MAX_RANDOM_NUM);
+    for(int i=0;i<MAX_RANDOM_NUM-1;i++)
+    {
+        EXPECT_LE(p_random[i],p_random[i+1]);
+    }
+}
+
+//TEST_F(SortTest, mergesort_test)
+//{
+//    mergesort(p_random, 0, MAX_RANDOM_NUM-1);
+//    for(int i=0;i<MAX_RANDOM_NUM-1;i++)
+//    {
+//        EXPECT_LE(p_random[i],p_random[i+1]);
+//    }
+//}
 
 

@@ -168,7 +168,7 @@ void shellsort(int *arr, int length)
 
 void merge(int *arr, int left, int mid, int right)
 {
-    int *temp = new int[right-left+1];
+    int *temp = (int*)malloc(sizeof(int)*(right-left+1));
 
     for(int i=left; i<=right; i++) //复制数组
     {
@@ -201,7 +201,7 @@ void merge(int *arr, int left, int mid, int right)
         arr[t++] = temp[s2++];
     }
 
-    delete []temp;
+    free(temp);
 }
 
 /** \brief 归并排序
@@ -225,36 +225,3 @@ void mergesort(int *arr, int left, int right)
     mergesort(arr,mid+1,right);
     merge(arr, left, mid, right);
 }
-
-/** \cond */
-int main0544()
-{
-    const int NUM = 20;
-    int arr[NUM];
-
-    for(int i=0; i<NUM; i++)
-    {
-        arr[i] = rand()%100;
-    }
-
-    for(int i=0; i<NUM; i++)
-    {
-        std::cout << arr[i] << " ";
-    }
-
-    std::cout << std::endl;
-    //quicksort(arr, 0, NUM-1);
-    //bubblesort(arr, NUM);
-    //insertsort(arr,NUM);
-    //shellsort(arr,NUM);
-    //mergesort(arr,0,NUM-1);
-
-    for(int i=0; i<NUM; i++)
-    {
-        std::cout << arr[i] << " ";
-    }
-
-    return 0;
-}
-/** \endcond */
-

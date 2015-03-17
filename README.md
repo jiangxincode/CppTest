@@ -14,6 +14,10 @@ http://github.com/jiangxincode
 * Test.cppcheck //cppcheck
 
 * data/ 一些数据文件，包括项目logo，Doxyfile（Doxywizard配置文件）等
+* test/ 单元测试文件
+* src/ 源代码文件
+* include/ 第三方依赖库头文件
+* lib/ 第三方依赖库库文件
 
 * main.c主函数
 * main.h主头文件
@@ -149,3 +153,8 @@ http://github.com/jiangxincode
 ### Version 1.14
 
 * 加入gtest测试框架
+
+
+### Version 1.15
+
+* 完成对sort.cpp的单元测试
