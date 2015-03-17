@@ -145,3 +145,7 @@ http://github.com/jiangxincode
 
 * 去除所有华为OJ题
 * 修改了本README
+
+### Version 1.14
+
+* 加入gtest测试框架
