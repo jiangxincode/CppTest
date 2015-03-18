@@ -2,7 +2,7 @@
 #include <gtest/gtest.h>
 #include <stdlib.h>
 
-#define MAX_RANDOM_NUM 10000
+#define MAX_RANDOM_NUM 100000
 
 class SortTest:public testing::Test
 {

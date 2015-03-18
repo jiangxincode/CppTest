@@ -163,3 +163,7 @@ http://github.com/jiangxincode
 ### Version 1.16
 
 * 完成heap.cpp的单元测试
+
+### Version 1.17
+
+* 完成binary_tree.cpp/binary_search_tree.cpp的单元测试

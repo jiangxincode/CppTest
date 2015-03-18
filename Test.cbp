@@ -29,11 +29,16 @@
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-std=c++11" />
 			<Add option="-Wall" />
 			<Add option="-ansi" />
 			<Add option="-fexceptions" />
+			<Add option="-std=gnu++11" />
+			<Add directory="include" />
 		</Compiler>
+		<Linker>
+			<Add option="-lgtest" />
+			<Add directory="lib" />
+		</Linker>
 		<Unit filename="src/LinkedSet.h" />
 		<Unit filename="src/binary_search_tree.cpp" />
 		<Unit filename="src/binary_search_tree.h" />
@@ -117,6 +122,7 @@
 		<Unit filename="src/main0553.cpp" />
 		<Unit filename="src/main0554.cpp" />
 		<Unit filename="src/main0555.cpp" />
+		<Unit filename="src/main0556.cpp" />
 		<Unit filename="src/main1000.cpp" />
 		<Unit filename="src/main1550.cpp" />
 		<Unit filename="src/main1560.cpp" />
@@ -156,12 +162,12 @@
 		<Unit filename="src/main2585.cpp" />
 		<Unit filename="src/main2591.cpp" />
 		<Unit filename="src/main2592.cpp" />
-		<Unit filename="src/oj.h" />
 		<Unit filename="src/sort.cpp" />
 		<Unit filename="src/sort.h" />
 		<Unit filename="src/static_list.h" />
 		<Unit filename="src/test_binary_search_tree.cpp" />
-		<Unit filename="src/test_heap.cpp" />
+		<Unit filename="test/test_heap.cpp" />
+		<Unit filename="test/test_sort.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
