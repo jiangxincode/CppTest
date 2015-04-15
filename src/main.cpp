@@ -4,29 +4,26 @@
 
 using namespace std;
 
-#define TEST_METHOD
+int main(int argc, char *argv[])
+{
+
+//#define TEST_METHOD
 
 #ifdef TEST_METHOD
-int main(int argc, char *argv[])
-{
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
-    return 0;
-}
 #else
-int main(int argc, char *argv[])
-{
     string ch;
-
     do
     {
         fflush(stdin); //清空输入流
-        main002();
+        main0507();
         cout << "\nGo on?(n/y)";
         cin >> ch;
     }
     while(ch == "y");
-
     return 0;
-}
 #endif // TEST_METHOD
+
+}
+

@@ -61,19 +61,21 @@ int fibonacci(int n)
  */
 int fibonacci_2(int n)
 {
-    if(n==1||n==2)
-        return 1;
-    else
-        return fibonacci_2(n-1)+fibonacci_2(n-2);
-}
-
-int main2592()
-{
-    for(int i=-100; i<100; i++)
+    if(n < 0)
     {
-        int result = fibonacci(i);
-        cout << i << ": " << result << " " << ((result==-1)?strerror(errno):"") << endl;
+        return -1;
     }
-
-    return 0;
+    else if(n == 0)
+    {
+        return 0;
+    }
+    else if(n==1||n==2)
+    {
+        return 1;
+    }
+    else
+    {
+        return fibonacci_2(n-1)+fibonacci_2(n-2);
+    }
 }
+

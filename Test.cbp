@@ -11,6 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="--gtest_filter=*Fib*.*" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -45,6 +46,8 @@
 		<Unit filename="src/binary_tree.cpp" />
 		<Unit filename="src/binary_tree.h" />
 		<Unit filename="src/circ_list.h" />
+		<Unit filename="src/fibonacci.cpp" />
+		<Unit filename="src/fibonacci.h" />
 		<Unit filename="src/hash.cpp" />
 		<Unit filename="src/hash.h" />
 		<Unit filename="src/heap.cpp" />
@@ -161,11 +164,12 @@
 		<Unit filename="src/main2584.cpp" />
 		<Unit filename="src/main2585.cpp" />
 		<Unit filename="src/main2591.cpp" />
-		<Unit filename="src/main2592.cpp" />
 		<Unit filename="src/sort.cpp" />
 		<Unit filename="src/sort.h" />
 		<Unit filename="src/static_list.h" />
-		<Unit filename="src/test_binary_search_tree.cpp" />
+		<Unit filename="test/test_binary_search_tree.cpp" />
+		<Unit filename="test/test_binary_tree.cpp" />
+		<Unit filename="test/test_fibonacci.cpp" />
 		<Unit filename="test/test_heap.cpp" />
 		<Unit filename="test/test_sort.cpp" />
 		<Extensions>

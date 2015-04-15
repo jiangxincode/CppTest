@@ -256,3 +256,18 @@ void mergesort(int *arr, int n)
         size *= 2; //范围扩大一倍
     }
 }
+
+//int index = 0;
+//int* temp = (int*)malloc(sizeof(int)*n);
+//int sleep_sort_tool(int time)
+//{
+//    sleep(time);
+//    temp[index++];
+//}
+//void sleepsort(int *arr, int n)
+//{
+//    for(int i=0;i<n;i++)
+//    {
+//        sleep_sort_tool(arr[i]);
+//    }
+//}

@@ -42,7 +42,9 @@ int main0031()
             i = (i+1)%num;
 
             if(player[i] != 0)
+            {
                 j++;
+            }
         }
 
         cout << "出列的人是：" << player[i] << endl;
