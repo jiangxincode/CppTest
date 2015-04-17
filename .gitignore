@@ -1,0 +1,4 @@
+*.o
+intro/daytimetcpcli
+intro/daytimetcpcliv6
+*.swp
