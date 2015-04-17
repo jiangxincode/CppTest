@@ -1,6 +1,6 @@
-
 #include <stdio.h>
-main0032()
+
+int main0032()
 {
     char x;
     printf("        Ö÷²Ëµ¥\n");
@@ -37,4 +37,5 @@ main0032()
         }
     }
     while(x!='0');
+    return 0;
 }

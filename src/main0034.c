@@ -10,7 +10,7 @@ typedef struct list node;
 typedef node *link;
 link static create_list(char array[][10],int num);
 void connect(char *ch,link pointer);
-int main0034(int argc, char *argv[])
+int main0034()
 {
     char *input;
     char arr1[50][10]= {

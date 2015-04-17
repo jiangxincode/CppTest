@@ -23,6 +23,14 @@ int main0023();
 int main0024();
 int main0025();
 int main0026();
+int main0027();
+int main0028();
+int main0029();
+int main0030();
+int main0031();
+int main0032();
+int main0033();
+int main0034();
 
 
 int main1011();

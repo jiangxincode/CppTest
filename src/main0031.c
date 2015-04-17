@@ -47,7 +47,7 @@ int main0031()
 
     if(choose=='y'||choose=='Y')
     {
-        main();
+        main0031();
     }
 
     return 0;

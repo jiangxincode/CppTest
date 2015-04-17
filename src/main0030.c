@@ -1,5 +1,8 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 int my_convert(char *s);
+
 int main0030(int argc, char *argv[])
 {
     int a, b, c;
