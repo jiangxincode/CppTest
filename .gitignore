@@ -1,4 +1,5 @@
 *.o
-intro/daytimetcpcli
-intro/daytimetcpcliv6
+daytimetcpcli
+daytimetcpcliv6
 *.swp
+*.orig

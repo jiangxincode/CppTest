@@ -88,6 +88,9 @@
 #define SHUT_RDWR 2 /*shutdown for reading and writing */
 #endif // SHUT_RD
 
+/* Folling could be derived from SOMAXCONN in <sys/socket.h>, but many kernel still #define it as 5, while actuall supporting many more */
+#define LISTENQ 1024 /* 2nd argument to listen() */
+
 /* Miscellaneous constants */
 #define MAXLINE 4096 /*max text line length */
 #define BUFFSIZE 8192 /* buffer size for reads and writes */
@@ -103,5 +106,14 @@ void err_sys(const char *fmt, ...);
 void err_dump(const char *fmt, ...);
 void err_msg(const char *fmt, ...);
 void err_quit(const char *fmt, ...);
+
+
+int Socket(int family, int type, int protocol);
+int Bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen);
+int Listen(int sockfd, int backlog);
+int Accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
+int Write(int fd, const void *buf, size_t count);
+int Close(int fd);
+
 
 #endif // __unp_h
