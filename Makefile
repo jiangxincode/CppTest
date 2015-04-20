@@ -14,4 +14,4 @@ std_err_process.o:std_err_process.c
 sockwrap.o:wrapsock.c
 	gcc -c $^ -Wall
 clean:
-	rm $(BIN) *.o *.orig
+	rm $(BIN) *.o
