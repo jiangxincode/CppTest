@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     do
     {
         fflush(stdin); //清空输入流
-        main0507();
+        main000();
         cout << "\nGo on?(n/y)";
         cin >> ch;
     }
