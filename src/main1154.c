@@ -3,6 +3,10 @@
 #include<ctype.h>
 #include<string.h>
 
+#define MAX_YEAR_LIMIT 9999
+#define MAX_MONTH_LIMIT 12
+#define MAX_DAY_LIMIT 31
+
 typedef struct _DATE_
 {
     int day;
@@ -10,9 +14,6 @@ typedef struct _DATE_
     int year;
 } DATE;
 
-#define MAX_YEAR_LIMIT 9999
-#define MAX_MONTH_LIMIT 12
-#define MAX_DAY_LIMIT 31
 
 /**计算所给日期是当年的第几天*/
 int day_of_year(const DATE date)
