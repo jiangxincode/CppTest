@@ -95,6 +95,10 @@
 #define MAXLINE 4096 /*max text line length */
 #define BUFFSIZE 8192 /* buffer size for reads and writes */
 
+/* Define some port number that can be used for our examples */
+#define SERV_PORT 9877 /* TCP and UDP */
+#define SERV_PORT_STR "9877" /* TCP and UDP */
+
 /* Following shortens all the typecasts of pointer arguments: */
 #define SA struct sockaddr
 
@@ -114,6 +118,8 @@ int Listen(int sockfd, int backlog);
 int Accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
 int Write(int fd, const void *buf, size_t count);
 int Close(int fd);
+pid_t Fork();
+ssize_t Writen(int fd, const void *vptr, ssize_t n);
 
 
 #endif // __unp_h

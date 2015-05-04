@@ -59,3 +59,15 @@ int Close(int fd)
 	}
 	return (n);
 }
+
+pid_t Fork()
+{
+    pid_t pid;
+    if((pid = fork()) < 0)
+    {
+        err_sys("fork error");
+    }
+    return pid;
+}
+
+
