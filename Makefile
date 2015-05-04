@@ -1,5 +1,5 @@
 OBJECTS = std_err_process.o wrapsock.o
-BIN = daytimetcpcli daytimetcpcliv6 daytimetcpsrv
+BIN = daytimetcpcli daytimetcpcliv6 daytimetcpsrv daytimetcpsrv1
 
 all:$(BIN)
 
@@ -8,6 +8,8 @@ daytimetcpcli:daytimetcpcli.o $(OBJECTS)
 daytimetcpcliv6:daytimetcpcliv6.o $(OBJECTS)
 	gcc -o $@ $^ -Wall
 daytimetcpsrv:daytimetcpsrv.o $(OBJECTS)
+	gcc -o $@ $^ -Wall
+daytimetcpsrv1:daytimetcpsrv1.o $(OBJECTS)
 	gcc -o $@ $^ -Wall
 std_err_process.o:std_err_process.c
 	gcc -c $^ -Wall
