@@ -113,13 +113,19 @@ void err_quit(const char *fmt, ...);
 
 
 int Socket(int family, int type, int protocol);
+int Connect(int sockfd, struct sockaddr *addr, socklen_t addrlen);
 int Bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen);
 int Listen(int sockfd, int backlog);
 int Accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
 int Write(int fd, const void *buf, size_t count);
 int Close(int fd);
 pid_t Fork();
-ssize_t Writen(int fd, const void *vptr, ssize_t n);
+ssize_t writen(int fd, const void *vptr, size_t n);
+ssize_t Writen(int fd, const void *vptr, size_t n);
+ssize_t readline(int fd, void *vptr, size_t maxlen);
+ssize_t ReadLine(int fd, void *vptr, size_t maxlen);
 
+char* Fgets(char *s, int size, FILE *stream);
+int Fputs(const char *s, FILE *stream);
 
 #endif // __unp_h

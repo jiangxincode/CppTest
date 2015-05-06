@@ -10,6 +10,16 @@ int Socket(int family, int type, int protocol)
 	return (n);
 }
 
+int Connect(int sockfd, struct sockaddr *addr, socklen_t addrlen)
+{
+    int n;
+    if((n = connect(sockfd, addr, addrlen)) < 0)
+    {
+        err_sys("connect error");
+    }
+    return 0;
+}
+
 int Bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen)
 {
 	int n;
@@ -71,3 +81,42 @@ pid_t Fork()
 }
 
 
+ssize_t Writen(int fd, const void *vptr, size_t n)
+{
+    ssize_t result;
+    if((result = writen(fd, vptr, n)) < 0)
+    {
+        err_sys("writen error");
+    }
+    return (result);
+}
+
+ssize_t ReadLine(int fd, void *vptr, size_t maxlen)
+{
+    ssize_t result;
+    if((result = readline(fd, vptr, maxlen)) < 0)
+    {
+        err_sys("readline error");
+    }
+    return result;
+}
+
+char* Fgets(char *s, int size, FILE *stream)
+{
+    char * result;
+    if((result = fgets(s, size, stream)) == NULL)
+    {
+        err_sys("fgets error");
+    }
+    return result;
+}
+
+int Fputs(const char *s, FILE *stream)
+{
+    int result;
+    if((result = fputs(s, stream)) < 0)
+    {
+        err_sys("fputs error");
+    }
+    return result;
+}
