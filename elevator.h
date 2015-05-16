@@ -1,39 +1,24 @@
-#include<stdio.h>
-#include<unistd.h>
-#include<stdlib.h>
-#include<errno.h>
+#include <glib.h>
 
-#include<sys/types.h>
-#include<sys/ipc.h>
-#include<sys/shm.h>
-#include<sys/wait.h>
+#ifndef ELEVATOR_H
+#define ELEVATOR_H
 
-#include<gtk/gtk.h>
+struct INFO
+{
+        gint current;
 
-#define MAXFLOOR 5
-#define BUFSZ 4096	//共享内存
-#define BUF_MAX 100	//缓冲区最的容纳字符数量
+        GQueue dest_up;
+        GQueue dest_down;
 
-enum FLOOR{
-	none,one=1,two,three,four,five
+        GQueue guest_up;
+        GQueue guest_down;
+
+        gint state;
+        gboolean door;
 };
 
-enum STATUS{
-	stop=0,up,down
-};
+typedef struct INFO info;
 
-enum DOOR{
-	closed=1,open
-};
-
-typedef struct {
-	enum FLOOR current; //电梯当前所在楼层
-	enum FLOOR destination; //电梯目的楼层
-	enum FLOOR guest;	//乘客楼层
-	enum FLOOR whocare;	//作为中间变量
-	enum STATUS status; //电梯所处状态
-	enum STATUS icare;	//作为中间变量
-	enum DOOR door; //电梯们所处状态 
-}info;
-
+void init(info *elev);
+#endif // ELEVATOR_H
 
