@@ -4,7 +4,7 @@
 #include "r_matmul.c"
 #include "sdminv.c"
 
-void main()
+void main4sd_matinv0()
 {
     double r_mat[2][2] = {{3,2},{2,5}};
     double r_mat1[2][2], r_mat2[2][2];
@@ -23,7 +23,7 @@ void main()
         printf("\n");
     }
     printf("\n");
-        
+
     sdminv(r_mat,n);
 
     printf("inv(A):\n");

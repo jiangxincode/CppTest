@@ -1,18 +1,18 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "c_comp.c"                              /* 需要包含复数运算的文件*/
-#include "c_matmul.c"                            /* 实系数矩阵相乘和复系数矩阵相乘的函数*/
+#include "something.h" /* 实系数矩阵相乘和复系数矩阵相乘的函数*/
 #include "r_matmul.c"
 
-void main()
+void main4matmul0()
 {
     struct c_comp c_mat1[2][2], c_mat2[2][2], c_mat3[2][2];
-                                  
+
     double r_mat1[3][2] = {{1,2},{3,4},{1,4}};   /* 为要相乘的实矩阵赋初值*/
     double r_mat2[2][2] = {{5,6},{7,8}};
     double r_mat3[3][2];
     int i,j;
-                                   
+
     r_matmul(r_mat1,r_mat2,3,2,2,r_mat3);        /* 调用函数进行计算并打印结果*/
     printf("real matmul:\n");
     for(i=0; i<3; i++)

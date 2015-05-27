@@ -7,8 +7,8 @@
 // ·µ »Ø Öµ£ºÎÞ
 //==============================================================*/
 #include "stdio.h"
-#include "math.h" 
-int kabg(x,n,y,h,alfa,beta,gama)
+#include "math.h"
+static int kabg(x,n,y,h,alfa,beta,gama)
 int n;
 double *x,*y;
 double h,alfa,beta,gama;

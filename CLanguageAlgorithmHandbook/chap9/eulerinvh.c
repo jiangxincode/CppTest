@@ -10,9 +10,7 @@
 #include<stdio.h>
 #include<math.h>
 
-int eulerinvh(y,n,f,h,m,a)
-double *y,(*f)(),h,a;
-int n,m;
+static int eulerinvh(double *y,int n,double (*f)(),double h,int m,double a)
 {
     double *F,x;
     int k=0,i;

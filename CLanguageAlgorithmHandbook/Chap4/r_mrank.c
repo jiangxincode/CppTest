@@ -8,7 +8,7 @@
 #include "stdlib.h"
 #include "math.h"
 
-int r_mrank(mat,m, n,eps)
+static int r_mrank(mat,m, n,eps)
 double *mat, eps;
 int m,n;
 {

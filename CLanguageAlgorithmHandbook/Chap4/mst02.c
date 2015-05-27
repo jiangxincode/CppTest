@@ -1,6 +1,6 @@
   #include "stdio.h"
   #include "mhhbg.c"
-  main()
+  mainmst02()
   {
     int i,j;
     static double q[5][5];

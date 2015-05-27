@@ -5,8 +5,8 @@
 // 返 回 值：阶乘函数的值
 //==============================================================*/
 #include "math.h"
-double factrl(n)
-int n;
+#include "something.h"
+static double factrl(int n)
 {
   int i;
   double t;

@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "tzi1.c"
 #include "lfsi.c"
-main()
+int main8lfsi0()
 {
   double a,b,eps,h0,z;
   double f1(double);
@@ -17,8 +17,7 @@ main()
 }
 
 #include "math.h"
-double f1(x)
-double x;                                      /* 被积分的函数*/
+double f1(double x)                                    /* 被积分的函数*/
 {
   double y;
     y=exp(-x*x)/(1.0+x*x);

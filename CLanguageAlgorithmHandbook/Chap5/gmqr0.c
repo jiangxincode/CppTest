@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "r_mqr.c"                         /* QR分解的函数*/
 #include "gmqr.c"
-main()
+main5gmqr0()
 {
   int i;
   double x[4],a[5][4]={{1.0,2.0,4.0,1.5},          /* 矩阵A赋值*/

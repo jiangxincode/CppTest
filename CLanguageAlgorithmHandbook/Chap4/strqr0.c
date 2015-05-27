@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "smdqr.c"
-main()
-{ 
+main4strqr0()
+{
 	int i,jt=60;
 	double eps=0.000001;
 	static double u[5],v[5];

@@ -16,7 +16,7 @@
     double imz;
 }c_comp;
 */
-int c_comp_exp(a,c)
+static int c_comp_exp(a,c)
 struct c_comp *a,*c;
 {
     double R;

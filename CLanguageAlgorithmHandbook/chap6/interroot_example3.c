@@ -5,11 +5,11 @@
 #include<stdio.h>
 #include<math.h>
 #include "interroot.c"
-
-void main()
+static     double f(double);
+void main6interroot3()
 {
     double x,eps,ab;
-    double f(double);
+
     double *x0 = &x;
     int max;
     *x0=1.0;                             /* 初值，精度，最大迭代次数*/
@@ -23,7 +23,7 @@ void main()
         printf("failed!\n");
 }
 
-double f(x)                              /* 计算函数值*/
+static double f(x)                              /* 计算函数值*/
 double x;
 {
     return x*x*x-3*x+1;

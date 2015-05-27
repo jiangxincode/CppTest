@@ -9,7 +9,7 @@
 // 返回值：  积分近似值
 =========================================================*/
 #include "math.h"
-double leg1(a,b,n0,eps,h0,f)
+static double leg1(a,b,n0,eps,h0,f)
 double a,b,eps,h0;
 int n0;
 double (*f)();

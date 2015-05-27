@@ -12,15 +12,15 @@
 #include<stdio.h>
 #include<math.h>
 
-int interroot(x0,ab,f,eps,max)
+static int interroot(x0,ab,f,eps,max)
 double *x0,ab,(*f)(),eps;
 int max;
 {
     double x,dis;
     double y0,yd,yab=f(ab);
     int num=0;
-	
-	
+
+
     do
     {
         y0=f(*x0);			     /* ¼ÆËãº¯ÊýÖµ*/

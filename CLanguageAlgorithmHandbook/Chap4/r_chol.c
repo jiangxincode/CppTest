@@ -11,7 +11,7 @@
 #include "stdlib.h"
 #include "math.h"
 
-int r_chol(mat,n,u,eps)
+static int r_chol(mat,n,u,eps)
 double *mat,*u,eps;
 int n;
 {

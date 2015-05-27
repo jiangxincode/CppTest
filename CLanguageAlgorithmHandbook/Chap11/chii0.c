@@ -1,6 +1,6 @@
 #include "stdio.h"
 #include "chii.c"
-main()
+main11chii0()
 {
   int i,n;
   double x,y;

@@ -8,13 +8,13 @@
 #include "rungekuttavh.c"
 #include "gillvh.c"
 
-
-void main()
+static void f(double*,double*,double);
+void main9rungekutta2()
 {
     double h=0.01,a=0,eps=0.000000001;
     int n=3,m=10,i,j;
     double *y;                       /* 存放所有函数值的指针*/
-    void f(double*,double*,double);
+
     y=(double*)malloc(n*(m+1)*sizeof(double));
     for(i=0;i<n*(m+1);i++)                    /* 初始化*/
 	   y[i]=0.0;
@@ -64,8 +64,8 @@ void main()
     printf("failed!\n");
 	free(y);
 }
- 
-void f(y,F,x)
+
+static void f(y,F,x)
 double *y,*F,x;
 {
     F[0]=5*x+1;

@@ -5,7 +5,7 @@
 #include "c_comp_product.c"
 #include "c_comp_divide.c"
 
-void main()
+void main2c_comp_example1()
 {
 	struct c_comp a,b,c,d;
 	a.rmz=7.0;

@@ -4,7 +4,7 @@
 #include "r_matmul.c"
 #include "Tminv.c"
 
-void main()
+void main4Tminv0()
 {
     double r_mat1[5][5], r_mat2[5][5], r_mat3[5][5];
     int i,j,m,n,p;

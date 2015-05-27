@@ -7,7 +7,8 @@
 // 返 回 值：找到则返回1，如果没有找到则返回0
 //==============================================================*/
 #include "stdio.h"
-int Fsech(fp,a,str)
+#include "something.h"
+static int Fsech(fp,a,str)
 FILE *fp;
 int a;
 STRU *str;

@@ -9,9 +9,9 @@
 #include "stdio.h"
 #define ENUMB 30.0                      /* 逆向递推时计算递推起点的数据，越大结果的有效数字越多*/
 
-double bsl3(n,x)
-double x;
-int n;
+
+
+double bsl3(int n,double x)
 {
   double t,I0(),I1();
   int j,nn,flag;
@@ -55,8 +55,7 @@ int n;
   }
 }
 
-static double I0(x)                     /* 计算I0(x)*/
-double x;
+double I0(double x)                     /* 计算I0(x)*/
 {
   double x1,x2,t;
   x1 = fabs(x);
@@ -79,8 +78,7 @@ double x;
   return t;
 }
 
-static double I1(x)                           /* 计算I1(x)*/
-double x;
+double I1(double x)                           /* 计算I1(x)*/
 {
   double x1,x2,t;
   x1 = fabs(x);

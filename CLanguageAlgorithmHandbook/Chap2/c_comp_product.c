@@ -10,12 +10,8 @@
 #include "stdlib.h"
 #include "math.h"
 
-/*struct c_comp{
-    double rmz;
-    double imz;
-}c_comp;
-*/
-int c_comp_product(a1,a2,c)
+#include "c_comp.h"
+static int c_comp_product(a1,a2,c)
 struct c_comp *a1,*a2,*c;
 {
     double p,q,s;

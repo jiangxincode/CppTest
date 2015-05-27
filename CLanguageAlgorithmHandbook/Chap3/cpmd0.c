@@ -3,7 +3,7 @@
 #include"c_comp.c"
 #include "cpmul.c"
 #include "cpdiv.c"
-void main()
+void main3cpmd0()
 {
   int i;
   struct c_comp a[3],b[3],c[5],q[4],r[5];

@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "randu01s.c"
-void main()
+void main13rand_u_example1()
 {
     int L;
     int flag,i,j;

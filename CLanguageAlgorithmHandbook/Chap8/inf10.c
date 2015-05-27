@@ -2,7 +2,7 @@
 #include "leg1.c"
 #include "cheb.c"
 #include "gasi.c"
-main()
+main8inf10()
 {
   double a,b,eps,h0,z;
   double f1(double);

@@ -6,11 +6,8 @@
 //            a 待删除的元素, a.KEY是它的关键字
 // 返 回 值：若删除成功则返回1,否则返回0
 //==============================================================*/
-
-int hashdel(HT,m,a)
-hashlist HT;
-int m;
-ElemType a;
+#include "something.h"
+int hashdel(hashlist HT,int m,ElemType a)
 {
 	int temp,d,i;
 	d = hashpos(a.KEY, 0, m);
@@ -20,7 +17,7 @@ ElemType a;
 	{
 		if( KeyEqu(HT[d].KEY, a.KEY) )            /* 已经找到，返回位置*/
 		{
-			 ElemDEL(&HT[d]);	
+			 ElemDEL(&HT[d]);
 			 return(1);
 		}
 		d = (d+2*i-1)%m;                         /* 不为空且不相等，说明已经被其它元素占据，向后探查*/

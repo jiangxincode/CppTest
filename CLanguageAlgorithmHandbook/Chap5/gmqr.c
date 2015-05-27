@@ -10,7 +10,7 @@
 #include "stdlib.h"
 #include "math.h"
 
-int gmqr(a,b,x,m,n,eps)
+static int gmqr(a,b,x,m,n,eps)
 double *a,*b,*x,eps;
 int n;
 {

@@ -1,12 +1,14 @@
 #include "stdio.h"
 #include "math.h"
-#include "brake.c"
+#include "something.h"
 #include "bsl1.c"
 
-void main()
+static double f(double);
+
+void main12brake0()
 {
 	double a,b,c,fa,fb,fc;
-	double f(double);
+
 	int i;
 
 	for(i=1; i<10; i++)
@@ -23,7 +25,7 @@ void main()
 	}
 }
 
-double f(double x)
+static double f(double x)
 {
 	return bsl1(0,x);
 }

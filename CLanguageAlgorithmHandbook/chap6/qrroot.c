@@ -14,7 +14,7 @@
 #include "math.h"
 #include "mhdqr.c"
 
-int qrroot(a,n,u,v,eps,itmax)
+static int qrroot(a,n,u,v,eps,itmax)
 double *a,*u,*v,eps;
 int n,itmax;
 {

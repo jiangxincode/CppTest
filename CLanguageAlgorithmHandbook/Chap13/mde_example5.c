@@ -2,12 +2,12 @@
 #include "stdlib.h"
 #include "mde.c"
 #define pi 3.1415926
-void main()
+void main13mde_example5()
 {
     int L,j;
     double *rand;
     double x,mean,adev,sddev,var,skew,kurt;
-    L=100;  /*生成100个随机数*/    
+    L=100;  /*生成100个随机数*/
     rand=(double*)malloc(sizeof(double)*L);
     if(rand==NULL)
     {
@@ -16,10 +16,10 @@ void main()
     }
     for(j=0;j<L;j++)
     {
-        x=pi*j/L;  
+        x=pi*j/L;
         rand[j]=sin(x);
-    }  
-    mde(rand,L,&mean,&adev,&sddev,&var,&skew,&kurt);    
+    }
+    mde(rand,L,&mean,&adev,&sddev,&var,&skew,&kurt);
     printf("Mean:    %1.5f\n",mean);
     printf("adev:    %1.5f\n",adev);
     printf("sddev:   %1.5f\n",sddev);

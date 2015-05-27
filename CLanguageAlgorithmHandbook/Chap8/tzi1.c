@@ -9,10 +9,7 @@
 //           f 指向被积函数的指针
 // 返回值：  积分近似值
 =========================================================*/
-double tzi1(a,b,n0,eps,h0,f)
-double a,b,eps,h0;
-int n0;
-double (*f)();
+static double tzi1(double a,double b,int n0,double eps,double h0,double (*f)(double))
 {
   int n,k;
   double z,z2,h,d,x,t;

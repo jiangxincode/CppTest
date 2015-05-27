@@ -10,7 +10,7 @@
 #include"math.h"
 #define PI 3.14159
 
-double randgsab(a,b)
+static double randgsab(a,b)
 double a,b;
 {
     double U1,U2,G;

@@ -3,7 +3,7 @@
 #include "wolt.c"
 #include "hadma.c"
 
-void main()
+void main16wolt0()
 {
   int i,n=8;
   double a[8],b[8],y[8];
@@ -32,7 +32,7 @@ void main()
     for(i=0; i<n; i++)
       printf("%5.4f ",a[i]);
   }
-  i = wolt(b,n,y); 	                                /* 求b的wolt变换*/                         
+  i = wolt(b,n,y); 	                                /* 求b的wolt变换*/
   if(i)
   {
     printf("\nwolt of b:\n");
@@ -53,21 +53,21 @@ void main()
     for(i=0; i<n; i++)
       printf("%5.4f ",y[i]);
   }
-  i = hadma(y,n,a); 	                                /*哈达玛逆变换*/                         
+  i = hadma(y,n,a); 	                                /*哈达玛逆变换*/
   if(i)
   {
     printf("\nhadma of hadma(a):\n");
     for(i=0; i<n; i++)
       printf("%5.4f ",a[i]);
   }
-  i = hadma(b,n,y); 	                                /*求b的哈达玛变换*/                         
+  i = hadma(b,n,y); 	                                /*求b的哈达玛变换*/
   if(i)
   {
     printf("\nhadma of b:\n");
     for(i=0; i<n; i++)
       printf("%5.4f ",y[i]);
   }
-  i = hadma(y,n,b); 	                                /*哈达玛逆变换*/                         
+  i = hadma(y,n,b); 	                                /*哈达玛逆变换*/
   if(i)
   {
     printf("\nhadma of hadma(b):\n");

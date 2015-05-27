@@ -3,7 +3,7 @@
 #include "bspl2.c"
 #include "bspl3.c"
 #define PI 3.1415926
-main()
+main7bspl0()
 {
   int k,m,n;
   double x[11]={0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,1.00};

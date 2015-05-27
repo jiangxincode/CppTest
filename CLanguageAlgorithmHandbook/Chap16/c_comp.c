@@ -1,18 +1,9 @@
-#ifndef C_COMP_H
-#define C_COMP_H
-
 #include "stdio.h"
 #include "stdlib.h"
 #include "math.h"
-#define PI 3.1415926
+#include "something.h"
 
-struct c_comp{
-    double rmz;
-    double imz;
-}c_comp;
-
-int c_comp_plus(a1,a2,c)
-struct c_comp *a1,*a2,*c;
+int c_comp_plus(struct c_comp *a1,struct c_comp *a2,struct c_comp *c)
 {
     if(a1 == NULL || a2 == NULL || c == NULL)
     {
@@ -24,8 +15,7 @@ struct c_comp *a1,*a2,*c;
     return(1);
 }
 
-int c_comp_sub(a1,a2,c)
-struct c_comp *a1,*a2,*c;
+int c_comp_sub(struct c_comp *a1,struct c_comp *a2,struct c_comp *c)
 {
     if(a1 == NULL || a2 == NULL || c == NULL)
     {
@@ -37,8 +27,7 @@ struct c_comp *a1,*a2,*c;
     return(1);
 }
 
-int c_comp_product(a1,a2,c)
-struct c_comp *a1,*a2,*c;
+int c_comp_product(struct c_comp *a1,struct c_comp *a2,struct c_comp *c)
 {
     double p,q,s;
     if(a1 == NULL || a2 == NULL || c == NULL)
@@ -54,9 +43,8 @@ struct c_comp *a1,*a2,*c;
     return(1);
 }
 
- 
-int c_comp_divide(a1,a2,c)
-struct c_comp *a1,*a2,*c;
+
+int c_comp_divide(struct c_comp *a1,struct c_comp *a2,struct c_comp *c)
 {
     double R2;
     if(a1 == NULL || a2 == NULL || c == NULL)
@@ -66,7 +54,7 @@ struct c_comp *a1,*a2,*c;
     }
 
     R2 = a2->rmz*a2->rmz + a2->imz*a2->imz;
-    
+
     c_comp_product(&a1,&a2,&c);
     c->rmz = c->rmz/R2;
     c->imz = c->imz/R2;
@@ -75,9 +63,7 @@ struct c_comp *a1,*a2,*c;
 }
 
 
-int c_comp_power(a,c,n)
-struct c_comp *a,*c;
-int n;
+int c_comp_power(struct c_comp *a,struct c_comp *c,int n)
 {
     double R,theta;
 
@@ -98,9 +84,7 @@ int n;
     return(1);
 }
 
-int c_comp_nthroot(a,c,n)
-struct c_comp *a,*c;
-int n;
+int c_comp_nthroot(struct c_comp *a,struct c_comp *c,int n)
 {
     int i;
     double R,theta;
@@ -125,8 +109,7 @@ int n;
 }
 
 
-int c_comp_exp(a,c)
-struct c_comp *a,*c;
+int c_comp_exp(struct c_comp *a,struct c_comp *c)
 {
     double R;
 
@@ -144,8 +127,7 @@ struct c_comp *a,*c;
     return(1);
 }
 
-int c_comp_log(a,c)
-struct c_comp *a,*c;
+int c_comp_log(struct c_comp *a,struct c_comp *c)
 {
 
     if(a == NULL || c == NULL)
@@ -161,8 +143,7 @@ struct c_comp *a,*c;
 }
 
 
-int c_comp_sin(a,c)
-struct c_comp *a,*c;
+int c_comp_sin(struct c_comp *a,struct c_comp *c)
 {
     double tmp1,tmp2;
 
@@ -180,8 +161,7 @@ struct c_comp *a,*c;
     return(1);
 }
 
-int c_comp_cos(a,c)
-struct c_comp *a,*c;
+int c_comp_cos(struct c_comp *a,struct c_comp *c)
 {
     double tmp1,tmp2;
 
@@ -199,14 +179,12 @@ struct c_comp *a,*c;
     return(1);
 }
 
-#endif
 
 
 
 
 
 
- 
 
 
 

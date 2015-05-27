@@ -1,11 +1,10 @@
 #include "stdio.h"
 #include "math.h"
-#include "c_comp.c"
-#include "fft.c"
+#include "something.h"
 #include "ifft.c"
 #include "r2fft.c"
 
-void main()
+void main16cfft0()
 {
   int i;
   struct c_comp x[4],y[4],y1[4],y2[4];
@@ -21,11 +20,11 @@ void main()
   printf("\n b sequence\n");
   for(i=0; i<4; i++)
 	  printf("%3.1f ",b[i]);
-  for(i=0; i<4; i++) 
+  for(i=0; i<4; i++)
   {
     x[i].rmz = a[i];
     x[i].imz = 0;
-  } 
+  }
   i = fft(x,4,y); 	                                 /*求a的fft*/
   if(i)
   {
@@ -33,12 +32,12 @@ void main()
     for(i=0; i<4; i++)
       printf("%3.1f+i*%3.1f ",y[i].rmz,y[i].imz);
   }
-  for(i=0; i<4; i++)       
+  for(i=0; i<4; i++)
   {
     x[i].rmz = b[i];
     x[i].imz = 0;
-  } 
-  i = fft(x,4,y); 	                                /*求b的fft*/                         
+  }
+  i = fft(x,4,y); 	                                /*求b的fft*/
   if(i)
   {
     printf("\nfft of b:\n");
@@ -52,7 +51,7 @@ void main()
      printf("%3.1f+i*%3.1f ",y1[i].rmz,y1[i].imz);
   printf("\nfft of b:\n");
   for(i=0; i<4; i++)
-     printf("%3.1f+i*%3.1f ",y2[i].rmz,y2[i].imz);  
+     printf("%3.1f+i*%3.1f ",y2[i].rmz,y2[i].imz);
   i = ifft(y1,4,x);                               	/*求fft(a)的ifft*/
   if(i)
   {

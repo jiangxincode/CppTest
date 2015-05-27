@@ -6,8 +6,8 @@
 // 返 回 值：贝塔函数的值
 //==============================================================*/
 #include "math.h"
-double beta(x,y)
-double x,y;
+#include "something.h"
+static double beta(double x,double y)
 {
   double t;
   if((x<0) || (y<0))                           /* 判断自变量是否满足要求*/

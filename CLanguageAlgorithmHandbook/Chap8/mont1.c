@@ -7,9 +7,7 @@
 //           f 指向被积函数的指针
 // 返回值：  积分近似值
 =========================================================*/
-double mont1(a,b,f)
-double a,b;
-double (*f)();
+double mont1(double a,double b,double (*f)(double))
 {
   int k,n;
   double z,p,x;

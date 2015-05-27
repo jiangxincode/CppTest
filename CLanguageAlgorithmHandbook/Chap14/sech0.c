@@ -1,18 +1,12 @@
-#define STRU struct student
-#define KEY age
-STRU{ 
-	int num;
-	char name[8];
-	char sex;
-	int age;
-};
+
 
 #include "stdio.h"
 #include "sech.c"
 #include "Fsech.c"
+#include "something.h"
 
-main()
-{ 
+main14sech0()
+{
 	int i,q,a;
 	long int k;
 	static STRU x[16]={{101,"Zhao",'M',19},
@@ -26,10 +20,10 @@ main()
 	{110,"Zhang",'F',18}};
 	FILE *fp;
 	STRU str;
-	printf("Serch from Array: \n");	
-	a=18; 
+	printf("Serch from Array: \n");
+	a=18;
 	i=0;
-	do{ 
+	do{
 		q=sech(x,16,i,a);                           /* ≤È’“≤¢¥Ú”°*/
 		if(q!=-1)
 			printf("%-5d%-8s%-2c%-2d%\n",x[q].num,

@@ -1,8 +1,8 @@
 #include "stdio.h"
 #include "math.h"
-#include "gammln.c"
+#include "something.h"
 #include "beta.c"
-void main()
+void main11gramma0()
 {
   int i;
   double x,y,z;

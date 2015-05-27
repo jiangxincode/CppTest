@@ -10,7 +10,7 @@
 //           t 指定的插值点
 // 返回值：  在指定插值点的函数近似值
 =========================================================*/
-double hmt(x,y,dy,n,t)
+static double hmt(x,y,dy,n,t)
 double *x,*y,*dy,t;
 int n;
 {
@@ -36,13 +36,13 @@ int n;
   {
     k = 0; p = n-1;                    /* 二分法寻找合适的区间*/
     while((p-k) > 1)
-    { 
+    {
       j = (k+p)/2;
       if(x[j] < t)  k = j;
       else  p = j;
     }
     if(n>7)
-    { 
+    {
       if(k<4)
       { k = 0; p = 2*p; }
       else if(k>(n-5))

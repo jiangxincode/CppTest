@@ -6,8 +6,8 @@
 // 返 回 值：第一类椭圆积分的退化形式的值
 //==============================================================*/
 #include "math.h"
-double RC(x,y)
-double x,y;
+double RC(x,y,z)
+double x,y,z;
 {
 	double ll,t,t1,f,eps;
 	eps = 1.0e-30;
@@ -24,10 +24,10 @@ double x,y;
 		y = -y;
 	}
 	do{
-		ll = 2.0*sqrt(x)*sqrt(y)+y;    
+		ll = 2.0*sqrt(x)*sqrt(y)+y;
 		x = (x+ll)/4.0;                                        /* 更新x,y*/
 		y = (y+ll)/4.0;
-		t = (x+y+z)/3.0;           
+		t = (x+y+z)/3.0;
 		t1 = 1.0-y/t;
 	}while(fabs(t1) > 0.0012);                                 /* 这个阈值用于判断x和y充分接近*/
 	t = (1.0+t1*t1*(0.3+t1*(1.0/7.0+t1*(0.375+9.0*t1/22.0))))/sqrt(t);     /* 用泰勒展开计算积分值*/

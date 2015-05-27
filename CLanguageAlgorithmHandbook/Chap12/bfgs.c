@@ -13,13 +13,9 @@
 =========================================================*/
 #include "stdlib.h"
 #include "math.h"
-#include "dirmin.c"
+#include "something.h"
 
-int bfgs(x, xmin, n, y0, f, df, eps, itmax)
-double *x,*xmin,*y0,eps;
-double (*f)();
-void (*df)();
-int n, itmax;
+int bfgs(double *x, double *xmin, int n, double *y0, double (*f)(), void (*df)(), double eps, int itmax)
 {
 	int i,j,it,flag;
 	double H[41][41],g0[41],dg[41],dx[41],hdg[41];
@@ -48,7 +44,7 @@ int n, itmax;
 		y1 = dirmin(xmin,dx,xmin,n,f,eps,itmax);          /* 从x出发，到更好的x. p=dx*/
 		if(2.0*(*y0 - y1) <= eps*(fabs(*y0) + fabs(y1) + tiny))
 		{
-			*y0 = y1;                            
+			*y0 = y1;
 			flag++;
 			if(flag == 3)                                 /* 连续三次函数值无变化，退出*/
 				return(it);
@@ -95,7 +91,7 @@ int n, itmax;
 			for(j=0; j<n; j++)
 				dx[i] = dx[i] - H[i][j]*g0[j];
 		}
-	}	
+	}
 	printf("exceeding maximum iterations\n");
 	return(it);
 }

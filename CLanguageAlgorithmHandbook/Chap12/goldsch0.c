@@ -2,13 +2,14 @@
 #include "math.h"
 #include "bsl1.c"
 #include "goldsch.c"
-#include "brake.c"
-
-void main()
+#include "something.h"
+static	double f();
+static double df();
+void main12glodch0()
 {
 	double a,b,c,xopt,eps,fx, xmin[50];
 	int i,j,itmax = 100, nmin, iflag;
-	double f(),df();
+
 	eps = 1e-10;
 	nmin = 0;
 	printf("Gold Serch:\n");
@@ -36,14 +37,14 @@ void main()
 				printf("num%d  x=%7.5f  f=%7.5f df=%7.5f\n", nmin,xopt,f(xopt),df(xopt));
 			}
 		}
-	}	
+	}
 }
 
-double f(double x)
+static double f(double x)
 {
 	return bsl1(0,x);
 }
-double df(double x)
+static double df(double x)
 {
 	return -bsl1(1,x);
 }

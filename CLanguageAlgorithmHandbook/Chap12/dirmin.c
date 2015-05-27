@@ -11,22 +11,19 @@
 // 返回值：  函数的极小值
 =========================================================*/
 #include "stdlib.h"
-#include "brent.c"
-#include "mnbrak.c"
+#include "something.h"
 
 int _ndir_;
 double *_pdir_, *_xdir_, *_xtdir_,(*_myfc_)();              /* 需要全局变量*/
 
-double dirmin(x, p, xmin, n, f, eps, itmax)
-double *x,*xmin,*p,eps,(*f)();
-int n,itmax;
+double dirmin(double *x, double *p, double *xmin, int n, double (*f)(), double eps, int itmax)
 {
 	int i;
 	double fdim(), ax, bx, cx, fopt, xopt;
 	_ndir_ = n;
 	_pdir_ = (double*)malloc(_ndir_*sizeof(double));
 	_xdir_ = (double*)malloc(_ndir_*sizeof(double));
-	_xtdir_ = (double*)malloc(_ndir_*sizeof(double));	
+	_xtdir_ = (double*)malloc(_ndir_*sizeof(double));
 	_myfc_ = f;                                            /* 全局变量指向函数*/
 	for(i=0; i<n; i++)
 	{
@@ -35,7 +32,7 @@ int n,itmax;
 	}
 	ax = 0.0;                                             /* 初始猜想范围*/
 	bx = 0.5;
-    mnbrak(&ax, &bx, &cx, fdim);                          /* 找一个极小值区间*/
+    brake(&ax, &bx, &cx, fdim);                          /* 找一个极小值区间*/
 	fopt = brent(ax, bx, cx, fdim, &xopt, eps, itmax);     /* 用brent算法找极小值*/
 	for(i=0; i<n; i++)                                    /* 找到了最优点x*/
 	{
@@ -48,8 +45,7 @@ int n,itmax;
 	return(fopt);
 }
 
-double fdim(t)                                     /* 求f在这个方向上行进t时的值*/
-double t;
+static double fdim_jiang(double t)                                     /* 求f在这个方向上行进t时的值*/
 {
 	int i;
 	double y;

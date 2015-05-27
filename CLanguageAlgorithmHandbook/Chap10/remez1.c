@@ -1,3 +1,8 @@
+#include <stdlib.h>
+
+#define PI 3.1415926
+#define REPS 1e-6
+
 void Remez(double a, double b, double p[7], double (*f)(double))
  /*
 a 双精度实型变量。区间左端点值 b 双精度实型变量。区间右端点值
@@ -28,7 +33,7 @@ f 双精度实型函数指针变量。指向计算函数f(x)值的函数。
         xx[i][6] = mu; mu=-mu;
     }         //初始X矩阵构造
 //下面开始迭代
-    int flagx;　　　//记录f(newx)-P(newx)的符号
+    int flagx; //记录f(newx)-P(newx)的符号
     int times = 0; //记录迭代次数
     while (times < 100)
     {

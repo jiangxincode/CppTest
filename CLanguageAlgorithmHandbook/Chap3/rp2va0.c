@@ -1,6 +1,6 @@
   #include "stdio.h"
   #include "rp2va.c"
-  main()
+  main3rp2va0()
   {
     double r;
     static double a[4][3]={{1.0,2.0,3.0},{2.0,3.0,4.0},

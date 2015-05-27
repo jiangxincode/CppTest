@@ -17,7 +17,7 @@
 #include "math.h"
 #include "stdlib.h"
 
-int bspl1(x,y,y1,y2,n,t,m,z,z1,z2)
+static int bspl1(x,y,y1,y2,n,t,m,z,z1,z2)
 double *x,*y,y1,y2,*t;
 double *z,*z1,*z2;
 int m,n;

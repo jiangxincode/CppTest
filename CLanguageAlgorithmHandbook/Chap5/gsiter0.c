@@ -3,7 +3,7 @@
 #include "jaco.c"
 #include "gssd.c"
 #include "orelax.c"
-main()
+main5gsiter0()
 {
   int i,j;
   double a[5][5]={{24.0,7.0,5.0,2.0,-1.0},

@@ -5,8 +5,8 @@
 // 返 回 值：伽马函数的值的自然对数
 //==============================================================*/
 #include "math.h"
-double gammln(x)
-double x;
+#include "something.h"
+double gammln(double x)
 {
   int i;
   double t,s;

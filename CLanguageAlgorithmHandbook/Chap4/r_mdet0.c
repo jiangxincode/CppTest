@@ -3,7 +3,7 @@
 #include "r_mdet.c"
 #include "r_mrank.c"
 #include "r_chdet.c"
-void main()
+void main4r_mdet0()
 {
     double a[4][4] = {{2.0,1.0,3.0,5.0},    /* ¾ØÕóA£¬B£¬C·Ö±ğ¸³³õÖµ*/
       {2.0,2.0,-3.0,-1.0},

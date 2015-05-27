@@ -1,6 +1,6 @@
 #include "stdio.h"
 #include "math.h"
-void main()
+void main1exp4()
 {
     int n;
     double x;
@@ -11,4 +11,4 @@ void main()
         x = 1.0/10.0/n - x/10.0;
         printf("x%2d=%e\n",n-1,x);
     }
-} 
+}

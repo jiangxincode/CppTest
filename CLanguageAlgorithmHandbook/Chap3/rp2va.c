@@ -6,7 +6,7 @@
   // 返 回 值：二元多项式在(x,y)处的值
   //==============================================================*/
 
-  double rp2va(a,m,n,x,y)
+  static double rp2va(a,m,n,x,y)
   int m,n;
   double *a,x,y;
   {

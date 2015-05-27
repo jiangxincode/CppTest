@@ -8,7 +8,7 @@
 =========================================================*/
 #include "math.h"
 
-double lagr(a,f,p)
+static double lagr(a,f,p)
 double a,(*f)();
 int p;
 {

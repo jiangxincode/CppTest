@@ -12,9 +12,7 @@
 #include "stdlib.h"
 #include "math.h"
 
-int toepl(t,b,x,n,eps)
-double *t,*b,*x,eps;
-int n;
+int toepl(double *t,double *b,double *x,int n,double eps)
 {
   int i,j,k;
   double beta,s1,s,p,q,*y,*yy;

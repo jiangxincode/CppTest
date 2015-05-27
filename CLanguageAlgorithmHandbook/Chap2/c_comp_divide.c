@@ -9,9 +9,8 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "math.h"
-
-int c_comp_divide(a1,a2,c)
-struct c_comp *a1,*a2,*c;
+#include "c_comp.h"
+static int c_comp_divide(struct c_comp *a1,struct c_comp *a2,struct c_comp *c)
 {
     double R2;
     if(a1 == NULL || a2 == NULL || c == NULL)
@@ -21,7 +20,7 @@ struct c_comp *a1,*a2,*c;
     }
 
     R2 = (a2->rmz)*(a2->rmz) + (a2->imz)*(a2->imz);
-    
+
     c_comp_product(a1,a2,c);
     c->rmz = c->rmz/R2;
     c->imz = c->imz/R2;

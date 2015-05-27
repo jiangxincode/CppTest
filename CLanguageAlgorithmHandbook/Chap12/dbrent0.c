@@ -2,13 +2,14 @@
 #include "math.h"
 #include "bsl1.c"
 #include "dbrent.c"
-#include "brake.c"
+#include "something.h"
 
-void main()
+static double f(double x);
+static double df(double x);
+void main12dbrent0()
 {
 	double a,b,c,xopt,eps,fx, xmin[50];
 	int i,j,itmax = 100, nmin, iflag;
-	double f(double),df(double);
 	eps = 1.0e-10;
 	nmin = 0;
 	printf("dbrent serch:\n");
@@ -35,15 +36,15 @@ void main()
 				xmin[nmin++] = xopt;
 				printf("num%d  x=%7.5f  f=%7.5f df=%7.5f\n", nmin,xopt,f(xopt),df(xopt));
 			}
-		}		
+		}
 	}
 }
 
-double f(double x)
+static double f(double x)
 {
 	return bsl1(0,x);
 }
-double df(double x)
+static double df(double x)
 {
 	return -bsl1(1,x);
 }

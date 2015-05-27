@@ -1,8 +1,8 @@
 #include "stdio.h"
 #include "math.h"
-#include "gammln.c"                               /* 需要伽马函数的支持*/
+#include "something.h" /* 需要伽马函数的支持*/
 #include "factrl.c"
-void main()
+void main11factrl0()
 {
   int n;
   double x;

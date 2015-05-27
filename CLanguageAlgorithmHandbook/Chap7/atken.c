@@ -9,7 +9,7 @@
 //           t 指定的插值点, eps 小于此数的值认为是0
 // 返回值：  在指定插值点的函数近似值
 =========================================================*/
-double atken(x,y,n,t,eps)
+static double atken(x,y,n,t,eps)
 double *x,*y,t,eps;
 int n;
 {
@@ -40,13 +40,13 @@ int n;
   {
     k = 0; m = n-1;                          /* 二分法寻找合适的区间*/
     while((m-k) > 1)
-    { 
+    {
       j = (k+m)/2;
       if(x[j] < t)  k = j;
       else  m = j;
     }
     if(n>7)
-    { 
+    {
       if(k<4)                                /* 插值点在中间*/
       { k = 0; m = 2*m; }
       else if(k>(n-5))                       /* 插值点在中间*/

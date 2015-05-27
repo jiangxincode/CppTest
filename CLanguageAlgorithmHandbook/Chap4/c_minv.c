@@ -10,10 +10,7 @@
 //           eps 精度要求，小于eps的值，认为是0。
 // 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-int c_minv(mat,n,eps)
-struct c_comp *mat;
-int n;
-double eps;
+int c_minv(struct c_comp *mat,int n,double eps)
 {
     int *is,*js,i,j,k,l,v;
     struct c_comp c_tmp;

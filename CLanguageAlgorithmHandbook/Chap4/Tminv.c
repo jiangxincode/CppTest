@@ -14,7 +14,7 @@
 #include "stdlib.h"
 #include "math.h"
 
-int Tminv(t1,t2,n,mat,eps)
+static int Tminv(t1,t2,n,mat,eps)
 double *t1, *t2;
 int n;
 double *mat;

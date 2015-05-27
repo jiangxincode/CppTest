@@ -1,7 +1,7 @@
   #include "stdio.h"
   #include "rpmva.c"
   #include "rpva.c"
-  main()
+  main3rpmdva0()
   {
     int i;
     double y[6],tmp;

@@ -12,9 +12,9 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "math.h"
-//#include "beta2.c"
+#include "something.h"
 
-int tutest(a,na,b,nb,alpha)
+static int tutest(a,na,b,nb,alpha)
 double *a,*b,alpha;
 int na,nb;
 {
@@ -45,5 +45,5 @@ int na,nb;
 	return(p<=alpha);
 }
 
-	
+
 

@@ -13,9 +13,9 @@
 =========================================================*/
 #include "stdlib.h"
 #include "math.h"
-#include "dirmin.c"
+#include "something.h"
 
-int powell(x, ee, xmin, n, y0, f, eps, itmax)
+static int powell(x, ee, xmin, n, y0, f, eps, itmax)
 double *x,*ee,*xmin,*y0,eps;
 double (*f)();
 int n, itmax;
@@ -43,7 +43,7 @@ int n, itmax;
 		{
 			for(j=0; j<n; j++)                        /* 第i个搜索方向*/
 				e[j] = ee[i*n+j];
-			y1 = *y0;                                 
+			y1 = *y0;
 			*y0 = dirmin(xmin, e, xmin, n, f, eps, itmax);  /* 从x出发，到更好的x*/
 			if(y1-*y0 > del)                          /* 下降量*/
 			{
@@ -65,7 +65,7 @@ int n, itmax;
 			tmp = tmp-del*(ymax-y1)*(ymax-y1);
 			if(tmp < 0.0)
 			{
-				*y0 = dirmin(xmin, e, xmin, n, f, eps, itmax); 
+				*y0 = dirmin(xmin, e, xmin, n, f, eps, itmax);
 				for(j=0; j<n; j++)
 					ee[kk*n+j] = e[j];               /* 更新方向集体*/
 			}

@@ -2,10 +2,10 @@
 #include<stdio.h>
 #include<math.h>
 #include"disroot.c"
-
-void main()
+static double f(double);
+void main6disroot1()
 {
-    double f(double);
+
     double a,b,eps,root;
     a=0.0;b=1.0;eps=0.00001;              /* 区间和精度要求*/
 
@@ -14,7 +14,7 @@ void main()
     printf("\nThe root is  %1.7f\n",root);
 }
 
-double f(x)                               /* 待解的方程*/
+static double f(x)                               /* 待解的方程*/
 double x;
 {
     double z;
@@ -23,4 +23,4 @@ double x;
 }
 
 
- 
+

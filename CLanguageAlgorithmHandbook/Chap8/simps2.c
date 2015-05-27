@@ -11,7 +11,8 @@
 //           fy 指向计算y方向上下限的函数的指针
 // 返回值：  积分近似值
 =========================================================*/
-double simps2(a,b,n0,eps,h0,f,fy)
+static   double g();
+static double simps2(a,b,n0,eps,h0,f,fy)
 double a,b,eps,h0;
 int n0;
 double (*f)();
@@ -19,7 +20,7 @@ void (*fy)();
 {
   int n,k;
   double z,z2,s,s2,h,d,x,t1,t2;
-  double g();
+
   n = n0;                            /* 初始的划分数*/
   h = (b-a)/n;                       /* 求得初始步长*/
   t1 = g(a,n0,eps,f,fy);

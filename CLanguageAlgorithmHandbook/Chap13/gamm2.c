@@ -12,7 +12,7 @@
 #include "gammln.c"
 #define NMAX 100
 
-double gamm2(a,x,e1,e0)
+static double gamm2(a,x,e1,e0)
 double a,x,e1,e0;
 {
   int n;

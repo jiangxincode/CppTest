@@ -17,17 +17,18 @@
 #include "stdlib.h"
 #include "math.h"
 #define TINY 1.0e-7
-
-int simplex(a,n,m1,m2,m3,ixr,ixc,eps)
+	static int cmax1(), cmax2(), pivot();
+	static void mswap();
+static int simplex(a,n,m1,m2,m3,ixr,ixc,eps)
 int n,m1,m2,m3,*ixr,*ixc;
-double *a,eps;     
+double *a,eps;
 {
 	int i,j,k,m,mp,np,ip,jp,flag;
 	int lisx[101],lism2[101],nl1;
-	int cmax1(), cmax2(), pivot();
-	void mswap();
+
+
 	double tmp,cmax;
-	
+
 	m = m1+m2+m3;
 	if(n > 100)
 	{
@@ -66,30 +67,30 @@ double *a,eps;
 		while(flag == 1)
 		{
 			jp = cmax1(a,mp,np,m+1,lisx,nl1,&cmax);            /* 找最后一行中的系数最大值*/
-			if(cmax <= eps && a[(m+1)*np] < -eps)             
-			{                                     /* 系数都是正的，而且此时的极小值也小于0*/ 
+			if(cmax <= eps && a[(m+1)*np] < -eps)
+			{                                     /* 系数都是正的，而且此时的极小值也小于0*/
 				printf("no feasible solution.\n");             /* 无可行解*/
 				return(-1);
 			}
-			else if(cmax <= eps && a[(m+1)*np]<=eps)         
+			else if(cmax <= eps && a[(m+1)*np]<=eps)
 			{                                    /* 已经找到辅助问题的最优解，要交换参数z*/
 				for(ip=m1+m2+1; ip<=m; ip++)
 				{
 					if(ixc[ip] == ip+n)                        /* 找到一个参数z*/
 					{                            /* 在本行找一个系数绝对值最大的，进行换元*/
-						jp = cmax2(a,mp,np,ip,lisx,nl1,&cmax); 
+						jp = cmax2(a,mp,np,ip,lisx,nl1,&cmax);
 						if(fabs(cmax) > eps)
 						{
 							mswap(a,mp,np,ip,jp);
 							for(j=1; j<=nl1; j++)
 								if(lisx[j] == jp)
 									break;
-								nl1--;                           /* 这一列以后不再关心*/	
+								nl1--;                           /* 这一列以后不再关心*/
 								for(k=j; k<=nl1; k++)
 									lisx[k] = lisx[k+1];
 								i = ixr[jp];              /* 更新左手变量和右手变量序列*/
 								ixr[jp] = ixc[ip];
-								ixc[ip] = i;								
+								ixc[ip] = i;
 						}
 					}
 				}
@@ -119,7 +120,7 @@ double *a,eps;
 					for(j=1; j<=nl1; j++)
 						if(lisx[j] == jp)
 							break;
-						nl1--;                           /* 这一列以后不再关心*/	
+						nl1--;                           /* 这一列以后不再关心*/
 						for(k=j; k<=nl1; k++)
 							lisx[k] = lisx[k+1];
 				}
@@ -138,7 +139,7 @@ double *a,eps;
 				ixr[jp] = ixc[ip];
 				ixc[ip] = i;
 			}
-		} 
+		}
 	}
 	while(1)
 	{
@@ -155,7 +156,7 @@ double *a,eps;
 	}
 }
 
-int cmax1(a, mp, np, mm, ll, nll, cmax) /* 计算数组a中第mm行数组ll中各列中的最大元素cmax*/
+static int cmax1(a, mp, np, mm, ll, nll, cmax) /* 计算数组a中第mm行数组ll中各列中的最大元素cmax*/
 double *a, *cmax;                                 /* 返回此最大元素的列号*/
 int mp, np, mm, *ll, nll;                         /* mp,np是二维数组a的规模*/
 {
@@ -176,7 +177,7 @@ int mp, np, mm, *ll, nll;                         /* mp,np是二维数组a的规模*/
 }
 
 #include "math.h"                 /* 计算数组a中第mm行数组ll中各列中的绝对值最大的元素cmax*/
-int cmax2(a, mp, np, mm, ll, nll, cmax) 
+static int cmax2(a, mp, np, mm, ll, nll, cmax)
 double *a, *cmax;                                 /* 返回此最大元素的列号*/
 int mp, np, mm, *ll, nll;                         /* mp,np是二维数组a的规模*/
 {
@@ -197,7 +198,7 @@ int mp, np, mm, *ll, nll;                         /* mp,np是二维数组a的规模*/
 	return(kp);
 }
 
-int pivot(a, mp, np, m, n, kp)                  /* 选主元，考虑到表退化的情况*/
+static int pivot(a, mp, np, m, n, kp)                  /* 选主元，考虑到表退化的情况*/
 double *a;
 int mp,np,m,n,kp;
 {
@@ -215,7 +216,7 @@ int mp,np,m,n,kp;
 		{
 			if(a[i*np+kp] < -TINY)                  /* 又一个负元素*/
 			{
-				p1 =  -a[i*np]/a[i*np+kp]; 
+				p1 =  -a[i*np]/a[i*np+kp];
 				if(p1 < p0)
 				{
 					ip = i;
@@ -240,7 +241,7 @@ int mp,np,m,n,kp;
 		return(ip);
 }
 
-void mswap(a, mp, np, ip, kp)                        /* 换元，ip指定的行和kp指定列*/
+static void mswap(a, mp, np, ip, kp)                        /* 换元，ip指定的行和kp指定列*/
 double *a;
 int mp,np,ip,kp;
 {
@@ -263,7 +264,7 @@ int mp,np,ip,kp;
 		for(k=kp+1; k<np; k++)
 			a[i*np+k] = a[i*np+k]-a[ip*np+k]*a[i*np+kp];
 	}
-	a[ip*np+kp] = a[ip*np+kp]*tmp;                       /* 变换第ip行*/                           
+	a[ip*np+kp] = a[ip*np+kp]*tmp;                       /* 变换第ip行*/
 	tmp = -tmp;
 	for(k=0; k<kp; k++)
 		a[ip*np+k] *= tmp;

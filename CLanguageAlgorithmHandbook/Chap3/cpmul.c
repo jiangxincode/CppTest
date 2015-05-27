@@ -13,7 +13,7 @@
 #include"p2c.c"
 #include"c2p.c"
 
-int cpmul(a,n,b,m,c)
+static int cpmul(a,n,b,m,c)
 struct c_comp *a,*b,*c;
 int n,m;
 {
@@ -25,10 +25,10 @@ int n,m;
     printf("(cpmul)NULL pointer found.\n");
     return(0);
   }
-  
+
   k = log(n+m-1-0.5)/log(2.0)+1;	/* 求最小的k，并满足2^k 不小于多项式C的阶数*/
   nn = 1;				/* 求出2^k*/
-  for(i=0; i<k; i++)		
+  for(i=0; i<k; i++)
     nn = nn<<1;
 					/* 为扩展后的多项式分配足够的空间*/
   aa = (struct c_comp*)malloc(nn*sizeof(struct c_comp));
@@ -66,13 +66,13 @@ int n,m;
 
   i = c2p(aa,nn,ya);			 /*求出扩展后多项式A的点表示形式*/
   k = c2p(bb,nn,yb);			 /*求出扩展后多项式B的点表示形式*/
-  					 
+
   if(i&&k)			  	 /* 若点表示求解成功，继续运算。否则返回0*/
   {
-  
+
     for(i=0; i<nn; i++)			 /* 计算在各点上的乘积*/
       c_comp_product(&ya[i],&yb[i],&yc[i]);
-    k = p2c(yc,nn,cc);			 /*求出多项式C的系数*/   
+    k = p2c(yc,nn,cc);			 /*求出多项式C的系数*/
     if(k)				 /*剔除多余的高阶零项。若p2c函数失败，则返回0*/
     {
       for(i=0; i<m+n-1; i++)

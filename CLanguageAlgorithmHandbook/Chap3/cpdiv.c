@@ -10,7 +10,7 @@
 //==============================================================*/
 #include"stdio.h"
 #include"c_comp.c"
-int cpdiv(a,n,b,m,q,k,r,l)
+static int cpdiv(a,n,b,m,q,k,r,l)
 struct c_comp *a,*b,*q,*r;
 int n,m,k,l;
 {
@@ -48,8 +48,8 @@ int n,m,k,l;
   for(i=0; i<k; i++)
   {
     kk = k-i-1;
-    jj = n-i-1; 
-    c_comp_product(&r[jj],&b[m-1],&t1);		  /* 求出当前的商*/   
+    jj = n-i-1;
+    c_comp_product(&r[jj],&b[m-1],&t1);		  /* 求出当前的商*/
     q[kk].rmz = t1.rmz/tmp;
     q[kk].imz = t1.imz/tmp;
     r[jj].rmz = 0.0;			          /* 从余式中减去当前的商与多项式B的积*/
@@ -61,6 +61,6 @@ int n,m,k,l;
     }
   }
   b[m-1].imz = -b[m-1].imz; 			  /* 恢复b[m-1]*/
-  return(1); 
+  return(1);
 }
 

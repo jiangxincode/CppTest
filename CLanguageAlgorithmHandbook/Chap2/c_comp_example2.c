@@ -9,7 +9,7 @@
 #include "c_comp_power.c"
 #include "c_comp_nthroot.c"
 
-void main()
+void main2c_comp_example2()
 {
 	struct c_comp a,b,c,f,g,h;
 	struct c_comp d[5];
@@ -17,7 +17,7 @@ void main()
 
 	a.rmz=5.5;
 	a.imz=3.7;
-	
+
 
 	if(c_comp_power(&a,&c,n))
 	{

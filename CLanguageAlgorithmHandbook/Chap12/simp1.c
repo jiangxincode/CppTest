@@ -19,10 +19,10 @@
 #include "stdlib.h"
 #include "math.h"
 
-int simp1(d,n,lam,alf,miu,x,fx,xopt,f,eps,itmax)
+static int simp1(d,n,lam,alf,miu,x,fx,xopt,f,eps,itmax)
 double d,lam,alf,miu;
 double *x,*fx,*xopt,eps;
-double (*f)();                                    
+double (*f)();
 int itmax,n;
 {
 	int it,i,j,h,l,g;
@@ -45,7 +45,7 @@ int itmax,n;
 	for(i=0; i<=n; i++)                                          /* 构造初始的单纯形*/
 	for(j=0; j<n; j++)
 		x[i*n+j] = xopt[j];
-	for(j=0; j<n; j++)                                            
+	for(j=0; j<n; j++)
 		x[(j+1)*n+j] = x[j]+d;
 	for(i=0; i<=n; i++)                                        /* 求出在各个顶点上的函数值*/
 		fx[j] = (*f)(&x[i*n],n);
@@ -68,7 +68,7 @@ int itmax,n;
 					g = h;
 					h = i;
 				}
-				else                                        /* 查找新次坏点*/                    
+				else                                        /* 查找新次坏点*/
 					g = i;
 				fg = fx[g];
 				fh = fx[h];
@@ -79,7 +79,7 @@ int itmax,n;
 				fl = fx[l];
 			}
 		}
-		for(j=0; j<n; j++)                              
+		for(j=0; j<n; j++)
 		{
 			xc[j] = 0.0;                                  /* 求重心的n个坐标*/
 			for(i=0; i<=n; i++)
@@ -107,7 +107,7 @@ int itmax,n;
 				fx[h] = ft;
 			}
 		}
-		else if(ft <= fx[g])                 
+		else if(ft <= fx[g])
 		{
 			for(j=0; j<n; j++)                    /* 用xt替换xh*/
 				x[h*n+j] = xt[j];

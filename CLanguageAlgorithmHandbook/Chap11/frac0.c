@@ -1,7 +1,7 @@
 #include "math.h"
 #include "stdio.h"
 #include "frac.c"
-main()
+main11frac0()
 {
   int nmax;
   double f,e0,e1;

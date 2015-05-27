@@ -11,7 +11,7 @@
 #include "math.h"
 #include "stdlib.h"
 
-double lfs(x,y,n,t,eps)
+static double lfs(x,y,n,t,eps)
 double *x,*y,t,eps;
 int n;
 {
@@ -29,48 +29,48 @@ int n;
   k = 0;
   if(t < x[2])
   {
-	  k = 0; 
+	  k = 0;
 	  p = 3;
   }
   else if(t > x[n-3])
-  { 
-	  k = n-3; 
-	  p =3; 
+  {
+	  k = n-3;
+	  p =3;
   }
   else
   {
     k = 0;
 	p = n-1;                    /* 二分法寻找合适的区间*/
     while((p-k) > 1)
-    { 
+    {
       j = (k+p)/2;
-      if(x[j] < t) 
+      if(x[j] < t)
 		  k = j;
-      else  
+      else
 		  p = j;
     }
     if(n>7)
-    { 
+    {
       if(k<4)
-      { 
-		  k = 0; 
+      {
+		  k = 0;
 		  p = 2*p;
 	  }
       else if(k>(n-5))
       {
-		  p = 2*(n-1-k); 
+		  p = 2*(n-1-k);
 		  k = n-p;
 	  }
       else
       {
-		  k = k-3; 
-		  p = 8; 
+		  k = k-3;
+		  p = 8;
 	  }
     }
     else
-    { 
-		k = 0; 
-		p = n; 
+    {
+		k = 0;
+		p = n;
 	}
   }
   b = (double*)malloc((p)*sizeof(double));  /* 分配空间，存放连分式*/

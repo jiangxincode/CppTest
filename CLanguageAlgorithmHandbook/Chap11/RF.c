@@ -7,8 +7,8 @@
 // 返 回 值：第一类椭圆积分的值
 //==============================================================*/
 #include "math.h"
-double RF(x,y,z)
-double x,y,z;
+double RF(double x,double y,double z)
+
 {
 	double ll,t,t1,t2,flag,eps;
 	double xt,yt,zt;
@@ -19,14 +19,14 @@ double x,y,z;
 		return(0.0);
 	}
 	do{
-		t = sqrt(x); 
-		t1 = sqrt(y); 
+		t = sqrt(x);
+		t1 = sqrt(y);
 		t2 = sqrt(z);
-		ll = t*(t1+t2)+t1*t2;    
+		ll = t*(t1+t2)+t1*t2;
 		x = (x+ll)/4.0;                                        /* 更新x,y,z*/
 		y = (y+ll)/4.0;
 		z = (z+ll)/4.0;
-		t = (x+y+z)/3.0;           
+		t = (x+y+z)/3.0;
 		xt = 1.0-x/t;
 		yt = 1.0-y/t;
 		zt = 1.0-z/t;
@@ -35,6 +35,6 @@ double x,y,z;
 	}while(flag > 0.0025);                                  /* 这个阈值用于判断xyz充分接近*/
 	t1 = xt*yt-zt*zt;                                        /* 用泰勒展开计算积分值*/
 	t2 = xt*yt*zt;
-	t = (1-t1/10.0+t2/14.0+t1*t1/24.0-3*t1*t2/44.0)/sqrt(t);  
+	t = (1-t1/10.0+t2/14.0+t1*t1/24.0-3*t1*t2/44.0)/sqrt(t);
 	return(t);
 }

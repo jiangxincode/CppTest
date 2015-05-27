@@ -7,14 +7,14 @@
 #include"stdio.h"
 #include"math.h"
 #include"c_comp.c"
-
-int c2p(a,n,y)
+static int c2p0();
+static int c2p(a,n,y)
 int n;
 struct c_comp *a,*y;
 {
 	int i,k,nn;
-	int c2p0();
-	k = log(n-0.5)/log(2.0)+1;        /* 求出k，使2^k>=n>2^(k-1) */ 
+
+	k = log(n-0.5)/log(2.0)+1;        /* 求出k，使2^k>=n>2^(k-1) */
 	nn = 1;
 	for(i=0; i<k; i++)          	/* 判断n是否是2的整数幂，不是的话退出程序*/
 		nn = nn<<1;
@@ -27,7 +27,7 @@ struct c_comp *a,*y;
 	return(k);
 }
 
-int c2p0(a,n,y)
+static int c2p0(a,n,y)
 int n;
 struct c_comp *a,*y;
 {
@@ -35,13 +35,13 @@ struct c_comp *a,*y;
   struct c_comp xn,x,t;
   struct c_comp *a0,*a1,*y0,*y1;
 
-  if(n==1)                   
+  if(n==1)
   {			    /* 当只有一个系数时，函数值就是这个系数*/
     y[0].rmz = a[0].rmz;
     y[0].imz = a[0].imz;
     return(1);
   }
-  
+
   k = n>>1;		    /* k是n的一半，即两个小规模问题需要分配空间大小*/
   a0 = (struct c_comp*)malloc(k*sizeof(struct c_comp));
   a1 = (struct c_comp*)malloc(k*sizeof(struct c_comp));
@@ -72,7 +72,7 @@ struct c_comp *a,*y;
     {
       c_comp_product(&x,&y1[i],&t); 			    /* 一加一减，完成了函数值的综合*/
       c_comp_plus(&y0[i],&t,&y[i]);
-      c_comp_sub(&y0[i],&t,&y[i+k]); 
+      c_comp_sub(&y0[i],&t,&y[i+k]);
       c_comp_product(&xn,&x,&x);    /* x与xn相乘，结果放在x中，第k次综合时的x就是xn^k*/
     }
   }

@@ -2,7 +2,7 @@
 #include "atken.c"
 #include "atkene.c"
 #include "lagr7.c"
-main()
+main7atken0()
 {
   double t,h,z,eps;
   double x[10]={0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,1.00};

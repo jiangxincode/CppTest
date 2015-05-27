@@ -15,11 +15,7 @@
 #include "math.h"
 #define G2 0.38196601
 
-double brent(a, b, c, f, xopt, eps, itmax)
-double a,b,c,eps;
-double (*f)(double);
-double *xopt;
-int itmax;
+double brent(double a, double b, double c, double (*f)(double), double *xopt, double eps, int itmax)
 {
 	int it;
 	double xm,x,u,w,v,fx,fu,fw,fv,eps1,eps2,d0,d;

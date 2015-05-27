@@ -12,9 +12,9 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "math.h"
-#include "beta2.c"
+#include "something.h"
 
-int ftest(a,na,b,nb,alpha)
+static int ftest(a,na,b,nb,alpha)
 double *a,*b,alpha;
 int na,nb;
 {
@@ -52,5 +52,5 @@ int na,nb;
 	if(q1 > 1.0)
 		q1 = 2.0 - q1;
 	return(q1<=alpha);
-}	
+}
 

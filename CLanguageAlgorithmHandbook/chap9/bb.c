@@ -11,7 +11,7 @@
 #include<math.h>
 //#include "rungekuttainvh.c"
 
-int bb(y,n,f,h,m,a)
+static int bb(y,n,f,h,m,a)
 double *y,(*f)(),h,a;
 int n,m;
 {
@@ -34,9 +34,9 @@ int n,m;
         x=a+k*h;
         f(&y[(k-1)*n],f1,x-h);               /* x(k-1)处的f*/
         f(&y[k*n],f2,x);                     /* x(k)处的f*/
-    	
+
         for(i=0;i<n;i++)                     /* 预报p*/
-            p[i]=-4.0*y[k*n+i]+5.0*y[(k-1)*n+i]+2.0*h*(2.0*f2[i]+f1[i]);		
+            p[i]=-4.0*y[k*n+i]+5.0*y[(k-1)*n+i]+2.0*h*(2.0*f2[i]+f1[i]);
         f(p,f3,x+h);                         /* 预报x(k+1)处的f*/
         for(i=0;i<n;i++)
         {                                    /* 预报c*/
@@ -45,7 +45,7 @@ int n,m;
     	}
         k++;
     }
-    while(k<m);                              /* 循环*/  
+    while(k<m);                              /* 循环*/
     free(p);
     free(f2);
     free(f3);
@@ -54,4 +54,4 @@ int n,m;
     return (1);
 }
 
- 
+

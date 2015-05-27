@@ -10,7 +10,7 @@
 #include<stdio.h>
 #include<math.h>
 
-int rungekuttainvh(y,n,f,h,m,a)
+static int rungekuttainvh(y,n,f,h,m,a)
 double *y,(*f)(),h,a;
 int n,m;
 {
@@ -32,15 +32,15 @@ int n,m;
         f(&y[k*n],k1,x);                           /* k1*/
 		for(i=0;i<n;i++)
 			ytemp[i]=y[k*n+i]+h*k1[i]/2.0;
-		f(ytemp,k2,x+h/2.0);                       /* k2*/		
+		f(ytemp,k2,x+h/2.0);                       /* k2*/
 		for(i=0;i<n;i++)
 			ytemp[i]=y[k*n+i]+h*k2[i]/2.0;
-		f(ytemp,k3,x+h/2.0);                       /* k3*/		
+		f(ytemp,k3,x+h/2.0);                       /* k3*/
 		for(i=0;i<n;i++)
 			ytemp[i]=y[k*n+i]+h*k3[i];
-		f(ytemp,k4,x+h);                           /* k4*/		
+		f(ytemp,k4,x+h);                           /* k4*/
 		for(i=0;i<n;i++)						   /* 计算此处的函数值*/
-			y[(k+1)*n+i]=y[k*n+i]+h/6.0*(k1[i]+2.0*k2[i]+2.0*k3[i]+k4[i]);         
+			y[(k+1)*n+i]=y[k*n+i]+h/6.0*(k1[i]+2.0*k2[i]+2.0*k3[i]+k4[i]);
 		k++;
     }
     while(k<m);
@@ -52,4 +52,3 @@ int n,m;
     return (1);
 }
 
- 

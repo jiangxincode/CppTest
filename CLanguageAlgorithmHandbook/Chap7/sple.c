@@ -10,7 +10,7 @@
 #include "stdio.h"
 #include "math.h"
 
-double sple(x,h,y,n,t,eps)
+static double sple(x,h,y,n,t,eps)
 double x,h,*y,t,eps;
 int n;
 {
@@ -29,7 +29,7 @@ int n;
   if(n==2)                                    /* 只有两个结点，使用线性插值*/
   {
     z = (y[0]*(t-x-h) - y[1]*(t-x))/h;
-    return(z);  
+    return(z);
   }
   k = 0;
   while(((x+k*h)<t)&&(k<n))                      /* 寻找合适的区间*/

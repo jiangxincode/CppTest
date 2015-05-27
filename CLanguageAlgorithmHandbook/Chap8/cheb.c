@@ -9,7 +9,7 @@
 //           f 指向被积函数的指针
 // 返回值：  积分近似值
 =========================================================*/
-double cheb(a,b,n0,eps,h0,f)
+static double cheb(a,b,n0,eps,h0,f)
 double a,b,eps,h0;
 int n0;
 double (*f)();

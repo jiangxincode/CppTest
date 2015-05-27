@@ -8,7 +8,7 @@
 #include "stdlib.h"
 #include "math.h"
 
-double r_mdet(mat, n, eps)
+static double r_mdet(mat, n, eps)
 double *mat,eps;
 int n;
 {
@@ -23,9 +23,9 @@ int n;
     cpmat = (double*)malloc(n*n*sizeof(double));  /* 将输入矩阵的内容拷贝一份，以免破坏*/
     for(i=0; i<n*n; i++)
       cpmat[i] = mat[i];
-    det = 1.0;                                 /* 设置行列式值初置*/ 
+    det = 1.0;                                 /* 设置行列式值初置*/
     flag = 1.0;                                /* 这个变量原来记录行列式值的符号*/
-    for(k=0; k<n-1; k++)           /* 最多进行n-1次消去*/     
+    for(k=0; k<n-1; k++)           /* 最多进行n-1次消去*/
     {
       pivot = 0.0;                             /* 选择主元*/
       for(i=k; i<n; i++)
@@ -43,7 +43,7 @@ int n;
       {
   det = 0.0;                             /*此时行列式值也是0。*/
   return(det);
-      } 
+      }
       if(is != k)                              /* 判断是否需要行交换*/
       {
   flag = -flag;                          /* 行交换一次，行列式值变号*/
@@ -70,13 +70,13 @@ int n;
       }
       for(i=k+1; i<n; i++)                    /* 进行消去*/
       {
-  tmp = cpmat[i*n+k]/cpmat[k*n+k];          /* 记录下此值，减少除法的次数*/ 
+  tmp = cpmat[i*n+k]/cpmat[k*n+k];          /* 记录下此值，减少除法的次数*/
   for(j=k+1; j<n; j++)                  /* 消去*/
     cpmat[i*n+j] -= tmp*cpmat[k*n+j];
       }
       det = det*cpmat[k*n+k];           /*更新det的值*/
     }
     det = flag*det*cpmat[k*n+k];        /* 最终更新det的值*/
-    free(cpmat);       
+    free(cpmat);
     return(det);
 }

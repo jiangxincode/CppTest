@@ -1,6 +1,6 @@
   #include "stdio.h"
   #include "r_chol.c"
-  main()
+  main4r_chol0()
   {
     int i,j;
     double u[5][5];

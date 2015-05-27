@@ -11,7 +11,7 @@
 #include<math.h>
 //#include "rungekuttainvh.c"
 
-int hamming(y,n,f,h,m,a)
+static int hamming(y,n,f,h,m,a)
 double *y,(*f)(),h,a;
 int n,m;
 {
@@ -36,9 +36,9 @@ int n,m;
         x=a+k*h;
         f(&y[(k-2)*n],f1,x-2*h);              /* x(k-2)处的f*/
         f(&y[(k-1)*n],f2,x-h);                /* x(k-1)处的f*/
-        f(&y[k*n],f3,x);                      /* xk处的f*/		
+        f(&y[k*n],f3,x);                      /* xk处的f*/
         for(i=0;i<n;i++)                      /* 预报p*/
-            p[i]=y[(k-3)*n+i]+4.0*h/3.0*(2.0*f3[i]-f2[i]+2.0*f1[i]);		
+            p[i]=y[(k-3)*n+i]+4.0*h/3.0*(2.0*f3[i]-f2[i]+2.0*f1[i]);
         f(p,f4,x+h);                          /* 预报x(k+1)处的f*/
         for(i=0;i<n;i++)
         {                                     /* 预报c*/
@@ -49,10 +49,10 @@ int n,m;
     }
     while(k<m)                                /* 循环*/
     {
-        x=a+k*h;		
+        x=a+k*h;
         temp=f1;f1=f2;f2=f3;f3=temp;
-        f(&y[k*n],f3,x); 
-    	
+        f(&y[k*n],f3,x);
+
         for(i=0;i<n;i++)
         {   ptemp[i]=y[(k-3)*n+i]+4.0*h/3.0*(2.0*f3[i]-f2[i]+2.0*f1[i]);  /* 预报*/
             p[i]=ptemp[i]+112.0/121.0*(c[i]-p[i]);                        /* 预报*/
@@ -64,7 +64,7 @@ int n,m;
             y[(k+1)*n+i]=c[i]-9.0/121.0*(c[i]-p[i]);
     	}
         k++;
-    }   
+    }
     free(p);
     free(f2);
     free(f3);
@@ -75,4 +75,4 @@ int n,m;
     return (1);
 }
 
- 
+

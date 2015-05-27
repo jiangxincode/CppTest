@@ -11,7 +11,7 @@
 
 #define PI 3.14159
 
-double randgsabs(L,a,b,G)
+static double randgsabs(L,a,b,G)
 int L;
 double a,b;
 double *G;

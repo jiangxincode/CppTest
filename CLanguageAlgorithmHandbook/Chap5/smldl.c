@@ -11,7 +11,7 @@
             eps 精度要求，小于此值的数据认为是0
 //返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-int smldl(mat,n,L,D,eps)
+static int smldl(mat,n,L,D,eps)
 double *mat,*L,*D,eps;
 int n;
 {

@@ -12,12 +12,9 @@
 #include "math.h"
 #define PI 3.1415926
 
-/*struct c_comp{
-    double rmz;
-    double imz;
-}c_comp;*/
+#include "c_comp.h"
 
-int c_comp_nthroot(a,c,n)
+static int c_comp_nthroot(a,c,n)
 struct c_comp *a,*c;
 int n;
 {

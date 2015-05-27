@@ -2,9 +2,10 @@
 #include "stdio.h"
 #include "simps2.c"
 #include "lfsi2.c"
-main()
+static double f(double,double);
+main8lfsi20()
 {
-  double a,b,eps,s,h0,f(double,double);
+  double a,b,eps,s,h0;
   void  fy(double,double []);
   a = 0.0;
   b = 4.0;
@@ -16,7 +17,7 @@ main()
   printf(" lfsi2: z=%2.5f\n",s);         /* 打印积分结果*/
   getchar();
 }
-double f(x,y)                            /* 被积分的函数*/
+static double f(x,y)                            /* 被积分的函数*/
 double x,y;
 {
   double z;

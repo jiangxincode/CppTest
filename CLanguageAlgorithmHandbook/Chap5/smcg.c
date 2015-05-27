@@ -9,7 +9,7 @@
 //           eps 精度要求，iter 最多迭代次数。
 // 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-int smcg(a,b,x,n,eps,iter)
+static int smcg(a,b,x,n,eps,iter)
 double *a,*b,*x,eps;
 int n,iter;
 {

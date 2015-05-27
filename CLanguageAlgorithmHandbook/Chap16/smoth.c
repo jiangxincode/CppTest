@@ -7,7 +7,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "math.h"
-int smoth(x,n,y)
+static int smoth(x,n,y)
 int n;
 double *x,*y;
 {
@@ -16,7 +16,7 @@ double *x,*y;
    {
 	   printf("n should be at least 5.\n");
 	   return(0);
-   }  		  
+   }
    y[0] = (69.0*x[0]+4.0*(x[1]+x[3])-6.0*x[2]-x[4])/70.0;        /* 前两点*/
    y[1] = (2.0*x[0]+27.0*x[1]+12.0*x[2]-8.0*x[3]+2.0*x[4])/35.0;
    for(i=2; i<n-2; i++)                                          /* 中间点*/

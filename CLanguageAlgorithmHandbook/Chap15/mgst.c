@@ -6,12 +6,13 @@
 // 返 回 值：无
 //==============================================================*/
 #include "stdlib.h"
-void mgst(x,n)
+static void Merge();                              /* 需要调用的归并函数*/
+static void mgst(x,n)
 int *x;
 int n;
 {
 	int i,flag,L,*x1;
-	void Merge();                              /* 需要调用的归并函数*/
+
 	x1 = (int*)malloc(n*sizeof(int));
 	L = 1;
 	flag = 1;
@@ -31,7 +32,7 @@ int n;
 	return;
 }
 
-void Merge(x,x1,n,L)                       /* 把数组x中的每个长度为L的有序序列归并到x1中*/
+static void Merge(x,x1,n,L)                       /* 把数组x中的每个长度为L的有序序列归并到x1中*/
 int *x,*x1,n,L;
 {
 	int i,j,k,s,m,t,t2;

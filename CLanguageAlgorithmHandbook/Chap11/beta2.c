@@ -9,16 +9,16 @@
 //==============================================================*/
 #include "stdio.h"
 #include "math.h"
-#include "gammln.c"
+#include "something.h"
 #define NMAX 100                         /* 迭代的最大次数*/
 #define EULER 0.5772156649
 #define FPMIN 1.0e-30                    /* 为防止除0使用的常数*/
 
-double beta2(a,b,x,e1)
-double a,b,x,e1;
+static double subcf(double, double, double, double);                          /* 计算连分式级数需要的变量和函数*/
+static double beta2(double a,double b,double x,double e1)
 {
   double t;
-  double subcf();                          /* 计算连分式级数需要的变量和函数*/
+
   if((x<0.0)||(x>1.0)||(a<=0.0)||(b<=0.0))
   {
     printf("Bad input parameter\n");
@@ -44,7 +44,7 @@ double a,b,x,e1;
   {
     t = exp(gammln(a+b)-gammln(a)-gammln(b)+a*log(x)+b*log(1.0-x)); /* 系数*/
     t = t*subcf(a,b,x,e1)/a;                       /* 使用连分式级数*/
-    return(t);  
+    return(t);
   }
 }
 

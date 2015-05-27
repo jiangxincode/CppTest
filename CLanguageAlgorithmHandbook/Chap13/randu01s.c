@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int randu01s(L,u_ran)
+static int randu01s(L,u_ran)
 int L;
 double *u_ran;
 {
@@ -16,6 +16,6 @@ double *u_ran;
     srand((unsigned)time(0));             /* 用系统时钟做种子*/
     for(i=0;i<L;i++)
     u_ran[i]=rand()/(double)RAND_MAX;     /* 生成(0,1)随机数，L次 */
-    return(1);   
+    return(1);
 }
 

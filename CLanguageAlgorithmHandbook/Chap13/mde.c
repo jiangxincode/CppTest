@@ -15,7 +15,7 @@
 #include "stdlib.h"
 #include "math.h"
 
-void mde(a,n,mean,adev,sddev,var,skew,kurt)
+static void mde(a,n,mean,adev,sddev,var,skew,kurt)
 double *a,*mean,*adev,*sddev,*var,*skew,*kurt;
 int n;
 {

@@ -1,6 +1,6 @@
 #include "stdio.h"
 #include "bmqr.c"
-main()
+main5bmqr0()
 {
   int i,j;
   double a[5][5]={{0.81,0.10,0.16,0.14,0.66},

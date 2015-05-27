@@ -2,13 +2,13 @@
 #include<stdio.h>
 #include<math.h>
 #include"nndroot.c"
-
-void main()
+static     void f(double*,double*,double*,double);
+void main6nndroot8()
 {
     double eps=0.000001,h=0.1,t=0.5;
     int n=3,max=600,i;
     double *x0;
-    void f(double*,double*,double*,double);
+
     x0=(double*)malloc(n*sizeof(double));
     x0[0]=1;                                 /* 初值*/
     x0[1]=-3;
@@ -22,8 +22,8 @@ void main()
     else
     printf("failed!\n");
 }
- 
-void f(x,f0,fi,h)							/*方程组函数*/
+
+static void f(x,f0,fi,h)							/*方程组函数*/
 double *x,*f0,*fi;
 double h;
 {

@@ -149,6 +149,6 @@ int n,itmax;
     free(x);
     free(ff);
     free(A);
-    free(Xemp);
+    free(temp);
     free(tempf);
 }

@@ -1,9 +1,10 @@
 #include "stdio.h"
 #include "lagr.c"
 #include "gasi.c"
-main()
+static double f1(),f2();
+main8inf20()
  {
-   double  f1(),f2(),z;
+   double  z;
    printf("Laguerre:\n");
    z = lagr(0.0,f1,1);                      /* 拉盖尔-高斯求积法计算第一个积分*/
    printf("f1: t1=%2.8f\n",z);
@@ -16,7 +17,7 @@ main()
    printf("f2: t2=%2.8f\n",z);
 }
 
-double f1(x)                               /* 被积函数1*/
+static double f1(x)                               /* 被积函数1*/
 double x;
 {
 	double y;

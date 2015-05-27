@@ -1,6 +1,6 @@
 #include "stdio.h"
 #include "toepl.c"
-main()
+int main5toepl0()
 {
   int i;
   double x[5];

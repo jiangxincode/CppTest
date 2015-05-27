@@ -5,19 +5,17 @@
 //            i 选择算法，应在0~7之间
 // 返 回 值：无符号整数，即字符串对应的整数
 //==============================================================*/
-
-unsigned int hashk(str,i)
-char *str;
-int i;
+static unsigned int ELFHash(char *str);     	/*  ELF Hash Function */
+static unsigned int BKDRHash(char *str);     	/*  BKDR Hash Function */
+static unsigned int RSHash(char *str);     	/*  RS Hash Function */
+static unsigned int JSHash(char *str);     	/*  JS Hash Function */
+static unsigned int PJWHash(char *str);     	/*  PJW Hash Function */
+static unsigned int SDBMHash(char *str);     	/*  SDBM Hash Function */
+static unsigned int DJBHash(char *str);     	/*  DJB Hash Function */
+static unsigned int APHash(char *str);       	/*  AP Hash Function */
+unsigned int hashk(char *str,int i)
 {
-	static unsigned int ELFHash(char *str);     	/*  ELF Hash Function */
-	static unsigned int BKDRHash(char *str);     	/*  BKDR Hash Function */
-	static unsigned int RSHash(char *str);     	/*  RS Hash Function */
-	static unsigned int JSHash(char *str);     	/*  JS Hash Function */
-	static unsigned int PJWHash(char *str);     	/*  PJW Hash Function */
-	static unsigned int SDBMHash(char *str);     	/*  SDBM Hash Function */
-	static unsigned int DJBHash(char *str);     	/*  DJB Hash Function */
-	static unsigned int APHash(char *str);       	/*  AP Hash Function */
+
 
 	if(i==0)                                /* 选择调用*/
 		return( ELFHash(str) );
@@ -42,7 +40,7 @@ int i;
 static unsigned int ELFHash(char *str)		       /*  ELF Hash Function */
 {
 	unsigned int hash = 0;
-	unsigned int x =0;	
+	unsigned int x =0;
 	while(*str)
 	{
 		hash = (*str++)+(hash<<4);
@@ -50,17 +48,17 @@ static unsigned int ELFHash(char *str)		       /*  ELF Hash Function */
 		{
 			hash = hash^(x>>24);
 			hash = hash&(~x);
-		} 
-	}	
+		}
+	}
 	return(hash&0x7FFFFFFF);
-} 
+}
 
 static unsigned int BKDRHash(char *str)            /*  BKDR Hash Function */
 {
 	static unsigned int seed = 13131;               /*  31 131 1313 13131 131313 etc..*/
 	unsigned int hash = 0;
 	while(*str)
-		hash = hash*seed+(*str++);	
+		hash = hash*seed+(*str++);
 	return(hash&0x7FFFFFFF);
 }
 
@@ -75,58 +73,58 @@ static unsigned int RSHash(char *str)               /*  RS Hash Function */
 		a = a*b;
 	}
 	return(hash&0x7FFFFFFF);
-} 
+}
 
 static unsigned int JSHash(char *str)               /*  JS Hash Function */
 {
-	unsigned int hash = 1315423911;	
+	unsigned int hash = 1315423911;
 	while(*str)
-		hash = hash^((hash<<5)+(*str++)+(hash>>2));	
+		hash = hash^((hash<<5)+(*str++)+(hash>>2));
 	return(hash&0x7FFFFFFF);
-} 
+}
 
 static unsigned int PJWHash(char *str)              /*  P.J.Weinberger Hash Function*/
 {
 	unsigned int OneEighth = (unsigned int)(sizeof(unsigned int));
-	unsigned int BitsofUI = (unsigned int)(OneEighth*8);	
+	unsigned int BitsofUI = (unsigned int)(OneEighth*8);
 	unsigned int ThreeQuarters = (unsigned int)(OneEighth*6);
 	unsigned int HighBits  = (unsigned int)(0xFFFFFFFF)<<(BitsofUI-OneEighth);
 	unsigned int hash  = 0;
-	unsigned int test  = 0;	
+	unsigned int test  = 0;
 	while(*str)
 	{
 		hash = (hash<<OneEighth)+(*str++);
 		if((test = hash&HighBits) != 0)
 			hash = ((hash^(test>>ThreeQuarters))&(~HighBits));
-	}	
+	}
 	return(hash&0x7FFFFFFF);
-} 
+}
 
 static unsigned int SDBMHash(char *str)               /*  SDBM Hash Function */
 {
-	unsigned int hash = 0;	
+	unsigned int hash = 0;
 	while(*str)
 		hash = (*str++)+(hash<<6)+(hash<<16)-hash;
 	return(hash&0x7FFFFFFF);
-} 
+}
 
 static unsigned int DJBHash(char *str)                 /*  DJB Hash Function */
 {
-	unsigned int hash = 5381;	
+	unsigned int hash = 5381;
 	while(*str)
-		hash += (hash<<5)+(*str++);	
+		hash += (hash<<5)+(*str++);
 	return(hash&0x7FFFFFFF);
-} 
+}
 
 static unsigned int APHash(char *str)                  /*  AP Hash Function */
 {
 	unsigned int hash = 0;
-	int i = 0;	
+	int i = 0;
 	while(*str)
 	if((i++)&1)
-		hash ^= (~((hash<<11)^(*str++)^(hash>>5))); 
+		hash ^= (~((hash<<11)^(*str++)^(hash>>5)));
 	else
-		hash ^= ((hash<<7)^(*str++)^(hash>>3));	
+		hash ^= ((hash<<7)^(*str++)^(hash>>3));
 	return(hash&0x7FFFFFFF);
-} 
+}
 

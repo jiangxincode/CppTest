@@ -12,7 +12,7 @@
 #include "stdlib.h"
 #include "math.h"
 
-int smldl(mat,n,L,D,eps)
+static int smldl(mat,n,L,D,eps)
 double *mat,*L,*D,eps;
 int n;
 {

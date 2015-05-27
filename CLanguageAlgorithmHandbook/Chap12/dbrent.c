@@ -15,7 +15,7 @@
 #include "stdio.h"
 #include "math.h"
 
-double dbrent(a, b, c, f, df, xopt, eps, itmax)
+static double dbrent(a, b, c, f, df, xopt, eps, itmax)
 double a,b,c,eps;
 double (*f)(double),(*df)(double);
 double *xopt;

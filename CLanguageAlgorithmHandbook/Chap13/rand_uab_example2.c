@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "randuabs.c"
-void main()
+void main13rand_uab_example2()
 {
     int L,a,b;
     int i,flag,j, uab_rand[100];

@@ -6,11 +6,9 @@
 //==============================================================*/
 #include"stdio.h"
 #include"math.h"
-#include"c_comp.c" 			   
+#include"something.h"
 
-int dct(x,n,y)
-int n;
-double *x,*y;
+int dct(double * x,int n, double *y)
 {
    int i,j,k,nn;
    double t;
@@ -18,7 +16,7 @@ double *x,*y;
    struct c_comp *x1,*y1;
    x1 = (struct c_comp*)malloc(n*sizeof(struct c_comp));
    y1 = (struct c_comp*)malloc(n*sizeof(struct c_comp));
-   k = log(n-0.5)/log(2.0)+1;                  /* 求出k，使2^k>=n>2^(k-1) */ 
+   k = log(n-0.5)/log(2.0)+1;                  /* 求出k，使2^k>=n>2^(k-1) */
    nn = 1;			                        /* 判断n是否是2的整数幂，不是的话退出程序*/
    for(i=0; i<k; i++)
 	   nn = nn<<1;
@@ -28,7 +26,7 @@ double *x,*y;
 	   free(x1);
 	   free(y1);
 	   return(0);
-   }  		  
+   }
    k = n>>1;
    for(i=0; i<k; i++)                       /* 将x进行重排 , 前半段*/
    {

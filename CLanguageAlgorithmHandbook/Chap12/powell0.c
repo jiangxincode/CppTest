@@ -1,12 +1,12 @@
 #include "stdio.h"
 #include "math.h"
 #include "powell.c"
-
-void main()
+static 	double f();
+void main12powell0()
 {
 	double  eps,fopt,x[3];
 	int itmax = 50, n = 3,it;
-	double f();
+
 	double ee[3][3] = {{1.0, 0.0, 0.0},{0.0,1.0,0.0},{0.0,0.0,1.0}};        /* 初始的方向*/
 	eps = 1e-7;
 	x[0] = x[1] = x[2] =2.0;                                                /* 初始点*/
@@ -14,7 +14,7 @@ void main()
 	printf("iterations = %d:\n x0=%f,x1=%f,x2=%f\nfopt=%f\n",it,x[0],x[1],x[2],fopt);
 }
 
-double f(x, n)
+static double f(x, n)
 double *x;
 int n;
 {

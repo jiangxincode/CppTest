@@ -14,7 +14,7 @@
 #include "math.h"
 #define G2 0.38196601
 
-double goldsch(a, b, c, f, xopt, eps)
+static double goldsch(a, b, c, f, xopt, eps)
 double a,b,c,eps;
 double (*f)(double);
 double *xopt;
@@ -47,7 +47,7 @@ double *xopt;
 			t = t+G2*(c-t);                /* 计算新t*/
 			f0 = f1;
 			f1 = f2;
-			f2 = (*f)(t); 
+			f2 = (*f)(t);
 		}
 	}
 	if(f1<f2){                             /* 返回较好的一个值*/

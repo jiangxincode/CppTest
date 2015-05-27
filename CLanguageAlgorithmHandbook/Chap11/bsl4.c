@@ -7,12 +7,12 @@
 //==============================================================*/
 #include "math.h"
 #include "stdio.h"
+#include "something.h"
 
-double bsl4(n,x)
-double x;
-int n;
+
+double bsl4(int n,double x)
 {
-  double t,K0(),K1();
+  double t;
   int j,nn,flag;
   double ax,nx,by0,by1;
   ax = fabs(x);
@@ -34,8 +34,7 @@ int n;
   return (x<0.0)&&(n&1)?-t:t;            /* n为奇数且x为负时，返回-t*/
 }
 
-static double K0(x)                     /* 计算k0(x)*/
-double x;
+double K0(double x)                     /* 计算k0(x)*/
 {
   double x1,x2,t;
   x1 = fabs(x);
@@ -58,8 +57,7 @@ double x;
   return t;
 }
 
-static double K1(x)                           /* 计算k1(x)*/
-double x;
+double K1(double x)                           /* 计算k1(x)*/
 {
   double x1,x2,t;
   x1 = fabs(x);

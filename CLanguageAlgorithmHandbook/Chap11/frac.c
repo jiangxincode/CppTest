@@ -8,9 +8,7 @@
 // 返 回 值：连分式级数的值
 //==============================================================*/
 #include "math.h"
-double frac(fab,nmax,e1,e0)
-double *fab(),e0,e1;
-int nmax;
+static double frac(double *fab(),int nmax,double e1,double e0)
 {
   int j;
   double f,a,b,ab[2];

@@ -14,7 +14,7 @@
 #include "stdlib.h"
 #include "math.h"
 
-int cggm2(x, xmin, n, y0, f, df, eps, itmax)
+static int cggm2(x, xmin, n, y0, f, df, eps, itmax)
 double *x,*xmin,*y0,eps;
 double (*f)(),(*df)();
 int n, itmax;
@@ -45,7 +45,7 @@ int n, itmax;
 		y1 = dirmin(xmin,g1,xmin,n,f,eps,itmax);   /* 从x出发，到更好的x*/
 		if(2.0*(*y0 - y1) <= eps*(fabs(*y0) + fabs(y1) + 1.0e-25))
 		{
-			*y0 = y1;                            
+			*y0 = y1;
 			flag++;
 			if(flag == 3)                         /* 连续三次函数值无变化，退出*/
 				return(it);

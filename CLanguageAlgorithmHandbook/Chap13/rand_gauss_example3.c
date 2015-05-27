@@ -2,7 +2,7 @@
 #include "stdlib.h"
 #include "stdio.h"
 #include "randgsab.c"
-void main()
+void main13rand_gauss_example3()
 {
     double a,b,G;
 	int i;

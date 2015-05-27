@@ -2,12 +2,12 @@
 #include<stdio.h>
 #include<math.h>
 #include"aitkenroot.c"
-
-void main()
+static double f(double);
+void main6aitkenroot4()
 {
 	double x, eps;
 	double *x0 = &x;
-	double f(double);
+
 	int max;
 	*x0=1.0;                              /* 初值，精度，最大迭代次数*/
 	eps=0.00001;
@@ -20,7 +20,7 @@ void main()
 
 }
 
-double f(x)                                 /* 计算函数值*/
+static double f(x)                                 /* 计算函数值*/
 double x;
 {
 	return  x*x*x-2*x+1;

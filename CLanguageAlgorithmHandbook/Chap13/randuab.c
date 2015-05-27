@@ -11,7 +11,7 @@ double randuab(a,b)
 int a,b;
 {
     double u_ran;
-    int u_ran
+    int uab_ran;
     srand((unsigned)time(0));            /* 用系统时钟做种子*/
     u_ran=rand()/(double)RAND_MAX;       /* 生成(0,1)随机数*/
     uab_ran=(int)((b-a+1)*u_ran)+a;

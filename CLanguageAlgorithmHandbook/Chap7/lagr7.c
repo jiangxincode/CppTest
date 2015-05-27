@@ -9,7 +9,7 @@
 //           t 指定的插值点
 // 返回值：  在指定插值点的函数近似值
 =========================================================*/
-double lagr7(x,y,n,t)
+static double lagr7(x,y,n,t)
 double *x,*y,t;
 int n;
 {
@@ -27,52 +27,52 @@ int n;
   if(n==2)
   {
     z = (y[0]*(t-x[1]) - y[1]*(t-x[0]))/(x[0] - x[1]);
-    return(z);  
+    return(z);
   }
   if(t < x[2])
   {
-	  k = 0; 
-	  p = 3; 
+	  k = 0;
+	  p = 3;
   }
   else if(t > x[n-3])
   {
-	  k = n-3; 
-	  p =3; 
+	  k = n-3;
+	  p =3;
   }
   else
   {
-    k = 0; 
+    k = 0;
 	p = n-1;                    /* 二分法寻找合适的区间*/
     while((p-k) > 1)
-    { 
+    {
       j = (k+p)/2;
-      if(x[j] < t) 
+      if(x[j] < t)
 		  k = j;
-      else  
+      else
 		  p = j;
     }
     if(n>7)
-    { 
+    {
       if(k<4)
-      { 
-		  k = 0; 
-		  p = 2*p; 
+      {
+		  k = 0;
+		  p = 2*p;
 	  }
       else if(k>(n-5))
-      { 
-		  p = 2*(n-1-k); 
+      {
+		  p = 2*(n-1-k);
 		  k = n-p;
 	  }
       else
-      { 
-		  k = k-3; 
-		  p = 8; 
+      {
+		  k = k-3;
+		  p = 8;
 	  }
     }
     else
     {
 		k = 0;
-		p = n; 
+		p = n;
 	}
   }
   z = 0.0;

@@ -2,17 +2,17 @@
 #include "conio.h"
 #include "stdlib.h"
 #include "c_comp.c"
-#include "c_matmul.c"
-#include "c_matinv.c"
+#include "something.h"
+//#include "c_matinv.c"
 
-void main()
+void main4c_matinv0()
 {
     struct c_comp c_mat[2][2], c_mat1[2][2], c_mat2[2][2];
     int i,j;
     int m,n;
     m = 2;
     n = 2;
-    
+
     c_mat[0][0].rmz = 2; c_mat[0][0].imz = 3;
     c_mat[0][1].rmz = 0; c_mat[0][1].imz = 2;
     c_mat[1][0].rmz = 2; c_mat[1][0].imz = 1;
@@ -30,7 +30,7 @@ void main()
         printf("\n");
     }
     printf("\n");
-        
+
     c_mat_inv(c_mat,n);
 
     printf("inv(A):\n");

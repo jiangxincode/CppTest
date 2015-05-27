@@ -11,18 +11,16 @@
 #include "stdio.h"
 #include "math.h"
 #define G1 0.61803399
-#define GSTEP 100.0                
+#define GSTEP 100.0
 #define TINY 1.0e-20
 
-void brake(a, b, c, f)
-double *a,*b,*c;
-double (*f)(double);
+void brake(double *a, double *b, double *c, double (*f)(double))
 {
 	double u,u2,fu,fa,fb,fc, tmp;
 	double r,q,p;                          /* 用于抛物线插值*/
 
 	fa = (*f)(*a);
-	fb = (*f)(*b); 
+	fb = (*f)(*b);
 	if(fb > fa)                            /* 确保a->b方向是下降的*/
 	{
 		tmp = *a;
@@ -106,7 +104,7 @@ double (*f)(double);
 		fb = fc;
 		fc = fu;
 	}
-	if(*a > *c)                         /* [a,c]就是存在极小值的区间*/ 
+	if(*a > *c)                         /* [a,c]就是存在极小值的区间*/
 	{
 		tmp = *a;                       /* 调整成 a<b<c*/
 		*a = *c;

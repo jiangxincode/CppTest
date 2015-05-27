@@ -9,7 +9,7 @@
 #include "stdlib.h"
 #include "math.h"
 
-int r_gaus(a,b,x,n,eps)
+static int r_gaus(a,b,x,n,eps)
 double *a,*b,*x,eps;
 int n;
 {

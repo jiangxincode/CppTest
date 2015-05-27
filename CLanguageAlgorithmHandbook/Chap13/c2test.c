@@ -16,7 +16,7 @@
 #include "math.h"
 #include "chii.c"
 
-int c2test(a,e,r,k,v,c2,alpha)
+static int c2test(a,e,r,k,v,c2,alpha)
 double *c2,alpha;
 int *a,*e,r,k,*v;
 {
@@ -35,5 +35,5 @@ int *a,*e,r,k,*v;
 	 		return 0;
 }
 
-	
+
 

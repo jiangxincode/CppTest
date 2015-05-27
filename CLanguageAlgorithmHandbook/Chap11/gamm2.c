@@ -9,11 +9,10 @@
 //==============================================================*/
 #include "stdio.h"
 #include "math.h"
-#include "gammln.c"
+#include "something.h"
 #define NMAX 100
 
-double gamm2(a,x,e1,e0)
-double a,x,e1,e0;
+static double gamm2(double a,double x,double e1,double e0)
 {
   int n;
   double t,del,gln;

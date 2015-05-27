@@ -11,11 +11,11 @@
 #include<stdio.h>
 #include<math.h>
 
-int aitkenroot(x0,f,eps,max)
+static int aitkenroot(x0,f,eps,max)
 double *x0,(*f)(),eps;
 int max;
 {
-    
+
     double x,x1,x2,dis;
     int num=0;
     do

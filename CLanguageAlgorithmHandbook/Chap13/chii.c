@@ -10,7 +10,7 @@
 #include "gamm2.c"
 #define EPS 1.0e-6                    /* 使用不完全伽马函数需要的数据*/
 #define DMIN 1.0e-30
-double chii(x,n)
+static double chii(x,n)
 double x;
 int n;
 {

@@ -9,7 +9,7 @@
 //           n 未知数个数，eps 精度要求，小于eps的值，认为是0。
 // 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-int r_ldl(a,b,x,n,eps)
+static int r_ldl(a,b,x,n,eps)
 double *a,*b,*x,eps;
 int n;
 {
@@ -22,8 +22,8 @@ int n;
     }
     D = (double *)malloc(n*sizeof(double));        /* 分配空间并检测是否成功*/
     L = (double *)malloc(n*n*sizeof(double));
-    y = (double *)malloc(n*sizeof(double)); 
-    z = (double *)malloc(n*sizeof(double)); 
+    y = (double *)malloc(n*sizeof(double));
+    z = (double *)malloc(n*sizeof(double));
     if((D==NULL)||(L==NULL)||(y==NULL)||(z==NULL))
     {
         printf("Memory alloc failed\n");

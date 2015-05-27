@@ -1,8 +1,6 @@
 #include "stdio.h"
-#include "bsl1.c"                        /* 这两个函数需要第一类贝塞尔函数的支持*/
-#include "bsl3.c"
-#include "bsl4.c"
-main()
+#include "something.h"
+main11bsl30()
 {
   int n,i;
   double x,y;

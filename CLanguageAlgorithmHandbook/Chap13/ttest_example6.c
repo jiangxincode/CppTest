@@ -4,7 +4,7 @@
 #include "tutest.c"
 #define pi 3.1415926
 
-void main()
+void main13ttest_example6()
 {
     int j,na,nb,nc,rtab,rtbc,rtac;
     double *a,*b,*c;
@@ -25,7 +25,7 @@ void main()
 
     for(j=0;j<na;j++)				//随机数样本一
     {
-        x=pi*j/na;    
+        x=pi*j/na;
         a[j]=sin(x);
     }
     for(j=0;j<nb;j++)              //随机样本二

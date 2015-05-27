@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int randuabs(L,a,b,uab_ran)
+static int randuabs(L,a,b,uab_ran)
 int L,a,b;
 int * uab_ran;
 {
@@ -26,6 +26,6 @@ int * uab_ran;
         u_ran[i]=rand()/(double)RAND_MAX;         /* 生成(0,1)随机数，L次*/
         uab_ran[i]=(int)(u_ran[i]*(b-a+1))+a;
     }
-    return(1); 
+    return(1);
 }
 

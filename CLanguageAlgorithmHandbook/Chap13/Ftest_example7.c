@@ -3,7 +3,7 @@
 #include "ftest.c"
 #define pi 3.1415926
 
-void main()
+void main13Ftest_example7()
 {
     int j,na,nb,nc,rtab,rtbc,rtac;
     double *a,*b,*c;
@@ -23,7 +23,7 @@ void main()
     }
     for(j=0;j<na;j++)				//随机数样本a
     {
-        x = pi*j/na;    
+        x = pi*j/na;
         a[j] = sin(x);
     }
     for(j=0;j<nb;j++)              //随机样本b

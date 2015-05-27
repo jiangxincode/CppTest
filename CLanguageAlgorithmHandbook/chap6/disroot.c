@@ -10,7 +10,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
-double disroot(a,b,f,eps)
+static double disroot(a,b,f,eps)
 double a,b,(*f)(),eps;
 {
     double x,ym;                   /* 定义区间中点及中点处的函数值*/
@@ -18,7 +18,7 @@ double a,b,(*f)(),eps;
     double yb=(*f)(b);             /* 区间右端点的函数值*/
     while(b-a>eps)                 /* 测试是否满足精度要求，不满足则继续对分*/
     {
-        
+
         x=(a+b)/2;
         printf("%1.7f    %1.7f    %1.7f\n",a,x,b);
         ym=(*f)(x);                /* 求区间中点及中点处的函数值*/

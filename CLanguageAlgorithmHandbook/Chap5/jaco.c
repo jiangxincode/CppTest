@@ -9,7 +9,7 @@
 //           iter 允许的最多迭代次数
 // 返回值：整型。运行成功则返回迭代次数,失败则返回0
 =========================================================*/
-int jaco(a,b,x,n,eps,iter)
+static int jaco(a,b,x,n,eps,iter)
 double *a,*b,*x,eps;
 int n,iter;
 {

@@ -11,10 +11,10 @@ itmax 最大迭代次数
 #include "stdlib.h"
 #include "stdio.h"
 #include "math.h"
-int jcb2(a,n,u,eps,itmax)
+static int jcb2(a,n,u,eps,itmax)
 double *a,*u,eps;
 int n,itmax;
-{ 
+{
 	int i,j,p,q,it,flag;
     double sint,cost,sin2t,cos2t,tmp,r,t1,t2,t3;
 	r = 0.0;
@@ -24,7 +24,7 @@ int n,itmax;
 	r = 2.0*r;                               /* 求出初始的r*/
 	it = 0;
 	while((it<itmax) && (r>eps))
-	{ 
+	{
 		it++;
 		flag = 1;
 		r = r/n;
@@ -37,11 +37,11 @@ int n,itmax;
 			{
 				tmp = fabs(a[i*n+j]);
 				if(tmp>r)
-				{ 
+				{
 					p=i; q=j;
 					j=i; i=n;                /* 找到第一个，终止扫描*/
 				}
-			}			
+			}
 			if(p == 0)                         /* 没有大于r的非对角线元素，此次扫描完成*/
 				flag = 0;
 			else
@@ -51,7 +51,7 @@ int n,itmax;
 				sin2t = sint/(sqrt(sint*sint+cost*cost));      /* 计算sin(2 theta)*/
 				if(cost<0.0)
 					sin2t = -sin2t;
-				cos2t = sqrt(1.0-sin2t*sin2t);         
+				cos2t = sqrt(1.0-sin2t*sin2t);
 				sint = sin2t/(sqrt(2*(1.0+cos2t)));     /* 计算givens矩阵元素*/
 				cost=sqrt(1.0-sint*sint);
 				tmp = a[p*n+p];                   /* 相似变换*/
@@ -64,14 +64,14 @@ int n,itmax;
 				a[q*n+p] = 0.0;
 				for(j=0; j<n; j++)               /* 第p行和第q行的变换*/
 				if((j!=p)&&(j!=q))
-				{ 
+				{
 					tmp = a[p*n+j];
 					a[p*n+j] = tmp*cost-a[q*n+j]*sint;
 					a[q*n+j] = tmp*sint+a[q*n+j]*cost;
 				}
 				for(i=0; i<=n-1; i++)           /* 用对称性可求得第p列和第q列*/
 					if((i!=p)&&(i!=q))
-					{ 
+					{
 						a[i*n+p] = a[p*n+i];
 						a[i*n+q] = a[q*n+i];
 					}

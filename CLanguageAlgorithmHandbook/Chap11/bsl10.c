@@ -1,7 +1,7 @@
 #include "stdio.h"
-#include "bsl1.c"
-#include "bsl2.c"
-main()
+#include "something.h"
+
+main11bsl10()
 {
   int n,i;
   double x,y;

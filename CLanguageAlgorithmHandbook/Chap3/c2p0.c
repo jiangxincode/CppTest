@@ -4,7 +4,7 @@
 #include "c2p.c"
 #include "p2c.c"
 
-void main()
+void main3c2p0()
 {
   int i;
   struct c_comp a[4],y[4],b[4];
@@ -12,7 +12,7 @@ void main()
   {
     a[i].rmz = i+1;
     a[i].imz = 0;
-  } 
+  }
   i = c2p(a,4,y); 	 /*调用系数表示转化为点表示的函数，并打印*/
   if(i)
   {

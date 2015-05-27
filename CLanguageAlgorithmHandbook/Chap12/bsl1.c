@@ -9,11 +9,11 @@
 #include "stdio.h"
 #define ENUMB 30.0                      /* 逆向递推时计算递推起点的数据，越大结果的有效数字越多*/
 
-double bsl1(n,x)
-double x;
-int n;
+static double J0(double x) ;
+static double J1(double x) ;
+static double bsl1(int n,double x)
 {
-  double t,J0(),J1();
+  double t;
   int j,nn,flag;
   double ax,nx,bj0,bj1,bj,bjs;
   ax = fabs(x);
@@ -66,8 +66,7 @@ int n;
   return (x<0.0)&&(n&1)?-t:t;            /* n为奇数且x为负时，返回-t*/
 }
 
-static double J0(x)                     /* 计算J0(x)*/
-double x;
+static double J0(double x)                     /* 计算J0(x)*/
 {
   double x1,x2,t,t1,t2,y;
   x1 = fabs(x);
@@ -97,7 +96,7 @@ double x;
   return t;
 }
 
-static double J1(x)                  /* 计算J1(x)*/
+double J1(x)                  /* 计算J1(x)*/
 double x;
 {
   double x1,x2,t,t1,t2,y;

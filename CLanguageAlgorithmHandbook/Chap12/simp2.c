@@ -21,16 +21,16 @@
 #include "stdlib.h"
 #include "math.h"
 #define TINY 1.0e-7
-
-int simp2(n,m,a,b,d,alf,eps,x,fx,xopt,sf,f,itmax)
+static double simprn(double *rr);
+static int simp2(n,m,a,b,d,alf,eps,x,fx,xopt,sf,f,itmax)
 int itmax,n,m;
 double *a,*b,*x,*fx,*xopt;
 double d,alf,eps;
 double (*f)();
-int (*sf)();                                    
+int (*sf)();
 {
 	int it,in,i,j,h,g,iflag;
-	double *xt,*xc,ft,fc,fg,fh,flag,tmp,rr,simprn();
+	double *xt,*xc,ft,fc,fg,fh,flag,tmp,rr;
 
 	if(a==NULL||b==NULL||x==NULL||fx==NULL||xopt==NULL)           /* 检查指针是否为空*/
 	{
@@ -73,7 +73,7 @@ int (*sf)();
 		x[i*n+j] = a[j] + d*simprn(&rr);
 	for(i=1; i<2*n; i++)                                        /* 调整顶点满足函数约束条件*/
 	{
-		it = 1;			
+		it = 1;
 		in = i*n;
 		for(j=0; j<n; j++)                                     /* 求出已知结点的重心*/
 		{
@@ -136,13 +136,13 @@ int (*sf)();
 					g = h;
 					h = i;
 				}
-				else                                        /* 查找新次坏点*/                    
+				else                                        /* 查找新次坏点*/
 					g = i;
 				fg = fx[g];
 				fh = fx[h];
 			}
 		}
-		for(j=0; j<n; j++)                              
+		for(j=0; j<n; j++)
 		{
 			xc[j] = 0.0;                                  /* 求重心的n个坐标*/
 			for(i=0; i<2*n; i++)

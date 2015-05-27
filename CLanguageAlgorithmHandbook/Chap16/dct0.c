@@ -1,10 +1,8 @@
 #include "stdio.h"
 #include "math.h"
-#include "c_comp.c"
-#include "fft.c"
-#include "dct.c"
+#include "something.h"
 
-void main()
+void main16dct0()
 {
   int i;
   double a[4],b[4],y[4];
@@ -26,7 +24,7 @@ void main()
     for(i=0; i<4; i++)
       printf("%5.4f ",y[i]);
   }
-  i = dct(b,4,y); 	                                /*求b的dctt*/                         
+  i = dct(b,4,y); 	                                /*求b的dctt*/
   if(i)
   {
     printf("\ndct of b:\n");

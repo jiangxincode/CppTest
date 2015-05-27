@@ -9,7 +9,7 @@
 // 返 回 值：整型数字。计算成功则返回1，否则返回0
 //==============================================================*/
 #include"stdio.h"
-int rpdiv(a,n,b,m,q,k,r,l)
+static int rpdiv(a,n,b,m,q,k,r,l)
 double *a,*b,*q,*r;
 int n,m,k,l;
 {
@@ -28,7 +28,7 @@ int n,m,k,l;
     r[i] = a[i];
   for(i=0; i<k; i++)
     q[i] = 0.0;
- 
+
   if(b[m-1]+1.0==1.0)				/* 检测除式的首项系数，若其几乎为0，函数结束。*/
   {
     printf("(rpdiv)Cannot divide zero");
@@ -37,12 +37,12 @@ int n,m,k,l;
   for(i=0; i<k; i++)
   {
     kk = k-i-1;
-    jj = n-i-1; 
-    q[kk] = r[jj]/b[m-1];   			/* 计算当前商*/   
+    jj = n-i-1;
+    q[kk] = r[jj]/b[m-1];   			/* 计算当前商*/
     r[jj] = 0.0;				/* 从余式中减去当前商与多项式B的乘积*/
     for(j=0; j<m-1; j++)
       r[j+kk] -= q[kk]*b[j];
   }
-  return(1); 
+  return(1);
 }
 

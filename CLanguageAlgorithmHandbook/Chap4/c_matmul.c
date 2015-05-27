@@ -9,9 +9,7 @@
             m(左矩阵行数) p(左矩阵列数) n(右矩阵列数)
 //返回值：运行成功则返回1,失败则返回0
 =========================================================*/
-int c_matmul(a, b, m, p, n, c)
-struct c_comp *a, *b, *c;
-int m,p,n;
+int c_matmul(struct c_comp *a, struct c_comp *b, int m, int p, int n, struct c_comp *c)
 {
     int i,j,k;
     struct c_comp tmp1, tmp2;
@@ -26,7 +24,7 @@ int m,p,n;
         printf("Err:(c_mat_mul)The matrix pointer is NULL\n");
         return(0);
     }
-        
+
     for(i=0; i<m; i++)				/* 循环编历矩阵c中的每个元素*/
         for(j=0; j<n; j++)
         {
@@ -34,7 +32,7 @@ int m,p,n;
             tmp1.imz = 0.0;
 
             for(k=0; k<p; k++)			/* 循环累加*/
-            {				
+            {
                 c_comp_product(&a[i*m+k], &b[k*m+j], &tmp2);
                 c_comp_plus(&tmp1,&tmp2,&tmp1);
             }

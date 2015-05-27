@@ -1,16 +1,15 @@
 #include "stdio.h"
 #include "math.h"
-#include "bfgs.c"
 #include "bsl1.c"
 
-void main()
+void main12bfgs0()
 {
 	double  eps,fopt,x[3],xm[3],g[3];
 	int itmax = 50, n = 3,it;
 	double f();
 	void df();
 	eps = 1e-7;
-	x[0] = x[1] = x[2] =0.0;    
+	x[0] = x[1] = x[2] =0.0;
 	it = bfgs(x, xm, n, &fopt, f, df, eps, itmax);
 	printf("iterations = %d:\nx0=%f,x1=%f,x2=%f\nfopt=%f\n",it,xm[0],xm[1],xm[2],fopt);
 	df(xm,g,3);

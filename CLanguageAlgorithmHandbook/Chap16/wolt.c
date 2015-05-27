@@ -6,15 +6,16 @@
 //==============================================================*/
 #include "stdio.h"
 #include "stdlib.h"
-#include "math.h"		   
-int wolt(y,n,x)
+#include "math.h"
+static int wolt1(double *x,int n,double *y);    /* 因为要递归调用，所以先声明*/
+static int wolt(y,n,x)
 int n;
 double *x,*y;
 {
    int i,j,k,nn;
    double t;
-   int wolt1(double *x,int n,double *y);    /* 因为要递归调用，所以先声明*/
-   k = log(n-0.5)/log(2.0)+1;                  /* 求出k，使2^k>=n>2^(k-1) */ 
+
+   k = log(n-0.5)/log(2.0)+1;                  /* 求出k，使2^k>=n>2^(k-1) */
    nn = 1;			                    /* 判断n是否是2的整数幂，不是的话退出程序*/
    for(i=0; i<k; i++)
 	   nn = nn<<1;
@@ -22,7 +23,7 @@ double *x,*y;
    {
 	   printf("n should be 2^k.\n");
 	   return(0);
-   }  		  
+   }
    j = wolt1(y,n,x);		                       /* 调用子函数求解求和符号中的部分*/
    if(j)
    {
@@ -32,13 +33,11 @@ double *x,*y;
    }
    return(j);
 }
-int wolt1(x,n,y)
-int n;
-double *x,*y;
+static int wolt1(double *x,int n,double *y)
 {
   int i,j,k;
   double *x0,*x1,*y0,*y1;
-  if(n==1)                   
+  if(n==1)
   {			                        /* 当序列长度为1时，沃尔什变换是它本身*/
     y[0] = x[0];
     return(1);
@@ -60,7 +59,7 @@ double *x,*y;
     x1[i] = x[j+1];
   }			                                      /* 递归调用此函数*/
   i = wolt1(x0,k,y0);
-  j = wolt1(x1,k,y1); 			                         
+  j = wolt1(x1,k,y1);
   if(i && j)                                /* 将得到的两部分序列综合起来*/
   {
     for(i=0; i<k;i++)

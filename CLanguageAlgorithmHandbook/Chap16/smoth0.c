@@ -1,6 +1,6 @@
 #include "stdio.h"
 #include "smoth.c"
-main()
+main16smoth0()
 {
 	int i,n;
     double x[15] = {154.0,245.0,327.0,259.0,101.0,

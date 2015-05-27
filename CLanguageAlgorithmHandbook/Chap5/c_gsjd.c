@@ -9,7 +9,7 @@
 #include "stdlib.h"
 #include "c_comp.c"
 
-int c_gsjd(a,b,x,n,eps)
+static int c_gsjd(a,b,x,n,eps)
 struct c_comp *a,*b,*x;
 int n;
 double eps;

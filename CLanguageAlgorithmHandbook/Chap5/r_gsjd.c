@@ -9,7 +9,7 @@
 #include "stdlib.h"
 #include "math.h"
 
-int r_gsjd(a,b,x,n,eps)
+static int r_gsjd(a,b,x,n,eps)
 double *a,*b,*x,eps;
 int n;
 {
@@ -72,7 +72,7 @@ int n;
         }
       l = k*n + k;                               /* 取倒数将除法转化为乘法*/
       a[l] = 1.0/a[l];
-      for(j=k+1; j<n; j++)           
+      for(j=k+1; j<n; j++)
       {
         v = k*n + j;
         a[v] = a[v]*a[l];

@@ -11,12 +11,8 @@
 #include "stdlib.h"
 #include "math.h"
 
-/*struct c_comp{
-    double rmz;
-    double imz;
-}c_comp;
-*/
-int c_comp_power(a,c,n)
+#include "c_comp.h"
+static int c_comp_power(a,c,n)
 struct c_comp *a,*c;
 int n;
 {

@@ -9,10 +9,7 @@
 //           f 指向被积函数的指针
 // 返回值：  积分近似值
 =========================================================*/
-double lfsi(a,b,n0,eps,f)
-double a,b,eps;
-int n0;
-double (*f)();
+double lfsi(double a,double b,int n0,double eps,double (*f)(double))
 {
   int k,j,p,n,flag;
   double z,z2,u,t,d,h,x,bb[8],hx[8];

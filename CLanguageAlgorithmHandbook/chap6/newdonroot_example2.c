@@ -2,12 +2,12 @@
 #include<stdio.h>
 #include<math.h>
 #include "newdonroot.c"
-
-void main()
+  static   double f(double);
+   static  double fd(double);
+void main6newdonroot2()
 {
     double x0;
-    double f(double);
-    double fd(double);
+
     double eps;
     int max;
     x0=0.0;                         /* 初值，精度，最大迭代次数*/
@@ -20,7 +20,7 @@ void main()
         printf("failed!\n");
 }
 
-double f(x)                         /* 计算函数值*/
+static double f(x)                         /* 计算函数值*/
 double x;
 {
      return x*x*x-3*x+1;

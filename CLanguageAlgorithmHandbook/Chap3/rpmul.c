@@ -8,7 +8,7 @@
 //==============================================================*/
 #include"stdio.h"
 
-int rpmul(a,n,b,m,c)
+static int rpmul(a,n,b,m,c)
 double *a,*b,*c;
 int n,m;
 {
@@ -25,5 +25,5 @@ int n,m;
   for(i=0; i<n; i++)    /* 依次将相乘的结果累加到对应的项上*/
     for(j=0; j<m; j++)
       c[i+j] += a[i]*b[j];
-  return(1); 
+  return(1);
 }

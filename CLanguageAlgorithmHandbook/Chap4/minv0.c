@@ -1,12 +1,11 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "c_comp.c"
-#include "c_matmul.c"
 #include "r_matmul.c"
-#include "c_minv.c"
+#include "something.h"
 #include "sdminv.c"
 
-void main()
+void main4minv0()
 {
     struct c_comp c_mat[2][2], c_mat1[2][2], c_mat2[2][2];
     double r_mat[2][2] = {{3,2},{2,5}};
@@ -14,7 +13,7 @@ void main()
     int i,j,m,n;
 
     m = 2; n = 2;
-    
+
     c_mat[0][0].rmz = 2; c_mat[0][0].imz = 3;
     c_mat[0][1].rmz = 0; c_mat[0][1].imz = 2;
     c_mat[1][0].rmz = 2; c_mat[1][0].imz = 1;
@@ -22,8 +21,8 @@ void main()
 
     for(i=0; i<n; i++)                     /* 求逆后会破坏原矩阵数据，因此先备份*/
       for(j=0; j<n; j++)
-        c_mat1[i][j] = c_mat[i][j];    
-    c_minv(c_mat,n);                        /* 调用函数求逆*/
+        c_mat1[i][j] = c_mat[i][j];
+    c_minv(c_mat,n,0.01);                        /* 调用函数求逆*/
     printf("inv(C):\n");                    /* 打印求得的逆矩阵*/
     for(i=0; i<m; i++)
     {

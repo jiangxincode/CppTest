@@ -13,7 +13,7 @@
 
 #include"r_gaus.c"
 
-int nndroot(x0,n,f,eps,max,h,t)
+static int nndroot(x0,n,f,eps,max,h,t)
 double *x0,eps,h,t;
 void (*f)();
 int n,max;

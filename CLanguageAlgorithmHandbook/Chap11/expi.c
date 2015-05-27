@@ -12,9 +12,7 @@
 #define EULER 0.5772156649
 #define FPMIN 1.0e-30
 
-double expi(n,x,e1)
-int n;
-double x,e1;
+static double expi(int n,double x,double e1)
 {
   int i,j;
   double t,t2,del;

@@ -9,15 +9,13 @@
 //           f 指向被积函数的指针
 // 返回值：  积分近似值
 =========================================================*/
-double tzi2(a,b,n0,eps,h0,f)
-double a,b,eps,h0;
-int n0;
-double (*f)();
+static double subtz(double x0,double x1,double y0,double y1,double h,double t,double eps,double h0,double (*f)(double));
+double tzi2(double a,double b,int n0,double eps,double h0,double (*f)(double))
 {
   int n,k;
   double z,h,t;
   double x0,x1,y0,y1;
-  double subtz();
+
   n = n0;                                  /* 初始的划分数*/
   h = (b-a)/n;                             /* 求得初始步长*/
   z = 0.0;
@@ -34,10 +32,7 @@ double (*f)();
   return(z);
 }
 
-static double subtz(x0,x1,y0,y1,h,t,eps,h0,f)
-double x0,x1,y0,y1,h,t;
-double eps,h0;
-double (*f)();
+static double subtz(double x0,double x1,double y0,double y1,double h,double t,double eps,double h0,double (*f)(double))
 {
   double x,y,t1,t2,d,z;
   x = x0+h/2.0;                            /* 区间的中点*/

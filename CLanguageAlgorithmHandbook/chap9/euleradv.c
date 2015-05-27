@@ -10,7 +10,7 @@
 #include<stdio.h>
 #include<math.h>
 
-int euleradv(y,n,f,h,m,a)
+static int euleradv(y,n,f,h,m,a)
 double *y,(*f)(),h,a;
 int n,m;
 {
@@ -39,4 +39,4 @@ int n,m;
     while(k<m);
 	free(y1);free(y2);
     return (1);
-} 
+}

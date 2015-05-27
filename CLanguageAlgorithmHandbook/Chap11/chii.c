@@ -10,9 +10,7 @@
 #include "gamm2.c"
 #define EPS 1.0e-6                    /* 使用不完全伽马函数需要的数据*/
 #define DMIN 1.0e-30
-double chii(x,n)
-double x;
-int n;
+static double chii(double x,int n)
 {
   double t;
   if(x<0)                             /* 若x<0，则不能计算*/

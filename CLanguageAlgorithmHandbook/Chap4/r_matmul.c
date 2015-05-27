@@ -8,7 +8,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-int r_matmul(a, b, m, p, n, c)
+static int r_matmul(a, b, m, p, n, c)
 double *a, *b, *c;
 int m,p,n;
 {
@@ -27,7 +27,7 @@ int m,p,n;
     for(i=0; i<m; i++)			      /* 循环遍历矩阵c中的每个元素*/
         for(j=0; j<n; j++)
         {
-            tmp = 0.0;			      /* 初值先存在临时变量中*/			
+            tmp = 0.0;			      /* 初值先存在临时变量中*/
             for(k=0; k<p; k++)		      /* 循环累加*/
                 tmp += a[i*p+k]*b[k*n+j];
             c[i*n+j] = tmp;                   /* 将得到的结果放入矩阵c中*/

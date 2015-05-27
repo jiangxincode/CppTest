@@ -1,6 +1,6 @@
 #include "stdio.h"
 #include "beta2.c"
-main()
+main11beta20()
 {
   int i,j,k;
   double x,a0,b0,y;

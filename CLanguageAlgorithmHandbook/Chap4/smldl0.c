@@ -1,6 +1,6 @@
   #include "stdio.h"
   #include "smldl.c"
-  main()
+  main4smldl0()
   {
     int i,j;
     double L[5][5],D[5];

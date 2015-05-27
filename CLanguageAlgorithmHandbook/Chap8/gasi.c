@@ -8,13 +8,14 @@
 //           f 指向被积函数的指针
 // 返回值：  积分近似值
 =========================================================*/
-double gasi(a,b,eps,nmax,f)
+static   double subleg(), sublagr(), subhemt();  /* 声明要调用的三个子函数*/
+static double gasi(a,b,eps,nmax,f)
 double a,b,eps;
 int nmax;
 double (*f)();
 {
   double z,z1,z2;
-  double subleg(), sublagr(), subhemt();  /* 声明要调用的三个子函数*/
+
   if((a<-1.0e34) && (b>1.0e34))            /* 此区间为无限区间(-inf,inf)*/
     z = subhemt(f);
   else if((a<-1.0e34) && (b<0))            /* 此区间为半无限区间(-inf,b),b<0*/
@@ -33,7 +34,7 @@ double (*f)();
   {
     z1 = sublagr(-a+1.0,0.0,eps,nmax,f,1);
     z2 = subleg(a,-a+1.0,0.0,eps,nmax,f);
-    z = z1+z2;  
+    z = z1+z2;
   }
   else if(b>1.0e34)                        /* 此区间为半无限区间(a,inf),a>=0*/
   {
@@ -82,7 +83,7 @@ double (*f)();
   return(z);
 }
 
-static double sublagr(x0,z0,eps,n0,f,p)
+double sublagr(x0,z0,eps,n0,f,p)
 double x0,z0,eps;
 int n0,p;
 double (*f)();
@@ -139,7 +140,7 @@ double (*f)();
   return(z);
 }
 
-static double subhemt(f)
+double subhemt(f)
 double (*f)();
 {
   int j;

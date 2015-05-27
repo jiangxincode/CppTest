@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "spl.c"
 #include "sple.c"
-main()
+main7spl0()
 {
   int n;
   double t,z;

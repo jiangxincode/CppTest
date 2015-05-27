@@ -11,7 +11,7 @@ struct c_comp{
     double imz;
 }c_comp;
 
-int c_comp_plus(a1,a2,c)
+static int c_comp_plus(a1,a2,c)
 struct c_comp *a1,*a2,*c;
 {
     if(a1 == NULL || a2 == NULL || c == NULL)
@@ -24,7 +24,7 @@ struct c_comp *a1,*a2,*c;
     return(1);
 }
 
-int c_comp_sub(a1,a2,c)
+static int c_comp_sub(a1,a2,c)
 struct c_comp *a1,*a2,*c;
 {
     if(a1 == NULL || a2 == NULL || c == NULL)
@@ -37,7 +37,7 @@ struct c_comp *a1,*a2,*c;
     return(1);
 }
 
-int c_comp_product(a1,a2,c)
+static int c_comp_product(a1,a2,c)
 struct c_comp *a1,*a2,*c;
 {
     double p,q,s;
@@ -54,8 +54,8 @@ struct c_comp *a1,*a2,*c;
     return(1);
 }
 
- 
-int c_comp_divide(a1,a2,c)
+
+static int c_comp_divide(a1,a2,c)
 struct c_comp *a1,*a2,*c;
 {
     double R2;
@@ -66,7 +66,7 @@ struct c_comp *a1,*a2,*c;
     }
 
     R2 = a2->rmz*a2->rmz + a2->imz*a2->imz;
-    
+
     c_comp_product(&a1,&a2,&c);
     c->rmz = c->rmz/R2;
     c->imz = c->imz/R2;
@@ -75,7 +75,7 @@ struct c_comp *a1,*a2,*c;
 }
 
 
-int c_comp_power(a,c,n)
+static int c_comp_power(a,c,n)
 struct c_comp *a,*c;
 int n;
 {
@@ -98,7 +98,7 @@ int n;
     return(1);
 }
 
-int c_comp_nthroot(a,c,n)
+static int c_comp_nthroot(a,c,n)
 struct c_comp *a,*c;
 int n;
 {
@@ -125,7 +125,7 @@ int n;
 }
 
 
-int c_comp_exp(a,c)
+static int c_comp_exp(a,c)
 struct c_comp *a,*c;
 {
     double R;
@@ -144,7 +144,7 @@ struct c_comp *a,*c;
     return(1);
 }
 
-int c_comp_log(a,c)
+static int c_comp_log(a,c)
 struct c_comp *a,*c;
 {
 
@@ -161,7 +161,7 @@ struct c_comp *a,*c;
 }
 
 
-int c_comp_sin(a,c)
+static int c_comp_sin(a,c)
 struct c_comp *a,*c;
 {
     double tmp1,tmp2;
@@ -180,7 +180,7 @@ struct c_comp *a,*c;
     return(1);
 }
 
-int c_comp_cos(a,c)
+static int c_comp_cos(a,c)
 struct c_comp *a,*c;
 {
     double tmp1,tmp2;
@@ -206,7 +206,7 @@ struct c_comp *a,*c;
 
 
 
- 
+
 
 
 

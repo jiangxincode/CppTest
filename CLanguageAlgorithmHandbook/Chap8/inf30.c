@@ -1,9 +1,10 @@
 #include "stdio.h"
 #include "hemt.c"
 #include "gasi.c"
-main()
+static double f1(double);
+main8inf30()
  {
-   double f1(double),z;
+   double z;
    printf("Hermite:\n");                      /* 埃尔米特-高斯求积法*/
    z = hemt(f1);
    printf("t=%2.8f\n",z);
@@ -12,7 +13,7 @@ main()
    printf("t=%2.8f\n",z);
 }
 
-double f1(x)                                  /* 被积函数*/
+static double f1(x)                                  /* 被积函数*/
 double x;
 {
   double y;

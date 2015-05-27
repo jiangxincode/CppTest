@@ -2,13 +2,13 @@
 #include<stdio.h>
 #include<math.h>
 #include"gradroot.c"
-
-void main()
+static 	double f(double*,double*);
+void main6gradroot7()
 {
     double eps=0.000001;
     int n=3,max=600,i;
     double *x0;
-	double f(double*,double*);
+
     x0=(double*)malloc(n*sizeof(double));
     x0[0]=1;                                    /* 初值*/
     x0[1]=-3;
@@ -21,8 +21,8 @@ void main()
     else
     printf("failed!\n");
 }
- 
-double f(x,fd)                                   /* 方程组*/
+
+static double f(x,fd)                                   /* 方程组*/
 double *x,*fd;
 {
     double f1,f2,f3,df1,df2,df3;

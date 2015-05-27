@@ -10,12 +10,8 @@
 #include "stdlib.h"
 #include "math.h"
 
-/*struct c_comp{
-    double rmz;
-    double imz;
-}c_comp;
-*/
-int c_comp_sin(a,c)
+#include "c_comp.h"
+static int c_comp_sin(a,c)
 struct c_comp *a,*c;
 {
     double tmp1,tmp2;

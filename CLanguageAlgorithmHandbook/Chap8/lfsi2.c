@@ -10,7 +10,8 @@
 //           fy 指向计算y方向上下限的函数的指针
 // 返回值：  积分近似值
 =========================================================*/
-double lfsi2(a,b,n0,eps,f,fy)
+static   double lfsg();
+static double lfsi2(a,b,n0,eps,f,fy)
 double a,b,eps,(*f)();
 int n0;
 void (*fy)();
@@ -18,7 +19,7 @@ void (*fy)();
   int k,j,p,n,flag;
   double z,z2,d,h,x,t1,t2;
   double u,bb[8],hx[8];
-  double lfsg();
+
   n = n0;                            /* 初始的划分数*/
   h = (b-a)/n;                       /* 求得初始步长*/
   t1 = lfsg(a,n0,eps,f,fy);

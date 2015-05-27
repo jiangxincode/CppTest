@@ -10,7 +10,7 @@
 #include "stdio.h"
 #include "math.h"
 
-double spl(x,y,n,t,eps)
+static double spl(x,y,n,t,eps)
 double *x,*y,t,eps;
 int n;
 {
@@ -29,7 +29,7 @@ int n;
   if(n==2)                                    /* 只有两个结点，使用线性插值*/
   {
     z = (y[0]*(t-x[1]) - y[1]*(t-x[0]))/(x[0] - x[1]);
-    return(z);  
+    return(z);
   }
   k = 0;
   while((x[k]<t)&&(k<n))                      /* 寻找合适的区间*/
@@ -53,7 +53,7 @@ int n;
   else
   {
     d[1] = (y[k]-y[k-1])/(x[k]-x[k-1]);
-    d[3] = (y[k+2]-y[k+1])/(x[k+2]-x[k+1]);  
+    d[3] = (y[k+2]-y[k+1])/(x[k+2]-x[k+1]);
   }
   if(k<=1)                                    /* 求出d0值*/
     d[0] = 2*d[1]-d[2];

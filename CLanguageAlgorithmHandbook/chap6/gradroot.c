@@ -12,7 +12,7 @@
 #include<stdio.h>
 #include<math.h>
 
-int gradroot(x0,n,f,eps,max)
+static int gradroot(x0,n,f,eps,max)
 double *x0,(*f)(),eps;
 int n,max;
 {

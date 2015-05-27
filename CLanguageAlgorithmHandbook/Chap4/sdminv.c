@@ -9,7 +9,7 @@
 #include "stdlib.h"
 #include "math.h"
 
-int sdminv(mat, n, eps)
+static int sdminv(mat, n, eps)
 double *mat;
 int n;
 double eps;

@@ -1,10 +1,11 @@
 #include "stdio.h"
 #include "simp2.c"
-main()
-{ 
+static 	double f();
+main12simp20()
+{
 	int i,n,m,itmax;
 	int  sf();
-	double f();
+
 	double d,alf,eps,a[2],b[2],xopt[3],fx[4],x[4*2];
 	n = 2; m=2;
 	xopt[0]=1.0; xopt[1]=0.0;
@@ -25,9 +26,9 @@ main()
 }
 
 #include "math.h"
-double f(x)
+static double f(x)
 double *x;
-{ 
+{
 	double y;
     y=-(9.0-(x[0]-2.0)*(x[0]-4.0));
     y=y*x[1]*x[1]*x[1];
@@ -37,7 +38,7 @@ double *x;
 #include "math.h"
 int sf(x)
 double *x;
-{ 
+{
 	double c[2],w[2],d[2];
     c[0]=0.0; c[1]=0.0;
     d[0]=x[0]/2.0; d[1]=6.0;

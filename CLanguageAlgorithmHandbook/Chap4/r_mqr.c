@@ -11,10 +11,10 @@
 #include "stdlib.h"
 #include "math.h"
 
-int r_mqr(mat,m,n,q,eps)
+static int r_mqr(mat,m,n,q,eps)
 double *mat,*q,eps;
 int m,n;
-{ 
+{
   int i,j,k,l,p;
   double u,alpha,t;
   if((mat==NULL) || (q==NULL))               /* 检测指针是否为空*/
@@ -23,7 +23,7 @@ int m,n;
     return(0);
   }
   if(m<n)                                    /* 要求矩阵维数必须满足m>n*/
-  { 
+  {
     printf("Fail\n");
     return(0);
   }
@@ -34,23 +34,23 @@ int m,n;
     q[i*m+i] = 1.0;
   }
   for(k=0; k<n; k++)                         /* 循环做Householder变换*/
-  { 
-    u = 0.0; 
+  {
+    u = 0.0;
     l = k*n+k;
     for(i=k; i<m; i++)                       /* 选取最大的值做it值，使计算稳定*/
-    { 
+    {
       t = fabs(mat[i*n+k]);
-      if(t>u) 
+      if(t>u)
         u = t;
     }
     alpha = 0.0;                             /* 计算alpha的值*/
     for(i=k; i<m; i++)
-    { 
-      t = mat[i*n+k]/u; 
+    {
+      t = mat[i*n+k]/u;
       alpha = alpha + t*t;
     }
     if(alpha < eps)                          /* 判断alpha值是否近似为0*/
-    { 
+    {
       printf("Fail\n");                      /* 若alpha值过小，则计算终止*/
       return(0);
     }
@@ -60,31 +60,31 @@ int m,n;
     alpha = u*sqrt(alpha);                   /* 完成alpha值的计算*/
     u = sqrt(2.0*alpha*(alpha-t));           /* 计算rou值*/
     if (u > eps)                             /* 判断rou值是否近似为0*/
-    { 
+    {
       mat[l] = (t-alpha)/u;                  /* 计算出的uk存放在原矩阵的空间中*/
       for(i=k+1; i<m; i++)                   /* 计算出的ui存放在原矩阵的空间中*/
-      { 
-        p = i*n+k; 
+      {
+        p = i*n+k;
         mat[p] = mat[p]/u;
     	}
       for(j=0; j<m; j++)                     /* Hk 左乘 Q*/
-      { 
+      {
         t = 0.0;
         for(l=k; l<m; l++)
           t = t+mat[l*n+k]*q[l*m+j];
         for(i=k; i<m; i++)
-      	{ 
-          p = i*m+j; 
+      	{
+          p = i*m+j;
           q[p] = q[p]-2.0*t*mat[i*n+k];}
     	}
       for(j=k+1; j<n; j++)                   /* Hk 左乘原矩阵 A*/
-      { 
+      {
         t = 0.0;
         for(l=k; l<m; l++)
           t = t+mat[l*n+k]*mat[l*n+j];
         for(i=k; i<m; i++)
-      	{ 
-          p = i*n+j; 
+      	{
+          p = i*n+j;
           mat[p] = mat[p]-2.0*t*mat[i*n+k];}
     	}
       mat[k*n+k] = alpha;
@@ -94,11 +94,11 @@ int m,n;
   }
   for(i=0; i<m-1; i++)                       /* 转置得到矩阵Q*/
     for(j=i+1; j<m;j++)
-    { 
-      p = i*m+j; 
+    {
+      p = i*m+j;
       l = j*m+i;
-      t = q[p]; 
-      q[p] = q[l]; 
+      t = q[p];
+      q[p] = q[l];
       q[l] = t;
     }
   return(1);

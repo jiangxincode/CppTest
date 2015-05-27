@@ -9,8 +9,7 @@
 #include "gamm2.c"
 #define EPS 1.0e-6                    /* 使用不完全伽马函数需要的数据*/
 #define DMIN 1.0e-30
-double errf(x)
-double x;
+static double errf(double x)
 {
   double t;
   t = gamm2(0.5,x*x,EPS,DMIN);

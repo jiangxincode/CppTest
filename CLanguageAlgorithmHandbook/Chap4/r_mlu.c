@@ -12,7 +12,7 @@
 #include "stdlib.h"
 #include "math.h"
 
-int r_mlu(mat,n,L,U,P,Q,eps)
+static int r_mlu(mat,n,L,U,P,Q,eps)
 double *mat,*L,*U,*P,*Q,eps;
 int n;
 {

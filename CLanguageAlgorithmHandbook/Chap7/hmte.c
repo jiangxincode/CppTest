@@ -10,7 +10,7 @@
 //           t 指定的插值点
 // 返回值：  在指定插值点的函数近似值
 =========================================================*/
-double hmte(x,h,y,dy,n,t)
+static double hmte(x,h,y,dy,n,t)
 double x,h,*y,*dy,t;
 int n;
 {
@@ -29,40 +29,40 @@ int n;
     return(z);
   }
   if(t < (x+2*h))
-  { 
-	  k = 0; 
-	  p = 3; 
+  {
+	  k = 0;
+	  p = 3;
   }
   else if(t > (x+(n-3)*h))
-  { 
-	  k = n-3; 
+  {
+	  k = n-3;
 	  p =3;
   }
   else
   {
     k = (int)((t-x)/h);                 /* 等距时，可以直接计算出所用区间*/
     if(n>7)
-    { 
+    {
       if(k<4)
-      { 
-		  k = 0; 
+      {
+		  k = 0;
 		  p = 2;
 	  }
       else if(k>(n-5))
-      { 
+      {
 		  p = 2*(n-1-k);
 		  k = n-p;
 	  }
       else
-      { 
-		  k = k-3; 
-		  p = 8; 
+      {
+		  k = k-3;
+		  p = 8;
 	  }
     }
     else
-    { 
-		k = 0; 
-		p = n; 
+    {
+		k = 0;
+		p = n;
 	}
   }
   z = 0.0;

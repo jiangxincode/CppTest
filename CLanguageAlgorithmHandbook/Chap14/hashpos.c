@@ -7,9 +7,7 @@
 // 返 回 值：元素对应的位置
 //==============================================================*/
 
-int hashpos(str,i,m)
-char *str;
-int i,m;
+int hashpos(char *str,int i,int m)
 {
 	unsigned int k = hashk(str,i);       /* 调用一个算法计算对应的整数*/
 	return( (int)(k%m) );

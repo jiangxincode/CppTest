@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "r_gaus.c"
 #include "r_gsjd.c"
-main()
+main5rgs0()
 {
   int i;
   double a1[4][4]=                         /* 调用函数会破坏矩阵数据，因此需要两份*/

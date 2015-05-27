@@ -2,7 +2,7 @@
 #include "b_gsjd.c"
 #include "r_trzg.c"
 #include "r_gsband.c"
-main()
+main5gstr0()
 {
   int i,j;
   double a[4][4]=

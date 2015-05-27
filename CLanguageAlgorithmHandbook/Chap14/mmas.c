@@ -6,7 +6,7 @@
 //            m 要找第m大的元素
 // 返 回 值：无
 //==============================================================*/
-void mmas(x,n,m)
+static void mmas(x,n,m)
 int *x;
 int n,m;
 {
@@ -37,13 +37,13 @@ int n,m;
 				x[i] = x[j];
 				x[j] = tmp;
 			}
-		}while(i<j);                         /* 对当前排序区间进行划分*/		
+		}while(i<j);                         /* 对当前排序区间进行划分*/
 		x[s] = x[j];
 		x[j] = flag;
 		if(j < m-1)                            /* 第m小的元素在后面的子空间内*/
 			s = j+1;
 		else if(j >= m)                         /* 第m小的元素在前面的子空间内*/
-			t = j-1;	
+			t = j-1;
 		else
 			return;
 	}while(1);

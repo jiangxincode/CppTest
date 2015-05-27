@@ -11,7 +11,7 @@
 #include<stdio.h>
 #include<math.h>
 
-int newdonroot(x0,f,fd,eps,max)
+static int newdonroot(x0,f,fd,eps,max)
 double *x0,(*f)(),(*fd)(),eps;
 int max;
 {

@@ -1,10 +1,11 @@
 #include "math.h"
 #include "stdio.h"
 #include "simps2.c"
-main()
+static   double f(double,double);
+ static  void  fy(double,double []);
+main8simps20()
 {
-  double a,b,eps,s,h0,f(double,double);
-  void  fy(double,double []);
+double a,b,eps,s,h0;
   a = 0.0;
   b = 4.0;
   eps = 0.0001;
@@ -13,14 +14,14 @@ main()
   printf("simps2: s=%2.5f\n",s);         /* 打印积分结果*/
   getchar();
 }
-double f(x,y)                            /* 被积分的函数*/
+static double f(x,y)                            /* 被积分的函数*/
 double x,y;
 {
   double z;
   z = exp(-x*y)/(1.0+x*y);
   return(z);
 }
-void fy(x,y)                             /* 求积分界的函数*/
+static void fy(x,y)                             /* 求积分界的函数*/
 double x,y[2];
 {
   y[0] = 0;

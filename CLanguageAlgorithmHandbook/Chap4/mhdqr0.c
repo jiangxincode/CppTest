@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "mhdqr.c"
-main()
-{ 
+main4mhdqr0()
+{
 	int i,itmax=60;
 	double eps=1e-7;
 	double u[5],v[5];

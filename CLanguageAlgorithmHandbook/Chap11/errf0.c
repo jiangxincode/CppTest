@@ -1,6 +1,6 @@
 #include "stdio.h"
 #include "errf.c"
-main()
+main11errf0()
 {
   int i,j;
   double x,t;

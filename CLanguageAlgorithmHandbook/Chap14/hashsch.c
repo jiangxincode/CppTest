@@ -6,11 +6,8 @@
 //            a 待查找的元素的关键字
 // 返 回 值：若找到则返回其位置,否则返回-1
 //==============================================================*/
-
-int hashsch(HT,m,a)
-hashlist HT;
-int m;
-KeyType a;
+#include "something.h"
+int hashsch(hashlist HT,int m,KeyType a)
 {
 	int temp,d,i;
 	d = hashpos(a, 0, m);
@@ -20,7 +17,7 @@ KeyType a;
 	{
 		if( KeyEqu(HT[d].KEY, a) )            /* 已经找到，返回位置*/
 			return(d);
-	
+
 		d = (d+2*i-1)%m;                         /* 不为空且不相等，说明已经被其它元素占据，向后探查*/
 		i++;
 		if(d == temp)                            /* 这时查找失败*/

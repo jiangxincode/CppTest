@@ -3,7 +3,7 @@
 #include "randu01s.c"
 #include "c2test.c"
 
-void main()
+void main13c2test_example8()
 {
 	int L,i,*a,*e,r,k,v,temp;
 	double *u_ran,c2,alpha;
@@ -14,7 +14,7 @@ void main()
 	e=(int *)malloc(sizeof(int)*r);
 	u_ran=(double *)malloc(sizeof(double)*L);
 	randu01s(L,u_ran);//生产L个[0,1]区间的均匀随机数
-	
+
 	for(i=0;i<r;i++)
 	{
 		e[i]=L/r;  //每个区间内L/r
@@ -32,5 +32,5 @@ void main()
 	else
 		printf("不符合分布\n");
 }
-	
+
 

@@ -11,7 +11,7 @@
 #include<math.h>
 //#include"rungekuttainvh.c"
 
-int rungekuttavh(y,n,f,h,m,a,eps)
+static int rungekuttavh(y,n,f,h,m,a,eps)
 double *y,(*f)(),h,a,eps;
 int n,m;
 {
@@ -27,7 +27,7 @@ int n,m;
     }
     do                                         /* 对k进行循环，分别计算xk处的函数值*/
     {
-        x=a+k*h;		
+        x=a+k*h;
 		do{                                    /* 在每个xk处，进行步长的动态选择*/
             m1=(int)(h/ht);                    /* ht为步长*/
             ytemp1=(double*)malloc(sizeof(double)*n*(m1+1));
@@ -43,7 +43,7 @@ int n,m;
             rungekuttainvh(ytemp1,n,f,ht,m1,x);     /* 调用定步长公式*/
             for(i=0;i<n;i++)
 				y1[i]=ytemp1[m1*n+i];
-				
+
             free(ytemp1);
 
 			m2=2*m1;                                 /* ht/2为步长*/
@@ -80,4 +80,4 @@ int n,m;
     return (1);
 }
 
- 
+

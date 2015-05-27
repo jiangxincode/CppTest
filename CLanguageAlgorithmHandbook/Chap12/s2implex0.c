@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "simplex.c"
-main()
-{ 
+main12s2implex0()
+{
 	int i,j,n,m1,m2,m3,ixr[9],ixc[9];
 	double eps=1.0e-10;
 	double a[8][10] = {{0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0},

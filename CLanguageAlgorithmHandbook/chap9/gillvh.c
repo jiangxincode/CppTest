@@ -9,14 +9,14 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
-
-int gillvh(y,n,f,h,m,a,eps)
+static int gillinvh();                              /* 需要使用定步长基尔算法得子函数*/
+static int gillvh(y,n,f,h,m,a,eps)
 double *y,(*f)(),h,a,eps;
 int n,m;
 {
     double x,*y1,*y2,*ytemp1,*ytemp2,dis,ht=h;
     int k=0,i,m1,m2;
-    int gillinvh();                              /* 需要使用定步长基尔算法得子函数*/
+
     y1=(double*)malloc(sizeof(double)*n);        /* 动态分配*/
     y2=(double*)malloc(sizeof(double)*n);
     if(y1==NULL||y2==NULL)
@@ -26,7 +26,7 @@ int n,m;
     }
     do                                          /* 对k进行循环，分别计算xk处的函数值*/
     {
-        x=a+k*h;    	
+        x=a+k*h;
         do{                                     /* 在每个xk处，进行步长的动态选择*/
             m1=(int)(h/ht);                     /* ht为步长*/
             ytemp1=(double*)malloc(sizeof(double)*n*(m1+1));
@@ -41,7 +41,7 @@ int n,m;
                 ytemp1[i]=y[k*n+i];
             gillinvh(ytemp1,n,f,ht,m1,x);       /* 调用定步长公式*/
             for(i=0;i<n;i++)
-                y1[i]=ytemp1[m1*n+i];				
+                y1[i]=ytemp1[m1*n+i];
             free(ytemp1);
             m2=2*m1;                            /* ht/2为步长*/
             ytemp2=(double*)malloc(sizeof(double)*n*(m2+1));
@@ -74,7 +74,7 @@ int n,m;
     return (1);
 }
 
-int gillinvh(y,n,f,h,m,a)
+static int gillinvh(y,n,f,h,m,a)
 double *y,(*f)(),h,a;
 int n,m;
 {
@@ -98,16 +98,16 @@ int n,m;
         f(&y[k*n],k1,x);                    /* k1*/
         for(i=0;i<n;i++)
             ytemp[i]=y[k*n+i]+h*k1[i]/2;
-        f(ytemp,k2,x+h/2);                  /* k2*/		
+        f(ytemp,k2,x+h/2);                  /* k2*/
         for(i=0;i<n;i++)
             ytemp[i]=ytemp[i]+(s2-1)*h*k1[i]+(1-s2)*h*k2[i];
-        f(ytemp,k3,x+h/2);                  /* k3*/		
+        f(ytemp,k3,x+h/2);                  /* k3*/
         for(i=0;i<n;i++)
             ytemp[i]=y[k*n+i]-s2*h*k2[i]+(1+s2)*h*k3[i];
         f(ytemp,k4,x+h);                    /* k4*/
-    	
+
         for(i=0;i<n;i++)                    /* 计算此处的函数值*/
-            y[(k+1)*n+i]=y[k*n+i]+h/6*(k1[i]+(2-2*s2)*k2[i]+(2+2*s2)*k3[i]+k4[i]);         
+            y[(k+1)*n+i]=y[k*n+i]+h/6*(k1[i]+(2-2*s2)*k2[i]+(2+2*s2)*k3[i]+k4[i]);
         k++;
     }
     while(k<m);
@@ -117,4 +117,4 @@ int n,m;
     free(k4);
     free(ytemp);
     return (1);
-} 
+}

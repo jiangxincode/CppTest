@@ -1,20 +1,9 @@
-#define KEY name                                             /* 调用哈希函数需要的宏*/
-#define NULLTag "\0"
-#define DELTag "1\0"
-#define HashSize 29
 
-struct student{                                              /* 定义存放学生信息的结构体*/
-	int num;
-	char name[8];
-	char sex;
-	int age;
-};
 
-typedef struct student ElemType;
-typedef struct student* ElemTypeP;
-typedef ElemType hashlist[HashSize];
-typedef char KeyType[8];
- 
+#include "something.h"
+
+
+
 int	KeyEqu(char* stra,char* strb);   /* 判断关键字是否相同*/
 void ElemCP(ElemType *a, ElemType *b);                         /* 将元素b中内容拷贝到a中*/
 void ElemDEL(ElemType *a);                                    /* 将元素a设成已删除*/
@@ -22,14 +11,10 @@ void ElemNULL(ElemType *a);                                   /* 将元素a设成空，
 
 #include "stdio.h"
 #include "string.h"
-#include "hashk.c"
-#include "hashpos.c"
-#include "hashins.c"
-#include "hashsch.c"
-#include "hashdel.c"
+#include "something.h"
 
-main()
-{ 
+main14hash0()
+{
 	int i,m;
 	static ElemType x[16]={{101,"Zhao",'M',19},
 	{102,"Qian",'F',18},{103,"Sun",'M',19},
@@ -44,7 +29,7 @@ main()
 	hashlist HT;                                        /* 定义哈希表*/
 	m = HashSize;
 	for(i=0; i<m; i++)                                  /* 初始化哈希表*/
-		ElemNULL(&HT[i]);	
+		ElemNULL(&HT[i]);
 	for(i=0; i<16; i++)                                 /* 将元素插入哈希表*/
 		hashins(HT,m,x[i]);
 	i = hashsch(HT,m,a);                                /* 在哈希表中查找*/
