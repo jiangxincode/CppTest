@@ -1,11 +1,11 @@
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include "c_comp.c"
 #include "r_matmul.c"
 #include "something.h"
 #include "sdminv.c"
 
-void main4minv0()
+int main4minv0()
 {
     struct c_comp c_mat[2][2], c_mat1[2][2], c_mat2[2][2];
     double r_mat[2][2] = {{3,2},{2,5}};
@@ -64,5 +64,6 @@ void main4minv0()
             printf("%2.5f ", r_mat2[i][j]);
         printf("\n");
     }
+    return 0;
 }
 

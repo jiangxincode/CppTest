@@ -1,9 +1,12 @@
-#include "stdio.h"
+#include <stdio.h>
+
 #include "bspl1.c"
 #include "bspl2.c"
 #include "bspl3.c"
+
 #define PI 3.1415926
-main7bspl0()
+
+int main7bspl0()
 {
     int k,m,n;
     double x[11]= {0.00,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,1.00};
@@ -31,4 +34,5 @@ main7bspl0()
     printf("BSPL3: \n");
     for(k=0; k<m; k++)                             /* ´òÓ¡½á¹û*/
         printf("t=%2.5f: z=%2.5f,z1=%2.5f,z2=%2.5f\n",t[k],z[k],z1[k],z2[k]);
+    return 0;
 }

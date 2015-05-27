@@ -1,3 +1,9 @@
+#include <stdlib.h>
+#include <math.h>
+#include <stdio.h>
+
+#include "something.h"
+
 /*======================================================
 // 函数名：bfgs
 // 功能描述：BFGS准牛顿法
@@ -11,10 +17,6 @@
 //           itmax 最大迭代次数
 // 返回值：  迭代次数
 =========================================================*/
-#include "stdlib.h"
-#include "math.h"
-#include "something.h"
-
 int bfgs(double *x, double *xmin, int n, double *y0, double (*f)(), void (*df)(), double eps, int itmax)
 {
     int i,j,it,flag;

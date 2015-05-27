@@ -1,1 +1,1 @@
-double beta2(a,b,x,e1);
+double beta2(double a,double b,double x,double e1);

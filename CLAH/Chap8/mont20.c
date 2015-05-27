@@ -1,5 +1,5 @@
-#include "math.h"
-#include "stdio.h"
+#include <math.h>
+#include <stdio.h>
 #include "simps2.c"
 #include "mont2.c"
 static void  fy(double,double []);

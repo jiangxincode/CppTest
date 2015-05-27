@@ -1,6 +1,6 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "errf.c"
-main11errf0()
+int main11errf0()
 {
     int i,j;
     double x,t;
@@ -15,4 +15,5 @@ main11errf0()
         printf("\n");
     }
     getchar();
+    return 0;
 }

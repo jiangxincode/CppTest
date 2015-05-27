@@ -4,8 +4,8 @@
 // 输入参数：a（多项式系数），n（系数个数）、y（计算出的点值）
 // 返 回 值：整型数字。计算成功则返回1，否则返回0
 //==============================================================*/
-#include"stdio.h"
-#include"math.h"
+#include <stdio.h>
+#include <math.h>
 #include"c_comp.c"
 static int c2p0();
 static int c2p(a,n,y)

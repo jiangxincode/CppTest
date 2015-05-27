@@ -1,10 +1,10 @@
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 #include "something.h"
 #include "ifft.c"
 #include "r2fft.c"
 
-void main16cfft0()
+int main16cfft0()
 {
     int i;
     struct c_comp x[4],y[4],y1[4],y2[4];
@@ -67,5 +67,6 @@ void main16cfft0()
             printf("%3.1f+i*%3.1f ",x[i].rmz,x[i].imz);
     }
     printf("\n");
+    return 0;
 }
 

@@ -1,6 +1,6 @@
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 /*======================================================
 // 函数名：r_trzg
 // 功能描述：用追赶法解线性方程组

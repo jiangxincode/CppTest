@@ -7,7 +7,7 @@
 //            k 每位数字最多在[0,k)之间，也就是说是k进制的。
 // 返 回 值：无
 //==============================================================*/
-#include "stdlib.h"
+#include <stdlib.h>
 static void rads_cout();
 static void rads(x,n,d,k)
 int *x;

@@ -4,9 +4,9 @@
 //输入参数：mat(输入的矩阵) m(矩阵行数) p(矩阵列数) eps(精度)
 //返回值：运行成功则返回矩阵的秩，失败则返回0
 =========================================================*/
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
 static int r_mrank(mat,m, n,eps)
 double *mat, eps;

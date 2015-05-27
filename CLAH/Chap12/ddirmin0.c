@@ -1,11 +1,11 @@
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 #include "ddirmin.c"
 
 static double f();
 static	void df();
 
-void main12ddirmin0()
+int main12ddirmin0()
 {
     double  eps,fopt,x[3],p[3],xmin[3];
     int itmax = 50, n =3;
@@ -16,6 +16,7 @@ void main12ddirmin0()
 
     fopt = ddirmin(x, p, xmin, n, f,df, eps, itmax);
     printf("%f,%f,%f,%f\n",xmin[0],xmin[1],xmin[2],fopt);
+    return 0;
 }
 
 static double f(x, n)

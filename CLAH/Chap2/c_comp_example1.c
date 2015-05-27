@@ -1,11 +1,11 @@
 #include "c_comp.h"
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #include "c_comp_product.c"
 #include "c_comp_divide.c"
 
-void main2c_comp_example1()
+int main2c_comp_example1()
 {
     struct c_comp a,b,c,d;
     a.rmz=7.0;
@@ -23,4 +23,5 @@ void main2c_comp_example1()
         printf("除法结果为：");
         printf("%1.5f+j%1.5f\n",d.rmz,d.imz);
     }
+    return 0;
 }

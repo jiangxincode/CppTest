@@ -1,10 +1,10 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "conio.h"
-#include "stdlib.h"
+#include <stdlib.h>
 #include "r_matmul.c"
 #include "sdminv.c"
 
-void main4sd_matinv0()
+int main4sd_matinv0()
 {
     double r_mat[2][2] = {{3,2},{2,5}};
     double r_mat1[2][2], r_mat2[2][2];
@@ -43,4 +43,5 @@ void main4sd_matinv0()
             printf("%2.5f ", r_mat2[i][j]);
         printf("\n");
     }
+    return 0;
 }

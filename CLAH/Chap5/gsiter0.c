@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "smcg.c"
 #include "jaco.c"
 #include "gssd.c"

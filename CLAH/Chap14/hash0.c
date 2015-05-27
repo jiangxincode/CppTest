@@ -9,7 +9,7 @@ void ElemCP(ElemType *a, ElemType *b);                         /* ½«ÔªËØbÖĞÄÚÈİ¿
 void ElemDEL(ElemType *a);                                    /* ½«ÔªËØaÉè³ÉÒÑÉ¾³ı*/
 void ElemNULL(ElemType *a);                                   /* ½«ÔªËØaÉè³É¿Õ£¬ÓÃÓÚ³õÊ¼»¯»òÇå¿Õ¹şÏ£±í*/
 
-#include "stdio.h"
+#include <stdio.h>
 #include "string.h"
 #include "something.h"
 

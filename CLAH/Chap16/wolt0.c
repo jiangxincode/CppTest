@@ -1,9 +1,9 @@
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 #include "wolt.c"
 #include "hadma.c"
 
-void main16wolt0()
+int main16wolt0()
 {
     int i,n=8;
     double a[8],b[8],y[8];
@@ -75,5 +75,6 @@ void main16wolt0()
             printf("%5.4f ",b[i]);
     }
     printf("\n");
+    return 0;
 }
 

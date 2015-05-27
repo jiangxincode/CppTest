@@ -1,6 +1,6 @@
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 /*======================================================
 // 函数名：orelax
 // 功能描述：用超松驰方法解对称方程组

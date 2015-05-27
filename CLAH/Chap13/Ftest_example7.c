@@ -1,9 +1,9 @@
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include "ftest.c"
 #define pi 3.1415926
 
-void main13Ftest_example7()
+int main13Ftest_example7()
 {
     int j,na,nb,nc,rtab,rtbc,rtac;
     double *a,*b,*c;
@@ -54,5 +54,6 @@ void main13Ftest_example7()
         printf("a与c有显著性差异\n");
     else
         printf("a与c没有显著性差异\n");
+    return 0;
 
 }

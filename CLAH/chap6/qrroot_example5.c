@@ -1,9 +1,9 @@
-#include "stdlib.h"
-#include "stdio.h"
-#include "math.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
 #include"qrroot.c"
 
-void main6qrroot5()
+int main6qrroot5()
 {
     int i,itmax=60;
     double eps=0.000001;                             /* ¾«¶È*/
@@ -15,4 +15,5 @@ void main6qrroot5()
         for (i=0; i<=4; i++)
             printf("%13.7e +j %13.7e\n",u[i],v[i]);
     printf("\n");
+    return 0;
 }

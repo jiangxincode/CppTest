@@ -1,7 +1,7 @@
 #include "c_comp.h"
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #include "c_comp_exp.c"
 #include "c_comp_log.c"
 #include "c_comp_sin.c"
@@ -9,7 +9,7 @@
 #include "c_comp_power.c"
 #include "c_comp_nthroot.c"
 
-void main2c_comp_example2()
+int main2c_comp_example2()
 {
     struct c_comp a,b,c,f,g,h;
     struct c_comp d[5];
@@ -50,4 +50,5 @@ void main2c_comp_example2()
         printf("余弦的结果为：\n");
         printf("%1.5f+j%1.5f\n",h.rmz,h.imz);
     }
+    return 0;
 }

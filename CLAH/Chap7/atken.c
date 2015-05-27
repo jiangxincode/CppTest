@@ -1,5 +1,5 @@
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 /*======================================================
 // 函数名：atken
 // 功能描述：埃特金插值

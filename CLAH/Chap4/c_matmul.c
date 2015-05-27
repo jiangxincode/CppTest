@@ -1,5 +1,5 @@
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include "c_comp.c"	 	 		/* 需要调用复数运算的算法*/
 
 /*======================================================

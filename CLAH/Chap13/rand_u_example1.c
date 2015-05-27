@@ -1,7 +1,7 @@
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include "randu01s.c"
-void main13rand_u_example1()
+int main13rand_u_example1()
 {
     int L;
     int flag,i,j;
@@ -25,4 +25,5 @@ void main13rand_u_example1()
             printf("%5.4f ",u_rand[i*5+j]);
         printf("\n");
     }
+    return 0;
 }

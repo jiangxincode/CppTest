@@ -4,7 +4,7 @@
 #include "newdonroot.c"
 static   double f(double);
 static  double fd(double);
-void main6newdonroot2()
+int main6newdonroot2()
 {
     double x0;
 
@@ -18,6 +18,7 @@ void main6newdonroot2()
         printf("\n%1.7f\n",x0);
     else
         printf("failed!\n");
+    return 0;
 }
 
 static double f(x)                         /* ¼ÆËãº¯ÊýÖµ*/

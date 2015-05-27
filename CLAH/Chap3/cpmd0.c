@@ -1,9 +1,9 @@
-#include"stdio.h"
-#include"math.h"
+#include <stdio.h>
+#include <math.h>
 #include"c_comp.c"
 #include "cpmul.c"
 #include "cpdiv.c"
-void main3cpmd0()
+int main3cpmd0()
 {
     int i;
     struct c_comp a[3],b[3],c[5],q[4],r[5];
@@ -31,4 +31,5 @@ void main3cpmd0()
         for(i=0; i<5; i++)
             printf("r[%i]=%2.1f+i*(%2.1f)\n",i,r[i].rmz,r[i].imz);
     }
+    return 0;
 }

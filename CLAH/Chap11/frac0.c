@@ -1,7 +1,7 @@
-#include "math.h"
-#include "stdio.h"
+#include <math.h>
+#include <stdio.h>
 #include "frac.c"
-main11frac0()
+int main11frac0()
 {
     int nmax;
     double f,e0,e1;
@@ -12,6 +12,7 @@ main11frac0()
     f=frac(fab,nmax,e1,e0);
     printf("f=%e\n",f);         /* 打印结果*/
     getchar();
+    return 0;
 }
 
 void fab(j,ab)                /* 计算系数的函数*/

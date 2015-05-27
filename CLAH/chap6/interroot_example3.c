@@ -6,7 +6,7 @@
 #include<math.h>
 #include "interroot.c"
 static     double f(double);
-void main6interroot3()
+int main6interroot3()
 {
     double x,eps,ab;
 
@@ -21,6 +21,7 @@ void main6interroot3()
         printf("\n%1.7f\n",*x0);
     else
         printf("failed!\n");
+    return 0;
 }
 
 static double f(x)                              /* ¼ÆËãº¯ÊýÖµ*/

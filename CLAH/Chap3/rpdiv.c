@@ -8,7 +8,7 @@
        r（余式R系数），l（系数个数）需要l=n
 // 返 回 值：整型数字。计算成功则返回1，否则返回0
 //==============================================================*/
-#include"stdio.h"
+#include <stdio.h>
 static int rpdiv(a,n,b,m,q,k,r,l)
 double *a,*b,*q,*r;
 int n,m,k,l;

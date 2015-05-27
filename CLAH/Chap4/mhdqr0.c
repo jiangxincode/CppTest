@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "mhdqr.c"
 main4mhdqr0()
 {

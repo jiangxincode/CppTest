@@ -1,6 +1,6 @@
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 /*======================================================
 // 函数名：r_sband
 // 功能描述：用高斯消去法解带型方程组

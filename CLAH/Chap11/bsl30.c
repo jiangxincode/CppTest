@@ -1,6 +1,6 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "something.h"
-main11bsl30()
+int main11bsl30()
 {
     int n,i;
     double x,y;
@@ -22,4 +22,5 @@ main11bsl30()
         printf("\n");
     }
     getchar();
+    return 0;
 }

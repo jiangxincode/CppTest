@@ -3,7 +3,7 @@
 #include<math.h>
 #include"nndroot.c"
 static     void f(double*,double*,double*,double);
-void main6nndroot8()
+int main6nndroot8()
 {
     double eps=0.000001,h=0.1,t=0.5;
     int n=3,max=600,i;
@@ -21,13 +21,13 @@ void main6nndroot8()
     }
     else
         printf("failed!\n");
+    return 0;
 }
 
 static void f(x,f0,fi,h)							/*方程组函数*/
 double *x,*f0,*fi;
 double h;
 {
-    double f1,f2,f3,df1,df2,df3;
     double tmp;
     int i;
     f0[0]=x[0]*x[0]+x[1]*x[1]+x[2]*x[2]-40;

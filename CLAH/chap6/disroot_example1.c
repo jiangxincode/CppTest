@@ -3,7 +3,7 @@
 #include<math.h>
 #include"disroot.c"
 static double f(double);
-void main6disroot1()
+int main6disroot1()
 {
 
     double a,b,eps,root;
@@ -14,6 +14,7 @@ void main6disroot1()
     printf("    a          (a+b)/2         b\n\n");
     root=disroot(a,b,f,eps);              /* 二分法求根并打印结果*/
     printf("\nThe root is  %1.7f\n",root);
+    return 0;
 }
 
 static double f(x)                               /* 待解的方程*/

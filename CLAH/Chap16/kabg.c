@@ -6,8 +6,8 @@
 //          alfa（结构参数α），beta（结构参数β）、gama（结构参数γ）
 // 返 回 值：无
 //==============================================================*/
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 static int kabg(x,n,y,h,alfa,beta,gama)
 int n;
 double *x,*y;

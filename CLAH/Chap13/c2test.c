@@ -11,9 +11,9 @@
 //返回值：1（符合分布），0（不符合分布）
 =========================================================*/
 
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #include "chii.c"
 
 static int c2test(a,e,r,k,v,c2,alpha)

@@ -1,8 +1,8 @@
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 #include "powell.c"
 static 	double f();
-void main12powell0()
+int main12powell0()
 {
     double  eps,fopt,x[3];
     int itmax = 50, n = 3,it;
@@ -12,6 +12,7 @@ void main12powell0()
     x[0] = x[1] = x[2] =2.0;                                                /* 初始点*/
     it = powell(x, ee, x, n, &fopt, f, eps, itmax);                         /* 调用函数，并打印结果*/
     printf("iterations = %d:\n x0=%f,x1=%f,x2=%f\nfopt=%f\n",it,x[0],x[1],x[2],fopt);
+    return 0;
 }
 
 static double f(x, n)

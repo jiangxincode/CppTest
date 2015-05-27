@@ -6,8 +6,8 @@
 //         e1 精度要求，当两次递推的值变化率小于e1时，认为已收敛
 // 返 回 值：不完全伽马函数的值
 //==============================================================*/
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 #define NMAX 100
 #define EULER 0.5772156649
 #define FPMIN 1.0e-30

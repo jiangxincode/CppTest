@@ -7,8 +7,8 @@
 // 返 回 值：整型数字。计算成功则返回1，否则返回0
 //==============================================================*/
 
-#include"stdio.h"
-#include"math.h"
+#include <stdio.h>
+#include <math.h>
 #include"c_comp.c"	/*复系数多项式的乘法函数需要调用系数和点表示相互转化的两个函数*/
 #include"p2c.c"
 #include"c2p.c"

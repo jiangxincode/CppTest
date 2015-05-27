@@ -13,9 +13,9 @@
 //           z2 指向存放返回的m个插值点处的函数二阶导数的数组的指针
 // 返回值：  成功则返回整型 1，失败则返回 0
 =========================================================*/
-#include "stdio.h"
-#include "math.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
 
 static int bspl1(x,y,y1,y2,n,t,m,z,z1,z2)
 double *x,*y,y1,y2,*t;

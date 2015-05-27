@@ -1,7 +1,7 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "rpmva.c"
 #include "rpva.c"
-main3rpmdva0()
+int main3rpmdva0()
 {
     int i;
     double y[6],tmp;
@@ -19,5 +19,6 @@ main3rpmdva0()
         printf("x(%d)=%2.5f; y(%d)=%2.5f\n",i,x[i],i,tmp);
     }
     printf("\n");
+    return 0;
 }
 

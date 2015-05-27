@@ -4,9 +4,9 @@
 //输入参数：mat(输入的矩阵) n(矩阵阶数) eps(精度)
 //返回值：矩阵的行列式值
 =========================================================*/
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
 static double r_chdet(mat,n,eps)
 int n;

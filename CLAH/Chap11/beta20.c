@@ -1,6 +1,6 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "beta2.c"
-main11beta20()
+int main11beta20()
 {
     int i,j,k;
     double x,a0,b0,y;
@@ -26,5 +26,6 @@ main11beta20()
     }
     printf("\n");
     getchar();
+    return 0;
 }
 

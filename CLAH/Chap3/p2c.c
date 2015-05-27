@@ -4,8 +4,8 @@
 // 输入参数：y（提供的点值），n（y的长度），a（计算得到的多项式系数）
 // 返 回 值：整型数字。计算成功则返回1，否则返回0
 //==============================================================*/
-#include"stdio.h"
-#include"math.h"
+#include <stdio.h>
+#include <math.h>
 #include"c_comp.c"
 static int p2c1();
 static int p2c(y,n,a)

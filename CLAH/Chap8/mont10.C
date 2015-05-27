@@ -1,10 +1,14 @@
-#include "stdio.h"
+#include <stdio.h>
+#include <math.h>
+
 #include "tzi1.c"
-#include "mont1.c"
+#include "something.h"
+
+static double f1(double);
 int main8mont10()
 {
     double a,b,eps,h0,z;
-    double f1(double);
+
     a = 0.0;
     b = 4.0;
     eps = 1e-8;
@@ -16,7 +20,6 @@ int main8mont10()
     getchar();
 }
 
-#include "math.h"
 static double f1(double x)                                    /* 被积分的函数*/
 {
     double y;

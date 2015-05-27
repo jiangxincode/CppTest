@@ -4,8 +4,8 @@
 // 输入参数：x 自变量x的值。
 // 返 回 值：误差函数的值
 //==============================================================*/
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 #include "gamm2.c"
 #define EPS 1.0e-6                    /* 使用不完全伽马函数需要的数据*/
 #define DMIN 1.0e-30

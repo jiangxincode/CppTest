@@ -1,5 +1,7 @@
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
 /*======================================================
 // 函数名：bspl3
 // 功能描述：第三类边界条件的三次样条函数插值

@@ -1,10 +1,10 @@
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include "ttest.c"
 #include "tutest.c"
 #define pi 3.1415926
 
-void main13ttest_example6()
+int main13ttest_example6()
 {
     int j,na,nb,nc,rtab,rtbc,rtac;
     double *a,*b,*c;
@@ -86,5 +86,6 @@ void main13ttest_example6()
         printf("a与c有显著性差异\n");
     else
         printf("a与c没有显著性差异\n");
+    return 0;
 
 }

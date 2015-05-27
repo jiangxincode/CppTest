@@ -6,7 +6,7 @@
 //           p 积分方向。p=1则积分[a,inf)，p=-1则积分(-inf,a];
 // 返回值：  积分近似值
 =========================================================*/
-#include "math.h"
+#include <math.h>
 
 static double lagr(a,f,p)
 double a,(*f)();

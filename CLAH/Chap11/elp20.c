@@ -1,7 +1,7 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "something.h"
 #include "RD.c"
-main11elp20()
+int main11elp20()
 {
     int i;
     double f,sf,cf,y,k;
@@ -21,4 +21,5 @@ main11elp20()
         y = sf*RF(cf*cf,(1.0+k*sf)*(1.0-k*sf),1.0)-y;   /* 调用函数求值并打印结果*/
         printf("F2(%3.2f, %6.5f)=%6.5f\n",k,f,y);
     }
+    return 0;
 }

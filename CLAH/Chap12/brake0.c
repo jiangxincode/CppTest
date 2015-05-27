@@ -1,11 +1,11 @@
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 #include "something.h"
 #include "bsl1.c"
 
 static double f(double);
 
-void main12brake0()
+int main12brake0()
 {
     double a,b,c,fa,fb,fc;
 
@@ -23,6 +23,7 @@ void main12brake0()
         printf("x %5.4f %5.4f %5.4f\n",a,b,c);
         printf("f %5.4f %5.4f %5.4f\n",fa,fb,fc);
     }
+    return 0;
 }
 
 static double f(double x)

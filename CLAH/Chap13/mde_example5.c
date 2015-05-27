@@ -1,8 +1,8 @@
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include "mde.c"
 #define pi 3.1415926
-void main13mde_example5()
+int main13mde_example5()
 {
     int L,j;
     double *rand;
@@ -26,4 +26,5 @@ void main13mde_example5()
     printf("var:     %1.5f\n",var);
     printf("skew:    %1.5f\n",skew);
     printf("kurt:    %1.5f\n",kurt);
+    return 0;
 }

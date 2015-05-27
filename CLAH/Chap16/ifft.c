@@ -1,12 +1,15 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+#include "something.h"
+
 /*=============================================================
 // 函 数 名：ifft (y,n,x)
 // 功能描述：傅里叶逆变换
 // 输入参数：y（待变换的序列），n（y的长度），x（变换后的序列）
 // 返 回 值：整型数字。计算成功则返回1，否则返回0
 //==============================================================*/
-#include"stdio.h"
-#include"math.h"
-#include"something.h"
 static int ifft1(struct c_comp *y,int n,struct c_comp *x); /* 首先声明一个要调用的子函数*/
 static int ifft(y,n,x)
 int n;

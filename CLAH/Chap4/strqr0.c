@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "smdqr.c"
 main4strqr0()
 {

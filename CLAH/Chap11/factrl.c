@@ -1,11 +1,14 @@
+#include <math.h>
+#include <stdio.h>
+
+#include "something.h"
+
 /*=============================================================
 // 函 数 名：factrl
 // 功能描述：求解阶乘的值，本函数需要伽马函数的支持。
 // 输入参数：n 函数变量
 // 返 回 值：阶乘函数的值
 //==============================================================*/
-#include "math.h"
-#include "something.h"
 static double factrl(int n)
 {
     int i;

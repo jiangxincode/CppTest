@@ -9,9 +9,9 @@
 //返回值：1（显著），0（不显著）
 =========================================================*/
 
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #include "something.h"
 
 static int ftest(a,na,b,nb,alpha)
@@ -48,7 +48,7 @@ int na,nb;
         v1 = nb - 1;
         v2 = na - 1;
     }
-    q1 = 2.0*beta2(0.5*v2, 0.5*v1, v2/(v2+v1*f));  /* 调用不完全贝塔函数计算*/
+    q1 = 2.0*beta2(0.5*v2, 0.5*v1, v2/(v2+v1*f),eps);  /* 调用不完全贝塔函数计算*/
     if(q1 > 1.0)
         q1 = 2.0 - q1;
     return(q1<=alpha);

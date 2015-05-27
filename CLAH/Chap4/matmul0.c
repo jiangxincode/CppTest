@@ -1,10 +1,10 @@
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include "c_comp.c"                              /* 需要包含复数运算的文件*/
 #include "something.h" /* 实系数矩阵相乘和复系数矩阵相乘的函数*/
 #include "r_matmul.c"
 
-void main4matmul0()
+int main4matmul0()
 {
     struct c_comp c_mat1[2][2], c_mat2[2][2], c_mat3[2][2];
 
@@ -45,4 +45,5 @@ void main4matmul0()
             printf("%2.5f + (%2.5f)*i ", c_mat3[i][j].rmz, c_mat3[i][j].imz);
         printf("\n");
     }
+    return 0;
 }

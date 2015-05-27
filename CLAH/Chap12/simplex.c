@@ -13,9 +13,9 @@
 // 返回值：  若求解成功，则返回0。若无有限解，则返回1。若无可行解，则返回-1
 =========================================================*/
 
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #define TINY 1.0e-7
 static int cmax1(), cmax2(), pivot();
 static void mswap();
@@ -180,7 +180,7 @@ int mp, np, mm, *ll, nll;                         /* mp,np是二维数组a的规模*/
     return(kp);
 }
 
-#include "math.h"                 /* 计算数组a中第mm行数组ll中各列中的绝对值最大的元素cmax*/
+#include <math.h>                 /* 计算数组a中第mm行数组ll中各列中的绝对值最大的元素cmax*/
 static int cmax2(a, mp, np, mm, ll, nll, cmax)
 double *a, *cmax;                                 /* 返回此最大元素的列号*/
 int mp, np, mm, *ll, nll;                         /* mp,np是二维数组a的规模*/

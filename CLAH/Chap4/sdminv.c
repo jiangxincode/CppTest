@@ -5,9 +5,9 @@
             n 矩阵阶数
 //返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
 static int sdminv(mat, n, eps)
 double *mat;

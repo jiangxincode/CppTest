@@ -1,5 +1,6 @@
-#include "stdio.h"
-#include "toepl.c"
+#include <stdio.h>
+#include "something.h"
+
 int main5toepl0()
 {
     int i;

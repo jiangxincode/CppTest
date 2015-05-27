@@ -1,5 +1,7 @@
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
 /*======================================================
 // 函数名：lfs
 // 功能描述：连分式插值

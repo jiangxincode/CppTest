@@ -1,8 +1,8 @@
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 #include "something.h"
 #include "beta.c"
-void main11gramma0()
+int main11gramma0()
 {
     int i;
     double x,y,z;
@@ -24,5 +24,6 @@ void main11gramma0()
         printf("x=%2.5f,y=%2.5f, beta(x)=%2.5f\n",x,y,z);
     }
     getchar();
+    return 0;
 }
 

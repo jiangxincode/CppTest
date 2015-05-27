@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "inst.c"
 #include "shel.c"
 main15inst0()

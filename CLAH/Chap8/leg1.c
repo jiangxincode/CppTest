@@ -8,7 +8,7 @@
 //           f 指向被积函数的指针
 // 返回值：  积分近似值
 =========================================================*/
-#include "math.h"
+#include <math.h>
 static double leg1(a,b,n0,eps,h0,f)
 double a,b,eps,h0;
 int n0;

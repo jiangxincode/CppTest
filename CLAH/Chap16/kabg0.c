@@ -1,10 +1,10 @@
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
-#include "time.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
 #include "kabg.c"
 #define PI 3.1415926
-void main16kabg0()
+int main16kabg0()
 {
     int i;
     void rand_gauss_lot();
@@ -28,6 +28,7 @@ void main16kabg0()
         printf("t=%5.2f  x(t)=%5.2f  y(t)=%5.2f  z(t)=%5.2f\n",
                t,x[i],y[i],z[i]);
     }
+    return 0;
 }
 
 void rand_gauss_lot(L,a,b,G)                    /* 产生高斯随机数的函数*/

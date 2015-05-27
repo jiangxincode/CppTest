@@ -11,8 +11,8 @@
 // 返回值：  函数的极小值
 =========================================================*/
 
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 #define G2 0.38196601
 
 double brent(double a, double b, double c, double (*f)(double), double *xopt, double eps, int itmax)

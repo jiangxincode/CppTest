@@ -1,6 +1,6 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "gamm2.c"
-main11gramm20()
+int main11gramm20()
 {
     int i,j;
     double ai,xj,y;
@@ -19,4 +19,5 @@ main11gramm20()
         printf("\n");
     }
     getchar();
+    return 0;
 }

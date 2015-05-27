@@ -1,11 +1,11 @@
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 #include "bsl1.c"
 #include "goldsch.c"
 #include "something.h"
 static	double f();
 static double df();
-void main12glodch0()
+int main12glodch0()
 {
     double a,b,c,xopt,eps,fx, xmin[50];
     int i,j,itmax = 100, nmin, iflag;
@@ -38,6 +38,7 @@ void main12glodch0()
             }
         }
     }
+    return 0;
 }
 
 static double f(double x)

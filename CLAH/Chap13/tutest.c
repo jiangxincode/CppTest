@@ -9,9 +9,9 @@
 //·µ»ØÖµ£º1£¨ÏÔÖø£©£¬0£¨²»ÏÔÖø£©
 =========================================================*/
 
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #include "something.h"
 
 static int tutest(a,na,b,nb,alpha)

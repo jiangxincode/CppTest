@@ -4,9 +4,9 @@
 // 输入参数：x（变换初始值），n（系数个数）、y（变换后序列）
 // 返 回 值：整型数字。计算成功则返回1，否则返回0
 //==============================================================*/
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 static int wolt1(double *x,int n,double *y);    /* 因为要递归调用，所以先声明*/
 static int wolt(y,n,x)
 int n;

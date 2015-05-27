@@ -1,13 +1,15 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+#include"something.h"
+
 /*=============================================================
 // 函 数 名：dct (x,n,y)
 // 功能描述：离散余弦变换
 // 输入参数：x（变换初始值），n（系数个数）、y（变换后序列）
 // 返 回 值：整型数字。计算成功则返回1，否则返回0
 //==============================================================*/
-#include"stdio.h"
-#include"math.h"
-#include"something.h"
-
 int dct(double * x,int n, double *y)
 {
     int i,j,k,nn;

@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "lagr.c"
 #include "gasi.c"
 static double f1(),f2();

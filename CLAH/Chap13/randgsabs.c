@@ -4,10 +4,10 @@
 //输入参数：L(序列个数) a(正态分布的均值) b(正态分布的方差)，G(指向生成随机数的指针)
 //返回值：1:生成成功。0：生成失败
 =========================================================*/
-#include "time.h"
-#include "stdlib.h"
-#include "stdio.h"
-#include "math.h"
+#include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
 
 #define PI 3.14159
 

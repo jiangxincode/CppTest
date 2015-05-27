@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "spl.c"
 #include "sple.c"
 main7spl0()

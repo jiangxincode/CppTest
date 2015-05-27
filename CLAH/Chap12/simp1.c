@@ -15,9 +15,9 @@
 // 返回值：  迭代次数
 =========================================================*/
 
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
 static int simp1(d,n,lam,alf,miu,x,fx,xopt,f,eps,itmax)
 double d,lam,alf,miu;

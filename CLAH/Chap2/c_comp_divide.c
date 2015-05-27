@@ -6,9 +6,9 @@
 //          c（计算结果的结构体）
 //返回值：0（失败），1（成功）
 =========================================================*/
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #include "c_comp.h"
 static int c_comp_divide(struct c_comp *a1,struct c_comp *a2,struct c_comp *c)
 {

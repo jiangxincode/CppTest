@@ -1,7 +1,7 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "something.h"
 
-main11bsl10()
+int main11bsl10()
 {
     int n,i;
     double x,y;
@@ -23,4 +23,5 @@ main11bsl10()
         printf("\n");
     }
     getchar();
+    return 0;
 }

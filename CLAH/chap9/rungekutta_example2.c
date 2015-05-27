@@ -9,7 +9,7 @@
 #include "gillvh.c"
 
 static void f(double*,double*,double);
-void main9rungekutta2()
+int main9rungekutta2()
 {
     double h=0.01,a=0,eps=0.000000001;
     int n=3,m=10,i,j;
@@ -63,6 +63,7 @@ void main9rungekutta2()
     else
         printf("failed!\n");
     free(y);
+    return 0;
 }
 
 static void f(y,F,x)

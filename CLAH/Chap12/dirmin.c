@@ -10,7 +10,7 @@
 //           itmax 最大迭代次数
 // 返回值：  函数的极小值
 =========================================================*/
-#include "stdlib.h"
+#include <stdlib.h>
 #include "something.h"
 
 int _ndir_;

@@ -1,3 +1,7 @@
+#include <stdlib.h>
+#include <math.h>
+#include <stdio.h>
+
 /*======================================================
 // 函数名：cggm2
 // 功能描述：共轭梯度法求极值，Polak-Ribire形式
@@ -11,8 +15,6 @@
 //           itmax 最大迭代次数
 // 返回值：  迭代次数
 =========================================================*/
-#include "stdlib.h"
-#include "math.h"
 
 static int cggm2(x, xmin, n, y0, f, df, eps, itmax)
 double *x,*xmin,*y0,eps;

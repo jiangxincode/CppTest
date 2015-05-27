@@ -1,10 +1,10 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "conio.h"
-#include "stdlib.h"
+#include <stdlib.h>
 #include "c_comp.c"
 #include "something.h"
 
-void main4c_matinv0()
+int main4c_matinv0()
 {
     struct c_comp c_mat[2][2], c_mat1[2][2], c_mat2[2][2];
     int i,j;
@@ -55,4 +55,5 @@ void main4c_matinv0()
     }
 
     getch();
+    return 0;
 }

@@ -1,6 +1,6 @@
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #include "something.h"
 
 int c_comp_plus(struct c_comp *a1,struct c_comp *a2,struct c_comp *c)

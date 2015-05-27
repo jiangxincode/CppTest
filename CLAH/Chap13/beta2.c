@@ -7,15 +7,14 @@
 //         e1 精度要求，当两次递推的值变化率小于e1时，认为已收敛
 // 返 回 值：不完全贝塔函数的值
 //==============================================================*/
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 #include "gammln.c"
 #define NMAX 100                         /* 迭代的最大次数*/
 #define EULER 0.5772156649
 #define FPMIN 1.0e-30                    /* 为防止除0使用的常数*/
 static double subcf();                          /* 计算连分式级数需要的变量和函数*/
-double beta2(a,b,x,e1)
-double a,b,x,e1;
+double beta2(double a,double b,double x,double e1)
 {
     double t;
 

@@ -1,5 +1,5 @@
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 /*======================================================
 // 函数名：lagr1
 // 功能描述：拉格朗日线性插值

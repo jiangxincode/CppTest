@@ -1,10 +1,10 @@
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 #include "c_comp.c"
 #include "c2p.c"
 #include "p2c.c"
 
-void main3c2p0()
+int main3c2p0()
 {
     int i;
     struct c_comp a[4],y[4],b[4];
@@ -27,5 +27,6 @@ void main3c2p0()
         for(i=0; i<4; i++)
             printf("%f+i*%f\n",b[i].rmz,b[i].imz);
     }
+    return 0;
 }
 

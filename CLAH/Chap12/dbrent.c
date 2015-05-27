@@ -12,8 +12,8 @@
 // 返回值：  函数的极小值
 =========================================================*/
 
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 
 static double dbrent(a, b, c, f, df, xopt, eps, itmax)
 double a,b,c,eps;

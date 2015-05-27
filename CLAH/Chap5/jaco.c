@@ -1,6 +1,6 @@
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 /*======================================================
 // 函数名：jaco
 // 功能描述：用雅克比迭代法解方程组

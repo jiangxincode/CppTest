@@ -1,8 +1,8 @@
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 #include "something.h"
 static double f();
-void main12dirmin0()
+int main12dirmin0()
 {
     double  eps,fopt,x[3],p[3],xmin[3],t;
     int i,itmax = 50, n =3;
@@ -21,6 +21,7 @@ void main12dirmin0()
         fopt = dirmin(x, p, xmin, n, f, eps, itmax);
         printf("%7.6f %7.6f %7.6f %7.6f\n",xmin[0],xmin[1],xmin[2],fopt);
     }
+    return 0;
 }
 
 static double f(x, n)

@@ -1,5 +1,5 @@
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 /*======================================================
 // 函数名：lfsi
 // 功能描述：连分式求积分

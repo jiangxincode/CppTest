@@ -3,7 +3,7 @@
 #include<math.h>
 #include"aitkenroot.c"
 static double f(double);
-void main6aitkenroot4()
+int main6aitkenroot4()
 {
     double x, eps;
     double *x0 = &x;
@@ -17,7 +17,7 @@ void main6aitkenroot4()
         printf("\n%1.5f\n\n",*x0);
     else
         printf("failed!\n");
-
+    return 0;
 }
 
 static double f(x)                                 /* ¼ÆËãº¯ÊýÖµ*/

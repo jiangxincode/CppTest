@@ -6,7 +6,7 @@
 //            str 指向用于存放记录的结构体
 // 返 回 值：找到则返回1，如果没有找到则返回0
 //==============================================================*/
-#include "stdio.h"
+#include <stdio.h>
 #include "something.h"
 static int Fsech(fp,a,str)
 FILE *fp;

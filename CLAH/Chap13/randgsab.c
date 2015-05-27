@@ -4,10 +4,10 @@
 //输入参数：a(正态分布的均值) b(正态分布的方差)
 //返回值：正态分布的随机数
 =========================================================*/
-#include "time.h"
-#include"stdlib.h"
-#include"stdio.h"
-#include"math.h"
+#include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
 #define PI 3.14159
 
 static double randgsab(a,b)

@@ -1,6 +1,6 @@
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #include "smldl.c"                         /* LDL分解的函数*/
 /*======================================================
 // 函数名：r_ldl

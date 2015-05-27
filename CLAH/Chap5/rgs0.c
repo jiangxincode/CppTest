@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "r_gaus.c"
 #include "r_gsjd.c"
 main5rgs0()

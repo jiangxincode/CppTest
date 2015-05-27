@@ -8,8 +8,8 @@
 // ∑µªÿ÷µ£∫  Œﬁ
 =========================================================*/
 
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 #define G1 0.61803399
 #define GSTEP 100.0
 #define TINY 1.0e-20

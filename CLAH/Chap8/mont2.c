@@ -1,5 +1,5 @@
-#include "math.h"
-#include "stdlib.h"
+#include <math.h>
+#include <stdlib.h>
 /*======================================================
 // 函数名：mont2
 // 功能描述：蒙特卡罗法求二重积分

@@ -7,9 +7,9 @@
 //           t 指定的插值点, eps 小于此数的值认为是0
 // 返回值：  在指定插值点的函数近似值
 =========================================================*/
-#include "stdio.h"
-#include "math.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
 
 static double lfs(x,y,n,t,eps)
 double *x,*y,t,eps;

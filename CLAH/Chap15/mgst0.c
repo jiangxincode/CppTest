@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "mgst.c"
 main15mgst0()
 {

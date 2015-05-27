@@ -5,7 +5,7 @@
 //            n 数组长度
 // 返 回 值：无
 //==============================================================*/
-#include "stdlib.h"
+#include <stdlib.h>
 static void Merge();                              /* 需要调用的归并函数*/
 static void mgst(x,n)
 int *x;

@@ -1,6 +1,11 @@
-#include "stdio.h"
+#include <stdio.h>
+#include <math.h>
+
 #include "tzi1.c"
-#include "lfsi.c"
+#include "something.h"
+
+static double f1(double x) ;
+
 int main8lfsi0()
 {
     double a,b,eps,h0,z;
@@ -16,8 +21,7 @@ int main8lfsi0()
     getchar();
 }
 
-#include "math.h"
-double f1(double x)                                    /* 被积分的函数*/
+static double f1(double x)                                    /* 被积分的函数*/
 {
     double y;
     y=exp(-x*x)/(1.0+x*x);

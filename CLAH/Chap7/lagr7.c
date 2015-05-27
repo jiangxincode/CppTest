@@ -1,5 +1,5 @@
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 /*======================================================
 // 函数名：lagr7
 // 功能描述：拉格朗日全区间插值

@@ -1,11 +1,14 @@
+#include <math.h>
+#include <stdio.h>
+
+#include "something.h"
+
 /*=============================================================
 // 函 数 名：gammln
 // 功能描述：求解伽马函数的值的自然对数
 // 输入参数：x 求值的自变量
 // 返 回 值：伽马函数的值的自然对数
 //==============================================================*/
-#include "math.h"
-#include "something.h"
 double gammln(double x)
 {
     int i;

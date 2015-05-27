@@ -1,7 +1,7 @@
-#include "math.h"
-#include "stdio.h"
+#include <math.h>
+#include <stdio.h>
 #include "simp1.c"
-main12simp10()
+int main12simp10()
 {
     int i;
     double  simf();
@@ -24,6 +24,7 @@ main12simp10()
     printf("\n");
     printf("optimization Points:\n");
     printf("x(0)=%e  x(1)=%e  minf=%e\n",x[0],x[1],x[2]);
+    return 0;
 }
 
 double simf(x,n)

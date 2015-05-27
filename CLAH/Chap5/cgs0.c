@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "c_comp.c"
 #include "c_gaus.c"
 #include "c_gsjd.c"

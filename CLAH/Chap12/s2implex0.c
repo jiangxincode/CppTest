@@ -1,6 +1,6 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "simplex.c"
-main12s2implex0()
+int main12s2implex0()
 {
     int i,j,n,m1,m2,m3,ixr[9],ixc[9];
     double eps=1.0e-10;
@@ -56,5 +56,5 @@ main12s2implex0()
         }
         printf("\n");
     }
-
+    return 0;
 }

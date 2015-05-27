@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "leg1.c"
 #include "cheb.c"
 #include "gasi.c"
@@ -18,7 +18,7 @@ main8inf10()
     printf("gasi: t=%7.6f\n",z);
 }
 
-#include "math.h"
+#include <math.h>
 double f1(x)
 double x;                                      /* 被积分的函数*/
 {

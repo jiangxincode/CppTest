@@ -1,12 +1,12 @@
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 #include "something.h"
 #include "cggm1.c"
 #include "cggm2.c"
 
 static double f();
 static void df();
-void main12cggm0()
+int main12cggm0()
 {
     double  eps,fopt,x[3],xm[3];
     int itmax = 50, n = 3,it;
@@ -19,6 +19,7 @@ void main12cggm0()
     printf("Polak-Ribire  ");
     it = cggm2(x, xm, n, &fopt, f, df, eps, itmax);
     printf("iterations = %d:\n x0=%f,x1=%f,x2=%f\nfopt=%f\n",it,xm[0],xm[1],xm[2],fopt);
+    return 0;
 }
 
 static double f(double *x, int n)

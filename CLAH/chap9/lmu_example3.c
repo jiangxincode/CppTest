@@ -8,7 +8,7 @@
 #include "hamming.c"
 #include "bb.c"
 static     void f(double*,double*,double);
-void main9lmu3()
+int main9lmu3()
 {
     double h=0.01,a=0,eps=0.000000001;
     int n=3,m=10,i,j;
@@ -64,6 +64,7 @@ void main9lmu3()
     else
         printf("failed!\n");
     free(y);
+    return 0;
 }
 static void f(y,F,x)
 double *y,*F,x;

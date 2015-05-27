@@ -8,9 +8,9 @@
 //          eps 精度要求，小于此值的数据认为是0
 //返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
 int toepl(double *t,double *b,double *x,int n,double eps)
 {

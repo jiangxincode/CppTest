@@ -5,9 +5,9 @@
 //           n 未知数个数，eps 精度要求，小于eps的值，认为是0。
 // 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
 static int r_gsjd(a,b,x,n,eps)
 double *a,*b,*x,eps;

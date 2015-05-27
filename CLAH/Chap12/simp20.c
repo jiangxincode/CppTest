@@ -1,7 +1,7 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "simp2.c"
 static 	double f();
-main12simp20()
+int main12simp20()
 {
     int i,n,m,itmax;
     int  sf();
@@ -30,9 +30,10 @@ main12simp20()
         printf("xopt(%d)=%e ",i,xopt[i]);
     printf("fopt=%e\n",xopt[2]);
     printf("\n");
+    return 0;
 }
 
-#include "math.h"
+#include <math.h>
 static double f(x)
 double *x;
 {
@@ -42,7 +43,7 @@ double *x;
     return(y);
 }
 
-#include "math.h"
+#include <math.h>
 int sf(x)
 double *x;
 {

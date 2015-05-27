@@ -7,7 +7,7 @@
 #include"eulervh.c"
 #include "euleradv.c"
 static void f(double*,double*,double);
-void main9euler1()
+int main9euler1()
 {
     double h=0.01,a=0,eps=0.000001;
     int n=3,m=10,i,j;
@@ -62,6 +62,7 @@ void main9euler1()
     else
         printf("failed!\n");
     free(y);
+    return 0;
 }
 
 static void f(y,F,x)

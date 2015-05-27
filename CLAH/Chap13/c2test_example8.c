@@ -1,9 +1,9 @@
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include "randu01s.c"
 #include "c2test.c"
 
-void main13c2test_example8()
+int main13c2test_example8()
 {
     int L,i,*a,*e,r,k,v,temp;
     double *u_ran,c2,alpha;
@@ -33,6 +33,7 @@ void main13c2test_example8()
         printf("符合分布\n");
     else
         printf("不符合分布\n");
+    return 0;
 }
 
 

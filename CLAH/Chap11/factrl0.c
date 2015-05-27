@@ -1,8 +1,8 @@
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 #include "something.h" /* 需要伽马函数的支持*/
 #include "factrl.c"
-void main11factrl0()
+int main11factrl0()
 {
     int n;
     double x;
@@ -13,4 +13,5 @@ void main11factrl0()
         printf("n=%d, factorial(n)=%e\n",n,x);
     }
     getchar();
+    return 0;
 }

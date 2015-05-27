@@ -1,10 +1,10 @@
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #include "r_matmul.c"
 #include "Tminv.c"
 
-void main4Tminv0()
+int main4Tminv0()
 {
     double r_mat1[5][5], r_mat2[5][5], r_mat3[5][5];
     int i,j,m,n,p;
@@ -54,5 +54,6 @@ void main4Tminv0()
             printf("\n");
         }
     }
+    return 0;
 }
 

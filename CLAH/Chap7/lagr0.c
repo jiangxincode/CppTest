@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "lagr1.c"
 #include "lagr2.c"
 #include "lagr7.c"

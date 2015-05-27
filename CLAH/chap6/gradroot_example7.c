@@ -3,7 +3,7 @@
 #include<math.h>
 #include"gradroot.c"
 static 	double f(double*,double*);
-void main6gradroot7()
+int main6gradroot7()
 {
     double eps=0.000001;
     int n=3,max=600,i;
@@ -20,6 +20,7 @@ void main6gradroot7()
     }
     else
         printf("failed!\n");
+    return 0;
 }
 
 static double f(x,fd)                                   /* ·½³Ì×é*/

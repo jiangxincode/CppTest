@@ -1,8 +1,8 @@
-#include "time.h"
-#include "stdlib.h"
-#include "stdio.h"
+#include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include "randgsab.c"
-void main13rand_gauss_example3()
+int main13rand_gauss_example3()
 {
     double a,b,G;
     int i;
@@ -14,4 +14,5 @@ void main13rand_gauss_example3()
         printf("%5.4f ",G);            /* Êä³ö½á¹û*/
     }
     printf("\n");
+    return 0;
 }

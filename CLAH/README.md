@@ -1,11 +1,28 @@
-CLanguageAlgorithmHandbook
-by jiangxin
-代码风格很老，许多不符合ANSI规范，进行了部分修改
-main->mainChapterFilename
-未解决函数：
-Chap4\SVDpudn.c
-Chap10\remez.c
-Chap10\remez1.c
+C语言算法速查手册 
+
+## Log:
+
++ 代码风格很老，许多不符合ANSI规范，进行了部分修改，基本解决了所有错误。依然存在错误的函数：
+
+    + Chap4\SVDpudn.c
+    + Chap10\remez.c
+    + Chap10\remez1.c
+
++ 所有的main函数按照下面的方式进行重命名
+
+    main->mainChapterFilename
+
++ 增加了部分头文件，方便函数的重用
++ 头文件名称改进了各式
+
+    + #include "math.h" -> #include <math.h>
+    + #include "stdio.h" -> #include <stdio.h>
+    + #include "stdlib.h" -> #include <stdlib.h>
+    + #include "time.h" -> #include <time.h>
++ 修改注释，使之更加规范
++ warning: implicit declaration of function 'xxxx' [-Wimplicit-function-declaration](for example printf,sin...) 566->83
++ warning: control reaches end of non-void function [-Wreturn-type] 83->64
+
 C语言算法速查手册 目录 
  
 第1章　绪论　1

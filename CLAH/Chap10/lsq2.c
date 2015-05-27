@@ -13,9 +13,9 @@
 //            误差的绝对值的最大值、误差的绝对值之和,x的平均值, y的平均值
 // 返回值：  整型。若拟合成功则返回1,否则返回0
 =========================================================*/
-#include "stdlib.h"
-#include "stdio.h"
-#include "math.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
 int lsq2(x,y,z,n,m,p,pp,qq,s)
 double *x,*y,*z,*p,*s;
 int n,m,qq,pp;

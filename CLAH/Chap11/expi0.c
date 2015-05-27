@@ -1,6 +1,6 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "expi.c"
-main11expi0()
+int main11expi0()
 {
     int i,j,ni;
     double xj,y;
@@ -19,4 +19,5 @@ main11expi0()
         printf("\n");
     }
     getchar();
+    return 0;
 }

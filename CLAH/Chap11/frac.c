@@ -7,7 +7,7 @@
 //         e0 极小的数值，接近浮点数能表示的最小数据。为避免除零，将除数设置的值。
 // 返 回 值：连分式级数的值
 //==============================================================*/
-#include "math.h"
+#include <math.h>
 static double frac(double *fab(),int nmax,double e1,double e0)
 {
     int j;

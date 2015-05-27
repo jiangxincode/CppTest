@@ -5,8 +5,8 @@
             m(左矩阵行数) p(左矩阵列数) n(右矩阵列数)
 //返回值：运行成功则返回1,失败则返回0
 =========================================================*/
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 static int r_matmul(a, b, m, p, n, c)
 double *a, *b, *c;

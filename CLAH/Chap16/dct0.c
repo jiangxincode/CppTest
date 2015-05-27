@@ -1,8 +1,8 @@
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 #include "something.h"
 
-void main16dct0()
+int main16dct0()
 {
     int i;
     double a[4],b[4],y[4];
@@ -32,5 +32,6 @@ void main16dct0()
             printf("%5.4f ",y[i]);
     }
     printf("\n");
+    return 0;
 }
 

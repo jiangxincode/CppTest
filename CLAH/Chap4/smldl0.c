@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "smldl.c"
 main4smldl0()
 {

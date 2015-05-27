@@ -17,9 +17,9 @@
 // 返回值：  迭代次数
 =========================================================*/
 
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #define TINY 1.0e-7
 static double simprn(double *rr);
 static int simp2(n,m,a,b,d,alf,eps,x,fx,xopt,sf,f,itmax)

@@ -1,8 +1,8 @@
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 #include "bsl1.c"
 
-void main12bfgs0()
+int main12bfgs0()
 {
     double  eps,fopt,x[3],xm[3],g[3];
     int itmax = 50, n = 3,it;
@@ -14,6 +14,7 @@ void main12bfgs0()
     printf("iterations = %d:\nx0=%f,x1=%f,x2=%f\nfopt=%f\n",it,xm[0],xm[1],xm[2],fopt);
     df(xm,g,3);
     printf("df[0]=%f, df[1]=%f, df[2]=%f\n",g[0],g[1],g[2]);
+    return 0;
 }
 double f(x, n)
 double *x;

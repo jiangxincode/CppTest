@@ -7,8 +7,8 @@
 //         e0 极小的数值，接近浮点数能表示的最小数据。为避免除零，将除数设置的值
 // 返 回 值：不完全伽马函数的值
 //==============================================================*/
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 #include "gammln.c"
 #define NMAX 100
 

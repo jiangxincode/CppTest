@@ -7,8 +7,8 @@
 //           t 指定的插值点,eps 绝对值小于此值的数据认为是0
 // 返回值：  在指定插值点的函数近似值
 =========================================================*/
-#include "stdio.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 
 static double sple(x,h,y,n,t,eps)
 double x,h,*y,t,eps;

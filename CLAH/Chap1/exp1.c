@@ -1,5 +1,5 @@
-#include "stdio.h"
-void main1exp1()
+#include <stdio.h>
+int main1exp1()
 {
     int k;
     double x,z;
@@ -9,4 +9,5 @@ void main1exp1()
         x = x + 0.2;
     printf("z=%2.17f\n",z);
     printf("x=%2.17f\n",x);
+    return 0;
 }

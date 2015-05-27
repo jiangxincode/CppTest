@@ -1,3 +1,9 @@
+#include <stdlib.h>
+#include <math.h>
+#include <stdio.h>
+
+#include "something.h"
+
 /*======================================================
 // 函数名：powell
 // 功能描述：powell方法求极值
@@ -11,10 +17,6 @@
 //           itmax 最大迭代次数
 // 返回值：  迭代次数
 =========================================================*/
-#include "stdlib.h"
-#include "math.h"
-#include "something.h"
-
 static int powell(x, ee, xmin, n, y0, f, eps, itmax)
 double *x,*ee,*xmin,*y0,eps;
 double (*f)();

@@ -1,3 +1,8 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+#include "something.h"
+
 /*======================================================
 //函数名：adams
 //功能描述：阿当姆斯预报校正法求常微分方程组的初值问题
@@ -6,9 +11,6 @@
 //          h（步长），m（步数），a（区间起点）
 //返回值：0（失败），1（成功）
 =========================================================*/
-#include <stdlib.h>
-#include "something.h"
-
 static int adams(y,n,f,h,m,a)
 double *y,(*f)(),h,a;
 int n,m;

@@ -8,9 +8,9 @@ eps 精度要求，用于判断元素是否为0
 itmax 最大迭代次数
 //返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-#include "stdlib.h"
-#include "stdio.h"
-#include "math.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
 static int jcb2(a,n,u,eps,itmax)
 double *a,*u,eps;
 int n,itmax;

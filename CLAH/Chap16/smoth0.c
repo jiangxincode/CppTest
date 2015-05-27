@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "smoth.c"
 main16smoth0()
 {

@@ -11,9 +11,9 @@
 //	    kurt£¨´æ·Å·åÌ¬£©
 =========================================================*/
 
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
 static void mde(a,n,mean,adev,sddev,var,skew,kurt)
 double *a,*mean,*adev,*sddev,*var,*skew,*kurt;

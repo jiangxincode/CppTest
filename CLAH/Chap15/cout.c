@@ -7,7 +7,7 @@
 //            k 数据的范围在[0,k]之间
 // 返 回 值：无
 //==============================================================*/
-#include "stdlib.h"
+#include <stdlib.h>
 static void cout(x,y,n,k)
 int *x,*y;
 int n,k;

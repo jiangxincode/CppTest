@@ -1,7 +1,7 @@
-#include "stdio.h"
+#include <stdio.h>
 #include "rpmul.c"
 #include "rpdiv.c"
-void main3rpmd0()
+int main3rpmd0()
 {
     int i;
     double a[3],b[3],c[5],q[4],r[5];
@@ -29,4 +29,5 @@ void main3rpmd0()
             printf("r[%d]=%3.2f ",i,r[i]);
         printf("\n");
     }
+    return 0;
 }
