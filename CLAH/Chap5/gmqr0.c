@@ -1,5 +1,5 @@
 #include "stdio.h"
-#include "r_mqr.c"                         /* QR分解的函数*/
+#include "something.h" /* QR分解的函数*/
 #include "gmqr.c"
 main5gmqr0()
 {

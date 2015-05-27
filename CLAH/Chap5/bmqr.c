@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "math.h"
-#include "r_mqr.c"                         /* QR分解的函数*/
+#include "something.h" /* QR分解的函数*/
 /*======================================================
 // 函数名：bmqr
 // 功能描述：用迭代法解病态方程组

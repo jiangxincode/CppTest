@@ -1,5 +1,5 @@
 #include "stdio.h"
-#include "r_mqr.c"
+#include "something.h"
 #include "r_matmul.c"
 main4r_mqr0()
 {

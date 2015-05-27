@@ -10,9 +10,7 @@
 #include<stdio.h>
 #include<math.h>
 
-static int rungekuttainvh(y,n,f,h,m,a)
-double *y,(*f)(),h,a;
-int n,m;
+int rungekuttainvh(double *y,int n,double (*f)(),double h,int m,double a)
 {
     double *k1,*k2,*k3,*k4,*ytemp,x;
     int k=0,i;

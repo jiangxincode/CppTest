@@ -6,7 +6,8 @@
 //          h（步长），m（步数），a（区间起点）
 //返回值：0（失败），1（成功）
 =========================================================*/
-#include "rungekuttainvh.c"
+#include <stdlib.h>
+#include "something.h"
 
 static int adams(y,n,f,h,m,a)
 double *y,(*f)(),h,a;

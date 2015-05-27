@@ -11,9 +11,7 @@
 #include "stdlib.h"
 #include "math.h"
 
-static int r_mqr(mat,m,n,q,eps)
-double *mat,*q,eps;
-int m,n;
+int r_mqr(double *mat,int m,int n,double *q,double eps)
 {
   int i,j,k,l,p;
   double u,alpha,t;

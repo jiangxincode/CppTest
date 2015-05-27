@@ -3,7 +3,6 @@
 #include "stdlib.h"
 #include "c_comp.c"
 #include "something.h"
-//#include "c_matinv.c"
 
 void main4c_matinv0()
 {
@@ -31,7 +30,7 @@ void main4c_matinv0()
     }
     printf("\n");
 
-    c_mat_inv(c_mat,n);
+    c_minv(c_mat,n,0.01);
 
     printf("inv(A):\n");
     for(i=0; i<m; i++)
@@ -43,7 +42,7 @@ void main4c_matinv0()
     printf("\n");
 
     printf("A*inv(A):\n");
-    c_mat_mul(c_mat,c_mat1,n,n,n,c_mat2);
+    c_matmul(c_mat,c_mat1,n,n,n,c_mat2);
     for(i=0; i<m; i++)
     {
         for(j=0; j<n; j++)

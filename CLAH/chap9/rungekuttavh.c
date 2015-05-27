@@ -9,7 +9,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
-//#include"rungekuttainvh.c"
+#include"something.h"
 
 static int rungekuttavh(y,n,f,h,m,a,eps)
 double *y,(*f)(),h,a,eps;

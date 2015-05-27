@@ -9,6 +9,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "math.h"
+#include "something.h"
 
 static int gmqr(a,b,x,m,n,eps)
 double *a,*b,*x,eps;
