@@ -7,7 +7,7 @@
 =========================================================*/
 #include <stdio.h>
 #include <stdlib.h>
-#include "c_comp.c"
+#include "../Chap2/c_comp.h"
 
 static int c_gaus(a,b,x,n,eps)
 struct c_comp *a,*b,*x;

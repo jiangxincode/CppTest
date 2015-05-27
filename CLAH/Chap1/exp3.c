@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+
 int main1exp3()
 {
     int n;

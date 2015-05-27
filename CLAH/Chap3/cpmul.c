@@ -9,7 +9,7 @@
 
 #include <stdio.h>
 #include <math.h>
-#include"c_comp.c"	/*复系数多项式的乘法函数需要调用系数和点表示相互转化的两个函数*/
+#include "../Chap2/c_comp.h"	/*复系数多项式的乘法函数需要调用系数和点表示相互转化的两个函数*/
 #include"p2c.c"
 #include"c2p.c"
 

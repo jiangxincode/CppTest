@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "c_comp.c"
+#include "../Chap2/c_comp.h"
 
 /*======================================================
 // º¯ÊýÃû£ºc_minv

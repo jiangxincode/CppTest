@@ -9,7 +9,7 @@
 // 返 回 值：整型数字。计算成功则返回1，否则返回0
 //==============================================================*/
 #include <stdio.h>
-#include"c_comp.c"
+#include "../Chap2/c_comp.h"
 static int cpdiv(a,n,b,m,q,k,r,l)
 struct c_comp *a,*b,*q,*r;
 int n,m,k,l;

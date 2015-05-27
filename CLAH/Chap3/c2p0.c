@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-#include "c_comp.c"
+#include "../Chap2/c_comp.h"
 #include "c2p.c"
 #include "p2c.c"
 

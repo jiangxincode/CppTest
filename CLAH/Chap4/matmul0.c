@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "c_comp.c"                              /* 需要包含复数运算的文件*/
+#include "../Chap2/c_comp.h"
 #include "something.h" /* 实系数矩阵相乘和复系数矩阵相乘的函数*/
 #include "r_matmul.c"
 

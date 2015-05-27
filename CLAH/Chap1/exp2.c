@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+
 int main1exp2()
 {
     double x1,x2;

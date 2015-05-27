@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-#include"c_comp.c"
+#include "../Chap2/c_comp.h"
 #include "cpmul.c"
 #include "cpdiv.c"
 int main3cpmd0()

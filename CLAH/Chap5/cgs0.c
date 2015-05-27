@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "c_comp.c"
+#include "../Chap2/c_comp.h"
 #include "c_gaus.c"
 #include "c_gsjd.c"
 main5cgs0()

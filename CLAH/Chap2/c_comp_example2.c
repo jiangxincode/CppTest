@@ -1,13 +1,8 @@
-#include "c_comp.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "c_comp_exp.c"
-#include "c_comp_log.c"
-#include "c_comp_sin.c"
-#include "c_comp_cos.c"
-#include "c_comp_power.c"
-#include "c_comp_nthroot.c"
+
+#include "c_comp.h"
 
 int main2c_comp_example2()
 {
@@ -24,7 +19,7 @@ int main2c_comp_example2()
         printf("5次乘幂的结果为：\n");
         printf("%1.5f+j%1.5f\n",c.rmz,c.imz);
     }
-    if(c_comp_nthroot(&a,&d,n))
+    if(c_comp_nthroot(&a,d,n))
     {
         printf("5次方根的结果为：\n");
         for(i=0; i<5; i++)

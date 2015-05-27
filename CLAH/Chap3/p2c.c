@@ -6,7 +6,7 @@
 //==============================================================*/
 #include <stdio.h>
 #include <math.h>
-#include"c_comp.c"
+#include "../Chap2/c_comp.h"
 static int p2c1();
 static int p2c(y,n,a)
 int n;

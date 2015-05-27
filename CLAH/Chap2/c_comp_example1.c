@@ -1,9 +1,8 @@
-#include "c_comp.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "c_comp_product.c"
-#include "c_comp_divide.c"
+
+#include "c_comp.h"
 
 int main2c_comp_example1()
 {

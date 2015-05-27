@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "conio.h"
 #include <stdlib.h>
-#include "c_comp.c"
+#include "../Chap2/c_comp.h"
 #include "something.h"
 
 int main4c_matinv0()

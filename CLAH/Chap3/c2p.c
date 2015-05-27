@@ -6,7 +6,7 @@
 //==============================================================*/
 #include <stdio.h>
 #include <math.h>
-#include"c_comp.c"
+#include"../Chap2/c_comp.h"
 static int c2p0();
 static int c2p(a,n,y)
 int n;
