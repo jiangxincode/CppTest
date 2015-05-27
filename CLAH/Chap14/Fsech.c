@@ -13,25 +13,25 @@ FILE *fp;
 int a;
 STRU *str;
 {
-	int flag,q;
-	long int k;
-	k = sizeof(STRU);
-	flag = 1;
-	while(flag)
-	{
-		if(fread(str,k,1,fp) == 0)       /* 已经到达文件尾，什么都没找到*/
-		{
-			flag = 0;
-			q = 0;
-		}
-		else                                 /* 找到一条记录*/
-		{
-			if(str->KEY == a)                 /* 这条记录满足要求*/
-			{
-				flag = 0;
-				q = 1;
-			}
-		}
-	}
-	return(q);
+    int flag,q;
+    long int k;
+    k = sizeof(STRU);
+    flag = 1;
+    while(flag)
+    {
+        if(fread(str,k,1,fp) == 0)       /* 已经到达文件尾，什么都没找到*/
+        {
+            flag = 0;
+            q = 0;
+        }
+        else                                 /* 找到一条记录*/
+        {
+            if(str->KEY == a)                 /* 这条记录满足要求*/
+            {
+                flag = 0;
+                q = 1;
+            }
+        }
+    }
+    return(q);
 }

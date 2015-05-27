@@ -11,9 +11,9 @@
 #define DMIN 1.0e-30
 static double errf(double x)
 {
-  double t;
-  t = gamm2(0.5,x*x,EPS,DMIN);
-  if(x<0)                             /* 若x<0，则取负*/
-    t = -t;
-  return(t);
+    double t;
+    t = gamm2(0.5,x*x,EPS,DMIN);
+    if(x<0)                             /* 若x<0，则取负*/
+        t = -t;
+    return(t);
 }

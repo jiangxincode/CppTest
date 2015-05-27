@@ -12,18 +12,18 @@ static int rpmul(a,n,b,m,c)
 double *a,*b,*c;
 int n,m;
 {
-  int i,j,k;
-  if((a==NULL) || (b==NULL) || (c==NULL))
-  {
-    printf("rpmul)NULL pointer found.\n");
-    return(0);
-  }
-  k = m+n-1;	 	/* 相乘后的系数个数*/
-  for(i=0; i<k; i++)    /* 先将系数向量置为0*/
-    c[i] = 0.0;
+    int i,j,k;
+    if((a==NULL) || (b==NULL) || (c==NULL))
+    {
+        printf("rpmul)NULL pointer found.\n");
+        return(0);
+    }
+    k = m+n-1;	 	/* 相乘后的系数个数*/
+    for(i=0; i<k; i++)    /* 先将系数向量置为0*/
+        c[i] = 0.0;
 
-  for(i=0; i<n; i++)    /* 依次将相乘的结果累加到对应的项上*/
-    for(j=0; j<m; j++)
-      c[i+j] += a[i]*b[j];
-  return(1);
+    for(i=0; i<n; i++)    /* 依次将相乘的结果累加到对应的项上*/
+        for(j=0; j<m; j++)
+            c[i+j] += a[i]*b[j];
+    return(1);
 }

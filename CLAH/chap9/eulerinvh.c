@@ -24,7 +24,7 @@ static int eulerinvh(double *y,int n,double (*f)(),double h,int m,double a)
     {
         x=a+k*h;
         f(&y[k*n],F,x);                      /* 计算微分方程表达式的值*/
-        for(i=0;i<n;i++)
+        for(i=0; i<n; i++)
             y[(k+1)*n+i]=y[k*n+i]+h*F[i];    /* 计算此处的函数值*/
         k++;
     }

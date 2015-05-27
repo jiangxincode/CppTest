@@ -10,8 +10,8 @@
 double randu01(x0)
 int x0;
 {
-	double u_ran;
-	srand((unsigned)time(0));             /* 用系统时钟做种子*/
-	u_ran=rand()/(double)RAND_MAX;        /* 生成(0,1)随机数*/
-	return(u_ran); 
+    double u_ran;
+    srand((unsigned)time(0));             /* 用系统时钟做种子*/
+    u_ran=rand()/(double)RAND_MAX;        /* 生成(0,1)随机数*/
+    return(u_ran);
 }

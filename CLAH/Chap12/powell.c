@@ -20,58 +20,58 @@ double *x,*ee,*xmin,*y0,eps;
 double (*f)();
 int n, itmax;
 {
-	int i,j,it,kk;
-	double x0[21], x1[21], e[21];
-	double y1, ymax, del, tmp;
-	if(n>20)                                          /* 我们处理n<＝20的情况*/
-	{
-		printf("you'd better simplify the problem\n");
-		return(0);
-	}
-	*y0 = (*f)(x,n);                                  /* 初始的函数值*/
-	it = 0;                                           /* 迭代次数为0*/
-	for(i=0; i<n; i++)
-		xmin[i] = x[i];
-	while(it++ < itmax)
-	{
-		for(i=0; i<n; i++)                            /* 记录下初始点x*/
-			x0[i] = xmin[i];
-		ymax = *y0;
-		kk = 0;
-		del = 0.0;
-		for(i=0; i<n; i++)                            /* 沿n个方向进行一维搜索*/
-		{
-			for(j=0; j<n; j++)                        /* 第i个搜索方向*/
-				e[j] = ee[i*n+j];
-			y1 = *y0;
-			*y0 = dirmin(xmin, e, xmin, n, f, eps, itmax);  /* 从x出发，到更好的x*/
-			if(y1-*y0 > del)                          /* 下降量*/
-			{
-				del = y1 - *y0;
-				kk = i;
-			}
-		}
-		if(2.0*(ymax-(*y0)) <= eps*(fabs(ymax)+fabs(*y0))+1.0e-25)
-			return(it);                              /* 求得了最优解*/
-		for(i=0; i<n; i++)                           /* 外延*/
-		{
-			x1[i] = 2.0*xmin[i] - x0[i];
-			e[i] = xmin[i] - x0[i];
-		}
-		y1 = (*f)(x1,n);                             /* 外延点的函数值*/
-		if(y1 < ymax)
-		{
-			tmp = 2.0*(ymax-2.0*(*y0)+y1)*(ymax-(*y0)-del)*(ymax-(*y0)-del);
-			tmp = tmp-del*(ymax-y1)*(ymax-y1);
-			if(tmp < 0.0)
-			{
-				*y0 = dirmin(xmin, e, xmin, n, f, eps, itmax);
-				for(j=0; j<n; j++)
-					ee[kk*n+j] = e[j];               /* 更新方向集体*/
-			}
-		}
-	}
-	printf("exceeding maximum iterations\n");
-	return(it);
+    int i,j,it,kk;
+    double x0[21], x1[21], e[21];
+    double y1, ymax, del, tmp;
+    if(n>20)                                          /* 我们处理n<＝20的情况*/
+    {
+        printf("you'd better simplify the problem\n");
+        return(0);
+    }
+    *y0 = (*f)(x,n);                                  /* 初始的函数值*/
+    it = 0;                                           /* 迭代次数为0*/
+    for(i=0; i<n; i++)
+        xmin[i] = x[i];
+    while(it++ < itmax)
+    {
+        for(i=0; i<n; i++)                            /* 记录下初始点x*/
+            x0[i] = xmin[i];
+        ymax = *y0;
+        kk = 0;
+        del = 0.0;
+        for(i=0; i<n; i++)                            /* 沿n个方向进行一维搜索*/
+        {
+            for(j=0; j<n; j++)                        /* 第i个搜索方向*/
+                e[j] = ee[i*n+j];
+            y1 = *y0;
+            *y0 = dirmin(xmin, e, xmin, n, f, eps, itmax);  /* 从x出发，到更好的x*/
+            if(y1-*y0 > del)                          /* 下降量*/
+            {
+                del = y1 - *y0;
+                kk = i;
+            }
+        }
+        if(2.0*(ymax-(*y0)) <= eps*(fabs(ymax)+fabs(*y0))+1.0e-25)
+            return(it);                              /* 求得了最优解*/
+        for(i=0; i<n; i++)                           /* 外延*/
+        {
+            x1[i] = 2.0*xmin[i] - x0[i];
+            e[i] = xmin[i] - x0[i];
+        }
+        y1 = (*f)(x1,n);                             /* 外延点的函数值*/
+        if(y1 < ymax)
+        {
+            tmp = 2.0*(ymax-2.0*(*y0)+y1)*(ymax-(*y0)-del)*(ymax-(*y0)-del);
+            tmp = tmp-del*(ymax-y1)*(ymax-y1);
+            if(tmp < 0.0)
+            {
+                *y0 = dirmin(xmin, e, xmin, n, f, eps, itmax);
+                for(j=0; j<n; j++)
+                    ee[kk*n+j] = e[j];               /* 更新方向集体*/
+            }
+        }
+    }
+    printf("exceeding maximum iterations\n");
+    return(it);
 }
 

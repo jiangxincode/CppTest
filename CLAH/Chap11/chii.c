@@ -12,12 +12,12 @@
 #define DMIN 1.0e-30
 static double chii(double x,int n)
 {
-  double t;
-  if(x<0)                             /* 若x<0，则不能计算*/
-  {
-    printf("negative x\n");
-    return(0.0);
-  }
-  t = gamm2(n/2.0,x/2.0,EPS,DMIN);    /* 调用不完全伽马函数求值*/
-  return(t);
+    double t;
+    if(x<0)                             /* 若x<0，则不能计算*/
+    {
+        printf("negative x\n");
+        return(0.0);
+    }
+    t = gamm2(n/2.0,x/2.0,EPS,DMIN);    /* 调用不完全伽马函数求值*/
+    return(t);
 }

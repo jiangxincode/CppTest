@@ -9,18 +9,18 @@
 =========================================================*/
 double mont1(double a,double b,double (*f)(double))
 {
-  int k,n;
-  double z,p,x;
-  unsigned long r;            /* 随机数变量*/
-  n = 5000;                  /* 产生5000个随机数*/
-  z = 0.0;
-  for(k=0; k<n; k++)
-  {
-    r = rand();               /* 生成随机数*/
-    p = (double)r/RAND_MAX;
-    x = a+(b-a)*p;
-    z = z+(*f)(x)/n;          /* 求和*/
-  }
-  z = z*(b-a);
-  return(z);
+    int k,n;
+    double z,p,x;
+    unsigned long r;            /* 随机数变量*/
+    n = 5000;                  /* 产生5000个随机数*/
+    z = 0.0;
+    for(k=0; k<n; k++)
+    {
+        r = rand();               /* 生成随机数*/
+        p = (double)r/RAND_MAX;
+        x = a+(b-a)*p;
+        z = z+(*f)(x)/n;          /* 求和*/
+    }
+    z = z*(b-a);
+    return(z);
 }

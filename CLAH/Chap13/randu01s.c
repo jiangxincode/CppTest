@@ -14,8 +14,8 @@ double *u_ran;
 {
     int i;
     srand((unsigned)time(0));             /* 用系统时钟做种子*/
-    for(i=0;i<L;i++)
-    u_ran[i]=rand()/(double)RAND_MAX;     /* 生成(0,1)随机数，L次 */
+    for(i=0; i<L; i++)
+        u_ran[i]=rand()/(double)RAND_MAX;     /* 生成(0,1)随机数，L次 */
     return(1);
 }
 

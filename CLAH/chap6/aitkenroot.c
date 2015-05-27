@@ -20,13 +20,13 @@ int max;
     int num=0;
     do
     {
-         x1=f(*x0);                       /* 第一次简单迭代*/
-         x2=f(x1);                        /* 第二次简单迭代*/
-         dis=fabs(x2-x1);                 /* 判断距离*/
-         x=x2-dis*dis/(x2-2*x1+*x0);      /* 计算新的值*/
-         num++;
-         printf("%1.7f    %1.7f    %1.7f\n",*x0,x,dis);
-         *x0=x;
+        x1=f(*x0);                       /* 第一次简单迭代*/
+        x2=f(x1);                        /* 第二次简单迭代*/
+        dis=fabs(x2-x1);                 /* 判断距离*/
+        x=x2-dis*dis/(x2-2*x1+*x0);      /* 计算新的值*/
+        num++;
+        printf("%1.7f    %1.7f    %1.7f\n",*x0,x,dis);
+        *x0=x;
     }
     while(dis>eps&&num<max);              /* 测试是否满足精度要求，不满足则继续迭代*/
 

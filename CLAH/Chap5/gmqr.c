@@ -24,41 +24,41 @@ int n;
     }
     if(m<n)
     {
-		printf("m<n, QR decomposition failed\n");
-		return(0);
+        printf("m<n, QR decomposition failed\n");
+        return(0);
     }
     c = (double *)malloc(m*sizeof(double));
     q = (double *)malloc(m*m*sizeof(double));         /* 分配空间并检测是否成功*/
     if((c==NULL)||(q==NULL))
     {
-		free(c);                                      /* 释放空间*/
-		free(q);
+        free(c);                                      /* 释放空间*/
+        free(q);
         printf("Memory alloc failed\n");
         return(0);
     }
-	i = r_mqr(a,m,n,q,eps);                        /* 调用函数进行QR分解*/
-	if(i==0)                                       /* 判断是否分解成功*/
+    i = r_mqr(a,m,n,q,eps);                        /* 调用函数进行QR分解*/
+    if(i==0)                                       /* 判断是否分解成功*/
     {
-		free(c);                                      /* 释放空间*/
-		free(q);
-		printf("QR decomposition failed\n");
-		return(0);
+        free(c);                                      /* 释放空间*/
+        free(q);
+        printf("QR decomposition failed\n");
+        return(0);
     }
     for(i=0; i<n; i++)                             /* 求出c*/
     {
-		t = 0.0;
-		for(k=0; k<m; k++)
-			t = t+q[k*m+i]*b[k];
-		c[i] = t;
+        t = 0.0;
+        for(k=0; k<m; k++)
+            t = t+q[k*m+i]*b[k];
+        c[i] = t;
     }
     for(i=n-1; i>=0; i--)                          /* 求出解向量x*/
     {
-		t = 0.0;
-		for(k=i+1; k<n; k++)
-			t = t+a[i*n+k]*x[k];
-		x[i] = (c[i] - t)/a[i*n+i];
+        t = 0.0;
+        for(k=i+1; k<n; k++)
+            t = t+a[i*n+k]*x[k];
+        x[i] = (c[i] - t)/a[i*n+i];
     }
-	free(c);                                      /* 释放空间*/
-	free(q);
+    free(c);                                      /* 释放空间*/
+    free(q);
     return(1);
 }

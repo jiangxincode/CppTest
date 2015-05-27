@@ -17,8 +17,8 @@ int n,iter;
     double fr = 1.0,t,*x2;
     if((a==NULL)||(b==NULL)||(x==NULL))            /* 检测输入的指针是否为空*/
     {
-      printf("The pointer is NULL\n");
-      return(0);
+        printf("The pointer is NULL\n");
+        return(0);
     }
     x2 = (double *)malloc(n*sizeof(double));       /* 分配空间并检测是否成功*/
     if(x2==NULL)
@@ -27,31 +27,31 @@ int n,iter;
         return(0);
     }
     for(i=0; i<n; i++)
-    if(fabs(a[i*n+i]) < 1e-12)               /* 因为要做除数，需要检查是否过小*/
-    {
-      printf("A[%d,%d] is too small,cannot converged",i,i);
-      return(0);
-    }
+        if(fabs(a[i*n+i]) < 1e-12)               /* 因为要做除数，需要检查是否过小*/
+        {
+            printf("A[%d,%d] is too small,cannot converged",i,i);
+            return(0);
+        }
     for(i=0; i<n; i++)                        /* 对解向量赋初值*/
-      x[i] = 0.0;
+        x[i] = 0.0;
     while((fr>eps) && (piter<iter))
     {
-      fr = 0.0;
-      for(i=0; i<n; i++)
-      {
-        t = 0.0;
-        for(j=0; j<i; j++)
-          t = t+a[i*n+j]*x[j];
-        for(j=i+1; j<n; j++)
-          t = t+a[i*n+j]*x[j];
-        x2[i] = (b[i] - t)/a[i*n+i];            /* 更新的x值*/
-        t = fabs(x2[i]-x[i])/(1.0+fabs(x[i]));  /* 更新误差*/
-        if(t > fr)
-          fr = t;
-      }
-      for(i=0; i<n; i++)
-        x[i] = x2[i];
-      piter++;                               /* 迭代次数增加1*/
+        fr = 0.0;
+        for(i=0; i<n; i++)
+        {
+            t = 0.0;
+            for(j=0; j<i; j++)
+                t = t+a[i*n+j]*x[j];
+            for(j=i+1; j<n; j++)
+                t = t+a[i*n+j]*x[j];
+            x2[i] = (b[i] - t)/a[i*n+i];            /* 更新的x值*/
+            t = fabs(x2[i]-x[i])/(1.0+fabs(x[i]));  /* 更新误差*/
+            if(t > fr)
+                fr = t;
+        }
+        for(i=0; i<n; i++)
+            x[i] = x2[i];
+        piter++;                               /* 迭代次数增加1*/
     }
     return(piter);
 }

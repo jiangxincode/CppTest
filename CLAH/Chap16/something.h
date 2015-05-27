@@ -1,10 +1,11 @@
 #ifndef _SOMETHING_H
 #define _SOMETHING_H
 
-struct c_comp{
+struct c_comp
+{
     double rmz;
     double imz;
-}c_comp;
+} c_comp;
 
 #define PI 3.1415926
 

@@ -18,28 +18,28 @@ static int ttest(a,na,b,nb,alpha)
 double *a,*b,alpha;
 int na,nb;
 {
-	int  j=0;
-	double meana=0,meanb=0,vara=0,varb=0;	//初始化
-	double sd,t,x,p;
-	int v;
-	double eps=0.00001;
-	for(j=0;j<na;j++)
-		meana+=a[j];
-	meana=meana/na;							//计算样本一均值
-	for(j=0;j<nb;j++)
-		meanb+=b[j];
-	meanb=meanb/nb;							//计算样本二均值
-	for(j=0;j<na;j++)
-		vara+=(a[j]-meana)*(a[j]-meana);	//样本一的方差*na
-	for(j=0;j<nb;j++)
-		varb+=(b[j]-meanb)*(b[j]-meanb);	//样本二的方差*nb
+    int  j=0;
+    double meana=0,meanb=0,vara=0,varb=0;	//初始化
+    double sd,t,x,p;
+    int v;
+    double eps=0.00001;
+    for(j=0; j<na; j++)
+        meana+=a[j];
+    meana=meana/na;							//计算样本一均值
+    for(j=0; j<nb; j++)
+        meanb+=b[j];
+    meanb=meanb/nb;							//计算样本二均值
+    for(j=0; j<na; j++)
+        vara+=(a[j]-meana)*(a[j]-meana);	//样本一的方差*na
+    for(j=0; j<nb; j++)
+        varb+=(b[j]-meanb)*(b[j]-meanb);	//样本二的方差*nb
 
-	v=na+nb-2;
-	sd=sqrt((1.0/na+1.0/nb)/(double)v*(vara+varb));//计算sd
-	t=(meana-meanb)/sd;						//计算t
-	x=v/(v+t*t);
-	p=beta2(v/2,0.5,x,eps);					//求概率
-	return(p<=alpha);
+    v=na+nb-2;
+    sd=sqrt((1.0/na+1.0/nb)/(double)v*(vara+varb));//计算sd
+    t=(meana-meanb)/sd;						//计算t
+    x=v/(v+t*t);
+    p=beta2(v/2,0.5,x,eps);					//求概率
+    return(p<=alpha);
 }
 
 

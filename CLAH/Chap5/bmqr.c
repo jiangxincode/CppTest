@@ -33,46 +33,46 @@ int n,iter;
     i = r_mqr(a,n,n,q,eps*eps);                    /* 调用函数进行QR分解*/
     if(i==0)                                       /* 判断是否分解成功*/
     {
-      printf("QR decomposition failed\n");
-      return(0);
+        printf("QR decomposition failed\n");
+        return(0);
     }
     for(i=0; i<n; i++)
     {
-      t = 0.0;
-      for(k=0; k<n; k++)
-        t = t+q[k*n+i]*b[k];
-      c[i] = t;                                    /* 求出c*/
-      r[i] = c[i];                                 /* 初始残差*/
-      x[i] = 0.0;                                  /* 初始解为0*/
-      e[i] = 0.0;                                  /* 初始修正为0*/
+        t = 0.0;
+        for(k=0; k<n; k++)
+            t = t+q[k*n+i]*b[k];
+        c[i] = t;                                    /* 求出c*/
+        r[i] = c[i];                                 /* 初始残差*/
+        x[i] = 0.0;                                  /* 初始解为0*/
+        e[i] = 0.0;                                  /* 初始修正为0*/
     }
     fr = 1.0;
     piter = 0;
     while((fr > eps) && (piter<iter))
     {
-      for(i=n-1; i>=0; i--)                        /* 解出修正量e*/
-      {
-        t = 0.0;
-        for(k=i+1; k<n; k++)
-          t = t+a[i*n+k]*e[k];
-        e[i] = (r[i] - t)/a[i*n+i];
-        x[i] = x[i] + e[i];
-      }
-      for(i=0; i<n; i++)                           /* 更新残差*/
-      {
-        t = 0.0;
-        for(k=i; k<n; k++)
-          t = t+a[i*n+k]*x[k];
-        r[i] = r[i] - t;
-      }
-      fr = 0.0;                                    /* 更新修正误差*/
-      for(i=0; i<n; i++)
-      {
-        t = fabs(e[i])/(1+fabs(x[i]));
-        if(t > fr)
-          fr = t;
-      }
-      piter++;                                     /* 更新迭代次数*/
+        for(i=n-1; i>=0; i--)                        /* 解出修正量e*/
+        {
+            t = 0.0;
+            for(k=i+1; k<n; k++)
+                t = t+a[i*n+k]*e[k];
+            e[i] = (r[i] - t)/a[i*n+i];
+            x[i] = x[i] + e[i];
+        }
+        for(i=0; i<n; i++)                           /* 更新残差*/
+        {
+            t = 0.0;
+            for(k=i; k<n; k++)
+                t = t+a[i*n+k]*x[k];
+            r[i] = r[i] - t;
+        }
+        fr = 0.0;                                    /* 更新修正误差*/
+        for(i=0; i<n; i++)
+        {
+            t = fabs(e[i])/(1+fabs(x[i]));
+            if(t > fr)
+                fr = t;
+        }
+        piter++;                                     /* 更新迭代次数*/
     }
     free(c);                                       /* 释放空间*/
     free(q);

@@ -12,23 +12,23 @@ static void cout(x,y,n,k)
 int *x,*y;
 int n,k;
 {
-	int i,j,*c;
-	c = (int*)malloc((k+1)*sizeof(int));
-	for(i=0; i<=k; i++)                     /* 设置初值*/
-		c[i] = 0;
-	for(i=0; i<n; i++)                      /* 统计个数*/
-	{
-		j = x[i];
-		c[j] = c[j]+1;
-	}
-	for(i=1; i<=k; i++)                     /* 计数，用于计算位置*/
-		c[i] = c[i]+c[i-1];
-	for(i=n-1; i>=0; i--)                   /* 直接各归其位*/
-	{
-		j = x[i];
-		y[c[j]-1] = j;
-		c[j] = c[j] - 1;
-	}
-	free(c);
-	return;
+    int i,j,*c;
+    c = (int*)malloc((k+1)*sizeof(int));
+    for(i=0; i<=k; i++)                     /* 设置初值*/
+        c[i] = 0;
+    for(i=0; i<n; i++)                      /* 统计个数*/
+    {
+        j = x[i];
+        c[j] = c[j]+1;
+    }
+    for(i=1; i<=k; i++)                     /* 计数，用于计算位置*/
+        c[i] = c[i]+c[i-1];
+    for(i=n-1; i>=0; i--)                   /* 直接各归其位*/
+    {
+        j = x[i];
+        y[c[j]-1] = j;
+        c[j] = c[j] - 1;
+    }
+    free(c);
+    return;
 }

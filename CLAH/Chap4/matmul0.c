@@ -21,14 +21,22 @@ void main4matmul0()
             printf("%2.5f ", r_mat3[i][j]);
         printf("\n");
     }
-    c_mat1[0][0].rmz = 1; c_mat1[0][0].imz = 1;  /* 为要相乘的复矩阵赋初值*/
-    c_mat1[0][1].rmz = 0; c_mat1[0][1].imz = 1;
-    c_mat1[1][0].rmz = 1; c_mat1[1][0].imz = 0;
-    c_mat1[1][1].rmz = 2; c_mat1[1][1].imz = 3;
-    c_mat2[0][0].rmz = 2; c_mat2[0][0].imz = 3;
-    c_mat2[0][1].rmz = 0; c_mat2[0][1].imz = 2;
-    c_mat2[1][0].rmz = 2; c_mat2[1][0].imz = 1;
-    c_mat2[1][1].rmz = 1; c_mat2[1][1].imz = 0.5;
+    c_mat1[0][0].rmz = 1;
+    c_mat1[0][0].imz = 1;  /* 为要相乘的复矩阵赋初值*/
+    c_mat1[0][1].rmz = 0;
+    c_mat1[0][1].imz = 1;
+    c_mat1[1][0].rmz = 1;
+    c_mat1[1][0].imz = 0;
+    c_mat1[1][1].rmz = 2;
+    c_mat1[1][1].imz = 3;
+    c_mat2[0][0].rmz = 2;
+    c_mat2[0][0].imz = 3;
+    c_mat2[0][1].rmz = 0;
+    c_mat2[0][1].imz = 2;
+    c_mat2[1][0].rmz = 2;
+    c_mat2[1][0].imz = 1;
+    c_mat2[1][1].rmz = 1;
+    c_mat2[1][1].imz = 0.5;
     c_matmul(c_mat1, c_mat2, 2, 2, 2, c_mat3);   /* 调用函数进行计算并打印结果*/
     printf("complex matmul:\n");
     for(i=0; i<2; i++)

@@ -11,7 +11,7 @@ double studf(x,n)
 double x;
 int n;
 {
-  double t;
-  t = 1.0-beta2(n/2.0,0.5,n/(n+x*x),EPS);
-  return(t);
+    double t;
+    t = 1.0-beta2(n/2.0,0.5,n/(n+x*x),EPS);
+    return(t);
 }

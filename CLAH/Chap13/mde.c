@@ -20,28 +20,33 @@ double *a,*mean,*adev,*sddev,*var,*skew,*kurt;
 int n;
 {
     int j=0;
-	double *dis;
-	dis=(double*)malloc(sizeof(double)*n); //存放数据与均值的差
-	*mean=0;*adev=0;*sddev=0;*var=0;*skew=0;*kurt=0;//初始化
-	for(j=0;j<n;j++)
-		*mean+=a[j];
-	*mean=*mean/n;//计算均值
-	for(j=0;j<n;j++)
-		dis[j]=a[j]-*mean;
-	for(j=0;j<n;j++)
-	{
-		*adev+=fabs(dis[j]);//平均差
-		*var+=dis[j]*dis[j];//方差
-	}
-	*adev=*adev/n;
-	*var=*var/(n-1);
-	*sddev=sqrt(*var);//标准差
-	for(j=0;j<n;j++)
-	{
-		dis[j]=dis[j]/(*sddev);
-		*skew+=dis[j]*dis[j]*dis[j];//斜差
-		*kurt+=dis[j]*dis[j]*dis[j]*dis[j];//峰态
-	}
-	*skew=*skew/n;
-	*kurt=*kurt/n-3;
+    double *dis;
+    dis=(double*)malloc(sizeof(double)*n); //存放数据与均值的差
+    *mean=0;
+    *adev=0;
+    *sddev=0;
+    *var=0;
+    *skew=0;
+    *kurt=0;//初始化
+    for(j=0; j<n; j++)
+        *mean+=a[j];
+    *mean=*mean/n;//计算均值
+    for(j=0; j<n; j++)
+        dis[j]=a[j]-*mean;
+    for(j=0; j<n; j++)
+    {
+        *adev+=fabs(dis[j]);//平均差
+        *var+=dis[j]*dis[j];//方差
+    }
+    *adev=*adev/n;
+    *var=*var/(n-1);
+    *sddev=sqrt(*var);//标准差
+    for(j=0; j<n; j++)
+    {
+        dis[j]=dis[j]/(*sddev);
+        *skew+=dis[j]*dis[j]*dis[j];//斜差
+        *kurt+=dis[j]*dis[j]*dis[j]*dis[j];//峰态
+    }
+    *skew=*skew/n;
+    *kurt=*kurt/n-3;
 }

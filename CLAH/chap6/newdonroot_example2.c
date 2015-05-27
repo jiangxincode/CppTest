@@ -2,8 +2,8 @@
 #include<stdio.h>
 #include<math.h>
 #include "newdonroot.c"
-  static   double f(double);
-   static  double fd(double);
+static   double f(double);
+static  double fd(double);
 void main6newdonroot2()
 {
     double x0;
@@ -23,7 +23,7 @@ void main6newdonroot2()
 static double f(x)                         /* 计算函数值*/
 double x;
 {
-     return x*x*x-3*x+1;
+    return x*x*x-3*x+1;
 }
 
 double fd(x)                        /* 计算导函数值*/

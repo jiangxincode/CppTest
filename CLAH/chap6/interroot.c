@@ -30,7 +30,7 @@ int max;
         dis=fabs(x-*x0);         /* 计算精度*/
         if(dis<fabs(y0))
             dis=fabs(y0);
-		printf("%1.7f    %1.7f    %1.7f\n",*x0,x,dis);
+        printf("%1.7f    %1.7f    %1.7f\n",*x0,x,dis);
         *x0=x;
     }
     while(dis>eps&&num<max);     /* 判断迭代是否结束*/

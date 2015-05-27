@@ -28,49 +28,51 @@ int n,m;
     do                                        /* 对k进行循环，分别计算xk处的函数值*/
     {
         x=a+k*h;
-        do{                                   /* 在每个xk处，进行步长的动态选择*/
+        do                                    /* 在每个xk处，进行步长的动态选择*/
+        {
             m1=(int)(h/ht);                   /* ht为步长*/
             ytemp1=(double*)malloc(sizeof(double)*n*(m1+1));
             if(ytemp1==NULL)
-        	{
+            {
                 printf("memory alloc failed.\n");
                 return(0);
-        	}
-            for(i=n;i<n*(m1+1);i++)
+            }
+            for(i=n; i<n*(m1+1); i++)
                 ytemp1[i]=0.0;                /* 初始化*/
-            for(i=0;i<n;i++)
-               ytemp1[i]=y[k*n+i];
+            for(i=0; i<n; i++)
+                ytemp1[i]=y[k*n+i];
             eulerinvh(ytemp1,n,f,ht,m1,x);    /* 调用定步长公式*/
-            for(i=0;i<n;i++)
+            for(i=0; i<n; i++)
                 y1[i]=ytemp1[m1*n+i];
             free(ytemp1);
             m2=2*m1;                          /* ht/2为步长*/
             ytemp2=(double*)malloc(sizeof(double)*n*(m2+1));
             if(ytemp2==NULL)
-        	{
+            {
                 printf("memory alloc failed.\n");
                 return(0);
-        	}
-            for(i=n;i<n*(m2+1);i++)
+            }
+            for(i=n; i<n*(m2+1); i++)
                 ytemp2[i]=0.0;
-            for(i=0;i<n;i++)
+            for(i=0; i<n; i++)
                 ytemp2[i]=y[k*n+i];
             eulerinvh(ytemp2,n,f,ht/2,m2,x);
-            for(i=0;i<n;i++)
+            for(i=0; i<n; i++)
                 y2[i]=ytemp2[m2*n+i];
             free(ytemp2);
             ht=ht/2;                         /* 下一次循环的步长*/
             dis=0.0;                         /* max距离*/
-            for(i=0;i<n;i++)
+            for(i=0; i<n; i++)
                 if(dis<fabs(y1[i]-y2[i]))    /* 计算此处的函数值*/
                     dis=fabs(y1[i]-y2[i]);
         }
         while(dis>=eps);                     /* 看距离是否满足精度*/
-        for(i=0;i<n;i++)
+        for(i=0; i<n; i++)
             y[(k+1)*n+i]=y2[i];              /* 结果记录*/
         k++;                                 /* 下一个xk*/
     }
     while(k<m);                              /* m个xk的循环*/
-    free(y1);free(y2);
+    free(y1);
+    free(y2);
     return (1);
 }

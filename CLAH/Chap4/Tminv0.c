@@ -30,18 +30,18 @@ void main4Tminv0()
         printf("T:\n");
         for(i=0; i<m; i++)
         {
-          for(j=0; j<n; j++)
-            printf("%2.5f ", r_mat2[i][j]);
-          printf("\n");
+            for(j=0; j<n; j++)
+                printf("%2.5f ", r_mat2[i][j]);
+            printf("\n");
         }
         printf("\n");
 
         printf("inv(T):\n");
         for(i=0; i<m; i++)
         {
-          for(j=0; j<n; j++)
-            printf("%2.5f ", r_mat1[i][j]);
-          printf("\n");
+            for(j=0; j<n; j++)
+                printf("%2.5f ", r_mat1[i][j]);
+            printf("\n");
         }
         printf("\n");
 
@@ -49,9 +49,9 @@ void main4Tminv0()
         r_matmul(r_mat1,r_mat2,n,n,n,r_mat3);
         for(i=0; i<m; i++)
         {
-          for(j=0; j<n; j++)
-            printf("%2.5f ", r_mat3[i][j]);
-          printf("\n");
+            for(j=0; j<n; j++)
+                printf("%2.5f ", r_mat3[i][j]);
+            printf("\n");
         }
     }
 }

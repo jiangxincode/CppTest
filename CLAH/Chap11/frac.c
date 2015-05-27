@@ -10,31 +10,32 @@
 #include "math.h"
 static double frac(double *fab(),int nmax,double e1,double e0)
 {
-  int j;
-  double f,a,b,ab[2];
-  double c,d,t;
-  fab(0,ab);
-  f = ab[1];                         /* 设置初值*/
-  if(fabs(f) < e0)
-    f = e0;
-  c = f;
-  d = 0.0;
-  j = 1;
-  do
-  {
-    fab(j,ab);                      /* 计算这一节的系数a和b*/
-    a = ab[0];
-    b = ab[1];
-    d = b+a*d;                    /* 计算cj和dj*/
-    c = b+a/c;
-    if(fabs(d) < e0)               /* 若小于e0，则认为是0*/
-      d = e0;
-    if(fabs(c) < e0)
-      c = e0;
-    d = 1.0/d;                    /* 更新dj值*/
-    t = c*d;
-    f = f*t;                        /* 计算新的连分式值*/
-    j++;
-  }while((fabs(t-1.0)>e1)&&(j<nmax)); /* 循环终止条件*/
-  return(f);
+    int j;
+    double f,a,b,ab[2];
+    double c,d,t;
+    fab(0,ab);
+    f = ab[1];                         /* 设置初值*/
+    if(fabs(f) < e0)
+        f = e0;
+    c = f;
+    d = 0.0;
+    j = 1;
+    do
+    {
+        fab(j,ab);                      /* 计算这一节的系数a和b*/
+        a = ab[0];
+        b = ab[1];
+        d = b+a*d;                    /* 计算cj和dj*/
+        c = b+a/c;
+        if(fabs(d) < e0)               /* 若小于e0，则认为是0*/
+            d = e0;
+        if(fabs(c) < e0)
+            c = e0;
+        d = 1.0/d;                    /* 更新dj值*/
+        t = c*d;
+        f = f*t;                        /* 计算新的连分式值*/
+        j++;
+    }
+    while((fabs(t-1.0)>e1)&&(j<nmax));  /* 循环终止条件*/
+    return(f);
 }

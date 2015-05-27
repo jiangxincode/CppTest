@@ -37,7 +37,7 @@ int n,max;
         f(x0,f0,fi,h);                        /* 计算方程组值以及偏移h后的值*/
 
         dis=0;
-        for(i=0;i<n;i++)
+        for(i=0; i<n; i++)
         {
             if(fabs(f0[i])>dis)
                 dis=fabs(f0[i]);              /* 计算max方程的值*/
@@ -49,11 +49,11 @@ int n,max;
             else
             {
                 sum=0;
-                for(i=0;i<n;i++)
+                for(i=0; i<n; i++)
                     sum=fx[i]+sum;
                 sum=h/(1-sum);
 
-                for(i=0;i<n;i++)
+                for(i=0; i<n; i++)
                 {
                     dl[i]=fx[i]*sum;          /* 差值*/
                     x0[i]=x0[i]-dl[i];        /* 新值*/
@@ -66,7 +66,9 @@ int n,max;
     }
     while(num<max);
 
-    free(f0);free(fi);free(dl);
+    free(f0);
+    free(fi);
+    free(dl);
 
     if(num==max)
         return (0);                         /* 迭代失败*/

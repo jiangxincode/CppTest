@@ -15,11 +15,11 @@ void main6gradroot7()
     x0[2]=5;
     if(gradroot(x0,n,f,eps,max))                 /* 调用函数求解*/
     {
-        for(i=0;i<n;i++)
+        for(i=0; i<n; i++)
             printf("x[%d]=%1.7f\n",i,x0[i]);     /* 输出*/
     }
     else
-    printf("failed!\n");
+        printf("failed!\n");
 }
 
 static double f(x,fd)                                   /* 方程组*/
@@ -30,11 +30,17 @@ double *x,*fd;
     f2=x[0]*x[0]+7*x[0]*x[1]+3*x[2]+14;
     f3=5*x[0]*x[2]+x[1]*x[2]-24;
 
-    df1=2.0*x[0];df2=2.0*x[0];df3=5.0*x[2];
+    df1=2.0*x[0];
+    df2=2.0*x[0];
+    df3=5.0*x[2];
     fd[0]=2.0*(df1*f1+df2*f2+df3*f3);
-    df1=2*x[1];df2=7.0*x[0];df3=x[2];
+    df1=2*x[1];
+    df2=7.0*x[0];
+    df3=x[2];
     fd[1]=2.0*(df1*f1+df2*f2+df3*f3);
-    df1=2.0*x[2];df2=3.0;df3=5.0*x[0]+x[1];
+    df1=2.0*x[2];
+    df2=3.0;
+    df3=5.0*x[0]+x[1];
     fd[2]=2.0*(df1*f1+df2*f2+df3*f3);
 
     return(f1*f1+f2*f2+f3*f3);

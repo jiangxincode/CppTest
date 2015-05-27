@@ -16,53 +16,53 @@ void main9rungekutta2()
     double *y;                       /* 存放所有函数值的指针*/
 
     y=(double*)malloc(n*(m+1)*sizeof(double));
-    for(i=0;i<n*(m+1);i++)                    /* 初始化*/
-	   y[i]=0.0;
+    for(i=0; i<n*(m+1); i++)                  /* 初始化*/
+        y[i]=0.0;
     y[0]=-1.0;                                /* 初值*/
     y[1]=0.0;
     y[2]=1.0;
-	if(rungekuttainvh(y,n,f,h,m,a))
+    if(rungekuttainvh(y,n,f,h,m,a))
     {
-		printf("定步长龙格库塔算法求值\n");
-        for(i=0;i<=m;i++)
+        printf("定步长龙格库塔算法求值\n");
+        for(i=0; i<=m; i++)
         {
             printf("x=%1.2f ",a+h*i);
-            for(j=0;j<n;j++)
-				printf("y[%d]=%1.9f  ",j,y[3*i+j]);   /* 输出*/
-			printf("\n");
+            for(j=0; j<n; j++)
+                printf("y[%d]=%1.9f  ",j,y[3*i+j]);   /* 输出*/
+            printf("\n");
         }
     }
     else
-    printf("failed!\n");
+        printf("failed!\n");
 
     if(rungekuttavh(y,n,f,h,m,a,eps))
     {
-		printf("变步长龙格-库塔算法求值\n");
-        for(i=0;i<=m;i++)
+        printf("变步长龙格-库塔算法求值\n");
+        for(i=0; i<=m; i++)
         {
             printf("x=%1.2f ",a+h*i);
-            for(j=0;j<n;j++)
-				printf("y[%d]=%1.9f  ",j,y[3*i+j]);    /* 输出*/
-			printf("\n");
+            for(j=0; j<n; j++)
+                printf("y[%d]=%1.9f  ",j,y[3*i+j]);    /* 输出*/
+            printf("\n");
         }
     }
     else
-    printf("failed!\n");
+        printf("failed!\n");
 
-	if(gillvh(y,n,f,h,m,a,eps))
+    if(gillvh(y,n,f,h,m,a,eps))
     {
-		printf("变步长基尔算法求值\n");
-        for(i=0;i<=m;i++)
+        printf("变步长基尔算法求值\n");
+        for(i=0; i<=m; i++)
         {
             printf("x=%1.2f ",a+h*i);
-            for(j=0;j<n;j++)
-				printf("y[%d]=%1.9f  ",j,y[3*i+j]);    /* 输出*/
-			printf("\n");
+            for(j=0; j<n; j++)
+                printf("y[%d]=%1.9f  ",j,y[3*i+j]);    /* 输出*/
+            printf("\n");
         }
     }
     else
-    printf("failed!\n");
-	free(y);
+        printf("failed!\n");
+    free(y);
 }
 
 static void f(y,F,x)

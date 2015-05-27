@@ -9,6 +9,6 @@
 
 int hashpos(char *str,int i,int m)
 {
-	unsigned int k = hashk(str,i);       /* 调用一个算法计算对应的整数*/
-	return( (int)(k%m) );
+    unsigned int k = hashk(str,i);       /* 调用一个算法计算对应的整数*/
+    return( (int)(k%m) );
 }

@@ -18,39 +18,39 @@ double *_pdir_, *_xdir_, *_xtdir_,(*_myfc_)();              /* 需要全局变量*/
 
 double dirmin(double *x, double *p, double *xmin, int n, double (*f)(), double eps, int itmax)
 {
-	int i;
-	double fdim(), ax, bx, cx, fopt, xopt;
-	_ndir_ = n;
-	_pdir_ = (double*)malloc(_ndir_*sizeof(double));
-	_xdir_ = (double*)malloc(_ndir_*sizeof(double));
-	_xtdir_ = (double*)malloc(_ndir_*sizeof(double));
-	_myfc_ = f;                                            /* 全局变量指向函数*/
-	for(i=0; i<n; i++)
-	{
-		_pdir_[i] = p[i];
-		_xdir_[i] = x[i];
-	}
-	ax = 0.0;                                             /* 初始猜想范围*/
-	bx = 0.5;
+    int i;
+    double fdim(), ax, bx, cx, fopt, xopt;
+    _ndir_ = n;
+    _pdir_ = (double*)malloc(_ndir_*sizeof(double));
+    _xdir_ = (double*)malloc(_ndir_*sizeof(double));
+    _xtdir_ = (double*)malloc(_ndir_*sizeof(double));
+    _myfc_ = f;                                            /* 全局变量指向函数*/
+    for(i=0; i<n; i++)
+    {
+        _pdir_[i] = p[i];
+        _xdir_[i] = x[i];
+    }
+    ax = 0.0;                                             /* 初始猜想范围*/
+    bx = 0.5;
     brake(&ax, &bx, &cx, fdim);                          /* 找一个极小值区间*/
-	fopt = brent(ax, bx, cx, fdim, &xopt, eps, itmax);     /* 用brent算法找极小值*/
-	for(i=0; i<n; i++)                                    /* 找到了最优点x*/
-	{
-		p[i] = xopt*p[i];
-		xmin[i] = x[i]+p[i];
-	}
-	free(_pdir_);
-	free(_xdir_);
-	free(_xtdir_);
-	return(fopt);
+    fopt = brent(ax, bx, cx, fdim, &xopt, eps, itmax);     /* 用brent算法找极小值*/
+    for(i=0; i<n; i++)                                    /* 找到了最优点x*/
+    {
+        p[i] = xopt*p[i];
+        xmin[i] = x[i]+p[i];
+    }
+    free(_pdir_);
+    free(_xdir_);
+    free(_xtdir_);
+    return(fopt);
 }
 
 static double fdim_jiang(double t)                                     /* 求f在这个方向上行进t时的值*/
 {
-	int i;
-	double y;
-	for(i=0; i<_ndir_; i++)
-		_xtdir_[i] = _xdir_[i] + t*_pdir_[i];
-	y = _myfc_(_xtdir_, _ndir_);
-	return(y);
+    int i;
+    double y;
+    for(i=0; i<_ndir_; i++)
+        _xtdir_[i] = _xdir_[i] + t*_pdir_[i];
+    y = _myfc_(_xtdir_, _ndir_);
+    return(y);
 }

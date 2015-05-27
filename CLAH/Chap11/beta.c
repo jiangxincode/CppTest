@@ -9,13 +9,13 @@
 #include "something.h"
 static double beta(double x,double y)
 {
-  double t;
-  if((x<0) || (y<0))                           /* 判断自变量是否满足要求*/
-  {
-    printf("negative input parameter\n");
-    return(0.0);
-  }
-  t = gammln(x)+gammln(y)-gammln(x+y);         /* 使用伽马函数实现*/
-  t = exp(t);
-  return(t);
+    double t;
+    if((x<0) || (y<0))                           /* 判断自变量是否满足要求*/
+    {
+        printf("negative input parameter\n");
+        return(0.0);
+    }
+    t = gammln(x)+gammln(y)-gammln(x+y);         /* 使用伽马函数实现*/
+    t = exp(t);
+    return(t);
 }

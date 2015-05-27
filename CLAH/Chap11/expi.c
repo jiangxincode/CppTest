@@ -14,68 +14,68 @@
 
 static double expi(int n,double x,double e1)
 {
-  int i,j;
-  double t,t2,del;
-  double a,b,c,d;                                  /* 计算连分式级数需要的变量*/
-  if((x<0.0)||(n<0)||(x==0.0 &&(n<2)))
-  {
-    printf("%2.1f,%d",x,n);
-    printf("bad input parameter\n");
+    int i,j;
+    double t,t2,del;
+    double a,b,c,d;                                  /* 计算连分式级数需要的变量*/
+    if((x<0.0)||(n<0)||(x==0.0 &&(n<2)))
+    {
+        printf("%2.1f,%d",x,n);
+        printf("bad input parameter\n");
+        return(0.0);
+    }
+    else if(x == 0.0)                                /* x为0的情况*/
+    {
+        t = 1.0/(n-1.0);
+        return(t);
+    }
+    else if(n == 0)                                  /* n为0的情况*/
+    {
+        t = exp(-x)/x;
+        return(t);
+    }
+    else if(x > 1.0)                                 /* 使用连分式级数*/
+    {
+        b = x+n;                                       /* 已经计算了第一节连分式*/
+        c = 1.0/FPMIN;
+        d = 1.0/b;
+        t = d;
+        for(i=1; i<NMAX; i++)
+        {
+            a = -i*(n-1+i);                               /* 此节的系数a*/
+            b = b+2.0;                                    /* 此节的系数b*/
+            d = a*d+b;
+            c = b+a/c;                                    /* c总是大于0*/
+            d = 1.0/d;                                    /* d总是大于0*/
+            del = d*c;
+            t = t*del;
+            if(fabs(del-1.0)<e1)                          /* 级数部分已经收敛*/
+            {
+                t=exp(-x)*t;
+                return(t);
+            }
+        }
+    }
+    else                                              /* 使用求和级数*/
+    {
+        t = (n==1)?(-log(x)-EULER):(1.0/(n-1));
+        t2 = 1.0;
+        for(i=1; i<NMAX; i++)
+        {
+            t2 = -t2*x/i;
+            if(i != (n-1))
+                del = -t2/(i-n+1);
+            else
+            {
+                del = -EULER;                               /* phi(n)的计算*/
+                for(j=1; j<n; j++)
+                    del = del+1.0/j;
+                del = t2*(-log(x)+del);
+            }
+            t = t+del;
+            if(fabs(del)<fabs(t)*e1)                      /* 级数部分已经收敛*/
+                return(t);
+        }
+    }
+    printf(" iteration too many times\n");            /* 经过NMAX次迭代没有收敛*/
     return(0.0);
-  }
-  else if(x == 0.0)                                /* x为0的情况*/
-  {
-    t = 1.0/(n-1.0);
-    return(t);
-  }
-  else if(n == 0)                                  /* n为0的情况*/
-  {
-    t = exp(-x)/x;
-    return(t);
-  }
-  else if(x > 1.0)                                 /* 使用连分式级数*/
-  {
-    b = x+n;                                       /* 已经计算了第一节连分式*/
-    c = 1.0/FPMIN;
-    d = 1.0/b;
-    t = d;
-    for(i=1; i<NMAX; i++)
-    {
-      a = -i*(n-1+i);                               /* 此节的系数a*/
-      b = b+2.0;                                    /* 此节的系数b*/
-      d = a*d+b;
-      c = b+a/c;                                    /* c总是大于0*/
-      d = 1.0/d;                                    /* d总是大于0*/
-      del = d*c;
-      t = t*del;
-      if(fabs(del-1.0)<e1)                          /* 级数部分已经收敛*/
-      {
-        t=exp(-x)*t;
-        return(t);
-      }
-    }
-  }
-  else                                              /* 使用求和级数*/
-  {
-    t = (n==1)?(-log(x)-EULER):(1.0/(n-1));
-    t2 = 1.0;
-    for(i=1; i<NMAX; i++)
-    {
-      t2 = -t2*x/i;
-      if(i != (n-1))
-        del = -t2/(i-n+1);
-      else
-      {
-        del = -EULER;                               /* phi(n)的计算*/
-        for(j=1; j<n; j++)
-          del = del+1.0/j;
-        del = t2*(-log(x)+del);
-      }
-      t = t+del;
-      if(fabs(del)<fabs(t)*e1)                      /* 级数部分已经收敛*/
-        return(t);
-    }
-  }
-  printf(" iteration too many times\n");            /* 经过NMAX次迭代没有收敛*/
-  return(0.0);
 }

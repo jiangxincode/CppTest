@@ -32,23 +32,23 @@ int n;
     i = smldl(a,n,L,D,eps);                        /* 调用函数进行LDL分解*/
     if(i==0)                                       /* 判断是否分解成功*/
     {
-      printf("LDL decomposition failed\n");
-      return(0);
+        printf("LDL decomposition failed\n");
+        return(0);
     }
     for(i=0; i<n; i++)                             /* 解出y和z*/
     {
-      t = 0.0;
-      for(k=0; k<i; k++)
-        t = t+L[i*n+k]*y[k];
-      y[i] = b[i]-t;
-      z[i] = y[i]/D[i];
+        t = 0.0;
+        for(k=0; k<i; k++)
+            t = t+L[i*n+k]*y[k];
+        y[i] = b[i]-t;
+        z[i] = y[i]/D[i];
     }
     for(i=n-1; i>=0; i--)                          /* 求出解向量x*/
     {
-      t = 0.0;
-      for(k=i+1; k<n; k++)
-        t = t+L[k*n+i]*x[k];
-      x[i] = z[i] - t;
+        t = 0.0;
+        for(k=i+1; k<n; k++)
+            t = t+L[k*n+i]*x[k];
+        x[i] = z[i] - t;
     }
     free(D);                                       /* 释放空间*/
     free(L);

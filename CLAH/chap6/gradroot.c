@@ -31,16 +31,17 @@ int n,max;
         if(F>eps)
         {
             D=0;
-            for(i=0;i<n;i++)
+            for(i=0; i<n; i++)
                 D=D+FD[i]*FD[i];            /* 计算D和系数lamda*/
             lam=F/D;
-            for(i=0;i<n;i++)
+            for(i=0; i<n; i++)
                 x0[i]=x0[i]-lam*FD[i];      /* 新值*/
         }
 
         else
             return(1);
-    }while(num<max);
+    }
+    while(num<max);
     if(num==max)
         return (0);                         /* 迭代失败*/
     else

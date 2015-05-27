@@ -20,7 +20,9 @@ int max;
     double yd0;
     int num=0;
     do
-    {   y0=f(*x0);yd0=fd(*x0);          /* 计算函数值以及导数值*/
+    {
+        y0=f(*x0);
+        yd0=fd(*x0);          /* 计算函数值以及导数值*/
         x=*x0-y0/yd0;                   /* 计算新的x值*/
         num++;
         dis=fabs(x-*x0);                /* 计算精度*/

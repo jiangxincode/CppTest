@@ -12,14 +12,18 @@ void main4c_matinv0()
     m = 2;
     n = 2;
 
-    c_mat[0][0].rmz = 2; c_mat[0][0].imz = 3;
-    c_mat[0][1].rmz = 0; c_mat[0][1].imz = 2;
-    c_mat[1][0].rmz = 2; c_mat[1][0].imz = 1;
-    c_mat[1][1].rmz = 1; c_mat[1][1].imz = 0.5;
+    c_mat[0][0].rmz = 2;
+    c_mat[0][0].imz = 3;
+    c_mat[0][1].rmz = 0;
+    c_mat[0][1].imz = 2;
+    c_mat[1][0].rmz = 2;
+    c_mat[1][0].imz = 1;
+    c_mat[1][1].rmz = 1;
+    c_mat[1][1].imz = 0.5;
 
     for(i=0; i<n; i++)
-      for(j=0; j<n; j++)
-        c_mat1[i][j] = c_mat[i][j];
+        for(j=0; j<n; j++)
+            c_mat1[i][j] = c_mat[i][j];
 
     printf("A:\n");
     for(i=0; i<m; i++)

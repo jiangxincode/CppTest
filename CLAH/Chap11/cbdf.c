@@ -11,7 +11,7 @@ double cbdf(p,n,k)
 double p;
 int n,k;
 {
-  double t;
-  t = beta2((double)k,n+1.0-k,p,EPS);
-  return(t);
+    double t;
+    t = beta2((double)k,n+1.0-k,p,EPS);
+    return(t);
 }

@@ -17,73 +17,73 @@
 static double subcf(double, double, double, double);                          /* 计算连分式级数需要的变量和函数*/
 static double beta2(double a,double b,double x,double e1)
 {
-  double t;
+    double t;
 
-  if((x<0.0)||(x>1.0)||(a<=0.0)||(b<=0.0))
-  {
-    printf("Bad input parameter\n");
-    return(0.0);
-  }
-  else if(x == 0.0)                                /* x为0的情况*/
-  {
-    t = 0.0;
-    return(t);
-  }
-  else if(x == 1.0)                                /* x为1的情况*/
-  {
-    t = 1.0;
-    return(t);
-  }
-  else if(x > (a+1.0)/(a+b+2.0))
-  {
-    t = exp(gammln(a+b)-gammln(a)-gammln(b)+a*log(x)+b*log(1.0-x)); /* 系数*/
-    t = 1.0-t*subcf(b,a,1.0-x,e1)/b;               /* 使用连分式级数*/
-    return(t);
-  }
-  else
-  {
-    t = exp(gammln(a+b)-gammln(a)-gammln(b)+a*log(x)+b*log(1.0-x)); /* 系数*/
-    t = t*subcf(a,b,x,e1)/a;                       /* 使用连分式级数*/
-    return(t);
-  }
+    if((x<0.0)||(x>1.0)||(a<=0.0)||(b<=0.0))
+    {
+        printf("Bad input parameter\n");
+        return(0.0);
+    }
+    else if(x == 0.0)                                /* x为0的情况*/
+    {
+        t = 0.0;
+        return(t);
+    }
+    else if(x == 1.0)                                /* x为1的情况*/
+    {
+        t = 1.0;
+        return(t);
+    }
+    else if(x > (a+1.0)/(a+b+2.0))
+    {
+        t = exp(gammln(a+b)-gammln(a)-gammln(b)+a*log(x)+b*log(1.0-x)); /* 系数*/
+        t = 1.0-t*subcf(b,a,1.0-x,e1)/b;               /* 使用连分式级数*/
+        return(t);
+    }
+    else
+    {
+        t = exp(gammln(a+b)-gammln(a)-gammln(b)+a*log(x)+b*log(1.0-x)); /* 系数*/
+        t = t*subcf(a,b,x,e1)/a;                       /* 使用连分式级数*/
+        return(t);
+    }
 }
 
 static double subcf(a,b,x,e1)
 double a,b,x,e1;
 {
-  int n;
-  double t,del,an,c,d;
-  c = 1.0;
-  d = 1.0-(a+b)*x/(a+1.0);
-  if(fabs(d)<FPMIN)
-    d = FPMIN;
-  d = 1.0/d;
-  t = d;
-  for(n=1; n<NMAX; n++)
-  {
-    an = n*(b-n)*x/((a+2.0*n-1.0)*(a+2.0*n));  /* 第2n节的系数a,此节的系数b为1*/
-    d = an*d+1.0;                              /* 计算d*/
-    c = 1.0+an/c;                              /* 计算c*/
-    if(fabs(d) < FPMIN)                        /* 检查cd的范围*/
-      d = FPMIN;
-    if(fabs(c) < FPMIN)
-      c = FPMIN;
+    int n;
+    double t,del,an,c,d;
+    c = 1.0;
+    d = 1.0-(a+b)*x/(a+1.0);
+    if(fabs(d)<FPMIN)
+        d = FPMIN;
     d = 1.0/d;
-    del = d*c;
-    t = t*del;
-    an = -(a+n)*(a+b+n)*x/((a+2.0*n)*(a+1.0+2.0*n));/* 第2n+1节*/
-    d = 1.0+an*d;
-    c = 1.0+an/c;
-    if(fabs(d) < FPMIN)
-      d = FPMIN;
-    if(fabs(c) < FPMIN)
-      c = FPMIN;
-    d = 1.0/d;
-    del = d*c;
-    t = t*del;
-    if(fabs(del-1.0)<e1)                       /* 级数部分已经收敛*/
-      return(t);
-  }
-  printf("iteration not converged.");          /* 没有收敛*/
-  return(t);
+    t = d;
+    for(n=1; n<NMAX; n++)
+    {
+        an = n*(b-n)*x/((a+2.0*n-1.0)*(a+2.0*n));  /* 第2n节的系数a,此节的系数b为1*/
+        d = an*d+1.0;                              /* 计算d*/
+        c = 1.0+an/c;                              /* 计算c*/
+        if(fabs(d) < FPMIN)                        /* 检查cd的范围*/
+            d = FPMIN;
+        if(fabs(c) < FPMIN)
+            c = FPMIN;
+        d = 1.0/d;
+        del = d*c;
+        t = t*del;
+        an = -(a+n)*(a+b+n)*x/((a+2.0*n)*(a+1.0+2.0*n));/* 第2n+1节*/
+        d = 1.0+an*d;
+        c = 1.0+an/c;
+        if(fabs(d) < FPMIN)
+            d = FPMIN;
+        if(fabs(c) < FPMIN)
+            c = FPMIN;
+        d = 1.0/d;
+        del = d*c;
+        t = t*del;
+        if(fabs(del-1.0)<e1)                       /* 级数部分已经收敛*/
+            return(t);
+    }
+    printf("iteration not converged.");          /* 没有收敛*/
+    return(t);
 }

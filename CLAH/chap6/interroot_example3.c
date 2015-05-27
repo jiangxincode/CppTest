@@ -16,7 +16,7 @@ void main6interroot3()
     ab=0.0;
     eps=0.00001;
     max=60;
-	printf("  x(k)         x(k+1)        dis\n");
+    printf("  x(k)         x(k+1)        dis\n");
     if(interroot(x0,ab,f,eps,max))
         printf("\n%1.7f\n",*x0);
     else

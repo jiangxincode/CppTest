@@ -12,8 +12,8 @@ void main4sd_matinv0()
     int n=2;
 
     for(i=0; i<n; i++)
-      for(j=0; j<n; j++)
-        r_mat1[i][j] = r_mat[i][j];
+        for(j=0; j<n; j++)
+            r_mat1[i][j] = r_mat[i][j];
 
     printf("A:\n");
     for(i=0; i<n; i++)
@@ -27,7 +27,7 @@ void main4sd_matinv0()
     sdminv(r_mat,n);
 
     printf("inv(A):\n");
-        for(i=0; i<n; i++)
+    for(i=0; i<n; i++)
     {
         for(j=0; j<n; j++)
             printf("%2.5f ", r_mat[i][j]);
@@ -37,7 +37,7 @@ void main4sd_matinv0()
 
     printf("A*inv(A):\n");
     r_matmul(r_mat,r_mat1,n,n,n,r_mat2);
-        for(i=0; i<n; i++)
+    for(i=0; i<n; i++)
     {
         for(j=0; j<n; j++)
             printf("%2.5f ", r_mat2[i][j]);

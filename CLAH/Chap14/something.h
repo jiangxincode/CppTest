@@ -7,11 +7,12 @@
 #define NULLTag "\0"
 #define DELTag "1\0"
 #define HashSize 29
-struct student{                                              /* 定义存放学生信息的结构体*/
-	int num;
-	char name[8];
-	char sex;
-	int age;
+struct student                                               /* 定义存放学生信息的结构体*/
+{
+    int num;
+    char name[8];
+    char sex;
+    int age;
 };
 #define STRU struct student
 #define KEY age

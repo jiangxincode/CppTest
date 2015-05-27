@@ -29,11 +29,11 @@ double eps;
 
     if (fabs(t1[0]) < eps)                     /* 检查首项是否为0*/
     {
-      free(c);                                 /* 若首项为0，则释放空间并退出*/
-      free(r);
-      free(p);
-      printf("Fail to invert\n");
-      return(0);
+        free(c);                                 /* 若首项为0，则释放空间并退出*/
+        free(r);
+        free(p);
+        printf("Fail to invert\n");
+        return(0);
     }
 
     a = t1[0];                                /* 计算初值*/
@@ -44,16 +44,16 @@ double eps;
     {
         tmp = 0.0;
         for(j=1; j<k+2; j++)                  /* 求第一个累加和*/
-          tmp = tmp + c[k+1-j]*t2[j];
+            tmp = tmp + c[k+1-j]*t2[j];
         tmp=(tmp-t2[k+2])/a;
 
         for(i=0; i<k+1; i++)              /* 先存放在p中，因为c[i]的原值还要使用*/
-          p[i] = c[i] + tmp*r[k-i];
+            p[i] = c[i] + tmp*r[k-i];
         c[k+1] = -tmp;                    /* 新求出c[k+1]的值*/
 
         tmp = 0.0;
         for(j=1; j<k+2; j++)              /* 第二个累加和*/
-          tmp = tmp + r[k+1-j]*t1[j];
+            tmp = tmp + r[k+1-j]*t1[j];
         tmp = (tmp-t1[k+2])/a;
 
         for(i=0; i<k+1; i++)
@@ -65,7 +65,7 @@ double eps;
 
         a = 0.0;
         for(j=1; j<k+3; j++)              /* 更新a的值*/
-          a = a+ t1[j]*c[j-1];
+            a = a+ t1[j]*c[j-1];
         a = t1[0]-a;
         if(fabs(a) < eps)                 /* 若a过小，则退出函数。求逆过程不能继续*/
         {
@@ -85,12 +85,12 @@ double eps;
         mat[k*n] = -c[i]/a;              /* 逆矩阵的第一列*/
     }
     for(i=0; i<n-1; i++)                 /* 逆矩阵的其他元素*/
-    for(j=0; j<n-1; j++)
-    {
-        l = (i+1)*n+j+1;
-        k = i*n+j;
-        mat[l] = mat[k]+(c[i]*r[j] - r[n-2-i]*c[n-2-j])/a;
-    }
+        for(j=0; j<n-1; j++)
+        {
+            l = (i+1)*n+j+1;
+            k = i*n+j;
+            mat[l] = mat[k]+(c[i]*r[j] - r[n-2-i]*c[n-2-j])/a;
+        }
     free(c);                            /* 释放空间*/
     free(r);
     free(p);

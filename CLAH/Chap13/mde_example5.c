@@ -11,10 +11,10 @@ void main13mde_example5()
     rand=(double*)malloc(sizeof(double)*L);
     if(rand==NULL)
     {
-         printf("memory alloc failed.\n");
-         exit(0);
+        printf("memory alloc failed.\n");
+        exit(0);
     }
-    for(j=0;j<L;j++)
+    for(j=0; j<L; j++)
     {
         x=pi*j/L;
         rand[j]=sin(x);

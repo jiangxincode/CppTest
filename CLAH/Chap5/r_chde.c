@@ -17,35 +17,35 @@ int n;
     double *u,*y,t;
     if((a==NULL)||(b==NULL)||(x==NULL))            /* 检测输入的指针是否为空*/
     {
-      printf("The pointer is NULL\n");
-      return(0);
+        printf("The pointer is NULL\n");
+        return(0);
     }
     u = (double *)malloc(n*n*sizeof(double));        /* 分配空间并检测是否成功*/
     y = (double *)malloc(n*sizeof(double));
     if((u==NULL)||(y==NULL))
     {
-      printf("Memory alloc failed\n");
-      return(0);
+        printf("Memory alloc failed\n");
+        return(0);
     }
     i = r_chol(a,n,u,eps);                         /* 调用函数进行cholesky分解*/
     if(i==0)                                       /* 判断是否分解成功*/
     {
-      printf("Cholesky decomposition failed\n");
-      return(0);
+        printf("Cholesky decomposition failed\n");
+        return(0);
     }
     for(i=0; i<n; i++)                             /* 解出y*/
     {
-      t = 0.0;
-      for(k=0; k<i; k++)
-        t = t+u[i*n+k]*y[k];
-      y[i] = (b[i]-t)/u[i*n+i];
+        t = 0.0;
+        for(k=0; k<i; k++)
+            t = t+u[i*n+k]*y[k];
+        y[i] = (b[i]-t)/u[i*n+i];
     }
     for(i=n-1; i>=0; i--)                          /* 求出解向量x*/
     {
-      t = 0.0;
-      for(k=i+1; k<n; k++)
-        t = t+u[k*n+i]*x[k];
-      x[i] = (y[i] - t)/u[i*n+i];
+        t = 0.0;
+        for(k=i+1; k<n; k++)
+            t = t+u[k*n+i]*x[k];
+        x[i] = (y[i] - t)/u[i*n+i];
     }
     free(u);                                       /* 释放空间*/
     free(y);

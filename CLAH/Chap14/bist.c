@@ -10,23 +10,25 @@ static int bist(x,n,a)
 int *x,a;
 int n;
 {
-	int s,t,k;
-	s = 0;                             /* 设置初值*/
-	t = n-1;
-	do{
-		if(t==s)                      /* 只有一个元素*/
-		{
-			if(x[t] == a)
-				return(t);
-			else
-				return(-1);
-		}
-		k = (s+t)/2;                  /* 二分*/
-		if(x[k] < a)                  /* 比较*/
-			s = k;
-		else if(x[k] > a)
-			t = k;
-		else
-			return(k);                 /* 已经找到*/
-	}while(1);
+    int s,t,k;
+    s = 0;                             /* 设置初值*/
+    t = n-1;
+    do
+    {
+        if(t==s)                      /* 只有一个元素*/
+        {
+            if(x[t] == a)
+                return(t);
+            else
+                return(-1);
+        }
+        k = (s+t)/2;                  /* 二分*/
+        if(x[k] < a)                  /* 比较*/
+            s = k;
+        else if(x[k] > a)
+            t = k;
+        else
+            return(k);                 /* 已经找到*/
+    }
+    while(1);
 }

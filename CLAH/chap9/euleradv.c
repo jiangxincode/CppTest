@@ -17,7 +17,7 @@ int n,m;
     double *y1,*y2,x;
     int k=0,i;
     y1=(double*)malloc(sizeof(double)*n);   /* 微分方程预报值*/
-	y2=(double*)malloc(sizeof(double)*n);
+    y2=(double*)malloc(sizeof(double)*n);
     if(y1==NULL||y2==NULL)
     {
         printf("memory alloc failed.\n");
@@ -27,16 +27,17 @@ int n,m;
     {
         x=a+k*h;
         f(&y[k*n],y1,x);                   /* 预报*/
-		for(i=0;i<n;i++)
-			y1[i]=y[k*n+i]+h*y1[i];
-		f(y1,y2,x+h);                      /* 再预报*/
-		for(i=0;i<n;i++)
-			y2[i]=y[k*n+i]+h*y2[i];
-        for(i=0;i<n;i++)
-			y[(k+1)*n+i]=(y1[i]+y2[i])/2;  /* 计算此处的函数值*/
+        for(i=0; i<n; i++)
+            y1[i]=y[k*n+i]+h*y1[i];
+        f(y1,y2,x+h);                      /* 再预报*/
+        for(i=0; i<n; i++)
+            y2[i]=y[k*n+i]+h*y2[i];
+        for(i=0; i<n; i++)
+            y[(k+1)*n+i]=(y1[i]+y2[i])/2;  /* 计算此处的函数值*/
         k++;
     }
     while(k<m);
-	free(y1);free(y2);
+    free(y1);
+    free(y2);
     return (1);
 }

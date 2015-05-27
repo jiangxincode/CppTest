@@ -44,9 +44,10 @@ int n,itmax;
         xx[i*n1] = 1.0;
         for (j=1; j<n; j++)
             xx[i*n1+j] = x[i]*xx[i*n1+j-1];
-        xx[i*n1+n] = mu; mu=-mu;
+        xx[i*n1+n] = mu;
+        mu=-mu;
     }                                      /* 初始X矩阵构造*/
-                                           /* 下面开始迭代*/
+    /* 下面开始迭代*/
     int flagx;
     int times = 0;                         /* 记录迭代次数*/
     while (times<itmax && fabs(pre_mu-mu)<eps)

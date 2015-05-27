@@ -19,7 +19,7 @@ double *G;
     int i;
     double U1,U2;
     srand((unsigned)time(0));/*用系统时钟做种子*/
-    for(i=0;i<L;i=i+2)
+    for(i=0; i<L; i=i+2)
     {
         U1=rand()/(double)RAND_MAX;/*生成(0,1)随机数U1*/
         U2=rand()/(double)RAND_MAX;/*生成(0,1)随机数U2*/
