@@ -1,7 +1,7 @@
 ﻿#include <stdio.h>
 #include <math.h>
 
-double f1(double x)
+static double f1(double x)
 {
     return(-6+x*(3+x*(2*x-4)));
 }

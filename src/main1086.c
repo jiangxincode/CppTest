@@ -1,7 +1,7 @@
 ﻿#include <stdio.h>
 #include <math.h>
 
-double f(double x)
+static double f(double x)
 {
     return exp(3*x)+pow(x,7);
 }
