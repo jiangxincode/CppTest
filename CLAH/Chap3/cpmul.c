@@ -1,21 +1,19 @@
-/*=============================================================
-// 函 数 名：cpmul(a,n,b,m,c)
-// 功能描述：完成系数表示的复系数的多项式A与B相乘，结果系数放在c里
-// 输入参数：a（多项式A系数），n（系数个数）
-	     b（多项式B系数），m（系数个数）
-	     c（返回的多项式C的系数）
-// 返 回 值：整型数字。计算成功则返回1，否则返回0
-//==============================================================*/
-
 #include <stdio.h>
 #include <math.h>
-#include "../Chap2/c_comp.h"	/*复系数多项式的乘法函数需要调用系数和点表示相互转化的两个函数*/
-#include"p2c.c"
-#include"c2p.c"
+#include <stdlib.h>
 
-static int cpmul(a,n,b,m,c)
-struct c_comp *a,*b,*c;
-int n,m;
+#include "../Chap2/c_comp.h"	/*复系数多项式的乘法函数需要调用系数和点表示相互转化的两个函数*/
+#include "something.h"
+
+/**
+ * 函 数 名：cpmul(a,n,b,m,c)
+ * 功能描述：完成系数表示的复系数的多项式A与B相乘，结果系数放在c里
+ * 输入参数：a（多项式A系数），n（系数个数）
+ *            b（多项式B系数），m（系数个数）
+ *            c（返回的多项式C的系数）
+ * 返 回 值：整型数字。计算成功则返回1，否则返回0
+ */
+int cpmul(struct c_comp *a,int n,struct c_comp *b,int m,struct c_comp *c)
 {
     int i,k,nn;
     struct c_comp *aa,*bb,*cc,*ya,*yb,*yc;

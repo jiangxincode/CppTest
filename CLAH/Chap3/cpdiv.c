@@ -1,18 +1,18 @@
-/*=============================================================
-// 函 数 名：cpdiv(a,n,b,m,q,r)
-// 功能描述：完成系数表示的复系数的多项式A与B相除
-       商多项式系数放在q里，余式系数放在r里
-// 输入参数：a（多项式A系数），n（系数个数）
-       b（多项式B系数），m（系数个数）
-       q（商多项式Q系数），k（系数个数）k=max(n-m+1,0)
-       r（余式R系数），l（系数个数）需要l=n
-// 返 回 值：整型数字。计算成功则返回1，否则返回0
-//==============================================================*/
 #include <stdio.h>
+
 #include "../Chap2/c_comp.h"
-static int cpdiv(a,n,b,m,q,k,r,l)
-struct c_comp *a,*b,*q,*r;
-int n,m,k,l;
+
+/**
+ * 函 数 名：cpdiv(a,n,b,m,q,r)
+ * 功能描述：完成系数表示的复系数的多项式A与B相除
+       商多项式系数放在q里，余式系数放在r里
+ * 输入参数：a（多项式A系数），n（系数个数）
+ *            b（多项式B系数），m（系数个数）
+ *            q（商多项式Q系数），k（系数个数）k=max(n-m+1,0)
+ *            r（余式R系数），l（系数个数）需要l=n
+ * 返 回 值：整型数字。计算成功则返回1，否则返回0
+ */
+int cpdiv(struct c_comp *a,int n,struct c_comp *b,int m,struct c_comp *q,int k,struct c_comp *r,int l)
 {
     int i,j,kk,jj;
     struct c_comp t1,t2;

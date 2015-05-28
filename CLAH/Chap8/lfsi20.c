@@ -3,7 +3,7 @@
 #include "simps2.c"
 #include "lfsi2.c"
 static double f(double,double);
-main8lfsi20()
+int main8lfsi20()
 {
     double a,b,eps,s,h0;
     void  fy(double,double []);
@@ -16,6 +16,7 @@ main8lfsi20()
     s = lfsi2(a,b,10,eps,f,fy);            /* 调用连分式法函数进行积分*/
     printf(" lfsi2: z=%2.5f\n",s);         /* 打印积分结果*/
     getchar();
+    return 0;
 }
 static double f(x,y)                            /* 被积分的函数*/
 double x,y;

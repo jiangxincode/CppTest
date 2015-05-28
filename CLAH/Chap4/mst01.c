@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "smtr.c"
-main4mst01()
+int main4mst01()
 {
     int i,j;
     static double q[5][5];
@@ -24,4 +24,5 @@ main4mst01()
             printf("%2.5f ",a[i][j]);
         printf("\n");
     }
+    return 0;
 }

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "jcb2.c"
 #include "jcb1.c"
-main4jcb0()
+int main4jcb0()
 {
     int i,itmax=60;
     double eps=1e-7, u[5],u2[5];
@@ -31,4 +31,5 @@ main4jcb0()
         for (i=0; i<5; i++)
             printf("%9.6f \n",u[i]);
     }
+    return 0;
 }

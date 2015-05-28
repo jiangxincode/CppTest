@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <math.h>
+
 #include "../Chap2/c_comp.h"
-#include "cpmul.c"
-#include "cpdiv.c"
+#include "something.h"
+
 int main3cpmd0()
 {
     int i;

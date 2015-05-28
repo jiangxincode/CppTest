@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "smldl.c"
-main4smldl0()
+int main4smldl0()
 {
     int i,j;
     double L[5][5],D[5];
@@ -24,4 +24,5 @@ main4smldl0()
     printf("\n");
 
     getchar();
+    return 0;
 }

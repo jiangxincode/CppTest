@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "selt.c"
 #include "heap.c"
-main15selt0()
+int main15selt0()
 {
     int i,j,p[50],p1[50];
     printf("Data:\n");
@@ -31,4 +31,5 @@ main15selt0()
             printf("%d   ",p1[10*i+j]);
         printf("\n");
     }
+    return 0;
 }

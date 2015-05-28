@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "r_gaus.c"
 #include "r_gsjd.c"
-main5rgs0()
+int main5rgs0()
 {
     int i;
     double a1[4][4]=                         /* 调用函数会破坏矩阵数据，因此需要两份*/
@@ -29,4 +29,5 @@ main5rgs0()
     if(r_gsjd(a1,b1,x1,4,1e-16)!=0)           /* 调用高斯－约当消去法*/
         for(i=0; i<4; i++)                     /* 打印结果*/
             printf("x1(%d)=%7.5f\n",i,x1[i]);
+    return 0;
 }

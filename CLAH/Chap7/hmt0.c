@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "hmt.c"
 #include "hmte.c"
-main7hmt0()
+int main7hmt0()
 {
     double t,z;
     double x[10]= {0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,1.00};
@@ -22,4 +22,5 @@ main7hmt0()
     printf("hermite: t=%2.5f,z=%2.5f\n",t,z);      /* 打印结果*/
     z=hmte(x[0],0.1,y,dy,10,t);                     /* 埃尔米特等距插值*/
     printf("hermite: t=%2.5f,z=%2.5f\n",t,z);      /* 打印结果*/
+    return 0;
 }

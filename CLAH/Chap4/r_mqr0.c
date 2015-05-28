@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "something.h"
 #include "r_matmul.c"
-main4r_mqr0()
+int main4r_mqr0()
 {
     int i,j;
     double q[4][4],mat[4][3]= {{1.0,2.0,4.0},         /* æÿ’ÛA∏≥÷µ*/
@@ -36,5 +36,6 @@ main4r_mqr0()
             printf("%2.5f ",mat3[i][j]);
         printf("\n");
     }
+    return 0;
 }
 

@@ -2,7 +2,7 @@
 #include "lagr.c"
 #include "gasi.c"
 static double f1(),f2();
-main8inf20()
+int main8inf20()
 {
     double  z;
     printf("Laguerre:\n");
@@ -15,6 +15,7 @@ main8inf20()
     printf("f1: t1=%2.8f\n",z);
     z = gasi(-1.0e35,0.0,1.0e-9,10,f2);      /* 自适应高斯求积法计算第二个积分*/
     printf("f2: t2=%2.8f\n",z);
+    return 0;
 }
 
 static double f1(x)                               /* 被积函数1*/

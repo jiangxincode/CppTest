@@ -3,7 +3,7 @@
 
 #define STRU struct student
 #define KEY age
-#define KEY name                                             /* 调用哈希函数需要的宏*/
+//#define KEY name                                             /* 调用哈希函数需要的宏*/
 #define NULLTag "\0"
 #define DELTag "1\0"
 #define HashSize 29
@@ -14,8 +14,6 @@ struct student                                               /* 定义存放学�
     char sex;
     int age;
 };
-#define STRU struct student
-#define KEY age
 typedef struct student ElemType;
 typedef struct student* ElemTypeP;
 typedef ElemType hashlist[HashSize];

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "r_chde.c"
 #include "r_ldl.c"
-main5childl0()
+int main5childl0()
 {
     int i,j;
     double a[5][5]= { {24.0,7.0,5.0,2.0,-1.0},
@@ -19,4 +19,5 @@ main5childl0()
     printf("CHOLESKY:\n");                               /* 打印Cholesky分解法的结果*/
     for(i=0; i<5; i++)
         printf("%2.5f\n",x[i]);
+    return 0;
 }

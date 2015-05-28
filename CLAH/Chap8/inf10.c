@@ -2,7 +2,7 @@
 #include "leg1.c"
 #include "cheb.c"
 #include "gasi.c"
-main8inf10()
+int main8inf10()
 {
     double a,b,eps,h0,z;
     double f1(double);
@@ -16,6 +16,7 @@ main8inf10()
     printf("cheb: t=%7.6f\n",z);
     z=gasi(a,b,eps,10,f1);                     /* 用自适应高斯求积法积分*/
     printf("gasi: t=%7.6f\n",z);
+    return 0;
 }
 
 #include <math.h>

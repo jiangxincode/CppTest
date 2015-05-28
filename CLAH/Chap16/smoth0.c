@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "smoth.c"
-main16smoth0()
+int main16smoth0()
 {
     int i,n;
     double x[15] = {154.0,245.0,327.0,259.0,101.0,
@@ -14,4 +14,5 @@ main16smoth0()
     for (i=0; i<n; i++)
         printf("x(%2d)=%4.1f   y(%2d)=%4.1f\n",i,x[i],i,y[i]);
     printf("\n");
+    return 0;
 }

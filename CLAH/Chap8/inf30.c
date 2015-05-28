@@ -2,7 +2,7 @@
 #include "hemt.c"
 #include "gasi.c"
 static double f1(double);
-main8inf30()
+int main8inf30()
 {
     double z;
     printf("Hermite:\n");                      /* 埃尔米特-高斯求积法*/
@@ -11,6 +11,7 @@ main8inf30()
     printf("Gauss:\n");                        /* 自适应高斯求积法*/
     z = gasi(-1.0e35,1.0e35,1.0e-9,10,f1);
     printf("t=%2.8f\n",z);
+    return 0;
 }
 
 static double f1(x)                                  /* 被积函数*/

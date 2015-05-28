@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include "rpmva.c"
-#include "rpva.c"
+
+#include "something.h"
+
 int main3rpmdva0()
 {
     int i;

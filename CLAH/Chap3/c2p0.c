@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <math.h>
+
 #include "../Chap2/c_comp.h"
-#include "c2p.c"
-#include "p2c.c"
+#include "something.h"
 
 int main3c2p0()
 {

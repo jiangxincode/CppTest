@@ -3,7 +3,7 @@
 #include "jaco.c"
 #include "gssd.c"
 #include "orelax.c"
-main5gsiter0()
+int main5gsiter0()
 {
     int i,j;
     double a[5][5]= {{24.0,7.0,5.0,2.0,-1.0},
@@ -44,4 +44,5 @@ main5gsiter0()
         for(i=0; i<5; i++)
             printf("x(%d) = %2.5f\n",i,x[i]);
     }
+    return 0;
 }

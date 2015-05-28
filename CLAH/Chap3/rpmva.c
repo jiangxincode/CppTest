@@ -1,17 +1,15 @@
 #include <math.h>
 #include <stdlib.h>
-#include <stdlib.h>
+#include <stdio.h>
 
-/*=============================================================
-// 函 数 名：rpmva(a,n,x,m,y)
-// 功能描述：利用多组求值方法求解一元多项式的值
-// 输入参数：a（多项式系数），n（多项式阶次）
-//        x（指定的值）,m（指定的值的个数）,y（返回的m个多项式值）
-// 返 回 值：若成功则返回1,否则返回0
-//==============================================================*/
-static int rpmva(a,n,x,m,y)
-int n,m;
-double *a,*x,*y;
+/**
+ * 函 数 名：rpmva(a,n,x,m,y)
+ * 功能描述：利用多组求值方法求解一元多项式的值
+ * 输入参数：a（多项式系数），n（多项式阶次）
+ *            x（指定的值）,m（指定的值的个数）,y（返回的m个多项式值）
+ * 返 回 值：若成功则返回1,否则返回0
+ */
+int rpmva(double *a,int n,double *x,int m,double *y)
 {
     int i,j,k,nn,nk,kk,l,count,tail;
     double *ax,*b;

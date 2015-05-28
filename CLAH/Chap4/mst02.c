@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "mhhbg.c"
-mainmst02()
+int mainmst02()
 {
     int i,j;
     static double q[5][5];
@@ -24,4 +24,5 @@ mainmst02()
             printf("%2.5f ",b[i][j]);
         printf("\n");
     }
+    return 0;
 }

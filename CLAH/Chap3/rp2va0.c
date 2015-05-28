@@ -1,6 +1,8 @@
 #include <stdio.h>
-#include "rp2va.c"
-main3rp2va0()
+
+#include "something.h"
+
+int main3rp2va0()
 {
     double r;
     static double a[4][3]= {{1.0,2.0,3.0},{2.0,3.0,4.0},
@@ -8,7 +10,8 @@ main3rp2va0()
     };
 
     printf("\n");
-    r=rp2va(a,4,3,1.6,-1.4); 	/* 调用函数进行求解*/
+    r=rp2va(a[0],4,3,1.6,-1.4); 	/* 调用函数进行求解*/
     printf("A(1.60,-1.4)=%2.5f\n",r);
     printf("\n");
+    return 0;
 }

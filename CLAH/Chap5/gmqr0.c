@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "something.h" /* QR分解的函数*/
 #include "gmqr.c"
-main5gmqr0()
+int main5gmqr0()
 {
     int i;
     double x[4],a[5][4]= {{1.0,2.0,4.0,1.5},         /* 矩阵A赋值*/
@@ -17,4 +17,5 @@ main5gmqr0()
         for(i=0; i<4; i++)
             printf("x(%d) = %5.2f\n",i,x[i]);
     }
+    return 0;
 }

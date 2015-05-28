@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "mhdqr.c"
-main4mhdqr0()
+int main4mhdqr0()
 {
     int i,itmax=60;
     double eps=1e-7;
@@ -19,4 +19,5 @@ main4mhdqr0()
         for(i=0; i<5; i++)
             printf("%9.6f + j(%9.6f)\n",u[i],v[i]);
     }
+    return 0;
 }

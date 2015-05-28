@@ -4,7 +4,7 @@
 #include "mont2.c"
 static void  fy(double,double []);
 static double f(double,double);
-main8mount20()
+int main8mount20()
 {
     double a,b,eps,s,h0;
 
@@ -17,6 +17,7 @@ main8mount20()
     s = mont2(a,b,a,b,f);                  /* 调用蒙特卡洛积分法进行积分*/
     printf("mont2: s=%2.5f\n",s);         /* 打印积分结果*/
     getchar();
+    return 0;
 }
 static double f(x,y)                            /* 被积分的函数*/
 double x,y;

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "popo.c"
 #include "qcks.c"
-main15qck0()
+int main15qck0()
 {
     int i,j,p[50],p1[50];
     printf("Data:\n");
@@ -31,4 +31,5 @@ main15qck0()
             printf("%d   ",p[10*i+j]);
         printf("\n");
     }
+    return 0;
 }

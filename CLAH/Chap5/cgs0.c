@@ -2,7 +2,7 @@
 #include "../Chap2/c_comp.h"
 #include "c_gaus.c"
 #include "c_gsjd.c"
-main5cgs0()
+int main5cgs0()
 {
     int i,j;
     struct c_comp a[3][3],a1[3][3],b[3],b1[3],x[3],x1[3];  /* 复数结构体数组*/
@@ -49,4 +49,5 @@ main5cgs0()
     if(c_gsjd(a,b,x,3,1e-16)!=0)                          /* 高斯－约当消去法*/
         for(i=0; i<3; i++)
             printf("x2(%d)=%2.5f +(%2.5fi)\n",i,x[i].rmz,x[i].imz); /* 打印结果*/
+    return 0;
 }

@@ -1,22 +1,24 @@
-/*=============================================================
-// 函 数 名：c2p (a,n,y)
-// 功能描述：将多项式由系数表示转化为点表示
-// 输入参数：a（多项式系数），n（系数个数）、y（计算出的点值）
-// 返 回 值：整型数字。计算成功则返回1，否则返回0
-//==============================================================*/
 #include <stdio.h>
 #include <math.h>
-#include"../Chap2/c_comp.h"
+#include <stdlib.h>
+
+#include "../Chap2/c_comp.h"
+
 static int c2p0();
-static int c2p(a,n,y)
-int n;
-struct c_comp *a,*y;
+
+/**
+ * 函 数 名：c2p (a,n,y)
+ * 功能描述：将多项式由系数表示转化为点表示
+ * 输入参数：a（多项式系数），n（系数个数）、y（计算出的点值）
+ * 返 回 值：整型数字。计算成功则返回1，否则返回0
+ */
+int c2p(struct c_comp *a,int n,struct c_comp *y)
 {
-    int i,k,nn;
+    int k,nn;
 
     k = log(n-0.5)/log(2.0)+1;        /* 求出k，使2^k>=n>2^(k-1) */
     nn = 1;
-    for(i=0; i<k; i++)          	/* 判断n是否是2的整数幂，不是的话退出程序*/
+    for(int i=0; i<k; i++)          	/* 判断n是否是2的整数幂，不是的话退出程序*/
         nn = nn<<1;
     if(nn != n)
     {
@@ -27,9 +29,7 @@ struct c_comp *a,*y;
     return(k);
 }
 
-static int c2p0(a,n,y)
-int n;
-struct c_comp *a,*y;
+static int c2p0(struct c_comp *a,int n,struct c_comp *y)
 {
     int i,j,k;
     struct c_comp xn,x,t;

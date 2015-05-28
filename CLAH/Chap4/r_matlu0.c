@@ -3,7 +3,7 @@
 #include "r_mlu.c"
 #include "r_matmul.c"
 
-main4r_matlu0()
+int main4r_matlu0()
 {
     int i,j,n;
     double p[4][4],q[4][4],l[4][4],u[4][4],mat1[4][4], mat2[4][4],mat3[4][4];
@@ -32,4 +32,5 @@ main4r_matlu0()
         printf("\n");
     }
     printf("\n");
+    return 0;
 }

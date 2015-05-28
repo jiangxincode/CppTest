@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "cout.c"
 #include "rads.c"
-main15Inst0()
+int main15Inst0()
 {
     int i,j,p[50],p1[50],y[50];
     printf("Data:\n");
@@ -31,4 +31,5 @@ main15Inst0()
             printf("%d   ",p1[10*i+j]);
         printf("\n");
     }
+    return 0;
 }

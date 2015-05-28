@@ -5,7 +5,7 @@
 #include "Fsech.c"
 #include "something.h"
 
-main14sech0()
+int main14sech0()
 {
     int i,q,a;
     long int k;
@@ -54,5 +54,6 @@ main14sech0()
     }
     while(q);
     fclose(fp);
+    return 0;
 }
 

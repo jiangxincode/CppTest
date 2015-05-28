@@ -3,7 +3,7 @@
 #include "mmas.c"
 #include "bist.c"
 #include "qcks.c"
-main14mima0()
+int main14mima0()
 {
     int i,j,p[50],ma,mi,m12;
     printf("Data:\n");
@@ -26,4 +26,5 @@ main14mima0()
     qcks(p,0,49);                                 /* ≈≈–Ú*/
     i = bist(p,50,m12);                           /* ∂˛∑÷≤È’“*/
     printf("m12's position in the ordered sqeu is: %d\n",i);
+    return 0;
 }

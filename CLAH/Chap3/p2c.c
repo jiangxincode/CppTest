@@ -1,16 +1,18 @@
-/*=============================================================
-// 函 数 名：p2c (y,n,a)
-// 功能描述：将多项式由点表示转化为系数表示
-// 输入参数：y（提供的点值），n（y的长度），a（计算得到的多项式系数）
-// 返 回 值：整型数字。计算成功则返回1，否则返回0
-//==============================================================*/
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
+
 #include "../Chap2/c_comp.h"
+
 static int p2c1();
-static int p2c(y,n,a)
-int n;
-struct c_comp *a,*y;
+
+/**
+ * 函 数 名：p2c (y,n,a)
+ * 功能描述：将多项式由点表示转化为系数表示
+ * 输入参数：y（提供的点值），n（y的长度），a（计算得到的多项式系数）
+ * 返 回 值：整型数字。计算成功则返回1，否则返回0
+ */
+int p2c(struct c_comp *y,int n,struct c_comp *a)
 {
     int i,j,k,nn;
     /* 首先声明一个要调用的子函数*/
@@ -35,9 +37,7 @@ struct c_comp *a,*y;
     return(j);
 }
 
-static int p2c1(y,n,a)
-int n;
-struct c_comp *a,*y;
+static int p2c1(struct c_comp *y,int n,struct c_comp *a)
 {
     int i,j,k;
     struct c_comp xn,x,t;

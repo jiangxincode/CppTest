@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "bmqr.c"
-main5bmqr0()
+int main5bmqr0()
 {
     int i,j;
     double a[5][5]= {{0.81,0.10,0.16,0.14,0.66},
@@ -16,4 +16,5 @@ main5bmqr0()
         for(i=0; i<5; i++)
             printf("x(%d) = %2.5f\n",i,x[i]);
     }
+    return 0;
 }

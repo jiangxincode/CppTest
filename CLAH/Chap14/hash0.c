@@ -13,7 +13,7 @@ void ElemNULL(ElemType *a);                                   /* 将元素a设成空，
 #include "string.h"
 #include "something.h"
 
-main14hash0()
+int main14hash0()
 {
     int i,m;
     static ElemType x[16]= {{101,"Zhao",'M',19},

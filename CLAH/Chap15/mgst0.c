@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "mgst.c"
-main15mgst0()
+int main15mgst0()
 {
     int i,j,p[50];
     printf("Data:\n");
@@ -21,4 +21,5 @@ main15mgst0()
             printf("%d   ",p[10*i+j]);
         printf("\n");
     }
+    return 0;
 }

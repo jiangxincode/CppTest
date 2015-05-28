@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "r_chol.c"
-main4r_chol0()
+int main4r_chol0()
 {
     int i,j;
     double u[5][5];
@@ -19,4 +19,5 @@ main4r_chol0()
     }
 
     getchar();
+    return 0;
 }

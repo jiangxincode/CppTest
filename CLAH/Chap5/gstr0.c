@@ -2,7 +2,7 @@
 #include "b_gsjd.c"
 #include "r_trzg.c"
 #include "r_gsband.c"
-main5gstr0()
+int main5gstr0()
 {
     int i,j;
     double a[4][4]=
@@ -36,4 +36,5 @@ main5gstr0()
     if(r_gsband(a,b,x,4,1,1e-16)!=0)
         for(i=0; i<4; i++)
             printf("x(%d)=%2.5f\n",i,x[i]);
+    return 0;
 }

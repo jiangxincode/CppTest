@@ -2,7 +2,7 @@
 #include "atken.c"
 #include "atkene.c"
 #include "lagr7.c"
-main7atken0()
+int main7atken0()
 {
     double t,h,z,eps;
     double x[10]= {0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,1.00};
@@ -26,4 +26,5 @@ main7atken0()
     printf("atken: t=%2.5f,z=%2.5f\n",t,z);           /* 打印结果*/
     z=atkene(x[0],h,y,10,t,eps);                      /* 埃特金等距插值*/
     printf("atkene: t=%2.5f,z=%2.5f\n",t,z);           /* 打印结果*/
+    return 0;
 }

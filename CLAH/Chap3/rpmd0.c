@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include "rpmul.c"
-#include "rpdiv.c"
+
+#include "something.h"
+
 int main3rpmd0()
 {
     int i;

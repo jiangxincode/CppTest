@@ -2,7 +2,7 @@
 #include "lagr1.c"
 #include "lagr2.c"
 #include "lagr7.c"
-main7lagr0()
+int main7lagr0()
 {
     double t,z;
     double x[10]= {0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,1.00};
@@ -24,4 +24,5 @@ main7lagr0()
     printf("Lagrange 2: t=%2.5f,z=%2.5f\n",t,z);      /* 打印结果*/
     z=lagr7(x,y,10,t);                                /* 拉格朗日七次插值*/
     printf("Lagrange 7: t=%2.5f,z=%2.5f\n",t,z);      /* 打印结果*/
+    return 0;
 }
