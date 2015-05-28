@@ -10,7 +10,7 @@
  *             y 函数变量
  * 返 回 值：贝塔函数的值
  */
-static double beta(double x,double y)
+double beta(double x,double y)
 {
     double t;
     if((x<0) || (y<0))                           /* 判断自变量是否满足要求*/

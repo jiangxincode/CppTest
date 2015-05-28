@@ -13,4 +13,4 @@ double rpva(double *a,int n,double x0);
 int rpmva(double *a,int n,double *x,int m,double *y);
 double rp2va(double *a,int m,int n,double x,double y);
 
-#endif // _CHAP3_SOMETHING_H_
+#endif //_CHAP3_SOMETHING_H_

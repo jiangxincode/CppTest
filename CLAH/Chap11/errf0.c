@@ -1,5 +1,7 @@
 #include <stdio.h>
-#include "errf.c"
+
+#include "something.h"
+
 int main11errf0()
 {
     int i,j;

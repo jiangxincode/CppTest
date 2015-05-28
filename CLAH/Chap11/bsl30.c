@@ -1,5 +1,7 @@
 #include <stdio.h>
+
 #include "something.h"
+
 int main11bsl30()
 {
     int n,i;

@@ -4,17 +4,17 @@
 //输入参数：a（简单随机样本的在每个区间内的个数）
 //	    e（理想分布情况下在每个区间内的频数）
 //	    r（区间的分割个数）
-//      k（已知分布所含未知参数的个数）
-//      v（统计量自由度的输出值）
-//      c2（统计量的值）
-//      alpha（显著性标准）
+ *      k（已知分布所含未知参数的个数）
+ *      v（统计量自由度的输出值）
+ *      c2（统计量的值）
+ *      alpha（显著性标准）
 //返回值：1（符合分布），0（不符合分布）
 =========================================================*/
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "chii.c"
+#include "../Chap11/something.h"
 
 static int c2test(a,e,r,k,v,c2,alpha)
 double *c2,alpha;

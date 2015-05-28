@@ -1,5 +1,7 @@
 #include <stdio.h>
-#include "expi.c"
+
+#include "something.h"
+
 int main11expi0()
 {
     int i,j,ni;

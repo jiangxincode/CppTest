@@ -1,13 +1,13 @@
 #include <math.h>
 /*======================================================
-// 函数名：tzi2
-// 功能描述：自适应梯形求积分
-// 输入参数：a 积分下限，b 积分上限,
-//           n0 初始划分数
-//           eps 精度要求
-//           h0 最小步长
-//           f 指向被积函数的指针
-// 返回值：  积分近似值
+ * 函数名：tzi2
+ * 功能描述：自适应梯形求积分
+ * 输入参数：a 积分下限，b 积分上限,
+ *           n0 初始划分数
+ *           eps 精度要求
+ *           h0 最小步长
+ *           f 指向被积函数的指针
+ * 返回值：  积分近似值
 =========================================================*/
 static double subtz(double x0,double x1,double y0,double y1,double h,double t,double eps,double h0,double (*f)(double));
 double tzi2(double a,double b,int n0,double eps,double h0,double (*f)(double))

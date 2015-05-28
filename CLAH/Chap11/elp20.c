@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include <math.h>
+
 #include "something.h"
-#include "RD.c"
+
 int main11elp20()
 {
     int i;

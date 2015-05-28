@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <math.h>
+
 #include "something.h"
-#include "beta.c"
+
 int main11gramma0()
 {
     int i;

@@ -1,5 +1,7 @@
 #include <stdio.h>
-#include "gamm2.c"
+
+#include "something.h"
+
 int main11gramm20()
 {
     int i,j;

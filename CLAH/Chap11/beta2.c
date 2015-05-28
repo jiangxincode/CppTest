@@ -1,21 +1,24 @@
-/*=============================================================
-// 函 数 名：beta2
-// 功能描述：求解不完全贝塔积分的值
-// 输入参数：a 自变量a的值。要求a>0。
-//           b 自变量b的值。要求b>0。
-//           x 自变量x的值，要求0<=x<=1。
-//         e1 精度要求，当两次递推的值变化率小于e1时，认为已收敛
-// 返 回 值：不完全贝塔函数的值
-//==============================================================*/
 #include <stdio.h>
 #include <math.h>
+
 #include "something.h"
+
 #define NMAX 100                         /* 迭代的最大次数*/
 #define EULER 0.5772156649
 #define FPMIN 1.0e-30                    /* 为防止除0使用的常数*/
 
-static double subcf(double, double, double, double);                          /* 计算连分式级数需要的变量和函数*/
-static double beta2(double a,double b,double x,double e1)
+static double subcf(double a,double b,double x,double e1); /* 计算连分式级数需要的变量和函数*/
+
+/**
+ * 函 数 名：beta2
+ * 功能描述：求解不完全贝塔积分的值
+ * 输入参数：a 自变量a的值。要求a>0。
+ *            b 自变量b的值。要求b>0。
+ *            x 自变量x的值，要求0<=x<=1。
+ *          e1 精度要求，当两次递推的值变化率小于e1时，认为已收敛
+ * 返 回 值：不完全贝塔函数的值
+ */
+double beta2(double a,double b,double x,double e1)
 {
     double t;
 
@@ -48,8 +51,7 @@ static double beta2(double a,double b,double x,double e1)
     }
 }
 
-static double subcf(a,b,x,e1)
-double a,b,x,e1;
+static double subcf(double a,double b,double x,double e1)
 {
     int n;
     double t,del,an,c,d;

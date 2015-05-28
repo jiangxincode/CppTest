@@ -1,5 +1,7 @@
 #include <stdio.h>
-#include "chii.c"
+
+#include "something.h"
+
 int main11chii0()
 {
     int i,n;

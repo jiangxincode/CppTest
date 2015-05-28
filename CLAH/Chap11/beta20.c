@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "beta2.c"
+#include "something.h"
+
 int main11beta20()
 {
     int i,j,k;
