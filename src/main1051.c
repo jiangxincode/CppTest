@@ -9,7 +9,9 @@ int main1051()
     p=fabs(x);
 
     if(p>0.1&&p<1)
+    {
         m=p;
+    }
     else
     {
         while(p>=1)
@@ -28,9 +30,13 @@ int main1051()
     }
 
     if(x>=0)
+    {
         printf("%lfe%d",m,n);
+    }
     else
+    {
         printf("-%lfe%d",m,n);
+    }
 
     return 0;
 }

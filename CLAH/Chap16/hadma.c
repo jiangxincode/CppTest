@@ -14,23 +14,32 @@ double *x,*y;
 {
     int i,j,k,nn;
     double t;
-
     k = log(n-0.5)/log(2.0)+1;                  /* 求出k，使2^k>=n>2^(k-1) */
     nn = 1;			                    /* 判断n是否是2的整数幂，不是的话退出程序*/
+
     for(i=0; i<k; i++)
+    {
         nn = nn<<1;
+    }
+
     if(nn != n)
     {
         printf("n should be 2^k.\n");
         return(0);
     }
+
     j = hadma1(y,n,x);		                       /* 调用子函数求解求和符号中的部分*/
+
     if(j)
     {
         t = 1.0/sqrt(n);
+
         for(i=0; i<n; i++)		                       /* 将子函数返回的结果除以n^0.5*/
+        {
             x[i] *= t;
+        }
     }
+
     return(j);
 }
 static int hadma1(x,n,y)
@@ -39,15 +48,18 @@ double *x,*y;
 {
     int i,j,k;
     double t;
+
     if(n==1)
     {
         /* 当序列长度为1时，沃尔什变换是它本身*/
         y[0] = x[0];
         return(1);
     }
+
     k = n>>1;		                     /* k是n的一半，即两个小规模问题需要分配空间大小*/
     i = hadma1(x,k,y);                 /* 递归调用此函数，变换前一半*/
     j = hadma1(x+k,k,y+k); 	             /* 递归调用此函数，变换后一半*/
+
     if(i && j)                                /* 将得到的两部分序列综合起来*/
     {
         for(i=0; i<k; i++)
@@ -58,5 +70,6 @@ double *x,*y;
             y[i] = y[i] + t;
         }
     }
+
     return(1);
 }

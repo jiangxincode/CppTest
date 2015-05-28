@@ -23,20 +23,25 @@ double eps;
         printf("The pointer exis NULL\n");
         return(0);
     }
+
     exjs = malloc(n*sizeof(int));          /* 为列交换记录分配空间并检测是否成功*/
+
     if(exjs == NULL)
     {
         printf("Memory alloc failed\n");
         return(0);
     }
+
     for(k=0; k<n; k++)
     {
         d = 0.0;
+
         for(i=k; i<n; i++)                              /* 此循环用于选取主元*/
             for(j=k; j<n; j++)
             {
                 l = i*n + j;
                 tmp = a[l].rmz*a[l].rmz + a[l].imz*a[l].imz;  /* 求元素的模*/
+
                 if(tmp>d)
                 {
                     d = tmp;
@@ -44,15 +49,17 @@ double eps;
                     exjs[k] = j;
                 }
             }
+
         if(d < eps)                                     /* 判断主元是否过小*/
         {
             free(exjs);
             printf("failed.\n");
             return(0);                                    /* 若主元过小则退出程序*/
         }
+
         if(exis!=k)                                       /* 判断是否需要行交换*/
         {
-            for (j=0; j<n; j++)                           /* 进行行交换*/
+            for(j=0; j<n; j++)                            /* 进行行交换*/
             {
                 l = k*n + j;
                 v = exis*n + j;
@@ -63,6 +70,7 @@ double eps;
                 a[l].imz = a[v].imz;
                 a[v].imz = tmp;
             }
+
             tmp = b[k].rmz;                              /* 常数向量也要进行行交换*/
             b[k].rmz = b[exis].rmz;
             b[exis].rmz = tmp;
@@ -70,6 +78,7 @@ double eps;
             b[k].imz = b[exis].imz;
             b[exis].imz = tmp;
         }
+
         if(exjs[k]!=k)                                   /* 判断是否需要列交换*/
             for(i=0; i<n; i++)                           /* 进行列交换*/
             {
@@ -82,14 +91,17 @@ double eps;
                 a[l].imz = a[v].imz;
                 a[v].imz = tmp;
             }
+
         l = k*n + k;                               /* 取共轭将复数除法转化为乘法*/
         a[l].rmz = a[l].rmz/d;
         a[l].imz = -a[l].imz/d;
+
         for(j=k+1; j<n; j++)           /* 归一化计算的第二步，需要使用复数的乘法*/
         {
             v = k*n + j;
             c_comp_product(&a[v],&a[l],&a[v]);
         }
+
         c_comp_product(&b[k],&a[l],&b[k]);            /* 常数向量的归一化计算*/
 
         for(i=k+1; i<n; i++)                          /* 消元计算*/
@@ -100,25 +112,31 @@ double eps;
                 a[i*n+j].rmz = a[i*n+j].rmz - c_tmp.rmz;
                 a[i*n+j].imz = a[i*n+j].imz - c_tmp.imz;
             }
+
             c_comp_product(&a[i*n+k], &b[k], &c_tmp);
             b[i].rmz = b[i].rmz - c_tmp.rmz;           /* 常数向量也要进行消元计算*/
             b[i].imz = b[i].imz - c_tmp.imz;
         }
     }
+
     x[n-1].rmz = b[n-1].rmz;                       /* 第一个解可直接读出*/
     x[n-1].imz = b[n-1].imz;
+
     for(i=n-2; i>=0; i--)                          /* 继续进行回代，求出解向量*/
     {
         c_tmp.rmz = 0;
         c_tmp.imz = 0;
+
         for(j=i+1; j<n; j++)
         {
             c_comp_product(&a[i*n+j], &x[j], &c_tmp2);
             c_comp_plus(&c_tmp2,&c_tmp,&c_tmp);
         }
+
         x[i].rmz = b[i].rmz-c_tmp.rmz;
         x[i].imz = b[i].imz-c_tmp.imz;
     }
+
     for(k=n-1; k>=0; k--)                      /* 依照列交换的历史进行结果恢复*/
     {
         if(exjs[k]!=k)                             /* 判断是否需要恢复*/
@@ -131,6 +149,7 @@ double eps;
             x[exjs[k]].imz = tmp;
         }
     }
+
     free(exjs);                                  /* 释放分配的空间*/
     return(1);                                 /* 求解成功，返回1*/
 }

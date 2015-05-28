@@ -15,17 +15,21 @@ int * uab_ran;
     int i;
     double *u_ran;
     u_ran=(double *)malloc(L*sizeof(double));
+
     if(u_ran==NULL)
     {
         printf("memory alloc failed.\n");
         return(0);
     }
+
     srand((unsigned)time(0));                     /* 用系统时钟做种子*/
+
     for(i=0; i<L; i++)
     {
         u_ran[i]=rand()/(double)RAND_MAX;         /* 生成(0,1)随机数，L次*/
         uab_ran[i]=(int)(u_ran[i]*(b-a+1))+a;
     }
+
     return(1);
 }
 

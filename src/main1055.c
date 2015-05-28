@@ -40,7 +40,10 @@ int is_armstrong(int num)
     {
         return 1;
     }
-    else return 0;
+    else
+    {
+        return 0;
+    }
 }
 
 int main1055()

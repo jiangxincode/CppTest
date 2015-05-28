@@ -21,12 +21,16 @@ static int detele(PS *p1,int m,PS *p2,int n)
     {
         for(j=0; j<n; j++)
             if(p1[i].id==p2[j].id)
+            {
                 break;
+            }
 
         if(j<n)
         {
             for(k=i; k<p-1; k++)
+            {
                 p1[k]=p1[k+1];
+            }
 
             m--;
             i--;
@@ -45,7 +49,9 @@ static int merge(PS *p1,int m,PS *p2,int n)
     {
         for(j=0; j<d; j++)
             if(p2[i].id==p1[j].id)
+            {
                 break;
+            }
 
         if(j==d)
         {
@@ -120,7 +126,9 @@ int main1155()
     d=detele(a,5,b,2);
 
     for(j=0; j<d; j++)
+    {
         p[j]=a[j];
+    }
 
     printf("a\n");
     display(a,d);

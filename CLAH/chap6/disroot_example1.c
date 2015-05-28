@@ -5,12 +5,10 @@
 static double f(double);
 int main6disroot1()
 {
-
     double a,b,eps,root;
     a=0.0;
     b=1.0;
     eps=0.00001;              /* 区间和精度要求*/
-
     printf("    a          (a+b)/2         b\n\n");
     root=disroot(a,b,f,eps);              /* 二分法求根并打印结果*/
     printf("\nThe root is  %1.7f\n",root);

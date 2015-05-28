@@ -26,13 +26,21 @@ int *a,*e,r,k,*v;
     *c2=0;
 
     for(i=0; i<r; i++)
-        *c2=*c2+(double)((a[i]-e[i])*(a[i]-e[i]))/(double)(e[i]);//计算统计量的值
+    {
+        *c2=*c2+(double)((a[i]-e[i])*(a[i]-e[i]))/(double)(e[i]);    //计算统计量的值
+    }
+
     s=chii(*c2,*v);//调用卡方函数计算函数值
     printf("s=%1.8f\n",s);
+
     if(s>alpha)//如果返回值是小值，则不符合已知分布
+    {
         return 1;
+    }
     else
+    {
         return 0;
+    }
 }
 
 

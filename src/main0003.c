@@ -14,12 +14,17 @@ void jx_float_exp(char *str,int n)
     strcpy(a,str);
 
     for(i=0; a[i]; i++)
-        if(a[i]=='.')k=i;
+        if(a[i]=='.')
+        {
+            k=i;
+        }
 
     m=i-k-1;
 
     for(i=k; i<k+m; i++)  //95.123>>95123
+    {
         a[i]=a[i+1];
+    }
 
     h=i;//h代表总的位数
 
@@ -91,7 +96,9 @@ void jx_float_exp(char *str,int n)
         for(j=0; ; j++)
         {
             if(b[j]!=0)
+            {
                 break;
+            }
         }
 
         for(i=h-1; i>=j; i--)

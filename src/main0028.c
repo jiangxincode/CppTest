@@ -72,7 +72,10 @@ double static calculate(char str[])
                     op.top--;
                     od.data[od.top]=calvalue(od1,od2,tempop);//计算出结果后入值栈
 
-                    if(op.top==-1)break;//如果操作符栈为空，跳出循环
+                    if(op.top==-1)
+                    {
+                        break;    //如果操作符栈为空，跳出循环
+                    }
                 }
 
                 op.top--;//左括号pop出来
@@ -101,7 +104,10 @@ double static calculate(char str[])
                     op.top--;
                     od.data[od.top]=calvalue(od1,od2,tempop);//计算结果后入值栈
 
-                    if(op.top==-1)break;//如果栈为空，跳出循环
+                    if(op.top==-1)
+                    {
+                        break;    //如果栈为空，跳出循环
+                    }
                 }
 
                 op.top++;
@@ -127,13 +133,21 @@ double static calculate(char str[])
 int static level(char op)//判断操作符优先等级
 {
     if(op == '+' || op == '-')//若为+、-，等级为1
+    {
         return 1;
+    }
     else if(op == '*' || op == '/' || op == '%')
-        return 2;         //若为*、/、%,等级为2
+    {
+        return 2;    //若为*、/、%,等级为2
+    }
     else if(op == '(')
-        return -1 ;      //若为(,等级为-1
+    {
+        return -1 ;    //若为(,等级为-1
+    }
     else
-        return -3;       //其他等级为-3；
+    {
+        return -3;    //其他等级为-3；
+    }
 }
 double static calvalue(double od1,double od2,char tempop)//计算
 {
@@ -157,10 +171,11 @@ double static calvalue(double od1,double od2,char tempop)//计算
 
     return 0;
 }
-void main0028()
+int main0028()
 {
     char str[MAXSIZE];//定义str数组存放数学表达式
     printf("输入算术表达式：\n");
     gets(str);       //从控制台输入算数表达式
     printf("结果是：%lf\n",calculate(str));//调用calculate函数，计算结果
+    return 0;
 }

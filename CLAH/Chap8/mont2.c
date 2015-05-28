@@ -10,13 +10,14 @@
 =========================================================*/
 static double mont2(x0,x1,y0,y1,f)
 double x0,x1,y0,y1;
-double (*f)();
+double(*f)();
 {
     int k,n;
     double z,p,x,y;
     unsigned long r;            /* 随机数变量*/
     n = 1000;                  /* 产生1000组随机数*/
     z = 0.0;
+
     for(k=0; k<n; k++)
     {
         r = rand();               /* 生成随机数*/
@@ -27,6 +28,7 @@ double (*f)();
         y = y0+(y1-y0)*p;
         z = z+(*f)(x,y)/n;          /* 求和*/
     }
+
     z = z*(y1-y0)*(x1-x0);
     return(z);
 }

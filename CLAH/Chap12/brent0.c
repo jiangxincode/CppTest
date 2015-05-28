@@ -12,12 +12,14 @@ int main12brent0()
     eps = 1e-10;
     nmin = 0;
     printf("brent serch:\n");
+
     for(i=1; i<80; i++)
     {
         a = i;
         b = i+1;
         brake(&a,&b,&c,f);
         fx = brent(a,b,c,f,&xopt,eps,itmax);
+
         if(nmin == 0)
         {
             xmin[0] = xopt;
@@ -27,9 +29,13 @@ int main12brent0()
         else
         {
             iflag = 0;
+
             for(j=0; j<nmin; j++)                           /* 寻找是否已经有相同的极小值*/
                 if(fabs(xopt-xmin[j]) < 0.01*xopt)
+                {
                     iflag = 1;
+                }
+
             if(iflag==0)
             {
                 xmin[nmin++] = xopt;
@@ -37,6 +43,7 @@ int main12brent0()
             }
         }
     }
+
     return 0;
 }
 

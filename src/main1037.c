@@ -11,7 +11,9 @@ int main1037()
         printf("S=%f",sqrt(s*(s-a)*(s-b)*(s-c)));
     }
     else
+    {
         printf("error");
+    }
 
     return 0;
 }

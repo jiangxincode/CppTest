@@ -35,22 +35,31 @@ int n,max;
     {
         num++;
         f(x0,f0,fi,h);                        /* 计算方程组值以及偏移h后的值*/
-
         dis=0;
+
         for(i=0; i<n; i++)
         {
             if(fabs(f0[i])>dis)
-                dis=fabs(f0[i]);              /* 计算max方程的值*/
+            {
+                dis=fabs(f0[i]);    /* 计算max方程的值*/
+            }
         }
+
         if(dis>eps)                           /* 不满足精度，继续迭代*/
         {
             if(r_gaus(fi,f0,fx,n,1e-8)==0)    /* 调用高斯消去法，解线性方程组*/
+            {
                 return(0);
+            }
             else
             {
                 sum=0;
+
                 for(i=0; i<n; i++)
+                {
                     sum=fx[i]+sum;
+                }
+
                 sum=h/(1-sum);
 
                 for(i=0; i<n; i++)
@@ -58,11 +67,14 @@ int n,max;
                     dl[i]=fx[i]*sum;          /* 差值*/
                     x0[i]=x0[i]-dl[i];        /* 新值*/
                 }
+
                 h=h*t;
             }
         }
         else
+        {
             return(1);
+        }
     }
     while(num<max);
 
@@ -71,7 +83,11 @@ int n,max;
     free(dl);
 
     if(num==max)
-        return (0);                         /* 迭代失败*/
+    {
+        return (0);    /* 迭代失败*/
+    }
     else
-        return (1);                         /* 迭代成功*/
+    {
+        return (1);    /* 迭代成功*/
+    }
 }

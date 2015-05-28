@@ -45,12 +45,16 @@ void movesort(int x[],int n)
             }
 
         if(flag)
+        {
             break;
+        }
     }
 
     /*把数组a[3]中的数依次输出*/
     for(i=0; i<k; i++)
+    {
         printf("%d ",a[i]);
+    }
 
     /*把数组b[3]中的数按升序排列*/
     for(i=0; i<count-1; i++)
@@ -67,12 +71,16 @@ void movesort(int x[],int n)
             }
 
         if(flag)
+        {
             break;
+        }
     }
 
     /*把数组b[3]中的数依次输出*/
     for(i=0; i<3; i++)
+    {
         printf("%d ",b[i]);
+    }
 
     printf("\n");
 }
@@ -81,7 +89,9 @@ int main1123(void)
     int x[6]= {1,2,3,4,5,6},i,n=6;
 
     for(i=0; i<6; i++)
+    {
         printf("%d ",x[i]);
+    }
 
     printf("\n");
     movesort(x,n);

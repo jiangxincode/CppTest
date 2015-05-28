@@ -25,7 +25,9 @@ int f1098(long n,long *hw)
     return i;
 
     if(i>10000)
+    {
         return -1;
+    }
 }
 int main1098()
 {

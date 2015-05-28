@@ -25,22 +25,26 @@ int m,n;
     double h1,h2,h3;                         /* 计算z z1 z2时所用的变量*/
     double t1,t2,t3,t4;                         /* 计算z z1 z2时所用的四个系数*/
     double tmp;
+
     if(!(x && y && t && z && z1 && z2))         /* 检测输入指针是否为空*/
     {
         printf("Pointer is Null\n");
         return(0);
     }
+
     if(n<3)                                     /* 提供结点少于3就不进行插值了*/
     {
         printf("nodes less than 3");
         return(0);
     }
+
     dy = (double*)malloc(n*sizeof(double));      /* 分配空间并检测是否成功*/
-    a =  (double*)malloc(n*sizeof(double));
-    b =  (double*)malloc(n*sizeof(double));
-    c =  (double*)malloc(n*sizeof(double));
-    p =  (double*)malloc(n*sizeof(double));
-    q =  (double*)malloc(n*sizeof(double));
+    a = (double*)malloc(n*sizeof(double));
+    b = (double*)malloc(n*sizeof(double));
+    c = (double*)malloc(n*sizeof(double));
+    p = (double*)malloc(n*sizeof(double));
+    q = (double*)malloc(n*sizeof(double));
+
     if(!(dy && a && b && c && p && q))
     {
         free(dy);
@@ -52,11 +56,13 @@ int m,n;
         printf("Memory alloc failed\n");
         return(0);
     }
+
     a[0] = 0.0;                                         /* a数组赋初值*/
     b[0] = 1.0;                                         /* b数组赋初值*/
     c[0] = 0.0;                                         /* c数组赋初值*/
     h1 = x[n-1]-x[n-2];
     y0 = y[n-1]-y[n-2];
+
     for(i=1; i<n-1; i++)                                 /* 递推计算a,b,c*/
     {
         h2 = h1;
@@ -71,6 +77,7 @@ int m,n;
         b[i] = (alpha-1.0)*b[i-1]*tmp;
         c[i] = (beta+(alpha-1.0)*c[i-1])*tmp;
     }
+
     h2 = x[n-1]-x[n-2];                             /* 计算最后一个alpha和beta*/
     y1 = y[n-1]-y[n-2];
     alpha = h1/(h1+h2);
@@ -78,27 +85,45 @@ int m,n;
     beta = 3.0*(beta+alpha*y1/h2);
     p[n-2] = 1.0;                                   /* 计算p,q值*/
     q[n-2] = 0.0;
+
     for(i=n-2; i>0; i--)
     {
         p[i-1] = a[i]*p[i]+b[i];
         q[i-1] = a[i]*q[i]+c[i];
     }
+
     dy[n-2] = (beta-alpha*q[0]+(alpha-1.0)*q[n-3]);  /* dy赋初值*/
     dy[n-2] = dy[n-2]/(2.0+alpha*p[0]+(1.0-alpha)*p[n-3]);
+
     for(i=0; i<n-2; i++)                          /* 递推计算结点处的一阶导数dy*/
+    {
         dy[i] = p[i]*dy[n-2]+q[i];
+    }
+
     dy[n-1] = dy[0];
+
     for(k=0; k<m; k++)
     {
         tmp = t[k];
         j = 0;
+
         while((x[j]<tmp)&&(j<n))                      /* 寻找合适的区间*/
+        {
             j++;
+        }
+
         j = j-1;
+
         if(j<1)
+        {
             j = 0;
+        }
+
         if(j>(n-1))
+        {
             j = n-2;
+        }
+
         h1 = x[j+1]-x[j];                             /* h*/
         h2 = h1*h1;                                  /* h^2*/
         h3 = h2*h1;                                  /* h^3*/
@@ -113,6 +138,7 @@ int m,n;
         z2[k] = 2.0*t1-6.0*t2*(tmp-x[j]);                   /* 计算二阶导数*/
         z2[k] = z2[k] + 2.0*t3 - 6.0*t4*(x[j+1]-tmp);
     }
+
     free(dy);
     free(a);
     free(b);

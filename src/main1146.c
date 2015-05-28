@@ -25,7 +25,9 @@ int main1146()
     d=find1146(p1,6,p2,6,p3);
 
     for(i=0; i<d; i++)
+    {
         puts(p3[i]);
+    }
 
     return 0;
 }

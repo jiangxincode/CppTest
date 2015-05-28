@@ -7,7 +7,6 @@ int main13c2test_example8()
 {
     int L,i,*a,*e,r,k,v,temp;
     double *u_ran,c2,alpha;
-
     L=10000;
     alpha=0.05;
     r=10;
@@ -24,15 +23,22 @@ int main13c2test_example8()
     }
 
     for(i=0; i<L; i++)
+    {
         a[(int)(u_ran[i]*10)]++;
+    }
 
     temp=c2test(a,e,r,k,&v,&c2,alpha);
-
     printf("v=%d  c2=%1.5f\n",v,c2);
+
     if(temp)
+    {
         printf("符合分布\n");
+    }
     else
+    {
         printf("不符合分布\n");
+    }
+
     return 0;
 }
 

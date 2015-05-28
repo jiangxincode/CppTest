@@ -6,9 +6,13 @@ int qiusushu(int n)
 {
     for(n=n+1;; n++)
         if(prime(n))
+        {
             return n;
+        }
         else
+        {
             continue;
+        }
 }
 int main1132(void)
 {
@@ -17,7 +21,9 @@ int main1132(void)
 
     for(i=0; i<4; i++)
         for(j=0; j<4; j++)
+        {
             b[i][j]=a[i][j];
+        }
 
     for(i=0; i<4; i++)
         for(j=0; j<4; j++)
@@ -29,13 +35,17 @@ int main1132(void)
                     count++;
                 }
                 else
+                {
                     b[i][j]=0;
+                }
             }
 
     for(i=0; i<4; i++)
     {
         for(j=0; j<4; j++)
+        {
             printf("%4d",b[i][j]);
+        }
 
         printf("\n");
     }

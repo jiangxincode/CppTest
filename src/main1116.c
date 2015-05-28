@@ -25,7 +25,9 @@ int main1116()
             printf("%6d",aa[k]);
 
             if((k+1)%10==0)
+            {
                 printf("\n");
+            }
         }
 
     return 0;

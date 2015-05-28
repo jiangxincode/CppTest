@@ -11,7 +11,9 @@ int main1093()
 
     for(a=m; a<=n-2; a++)
         if(prime(a)&&prime(a+2))
+        {
             printf("(%d  %d)\n",a,a+2);
+        }
 
     return 0;
 }

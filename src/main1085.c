@@ -10,9 +10,13 @@ int main1085()
     double a=0,b=3,c,x,eps=1e-6;
 
     if(fabs(f1(a))<eps)
+    {
         x=a;
+    }
     else if(fabs(f1(b))<eps)
+    {
         x=b;
+    }
     else
     {
         c=(a*f1(b)-b*f1(a))/(f1(b)-f1(a));
@@ -20,9 +24,13 @@ int main1085()
         while(fabs(f1(c))>eps&&fabs(b-a)>eps)
         {
             if(f1(a)*f1(c)<0)
+            {
                 b=c;
+            }
             else
+            {
                 a=c;
+            }
 
             c=(a*f1(b)-b*f1(a))/(f1(b)-f1(a));
         }

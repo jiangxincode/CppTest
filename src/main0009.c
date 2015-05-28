@@ -37,9 +37,13 @@ void createList(node **head, int data)
     new->next = cur;
 
     if(pre == NULL)
+    {
         *head = new;
+    }
     else
+    {
         pre->next = new;
+    }
 }
 
 void printLink(node *head)
@@ -126,10 +130,14 @@ node* checkLink(node* pHead1,node* pHead2)
     int i=1,j=1;
 
     if(p1==NULL || p2==NULL)
+    {
         return NULL;
+    }
 
     if(p1==p2)
+    {
         return p1;
+    }
 
     while(p1->next!=NULL)
     {
@@ -144,15 +152,21 @@ node* checkLink(node* pHead1,node* pHead2)
     }
 
     if(p1==p2)
+    {
         return NULL;
+    }
     else
     {
         for(int k=0; k<fabs(p1-p2); k++)
         {
             if(i>j)
+            {
                 p1=p1->next;
+            }
             else
+            {
                 p2=p2->next;
+            }
         }
 
         while(p1!=p2)

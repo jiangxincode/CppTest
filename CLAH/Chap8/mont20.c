@@ -7,7 +7,6 @@ static double f(double,double);
 int main8mount20()
 {
     double a,b,eps,s,h0;
-
     a = 0.0;
     b = 4.0;
     eps = 0.0001;

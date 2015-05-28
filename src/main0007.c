@@ -47,12 +47,16 @@ int main0007()
     matrix = (int **)malloc(sizeof(int *) * n);
 
     for(i = 0; i < n; i ++)
+    {
         matrix[i] = (int *)malloc(sizeof(int) * m);
+    }
 
     for(i = 0; i < n; i ++)
     {
         for(j = 0; j < m; j ++)
+        {
             scanf("%11d", &matrix[i][j]);
+        }
     }
 
     // 查询数据

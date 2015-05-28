@@ -29,13 +29,23 @@ int main14hash0()
     KeyType a = "Zhou";                                /* aÎªÒª²éÕÒµÄ¹Ø¼ü×Ö*/
     hashlist HT;                                        /* ¶¨Òå¹þÏ£±í*/
     m = HashSize;
+
     for(i=0; i<m; i++)                                  /* ³õÊ¼»¯¹þÏ£±í*/
+    {
         ElemNULL(&HT[i]);
+    }
+
     for(i=0; i<16; i++)                                 /* ½«ÔªËØ²åÈë¹þÏ£±í*/
+    {
         hashins(HT,m,x[i]);
+    }
+
     i = hashsch(HT,m,a);                                /* ÔÚ¹þÏ£±íÖÐ²éÕÒ*/
+
     if(i != -1)
+    {
         printf("%-5d%-8s%-2c%-2d%\n",HT[i].num,HT[i].name,HT[i].sex,HT[i].age);
+    }
 }
 
 int	KeyEqu(char* stra, char* strb)   /* ÅÐ¶Ï¹Ø¼ü×ÖÊÇ·ñÏàÍ¬*/
@@ -47,8 +57,12 @@ void ElemCP(ElemType *a, ElemType *b)                          /* ½«ÔªËØbÖÐÄÚÈÝ¿
 {
     int i;
     a->num = b->num;
+
     for(i=0; i<8; i++)
+    {
         a->name[i] = b->name[i];
+    }
+
     a->name[7] = '\0';
     a->sex = b->sex;
     a->age = b->age;
@@ -58,13 +72,19 @@ void ElemDEL(ElemType *a)                                    /* ½«ÔªËØaÉè³ÉÒÑÉ¾³
 {
     int i;
     a->name[0] = '1';
+
     for(i=1; i<8; i++)
+    {
         a->name[i] = '\0';
+    }
 }
 
 void ElemNULL(ElemType *a)                                    /* ½«ÔªËØaÉè³ÉÒÑÉ¾³ý*/
 {
     int i;
+
     for(i=0; i<8; i++)
+    {
         a->name[i] = '\0';
+    }
 }

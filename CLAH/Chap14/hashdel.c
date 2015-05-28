@@ -13,17 +13,23 @@ int hashdel(hashlist HT,int m,ElemType a)
     d = hashpos(a.KEY, 0, m);
     temp = d;
     i = 1;
-    while( !KeyEqu(HT[d].KEY,NULLTag) )            /* 常量NULLTag是空标志，需要自己定义*/
+
+    while(!KeyEqu(HT[d].KEY,NULLTag))              /* 常量NULLTag是空标志，需要自己定义*/
     {
-        if( KeyEqu(HT[d].KEY, a.KEY) )            /* 已经找到，返回位置*/
+        if(KeyEqu(HT[d].KEY, a.KEY))              /* 已经找到，返回位置*/
         {
             ElemDEL(&HT[d]);
             return(1);
         }
+
         d = (d+2*i-1)%m;                         /* 不为空且不相等，说明已经被其它元素占据，向后探查*/
         i++;
+
         if(d == temp)                            /* 这时删除失败*/
+        {
             return(0);
+        }
     }
+
     return(0);                                    /* 这时删除失败*/
 }

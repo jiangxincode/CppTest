@@ -8,7 +8,10 @@ int main1115()
 
     for(i=n1; i<=n2; i++)
     {
-        for(j=0; j<10; j++)d[j]=0;
+        for(j=0; j<10; j++)
+        {
+            d[j]=0;
+        }
 
         int f=1;
 
@@ -20,7 +23,9 @@ int main1115()
             }
 
         if(f==0)
+        {
             continue;
+        }
 
         x=y=i*i;
         m=0;
@@ -43,7 +48,10 @@ int main1115()
             }
         }
 
-        if(f) printf("\n%ld %ld",i,x);
+        if(f)
+        {
+            printf("\n%ld %ld",i,x);
+        }
     }
 
     return 0;

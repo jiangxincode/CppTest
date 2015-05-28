@@ -9,8 +9,8 @@
  *            h0 最小步长
  *            f 指向被积函数的指针
  * 返回值：  积分近似值
-=========================================================*/
-double leg1(double a,double b,int n0,double eps,double h0,double (*f)())
+ */
+double leg1(double a,double b,int n0,double eps,double h0,double(*f)())
 {
     int n,i,j;
     double z,z2,h,d,x;
@@ -23,28 +23,40 @@ double leg1(double a,double b,int n0,double eps,double h0,double (*f)())
     n = n0;                            /* 初始的划分数*/
     h = (b-a)/n;                       /* 求得初始步长*/
     z = 0.0;                           /* 计算初始的积分值*/
+
     for(i=0; i<n; i++)
     {
         x = a+i*h+h/2.0;
+
         for(j=0; j<5; j++)
+        {
             z = z+c[j]*(*f)(h/2.0*t[j]+x);
+        }
     }
+
     z = z*h/2.0;
+
     do
     {
         n = 2*n;                          /* 更新划分数*/
         h = h/2.0;                        /* 更新步长*/
         z2 = 0.0;                         /* 计算新的积分值*/
+
         for(i=0; i<n; i++)
         {
             x = a+i*h+h/2.0;
+
             for(j=0; j<5; j++)
+            {
                 z2 = z2+c[j]*(*f)(h/2.0*t[j]+x);
+            }
         }
+
         z2 = z2*h/2.0;                   /* 尽量减少乘法次数*/
         d = fabs(z2-z);                  /* 计算两次积分值的差*/
         z = z2;                          /* 更新积分值*/
     }
     while((d>eps)&&(h>h0));
+
     return(z);
 }

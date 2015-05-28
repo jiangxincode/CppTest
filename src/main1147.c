@@ -11,9 +11,13 @@ int  my_delete(char s[][10],int n)
         for(j=0; s[i][j]!='\0'; j++)
         {
             if(isalpha(s[i][j])||isdigit(s[i][j])||s[i][j]=='_')
+            {
                 continue;
+            }
             else
+            {
                 break;
+            }
         }
 
         if(s[i][j]=='\0'&&!isdigit(s[i][0]))
@@ -32,7 +36,9 @@ int main1147()
     d=my_delete(a,5);
 
     for(i=0; i<d; i++)
+    {
         puts(a[i]);
+    }
 
     return 0;
 }

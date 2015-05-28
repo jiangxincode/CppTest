@@ -62,7 +62,9 @@ void freeTG(TG* total)
     while(count <= 100)
     {
         if(strcmp((total+count)->agentName, an) == 0)
+        {
             (total+count)->agentName = " ";
+        }
 
         count++;
     }
@@ -92,7 +94,9 @@ int main0016()
             printf("%d(%s) ", (total+i)->num, (total+i)->agentName);
 
             if(i%5 == 0)
+            {
                 printf("\n");
+            }
         }
 
         printf("\n");
@@ -101,9 +105,13 @@ int main0016()
         scanf("%11d", &sw);
 
         if(sw == 1)
+        {
             mallocTG(total);
+        }
         else
+        {
             freeTG(total);
+        }
     }
 
     return 0;

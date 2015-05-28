@@ -35,7 +35,10 @@ int InitStack(Stack *s) /*构造运算符栈*/
 {
     s->base=(char *)malloc(STACK_INIT_SIZE*sizeof(char));
 
-    if(!s->base) return -1;
+    if(!s->base)
+    {
+        return -1;
+    }
 
     s->top=s->base;
     s->stacksize=STACK_INIT_SIZE;
@@ -45,7 +48,10 @@ int InitStack2(Stack2 *s) /*构造操作数栈*/
 {
     s->base=(int *)malloc(STACK_INIT_SIZE*sizeof(int));
 
-    if(!s->base) return -1;
+    if(!s->base)
+    {
+        return -1;
+    }
 
     s->stacksize=STACK_INIT_SIZE;
     s->top=s->base;
@@ -212,7 +218,10 @@ int EvalExpr()/*主要操作函数 */
     {
         if(!In(c))
         {
-            if(!In(*(ptr-1))) ptr=ptr-1;
+            if(!In(*(ptr-1)))
+            {
+                ptr=ptr-1;
+            }
 
             m=atoi(ptr);/*取字符串前面的数字段*/
             n=num(m);

@@ -47,5 +47,7 @@ void main1152()
     sort(s,5,sortkey,3);
 
     for(i=0; i<5; i++)
+    {
         printf("\n%s    %s",s[i].name,s[i].degree);
+    }
 }

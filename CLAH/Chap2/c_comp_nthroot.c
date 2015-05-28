@@ -22,7 +22,6 @@ int c_comp_nthroot(struct c_comp *a,struct c_comp *c,int n)
 
     double theta = atan2(a->imz,a->rmz);
     double R = sqrt(a->rmz*a->rmz + a->imz*a->imz);
-
     R = pow(R,1.0/n);
 
     for(int i=0; i<n; i++)

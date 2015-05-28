@@ -11,7 +11,6 @@ int main4c_matinv0()
     int m,n;
     m = 2;
     n = 2;
-
     c_mat[0][0].rmz = 2;
     c_mat[0][0].imz = 3;
     c_mat[0][1].rmz = 0;
@@ -23,34 +22,47 @@ int main4c_matinv0()
 
     for(i=0; i<n; i++)
         for(j=0; j<n; j++)
+        {
             c_mat1[i][j] = c_mat[i][j];
+        }
 
     printf("A:\n");
+
     for(i=0; i<m; i++)
     {
         for(j=0; j<n; j++)
+        {
             printf("%2.5f + (%2.5f)*i ", c_mat[i][j].rmz, c_mat[i][j].imz);
+        }
+
         printf("\n");
     }
-    printf("\n");
 
+    printf("\n");
     c_minv(c_mat,n,0.01);
-
     printf("inv(A):\n");
+
     for(i=0; i<m; i++)
     {
         for(j=0; j<n; j++)
+        {
             printf("%2.5f + (%2.5f)*i ", c_mat[i][j].rmz, c_mat[i][j].imz);
+        }
+
         printf("\n");
     }
-    printf("\n");
 
+    printf("\n");
     printf("A*inv(A):\n");
     c_matmul(c_mat,c_mat1,n,n,n,c_mat2);
+
     for(i=0; i<m; i++)
     {
         for(j=0; j<n; j++)
+        {
             printf("%2.5f + (%2.5f)*i ", c_mat2[i][j].rmz, c_mat2[i][j].imz);
+        }
+
         printf("\n");
     }
 

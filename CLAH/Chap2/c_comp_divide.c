@@ -21,10 +21,8 @@ int c_comp_divide(struct c_comp *a1,struct c_comp *a2,struct c_comp *c)
     }
 
     double R2 = (a2->rmz)*(a2->rmz) + (a2->imz)*(a2->imz);
-
     c_comp_product(a1,a2,c);
     c->rmz = c->rmz/R2;
     c->imz = c->imz/R2;
-
     return(1);
 }

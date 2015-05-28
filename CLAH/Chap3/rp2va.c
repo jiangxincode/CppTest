@@ -10,13 +10,19 @@ double rp2va(double *a,int m,int n,double x,double y)
     int i,j;
     double r1,r2;
     r1 = 0;   	 		/* 结果赋初值 */
+
     for(i=m-1; i>=0; i--)	/* 累次相加*/
     {
         r2 = a[i*n+n-1];
+
         for(j=n-2; j>=0; j--)
+        {
             r2=r2*y + a[i*n+j];
+        }
+
         r1 = r1*x + r2;
     }
+
     return(r1);
 }
 

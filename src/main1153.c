@@ -14,11 +14,17 @@ int delphone(char delname[ ], struct address list[])
     int i;
 
     for(i=0; i<N; i++)
-        if(strcmp(list[i].name,delname)==0)  break;
+        if(strcmp(list[i].name,delname)==0)
+        {
+            break;
+        }
 
     if(i<N)
     {
-        for(int j=i; j<N; j++)  list[j]=list[j+1];
+        for(int j=i; j<N; j++)
+        {
+            list[j]=list[j+1];
+        }
 
         return N-1;
     }
@@ -41,9 +47,14 @@ int main1153(void)
         printf("The information after deleting:\n");
 
         for(int i=0; i<k; i++)
+        {
             printf("%5d%15s%15s\n", list[i].no, list[i].name, list[i].phone);
+        }
     }
-    else printf("Not found \n");
+    else
+    {
+        printf("Not found \n");
+    }
 
     return 0;
 }

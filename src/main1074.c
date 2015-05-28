@@ -21,9 +21,13 @@ int main1074()
     case 12:
     {
         if(d>31)
+        {
             printf("wrong date");
+        }
         else
+        {
             printf("right date");
+        }
     }
 
     case 4:
@@ -32,9 +36,13 @@ int main1074()
     case 11:
     {
         if(d>30)
+        {
             printf("wrong date");
+        }
         else
+        {
             printf("right date");
+        }
     }
 
     case 2:
@@ -42,16 +50,24 @@ int main1074()
         if((y%4==0 && y%100!=0) || (y%400==0))
         {
             if(d>29)
+            {
                 printf("wrong date");
+            }
             else
+            {
                 printf("right date");
+            }
         }
         else
         {
             if(d>28)
+            {
                 printf("wrong date");
+            }
             else
+            {
                 printf("right date");
+            }
         }
     }
     }

@@ -24,7 +24,9 @@ void replaceword(char s[])
     for(i=0; s[i]; i++)
     {
         for(j=i,k=0; isalpha(s[j]); k++,j++)
+        {
             t[k]=s[j];
+        }
 
         t[k]=0;
 
@@ -32,7 +34,9 @@ void replaceword(char s[])
         {
             for(n=0; n<4; n++)
                 if(strcmp(t,word_tab[n])==0)
+                {
                     break;
+                }
 
             if(n<4)
             {
@@ -42,7 +46,9 @@ void replaceword(char s[])
                 i=i+strlen(word_tab[(n+1)%4]);
             }
             else
+            {
                 i=i+strlen(t);
+            }
         }
     }
 }

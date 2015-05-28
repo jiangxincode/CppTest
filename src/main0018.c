@@ -73,7 +73,9 @@ int multiply(int a, int b)
         result = add(result, b);
 
         if(errno == ERANGE)
+        {
             break;
+        }
     }
 
     return result * sign_of_a;

@@ -24,35 +24,43 @@ int main14sech0()
     printf("Serch from Array: \n");
     a=18;
     i=0;
+
     do
     {
         q=sech(x,16,i,a);                           /* 查找并打印*/
+
         if(q!=-1)
             printf("%-5d%-8s%-2c%-2d%\n",x[q].num,
                    x[q].name,x[q].sex,x[q].age);
+
         i=q+1;
     }
-    while (q!=-1);
+    while(q!=-1);
+
     k = sizeof(STRU);
     fp = fopen("stu.dat","w+");                       /* 打开文件写*/
+
     for(i=0; i<16; i++)
         if(fwrite(&x[i], k,1,fp) != 1)                /* 写入文件*/
         {
             printf("Cannot write file\n");           /* 写入失败*/
             i = 16;
         }
-    fclose(fp);
 
+    fclose(fp);
     printf("\nSerch from File: \n");
     fp = fopen("stu.dat","r+");                      /* 打开文件读*/
+
     do
     {
         q = Fsech(fp,a,&str);                        /* 查找并打印*/
+
         if(q)
             printf("%-5d%-8s%-2c%-2d%\n",str.num,
                    str.name,str.sex,str.age);
     }
     while(q);
+
     fclose(fp);
     return 0;
 }

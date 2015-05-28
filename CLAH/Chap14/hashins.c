@@ -13,14 +13,19 @@ int hashins(hashlist HT,int m,ElemType a)
     d = hashpos(a.KEY, 0, m);
     temp = d;
     i = 1;
-    while( !KeyEqu(HT[d].KEY,NULLTag) &&           /* 常量NULLTag是空标志，需要自己定义*/
+
+    while(!KeyEqu(HT[d].KEY,NULLTag) &&            /* 常量NULLTag是空标志，需要自己定义*/
             !KeyEqu(HT[d].KEY,DELTag))                /* 常量DELTag是指此处存放过元素，但是已被删除，需要自己定义*/
     {
         d = (d+2*i-1)%m;                           /* 不为空说明已经被占据，向后探查*/
         i++;
+
         if(d == temp)                             /* 这时插入失败*/
+        {
             return(0);
+        }
     }
+
     ElemCP(&HT[d], &a);                             /* 将a中内容拷贝到哈希表中*/
     return(1);
 }

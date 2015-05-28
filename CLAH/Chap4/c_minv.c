@@ -23,6 +23,7 @@ int c_minv(struct c_comp *mat,int n,double eps)
     }
 
     is = malloc(n*sizeof(int));         /* 为行交换记录分配空间并检测是否成功*/
+
     if(is == NULL)
     {
         printf("Memory alloc failed\n");
@@ -30,6 +31,7 @@ int c_minv(struct c_comp *mat,int n,double eps)
     }
 
     js = malloc(n*sizeof(int));         /* 为列交换记录分配空间并检测是否成功*/
+
     if(js == NULL)
     {
         free(is);
@@ -40,11 +42,13 @@ int c_minv(struct c_comp *mat,int n,double eps)
     for(k=0; k<n; k++)
     {
         d = 0.0;
+
         for(i=k; i<n; i++)             /* 此循环用于选取主元*/
             for(j=k; j<n; j++)
             {
                 l = i*n + j;
                 tmp = mat[l].rmz*mat[l].rmz + mat[l].imz*mat[l].imz;  /* 求元素的模*/
+
                 if(tmp>d)
                 {
                     d = tmp;
@@ -52,6 +56,7 @@ int c_minv(struct c_comp *mat,int n,double eps)
                     js[k] = j;
                 }
             }
+
         if(d < eps)                    /* 判断主元是否过小*/
         {
             free(is);                  /* 若主元过小则退出程序*/
@@ -61,7 +66,7 @@ int c_minv(struct c_comp *mat,int n,double eps)
         }
 
         if(is[k]!=k)                   /* 判断是否需要行交换*/
-            for (j=0; j<=n-1; j++)       /* 进行行交换*/
+            for(j=0; j<=n-1; j++)        /* 进行行交换*/
             {
                 l = k*n + j;
                 v = is[k]*n + j;
@@ -72,8 +77,9 @@ int c_minv(struct c_comp *mat,int n,double eps)
                 mat[l].imz = mat[v].imz;
                 mat[v].imz = tmp;
             }
+
         if(js[k]!=k)                   /* 判断是否需要列交换*/
-            for (i=0; i<=n-1; i++)       /* 进行列交换*/
+            for(i=0; i<=n-1; i++)        /* 进行列交换*/
             {
                 l = i*n + k;
                 v = i*n +js[k];
@@ -84,6 +90,7 @@ int c_minv(struct c_comp *mat,int n,double eps)
                 mat[l].imz = mat[v].imz;
                 mat[v].imz = tmp;
             }
+
         l = k*n + k;                   /* 归一化计算的第一步*/
         mat[l].rmz = mat[l].rmz/d;
         mat[l].imz = -mat[l].imz/d;
@@ -98,8 +105,8 @@ int c_minv(struct c_comp *mat,int n,double eps)
         for(i=0; i<=n-1; i++)          /* 消元计算的第一步*/
             if(i!=k)
             {
-                for (j=0; j<=n-1; j++)
-                    if (j!=k)
+                for(j=0; j<=n-1; j++)
+                    if(j!=k)
                     {
                         c_comp_product(&mat[k*n+j], &mat[i*n+k], &c_tmp);
                         mat[i*n+j].rmz = mat[i*n+j].rmz - c_tmp.rmz;

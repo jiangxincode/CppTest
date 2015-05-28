@@ -18,41 +18,60 @@ int n;
 {
     int i,j,k;
     double t;
+
     if((mat==NULL)||(L==NULL)||(D==NULL)) /* 检测指针是否为空*/
     {
         printf("One of the pointer is NULL\n");            /* 若为空则打印错误消息，函数结束*/
         return(0);
     }
+
     for(i=0; i<n; i++)                                   /* 将L矩阵赋初值为单位阵*/
     {
         for(j=0; j<n; j++)
+        {
             L[i*n+j] = 0.0;
+        }
+
         L[i*n+i] = 1.0;
     }
+
     D[0] = mat[0];
+
     if(fabs(D[0]) < eps)                               /* 因要做除数，需要检查其范围*/
     {
         printf("Failed.\n");
         return(0);
     }                                                 /* 递推求解*/
+
     for(i=1; i<n; i++)
     {
         for(j=0; j<i; j++)
         {
             t = 0.0;
+
             for(k=0; k<j; k++)                            /* 求解Lij中的求和部分*/
+            {
                 t = t+L[i*n+k]*L[j*n+k]*D[k];
+            }
+
             L[i*n+j] = (mat[i*n+j]-t)/D[j];               /* 求解Lij*/
         }
+
         t = 0.0;
+
         for(k=0; k<i; k++)
+        {
             t = t+L[i*n+k]*L[i*n+k]*D[k];
+        }
+
         D[i] = mat[i*n+i]-t;                            /* 求解D[i]*/
+
         if(fabs(D[i]) < eps)                            /* 检查其范围*/
         {
             printf("Failed.\n");
             return(0);
         }
     }
+
     return(1);
 }

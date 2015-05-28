@@ -22,20 +22,36 @@ int na,nb;
     double meana=0,meanb=0,vara=0,varb=0;	//初始化
     double f,v1,v2,q1;
     double eps=0.00001;
+
     for(j=0; j<na; j++)
+    {
         meana+=a[j];
+    }
+
     meana=meana/na;							//计算样本一均值
+
     for(j=0; j<nb; j++)
+    {
         meanb+=b[j];
+    }
+
     meanb=meanb/nb;							//计算样本二均值
+
     for(j=0; j<na; j++)
-        vara+=(a[j]-meana)*(a[j]-meana);	//样本一的方差
+    {
+        vara+=(a[j]-meana)*(a[j]-meana);    //样本一的方差
+    }
+
     for(j=0; j<nb; j++)
-        varb+=(b[j]-meanb)*(b[j]-meanb);	//样本二的方差
+    {
+        varb+=(b[j]-meanb)*(b[j]-meanb);    //样本二的方差
+    }
+
     vara=vara/(na-1);
     varb=varb/(nb-1);
     v1=na-1;
     v2=nb-1;
+
     if(vara < varb)                        /* 选择大的一个做分母*/
     {
         f = vara/varb;
@@ -48,9 +64,14 @@ int na,nb;
         v1 = nb - 1;
         v2 = na - 1;
     }
+
     q1 = 2.0*beta2(0.5*v2, 0.5*v1, v2/(v2+v1*f),eps);  /* 调用不完全贝塔函数计算*/
+
     if(q1 > 1.0)
+    {
         q1 = 2.0 - q1;
+    }
+
     return(q1<=alpha);
 }
 

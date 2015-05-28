@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include "something.h"
 #include "bsl1.c"
 
 int main12bfgs0()
@@ -21,8 +22,12 @@ double *x;
 int n;
 {
     double y;
+
     if(n!=3)
+    {
         return(0.0);
+    }
+
     y = (x[0]-1.0)*(x[0]-1.0)+(x[1]-2.0)*(x[1]-2.0)+(x[2]-3.0)*(x[2]-3.0);
     return bsl1(0,y);
 }
@@ -31,8 +36,12 @@ double *x, *g;
 int n;
 {
     double y;
+
     if(n!=3)
+    {
         return;
+    }
+
     y = (x[0]-1.0)*(x[0]-1.0)+(x[1]-2.0)*(x[1]-2.0)+(x[2]-3.0)*(x[2]-3.0);
     g[0] = -bsl1(1,y)*(2*(x[0]-1.0));
     g[1] = -bsl1(1,y)*(2*(x[1]-2.0));

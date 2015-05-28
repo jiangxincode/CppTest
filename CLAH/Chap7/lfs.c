@@ -17,16 +17,25 @@ int n;
 {
     int i,j,k,p,flag;
     double z,u,*b;
+
     if((x==NULL)||(y==NULL))             /* 检测输入指针是否为空*/
     {
         printf("Pointer is Null\n");
         return(0.0);
     }
+
     if(n<1)                              /* 没有提供结点，返回0.0*/
+    {
         return(0.0);
+    }
+
     if(n==1)                             /* 只有一个结点，返回此函数值*/
+    {
         return(y[0]);
+    }
+
     k = 0;
+
     if(t < x[2])
     {
         k = 0;
@@ -41,14 +50,21 @@ int n;
     {
         k = 0;
         p = n-1;                    /* 二分法寻找合适的区间*/
+
         while((p-k) > 1)
         {
             j = (k+p)/2;
+
             if(x[j] < t)
+            {
                 k = j;
+            }
             else
+            {
                 p = j;
+            }
         }
+
         if(n>7)
         {
             if(k<4)
@@ -73,12 +89,15 @@ int n;
             p = n;
         }
     }
+
     b = (double*)malloc((p)*sizeof(double));  /* 分配空间，存放连分式*/
     b[0] = y[k];
+
     for(i=1; i<p; i++)                        /* 构造连分式*/
     {
         flag = 0;
         u = y[i+k];
+
         for(j=0; j<i; j++)
         {
             if(fabs(u-b[j])<eps)                    /* 要做除数，因此需要检查范围*/
@@ -87,8 +106,11 @@ int n;
                 j = i;                                /* 若除数为0,则连分式到此为止*/
             }
             else
+            {
                 u=(x[i+k]-x[j+k])/(u-b[j]);
+            }
         }
+
         if(flag == 1)
         {
             /* 这个数据用来终止连分式*/
@@ -96,12 +118,19 @@ int n;
             p = i;
         }
         else
+        {
             b[i] = u;
+        }
     }
+
     printf("lfs: %d,%d\n",k,k+p-1);              /* 打印构造连分式所使用的区间*/
     z = b[p-1];                                  /* 计算近似值*/
+
     for(i=p-2; i>=0; i--)
+    {
         z = b[i]+(t-x[i+k])/z;
+    }
+
     free(b);
     return(z);
 }

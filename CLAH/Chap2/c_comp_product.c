@@ -19,6 +19,7 @@ int c_comp_product(struct c_comp *a1,struct c_comp *a2,struct c_comp *c)
         printf("(c_comp_product)The c_comp pointer is NULL!\n");
         return(0);
     }
+
     double p = (a1->rmz)*(a2->rmz);
     double q = (a1->imz)*(a2->imz);
     double s = (a1->rmz + a1->imz)*(a2->rmz + a2->imz);

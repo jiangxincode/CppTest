@@ -20,7 +20,6 @@ int max;
     double y0,yd,yab=f(ab);
     int num=0;
 
-
     do
     {
         y0=f(*x0);			     /* 计算函数值*/
@@ -28,15 +27,24 @@ int max;
         x=*x0-yd*y0;             /* 计算新的x值*/
         num++;
         dis=fabs(x-*x0);         /* 计算精度*/
+
         if(dis<fabs(y0))
+        {
             dis=fabs(y0);
+        }
+
         printf("%1.7f    %1.7f    %1.7f\n",*x0,x,dis);
         *x0=x;
     }
     while(dis>eps&&num<max);     /* 判断迭代是否结束*/
+
     if(num==max)
-        return (0);              /* 迭代失败*/
+    {
+        return (0);    /* 迭代失败*/
+    }
     else
-        return (1);              /* 迭代成功*/
+    {
+        return (1);    /* 迭代成功*/
+    }
 }
 

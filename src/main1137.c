@@ -13,7 +13,9 @@ int main1137()
         j=rand()%9;
 
         if(a[i][j]==0)
+        {
             a[i][j]=-1;
+        }
     }
 
     for(i=0; i<9; i++)
@@ -21,7 +23,9 @@ int main1137()
         for(j=0; j<9; i++)
         {
             if(a[i][j]==-1)
+            {
                 printf("%c",15);
+            }
             else
             {
                 n1=(i>0&&j>0&&a[i-1][j-1]==-1)+(i>0&&a[i-1][j]==-1)+(i>0&&j<8&&a[i-1][j+1]==-1);
@@ -30,9 +34,13 @@ int main1137()
                 n=n1+n2+n3;
 
                 if(n==0)
+                {
                     printf("%c",32);
+                }
                 else
+                {
                     printf("%d",n);
+                }
             }
         }
 

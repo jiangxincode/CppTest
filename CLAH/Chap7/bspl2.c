@@ -27,19 +27,23 @@ int m,n;
     double h1,h2,h3;                            /* 计算z z1 z2时所用的变量*/
     double t1,t2,t3,t4;                         /* 计算z z1 z2时所用的四个系数*/
     double tmp;
+
     if(!(x && y && t && z && z1 && z2))         /* 检测输入指针是否为空*/
     {
         printf("Pointer is Null\n");
         return(0);
     }
+
     if(n<3)                                     /* 提供结点少于3就不进行插值了*/
     {
         printf("nodes less than 3");
         return(0);
     }
+
     dy = (double*)malloc(n*sizeof(double));      /* 分配空间并检测是否成功*/
-    a =  (double*)malloc(n*sizeof(double));
-    b =  (double*)malloc(n*sizeof(double));
+    a = (double*)malloc(n*sizeof(double));
+    b = (double*)malloc(n*sizeof(double));
+
     if(!(dy && a && b))
     {
         free(dy);
@@ -48,9 +52,11 @@ int m,n;
         printf("Memory alloc failed\n");
         return(0);
     }
+
     h1 = x[1]-x[0];
     a[0] = -0.5;                                         /* a数组赋初值*/
     b[0] = 1.5*(y[1]-y[0])/h1 - 0.25*y1*h1;           /* b数组赋初值*/
+
     for(i=1; i<n-1; i++)                                 /* 递推计算a和b*/
     {
         h2 = x[i+1]-x[i];
@@ -62,22 +68,38 @@ int m,n;
         b[i] = (beta+(alpha-1.0)*b[i-1])*tmp;
         h1 = h2;
     }
+
     dy[n-1] = 3.0*(y[n-1]-y[n-2])/h2+y2*h2/2.0-b[n-2];  /* dy赋初值*/
     dy[n-1] = dy[n-1]/(2.0+a[n-2]);
     dy[0] = y1;
+
     for(i=n-2; i>=0; i--)                          /* 递推计算结点处的一阶导数dy*/
+    {
         dy[i] = a[i]*dy[i+1]+b[i];
+    }
+
     for(k=0; k<m; k++)
     {
         tmp = t[k];
         j = 0;
+
         while((x[j]<tmp)&&(j<n))                      /* 寻找合适的区间*/
+        {
             j++;
+        }
+
         j = j-1;
+
         if(j<1)
+        {
             j = 0;
+        }
+
         if(j>(n-1))
+        {
             j = n-2;
+        }
+
         h1 = x[j+1]-x[j];                                     /* h*/
         h2 = h1*h1;                                         /* h^2*/
         h3 = h2*h1;                                        /* h^3*/
@@ -92,6 +114,7 @@ int m,n;
         z2[k] = 2.0*t1-6.0*t2*(tmp-x[j]);                   /* 计算二阶导数*/
         z2[k] = z2[k] + 2.0*t3 - 6.0*t4*(x[j+1]-tmp);
     }
+
     free(dy);
     free(a);
     free(b);

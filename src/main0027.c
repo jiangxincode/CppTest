@@ -57,7 +57,10 @@ void trans(char str[],char exp[])
                     op.top--;
                     j++;
 
-                    if(op.top==-1)break;//如果栈为空，跳出循环
+                    if(op.top==-1)
+                    {
+                        break;    //如果栈为空，跳出循环
+                    }
                 }
 
                 op.top--;//左括号pop出来
@@ -83,7 +86,10 @@ void trans(char str[],char exp[])
                     op.top--;
                     j++;
 
-                    if(op.top==-1)break;//如果栈为空，跳出循环
+                    if(op.top==-1)
+                    {
+                        break;    //如果栈为空，跳出循环
+                    }
                 }
 
                 op.top++;
@@ -106,13 +112,21 @@ void trans(char str[],char exp[])
 int level(char op)//判断操作符优先等级
 {
     if(op == '+' || op == '-')//若为+、-，等级为1
+    {
         return 1;
+    }
     else if(op == '*' || op == '/' || op == '%')
-        return 2;        //若为*、/、%,等级为2
+    {
+        return 2;    //若为*、/、%,等级为2
+    }
     else if(op == '(')
-        return -1 ;      //若为(,等级为-1
+    {
+        return -1 ;    //若为(,等级为-1
+    }
     else
-        return -3;      //其他等级为-3；
+    {
+        return -3;    //其他等级为-3；
+    }
 }
 double calvalue(double od1,double od2,char tempop)//计算
 {

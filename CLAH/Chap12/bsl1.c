@@ -17,23 +17,34 @@ static double bsl1(int n,double x)
     int j,nn,flag;
     double ax,nx,bj0,bj1,bj,bjs;
     ax = fabs(x);
+
     if(ax==0.0)
+    {
         return(0.0);
+    }
+
     nx = 2.0/ax;                          /* 计算2*n/x需要的值2/x*/
+
     if(ax>(double)n)                      /* 正向递推*/
     {
         bj0 = J0(ax);                       /* 递推初值J0*/
         bj1 = J1(ax);                       /* 递推初值J1*/
+
         for(j=1; j<n; j++)
         {
             bj = j*nx*bj1-bj0;                /* 递推计算*/
             bj0 = bj1;
             bj1 = bj;
         }
+
         if(n==0)
+        {
             t = bj0;
+        }
         else
+        {
             t = bj1;
+        }
     }
     else
     {
@@ -42,16 +53,25 @@ static double bsl1(int n,double x)
         flag = 0;                            /* 只对偶数项进行相加*/
         bj1 = 0.0;                           /* 第nn+1项设为0*/
         bj0 = 1.0;                           /* 第nn项设为1.0*/
+
         for(j=nn; j>0; j--)
         {
             bj = j*nx*bj0-bj1;                 /* 递推计算*/
             bj1 = bj0;
             bj0 = bj;
+
             if(flag)                           /* 偶数项进行累加*/
+            {
                 bjs = bjs+bj;
+            }
+
             flag = !flag;
+
             if(j==n)
+            {
                 t = bj1;
+            }
+
             if(fabs(bj)>1.0e10)                /* 在递推过程中进行归一化，防止溢出*/
             {
                 bj0 = bj0*1.0e-10;
@@ -60,9 +80,11 @@ static double bsl1(int n,double x)
                 t = t*1.0e-10;
             }
         }
+
         bjs = 2.0*bjs-bj;
         t = t/bjs;
     }
+
     return (x<0.0)&&(n&1)?-t:t;            /* n为奇数且x为负时，返回-t*/
 }
 
@@ -70,6 +92,7 @@ static double J0(double x)                     /* 计算J0(x)*/
 {
     double x1,x2,t,t1,t2,y;
     x1 = fabs(x);
+
     if(x1 < 8.0)                           /* 有理分式逼近*/
     {
         x2 = x*x;
@@ -93,6 +116,7 @@ static double J0(double x)                     /* 计算J0(x)*/
         t = x1-0.785398164;
         t = sqrt(0.0795774715*y)*(cos(t)*t1-y*sin(t)*t2);
     }
+
     return t;
 }
 
@@ -101,6 +125,7 @@ double x;
 {
     double x1,x2,t,t1,t2,y;
     x1 = fabs(x);
+
     if(x1 < 8.0)                           /* 有理分式逼近*/
     {
         x2 = x*x;
@@ -125,5 +150,6 @@ double x;
         t = sqrt(0.0795774715*y)*(cos(t)*t1-y*sin(t)*t2);
         t = (x<0.0)?-t:t;
     }
+
     return t;
 }

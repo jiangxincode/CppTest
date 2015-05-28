@@ -21,14 +21,18 @@ static NODE *create(void)
         scanf("%11d",&num);
 
         if(num==0)
+        {
             break;
+        }
 
         p1=(NODE *)malloc(sizeof(NODE));
         p1->x=num;
         p1->next=NULL;
 
         if(i==1)
+        {
             head=p2=p1;
+        }
         else
         {
             p2->next=p1;
@@ -61,7 +65,9 @@ void display1161(NODE *head)
 void free_all(NODE *head)
 {
     if(head==NULL)
+    {
         return;
+    }
 
     while(head!=NULL)
     {

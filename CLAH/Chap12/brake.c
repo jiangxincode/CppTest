@@ -14,13 +14,13 @@
 #define GSTEP 100.0
 #define TINY 1.0e-20
 
-void brake(double *a, double *b, double *c, double (*f)(double))
+void brake(double *a, double *b, double *c, double(*f)(double))
 {
     double u,u2,fu,fa,fb,fc, tmp;
     double r,q,p;                          /* 用于抛物线插值*/
-
     fa = (*f)(*a);
     fb = (*f)(*b);
+
     if(fb > fa)                            /* 确保a->b方向是下降的*/
     {
         tmp = *a;
@@ -30,21 +30,29 @@ void brake(double *a, double *b, double *c, double (*f)(double))
         fa = fb;
         fb = tmp;
     }
+
     *c = (*b)+G1*(*b - *a);                /* 区间延伸到点c*/
     fc = (*f)(*c);
+
     while(fb >= fc)                         /* 这时需要继续寻找区间*/
     {
         r = (*b-*a)*(fb-fc);                 /* fb-fc>=0*/
         q = (*b-*c)*(fb-fa);                 /* fb-fa <=0*/
         p = (*b-*c)*q - (*b-*a)*r;           /* p<0.  q与r异号*/
         tmp = q - r;
+
         if(fabs(tmp) < TINY)                /* 分母过小*/
+        {
             tmp = TINY;
+        }
+
         u = *b-p/(2.0*tmp);                 /* 求出抛物线的极值点u*/
         u2 = *b+GSTEP*(*c-*b);              /* u2限制了u行进的最大步长*/
+
         if((*b-u)*(*c-u) < 0.0)             /* u在b 和c之间*/
         {
             fu = (*f)(u);
+
             if(fu < fc)                     /* b u c确定一个存在极小值的区间*/
             {
                 if(*b < *c)                 /* 调整后保证a < b < c*/
@@ -58,25 +66,31 @@ void brake(double *a, double *b, double *c, double (*f)(double))
                     *c = *b;
                     *b = u;
                 }
+
                 return;
             }
             else if(fu > fb)                /* a b u确定了一个存在极小值的区间*/
             {
                 if(*a < u)
+                {
                     *c = u;
+                }
                 else
                 {
                     *c = *a;
                     *a = u;
                 }
+
                 return;
             }
+
             u = *c + G1*(*c-*b);             /* 抛物线确定的u无用*/
             fu = (*f)(u);
         }
         else if((*c-u)*(u2-u) < 0.0)         /* u在c和u2之间*/
         {
             fu = (*f)(u);
+
             if(fu < fc)
             {
                 *b = *c;
@@ -97,6 +111,7 @@ void brake(double *a, double *b, double *c, double (*f)(double))
             u = (*c)+G1*(*c-*b);
             fu = (*f)(u);
         }
+
         *a = *b;                               /* 更新a,b,c*/
         *b = *c;
         *c = u;
@@ -104,11 +119,13 @@ void brake(double *a, double *b, double *c, double (*f)(double))
         fb = fc;
         fc = fu;
     }
+
     if(*a > *c)                         /* [a,c]就是存在极小值的区间*/
     {
         tmp = *a;                       /* 调整成 a<b<c*/
         *a = *c;
         *c = tmp;
     }
+
     return;
 }

@@ -16,30 +16,41 @@
 
 double RJ(double x,double y,double z,double p)
 {
-    double ll,f,s,eps,rc0,a,b,a0,b0,flag;
+    double ll,f,s,eps,rc0,a = 0.0,b,a0,b0,flag;
     double t,t1,t2,t3,t4,t5,t6;
     double xt,yt,zt,pt;
     eps = 1.0e-10;
+
     if(x<0||y<0||z<0||(x+y)<eps||(x+z)<eps||(z+y)<eps||fabs(p)<eps)    /* 检查自变量范围*/
     {
         printf("Parameters incorrect\n");
         return(0.0);
     }
+
     s = 0.0;
     f = 4.0;
+
     if(p<0.0)
     {
         t1 = y;                                              /* t1存放xyz中最大者*/
         t = x;                                               /* t 存放xyz中最小者*/
+
         if(x>y)
         {
             t = y;
             t1 = x;
         }
+
         if(t>z)
+        {
             t = z;
+        }
+
         if(t1<z)
+        {
             t1 = z;
+        }
+
         y = x+y+z-t-t1;                                       /* 按x<y<z排列是为了防止计算溢出*/
         x = t;
         z = t1;
@@ -48,6 +59,7 @@ double RJ(double x,double y,double z,double p)
         rc0 = RC(x*z/y, p*(p+b0)/y);
         p = p+b0;
     }
+
     do
     {
         t1 = sqrt(x);
@@ -74,6 +86,7 @@ double RJ(double x,double y,double z,double p)
         flag = t1>t2?t1:t2;
     }
     while(flag > 0.0015);                                     /* 这个阈值用于判断x和y充分接近*/
+
     t1 = xt*(yt+zt)+yt*zt;                                    /* 用泰勒展开计算积分值*/
     t2 = xt*yt*zt;
     t3 = pt*pt;
@@ -84,7 +97,11 @@ double RJ(double x,double y,double z,double p)
          t2*(1.0/6.0+t6*(-3.0/11.0+3.0*t6/26.0))+
          t1*t6*(1.0/3.0-3.0*t6/22.0)-t3*t6/3.0)/(t*sqrt(t));
     t = 3.0*s+f*t;                                            /* 乘上系数*/
+
     if(p<0)
-        t = a0*(b0*t+3.0*(rc0-RF(x,y,z)));                    /* 最后计算RF(x,y,z)，速度比较快，因为已经迭代过*/
+    {
+        t = a0*(b0*t+3.0*(rc0-RF(x,y,z)));    /* 最后计算RF(x,y,z)，速度比较快，因为已经迭代过*/
+    }
+
     return(t);
 }

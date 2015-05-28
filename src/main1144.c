@@ -30,7 +30,9 @@ int main1144()
     f1144(xx);
 
     for(i=0; xx[i]; i++)
+    {
         printf("%c",xx[i]);
+    }
 
     return 0;
 }

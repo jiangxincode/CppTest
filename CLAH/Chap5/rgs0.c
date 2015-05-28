@@ -21,13 +21,21 @@ int main5rgs0()
     double b1[4]= {1.8471,1.7471,1.6471,1.5471},b2[4]= {1.8471,1.7471,1.6471,1.5471};
     double x1[4],x2[4];
     printf("GAUSS:\n");
+
     if(r_gsjd(a2,b2,x2,4,1e-16)!=0)           /* 调用高斯消去法*/
         for(i=0; i<4; i++)                     /* 打印结果*/
+        {
             printf("x2(%d)=%7.5f\n",i,x2[i]);
+        }
+
     printf("\n");
     printf("GAUSS JORDAN:\n");
+
     if(r_gsjd(a1,b1,x1,4,1e-16)!=0)           /* 调用高斯－约当消去法*/
         for(i=0; i<4; i++)                     /* 打印结果*/
+        {
             printf("x1(%d)=%7.5f\n",i,x1[i]);
+        }
+
     return 0;
 }

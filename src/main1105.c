@@ -8,7 +8,9 @@ double f1105(double a,double b,int n,double(*p)(double))
     h=(b-a)/n;
 
     if(n==1)
+    {
         return (p(a)+p(b))*h/2;
+    }
     else
     {
         return (p(b)+p(b-h))*h/2+f1105(a,b-h,n-1,p);

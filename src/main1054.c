@@ -15,7 +15,9 @@ int main1054()
         scanf("%11d",&a);
 
         if(a>max)
+        {
             max=a;
+        }
 
         sum=sum+a;
         n++;

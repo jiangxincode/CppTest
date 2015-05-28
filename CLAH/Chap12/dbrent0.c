@@ -13,12 +13,14 @@ int main12dbrent0()
     eps = 1.0e-10;
     nmin = 0;
     printf("dbrent serch:\n");
+
     for(i=1; i<80; i++)
     {
         a = i;
         b = i+1;
         brake(&a,&b,&c,f);
         fx = dbrent(a,b,c,f,df,&xopt,eps,itmax);
+
         if(nmin == 0)
         {
             xmin[0] = xopt;
@@ -28,9 +30,13 @@ int main12dbrent0()
         else
         {
             iflag = 0;
+
             for(j=0; j<nmin; j++)                           /* 寻找是否已经有相同的极小值*/
                 if(fabs(xopt-xmin[j]) < 0.01*xopt)
+                {
                     iflag = 1;
+                }
+
             if(iflag==0)
             {
                 xmin[nmin++] = xopt;
@@ -38,6 +44,7 @@ int main12dbrent0()
             }
         }
     }
+
     return 0;
 }
 

@@ -23,16 +23,30 @@ int na,nb;
     double sd,t,x,p;
     int v;
     double eps=0.00001;
+
     for(j=0; j<na; j++)
+    {
         meana+=a[j];
+    }
+
     meana=meana/na;							//计算样本一均值
+
     for(j=0; j<nb; j++)
+    {
         meanb+=b[j];
+    }
+
     meanb=meanb/nb;							//计算样本二均值
+
     for(j=0; j<na; j++)
-        vara+=(a[j]-meana)*(a[j]-meana);	//样本一的方差*na
+    {
+        vara+=(a[j]-meana)*(a[j]-meana);    //样本一的方差*na
+    }
+
     for(j=0; j<nb; j++)
-        varb+=(b[j]-meanb)*(b[j]-meanb);	//样本二的方差*nb
+    {
+        varb+=(b[j]-meanb)*(b[j]-meanb);    //样本二的方差*nb
+    }
 
     v=na+nb-2;
     sd=sqrt((1.0/na+1.0/nb)/(double)v*(vara+varb));//计算sd

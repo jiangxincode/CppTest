@@ -16,17 +16,22 @@ int n;
 struct c_comp *x,*y;
 {
     int i,j,k,nn;
-
     k = log(n-0.5)/log(2.0)+1;	                  /* 求出log2(n)*/
     nn = 1;
+
     for(i=0; i<k; i++)		                      /* 检测点个数是否是2的整数次幂*/
+    {
         nn = nn<<1;
+    }
+
     if(nn != n)
     {
         printf("(ifft)n should be 2^k.\n");
         return(0);
     }
+
     j = ifft1(y,n,x);		                       /* 调用子函数求解求和符号中的部分*/
+
     if(j)
     {
         for(i=0; i<n; i++)		                       /* 将子函数返回的结果除以n*/
@@ -35,6 +40,7 @@ struct c_comp *x,*y;
             x[i].imz /= n;
         }
     }
+
     return(j);
 }
 
@@ -45,22 +51,26 @@ struct c_comp *x,*y;
     int i,j,k;
     struct c_comp wn,w,t;
     struct c_comp *x0,*x1,*y0,*y1;
+
     if(n==1)			                              /* n=1时，唯一元素x与y相等*/
     {
         x[0].rmz = y[0].rmz;
         x[0].imz = y[0].imz;
         return(1);
     }
+
     k = n>>1;			                     /*k是n的一半，就是两个小规模问题分配空间的大小*/
     x0 = (struct c_comp*)malloc(k*sizeof(struct c_comp));
     x1 = (struct c_comp*)malloc(k*sizeof(struct c_comp));
     y0 = (struct c_comp*)malloc(k*sizeof(struct c_comp));
     y1 = (struct c_comp*)malloc(k*sizeof(struct c_comp));
+
     if((x0==NULL)||(x1==NULL)||(y0==NULL)||(y1==NULL))
     {
         printf("(ifft)memory xlloc fxiled.\n");
         return(0);
     }
+
     for(i=0; i<k; i++)	                         /* 将问题分成两段*/
     {
         j=2*i;
@@ -69,8 +79,10 @@ struct c_comp *x,*y;
         y1[i].rmz = y[j+1].rmz;
         y1[i].imz = y[j+1].imz;
     }
+
     i = ifft1(y0,k,x0);                           /* 对两段分别求解*/
     j = ifft1(y1,k,x1);
+
     if(i && j)		                            /* 若两段求解成功，则将两部分解综合起来*/
     {
         wn.rmz = cos(2*PI/n);
@@ -86,6 +98,7 @@ struct c_comp *x,*y;
             c_comp_product(&wn,&w,&w);	 /* w与wn相乘，结果放在w中，第k次综合时的w就是wn^k*/
         }
     }
+
     free(y0);
     free(y1);
     free(x0);

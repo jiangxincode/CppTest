@@ -15,15 +15,23 @@ int n;
 {
     int i,j,k,m;
     double z,d,xx,yy[10];
+
     if(y==NULL)                                /* 检测输入指针是否为空*/
     {
         printf("Pointer is Null\n");
         return(0.0);
     }
+
     if(n<1)                                    /* 没有提供数据点时，返回0*/
+    {
         return(0.0);
+    }
+
     if(n==1)                                   /* 只有一个数据点时，就返回这个点*/
+    {
         return(y[0]);
+    }
+
     if(n==2)                                   /* 只有两个数据点时，都要用*/
     {
         k = 0;
@@ -43,6 +51,7 @@ int n;
     {
         /* 计算合适的区间*/
         k = (int)((t-x)/h);
+
         if(n>7)
         {
             if(k<4)                                /* 插值点在中间*/
@@ -67,20 +76,31 @@ int n;
             m = n;
         }
     }
+
     printf("atken: %d,%d\n",k,k+m-1);
+
     for(i=0; i<m; i++)                          /* 将使用的m个数据转存在yy中*/
+    {
         yy[i] = y[k+i];
+    }
+
     xx = x+k*h;
     i=1;
+
     do                                          /* 埃特金逐步插值*/
     {
         z=yy[i];
+
         for(j=0; j<i; j++)
+        {
             z=yy[j]+(t-xx-j*h)*(yy[j]-z)/(h*(j-i));
+        }
+
         yy[i]=z;
         d = fabs(yy[i]-yy[i-1]);                  /* 比较两次插值的结果*/
         i++;
     }
-    while ((i<m)&&(d>eps));                     /* 检查是否满足精度要求*/
+    while((i<m)&&(d>eps));                      /* 检查是否满足精度要求*/
+
     return(z);
 }

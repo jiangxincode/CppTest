@@ -16,7 +16,9 @@ char jx_getchar(TRANSFORM option)
     char ch = getchar();
 
     if(ch == '\n') //直接输入回车，返回'\n'
+    {
         return '\n';
+    }
     else if((temp=getchar())!='\n') //输入一些字符（不止一个），然后回车，清除所有字符后返回'\n'
     {
         while((temp=getchar())!='\n' && temp!=EOF);
@@ -102,11 +104,17 @@ int prime(int n)
     for(i=2; i<n; i++)
     {
         if((n%i)==0)
+        {
             flag++;
+        }
     }
 
     if(flag == 0)
+    {
         return 1;
+    }
     else
+    {
         return 0;
+    }
 }

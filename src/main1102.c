@@ -12,9 +12,13 @@ void dec2hex(int x)
     a=x%16;
 
     if(a<10)
+    {
         printf("%d",a);
+    }
     else
+    {
         printf("%c",a-10+'A');
+    }
 }
 int main1102()
 {

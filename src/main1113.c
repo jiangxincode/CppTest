@@ -10,7 +10,9 @@ int main1113()
             a=x[0];
 
             for(j=0; j<9; j++)
+            {
                 x[j]=x[j+1];
+            }
 
             x[j]=a;
         }
@@ -20,13 +22,17 @@ int main1113()
             a=x[9];
 
             for(j=9; j>0; j--)
+            {
                 x[j]=x[j-1];
+            }
 
             x[0]=a;
         }
 
     for(i=0; i<10; i++)
+    {
         printf("%d ",x[i]);
+    }
 
     return 0;
 }

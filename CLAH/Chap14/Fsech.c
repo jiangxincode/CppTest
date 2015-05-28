@@ -17,6 +17,7 @@ STRU *str;
     long int k;
     k = sizeof(STRU);
     flag = 1;
+
     while(flag)
     {
         if(fread(str,k,1,fp) == 0)       /* 已经到达文件尾，什么都没找到*/
@@ -33,5 +34,6 @@ STRU *str;
             }
         }
     }
+
     return(q);
 }

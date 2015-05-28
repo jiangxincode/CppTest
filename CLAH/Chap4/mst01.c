@@ -10,19 +10,29 @@ int main4mst01()
     };
     smtr(a,5,q,1e-16);                                   /* A相似变换为三对角阵*/
     printf("MAT Q IS:\n");                                /* 打印Q矩阵*/
-    for (i=0; i<=4; i++)
-    {
-        for (j=0; j<=4; j++)
-            printf("%2.5f ",q[i][j]);
-        printf("\n");
-    }
-    printf("\n");
-    printf("MAT TR IS:\n");                              /* 打印三对角阵*/
+
     for(i=0; i<=4; i++)
     {
         for(j=0; j<=4; j++)
-            printf("%2.5f ",a[i][j]);
+        {
+            printf("%2.5f ",q[i][j]);
+        }
+
         printf("\n");
     }
+
+    printf("\n");
+    printf("MAT TR IS:\n");                              /* 打印三对角阵*/
+
+    for(i=0; i<=4; i++)
+    {
+        for(j=0; j<=4; j++)
+        {
+            printf("%2.5f ",a[i][j]);
+        }
+
+        printf("\n");
+    }
+
     return 0;
 }

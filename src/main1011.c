@@ -54,14 +54,22 @@ int main10115()
     scanf("%20f%20f%20f",&a,&b,&c);
 
     if(a>b)
+    {
         d=a;
+    }
     else
+    {
         d=b;
+    }
 
     if(d>c)
+    {
         printf("%f",d);
+    }
     else
+    {
         printf("%f",c);
+    }
 
     return 0;
 }
@@ -72,7 +80,9 @@ int main10117()
     scanf("%11d",&n);
 
     for(i=1; i<=n; i++)
+    {
         s=s*i;
+    }
 
     printf("%d=%d!",s,n);
     return 0;

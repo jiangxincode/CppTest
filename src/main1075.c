@@ -4,9 +4,13 @@
 int ye(int y)
 {
     if((y%4==0 && y%100!=0) || (y%400==0))
+    {
         return 1;
+    }
     else
+    {
         return 0;
+    }
 }
 int mo(int m, int y)
 {
@@ -30,9 +34,13 @@ int mo(int m, int y)
     case 2:
     {
         if(ye(y)==1)
+        {
             return 29;
+        }
         else
+        {
             return 28;
+        }
     }
     }
 
@@ -53,9 +61,13 @@ int main1075()
         int t=ye(i);
 
         if(t==1)
+        {
             s=s+366;
+        }
         else
+        {
             s=s+365;
+        }
     }
 
     for(j=1; j<m; j++)

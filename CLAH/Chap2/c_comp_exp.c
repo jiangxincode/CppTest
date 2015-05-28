@@ -20,9 +20,7 @@ int c_comp_exp(struct c_comp *a,struct c_comp *c)
     }
 
     double R = exp(a->rmz);
-
     c->rmz = R*cos(a->imz);
     c->imz = R*sin(a->imz);
-
     return(1);
 }

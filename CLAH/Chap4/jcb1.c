@@ -18,14 +18,17 @@ int n,itmax;
     int i,j,p,q,it;
     double sint,cost,sin2t,cos2t,d,tmp,t1,t2,t3;
     it = 0;
+
     while(it < itmax)
     {
         it++;
         d = 0.0;
+
         for(i=1; i<n; i++)                  /* 寻找绝对值最大的元素*/
             for(j=0; j<i; j++)
             {
                 tmp = fabs(a[i*n+j]);
+
                 if(tmp>d)
                 {
                     d = tmp;
@@ -33,17 +36,26 @@ int n,itmax;
                     q=j;
                 }
             }
+
         if(d < eps)                         /* 已经收敛成对角阵，此时迭代完成*/
         {
             for(i=0; i<n; i++)              /* 取出特征值*/
+            {
                 u[i] = a[i*n+i];
+            }
+
             return(it);
         }
+
         sint = 2*a[p*n+q];
         cost = a[q*n+q]-a[p*n+p];
         sin2t = sint/(sqrt(sint*sint+cost*cost));
+
         if(cost<0.0)
-            sin2t = -sin2t;                   /* 计算sin(2 theta)*/
+        {
+            sin2t = -sin2t;    /* 计算sin(2 theta)*/
+        }
+
         cos2t = sqrt(1.0-sin2t*sin2t);
         sint = sin2t/(sqrt(2*(1.0+cos2t)));     /* 计算givens矩阵元素*/
         cost=sqrt(1.0-sint*sint);
@@ -55,6 +67,7 @@ int n,itmax;
         a[q*n+q] = tmp - t1 + t2 + t3;
         a[p*n+q] = 0.0;
         a[q*n+p] = 0.0;
+
         for(j=0; j<n; j++)               /* 第p行和第q行的变换*/
             if((j!=p)&&(j!=q))
             {
@@ -62,6 +75,7 @@ int n,itmax;
                 a[p*n+j] = tmp*cost-a[q*n+j]*sint;
                 a[q*n+j] = tmp*sint+a[q*n+j]*cost;
             }
+
         for(i=0; i<=n-1; i++)           /* 用对称性可求得第p列和第q列*/
             if((i!=p)&&(i!=q))
             {
@@ -69,6 +83,7 @@ int n,itmax;
                 a[i*n+q] = a[q*n+i];
             }
     }
+
     return(0);
 }
 

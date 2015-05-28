@@ -9,7 +9,6 @@ static     double f(double);
 int main6interroot3()
 {
     double x,eps,ab;
-
     double *x0 = &x;
     int max;
     *x0=1.0;                             /* 初值，精度，最大迭代次数*/
@@ -17,10 +16,16 @@ int main6interroot3()
     eps=0.00001;
     max=60;
     printf("  x(k)         x(k+1)        dis\n");
+
     if(interroot(x0,ab,f,eps,max))
+    {
         printf("\n%1.7f\n",*x0);
+    }
     else
+    {
         printf("failed!\n");
+    }
+
     return 0;
 }
 

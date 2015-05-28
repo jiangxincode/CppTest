@@ -8,6 +8,7 @@ int main11gramma0()
     int i;
     double x,y,z;
     printf("Gamma(x): \n");
+
     for(i=1; i<10; i++)
     {
         x = 1.5*i;
@@ -15,8 +16,10 @@ int main11gramma0()
         y = exp(y);
         printf("x=%2.5f, gamma(x)=%2.5f\n",x,y);
     }
+
     printf("\n");
     printf("Beta(x,y): \n");
+
     for(i=1; i<5; i++)
     {
         x = 0.5*i;
@@ -24,6 +27,7 @@ int main11gramma0()
         z = beta(x,y);
         printf("x=%2.5f,y=%2.5f, beta(x)=%2.5f\n",x,y,z);
     }
+
     getchar();
     return 0;
 }

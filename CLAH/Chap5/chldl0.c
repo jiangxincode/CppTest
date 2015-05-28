@@ -12,12 +12,20 @@ int main5childl0()
     /*这两个算法不破坏数据，因此不需要拷贝*/
     r_ldl(a,b,x,5,1e-16);                                /* 调用LDL分解法求解*/
     printf("LDL DECO:\n");                               /* 打印LDL分解法的结果*/
+
     for(i=0; i<5; i++)
+    {
         printf("%2.5f\n",x[i]);
+    }
+
     printf("\n");
     r_chde(a,b,x,5,1e-16);                               /* 调用Cholesky分解法求解*/
     printf("CHOLESKY:\n");                               /* 打印Cholesky分解法的结果*/
+
     for(i=0; i<5; i++)
+    {
         printf("%2.5f\n",x[i]);
+    }
+
     return 0;
 }

@@ -90,7 +90,9 @@ int main1171()
             scanf("%19s",a);
 
             if(strncmp("n",a,1)==0)
+            {
                 return 0;
+            }
 
             break;
         }
@@ -109,7 +111,9 @@ int main1171()
             scanf("%19s",a);
 
             if(strncmp("n",a,1)==0)
+            {
                 return 0;
+            }
 
             break;
         };
@@ -141,7 +145,9 @@ void f_new(void)
         printf("Please input the name:\n(In Chinese!)\n");
 
         if(count==1)
+        {
             printf("If you don't understand why you should input in Chinese,please input why,otherwise input according reference:\n");
+        }
 
         scanf("%19s",data[count].name);
 
@@ -198,11 +204,17 @@ void f_save(void)
         }
 
         if(strncmp(data[count].sex,"m",1)==0)
+        {
             strcpy(SEX,"男");
+        }
         else if(strncmp(data[count].sex,"f",1)==0)
+        {
             strcpy(SEX,"女");
+        }
         else
+        {
             strcpy(SEX,"未知");
+        }
 
         fprintf(fp,"%s\t%s\t%s\t%s\n",TYPE,data[count].name,SEX,data[count].phone);
     }
@@ -256,11 +268,17 @@ void f_open(void)
         }
 
         if(strncmp(data[count].sex,"m",1)==0)
+        {
             strcpy(SEX,"男");
+        }
         else if(strncmp(data[count].sex,"f",1)==0)
+        {
             strcpy(SEX,"女");
+        }
         else
+        {
             strcpy(SEX,"未知");
+        }
 
         fscanf(fp,"%19s%19s%1s%19s",TYPE,data[count].name,SEX,data[count].phone);
         printf("%s\t%s\t%s\t%s\n",TYPE,data[count].name,SEX,data[count].phone);

@@ -8,7 +8,6 @@ static double f(double);
 int main12brake0()
 {
     double a,b,c,fa,fb,fc;
-
     int i;
 
     for(i=1; i<10; i++)
@@ -23,6 +22,7 @@ int main12brake0()
         printf("x %5.4f %5.4f %5.4f\n",a,b,c);
         printf("f %5.4f %5.4f %5.4f\n",fa,fb,fc);
     }
+
     return 0;
 }
 

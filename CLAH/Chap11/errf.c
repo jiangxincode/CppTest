@@ -16,7 +16,11 @@ double errf(double x)
 {
     double t;
     t = gamm2(0.5,x*x,EPS,DMIN);
+
     if(x<0)                             /* Èôx<0£¬ÔòÈ¡¸º*/
+    {
         t = -t;
+    }
+
     return(t);
 }

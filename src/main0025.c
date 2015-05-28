@@ -95,7 +95,10 @@ int QueuePop(Queue **qH,long *i)
 {
     Queue *temp;
 
-    if((*qH)->next==NULL)return false;
+    if((*qH)->next==NULL)
+    {
+        return false;
+    }
     else
     {
         temp=(*qH)->next;
@@ -111,7 +114,10 @@ int QueuePush(Queue **q,long i)
 {
     Queue *temp;
 
-    if((temp=(Queue *)malloc(sizeof(Queue)))==NULL)return false;
+    if((temp=(Queue *)malloc(sizeof(Queue)))==NULL)
+    {
+        return false;
+    }
     else
     {
         (*q)->next=temp;
@@ -175,9 +181,13 @@ int main0025()
             }//在车站外查找
 
             if(inStack)
+            {
                 printf("\n查询结果:输入的汽车已经在车站中第%d个位置停留了%d个小时!\n",i+1,time-part.time[i]);
+            }
             else if(inQueue)
+            {
                 printf("\n查询结果:输入的汽车已经在车站外第%d个位置等候\n",j);
+            }
             else
             {
                 if(StackPush(&part,num,time)==false)
@@ -185,7 +195,10 @@ int main0025()
                     QueuePush(&p,num);
                     printf("\n车站已满,车辆停在场外。\n");
                 }
-                else printf("\n车辆成功进站!\n");
+                else
+                {
+                    printf("\n车辆成功进站!\n");
+                }
             }//如果车辆到达，当车站已满，停在车站外，否则，进入车站
         }
         else if(state=='l'||state=='L')     //如果是离开
@@ -214,7 +227,10 @@ int main0025()
                 {
                     QueuePop(&H,&num);
 
-                    if(H->next==NULL)p=H;
+                    if(H->next==NULL)
+                    {
+                        p=H;
+                    }
 
                     StackPush(&part,num,time);
                     printf("\n停车场空出一位置。场外等候的%ld号汽车入站了!\n",num);
@@ -239,11 +255,17 @@ int main0025()
                     printf("\n汽车%d在停车场外,不收费\n",i);
                     temp2->next=temp->next;
 
-                    if(temp==p)p=temp2;
+                    if(temp==p)
+                    {
+                        p=temp2;
+                    }
 
                     free(temp);
                 }//在车站外
-                else printf("\n错误!你输入了不存在的车牌号!\n");//如果不在车站外，说明输入车辆不存在
+                else
+                {
+                    printf("\n错误!你输入了不存在的车牌号!\n");    //如果不在车站外，说明输入车辆不存在
+                }
             }
         }
         else if(state=='q'||state=='Q')
@@ -251,7 +273,10 @@ int main0025()
             printf("\n");
             break;
         }
-        else printf("\n输入错误!\n");
+        else
+        {
+            printf("\n输入错误!\n");
+        }
     }//end while
 
     return 0;

@@ -24,6 +24,7 @@ int n;
         printf("One of the pointer is NULL\n");            /* 若为空则打印错误消息，函数结束*/
         return(0);
     }
+
     for(i=0; i<n; i++)                                   /* 为P，Q矩阵赋初值为单位阵*/
     {
         for(j=0; j<n; j++)
@@ -31,16 +32,20 @@ int n;
             P[i*n+j] = 0.0;
             Q[i*n+j] = 0.0;
         }
+
         P[i*n+i] = 1.0;
         Q[i*n+i] = 1.0;
     }
+
     for(k=0; k<n-1; k++)
     {
         pivot = 0.0;                                         /* 选取主元*/
+
         for(i=k; i<n; i++)
             for(j=k; j<n; j++)
             {
                 tmp = fabs(mat[i*n+j]);
+
                 if(tmp > pivot)
                 {
                     pivot = tmp;
@@ -54,6 +59,7 @@ int n;
             printf("Fail\n");                                 /* 若主元为0,则函数结束*/
             return(0);
         }
+
         if(is != k)                                         /* 判断是否需要行交换*/
         {
             for(j=0; j<n; j++)
@@ -63,12 +69,12 @@ int n;
                 tmp = mat[l];
                 mat[l] = mat[v];
                 mat[v] = tmp;
-
                 tmp = Q[l];                                      /* 对P矩阵进行行交换*/
                 Q[l] = Q[v];
                 Q[v] = tmp;
             }
         }
+
         if(js != k)                                         /* 判断是否需要列交换*/
         {
             for(i=0; i<n; i++)
@@ -78,18 +84,20 @@ int n;
                 tmp = mat[l];
                 mat[l] = mat[v];
                 mat[v] = tmp;
-
                 tmp = P[l];                                     /* 对Q矩阵进行列交换*/
                 P[l] = P[v];
                 P[v] = tmp;
             }
         }
+
         kk = k*n+k;
         tmp = 1.0/mat[kk];                                 /* 更新矩阵a中的元素*/
+
         for(i=k+1; i<n; i++)
         {
             l = i*n+k;
             mat[l] = mat[l]*tmp;
+
             for(j=k+1; j<n; j++)
             {
                 v = i*n+j;
@@ -102,6 +110,7 @@ int n;
         for(j=0; j<n; j++)                                  /* 计算L矩阵和U矩阵*/
         {
             l = i*n+j;
+
             if(j<i)
             {
                 L[l] = mat[l];
@@ -118,5 +127,6 @@ int n;
                 U[l] = mat[l];
             }
         }
+
     return(1);
 }

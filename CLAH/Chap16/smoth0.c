@@ -11,8 +11,12 @@ int main16smoth0()
     n = 15;
     smoth(x,n,y);
     printf("五点三次平滑：\n");
-    for (i=0; i<n; i++)
+
+    for(i=0; i<n; i++)
+    {
         printf("x(%2d)=%4.1f   y(%2d)=%4.1f\n",i,x[i],i,y[i]);
+    }
+
     printf("\n");
     return 0;
 }

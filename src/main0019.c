@@ -29,13 +29,17 @@ forest *HashTable[MAXVALUE] = {NULL}; //第一个字的根结点用数组存储
 forest *search_charactor(forest *root, int value) //在此层进行文字的查找
 {
     if(root == NULL)
+    {
         return root;
+    }
     else
     {
         root = root->child;
 
         while(root && (root->value != value))
+        {
             root = root->sibling;
+        }
 
         return root;
     }
@@ -64,7 +68,10 @@ forest *insert_charactor(forest *root, int value)
             tmp = tmp->sibling;
         }
 
-        if(tmp)return tmp; //找到了相同字符
+        if(tmp)
+        {
+            return tmp;    //找到了相同字符
+        }
         else
         {
             tmpcell = (forest *)malloc(sizeof(forest));
@@ -144,7 +151,9 @@ void dic_init()
         while(1)
         {
             if(0 == buffer[i]) //end of the data item
+            {
                 break;
+            }
             else if(128 > buffer[i]) //a ASCII charactor
             {
                 value = buffer[i] * 256;
@@ -166,7 +175,10 @@ void dic_init()
 }
 void free_forest(forest *root)/*递归释放森令各节点*/
 {
-    if(root == NULL) return ;
+    if(root == NULL)
+    {
+        return ;
+    }
     else
     {
         forest *tmp = root->sibling;
@@ -233,12 +245,18 @@ void file_split(const char *filename)
                     if(str_pos != 2) //如果不是中文词的第二个字
                     {
                         if(str_pos == lasteof) //如果该中文词仅含中文字符则仅回退一个中文字符
+                        {
                             fseek(fp, -2, SEEK_CUR);
+                        }
                         else //如果该中文词包含ASCII字符则仅回退末尾若干个英文字符
+                        {
                             fseek(fp, -(str_pos - lasteof), SEEK_CUR);
+                        }
                     }
                     else //如果是中文词的第二个字
+                    {
                         fseek(fp, -2, SEEK_CUR);
+                    }
 
                     str_pos = 0;
                 }
@@ -248,7 +266,9 @@ void file_split(const char *filename)
                     str[str_pos++] = ch[1];
 
                     if(root->is_Chinese == 1) /*若是一个中文词，记录下最后的位置*/
+                    {
                         lasteof = str_pos;
+                    }
                 }
             }
         }

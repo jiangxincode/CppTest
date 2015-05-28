@@ -18,6 +18,7 @@ int c_comp_plus(struct c_comp *a1,struct c_comp *a2,struct c_comp *c)
         printf("(c_comp_plus)The c_comp pointer is NULL!\n");
         return(0);
     }
+
     c->rmz = a1->rmz + a2->rmz;
     c->imz = a1->imz + a2->imz;
     return(1);

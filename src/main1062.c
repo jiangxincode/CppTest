@@ -24,7 +24,9 @@ int main1062()
         }
 
         if(p==a)
+        {
             printf("%d\n",a);
+        }
 
         a=a+1;
     }

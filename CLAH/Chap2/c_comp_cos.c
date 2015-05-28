@@ -23,6 +23,5 @@ int c_comp_cos(struct c_comp *a,struct c_comp *c)
     double tmp2 = exp(-a->imz);
     c->rmz = cos(a->rmz)*(tmp1+tmp2)/2;
     c->imz = -sin(a->rmz)*(tmp1-tmp2)/2;
-
     return(1);
 }

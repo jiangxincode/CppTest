@@ -20,6 +20,7 @@ double h,alfa,beta,gama;
     z = 0.0;
     h2 = h*h;
     invh2 = 1.0/h/h;
+
     for(i=0; i<n; i++)
     {
         z1 = z + h*v + h2*a*0.5;                 /* 中间值*/
@@ -29,5 +30,6 @@ double h,alfa,beta,gama;
         v = v + h*a +  beta*tmp;                 /* 递推的中间变量v*/
         a = a + 0.5*gama*tmp*invh2;              /* 递推的中间变量a*/
     }
+
     return(1);
 }

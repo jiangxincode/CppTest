@@ -18,18 +18,28 @@ int main4jcb0()
         {7.0,4.0,20.0,-6.0,6.0}
     };
     i=jcb1(a,5,u,eps,100);
-    if (i>0)
+
+    if(i>0)
     {
         printf("jcb1  eigvalue:\n");
-        for (i=0; i<5; i++)
+
+        for(i=0; i<5; i++)
+        {
             printf("%9.6f \n",u[i]);
+        }
     }
+
     i=jcb2(b,5,u2,eps,100);
-    if (i>0)
+
+    if(i>0)
     {
         printf("jcb2 eigvalue:\n");
-        for (i=0; i<5; i++)
+
+        for(i=0; i<5; i++)
+        {
             printf("%9.6f \n",u[i]);
+        }
     }
+
     return 0;
 }

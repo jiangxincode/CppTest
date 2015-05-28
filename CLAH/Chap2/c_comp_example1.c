@@ -17,10 +17,12 @@ int main2c_comp_example1()
         printf("乘法结果为：");
         printf("%1.5f+j%1.5f\n",c.rmz,c.imz);
     }
+
     if(c_comp_divide(&a,&b,&d))
     {
         printf("除法结果为：");
         printf("%1.5f+j%1.5f\n",d.rmz,d.imz);
     }
+
     return 0;
 }

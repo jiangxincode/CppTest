@@ -15,13 +15,16 @@ double RD(double x,double y,double z)
     double t,t1,t2,t3,t4,t5,t6;
     double xt,yt,zt;
     eps = 1.0e-25;
+
     if(x<0||y<0||(x+y)<eps||z<eps)         /* 检查自变量范围*/
     {
         printf("Parameters incorrect\n");
         return(0.0);
     }
+
     s = 0.0;
     f = 4.0;
+
     do
     {
         t1 = sqrt(x);
@@ -41,6 +44,7 @@ double RD(double x,double y,double z)
         flag = flag>fabs(xt)?flag:fabs(xt);
     }
     while(flag > 0.0015);                                   /* 这个阈值用于判断xyz充分接近*/
+
     t1 = xt*yt;                                              /* 用泰勒展开计算积分值*/
     t2 = zt*zt;
     t3 = t1-t2;

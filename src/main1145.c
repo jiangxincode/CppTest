@@ -20,7 +20,9 @@ void FindLWord(char *a,char*b)
             p[k]='\0';
 
             if(strlen(p)>strlen(b))
+            {
                 strcpy(b,p);
+            }
         }
     }
 }

@@ -15,20 +15,29 @@ int n;
 {
     int i,j,k,p;
     double z,tmp;
+
     if((x==NULL)||(y==NULL))             /* 检测输入指针是否为空*/
     {
         printf("Pointer is Null\n");
         return(0.0);
     }
+
     if(n<1)                              /* 没有提供结点，返回0.0*/
+    {
         return(0.0);
+    }
+
     if(n==1)                             /* 只有一个结点，返回此函数值*/
+    {
         return(y[0]);
+    }
+
     if(n==2)
     {
         z = (y[0]*(t-x[1]) - y[1]*(t-x[0]))/(x[0] - x[1]);
         return(z);
     }
+
     if(t < x[2])
     {
         k = 0;
@@ -43,14 +52,21 @@ int n;
     {
         k = 0;
         p = n-1;                    /* 二分法寻找合适的区间*/
+
         while((p-k) > 1)
         {
             j = (k+p)/2;
+
             if(x[j] < t)
+            {
                 k = j;
+            }
             else
+            {
                 p = j;
+            }
         }
+
         if(n>7)
         {
             if(k<4)
@@ -75,15 +91,22 @@ int n;
             p = n;
         }
     }
+
     z = 0.0;
     printf("lagr7: %d,%d\n",k,k+p-1);    /* 打印使用的区间*/
+
     for(i=k; i<k+p; i++)                 /* 求出插值的结果*/
     {
         tmp = 1.0;
+
         for(j=k; j<k+p; j++)
             if(j!=i)
+            {
                 tmp = tmp*(t-x[j])/(x[i]-x[j]);
+            }
+
         z = z + tmp*y[i];
     }
+
     return(z);
 }

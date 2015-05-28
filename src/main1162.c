@@ -180,30 +180,48 @@ static NODE * merge(NODE *head1, NODE *head2)
     p1=head1,p2=head2;
 
     if(p1->num>p2->num)
+    {
         head=p2,p=p2,p2=p2->next;
+    }
     else
+    {
         head=p1,p=p1,p1=p1->next;
+    }
 
     while(p1!=NULL&&p2!=NULL)
     {
         if(p1->num>p2->num)
+        {
             p->next=p2,p=p2,p2=p2->next;
+        }
         else if(p1->num<p2->num)
+        {
             p->next=p1,p=p1,p1=p1->next;
+        }
         else
         {
             if(p1->score>p2->score)
+            {
                 p->next=p1,p=p1;
+            }
             else
+            {
                 p->next=p2,p=p2;
+            }
 
             p1=p1->next;
             p2=p2->next;
         }
     }
 
-    if(p1==NULL) p->next=p2;
-    else p->next=p1;
+    if(p1==NULL)
+    {
+        p->next=p2;
+    }
+    else
+    {
+        p->next=p1;
+    }
 
     return (head);
 }

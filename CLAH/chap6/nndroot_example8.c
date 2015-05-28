@@ -8,7 +8,6 @@ int main6nndroot8()
     double eps=0.000001,h=0.1,t=0.5;
     int n=3,max=600,i;
     double *x0;
-
     x0=(double*)malloc(n*sizeof(double));
     x0[0]=1;                                 /* ≥ı÷µ*/
     x0[1]=-3;
@@ -17,10 +16,15 @@ int main6nndroot8()
     if(nndroot(x0,n,f,eps,max,h,t))
     {
         for(i=0; i<n; i++)
-            printf("x[%d]=%1.7f\n",i,x0[i]); /*  ‰≥ˆ*/
+        {
+            printf("x[%d]=%1.7f\n",i,x0[i]);    /*  ‰≥ˆ*/
+        }
     }
     else
+    {
         printf("failed!\n");
+    }
+
     return 0;
 }
 
@@ -43,6 +47,7 @@ double h;
         fi[6+i]=5*x[0]*x[2]+x[1]*x[2]-24;
         x[i]=tmp;
     }
+
     return;
 }
 

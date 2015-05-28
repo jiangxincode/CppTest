@@ -22,9 +22,13 @@ int main1073()
     }
 
     if(fabs(right-left)/(fabs(right)+fabs(left))<1e-6)
+    {
         printf("right!\nx=%.20f\nleft=%.20f\nright=%.20f",x,left,right);
+    }
     else
+    {
         printf("wrong!");
+    }
 
     return 0;
 }

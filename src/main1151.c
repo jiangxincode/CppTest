@@ -64,7 +64,9 @@ int main1151(int argc,char*argv[])
     for(i=0; i<count; i++)
     {
         if(!prime(arr[i]))
+        {
             printf("%d ",arr[i]);
+        }
     }
 
     printf("\n");

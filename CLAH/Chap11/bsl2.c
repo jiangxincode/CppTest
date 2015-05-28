@@ -17,21 +17,32 @@ double bsl2(int n,double x)
     int j;
     double ax,nx,by0,by1;
     ax = fabs(x);
+
     if(ax==0.0)
+    {
         return(0.0);
+    }
+
     nx = 2.0/ax;                          /* 计算2*n/x需要的值2/x*/
     by0 = Y0(ax);                       /* 递推初值Y0*/
     by1 = Y1(ax);                       /* 递推初值Y1*/
+
     for(j=1; j<n; j++)
     {
         t = j*nx*by1-by0;                /* 递推计算*/
         by0 = by1;
         by1 = t;
     }
+
     if(n==0)
+    {
         t = by0;
+    }
     else
+    {
         t = by1;
+    }
+
     return (x<0.0)&&(n&1)?-t:t;            /* n为奇数且x为负时，返回-t*/
 }
 
@@ -39,6 +50,7 @@ double Y0(double x)                     /* 计算Y0(x)*/
 {
     double x1,x2,t,t1,t2,y;
     x1 = fabs(x);
+
     if(x1 < 8.0)                           /* 有理分式逼近*/
     {
         x2 = x*x;
@@ -62,6 +74,7 @@ double Y0(double x)                     /* 计算Y0(x)*/
         t = x1-0.785398164;
         t = sqrt(0.0795774715*y)*(sin(t)*t1+y*cos(t)*t2);
     }
+
     return t;
 }
 
@@ -69,6 +82,7 @@ double Y1(double x)                  /* 计算Y1(x)*/
 {
     double x1,x2,t,t1,t2,y;
     x1 = fabs(x);
+
     if(x1 < 8.0)                           /* 有理分式逼近*/
     {
         x2 = x*x;
@@ -92,5 +106,6 @@ double Y1(double x)                  /* 计算Y1(x)*/
         t = x1-2.356194491;
         t = sqrt(0.0795774715*y)*(sin(t)*t1+y*cos(t)*t2);
     }
+
     return t;
 }

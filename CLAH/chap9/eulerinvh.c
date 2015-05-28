@@ -10,25 +10,32 @@
 #include<stdio.h>
 #include<math.h>
 
-static int eulerinvh(double *y,int n,double (*f)(),double h,int m,double a)
+static int eulerinvh(double *y,int n,double(*f)(),double h,int m,double a)
 {
     double *F,x;
     int k=0,i;
     F=(double*)malloc(sizeof(double)*n);     /* 微分方程表达式的值*/
+
     if(F==NULL)
     {
         printf("memory alloc failed.\n");
         return(0);
     }
+
     do
     {
         x=a+k*h;
         f(&y[k*n],F,x);                      /* 计算微分方程表达式的值*/
+
         for(i=0; i<n; i++)
+        {
             y[(k+1)*n+i]=y[k*n+i]+h*F[i];    /* 计算此处的函数值*/
+        }
+
         k++;
     }
     while(k<m);
+
     free(F);
     return (1);
 }

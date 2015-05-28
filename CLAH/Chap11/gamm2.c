@@ -18,28 +18,37 @@ double gamm2(double a,double x,double e1,double e0)
     int n;
     double t,del,gln;
     double an,bn,c,d;               /* 计算连分式级数需要的变量*/
+
     if((x<0.0)||(a<=0))
     {
         printf("x<0.0 or a<=0.0\n");
         return(0.0);
     }
+
     if(x<e0)
+    {
         return(0.0);
+    }
+
     gln = gammln(a);
+
     if(x<(a+1.0))                 /* 调用求和级数*/
     {
         del = 1.0/a;               /*gamm(a)/gamm(a+1)=1/a*/
         t = 1.0/a;
+
         for(n=1; n<NMAX; n++)
         {
             del = del*x/(a+n);
             t = t+del;
+
             if(fabs(del)<fabs(t)*e1)          /* 级数部分已经收敛*/
             {
                 t = t*exp(-x+a*log(x)-gln);
                 return(t);
             }
         }
+
         printf(" iteration too many times\n");    /* 经过NMAX次迭代没有收敛*/
         return(0.0);
     }
@@ -49,19 +58,28 @@ double gamm2(double a,double x,double e1,double e0)
         c = 1.0/e0;
         d = 1.0/bn;
         t = d;
+
         for(n=1; n<NMAX; n++)
         {
             an = n*(a-n);              /* 此节的系数a*/
             bn = bn+2.0;               /* 此节的系数b*/
             d = an*d+bn;
             c = bn+an/c;
+
             if(fabs(d) < e0)           /* 若小于e0，则认为是0*/
+            {
                 d = e0;
+            }
+
             if(fabs(c) < e0)
+            {
                 c = e0;
+            }
+
             d = 1.0/d;
             del = d*c;
             t = t*del;
+
             if(fabs(del-1.0)<e1)          /* 级数部分已经收敛*/
             {
                 t=exp(-x+a*log(x)-gln)*t;
@@ -69,6 +87,7 @@ double gamm2(double a,double x,double e1,double e0)
                 return(t);
             }
         }
+
         printf(" iteration too many times\n");    /* 经过NMAX次迭代没有收敛*/
         return(0.0);
     }

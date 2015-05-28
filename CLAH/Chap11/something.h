@@ -20,7 +20,7 @@ double RF(double x,double y,double z);
 double RC(double x,double y);
 double RD(double x,double y,double z);
 double RJ(double x,double y,double z,double p);
-double leg1(double a,double b,int n0,double eps,double h0,double (*f)());
+double leg1(double a,double b,int n0,double eps,double h0,double(*f)());
 
 double J0(double);
 double J1(double);

@@ -19,6 +19,7 @@ double *G;
     int i;
     double U1,U2;
     srand((unsigned)time(0));/*用系统时钟做种子*/
+
     for(i=0; i<L; i=i+2)
     {
         U1=rand()/(double)RAND_MAX;/*生成(0,1)随机数U1*/
@@ -28,6 +29,7 @@ double *G;
         G[i+1]=sqrt(-2*log(U1))*cos(2*PI*U2);/*生成标准正态分布随机数G2*/
         G[i+1]=sqrt(b)*G[i+1]+a;/*生成服从N~(a,b)的随机数G2*/
     }
+
     return(1);
 }
 

@@ -9,6 +9,7 @@ int main11gramm20()
     double e1=1.0e-7,e0=1.0e-30;               /* 这两个值用于不完全伽马函数的计算*/
     static double a[3]= {0.5,5.0,10.0};
     static double x[3]= {0.5,5.0,10.0};
+
     for(i=0; i<3; i++)
     {
         for(j=0; j<3; j++)
@@ -18,8 +19,10 @@ int main11gramm20()
             y=gamm2(ai,xj,e1,e0);                    /* 调用函数求值并打印结果*/
             printf("gamm2(%2.1f,%2.1f)=%e\n",ai,xj,y);
         }
+
         printf("\n");
     }
+
     getchar();
     return 0;
 }

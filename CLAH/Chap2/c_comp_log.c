@@ -21,6 +21,5 @@ int c_comp_log(struct c_comp *a,struct c_comp *c)
 
     c->rmz = log(sqrt(a->rmz*a->rmz + a->imz*a->imz));
     c->imz = atan2(a->imz,a->rmz);
-
     return(1);
 }

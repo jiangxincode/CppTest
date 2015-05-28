@@ -44,9 +44,13 @@ void popQueue(stack *s1, stack *s2)
         }
 
         if(s2->top > 0)
+        {
             printf("%d\n", s2->seq[-- s2->top]);
+        }
         else
+        {
             printf("-1\n");
+        }
     }
 }
 

@@ -14,9 +14,16 @@ int n,k,a;
 {
     int i;
     i = k;
+
     while(i<n &&(x[i].KEY != a))
+    {
         i++;
+    }
+
     if(i==n)
+    {
         return(-1);
+    }
+
     return(i);
 }

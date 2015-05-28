@@ -7,7 +7,10 @@ int main1134(void)
     int unisec[30],n,i;
     n=Union(sec,unisec);
 
-    for(i=0; i<n; i++)printf("%5d",unisec[i]);
+    for(i=0; i<n; i++)
+    {
+        printf("%5d",unisec[i]);
+    }
 
     printf("\n");
     return 0;
@@ -26,7 +29,10 @@ int Union(int (*a)[6],int res[])
                     break;
                 }
 
-            if(flag==0) 	res[count++]=a[i][j];
+            if(flag==0)
+            {
+                res[count++]=a[i][j];
+            }
         }
 
     return count;

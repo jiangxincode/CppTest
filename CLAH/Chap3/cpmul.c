@@ -26,8 +26,12 @@ int cpmul(struct c_comp *a,int n,struct c_comp *b,int m,struct c_comp *c)
 
     k = log(n+m-1-0.5)/log(2.0)+1;	/* 求最小的k，并满足2^k 不小于多项式C的阶数*/
     nn = 1;				/* 求出2^k*/
+
     for(i=0; i<k; i++)
+    {
         nn = nn<<1;
+    }
+
     /* 为扩展后的多项式分配足够的空间*/
     aa = (struct c_comp*)malloc(nn*sizeof(struct c_comp));
     bb = (struct c_comp*)malloc(nn*sizeof(struct c_comp));
@@ -41,21 +45,25 @@ int cpmul(struct c_comp *a,int n,struct c_comp *b,int m,struct c_comp *c)
         printf("(cpmul)memory alloc failed.\n");
         return(0);
     }
+
     for(i=0; i<n; i++) 			 /*将A,B两个多项式补足成2^k阶的，并转存在aa与bb中*/
     {
         aa[i].rmz = a[i].rmz;
         aa[i].imz = a[i].imz;
     }
+
     for(i=n; i<nn; i++)
     {
         aa[i].rmz = 0;
         aa[i].imz = 0;
     }
+
     for(i=0; i<m; i++)
     {
         bb[i].rmz = b[i].rmz;
         bb[i].imz = b[i].imz;
     }
+
     for(i=m; i<nn; i++)
     {
         bb[i].rmz = 0;
@@ -67,10 +75,13 @@ int cpmul(struct c_comp *a,int n,struct c_comp *b,int m,struct c_comp *c)
 
     if(i&&k)			  	 /* 若点表示求解成功，继续运算。否则返回0*/
     {
-
         for(i=0; i<nn; i++)			 /* 计算在各点上的乘积*/
+        {
             c_comp_product(&ya[i],&yb[i],&yc[i]);
+        }
+
         k = p2c(yc,nn,cc);			 /*求出多项式C的系数*/
+
         if(k)				 /*剔除多余的高阶零项。若p2c函数失败，则返回0*/
         {
             for(i=0; i<m+n-1; i++)
@@ -78,11 +89,16 @@ int cpmul(struct c_comp *a,int n,struct c_comp *b,int m,struct c_comp *c)
                 c[i].rmz = cc[i].rmz;
                 c[i].imz = cc[i].imz;
             }
+
             return(1);
         }
         else
+        {
             return(0);
+        }
     }
     else
+    {
         return(0);
+    }
 }

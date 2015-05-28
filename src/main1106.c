@@ -4,9 +4,13 @@
 double term(double x,int n)
 {
     if(n==1)
+    {
         return x;
+    }
     else
+    {
         return term(x,n-1)*(2*n-3)*(-1)*(2*n-3)*x*x/(2*n-1)/(2*n-2);
+    }
 }
 double f1106(double x,double eps)
 {

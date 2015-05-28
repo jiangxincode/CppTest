@@ -13,7 +13,8 @@ void connect(char *ch,link pointer);
 int main0034()
 {
     char *input;
-    char arr1[50][10]= {
+    char arr1[50][10]=
+    {
         {"众星拱月"},
         {"月光弥漫"},
         {"漫游他方"},
@@ -24,7 +25,8 @@ int main0034()
         {"望子成龙"},
         {"来龙去脉"},
         {"群龙无首"},
-        {"龙飞凤舞"}};
+        {"龙飞凤舞"}
+    };
     link ptr;
     ptr=create_list(arr1,10);
     printf("请输入一个成语\n");

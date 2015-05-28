@@ -12,9 +12,13 @@ int f1095(int n)
         c=n%10;
 
         if(a*a+b*b==c*c&&a!=0&&b!=0&&c!=0)
+        {
             return 1;
+        }
         else
+        {
             return 0;
+        }
     }
     else if(n>=1000&&n<10000)
     {
@@ -23,9 +27,13 @@ int f1095(int n)
         c=n%100;
 
         if(a*a+b*b==c*c&&a!=0&&b!=0&&c!=0)
+        {
             return 1;
+        }
         else
+        {
             return 0;
+        }
     }
     else
     {

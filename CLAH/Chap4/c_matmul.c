@@ -19,6 +19,7 @@ int c_matmul(struct c_comp *a, struct c_comp *b, int m, int p, int n, struct c_c
         printf("Err:(c_mat_mul)Dimension of a matrix is incorrect\n");
         return(0);
     }
+
     if(a == NULL || b == NULL || c == NULL)	/* 检查输入指针是否为空*/
     {
         printf("Err:(c_mat_mul)The matrix pointer is NULL\n");
@@ -36,8 +37,10 @@ int c_matmul(struct c_comp *a, struct c_comp *b, int m, int p, int n, struct c_c
                 c_comp_product(&a[i*m+k], &b[k*m+j], &tmp2);
                 c_comp_plus(&tmp1,&tmp2,&tmp1);
             }
+
             c[i*n+j].rmz = tmp1.rmz;		/* 将计算的结果存入矩阵c中*/
             c[i*n+j].imz = tmp1.imz;
         }
+
     return(1);
 }

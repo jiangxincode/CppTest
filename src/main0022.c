@@ -95,9 +95,13 @@ int natoi(const char *str)
         dat *= 10;
 
         if(*str >= '0' || *str <= '9')
+        {
             dat += *str - '0';
+        }
         else
+        {
             return -1;
+        }
 
         str++;
     }

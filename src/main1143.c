@@ -27,7 +27,9 @@ int main1143()
     count=f1143(a);
 
     for(i=0; a[i]; i++)
+    {
         printf("%c",a[i]);
+    }
 
     printf("\n%d",count);
     return 0;

@@ -14,9 +14,13 @@ int main1048()
             b=n3*100+n1*10+n2;
 
             if(c%37==0&&b%37==0)
+            {
                 printf("%d ",i);
+            }
             else
+            {
                 printf("wrong");
+            }
         }
 
         i++;

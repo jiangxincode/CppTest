@@ -16,19 +16,24 @@
 
 static double goldsch(a, b, c, f, xopt, eps)
 double a,b,c,eps;
-double (*f)(double);
+double(*f)(double);
 double *xopt;
 {
     double f0,f1,f2,f3,t;
+
     if(fabs(c-b) > fabs(b-a))            /* 在较大的一段中求t*/
+    {
         t = b+G2*(c-b);
+    }
     else
     {
         t = b;
         b = b-G2*(b-a);
     }
+
     f1 = (*f)(b);
     f2 = (*f)(t);
+
     while(fabs(c-a) > eps*(fabs(b)+fabs(t)))
     {
         if(f2>f1)                         /* 新区间为[a b t]*/
@@ -50,6 +55,7 @@ double *xopt;
             f2 = (*f)(t);
         }
     }
+
     if(f1<f2)                              /* 返回较好的一个值*/
     {
         *xopt = b;

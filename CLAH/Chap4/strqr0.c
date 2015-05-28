@@ -11,15 +11,20 @@ int main4strqr0()
         {0.0,0.0,21.0,30.0,3.0},
         {0.0,0.0,0.0,3.0,6.0}
     };
-
     i=smdqr(a,5,u,eps,jt);
+
     if(i>0)
     {
         printf("\neigvalue:\n");
+
         for(i=0; i<5; i++)
+        {
             printf("%e \n",u[i]);
+        }
+
         printf("\n");
     }
+
     return 0;
 }
 

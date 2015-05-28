@@ -10,7 +10,6 @@ static double f1(double);
 int main8tzi0()
 {
     double a,b,eps,h0,z;
-
     a = 0.0;
     b = 4.0;
     eps = 1e-8;

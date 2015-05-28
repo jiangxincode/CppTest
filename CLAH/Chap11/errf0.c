@@ -6,6 +6,7 @@ int main11errf0()
 {
     int i,j;
     double x,t;
+
     for(i=0; i<10; i++)                             /* 共有10行*/
     {
         for(j=0; j<3; j++)                            /* 每行3个*/
@@ -14,8 +15,10 @@ int main11errf0()
             t = errf(x);                                /* 调用误差函数计算*/
             printf("erf(%2.1f)=%e ",x,t);               /* 打印结果*/
         }
+
         printf("\n");
     }
+
     getchar();
     return 0;
 }

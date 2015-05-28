@@ -222,7 +222,9 @@ m:
     for(i=0; i<N; i++)
     {
         if(strcmp(carInfo[i].carNo,carNo)==0)
+        {
             break;
+        }
     }
 
     if(strcmp(carInfo[i].carNo,carNo)==0)
@@ -298,7 +300,9 @@ void user_name_query()//车主名查询
     for(i=0; i<N; i++)
     {
         if((strcmp(carInfo[i].userName,chezhuming))==0)
+        {
             break;
+        }
     }
 
     if((strcmp(carInfo[i].userName,chezhuming))==0)
@@ -683,7 +687,9 @@ void parking_ability()
         }
     }
     else
+    {
         printf("\n\n\n\n\n\n\t\t停车场已满!");
+    }
 
     Sleep(1000);
     printf("\n\n\t\t1.查看所有车辆信息\n\n\t\t2.返回");
@@ -706,7 +712,9 @@ void parking_info()
     for(int i=0; i<N; i++)
     {
         if(carInfo[i].carNo[0]==0||carInfo[i].carNo[0]=='0')
+        {
             continue;
+        }
 
         int	a=carInfo[i].abbreviation;
         printf("%d号车位",i+1);

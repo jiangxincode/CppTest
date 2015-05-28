@@ -17,8 +17,8 @@ static double dfdim(double t);
 
 int _ndir_;
 double *_pdir_, *_xdir_, *_xtdir_, *_dxtdir_;             /* 需要全局变量*/
-double (*_myfc_)();
-void   (*_mydfc_)();                           /* 需要全局变量*/
+double(*_myfc_)();
+void (*_mydfc_)();                             /* 需要全局变量*/
 
 static double ddirmin(x, p, xmin, n, f, df, eps, itmax)
 double *x,*xmin,*p,eps,(*f)(),(*df)();
@@ -39,15 +39,18 @@ int n,itmax;
         _pdir_[i] = p[i];
         _xdir_[i] = x[i];
     }
+
     ax = 0.0;                                             /* 初始猜想范围*/
     bx = 0.5;
     brake(&ax, &bx, &cx, fdim);                          /* 找一个极小值区间*/
     fopt = dbrent(ax, bx, cx, fdim, dfdim, &xopt, eps, itmax);     /* 用brent算法找极小值*/
+
     for(i=0; i<n; i++)                                    /* 找到了最优点x*/
     {
         p[i] = xopt*p[i];
         xmin[i] = x[i]+p[i];
     }
+
     free(_pdir_);
     free(_xdir_);
     free(_xtdir_);
@@ -60,8 +63,12 @@ double t;
 {
     int i;
     double y;
+
     for(i=0; i<_ndir_; i++)
+    {
         _xtdir_[i] = _xdir_[i] + t*_pdir_[i];
+    }
+
     y = _myfc_(_xtdir_, _ndir_);
     return(y);
 }
@@ -70,11 +77,19 @@ static double dfdim(double t)                                     /* 求f在这个方
 {
     int i;
     double df;
+
     for(i=0; i<_ndir_; i++)
+    {
         _xtdir_[i] = _xdir_[i] + t*_pdir_[i];
+    }
+
     _mydfc_(_xtdir_, _dxtdir_, _ndir_);
     df = 0.0;
+
     for(i=0; i<_ndir_; i++)
+    {
         df = df + _dxtdir_[i]*_pdir_[i];
+    }
+
     return(df);
 }

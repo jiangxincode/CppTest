@@ -16,21 +16,32 @@ double bsl4(int n,double x)
     int j;
     double ax,nx,by0,by1;
     ax = fabs(x);
+
     if(ax==0.0)
+    {
         return(0.0);
+    }
+
     nx = 2.0/ax;                        /* 计算2*n/x需要的值2/x*/
     by0 = K0(ax);                       /* 递推初值K0*/
     by1 = K1(ax);                       /* 递推初值K1*/
+
     for(j=1; j<n; j++)
     {
         t = j*nx*by1+by0;                /* 递推计算*/
         by0 = by1;
         by1 = t;
     }
+
     if(n==0)
+    {
         t = by0;
+    }
     else
+    {
         t = by1;
+    }
+
     return (x<0.0)&&(n&1)?-t:t;            /* n为奇数且x为负时，返回-t*/
 }
 
@@ -38,6 +49,7 @@ double K0(double x)                     /* 计算k0(x)*/
 {
     double x1,x2,t;
     x1 = fabs(x);
+
     if(x1 <= 2.0)                         /* 有理分式逼近*/
     {
         x2 = x1*x1/4.0;
@@ -54,6 +66,7 @@ double K0(double x)                     /* 计算k0(x)*/
                                                x2*(0.00587872+x2*(-0.00251540+
                                                        x2*0.00053208))))))*exp(-x1)/sqrt(x1);
     }
+
     return t;
 }
 
@@ -61,6 +74,7 @@ double K1(double x)                           /* 计算k1(x)*/
 {
     double x1,x2,t;
     x1 = fabs(x);
+
     if(x1 <= 2.0)                               /* 有理分式逼近*/
     {
         x2 = x1*x1/4.0;
@@ -78,5 +92,6 @@ double K1(double x)                           /* 计算k1(x)*/
                                                       x2*(-0.00068245))))));
         t = t*exp(-x1)/sqrt(x1);
     }
+
     return (x<0.0)?-t:t;
 }

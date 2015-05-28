@@ -57,35 +57,58 @@ static double subcf(double a,double b,double x,double e1)
     double t,del,an,c,d;
     c = 1.0;
     d = 1.0-(a+b)*x/(a+1.0);
+
     if(fabs(d)<FPMIN)
+    {
         d = FPMIN;
+    }
+
     d = 1.0/d;
     t = d;
+
     for(n=1; n<NMAX; n++)
     {
         an = n*(b-n)*x/((a+2.0*n-1.0)*(a+2.0*n));  /* 第2n节的系数a,此节的系数b为1*/
         d = an*d+1.0;                              /* 计算d*/
         c = 1.0+an/c;                              /* 计算c*/
+
         if(fabs(d) < FPMIN)                        /* 检查cd的范围*/
+        {
             d = FPMIN;
+        }
+
         if(fabs(c) < FPMIN)
+        {
             c = FPMIN;
+        }
+
         d = 1.0/d;
         del = d*c;
         t = t*del;
         an = -(a+n)*(a+b+n)*x/((a+2.0*n)*(a+1.0+2.0*n));/* 第2n+1节*/
         d = 1.0+an*d;
         c = 1.0+an/c;
+
         if(fabs(d) < FPMIN)
+        {
             d = FPMIN;
+        }
+
         if(fabs(c) < FPMIN)
+        {
             c = FPMIN;
+        }
+
         d = 1.0/d;
         del = d*c;
         t = t*del;
+
         if(fabs(del-1.0)<e1)                       /* 级数部分已经收敛*/
+        {
             return(t);
+        }
     }
+
     printf("iteration not converged.");          /* 没有收敛*/
     return(t);
 }

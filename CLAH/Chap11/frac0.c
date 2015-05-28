@@ -22,6 +22,7 @@ int main11frac0()
 double* fab(int j,double *ab)                /* 计算系数的函数*/
 {
     double a = 0.5,x=2.5;       /* 两个参数*/
+
     if(j==0)                    /*b0= 0，此时的a0不重要*/
     {
         ab[0] = 0.0;
@@ -37,5 +38,6 @@ double* fab(int j,double *ab)                /* 计算系数的函数*/
         ab[0] = (j-1)*(a-j+1.0);
         ab[1] = x+2.0*j+1.0-a;
     }
+
     return NULL;
 }

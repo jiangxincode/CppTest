@@ -18,8 +18,12 @@ double bsl3(int n,double x)
     int j,nn;
     double ax,nx,bj0,bj1,bj,bjs;
     ax = fabs(x);
+
     if(ax==0.0)
+    {
         return(0.0);
+    }
+
     if(n==0)
     {
         t = I0(ax);
@@ -36,13 +40,18 @@ double bsl3(int n,double x)
         nn = 2*((int)(n+sqrt(ENUMB*n))/2);   /* 保证是偶数*/
         bj1 = 0.0;                           /* 第nn+1项设为0*/
         bj0 = 1.0;                           /* 第nn项设为1.0*/
+
         for(j=nn; j>0; j--)
         {
             bj = j*nx*bj0+bj1;                 /* 递推计算*/
             bj1 = bj0;
             bj0 = bj;
+
             if(j==n)
+            {
                 t = bj1;
+            }
+
             if(fabs(bj)>1.0e10)                /* 在递推过程中进行归一化，防止溢出*/
             {
                 bj0 = bj0*1.0e-10;
@@ -50,6 +59,7 @@ double bsl3(int n,double x)
                 t = t*1.0e-10;
             }
         }
+
         bjs = I0(ax);
         t = t*bjs/bj0;                          /*归一化递推结果*/
         return (x<0.0)&&(n&1)?-t:t;            /* n为奇数且x为负时，返回-t*/
@@ -60,6 +70,7 @@ double I0(double x)                     /* 计算I0(x)*/
 {
     double x1,x2,t;
     x1 = fabs(x);
+
     if(x1 < 3.75)                         /* 有理分式逼近*/
     {
         x2 = x1*x1/14.0625;
@@ -76,6 +87,7 @@ double I0(double x)                     /* 计算I0(x)*/
                                                        x2*(0.02635537+x2*(-0.01647633+
                                                                x2*0.00392377))))))))*exp(x1)/sqrt(x1);
     }
+
     return t;
 }
 
@@ -83,6 +95,7 @@ double I1(double x)                           /* 计算I1(x)*/
 {
     double x1,x2,t;
     x1 = fabs(x);
+
     if(x1 < 3.75)                               /* 有理分式逼近*/
     {
         x2 = x1*x1/14.0625;
@@ -100,5 +113,6 @@ double I1(double x)                           /* 计算I1(x)*/
                                                x2*(-0.01031555+x2*t))));
         t = t*exp(x1)/sqrt(x1);
     }
+
     return (x<0.0)?-t:t;
 }

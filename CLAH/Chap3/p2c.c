@@ -18,14 +18,20 @@ int p2c(struct c_comp *y,int n,struct c_comp *a)
     /* 首先声明一个要调用的子函数*/
     k = log(n-0.5)/log(2.0)+1;	        /* 求出log2(n)*/
     nn = 1;
+
     for(i=0; i<k; i++)		            /* 检测点个数是否是2的整数次幂*/
+    {
         nn = nn<<1;
+    }
+
     if(nn != n)
     {
         printf("(p2c)n should be 2^k.\n");
         return(0);
     }
+
     j = p2c1(y,n,a);		                /* 调用子函数求解求和符号中的部分*/
+
     if(j)
     {
         for(i=0; i<n; i++)		       /* 将子函数返回的结果除以n*/
@@ -34,6 +40,7 @@ int p2c(struct c_comp *y,int n,struct c_comp *a)
             a[i].imz /= n;
         }
     }
+
     return(j);
 }
 
@@ -42,22 +49,26 @@ static int p2c1(struct c_comp *y,int n,struct c_comp *a)
     int i,j,k;
     struct c_comp xn,x,t;
     struct c_comp *a0,*a1,*y0,*y1;
+
     if(n==1)			                     /* n=1时，唯一系数a与y相等*/
     {
         a[0].rmz = y[0].rmz;
         a[0].imz = y[0].imz;
         return(1);
     }
+
     k = n>>1;			                    /*k是n的一半，就是两个小规模问题分配空间的大小*/
     a0 = (struct c_comp*)malloc(k*sizeof(struct c_comp));
     a1 = (struct c_comp*)malloc(k*sizeof(struct c_comp));
     y0 = (struct c_comp*)malloc(k*sizeof(struct c_comp));
     y1 = (struct c_comp*)malloc(k*sizeof(struct c_comp));
+
     if((a0==NULL)||(a1==NULL)||(y0==NULL)||(y1==NULL))
     {
         printf("(p2c)memory alloc failed.\n");
         return(0);
     }
+
     for(i=0; i<k; i++)	                 /* 将问题分成两段*/
     {
         j=2*i;
@@ -66,8 +77,10 @@ static int p2c1(struct c_comp *y,int n,struct c_comp *a)
         y1[i].rmz = y[j+1].rmz;
         y1[i].imz = y[j+1].imz;
     }
+
     i = p2c1(y0,k,a0); 	                 /* 对两段分别求解*/
     j = p2c1(y1,k,a1);
+
     if(i && j)		                     /* 若两段求解成功，则将两部分解综合起来*/
     {
         xn.rmz = cos(-2*PI/n);
@@ -83,6 +96,7 @@ static int p2c1(struct c_comp *y,int n,struct c_comp *a)
             c_comp_product(&xn,&x,&x);    	/* x与xn相乘，结果放在x中，第k次综合时的x就是xn^k*/
         }
     }
+
     free(y0);
     free(y1);
     free(a0);

@@ -16,7 +16,7 @@
 int _ndir_;
 double *_pdir_, *_xdir_, *_xtdir_,(*_myfc_)();              /* ÐèÒªÈ«¾Ö±äÁ¿*/
 
-double dirmin(double *x, double *p, double *xmin, int n, double (*f)(), double eps, int itmax)
+double dirmin(double *x, double *p, double *xmin, int n, double(*f)(), double eps, int itmax)
 {
     int i;
     double fdim(), ax, bx, cx, fopt, xopt;
@@ -25,20 +25,24 @@ double dirmin(double *x, double *p, double *xmin, int n, double (*f)(), double e
     _xdir_ = (double*)malloc(_ndir_*sizeof(double));
     _xtdir_ = (double*)malloc(_ndir_*sizeof(double));
     _myfc_ = f;                                            /* È«¾Ö±äÁ¿Ö¸Ïòº¯Êý*/
+
     for(i=0; i<n; i++)
     {
         _pdir_[i] = p[i];
         _xdir_[i] = x[i];
     }
+
     ax = 0.0;                                             /* ³õÊ¼²ÂÏë·¶Î§*/
     bx = 0.5;
     brake(&ax, &bx, &cx, fdim);                          /* ÕÒÒ»¸ö¼«Ð¡ÖµÇø¼ä*/
     fopt = brent(ax, bx, cx, fdim, &xopt, eps, itmax);     /* ÓÃbrentËã·¨ÕÒ¼«Ð¡Öµ*/
+
     for(i=0; i<n; i++)                                    /* ÕÒµ½ÁË×îÓÅµãx*/
     {
         p[i] = xopt*p[i];
         xmin[i] = x[i]+p[i];
     }
+
     free(_pdir_);
     free(_xdir_);
     free(_xtdir_);
@@ -49,8 +53,12 @@ static double fdim_jiang(double t)                                     /* ÇófÔÚÕ
 {
     int i;
     double y;
+
     for(i=0; i<_ndir_; i++)
+    {
         _xtdir_[i] = _xdir_[i] + t*_pdir_[i];
+    }
+
     y = _myfc_(_xtdir_, _ndir_);
     return(y);
 }

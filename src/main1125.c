@@ -8,9 +8,13 @@
 long int factorial(int n)
 {
     if(n==0||n==1)
+    {
         return 1;
+    }
     else
+    {
         return n*factorial(n-1);
+    }
 }
 
 
@@ -39,7 +43,9 @@ int fact(int n)
     for(i=2; i<=n; i++)
     {
         for(j=0; j<10; j++)
+        {
             m[j]*=i;
+        }
 
         for(j=0; j<10-1; j++)
         {
@@ -50,10 +56,16 @@ int fact(int n)
             }
         }
 
-        if(m[10-1]>9) return 0;
+        if(m[10-1]>9)
+        {
+            return 0;
+        }
     }
 
-    for(j=9; j>=0; j--) printf("%d",m[j]);
+    for(j=9; j>=0; j--)
+    {
+        printf("%d",m[j]);
+    }
 
     return 1;
 }
@@ -65,7 +77,10 @@ int main1125()
     scanf("%11d",&n);
     k=fact(n);
 
-    if(k==0) printf("OVERFLOW!!!");
+    if(k==0)
+    {
+        printf("OVERFLOW!!!");
+    }
 
     return 0;
 }

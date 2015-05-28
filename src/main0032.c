@@ -37,5 +37,6 @@ int main0032()
         }
     }
     while(x!='0');
+
     return 0;
 }

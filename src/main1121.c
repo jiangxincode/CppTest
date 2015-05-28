@@ -8,11 +8,17 @@ static int search(int x[],int low,int high,int key)
         int mid=(low+high)/2;
 
         if(x[mid]==key)
+        {
             return mid;
+        }
         else if(key<x[mid])
+        {
             high=mid-1;
+        }
         else
+        {
             low=mid+1;
+        }
     }
 
     return -1;
@@ -25,9 +31,13 @@ int main1121(void)
     i=search(xx,0,9,key);
 
     if(i==-1)
+    {
         printf("not found!\n");
+    }
     else
+    {
         printf("%d\n",i);
+    }
 
     return 0;
 }

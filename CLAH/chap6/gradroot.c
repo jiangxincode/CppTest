@@ -19,33 +19,49 @@ int n,max;
     double F,*FD,D,lam;
     int i,num=0;
     FD=(double*)malloc(sizeof(double)*n);   /* 分配空间并检测是否成功*/
+
     if(FD==NULL)
     {
         printf("memory alloc failed.\n");
         return(0);
     }
+
     do
     {
         num++;
         F=f(x0,FD);                         /* 计算目标函数和偏导数*/
+
         if(F>eps)
         {
             D=0;
-            for(i=0; i<n; i++)
-                D=D+FD[i]*FD[i];            /* 计算D和系数lamda*/
-            lam=F/D;
-            for(i=0; i<n; i++)
-                x0[i]=x0[i]-lam*FD[i];      /* 新值*/
-        }
 
+            for(i=0; i<n; i++)
+            {
+                D=D+FD[i]*FD[i];    /* 计算D和系数lamda*/
+            }
+
+            lam=F/D;
+
+            for(i=0; i<n; i++)
+            {
+                x0[i]=x0[i]-lam*FD[i];    /* 新值*/
+            }
+        }
         else
+        {
             return(1);
+        }
     }
     while(num<max);
+
     if(num==max)
-        return (0);                         /* 迭代失败*/
+    {
+        return (0);    /* 迭代失败*/
+    }
     else
-        return (1);                         /* 迭代成功*/
+    {
+        return (1);    /* 迭代成功*/
+    }
 }
 
 
