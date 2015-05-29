@@ -908,6 +908,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="CLAH/Chap9/something.h" />
+		<Unit filename="src/getopt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/getopt.h" />
 		<Unit filename="src/jiangxin.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -1016,9 +1020,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/main0033.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/main0034.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/main1011.c">
@@ -1285,6 +1286,7 @@
 		<Unit filename="src/main1171.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/tailor.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

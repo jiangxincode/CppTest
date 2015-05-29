@@ -3,7 +3,7 @@
 /** \cond */
 int main(int argc,char* argv[])
 {
-    main0034();
+    mainclcdc09ping(argc,argv);
     return 0;
 }
 /** \endcond */
