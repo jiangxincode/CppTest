@@ -55,7 +55,7 @@ int main(int argc, char* argv[])
 
         case 'h':
             show_help();
-            break;
+            exit(0);
 
         case '?':
             printf("unrecognized option: -%c", optopt);
@@ -149,10 +149,10 @@ void connect(char *input,struct list* head, int num, bool is_loop)
 
 void show_help()
 {
-    fputs("IdiomSolitaire: A toy for idiom solitaire", stdout);
-    fputs("\t-h: Show this help.", stdout);
-    fputs("\t-i filename: Set the dictionary file.", stdout);
-    fputs("\t-l: Be able to loop.", stdout);
-    fputs("\t-n num: Set the idiom item number when output.", stdout);
+    fputs("IdiomSolitaire: A toy for idiom solitaire.\n", stdout);
+    fputs("\t-h: Show this help.\n", stdout);
+    fputs("\t-i filename: Set the dictionary file.\n", stdout);
+    fputs("\t-l: Be able to loop.\n", stdout);
+    fputs("\t-n num: Set the maximum idiom item number when output. Of course if there are not so many, It only show the exist. \n", stdout);
     return;
 }
