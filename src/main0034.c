@@ -1,19 +1,22 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
+
+#define MAXLENGTH 20
+#define MAXNUM 11
+
 struct list
 {
-    char data[10];
+    char data[MAXLENGTH];
     struct list *next;
 };
-typedef struct list node;
-typedef node *link;
-link static create_list(char array[][10],int num);
-void connect(char *ch,link pointer);
+static struct list* create_list(char array[][MAXLENGTH],int num);
+static void connect(char *ch,struct list* pointer);
+
 int main0034()
 {
-    char *input;
-    char arr1[50][10]=
+    char input[MAXLENGTH];
+    char arr1[MAXLENGTH][MAXLENGTH]=
     {
         {"众星拱月"},
         {"月光弥漫"},
@@ -27,40 +30,39 @@ int main0034()
         {"群龙无首"},
         {"龙飞凤舞"}
     };
-    link ptr;
-    ptr=create_list(arr1,10);
+    struct list* ptr;
+    ptr=create_list(arr1,11);
     printf("请输入一个成语\n");
     scanf("%s",input);
     connect(input,ptr);
     system("PAUSE");
     return 0;
 }
-link static create_list(char array[][10],int num)
-{
-    link tmp1,tmp2,pointer;
-    int i;
-    pointer=(link)malloc(sizeof(node));
-    strcpy(pointer->data,array[0]);
-    tmp1=pointer;
 
-    for(i=1; i<=num; i++)
+static struct list* create_list(char array[][MAXLENGTH],int num)
+{
+    struct list *tmp1,*tmp2,*head;
+    head=(struct list *)malloc(sizeof(struct list));
+    strcpy(head->data,array[0]);
+    tmp1=head;
+
+    for(int i=1; i<num; i++)
     {
-        tmp2=(link)malloc(sizeof(node));
+        tmp2=(struct list *)malloc(sizeof(struct list));
         tmp2->next=NULL;
         strcpy(tmp2->data,array[i]);
         tmp1->next=tmp2;
         tmp1=tmp1->next;
     }
 
-    return pointer;
+    return head;
 }
-void connect(char *ch,link pointer)
+
+static void connect(char *input,struct list* head)
 {
-    link p=pointer;
-    char tmp[10],tmp_head[3],tmp_tail[3];
-    strcpy(tmp,ch);
-    puts("\n");
-    puts(ch);
+    struct list * p=head;
+    char tmp[MAXLENGTH],tmp_head[3],tmp_tail[3];
+    strcpy(tmp,input);
 
     while(p->next!=NULL)
     {
@@ -73,7 +75,7 @@ void connect(char *ch,link pointer)
         {
             puts(p->data);
             strcpy(tmp,p->data);
-            p=pointer;
+            p=head;
         }
         else
         {

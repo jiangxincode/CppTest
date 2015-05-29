@@ -66,6 +66,6 @@ int main4c_matinv0()
         printf("\n");
     }
 
-    getch();
+
     return 0;
 }

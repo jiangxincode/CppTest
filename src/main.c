@@ -3,7 +3,7 @@
 /** \cond */
 int main(int argc,char* argv[])
 {
-    main2c_comp_example2();
+    main0034();
     return 0;
 }
 /** \endcond */
