@@ -1,4 +1,6 @@
 bin/
 obj/
 *.depend
+*.layout
+*.xml
 

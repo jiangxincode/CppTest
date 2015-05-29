@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <ctype.h>
 
 #include "getopt.h"
 
@@ -20,24 +21,26 @@ struct list
 };
 
 struct list* create_list(char array[][MAXLENGTH],int num);
-void connect(char *ch,struct list* pointer, int num, bool is_loop);
+void connect(char *input, char *output, struct list* pointer, int num, bool is_loop);
 
 int main(int argc, char* argv[])
 {
     extern int opterr, optopt;
     extern char *optarg;
     char input[MAXLENGTH];
+    char output[MAXLENGTH];
     char idiom_array[MAXNUM][MAXLENGTH];
     int count = 0;
     char c;
     char filename[FILENAME_MAXLENGTH] = DEFAULT_FILENAME;
     int show_item_num = 10;
     bool is_loop  = false;
+    bool is_every = false;
     struct list* ptr;
     FILE *fp;
     opterr = 0;
 
-    while((c = getopt(argc, argv, "f:n:lh")) != -1)
+    while((c = getopt(argc, argv, "f:n:lhe")) != -1)
     {
         switch(c)
         {
@@ -51,6 +54,9 @@ int main(int argc, char* argv[])
 
         case 'l':
             is_loop = true;
+            break;
+        case 'e':
+            is_every = true;
             break;
 
         case 'h':
@@ -81,7 +87,21 @@ int main(int argc, char* argv[])
     ptr=create_list(idiom_array,count);
     printf("请输入一个成语\n");
     scanf("%s",input);
-    connect(input,ptr,show_item_num,is_loop);
+    if(is_every)
+    {
+        char ch = '\0';
+        while(ch != 'e')
+        {
+            connect(input,output,ptr,show_item_num,is_loop);
+            strcpy(input, output);
+            ch = tolower(getchar());
+        }
+    }
+    else
+    {
+        connect(input,output,ptr,show_item_num,is_loop);
+    }
+    fclose(fp);
     return 0;
 }
 
@@ -91,6 +111,7 @@ struct list* create_list(char array[][MAXLENGTH],int num)
     head=(struct list *)malloc(sizeof(struct list));
     strcpy(head->data,array[0]);
     head->is_visited = false;
+    head->next = NULL;
     tmp1=head;
 
     for(int i=1; i<num; i++)
@@ -106,7 +127,7 @@ struct list* create_list(char array[][MAXLENGTH],int num)
     return head;
 }
 
-void connect(char *input,struct list* head, int num, bool is_loop)
+void connect(char *input,char *output, struct list* head, int num, bool is_loop)
 {
     struct list * p=head;
     int count = 0;
@@ -115,7 +136,7 @@ void connect(char *input,struct list* head, int num, bool is_loop)
 
     while(p->next!=NULL)
     {
-        strncpy(tmp_tail,tmp+6,2);
+        strncpy(tmp_tail,tmp+strlen(tmp)-2,2);
         tmp_tail[2]='\0';
         strncpy(tmp_head,p->data,2);
         tmp_head[2]='\0';
@@ -128,7 +149,7 @@ void connect(char *input,struct list* head, int num, bool is_loop)
             }
             else
             {
-                printf("%s -> ", p->data);
+                (count == 0)?printf("%s", p->data):printf(" --> %s", p->data);
                 p->is_visited = true;
                 strcpy(tmp,p->data);
                 p=head;
@@ -145,6 +166,7 @@ void connect(char *input,struct list* head, int num, bool is_loop)
             p=p->next;
         }
     }
+    strcpy(output, tmp);
 }
 
 void show_help()
@@ -153,6 +175,7 @@ void show_help()
     fputs("\t-h: Show this help.\n", stdout);
     fputs("\t-i filename: Set the dictionary file.\n", stdout);
     fputs("\t-l: Be able to loop.\n", stdout);
+    fputs("\t-e: Show every item when you strike the key, and 'e' to quit", stdout);
     fputs("\t-n num: Set the maximum idiom item number when output. Of course if there are not so many, It only show the exist. \n", stdout);
     return;
 }
