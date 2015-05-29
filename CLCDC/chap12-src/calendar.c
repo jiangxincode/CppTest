@@ -643,5 +643,3 @@ void main()
     getdate(&sysTime);
     getKeyValue();
 }
-
-

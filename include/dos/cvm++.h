@@ -56,21 +56,6 @@ void * realloc (void * p, unsigned size);
 #define	SEEK_SET	0
 
 
-typedef int FILE;
-
-int putchar (char ch);
-int puts (char * str);
-char *gets (char *buffer);
-int getchar (void);
-
-int fclose (FILE * fp);
-int feof (FILE * fp);
-FILE * fopen (char * filename, char * mode);
-int fread (char * pt, unsigned size, unsigned n, FILE * fp);
-long fseek (FILE * fp, long offset, int base);
-long ftell (FILE * fp);
-int fwrite (char * ptr, unsigned size, unsigned n, FILE * fp);
-
 /**game**/
 
 #define	KEY_UP		38
