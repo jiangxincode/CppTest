@@ -1,21 +1,21 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 
 /*======================================================
- * º¯ÊýÃû£ºbspl2
- * ¹¦ÄÜÃèÊö£ºµÚ¶þÀà±ß½çÌõ¼þµÄÈý´ÎÑùÌõº¯Êý²åÖµ
- * ÊäÈë²ÎÊý£ºx Ö¸Ïò´æ·Ån¸ö½áµãµÄÊý¾ÝµÄÊý×éµÄÖ¸Õë
- *           y Ö¸Ïò´æ·Ån¸ö½áµãµÄº¯ÊýÖµµÄÊý×éµÄÖ¸Õë
- *           y1 º¯ÊýÔÚx0´¦µÄ¶þ½×µ¼ÊýÖµ
- *           y2 º¯ÊýÔÚxn-1 ´¦µÄ¶þ½×µ¼ÊýÖµ
- *           n ½áµã¸öÊý£¬±¾º¯ÊýÒªÇónÖÁÉÙÎª3
- *           t Ö¸Ïò´æ·Åm¸ö²åÖµµãµÄÊý¾ÝµÄÊý×éµÄÖ¸Õë
- *           m ²åÖµµã¸öÊý
- *           z Ö¸Ïò´æ·Å·µ»ØµÄm¸ö²åÖµµã´¦µÄº¯Êý½üËÆÖµµÄÊý×éµÄÖ¸Õë
- *           z1 Ö¸Ïò´æ·Å·µ»ØµÄm¸ö²åÖµµã´¦µÄº¯ÊýÒ»½×µ¼ÊýµÄÊý×éµÄÖ¸Õë
- *           z2 Ö¸Ïò´æ·Å·µ»ØµÄm¸ö²åÖµµã´¦µÄº¯Êý¶þ½×µ¼ÊýµÄÊý×éµÄÖ¸Õë
- * ·µ»ØÖµ£º  ³É¹¦Ôò·µ»ØÕûÐÍ 1£¬Ê§°ÜÔò·µ»Ø 0
+ * å‡½æ•°åï¼šbspl2
+ * åŠŸèƒ½æè¿°ï¼šç¬¬äºŒç±»è¾¹ç•Œæ¡ä»¶çš„ä¸‰æ¬¡æ ·æ¡å‡½æ•°æ’å€¼
+ * è¾“å…¥å‚æ•°ï¼šx æŒ‡å‘å­˜æ”¾nä¸ªç»“ç‚¹çš„æ•°æ®çš„æ•°ç»„çš„æŒ‡é’ˆ
+ *           y æŒ‡å‘å­˜æ”¾nä¸ªç»“ç‚¹çš„å‡½æ•°å€¼çš„æ•°ç»„çš„æŒ‡é’ˆ
+ *           y1 å‡½æ•°åœ¨x0å¤„çš„äºŒé˜¶å¯¼æ•°å€¼
+ *           y2 å‡½æ•°åœ¨xn-1 å¤„çš„äºŒé˜¶å¯¼æ•°å€¼
+ *           n ç»“ç‚¹ä¸ªæ•°ï¼Œæœ¬å‡½æ•°è¦æ±‚nè‡³å°‘ä¸º3
+ *           t æŒ‡å‘å­˜æ”¾mä¸ªæ’å€¼ç‚¹çš„æ•°æ®çš„æ•°ç»„çš„æŒ‡é’ˆ
+ *           m æ’å€¼ç‚¹ä¸ªæ•°
+ *           z æŒ‡å‘å­˜æ”¾è¿”å›žçš„mä¸ªæ’å€¼ç‚¹å¤„çš„å‡½æ•°è¿‘ä¼¼å€¼çš„æ•°ç»„çš„æŒ‡é’ˆ
+ *           z1 æŒ‡å‘å­˜æ”¾è¿”å›žçš„mä¸ªæ’å€¼ç‚¹å¤„çš„å‡½æ•°ä¸€é˜¶å¯¼æ•°çš„æ•°ç»„çš„æŒ‡é’ˆ
+ *           z2 æŒ‡å‘å­˜æ”¾è¿”å›žçš„mä¸ªæ’å€¼ç‚¹å¤„çš„å‡½æ•°äºŒé˜¶å¯¼æ•°çš„æ•°ç»„çš„æŒ‡é’ˆ
+ * è¿”å›žå€¼ï¼š  æˆåŠŸåˆ™è¿”å›žæ•´åž‹ 1ï¼Œå¤±è´¥åˆ™è¿”å›ž 0
 =========================================================*/
 static int bspl2(x,y,y1,y2,n,t,m,z,z1,z2)
 double *x,*y,y1,y2,*t;
@@ -23,24 +23,24 @@ double *z,*z1,*z2;
 int m,n;
 {
     int i,j,k;
-    double *a,*b,alpha,beta,*dy;                /* ¼ÆËãdyËùÓÃ±äÁ¿*/
-    double h1,h2,h3;                            /* ¼ÆËãz z1 z2Ê±ËùÓÃµÄ±äÁ¿*/
-    double t1,t2,t3,t4;                         /* ¼ÆËãz z1 z2Ê±ËùÓÃµÄËÄ¸öÏµÊý*/
+    double *a,*b,alpha,beta,*dy;                /* è®¡ç®—dyæ‰€ç”¨å˜é‡*/
+    double h1,h2,h3;                            /* è®¡ç®—z z1 z2æ—¶æ‰€ç”¨çš„å˜é‡*/
+    double t1,t2,t3,t4;                         /* è®¡ç®—z z1 z2æ—¶æ‰€ç”¨çš„å››ä¸ªç³»æ•°*/
     double tmp;
 
-    if(!(x && y && t && z && z1 && z2))         /* ¼ì²âÊäÈëÖ¸ÕëÊÇ·ñÎª¿Õ*/
+    if(!(x && y && t && z && z1 && z2))         /* æ£€æµ‹è¾“å…¥æŒ‡é’ˆæ˜¯å¦ä¸ºç©º*/
     {
         printf("Pointer is Null\n");
         return(0);
     }
 
-    if(n<3)                                     /* Ìá¹©½áµãÉÙÓÚ3¾Í²»½øÐÐ²åÖµÁË*/
+    if(n<3)                                     /* æä¾›ç»“ç‚¹å°‘äºŽ3å°±ä¸è¿›è¡Œæ’å€¼äº†*/
     {
         printf("nodes less than 3");
         return(0);
     }
 
-    dy = (double*)malloc(n*sizeof(double));      /* ·ÖÅä¿Õ¼ä²¢¼ì²âÊÇ·ñ³É¹¦*/
+    dy = (double*)malloc(n*sizeof(double));      /* åˆ†é…ç©ºé—´å¹¶æ£€æµ‹æ˜¯å¦æˆåŠŸ*/
     a = (double*)malloc(n*sizeof(double));
     b = (double*)malloc(n*sizeof(double));
 
@@ -54,10 +54,10 @@ int m,n;
     }
 
     h1 = x[1]-x[0];
-    a[0] = -0.5;                                         /* aÊý×é¸³³õÖµ*/
-    b[0] = 1.5*(y[1]-y[0])/h1 - 0.25*y1*h1;           /* bÊý×é¸³³õÖµ*/
+    a[0] = -0.5;                                         /* aæ•°ç»„èµ‹åˆå€¼*/
+    b[0] = 1.5*(y[1]-y[0])/h1 - 0.25*y1*h1;           /* bæ•°ç»„èµ‹åˆå€¼*/
 
-    for(i=1; i<n-1; i++)                                 /* µÝÍÆ¼ÆËãaºÍb*/
+    for(i=1; i<n-1; i++)                                 /* é€’æŽ¨è®¡ç®—aå’Œb*/
     {
         h2 = x[i+1]-x[i];
         alpha = h1/(h1+h2);
@@ -69,11 +69,11 @@ int m,n;
         h1 = h2;
     }
 
-    dy[n-1] = 3.0*(y[n-1]-y[n-2])/h2+y2*h2/2.0-b[n-2];  /* dy¸³³õÖµ*/
+    dy[n-1] = 3.0*(y[n-1]-y[n-2])/h2+y2*h2/2.0-b[n-2];  /* dyèµ‹åˆå€¼*/
     dy[n-1] = dy[n-1]/(2.0+a[n-2]);
     dy[0] = y1;
 
-    for(i=n-2; i>=0; i--)                          /* µÝÍÆ¼ÆËã½áµã´¦µÄÒ»½×µ¼Êýdy*/
+    for(i=n-2; i>=0; i--)                          /* é€’æŽ¨è®¡ç®—ç»“ç‚¹å¤„çš„ä¸€é˜¶å¯¼æ•°dy*/
     {
         dy[i] = a[i]*dy[i+1]+b[i];
     }
@@ -83,7 +83,7 @@ int m,n;
         tmp = t[k];
         j = 0;
 
-        while((x[j]<tmp)&&(j<n))                      /* Ñ°ÕÒºÏÊÊµÄÇø¼ä*/
+        while((x[j]<tmp)&&(j<n))                      /* å¯»æ‰¾åˆé€‚çš„åŒºé—´*/
         {
             j++;
         }
@@ -103,15 +103,15 @@ int m,n;
         h1 = x[j+1]-x[j];                                     /* h*/
         h2 = h1*h1;                                         /* h^2*/
         h3 = h2*h1;                                        /* h^3*/
-        t1 = 3.0*y[j+1]/h2 - 1.0*dy[j+1]/h1;           /* ¼ÆËã4¸öÏµÊý*/
+        t1 = 3.0*y[j+1]/h2 - 1.0*dy[j+1]/h1;           /* è®¡ç®—4ä¸ªç³»æ•°*/
         t2 = 2.0*y[j+1]/h3 - 1.0*dy[j+1]/h2;
         t3 = 3.0*y[j]/h2 + 1.0*dy[j]/h1;
         t4 = 2.0*y[j]/h3 + 1.0*dy[j]/h2;
-        z[k] = (t1-t2*(tmp-x[j]))*(tmp-x[j])*(tmp-x[j]);    /* ¼ÆËãº¯Êý½üËÆÖµ*/
+        z[k] = (t1-t2*(tmp-x[j]))*(tmp-x[j])*(tmp-x[j]);    /* è®¡ç®—å‡½æ•°è¿‘ä¼¼å€¼*/
         z[k] = z[k] + (t3 - t4*(x[j+1]-tmp))*(x[j+1]-tmp)*(x[j+1]-tmp);
-        z1[k] = (2.0*t1-3.0*t2*(tmp-x[j]))*(tmp-x[j]);      /* ¼ÆËãÒ»½×µ¼Êý*/
+        z1[k] = (2.0*t1-3.0*t2*(tmp-x[j]))*(tmp-x[j]);      /* è®¡ç®—ä¸€é˜¶å¯¼æ•°*/
         z1[k] = z1[k] + (-2.0*t3 + 3.0*t4*(x[j+1]-tmp))*(x[j+1]-tmp);
-        z2[k] = 2.0*t1-6.0*t2*(tmp-x[j]);                   /* ¼ÆËã¶þ½×µ¼Êý*/
+        z2[k] = 2.0*t1-6.0*t2*(tmp-x[j]);                   /* è®¡ç®—äºŒé˜¶å¯¼æ•°*/
         z2[k] = z2[k] + 2.0*t3 - 6.0*t4*(x[j+1]-tmp);
     }
 

@@ -1,8 +1,8 @@
-/*======================================================
-//º¯ÊýÃû£ºr_mrank
-//¹¦ÄÜÃèÊö£ºÇóÊµ¾ØÕóµÄÖÈ
-//ÊäÈë²ÎÊý£ºmat(ÊäÈëµÄ¾ØÕó) m(¾ØÕóÐÐÊý) p(¾ØÕóÁÐÊý) eps(¾«¶È)
-//·µ»ØÖµ£ºÔËÐÐ³É¹¦Ôò·µ»Ø¾ØÕóµÄÖÈ£¬Ê§°ÜÔò·µ»Ø0
+ï»¿/*======================================================
+//å‡½æ•°åï¼šr_mrank
+//åŠŸèƒ½æè¿°ï¼šæ±‚å®žçŸ©é˜µçš„ç§©
+//è¾“å…¥å‚æ•°ï¼šmat(è¾“å…¥çš„çŸ©é˜µ) m(çŸ©é˜µè¡Œæ•°) p(çŸ©é˜µåˆ—æ•°) eps(ç²¾åº¦)
+//è¿”å›žå€¼ï¼šè¿è¡ŒæˆåŠŸåˆ™è¿”å›žçŸ©é˜µçš„ç§©ï¼Œå¤±è´¥åˆ™è¿”å›ž0
 =========================================================*/
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,25 +16,25 @@ int m,n;
     double tmp, pivot;
     double *cpmat;
 
-    if(mat == NULL)				  /* ¼ì²éÊäÈëÖ¸ÕëÊÇ·ñÎª¿Õ*/
+    if(mat == NULL)				  /* æ£€æŸ¥è¾“å…¥æŒ‡é’ˆæ˜¯å¦ä¸ºç©º*/
     {
         printf("matrix pointer is Null.\n");
         return(0);
     }
 
-    cpmat = (double*)malloc(m*n*sizeof(double));  /* ½«ÊäÈë¾ØÕóµÄÄÚÈÝ¿½±´Ò»·Ý£¬ÒÔÃâÆÆ»µ*/
+    cpmat = (double*)malloc(m*n*sizeof(double));  /* å°†è¾“å…¥çŸ©é˜µçš„å†…å®¹æ‹·è´ä¸€ä»½ï¼Œä»¥å…ç ´å*/
 
     for(i=0; i<m*n; i++)
     {
         cpmat[i] = mat[i];
     }
 
-    p = m<n?m:n;				  /* Çó³ömºÍnÖÐµÄ½ÏÐ¡Õß£¬¼´ÖÈµÄ×î´óÖµ*/
+    p = m<n?m:n;				  /* æ±‚å‡ºmå’Œnä¸­çš„è¾ƒå°è€…ï¼Œå³ç§©çš„æœ€å¤§å€¼*/
     rank = 0;
 
     for(k=0; k<p; k++)
     {
-        pivot = 0.0;				  /* Ñ¡Ö÷Ôª*/
+        pivot = 0.0;				  /* é€‰ä¸»å…ƒ*/
 
         for(i=k; i<m; i++)
             for(j=k; j<n; j++)
@@ -44,20 +44,20 @@ int m,n;
                 if(tmp > pivot)
                 {
                     pivot = tmp;
-                    is = i;				  /* ¼ÇÂ¼ÏÂÖ÷ÔªµÄÎ»ÖÃ*/
+                    is = i;				  /* è®°å½•ä¸‹ä¸»å…ƒçš„ä½ç½®*/
                     js = j;
                 }
             }
 
-        if(pivot < eps)				  /* Ö÷ÔªÐ¡ÓÚ¾«¶ÈÖµÊ±£¬ÈÏÎª¸ßË¹ÏûÔªÒÑ¾­Íê³É*/
+        if(pivot < eps)				  /* ä¸»å…ƒå°äºŽç²¾åº¦å€¼æ—¶ï¼Œè®¤ä¸ºé«˜æ–¯æ¶ˆå…ƒå·²ç»å®Œæˆ*/
         {
             return(rank);
         }
 
-        rank++;					  /* Ö÷Ôª²»ÎªÁã£¬ÖÈ¼Ó1*/
+        rank++;					  /* ä¸»å…ƒä¸ä¸ºé›¶ï¼Œç§©åŠ 1*/
 
-        if(is != k)				  /* ÅÐ¶ÏÊÇ·ñÐèÒª½øÐÐÐÐ½»»»*/
-            for(j=k; j<n; j++)			  /* ½øÐÐÐÐ½»»»*/
+        if(is != k)				  /* åˆ¤æ–­æ˜¯å¦éœ€è¦è¿›è¡Œè¡Œäº¤æ¢*/
+            for(j=k; j<n; j++)			  /* è¿›è¡Œè¡Œäº¤æ¢*/
             {
                 l = k*n + j;
                 v = is*n + j;
@@ -67,7 +67,7 @@ int m,n;
             }
 
         if(js != k)
-            for(i=k; i<m; i++)			  /* ½øÐÐÁÐ½»»»*/
+            for(i=k; i<m; i++)			  /* è¿›è¡Œåˆ—äº¤æ¢*/
             {
                 l = i*n + k;
                 v = i*n + js;
@@ -76,11 +76,11 @@ int m,n;
                 cpmat[v] = tmp;
             }
 
-        for(i=k+1; i<m; i++)			  /* ÏûÈ¥*/
+        for(i=k+1; i<m; i++)			  /* æ¶ˆåŽ»*/
         {
-            tmp = cpmat[i*n+k]/cpmat[k*n+k];	  /* ¼õÉÙ³ý·¨µÄ´ÎÊý*/
+            tmp = cpmat[i*n+k]/cpmat[k*n+k];	  /* å‡å°‘é™¤æ³•çš„æ¬¡æ•°*/
 
-            for(j=k+1; j<n; j++)		  /* ½øÐÐÏûÈ¥*/
+            for(j=k+1; j<n; j++)		  /* è¿›è¡Œæ¶ˆåŽ»*/
             {
                 cpmat[i*n+j] -= tmp*cpmat[k*n+j];
             }

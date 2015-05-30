@@ -1,8 +1,8 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
-#include "../Chap2/c_comp.h"
+
 #include "r_matmul.c"
-#include "something.h"
+#include "../utility.h"
 #include "sdminv.c"
 
 int main4minv0()
@@ -22,14 +22,14 @@ int main4minv0()
     c_mat[1][1].rmz = 1;
     c_mat[1][1].imz = 0.5;
 
-    for(i=0; i<n; i++)                     /* ÇóÄæºó»áÆÆ»µÔ­¾ØÕóÊý¾Ý£¬Òò´ËÏÈ±¸·Ý*/
+    for(i=0; i<n; i++)                     /* æ±‚é€†åŽä¼šç ´ååŽŸçŸ©é˜µæ•°æ®ï¼Œå› æ­¤å…ˆå¤‡ä»½*/
         for(j=0; j<n; j++)
         {
             c_mat1[i][j] = c_mat[i][j];
         }
 
-    c_minv(c_mat,n,0.01);                        /* µ÷ÓÃº¯ÊýÇóÄæ*/
-    printf("inv(C):\n");                    /* ´òÓ¡ÇóµÃµÄÄæ¾ØÕó*/
+    c_minv(c_mat,n,0.01);                        /* è°ƒç”¨å‡½æ•°æ±‚é€†*/
+    printf("inv(C):\n");                    /* æ‰“å°æ±‚å¾—çš„é€†çŸ©é˜µ*/
 
     for(i=0; i<m; i++)
     {
@@ -41,8 +41,8 @@ int main4minv0()
         printf("\n");
     }
 
-    c_matmul(c_mat,c_mat1,n,n,n,c_mat2);    /* Äæ¾ØÕóºÍÔ­¾ØÕóÏà³Ë*/
-    printf("C*inv(C):\n");                  /* ´òÓ¡Ïà³ËºóµÄ½á¹û£¬ÒÔÑéÖ¤ÕýÈ·ÐÔ*/
+    c_matmul(c_mat,c_mat1,n,n,n,c_mat2);    /* é€†çŸ©é˜µå’ŒåŽŸçŸ©é˜µç›¸ä¹˜*/
+    printf("C*inv(C):\n");                  /* æ‰“å°ç›¸ä¹˜åŽçš„ç»“æžœï¼Œä»¥éªŒè¯æ­£ç¡®æ€§*/
 
     for(i=0; i<m; i++)
     {
@@ -54,15 +54,15 @@ int main4minv0()
         printf("\n");
     }
 
-    for(i=0; i<n; i++)                     /* ÇóÄæºó»áÆÆ»µÔ­¾ØÕóÊý¾Ý£¬Òò´ËÏÈ±¸·Ý*/
+    for(i=0; i<n; i++)                     /* æ±‚é€†åŽä¼šç ´ååŽŸçŸ©é˜µæ•°æ®ï¼Œå› æ­¤å…ˆå¤‡ä»½*/
         for(j=0; j<n; j++)
         {
             r_mat1[i][j] = r_mat[i][j];
         }
 
     printf("\n");
-    sdminv(r_mat,n);                         /* Õý¶¨¾ØÕóÇóÄæ*/
-    printf("inv(SD):\n");                    /* ´òÓ¡ÇóµÃµÄÄæ¾ØÕó*/
+    sdminv(r_mat,n);                         /* æ­£å®šçŸ©é˜µæ±‚é€†*/
+    printf("inv(SD):\n");                    /* æ‰“å°æ±‚å¾—çš„é€†çŸ©é˜µ*/
 
     for(i=0; i<n; i++)
     {
@@ -75,9 +75,9 @@ int main4minv0()
     }
 
     printf("SD*inv(SD):\n");
-    r_matmul(r_mat,r_mat1,n,n,n,r_mat2);     /* ¾ØÕóºÍÆäÄæ¾ØÕóÏà³Ë*/
+    r_matmul(r_mat,r_mat1,n,n,n,r_mat2);     /* çŸ©é˜µå’Œå…¶é€†çŸ©é˜µç›¸ä¹˜*/
 
-    for(i=0; i<n; i++)                       /* ´òÓ¡Ïà³ËµÄ½á¹û*/
+    for(i=0; i<n; i++)                       /* æ‰“å°ç›¸ä¹˜çš„ç»“æžœ*/
     {
         for(j=0; j<n; j++)
         {

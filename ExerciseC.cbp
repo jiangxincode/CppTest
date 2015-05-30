@@ -37,6 +37,7 @@
 			<Add directory="include/glib-2.0" />
 			<Add directory="lib/glib-2.0/include" />
 			<Add directory="include/dos" />
+			<Add directory="include" />
 		</Compiler>
 		<Linker>
 			<Add library="lib\gio-2.0.lib" />
@@ -148,7 +149,6 @@
 		<Unit filename="CLAH/Chap11/gammln.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="CLAH/Chap11/something.h" />
 		<Unit filename="CLAH/Chap11/studf.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -236,7 +236,6 @@
 		<Unit filename="CLAH/Chap12/simplex0.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="CLAH/Chap12/something.h" />
 		<Unit filename="CLAH/Chap13/Ftest_example7.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -285,7 +284,6 @@
 		<Unit filename="CLAH/Chap13/randuabs.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="CLAH/Chap13/something.h" />
 		<Unit filename="CLAH/Chap13/ttest.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -337,7 +335,6 @@
 		<Unit filename="CLAH/Chap14/sech0.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="CLAH/Chap14/something.h" />
 		<Unit filename="CLAH/Chap15/cout.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -380,7 +377,6 @@
 		<Unit filename="CLAH/Chap15/shel.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="CLAH/Chap15/something.h" />
 		<Unit filename="CLAH/Chap16/cfft0.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -414,7 +410,6 @@
 		<Unit filename="CLAH/Chap16/smoth0.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="CLAH/Chap16/something.h" />
 		<Unit filename="CLAH/Chap16/wolt.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -433,7 +428,6 @@
 		<Unit filename="CLAH/Chap1/exp4.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="CLAH/Chap2/c_comp.h" />
 		<Unit filename="CLAH/Chap2/c_comp_cos.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -512,7 +506,6 @@
 		<Unit filename="CLAH/Chap3/rpva.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="CLAH/Chap3/something.h" />
 		<Unit filename="CLAH/Chap4/Tminv.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -612,7 +605,6 @@
 		<Unit filename="CLAH/Chap4/smtr.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="CLAH/Chap4/something.h" />
 		<Unit filename="CLAH/Chap4/strqr0.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -691,7 +683,6 @@
 		<Unit filename="CLAH/Chap5/smldl.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="CLAH/Chap5/something.h" />
 		<Unit filename="CLAH/Chap5/toepl.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -746,7 +737,6 @@
 		<Unit filename="CLAH/Chap6/r_gaus.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="CLAH/Chap6/something.h" />
 		<Unit filename="CLAH/Chap7/atken.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -795,7 +785,6 @@
 		<Unit filename="CLAH/Chap7/lfs0.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="CLAH/Chap7/something.h" />
 		<Unit filename="CLAH/Chap7/spl.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -865,7 +854,6 @@
 		<Unit filename="CLAH/Chap8/simps20.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="CLAH/Chap8/something.h" />
 		<Unit filename="CLAH/Chap8/tzi0.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -911,52 +899,7 @@
 		<Unit filename="CLAH/Chap9/rungekuttavh.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="CLAH/Chap9/something.h" />
-		<Unit filename="CLCDC/chap10-src/client.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLCDC/chap10-src/service.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLCDC/chap11-src/udp.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLCDC/chap12-src/calendar.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLCDC/chap13-src/Draw.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLCDC/chap14-src/clock.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLCDC/chap15-src/calc.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLCDC/chap16-src/editor.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLCDC/chap3-src/ELS.C">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLCDC/chap4-src/tuixiangzi.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLCDC/chap5-src/GOBANG.C">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLCDC/chap6-src/cjgl.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLCDC/chap7-src/gzgl-newest.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLCDC/chap8-src/dhbgl.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLCDC/chap9-src/ping.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Unit filename="CLAH/utility.h" />
 		<Unit filename="src/getopt.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -1,22 +1,22 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <math.h>
 
-#include "something.h"
+#include "../utility.h"
 
-#define NMAX 100                         /* µü´úµÄ×î´ó´ÎÊı*/
+#define NMAX 100                         /* è¿­ä»£çš„æœ€å¤§æ¬¡æ•°*/
 #define EULER 0.5772156649
-#define FPMIN 1.0e-30                    /* Îª·ÀÖ¹³ı0Ê¹ÓÃµÄ³£Êı*/
+#define FPMIN 1.0e-30                    /* ä¸ºé˜²æ­¢é™¤0ä½¿ç”¨çš„å¸¸æ•°*/
 
-static double subcf(double a,double b,double x,double e1); /* ¼ÆËãÁ¬·ÖÊ½¼¶ÊıĞèÒªµÄ±äÁ¿ºÍº¯Êı*/
+static double subcf(double a,double b,double x,double e1); /* è®¡ç®—è¿åˆ†å¼çº§æ•°éœ€è¦çš„å˜é‡å’Œå‡½æ•°*/
 
 /**
- * º¯ Êı Ãû£ºbeta2
- * ¹¦ÄÜÃèÊö£ºÇó½â²»ÍêÈ«±´Ëş»ı·ÖµÄÖµ
- * ÊäÈë²ÎÊı£ºa ×Ô±äÁ¿aµÄÖµ¡£ÒªÇóa>0¡£
- *            b ×Ô±äÁ¿bµÄÖµ¡£ÒªÇób>0¡£
- *            x ×Ô±äÁ¿xµÄÖµ£¬ÒªÇó0<=x<=1¡£
- *          e1 ¾«¶ÈÒªÇó£¬µ±Á½´ÎµİÍÆµÄÖµ±ä»¯ÂÊĞ¡ÓÚe1Ê±£¬ÈÏÎªÒÑÊÕÁ²
- * ·µ »Ø Öµ£º²»ÍêÈ«±´Ëşº¯ÊıµÄÖµ
+ * å‡½ æ•° åï¼šbeta2
+ * åŠŸèƒ½æè¿°ï¼šæ±‚è§£ä¸å®Œå…¨è´å¡”ç§¯åˆ†çš„å€¼
+ * è¾“å…¥å‚æ•°ï¼ša è‡ªå˜é‡açš„å€¼ã€‚è¦æ±‚a>0ã€‚
+ *            b è‡ªå˜é‡bçš„å€¼ã€‚è¦æ±‚b>0ã€‚
+ *            x è‡ªå˜é‡xçš„å€¼ï¼Œè¦æ±‚0<=x<=1ã€‚
+ *          e1 ç²¾åº¦è¦æ±‚ï¼Œå½“ä¸¤æ¬¡é€’æ¨çš„å€¼å˜åŒ–ç‡å°äºe1æ—¶ï¼Œè®¤ä¸ºå·²æ”¶æ•›
+ * è¿” å› å€¼ï¼šä¸å®Œå…¨è´å¡”å‡½æ•°çš„å€¼
  */
 double beta2(double a,double b,double x,double e1)
 {
@@ -27,26 +27,26 @@ double beta2(double a,double b,double x,double e1)
         printf("Bad input parameter\n");
         return(0.0);
     }
-    else if(x == 0.0)                                /* xÎª0µÄÇé¿ö*/
+    else if(x == 0.0)                                /* xä¸º0çš„æƒ…å†µ*/
     {
         t = 0.0;
         return(t);
     }
-    else if(x == 1.0)                                /* xÎª1µÄÇé¿ö*/
+    else if(x == 1.0)                                /* xä¸º1çš„æƒ…å†µ*/
     {
         t = 1.0;
         return(t);
     }
     else if(x > (a+1.0)/(a+b+2.0))
     {
-        t = exp(gammln(a+b)-gammln(a)-gammln(b)+a*log(x)+b*log(1.0-x)); /* ÏµÊı*/
-        t = 1.0-t*subcf(b,a,1.0-x,e1)/b;               /* Ê¹ÓÃÁ¬·ÖÊ½¼¶Êı*/
+        t = exp(gammln(a+b)-gammln(a)-gammln(b)+a*log(x)+b*log(1.0-x)); /* ç³»æ•°*/
+        t = 1.0-t*subcf(b,a,1.0-x,e1)/b;               /* ä½¿ç”¨è¿åˆ†å¼çº§æ•°*/
         return(t);
     }
     else
     {
-        t = exp(gammln(a+b)-gammln(a)-gammln(b)+a*log(x)+b*log(1.0-x)); /* ÏµÊı*/
-        t = t*subcf(a,b,x,e1)/a;                       /* Ê¹ÓÃÁ¬·ÖÊ½¼¶Êı*/
+        t = exp(gammln(a+b)-gammln(a)-gammln(b)+a*log(x)+b*log(1.0-x)); /* ç³»æ•°*/
+        t = t*subcf(a,b,x,e1)/a;                       /* ä½¿ç”¨è¿åˆ†å¼çº§æ•°*/
         return(t);
     }
 }
@@ -68,11 +68,11 @@ static double subcf(double a,double b,double x,double e1)
 
     for(n=1; n<NMAX; n++)
     {
-        an = n*(b-n)*x/((a+2.0*n-1.0)*(a+2.0*n));  /* µÚ2n½ÚµÄÏµÊıa,´Ë½ÚµÄÏµÊıbÎª1*/
-        d = an*d+1.0;                              /* ¼ÆËãd*/
-        c = 1.0+an/c;                              /* ¼ÆËãc*/
+        an = n*(b-n)*x/((a+2.0*n-1.0)*(a+2.0*n));  /* ç¬¬2nèŠ‚çš„ç³»æ•°a,æ­¤èŠ‚çš„ç³»æ•°bä¸º1*/
+        d = an*d+1.0;                              /* è®¡ç®—d*/
+        c = 1.0+an/c;                              /* è®¡ç®—c*/
 
-        if(fabs(d) < FPMIN)                        /* ¼ì²écdµÄ·¶Î§*/
+        if(fabs(d) < FPMIN)                        /* æ£€æŸ¥cdçš„èŒƒå›´*/
         {
             d = FPMIN;
         }
@@ -85,7 +85,7 @@ static double subcf(double a,double b,double x,double e1)
         d = 1.0/d;
         del = d*c;
         t = t*del;
-        an = -(a+n)*(a+b+n)*x/((a+2.0*n)*(a+1.0+2.0*n));/* µÚ2n+1½Ú*/
+        an = -(a+n)*(a+b+n)*x/((a+2.0*n)*(a+1.0+2.0*n));/* ç¬¬2n+1èŠ‚*/
         d = 1.0+an*d;
         c = 1.0+an/c;
 
@@ -103,12 +103,12 @@ static double subcf(double a,double b,double x,double e1)
         del = d*c;
         t = t*del;
 
-        if(fabs(del-1.0)<e1)                       /* ¼¶Êı²¿·ÖÒÑ¾­ÊÕÁ²*/
+        if(fabs(del-1.0)<e1)                       /* çº§æ•°éƒ¨åˆ†å·²ç»æ”¶æ•›*/
         {
             return(t);
         }
     }
 
-    printf("iteration not converged.");          /* Ã»ÓĞÊÕÁ²*/
+    printf("iteration not converged.");          /* æ²¡æœ‰æ”¶æ•›*/
     return(t);
 }

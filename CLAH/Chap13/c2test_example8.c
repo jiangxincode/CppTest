@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include "randu01s.c"
 #include "c2test.c"
@@ -14,11 +14,11 @@ int main13c2test_example8()
     a=(int *)malloc(sizeof(int)*r);
     e=(int *)malloc(sizeof(int)*r);
     u_ran=(double *)malloc(sizeof(double)*L);
-    randu01s(L,u_ran);//Éú²úL¸ö[0,1]Çø¼äµÄ¾ùÔÈËæ»úÊı
+    randu01s(L,u_ran);//ç”Ÿäº§Lä¸ª[0,1]åŒºé—´çš„å‡åŒ€éšæœºæ•°
 
     for(i=0; i<r; i++)
     {
-        e[i]=L/r;  //Ã¿¸öÇø¼äÄÚL/r
+        e[i]=L/r;  //æ¯ä¸ªåŒºé—´å†…L/r
         a[i]=0;
     }
 
@@ -32,11 +32,11 @@ int main13c2test_example8()
 
     if(temp)
     {
-        printf("·ûºÏ·Ö²¼\n");
+        printf("ç¬¦åˆåˆ†å¸ƒ\n");
     }
     else
     {
-        printf("²»·ûºÏ·Ö²¼\n");
+        printf("ä¸ç¬¦åˆåˆ†å¸ƒ\n");
     }
 
     return 0;

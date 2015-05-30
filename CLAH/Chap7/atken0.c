@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include "atken.c"
 #include "atkene.c"
 #include "lagr7.c"
@@ -12,19 +12,19 @@ int main7atken0()
     eps = 1.0e-6;
     h = 0.1;
     t=0.20;
-    z=lagr7(x,y,10,t);                                /* À­¸ñÀÊÈÕÆß´Î²åÖµ*/
-    printf("Lagrange 7: t=%2.5f,z=%2.5f\n",t,z);      /* ´òÓ¡½á¹û*/
-    z=atken(x,y,10,t,eps);                            /* °£ÌØ½ğ²»µÈ¾à²åÖµ*/
-    printf("atken: t=%2.5f,z=%2.5f\n",t,z);           /* ´òÓ¡½á¹û*/
-    z=atkene(x[0],h,y,10,t,eps);                      /* °£ÌØ½ğµÈ¾à²åÖµ*/
-    printf("atkene: t=%2.5f,z=%2.5f\n",t,z);           /* ´òÓ¡½á¹û*/
+    z=lagr7(x,y,10,t);                                /* æ‹‰æ ¼æœ—æ—¥ä¸ƒæ¬¡æ’å€¼*/
+    printf("Lagrange 7: t=%2.5f,z=%2.5f\n",t,z);      /* æ‰“å°ç»“æœ*/
+    z=atken(x,y,10,t,eps);                            /* åŸƒç‰¹é‡‘ä¸ç­‰è·æ’å€¼*/
+    printf("atken: t=%2.5f,z=%2.5f\n",t,z);           /* æ‰“å°ç»“æœ*/
+    z=atkene(x[0],h,y,10,t,eps);                      /* åŸƒç‰¹é‡‘ç­‰è·æ’å€¼*/
+    printf("atkene: t=%2.5f,z=%2.5f\n",t,z);           /* æ‰“å°ç»“æœ*/
     t=0.55;
     printf("\n");
-    z=lagr7(x,y,10,t);                                /* À­¸ñÀÊÈÕÆß´Î²åÖµ*/
-    printf("Lagrange 7: t=%2.5f,z=%2.5f\n",t,z);      /* ´òÓ¡½á¹û*/
-    z=atken(x,y,10,t,eps);                            /* °£ÌØ½ğ²»µÈ¾à²åÖµ*/
-    printf("atken: t=%2.5f,z=%2.5f\n",t,z);           /* ´òÓ¡½á¹û*/
-    z=atkene(x[0],h,y,10,t,eps);                      /* °£ÌØ½ğµÈ¾à²åÖµ*/
-    printf("atkene: t=%2.5f,z=%2.5f\n",t,z);           /* ´òÓ¡½á¹û*/
+    z=lagr7(x,y,10,t);                                /* æ‹‰æ ¼æœ—æ—¥ä¸ƒæ¬¡æ’å€¼*/
+    printf("Lagrange 7: t=%2.5f,z=%2.5f\n",t,z);      /* æ‰“å°ç»“æœ*/
+    z=atken(x,y,10,t,eps);                            /* åŸƒç‰¹é‡‘ä¸ç­‰è·æ’å€¼*/
+    printf("atken: t=%2.5f,z=%2.5f\n",t,z);           /* æ‰“å°ç»“æœ*/
+    z=atkene(x[0],h,y,10,t,eps);                      /* åŸƒç‰¹é‡‘ç­‰è·æ’å€¼*/
+    printf("atkene: t=%2.5f,z=%2.5f\n",t,z);           /* æ‰“å°ç»“æœ*/
     return 0;
 }

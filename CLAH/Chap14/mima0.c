@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include "mima.c"
 #include "mmas.c"
 #include "bist.c"
@@ -8,7 +8,7 @@ int main14mima0()
     int i,j,p[50],ma,mi,m12;
     printf("Data:\n");
 
-    for(i=0; i<5; i++)                            /* Éú³ÉÒ»Ð©ÎÞÐòÊý¾Ý*/
+    for(i=0; i<5; i++)                            /* ç”Ÿæˆä¸€äº›æ— åºæ•°æ®*/
     {
         for(j=0; j<10; j++)
         {
@@ -19,15 +19,15 @@ int main14mima0()
         printf("\n");
     }
 
-    printf("mima:\n");                           /* ÕÒ×î´óÖµºÍ×îÐ¡Öµ*/
+    printf("mima:\n");                           /* æ‰¾æœ€å¤§å€¼å’Œæœ€å°å€¼*/
     mima(p,50,&mi,&ma);
     printf("min = %d , max = %d\n",mi,ma);
     printf("mmas:\n");
-    mmas(p,50,12);                               /* ÕÒµÚ12´óµÄÔªËØ*/
+    mmas(p,50,12);                               /* æ‰¾ç¬¬12å¤§çš„å…ƒç´ */
     m12 = p[11];
     printf("The 12th smallest m12 is: %d\n",m12);
-    qcks(p,0,49);                                 /* ÅÅÐò*/
-    i = bist(p,50,m12);                           /* ¶þ·Ö²éÕÒ*/
+    qcks(p,0,49);                                 /* æŽ’åº*/
+    i = bist(p,50,m12);                           /* äºŒåˆ†æŸ¥æ‰¾*/
     printf("m12's position in the ordered sqeu is: %d\n",i);
     return 0;
 }

@@ -1,13 +1,13 @@
-/*======================================================
-//º¯ÊýÃû£ºmhdqr
-//¹¦ÄÜÃèÊö£ºÉÏH¾ØÕóÇóÌØÕ÷Öµ
-//ÊäÈë²ÎÊý£ºa   Ö¸Ïò´æ·ÅÉÏH¾ØÕóµÄÖ¸Õë
-			n   ¾ØÕó½×Êý
-			u   ·µ»ØµÄÌØÕ÷ÖµµÄÊµ²¿
-			v   ·µ»ØµÄÌØÕ÷ÖµµÄÐé²¿
-			eps ¾«¶ÈÒªÇó£¬ÓÃÓÚÅÐ¶ÏÔªËØÊÇ·ñÎª0
-			itmax ×î´óµü´ú´ÎÊý
-//·µ»ØÖµ£ºÕûÐÍ¡£ÔËÐÐ³É¹¦Ôò·µ»Ø1,Ê§°ÜÔò·µ»Ø0
+ï»¿/*======================================================
+//å‡½æ•°åï¼šmhdqr
+//åŠŸèƒ½æè¿°ï¼šä¸ŠHçŸ©é˜µæ±‚ç‰¹å¾å€¼
+//è¾“å…¥å‚æ•°ï¼ša   æŒ‡å‘å­˜æ”¾ä¸ŠHçŸ©é˜µçš„æŒ‡é’ˆ
+			n   çŸ©é˜µé˜¶æ•°
+			u   è¿”å›žçš„ç‰¹å¾å€¼çš„å®žéƒ¨
+			v   è¿”å›žçš„ç‰¹å¾å€¼çš„è™šéƒ¨
+			eps ç²¾åº¦è¦æ±‚ï¼Œç”¨äºŽåˆ¤æ–­å…ƒç´ æ˜¯å¦ä¸º0
+			itmax æœ€å¤§è¿­ä»£æ¬¡æ•°
+//è¿”å›žå€¼ï¼šæ•´åž‹ã€‚è¿è¡ŒæˆåŠŸåˆ™è¿”å›ž1,å¤±è´¥åˆ™è¿”å›ž0
 =========================================================*/
 #include <stdlib.h>
 #include <stdio.h>
@@ -17,33 +17,33 @@ double *a,*u,*v,eps;
 int n,itmax;
 {
     int i,j,k,ii,jj,kk;
-    double x,y,p,q,r;                          /* ÓÃÓÚ½øÐÐÏàËÆ±ä»»*/
-    double q00,q01,q02,q11,q12,q22;            /* ÓÃÓÚÇóQ*/
-    int is1,is2,n1;                            /* ÓÃÓÚ·Ö½âÎÊÌâ*/
-    double *a1;                                /* ÓÃÓÚ´æ·ÅÐ¡¹æÄ£µÄÎÊÌâ*/
-    double b,c,s;                              /* ÓÃÓÚ¼ÆËã2½×¾ØÕóµÄÌØÕ÷Öµ*/
+    double x,y,p,q,r;                          /* ç”¨äºŽè¿›è¡Œç›¸ä¼¼å˜æ¢*/
+    double q00,q01,q02,q11,q12,q22;            /* ç”¨äºŽæ±‚Q*/
+    int is1,is2,n1;                            /* ç”¨äºŽåˆ†è§£é—®é¢˜*/
+    double *a1;                                /* ç”¨äºŽå­˜æ”¾å°è§„æ¨¡çš„é—®é¢˜*/
+    double b,c,s;                              /* ç”¨äºŽè®¡ç®—2é˜¶çŸ©é˜µçš„ç‰¹å¾å€¼*/
 
-    if(itmax == 0)                            /* ÒÑ¾­²»ÄÜÔÙµü´ú*/
+    if(itmax == 0)                            /* å·²ç»ä¸èƒ½å†è¿­ä»£*/
     {
         printf("fail\n");
         return(0);
     }
 
-    if(n==1)                                   /* ¾ØÕóÊÇ1½×*/
+    if(n==1)                                   /* çŸ©é˜µæ˜¯1é˜¶*/
     {
         u[0] = a[0];
         v[0] = 0.0;
         return(1);
     }
 
-    if(n==2)                                  /* ¾ØÕóÊÇ2½×*/
+    if(n==2)                                  /* çŸ©é˜µæ˜¯2é˜¶*/
     {
         b = (a[0]+a[3]);
         c = a[0]*a[3]-a[1]*a[2];
         s = b*b-4.0*c;
         y = sqrt(fabs(s));
 
-        if(s > 0.0)                            /* Á½¸öÌØÕ÷ÖµÊÇÊµµÄ*/
+        if(s > 0.0)                            /* ä¸¤ä¸ªç‰¹å¾å€¼æ˜¯å®žçš„*/
         {
             if(b > 0.0)
             {
@@ -58,7 +58,7 @@ int n,itmax;
             u[1]=c/u[0];
             v[1]=0.0;
         }
-        else                                   /* Á½¸öÌØÕ÷ÖµÊÇ¸´¹²éîµÄ*/
+        else                                   /* ä¸¤ä¸ªç‰¹å¾å€¼æ˜¯å¤å…±è½­çš„*/
         {
             u[0] = b/2.0;
             v[0] = y/2.0;
@@ -72,12 +72,12 @@ int n,itmax;
     is1 = 0;
     is2 = 0;
 
-    while(is2 < n-1)   			               /* ·Ö¸î³ÉÐ¡¹æÄ£ÎÊÌâ*/
+    while(is2 < n-1)   			               /* åˆ†å‰²æˆå°è§„æ¨¡é—®é¢˜*/
     {
         is2++;
         j = is2*n+is2;
 
-        if(fabs(a[j-1]) < eps*(fabs(a[j-n-1])+fabs(a[j]))) /* Ñ°ÕÒ´Î¶Ô½ÇÏßÉÏ0ÔªËØ*/
+        if(fabs(a[j-1]) < eps*(fabs(a[j-n-1])+fabs(a[j]))) /* å¯»æ‰¾æ¬¡å¯¹è§’çº¿ä¸Š0å…ƒç´ */
         {
             n1 = is2-is1;
             printf("Partion: is1=%d,is2=%d,size=%d\n",is1,is2,n1);
@@ -89,13 +89,13 @@ int n,itmax;
                     a1[i*n1+j] = a[(i+is1)*n+j+is1];
                 }
 
-            mhdqr(a1,n1,u+is1,v+is1,eps,itmax);   /* µÝ¹éµ÷ÓÃº¯ÊýÇó½â*/
+            mhdqr(a1,n1,u+is1,v+is1,eps,itmax);   /* é€’å½’è°ƒç”¨å‡½æ•°æ±‚è§£*/
             free(a1);
             is1 = is2;
         }
     }
 
-    if(is1>0 && is1<n)                           /* ½øÐÐ¹ý·Ö¸î£¬ÇÒ×îºóÒ»¿é¾ØÕóÎ´Çó½â*/
+    if(is1>0 && is1<n)                           /* è¿›è¡Œè¿‡åˆ†å‰²ï¼Œä¸”æœ€åŽä¸€å—çŸ©é˜µæœªæ±‚è§£*/
     {
         n1 = n-is1;
         printf("Partion: is1=%d,is2=%d,size=%d\n",is1,n,n1);
@@ -107,7 +107,7 @@ int n,itmax;
                 a1[i*n1+j] = a[(i+is1)*n+j+is1];
             }
 
-        mhdqr(a1,n1,u+is1,v+is1,eps,itmax);     /* µÝ¹éµ÷ÓÃº¯ÊýÇó½â×îºóÒ»¿é¾ØÕó*/
+        mhdqr(a1,n1,u+is1,v+is1,eps,itmax);     /* é€’å½’è°ƒç”¨å‡½æ•°æ±‚è§£æœ€åŽä¸€å—çŸ©é˜µ*/
         free(a1);
         return(1);
     }
@@ -118,7 +118,7 @@ int n,itmax;
 
     for(k=0; k<n-1; k++)
     {
-        if(k==0)                                 /* ´¦ÀíµÚÒ»ÁÐÓ¦ÓÃÁËÎ»ÒÆ²ßÂÔ*/
+        if(k==0)                                 /* å¤„ç†ç¬¬ä¸€åˆ—åº”ç”¨äº†ä½ç§»ç­–ç•¥*/
         {
             x = a[(n-2)*n+n-2]+a[n*n-1];
             y = a[(n-2)*n+n-2]*a[n*n-1]-a[(n-2)*n+n-1]*a[(n-1)*n+n-2];
@@ -126,7 +126,7 @@ int n,itmax;
             q = a[n]*(a[0]+a[n+1]-x);
             r = a[n]*a[2*n+1];
         }
-        else                      /* ÆäÓà¸÷ÁÐµÄÔËËã¾ÍÊÇÒª½«¾ØÕó»Ö¸´³ÉÉÏH¾ØÕó*/
+        else                      /* å…¶ä½™å„åˆ—çš„è¿ç®—å°±æ˜¯è¦å°†çŸ©é˜µæ¢å¤æˆä¸ŠHçŸ©é˜µ*/
         {
             p = a[k*n+k-1];
             q = a[(k+1)*n+k-1];
@@ -141,9 +141,9 @@ int n,itmax;
             }
         }
 
-        if((fabs(p)+fabs(q)+fabs(r))!=0.0)     /* ¶¼ÊÇ0£¬ÕâÒ»ÁÐ¾Í²»ÐèÒª´¦Àí*/
+        if((fabs(p)+fabs(q)+fabs(r))!=0.0)     /* éƒ½æ˜¯0ï¼Œè¿™ä¸€åˆ—å°±ä¸éœ€è¦å¤„ç†*/
         {
-            if(p<0.0)                          /* ÇóQ*/
+            if(p<0.0)                          /* æ±‚Q*/
             {
                 s = -sqrt(p*p+q*q+r*r);
             }
@@ -157,14 +157,14 @@ int n,itmax;
                 a[k*n+k-1]=-s;
             }
 
-            q00 = -p/s;                     /* QµÄ¸÷¸ö»ù±¾ÔªËØ*/
+            q00 = -p/s;                     /* Qçš„å„ä¸ªåŸºæœ¬å…ƒç´ */
             q01 = -q/s;
             q02 = -r/s;
             q11 = -q00-q02*r/(p+s);
             q12 = q01*r/(p+s);
             q22 = -q00-q01*q/(p+s);
 
-            for(j=k; j<n; j++)           /* Q×ó³ËA£¬×î¶à¸Ä±äk,k+1,k+2Õâ3ÐÐÉÏµÄn-kÁÐÔªËØ*/
+            for(j=k; j<n; j++)           /* Qå·¦ä¹˜Aï¼Œæœ€å¤šæ”¹å˜k,k+1,k+2è¿™3è¡Œä¸Šçš„n-kåˆ—å…ƒç´ */
             {
                 ii = k*n+j;
                 jj = (k+1)*n+j;
@@ -173,7 +173,7 @@ int n,itmax;
                 q = q01*a[ii]+q11*a[jj];
                 r = q02*a[ii]+q12*a[jj];
 
-                if(k!=n-2)                     /* µ±kÎªn-2Ê±£¬Ö»¸Ä±ä2ÐÐ*/
+                if(k!=n-2)                     /* å½“kä¸ºn-2æ—¶ï¼Œåªæ”¹å˜2è¡Œ*/
                 {
                     p = p+q02*a[kk];
                     q = q+q12*a[kk];
@@ -185,14 +185,14 @@ int n,itmax;
                 a[jj] = q;
             }
 
-            j=k+3;                         /* ¼ÆËãQÓÒ³ËAÓ°ÏìµÄÐÐÊý£¬Ö÷ÒªÊÇ±ß½çÎÊÌâ*/
+            j=k+3;                         /* è®¡ç®—Qå³ä¹˜Aå½±å“çš„è¡Œæ•°ï¼Œä¸»è¦æ˜¯è¾¹ç•Œé—®é¢˜*/
 
             if(j>=n-1)
             {
                 j=n-1;
             }
 
-            for(i=0; i<=j; i++)           /* QÓÒ³ËA£¬×î¶àÓ°Ïì3ÁÐ£¬µÚk,k+1,k+2ÁÐ*/
+            for(i=0; i<=j; i++)           /* Qå³ä¹˜Aï¼Œæœ€å¤šå½±å“3åˆ—ï¼Œç¬¬k,k+1,k+2åˆ—*/
             {
                 ii = i*n+k;
                 jj = i*n+k+1;
@@ -200,7 +200,7 @@ int n,itmax;
                 q = q01*a[ii]+q11*a[jj];
                 r = q02*a[ii]+q12*a[jj];
 
-                if(k!=n-2)               /* µ±k+2ÎªnÊ±£¬²»¼ÆËãÕâÒ»ÁÐÁË£¬ÒòÎªÔ½½çÁË*/
+                if(k!=n-2)               /* å½“k+2ä¸ºnæ—¶ï¼Œä¸è®¡ç®—è¿™ä¸€åˆ—äº†ï¼Œå› ä¸ºè¶Šç•Œäº†*/
                 {
                     kk = i*n+k+2;
                     p = p+q02*a[kk];
@@ -214,7 +214,7 @@ int n,itmax;
             }
         }
 
-        if(k > 0)                      /* ÕâÁ½ÐÐÔªËØÊÇ0*/
+        if(k > 0)                      /* è¿™ä¸¤è¡Œå…ƒç´ æ˜¯0*/
         {
             a[(k+1)*n+k-1] = 0.0;
 
@@ -225,11 +225,11 @@ int n,itmax;
         }
     }
 
-    /*	for (j=2; j<=n-1; j++)                       ±£Ö¤ÊÇÉÏH¾ØÕó
+    /*	for (j=2; j<=n-1; j++)                       ä¿è¯æ˜¯ä¸ŠHçŸ©é˜µ
     		a[j*n+j-2]=0.0;
     	for (j=3; j<=n-1; j++)
     		a[j*n+j-3]=0.0;*/
-    i = mhdqr(a,n,u,v,eps,itmax-1);    /* ½øÐÐÍêÏàËÆ±ä»»ºóÔÙµÝ¹éµ÷ÓÃº¯ÊýÇó½â*/
+    i = mhdqr(a,n,u,v,eps,itmax-1);    /* è¿›è¡Œå®Œç›¸ä¼¼å˜æ¢åŽå†é€’å½’è°ƒç”¨å‡½æ•°æ±‚è§£*/
     return(i);
 }
 

@@ -1,12 +1,12 @@
-#include <math.h>
+ï»¿#include <math.h>
 #include <stdio.h>
 
 /**
- * º¯ Êý Ãû£ºRC
- * ¹¦ÄÜÃèÊö£ºÇó½âµÚÒ»ÀàÍÖÔ²»ý·ÖµÄÍË»¯ÐÎÊ½µÄÖµ
- * ÊäÈë²ÎÊý£ºx ÇóÖµµÄ×Ô±äÁ¿
- *           y ÇóÖµµÄ×Ô±äÁ¿
- * ·µ »Ø Öµ£ºµÚÒ»ÀàÍÖÔ²»ý·ÖµÄÍË»¯ÐÎÊ½µÄÖµ
+ * å‡½ æ•° åï¼šRC
+ * åŠŸèƒ½æè¿°ï¼šæ±‚è§£ç¬¬ä¸€ç±»æ¤­åœ†ç§¯åˆ†çš„é€€åŒ–å½¢å¼çš„å€¼
+ * è¾“å…¥å‚æ•°ï¼šx æ±‚å€¼çš„è‡ªå˜é‡
+ *           y æ±‚å€¼çš„è‡ªå˜é‡
+ * è¿” å›ž å€¼ï¼šç¬¬ä¸€ç±»æ¤­åœ†ç§¯åˆ†çš„é€€åŒ–å½¢å¼çš„å€¼
  */
 double RC(double x,double y)
 {
@@ -14,7 +14,7 @@ double RC(double x,double y)
     double z = 0.0; //add by jiangxin
     eps = 1.0e-30;
 
-    if(x<0||(x+fabs(y))<eps)                                  /* ¼ì²é×Ô±äÁ¿·¶Î§*/
+    if(x<0||(x+fabs(y))<eps)                                  /* æ£€æŸ¥è‡ªå˜é‡èŒƒå›´*/
     {
         printf("Parameters incorrect\n");
         return(0.0);
@@ -32,14 +32,14 @@ double RC(double x,double y)
     do
     {
         ll = 2.0*sqrt(x)*sqrt(y)+y;
-        x = (x+ll)/4.0;                                        /* ¸üÐÂx,y*/
+        x = (x+ll)/4.0;                                        /* æ›´æ–°x,y*/
         y = (y+ll)/4.0;
         t = (x+y+z)/3.0;
         t1 = 1.0-y/t;
     }
-    while(fabs(t1) > 0.0012);                                  /* Õâ¸öãÐÖµÓÃÓÚÅÐ¶ÏxºÍy³ä·Ö½Ó½ü*/
+    while(fabs(t1) > 0.0012);                                  /* è¿™ä¸ªé˜ˆå€¼ç”¨äºŽåˆ¤æ–­xå’Œyå……åˆ†æŽ¥è¿‘*/
 
-    t = (1.0+t1*t1*(0.3+t1*(1.0/7.0+t1*(0.375+9.0*t1/22.0))))/sqrt(t);     /* ÓÃÌ©ÀÕÕ¹¿ª¼ÆËã»ý·ÖÖµ*/
-    t = f*t;                                                    /* ³ËÉÏÏµÊý*/
+    t = (1.0+t1*t1*(0.3+t1*(1.0/7.0+t1*(0.375+9.0*t1/22.0))))/sqrt(t);     /* ç”¨æ³°å‹’å±•å¼€è®¡ç®—ç§¯åˆ†å€¼*/
+    t = f*t;                                                    /* ä¹˜ä¸Šç³»æ•°*/
     return(t);
 }

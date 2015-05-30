@@ -1,19 +1,19 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 
-#include "something.h"
+#include "../utility.h"
 
 int main11errf0()
 {
     int i,j;
     double x,t;
 
-    for(i=0; i<10; i++)                             /* ¹²ÓÐ10ÐÐ*/
+    for(i=0; i<10; i++)                             /* å…±æœ‰10è¡Œ*/
     {
-        for(j=0; j<3; j++)                            /* Ã¿ÐÐ3¸ö*/
+        for(j=0; j<3; j++)                            /* æ¯è¡Œ3ä¸ª*/
         {
-            x = 0.1*(3.0*i+j);                          /* ¼ÆËãx*/
-            t = errf(x);                                /* µ÷ÓÃÎó²îº¯Êý¼ÆËã*/
-            printf("erf(%2.1f)=%e ",x,t);               /* ´òÓ¡½á¹û*/
+            x = 0.1*(3.0*i+j);                          /* è®¡ç®—x*/
+            t = errf(x);                                /* è°ƒç”¨è¯¯å·®å‡½æ•°è®¡ç®—*/
+            printf("erf(%2.1f)=%e ",x,t);               /* æ‰“å°ç»“æžœ*/
         }
 
         printf("\n");

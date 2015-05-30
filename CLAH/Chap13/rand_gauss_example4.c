@@ -1,4 +1,4 @@
-#include <time.h>
+ï»¿#include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include "randgsabs.c"
@@ -14,9 +14,9 @@ int main13rand_gauss_example4()
         exit(0);
     }
 
-    a=3.0;                         /* ¾ùÖµ*/
-    b=2.2;                          /* ·½²î*/
-    randgsabs(L,a,b,G);        /* µ÷ÓÃº¯Êı*/
+    a=3.0;                         /* å‡å€¼*/
+    b=2.2;                          /* æ–¹å·®*/
+    randgsabs(L,a,b,G);        /* è°ƒç”¨å‡½æ•°*/
 
     for(i=0; i<20; i++)
     {

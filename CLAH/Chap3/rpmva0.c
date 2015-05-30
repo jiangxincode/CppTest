@@ -1,6 +1,6 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 
-#include "something.h"
+#include "../utility.h"
 
 int main3rpmdva0()
 {
@@ -8,7 +8,7 @@ int main3rpmdva0()
     double y[6],tmp;
     static double a[7]= {7.0,-7.0,1.0,3.0,-5.0,2.0,2.0};
     static double x[6]= {1.0,1.1,0.3,-0.3,-1.1,-1.9};
-    rpmva(a,7,x,6,y);     /* µ÷ÓÃÒ»´ÎÇó¶à¸öÖµµÄº¯Êı£¬²¢´òÓ¡½á¹û*/
+    rpmva(a,7,x,6,y);     /* è°ƒç”¨ä¸€æ¬¡æ±‚å¤šä¸ªå€¼çš„å‡½æ•°ï¼Œå¹¶æ‰“å°ç»“æœ*/
     printf("rpmva:\n");
 
     for(i=0; i<6; i++)
@@ -17,7 +17,7 @@ int main3rpmdva0()
     }
 
     printf("\n");
-    printf("rpva:\n");    /* Ñ­»·µ÷ÓÃÒ»´ÎÇóÒ»¸öÖµµÄº¯Êı£¬²¢´òÓ¡½á¹û¡£*/
+    printf("rpva:\n");    /* å¾ªç¯è°ƒç”¨ä¸€æ¬¡æ±‚ä¸€ä¸ªå€¼çš„å‡½æ•°ï¼Œå¹¶æ‰“å°ç»“æœã€‚*/
 
     for(i=0; i<6; i++)
     {

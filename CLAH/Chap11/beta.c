@@ -1,26 +1,26 @@
-#include <math.h>
+ï»¿#include <math.h>
 #include <stdio.h>
 
-#include "something.h"
+#include "../utility.h"
 
 /**
- * º¯ Êı Ãû£ºbeta
- * ¹¦ÄÜÃèÊö£ºÇó½â±´Ëşº¯ÊıµÄÖµ
- * ÊäÈë²ÎÊı£º x º¯Êı±äÁ¿
- *             y º¯Êı±äÁ¿
- * ·µ »Ø Öµ£º±´Ëşº¯ÊıµÄÖµ
+ * å‡½ æ•° åï¼šbeta
+ * åŠŸèƒ½æè¿°ï¼šæ±‚è§£è´å¡”å‡½æ•°çš„å€¼
+ * è¾“å…¥å‚æ•°ï¼š x å‡½æ•°å˜é‡
+ *             y å‡½æ•°å˜é‡
+ * è¿” å› å€¼ï¼šè´å¡”å‡½æ•°çš„å€¼
  */
 double beta(double x,double y)
 {
     double t;
 
-    if((x<0) || (y<0))                           /* ÅĞ¶Ï×Ô±äÁ¿ÊÇ·ñÂú×ãÒªÇó*/
+    if((x<0) || (y<0))                           /* åˆ¤æ–­è‡ªå˜é‡æ˜¯å¦æ»¡è¶³è¦æ±‚*/
     {
         printf("negative input parameter\n");
         return(0.0);
     }
 
-    t = gammln(x)+gammln(y)-gammln(x+y);         /* Ê¹ÓÃÙ¤Âíº¯ÊıÊµÏÖ*/
+    t = gammln(x)+gammln(y)-gammln(x+y);         /* ä½¿ç”¨ä¼½é©¬å‡½æ•°å®ç°*/
     t = exp(t);
     return(t);
 }

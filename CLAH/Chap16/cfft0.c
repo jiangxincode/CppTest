@@ -1,6 +1,6 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <math.h>
-#include "something.h"
+#include "../utility.h"
 #include "ifft.c"
 #include "r2fft.c"
 
@@ -10,7 +10,7 @@ int main16cfft0()
     struct c_comp x[4],y[4],y1[4],y2[4];
     double a[4],b[4];
 
-    for(i=0; i<4; i++)                                 /* ¸ø¶¨aºÍb*/
+    for(i=0; i<4; i++)                                 /* ç»™å®šaå’Œb*/
     {
         a[i] = i+1;
         b[i] = 2*i;
@@ -36,7 +36,7 @@ int main16cfft0()
         x[i].imz = 0;
     }
 
-    i = fft(x,4,y); 	                                 /*ÇóaµÄfft*/
+    i = fft(x,4,y); 	                                 /*æ±‚açš„fft*/
 
     if(i)
     {
@@ -54,7 +54,7 @@ int main16cfft0()
         x[i].imz = 0;
     }
 
-    i = fft(x,4,y); 	                                /*ÇóbµÄfft*/
+    i = fft(x,4,y); 	                                /*æ±‚bçš„fft*/
 
     if(i)
     {
@@ -66,7 +66,7 @@ int main16cfft0()
         }
     }
 
-    r2fft(a,b,4,y1,y2);                               /* ¶ÔÁ½¸öÊµÐòÁÐÍ¬Ê±Çófft*/
+    r2fft(a,b,4,y1,y2);                               /* å¯¹ä¸¤ä¸ªå®žåºåˆ—åŒæ—¶æ±‚fft*/
     printf("\n\nr2fft:\n");
     printf("fft of a:\n");
 
@@ -82,7 +82,7 @@ int main16cfft0()
         printf("%3.1f+i*%3.1f ",y2[i].rmz,y2[i].imz);
     }
 
-    i = ifft(y1,4,x);                               	/*Çófft(a)µÄifft*/
+    i = ifft(y1,4,x);                               	/*æ±‚fft(a)çš„ifft*/
 
     if(i)
     {
@@ -94,7 +94,7 @@ int main16cfft0()
         }
     }
 
-    i = ifft(y2,4,x);                               	/*Çófft(b)µÄifft*/
+    i = ifft(y2,4,x);                               	/*æ±‚fft(b)çš„ifft*/
 
     if(i)
     {

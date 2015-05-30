@@ -1,4 +1,4 @@
-#include <stdlib.h>
+ï»¿#include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
 #include"qrroot.c"
@@ -6,12 +6,12 @@
 int main6qrroot5()
 {
     int i,itmax=60;
-    double eps=0.000001;                             /* ¾«¶È*/
-    static double u[5],v[5];                         /* ´æ·Å¸ùµÄ¾ØÕó*/
-    static double a[6]= {3.0,2.0,4.5,2.2,1.0,2.1};   /* ½µÃİÏµÊı*/
-    i=qrroot(a,5,u,v,eps,itmax);                        /* µ÷ÓÃº¯Êı*/
+    double eps=0.000001;                             /* ç²¾åº¦*/
+    static double u[5],v[5];                         /* å­˜æ”¾æ ¹çš„çŸ©é˜µ*/
+    static double a[6]= {3.0,2.0,4.5,2.2,1.0,2.1};   /* é™å¹‚ç³»æ•°*/
+    i=qrroot(a,5,u,v,eps,itmax);                        /* è°ƒç”¨å‡½æ•°*/
 
-    if(i>0)                                          /* ³É¹¦ÇóÖµÊä³ö*/
+    if(i>0)                                          /* æˆåŠŸæ±‚å€¼è¾“å‡º*/
         for(i=0; i<=4; i++)
         {
             printf("%13.7e +j %13.7e\n",u[i],v[i]);

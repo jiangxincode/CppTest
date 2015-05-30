@@ -1,7 +1,7 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <stdlib.h>
 
-#include "c_comp.h"
+#include "../utility.h"
 
 /**
  * 函数名：c_comp_sub.c

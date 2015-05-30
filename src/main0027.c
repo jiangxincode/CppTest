@@ -1,4 +1,4 @@
-//下面给出的是用中缀转后缀算法实现的程序的源代码：
+﻿//下面给出的是用中缀转后缀算法实现的程序的源代码：
 //参考Test main0524.cpp
 #include<stdio.h>
 #include<string.h>

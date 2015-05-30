@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <math.h>
 
 #define NMAX 100
@@ -6,18 +6,18 @@
 #define FPMIN 1.0e-30
 
 /**
- * º¯ Êý Ãû£ºexpi
- * ¹¦ÄÜÃèÊö£ºÇó½âÖ¸Êý»ý·ÖµÄÖµ
- * ÊäÈë²ÎÊý£ºn ×Ô±äÁ¿nµÄÖµ¡£ÒªÇóa>0¡£
- *           x ×Ô±äÁ¿xµÄÖµ£¬ÒªÇóx>=0¡£
- *         e1 ¾«¶ÈÒªÇó£¬µ±Á½´ÎµÝÍÆµÄÖµ±ä»¯ÂÊÐ¡ÓÚe1Ê±£¬ÈÏÎªÒÑÊÕÁ²
- * ·µ »Ø Öµ£º²»ÍêÈ«Ù¤Âíº¯ÊýµÄÖµ
+ * å‡½ æ•° åï¼šexpi
+ * åŠŸèƒ½æè¿°ï¼šæ±‚è§£æŒ‡æ•°ç§¯åˆ†çš„å€¼
+ * è¾“å…¥å‚æ•°ï¼šn è‡ªå˜é‡nçš„å€¼ã€‚è¦æ±‚a>0ã€‚
+ *           x è‡ªå˜é‡xçš„å€¼ï¼Œè¦æ±‚x>=0ã€‚
+ *         e1 ç²¾åº¦è¦æ±‚ï¼Œå½“ä¸¤æ¬¡é€’æŽ¨çš„å€¼å˜åŒ–çŽ‡å°äºŽe1æ—¶ï¼Œè®¤ä¸ºå·²æ”¶æ•›
+ * è¿” å›ž å€¼ï¼šä¸å®Œå…¨ä¼½é©¬å‡½æ•°çš„å€¼
  */
 double expi(int n,double x,double e1)
 {
     int i,j;
     double t,t2,del;
-    double a,b,c,d;                                  /* ¼ÆËãÁ¬·ÖÊ½¼¶ÊýÐèÒªµÄ±äÁ¿*/
+    double a,b,c,d;                                  /* è®¡ç®—è¿žåˆ†å¼çº§æ•°éœ€è¦çš„å˜é‡*/
 
     if((x<0.0)||(n<0)||(x==0.0 &&(n<2)))
     {
@@ -25,41 +25,41 @@ double expi(int n,double x,double e1)
         printf("bad input parameter\n");
         return(0.0);
     }
-    else if(x == 0.0)                                /* xÎª0µÄÇé¿ö*/
+    else if(x == 0.0)                                /* xä¸º0çš„æƒ…å†µ*/
     {
         t = 1.0/(n-1.0);
         return(t);
     }
-    else if(n == 0)                                  /* nÎª0µÄÇé¿ö*/
+    else if(n == 0)                                  /* nä¸º0çš„æƒ…å†µ*/
     {
         t = exp(-x)/x;
         return(t);
     }
-    else if(x > 1.0)                                 /* Ê¹ÓÃÁ¬·ÖÊ½¼¶Êý*/
+    else if(x > 1.0)                                 /* ä½¿ç”¨è¿žåˆ†å¼çº§æ•°*/
     {
-        b = x+n;                                       /* ÒÑ¾­¼ÆËãÁËµÚÒ»½ÚÁ¬·ÖÊ½*/
+        b = x+n;                                       /* å·²ç»è®¡ç®—äº†ç¬¬ä¸€èŠ‚è¿žåˆ†å¼*/
         c = 1.0/FPMIN;
         d = 1.0/b;
         t = d;
 
         for(i=1; i<NMAX; i++)
         {
-            a = -i*(n-1+i);                               /* ´Ë½ÚµÄÏµÊýa*/
-            b = b+2.0;                                    /* ´Ë½ÚµÄÏµÊýb*/
+            a = -i*(n-1+i);                               /* æ­¤èŠ‚çš„ç³»æ•°a*/
+            b = b+2.0;                                    /* æ­¤èŠ‚çš„ç³»æ•°b*/
             d = a*d+b;
-            c = b+a/c;                                    /* c×ÜÊÇ´óÓÚ0*/
-            d = 1.0/d;                                    /* d×ÜÊÇ´óÓÚ0*/
+            c = b+a/c;                                    /* cæ€»æ˜¯å¤§äºŽ0*/
+            d = 1.0/d;                                    /* dæ€»æ˜¯å¤§äºŽ0*/
             del = d*c;
             t = t*del;
 
-            if(fabs(del-1.0)<e1)                          /* ¼¶Êý²¿·ÖÒÑ¾­ÊÕÁ²*/
+            if(fabs(del-1.0)<e1)                          /* çº§æ•°éƒ¨åˆ†å·²ç»æ”¶æ•›*/
             {
                 t=exp(-x)*t;
                 return(t);
             }
         }
     }
-    else                                              /* Ê¹ÓÃÇóºÍ¼¶Êý*/
+    else                                              /* ä½¿ç”¨æ±‚å’Œçº§æ•°*/
     {
         t = (n==1)?(-log(x)-EULER):(1.0/(n-1));
         t2 = 1.0;
@@ -74,7 +74,7 @@ double expi(int n,double x,double e1)
             }
             else
             {
-                del = -EULER;                               /* phi(n)µÄ¼ÆËã*/
+                del = -EULER;                               /* phi(n)çš„è®¡ç®—*/
 
                 for(j=1; j<n; j++)
                 {
@@ -86,13 +86,13 @@ double expi(int n,double x,double e1)
 
             t = t+del;
 
-            if(fabs(del)<fabs(t)*e1)                      /* ¼¶Êý²¿·ÖÒÑ¾­ÊÕÁ²*/
+            if(fabs(del)<fabs(t)*e1)                      /* çº§æ•°éƒ¨åˆ†å·²ç»æ”¶æ•›*/
             {
                 return(t);
             }
         }
     }
 
-    printf(" iteration too many times\n");            /* ¾­¹ýNMAX´Îµü´úÃ»ÓÐÊÕÁ²*/
+    printf(" iteration too many times\n");            /* ç»è¿‡NMAXæ¬¡è¿­ä»£æ²¡æœ‰æ”¶æ•›*/
     return(0.0);
 }

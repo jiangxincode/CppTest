@@ -1,7 +1,7 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <math.h>
-#include "something.h"
-#include "bsl1.c"
+
+#include "../utility.h"
 
 static double f(double);
 

@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include "ttest.c"
 #include "tutest.c"
@@ -9,7 +9,7 @@ int main13ttest_example6()
     int j,na,nb,nc,rtab,rtbc,rtac;
     double *a,*b,*c;
     double x,meana,meanb,meanc,vara,varb,varc,alpha;
-    na=50;  /*Éú³É100¸öËæ»úÊı*/
+    na=50;  /*ç”Ÿæˆ100ä¸ªéšæœºæ•°*/
     nb=70;
     nc=60;
     alpha=0.05;
@@ -23,19 +23,19 @@ int main13ttest_example6()
         exit(0);
     }
 
-    for(j=0; j<na; j++)				//Ëæ»úÊıÑù±¾Ò»
+    for(j=0; j<na; j++)				//éšæœºæ•°æ ·æœ¬ä¸€
     {
         x=pi*j/na;
         a[j]=sin(x);
     }
 
-    for(j=0; j<nb; j++)            //Ëæ»úÑù±¾¶ş
+    for(j=0; j<nb; j++)            //éšæœºæ ·æœ¬äºŒ
     {
         x=pi*j/nb;
         b[j]=cos(x);
     }
 
-    for(j=0; j<nc; j++)            //Ëæ»úÑù±¾Èı
+    for(j=0; j<nc; j++)            //éšæœºæ ·æœ¬ä¸‰
     {
         x=pi*j/nc;
         c[j]=sin(x);
@@ -46,59 +46,59 @@ int main13ttest_example6()
         meana+=a[j];
     }
 
-    meana=meana/na;							//¼ÆËãÑù±¾Ò»¾ùÖµ
+    meana=meana/na;							//è®¡ç®—æ ·æœ¬ä¸€å‡å€¼
 
     for(j=0; j<nb; j++)
     {
         meanb+=b[j];
     }
 
-    meanb=meanb/nb;							//¼ÆËãÑù±¾¶ş¾ùÖµ
+    meanb=meanb/nb;							//è®¡ç®—æ ·æœ¬äºŒå‡å€¼
 
     for(j=0; j<nc; j++)
     {
         meanc+=c[j];
     }
 
-    meanc=meanc/nc;							//¼ÆËãÑù±¾Èı¾ùÖµ
+    meanc=meanc/nc;							//è®¡ç®—æ ·æœ¬ä¸‰å‡å€¼
 
     for(j=0; j<na; j++)
     {
         vara+=(a[j]-meana)*(a[j]-meana);
     }
 
-    vara=vara/(na-1);						//Ñù±¾Ò»µÄ·½²î
+    vara=vara/(na-1);						//æ ·æœ¬ä¸€çš„æ–¹å·®
 
     for(j=0; j<nb; j++)
     {
         varb+=(b[j]-meanb)*(b[j]-meanb);
     }
 
-    varb=varb/(nb-1);						//Ñù±¾¶şµÄ·½²î
+    varb=varb/(nb-1);						//æ ·æœ¬äºŒçš„æ–¹å·®
 
     for(j=0; j<nc; j++)
     {
         varc+=(c[j]-meanc)*(c[j]-meanc);
     }
 
-    varc=varc/(nc-1);						//Ñù±¾ÈıµÄ·½²î
+    varc=varc/(nc-1);						//æ ·æœ¬ä¸‰çš„æ–¹å·®
 
-    if(vara==varb)        //·½²îÏàÍ¬Ê±µ÷ÓÃttest
+    if(vara==varb)        //æ–¹å·®ç›¸åŒæ—¶è°ƒç”¨ttest
     {
         rtab=ttest(a,na,b,nb,alpha);
     }
     else
     {
-        rtab=tutest(a,na,b,nb,alpha);    //·½³Ì²»Í¬Ê±µ÷ÓÃtutest
+        rtab=tutest(a,na,b,nb,alpha);    //æ–¹ç¨‹ä¸åŒæ—¶è°ƒç”¨tutest
     }
 
     if(rtab)
     {
-        printf("aÓëbÓĞÏÔÖøĞÔ²îÒì\n");
+        printf("aä¸bæœ‰æ˜¾è‘—æ€§å·®å¼‚\n");
     }
     else
     {
-        printf("aÓëbÃ»ÓĞÏÔÖøĞÔ²îÒì\n");
+        printf("aä¸bæ²¡æœ‰æ˜¾è‘—æ€§å·®å¼‚\n");
     }
 
     if(varc==varb)
@@ -112,11 +112,11 @@ int main13ttest_example6()
 
     if(rtbc)
     {
-        printf("bÓëcÓĞÏÔÖøĞÔ²îÒì\n");
+        printf("bä¸cæœ‰æ˜¾è‘—æ€§å·®å¼‚\n");
     }
     else
     {
-        printf("bÓëcÃ»ÓĞÏÔÖøĞÔ²îÒì\n");
+        printf("bä¸cæ²¡æœ‰æ˜¾è‘—æ€§å·®å¼‚\n");
     }
 
     if(vara==varc)
@@ -130,11 +130,11 @@ int main13ttest_example6()
 
     if(rtac)
     {
-        printf("aÓëcÓĞÏÔÖøĞÔ²îÒì\n");
+        printf("aä¸cæœ‰æ˜¾è‘—æ€§å·®å¼‚\n");
     }
     else
     {
-        printf("aÓëcÃ»ÓĞÏÔÖøĞÔ²îÒì\n");
+        printf("aä¸cæ²¡æœ‰æ˜¾è‘—æ€§å·®å¼‚\n");
     }
 
     return 0;

@@ -1,11 +1,11 @@
-#include <stdio.h>
-#include "../Chap2/c_comp.h"
+ï»¿#include <stdio.h>
+#include "../utility.h"
 #include "c_gaus.c"
 #include "c_gsjd.c"
 int main5cgs0()
 {
     int i,j;
-    struct c_comp a[3][3],a1[3][3],b[3],b1[3],x[3],x1[3];  /* ¸´Êı½á¹¹ÌåÊı×é*/
+    struct c_comp a[3][3],a1[3][3],b[3],b1[3],x[3],x1[3];  /* å¤æ•°ç»“æ„ä½“æ•°ç»„*/
     a[0][0].rmz = 1.0;
     a[0][0].imz=0.5;
     a[0][1].rmz = .5;
@@ -23,19 +23,19 @@ int main5cgs0()
     a[2][1].rmz = -1.5;
     a[2][1].imz=-1.5;
     a[2][2].rmz = 1.0;
-    a[2][2].imz=2.5;                    /* ÏµÊı¾ØÕó¸³³õÖµ*/
+    a[2][2].imz=2.5;                    /* ç³»æ•°çŸ©é˜µèµ‹åˆå€¼*/
     b[0].rmz = .5;
     b[0].imz=1.5;
     b[1].rmz = -1.0;
     b[1].imz=-0.5;
     b[2].rmz = 1.5;
-    b[2].imz=2.5;                          /* ³£ÊıÏòÁ¿¸³³õÖµ*/
+    b[2].imz=2.5;                          /* å¸¸æ•°å‘é‡èµ‹åˆå€¼*/
 
     for(i=0; i<3; i++)
     {
-        for(j=0; j<3; j++)                                  /* µ÷ÓÃº¯Êı»áÆÆ»µÊı¾İ*/
+        for(j=0; j<3; j++)                                  /* è°ƒç”¨å‡½æ•°ä¼šç ´åæ•°æ®*/
         {
-            /* Òò´ËÒª¸´ÖÆÒ»·İ*/
+            /* å› æ­¤è¦å¤åˆ¶ä¸€ä»½*/
             a1[i][j].rmz = a[i][j].rmz;
             a1[i][j].imz = a[i][j].imz;
         }
@@ -44,20 +44,20 @@ int main5cgs0()
         b1[i].imz = b[i].imz;
     }
 
-    printf("GAUSS:\n");                                   /* ¸ßË¹ÏûÔª·¨*/
+    printf("GAUSS:\n");                                   /* é«˜æ–¯æ¶ˆå…ƒæ³•*/
 
     if(c_gaus(a1,b1,x1,3,1e-16)!=0)
-        for(i=0; i<3; i++)                                    /* ´òÓ¡½á¹û*/
+        for(i=0; i<3; i++)                                    /* æ‰“å°ç»“æœ*/
         {
             printf("x1(%d)=%2.5f +(%2.5fi)\n",i,x1[i].rmz,x1[i].imz);
         }
 
     printf("\nGAUSS JORDAN:\n");
 
-    if(c_gsjd(a,b,x,3,1e-16)!=0)                          /* ¸ßË¹£­Ô¼µ±ÏûÈ¥·¨*/
+    if(c_gsjd(a,b,x,3,1e-16)!=0)                          /* é«˜æ–¯ï¼çº¦å½“æ¶ˆå»æ³•*/
         for(i=0; i<3; i++)
         {
-            printf("x2(%d)=%2.5f +(%2.5fi)\n",i,x[i].rmz,x[i].imz);    /* ´òÓ¡½á¹û*/
+            printf("x2(%d)=%2.5f +(%2.5fi)\n",i,x[i].rmz,x[i].imz);    /* æ‰“å°ç»“æœ*/
         }
 
     return 0;

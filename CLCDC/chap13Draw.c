@@ -1,11 +1,10 @@
-#include <graphics.h>
+#include <Graphics.h>
 #include <stdlib.h>
 #include <conio.h>
 #include <stdio.h>
 #include <dos.h>
 #include <bios.h>
 #include <math.h>
-#include <alloc.h>
 
 /*定义常量*/
 /*向上翻页移键*/
@@ -13,13 +12,13 @@
 /*向下翻页移键*/
 #define PAGEDOWN 0x5100
 /*Escape键*/
-#define ESC 0x011b 
+#define ESC 0x011b
 /*左移键*/
 #define LEFT 0x4b00
 /*右移键*/
-#define RIGHT 0x4d00 
+#define RIGHT 0x4d00
 /*下移键*/
-#define DOWN 0x5000 
+#define DOWN 0x5000
 /*上移键*/
 #define UP 0x4800
 /*空格键*/
@@ -147,7 +146,7 @@ char zhu16K[]={
 
 /*自定义函数*/
 void outChinese(char *mat,int matsize,int x,int y,int color);
-void fill(int startx,int starty,int endx,int endy,int color);
+void fill_jiangxin(int startx,int starty,int endx,int endy,int color);
 void showHelp();
 
 void save();
@@ -181,7 +180,7 @@ void outChinese(char *mat,int matsize,int x,int y,int color)
 }
 
 /*填充函数*/
-void fill(int startx,int starty,int endx,int endy,int color)
+void fill_jiangxin(int startx,int starty,int endx,int endy,int color)
 {
     int i,j;
         for(i=startx;i<=endx;i++)
@@ -189,7 +188,7 @@ void fill(int startx,int starty,int endx,int endy,int color)
             /*在指定位置以指定颜色画一像素*/
             putpixel(i,j,color);
 
-} 
+}
 
 /*显示用户帮助函数*/
 void showHelp()
@@ -227,29 +226,29 @@ void showHelp()
     outtextxy(45,245,"Press right button to end the drawing works.");
     outtextxy(45,260,"Press any key to continue......");
     getch();
-    fill(40,40,625,270,0);
+    fill_jiangxin(40,40,625,270,0);
 
 }
 
 /*保存函数*/
 void save()
 {
-    int i,j; 
+    int i,j;
     FILE *fp;
     char fileName[20];
 
-    fill(0,447,630,477,2);
+    fill_jiangxin(0,447,630,477,2);
     gotoxy(1,25);
     printf("\n\n\n\n  Input the file name[.dat]:");
     scanf("%s",fileName);
-    fill(0,447,630,477,2);
+    fill_jiangxin(0,447,630,477,2);
 
     /*以读写的方式打开文件*/
     if((fp=fopen(fileName,"w+"))==NULL)
     {
         outtextxy(260,455,"Failed to open file!");
-        exit(0); 
-    } 
+        exit(0);
+    }
     outtextxy(280,455,"saving...");
 
     /*保存像素到文件*/
@@ -258,39 +257,39 @@ void save()
             fputc(getpixel(i,j),fp);
     fclose(fp);
 
-    fill(0,447,630,477,2);
+    fill_jiangxin(0,447,630,477,2);
     outtextxy(260,455,"save over!");
-} 
+}
 
 /*打开函数*/
 void load()
-{ 
-    int i,j; 
+{
+    int i,j;
     char fileName[20];
     FILE *fp;
 
-    fill(0,447,630,477,2);
-    gotoxy(1,25); 
+    fill_jiangxin(0,447,630,477,2);
+    gotoxy(1,25);
     printf("\n\n\n\n  Input the file name[.dat]:");
     scanf("%s",fileName);
 
     /*打开指定的文件*/
     if((fp=fopen(fileName,"r+"))!=NULL)
-    { 
-        fill(0,447,630,477,2);
+    {
+        fill_jiangxin(0,447,630,477,2);
         outtextxy(280,455,"loading...");
 
         /*从文件中读出像素*/
         for(i=5;i<630;i++)
             for(j=30;j<=445;j++)
                 putpixel(i,j,fgetc(fp));
-        fill(0,447,630,477,2);
+        fill_jiangxin(0,447,630,477,2);
         outtextxy(280,455,"loading over !");
     }
     /*打开失败*/
     else
     {
-        fill(0,447,630,477,2);
+        fill_jiangxin(0,447,630,477,2);
         outtextxy(260,455,"Failed to open file!");
 
     }
@@ -407,7 +406,7 @@ void DrawLine()
 
                 /*旋转*/
                 if(key==SPACE)
-                {   
+                {
                     /*计算旋转中心*/
                     /*如果直线示倾斜的*/
                     if((lineStarty!=lineEndy)&& (lineStartx!=lineEndx))
@@ -415,7 +414,7 @@ void DrawLine()
                         Centx=(lineEndx-lineStartx)/2+lineStartx;
                         Centy=(lineEndy-lineStarty)/2+lineStarty;
                     }
-        
+
                     /*如果直线是竖直的*/
                     if(lineStarty==lineEndy)
                     {
@@ -449,7 +448,7 @@ void DrawLine()
                         /*计算旋转30度后的终点坐标*/
                         lineStarty=(temStartx-Centx)*sin(pi/6)+(temStarty-Centy)*cos(pi/6)+Centy;
                         lineEndy=(temEndx-Centx)*sin(pi/6)+(temEndy-Centy)*cos(pi/6)+Centy;
-    
+
                         temStartx=lineStartx;
                         temStarty=lineStarty;
                         temEndx=lineEndx;
@@ -457,7 +456,7 @@ void DrawLine()
 
                         /*绘制旋转后的直线*/
                         line(lineStartx,lineStarty,lineEndx,lineEndy);
-                    }   
+                    }
                 }
                 /*左移直线*/
                 if(key==LEFT)
@@ -516,7 +515,7 @@ void DrawLine()
                 }
                 /*放大直线*/
                 if(key==PAGEUP)
-                {   
+                {
                     if(lineStartx>=10 && lineStarty>=40 && lineEndx <=620 && lineEndy <=445)
                     {
                         setwritemode(XOR_PUT);
@@ -560,7 +559,7 @@ void DrawLine()
                         /*如果直线是水平的*/
                         if(lineStartx==lineEndx)
                         {
-                            lineStarty-=5; 
+                            lineStarty-=5;
                             lineEndy+=5;
                         }
                         line(lineStartx,lineStarty,lineEndx,lineEndy);
@@ -634,7 +633,7 @@ void DrawRectangle()
 
    DrawMouse(last_x,last_y);
    while(1)
-   {    
+   {
         /*单击右键，结束绘制矩形*/
         while((mouseStatus(&x1,&y1)==RIGHT_PRESSED))
             endFlag=1;
@@ -864,7 +863,7 @@ void DrawCircle()
 
             /*按住鼠标左键不动，拖动鼠标绘制圆*/
             while(mouseStatus(&x1,&y1)==LEFT_PRESSED)
-            { 
+            {
                 if(last_x!=x1||last_y!=y1)
                 {
                     r=sqrt((x0-x1)*(x0-x1)+(y0-y1)*(y0-y1));
@@ -873,7 +872,7 @@ void DrawCircle()
                     last_x=x1;
                     last_y=y1;
                     oldr=r;
-                }          
+                }
             }
             /*绘制结束后，记录圆的圆心和半径*/
             Rx=x0;
@@ -942,11 +941,11 @@ void DrawCircle()
         }
    }
    DrawMouse(last_x,last_y);
-}       
+}
 
 /*求阶乘函数*/
 long factorial(int n)
-{ 
+{
     long s=1;
     if(n==0)
         return 1;
@@ -988,7 +987,7 @@ void DrawBezier()
                 endFlag=1;
             if(endFlag==1)
                 break;
-            /*如果有两个以上的点，则将其连接，即画直线*/ 
+            /*如果有两个以上的点，则将其连接，即画直线*/
             if(n>1)
                line(linePoint_x[n-1],linePoint_y[n-1],linePoint_x[n-2],linePoint_y[n-2]);
 

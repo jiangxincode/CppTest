@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include "ftest.c"
 #define pi 3.1415926
@@ -8,7 +8,7 @@ int main13Ftest_example7()
     int j,na,nb,nc,rtab,rtbc,rtac;
     double *a,*b,*c;
     double x,alpha;
-    na = 50;       /* Éú³É10¸öËæ»úÊı*/
+    na = 50;       /* ç”Ÿæˆ10ä¸ªéšæœºæ•°*/
     nb = 70;
     nc = 60;
     alpha=0.1;
@@ -22,55 +22,55 @@ int main13Ftest_example7()
         exit(0);
     }
 
-    for(j=0; j<na; j++)				//Ëæ»úÊıÑù±¾a
+    for(j=0; j<na; j++)				//éšæœºæ•°æ ·æœ¬a
     {
         x = pi*j/na;
         a[j] = sin(x);
     }
 
-    for(j=0; j<nb; j++)            //Ëæ»úÑù±¾b
+    for(j=0; j<nb; j++)            //éšæœºæ ·æœ¬b
     {
         x = pi*j/nb;
         b[j] = cos(x);
     }
 
-    for(j=0; j<nc; j++)            //Ëæ»úÑù±¾c
+    for(j=0; j<nc; j++)            //éšæœºæ ·æœ¬c
     {
         x = pi*j/nc;
         c[j] = sin(x);
     }
 
-    rtab=ftest(a,na,b,nb,alpha);         /* ¼ìÑéaºÍb*/
+    rtab=ftest(a,na,b,nb,alpha);         /* æ£€éªŒaå’Œb*/
 
     if(rtab)
     {
-        printf("aÓëbÓĞÏÔÖøĞÔ²îÒì\n");
+        printf("aä¸bæœ‰æ˜¾è‘—æ€§å·®å¼‚\n");
     }
     else
     {
-        printf("aÓëbÃ»ÓĞÏÔÖøĞÔ²îÒì\n");
+        printf("aä¸bæ²¡æœ‰æ˜¾è‘—æ€§å·®å¼‚\n");
     }
 
-    rtbc=ftest(c,nc,b,nb,alpha);         /* ¼ìÑébºÍc*/
+    rtbc=ftest(c,nc,b,nb,alpha);         /* æ£€éªŒbå’Œc*/
 
     if(rtbc)
     {
-        printf("bÓëcÓĞÏÔÖøĞÔ²îÒì\n");
+        printf("bä¸cæœ‰æ˜¾è‘—æ€§å·®å¼‚\n");
     }
     else
     {
-        printf("bÓëcÃ»ÓĞÏÔÖøĞÔ²îÒì\n");
+        printf("bä¸cæ²¡æœ‰æ˜¾è‘—æ€§å·®å¼‚\n");
     }
 
-    rtac=ftest(a,na,c,nc,alpha);        /* ¼ìÑéaºÍc*/
+    rtac=ftest(a,na,c,nc,alpha);        /* æ£€éªŒaå’Œc*/
 
     if(rtac)
     {
-        printf("aÓëcÓĞÏÔÖøĞÔ²îÒì\n");
+        printf("aä¸cæœ‰æ˜¾è‘—æ€§å·®å¼‚\n");
     }
     else
     {
-        printf("aÓëcÃ»ÓĞÏÔÖøĞÔ²îÒì\n");
+        printf("aä¸cæ²¡æœ‰æ˜¾è‘—æ€§å·®å¼‚\n");
     }
 
     return 0;

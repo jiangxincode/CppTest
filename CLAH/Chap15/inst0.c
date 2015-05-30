@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include "inst.c"
 #include "shel.c"
 int main15inst0()
@@ -6,7 +6,7 @@ int main15inst0()
     int i,j,p[50],p1[50];
     printf("Data:\n");
 
-    for(i=0; i<5; i++)                     /* Éú³ÉÒ»Ð©ÎÞÐòÊý¾Ý*/
+    for(i=0; i<5; i++)                     /* ç”Ÿæˆä¸€äº›æ— åºæ•°æ®*/
     {
         for(j=0; j<10; j++)
         {
@@ -18,7 +18,7 @@ int main15inst0()
         printf("\n");
     }
 
-    printf("Insert Sort:\n");                /* Ö±½Ó²åÈëÅÅÐòµÄ½á¹û*/
+    printf("Insert Sort:\n");                /* ç›´æŽ¥æ’å…¥æŽ’åºçš„ç»“æžœ*/
     inst(p,50);
 
     for(i=0; i<5; i++)
@@ -31,7 +31,7 @@ int main15inst0()
         printf("\n");
     }
 
-    printf("Shell Sort:\n");                /* Ï£¶ûÅÅÐòµÄ½á¹û*/
+    printf("Shell Sort:\n");                /* å¸Œå°”æŽ’åºçš„ç»“æžœ*/
     shel(p1,50);
 
     for(i=0; i<5; i++)

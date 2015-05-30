@@ -1,4 +1,4 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include "jcb2.c"
 #include "jcb1.c"
 int main4jcb0()

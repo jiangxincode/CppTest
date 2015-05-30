@@ -1,21 +1,21 @@
-#include <stdlib.h>
+Ôªø#include <stdlib.h>
 #include <math.h>
 #include <stdio.h>
 
-#include "something.h"
+#include "../utility.h"
 
 /**
- * ∫Ø ˝√˚£∫bfgs
- * π¶ƒ‹√Ë ˆ£∫BFGS◊º≈£∂Ÿ∑®
- *  ‰»Î≤Œ ˝£∫x[n]  ‰»ÎÀ—À˜µƒ≥ˆ∑¢µ„
- *           xmin[n] ∑µªÿ’“µΩµƒ◊Ó”≈µ„
- *           y0      «Ûµ√µƒº´–°÷µ
- *           n ≥ı º«¯º‰µƒ¡Ì“ª∏ˆ∂Àµ„
- *           f ∂‡‘™∫Ø ˝÷∏’Î
- *           df ∂‡‘™∫Ø ˝µƒµº∫Ø ˝µƒ÷∏’Î
- *           eps æ´∂»œﬁ∂»
- *           itmax ◊Ó¥Ûµ¸¥˙¥Œ ˝
- * ∑µªÿ÷µ£∫  µ¸¥˙¥Œ ˝
+ * ÂáΩÊï∞ÂêçÔºöbfgs
+ * ÂäüËÉΩÊèèËø∞ÔºöBFGSÂáÜÁâõÈ°øÊ≥ï
+ * ËæìÂÖ•ÂèÇÊï∞Ôºöx[n] ËæìÂÖ•ÊêúÁ¥¢ÁöÑÂá∫ÂèëÁÇπ
+ *           xmin[n] ËøîÂõûÊâæÂà∞ÁöÑÊúÄ‰ºòÁÇπ
+ *           y0      Ê±ÇÂæóÁöÑÊûÅÂ∞èÂÄº
+ *           n ÂàùÂßãÂå∫Èó¥ÁöÑÂè¶‰∏Ä‰∏™Á´ØÁÇπ
+ *           f Â§öÂÖÉÂáΩÊï∞ÊåáÈíà
+ *           df Â§öÂÖÉÂáΩÊï∞ÁöÑÂØºÂáΩÊï∞ÁöÑÊåáÈíà
+ *           eps Á≤æÂ∫¶ÈôêÂ∫¶
+ *           itmax ÊúÄÂ§ßËø≠‰ª£Ê¨°Êï∞
+ * ËøîÂõûÂÄºÔºö  Ëø≠‰ª£Ê¨°Êï∞
  */
 int bfgs(double *x, double *xmin, int n, double *y0, double(*f)(), void (*df)(), double eps, int itmax)
 {
@@ -23,7 +23,7 @@ int bfgs(double *x, double *xmin, int n, double *y0, double(*f)(), void (*df)(),
     double H[41][41],g0[41],dg[41],dx[41],hdg[41];
     double y1, tiny, pq1, uij,  pq, qhq, qhq1;
 
-    if(n>40)                                          /* Œ“√«¥¶¿Ìn<£Ω20µƒ«Èøˆ*/
+    if(n>40)                                          /* Êàë‰ª¨Â§ÑÁêÜn<Ôºù20ÁöÑÊÉÖÂÜµ*/
     {
         printf("you'd better simplify the problem\n");
         return(0);
@@ -34,14 +34,14 @@ int bfgs(double *x, double *xmin, int n, double *y0, double(*f)(), void (*df)(),
         xmin[i] = x[i];
     }
 
-    *y0 = (*f)(xmin, n);                              /* º∆À„∫Ø ˝÷µ*/
-    (*df)(xmin, g0, n);                               /* º∆À„Ã›∂»*/
+    *y0 = (*f)(xmin, n);                              /* ËÆ°ÁÆóÂáΩÊï∞ÂÄº*/
+    (*df)(xmin, g0, n);                               /* ËÆ°ÁÆóÊ¢ØÂ∫¶*/
 
     for(i=0; i<n; i++)
     {
-        dx[i] = -g0[i];                               /* ≥ı ºµƒÀ—À˜∑ΩœÚ*/
+        dx[i] = -g0[i];                               /* ÂàùÂßãÁöÑÊêúÁ¥¢ÊñπÂêë*/
 
-        for(j=0; j<n; j++)                            /* Hµƒ≥ı÷µ…ËŒ™nΩ◊µ•Œª’Û*/
+        for(j=0; j<n; j++)                            /* HÁöÑÂàùÂÄºËÆæ‰∏∫nÈò∂Âçï‰ΩçÈòµ*/
         {
             H[i][j] = 0.0;
         }
@@ -55,31 +55,31 @@ int bfgs(double *x, double *xmin, int n, double *y0, double(*f)(), void (*df)(),
 
     while(it++<itmax)
     {
-        y1 = dirmin(xmin,dx,xmin,n,f,eps,itmax);          /* ¥”x≥ˆ∑¢£¨µΩ∏¸∫√µƒx. p=dx*/
+        y1 = dirmin(xmin,dx,xmin,n,f,eps,itmax);          /* ‰ªéxÂá∫ÂèëÔºåÂà∞Êõ¥Â•ΩÁöÑx. p=dx*/
 
         if(2.0*(*y0 - y1) <= eps*(fabs(*y0) + fabs(y1) + tiny))
         {
             *y0 = y1;
             flag++;
 
-            if(flag == 3)                                 /* ¡¨–¯»˝¥Œ∫Ø ˝÷µŒﬁ±‰ªØ£¨ÕÀ≥ˆ*/
+            if(flag == 3)                                 /* ËøûÁª≠‰∏âÊ¨°ÂáΩÊï∞ÂÄºÊó†ÂèòÂåñÔºåÈÄÄÂá∫*/
             {
                 return(it);
             }
         }
         else
         {
-            flag = 0;    /* flag÷√Œ™0*/
+            flag = 0;    /* flagÁΩÆ‰∏∫0*/
         }
 
         *y0 = y1;
 
         for(i=0; i<n; i++)
         {
-            dg[i] = g0[i];    /* g0‘›¥Ê‘⁄dg÷–*/
+            dg[i] = g0[i];    /* g0ÊöÇÂ≠òÂú®dg‰∏≠*/
         }
 
-        (*df)(xmin, g0, n);                              /* º∆À„–¬µ„…œµƒ∆´µº*/
+        (*df)(xmin, g0, n);                              /* ËÆ°ÁÆóÊñ∞ÁÇπ‰∏äÁöÑÂÅèÂØº*/
 
         for(i=0; i<n; i++)
         {
@@ -97,7 +97,7 @@ int bfgs(double *x, double *xmin, int n, double *y0, double(*f)(), void (*df)(),
         }
 
         pq = 0.0;
-        qhq = 0.0;                                       /* «ÛpT*q ∫ÕqT*H*q */
+        qhq = 0.0;                                       /* Ê±ÇpT*q ÂíåqT*H*q */
 
         for(i=0; i<n; i++)
         {
@@ -105,7 +105,7 @@ int bfgs(double *x, double *xmin, int n, double *y0, double(*f)(), void (*df)(),
             qhq = qhq + dg[i]*hdg[i];                    /* qT*H*q */
         }
 
-        if(pq<tiny || qhq<tiny)                          /* “— ’¡≤*/
+        if(pq<tiny || qhq<tiny)                          /* Â∑≤Êî∂Êïõ*/
         {
             return(it);
         }
@@ -119,14 +119,14 @@ int bfgs(double *x, double *xmin, int n, double *y0, double(*f)(), void (*df)(),
         }
 
         for(i=0; i<n; i++)
-            for(j=0; j<n; j++)                                 /* ∏¸–¬Hæÿ’Û*/
+            for(j=0; j<n; j++)                                 /* Êõ¥Êñ∞HÁü©Èòµ*/
             {
                 pq1 = pq*dx[i]*dx[j] - qhq1*hdg[i]*hdg[j];
                 uij = qhq*dg[i]*dg[j];
                 H[i][j] = H[i][j] + pq1+uij;
             }
 
-        for(i=0; i<n; i++)                                /* «Ûœ¬¥ŒµƒÀ—À˜∑ΩœÚ*/
+        for(i=0; i<n; i++)                                /* Ê±Ç‰∏ãÊ¨°ÁöÑÊêúÁ¥¢ÊñπÂêë*/
         {
             dx[i] = 0.0;
 

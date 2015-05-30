@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include "randuabs.c"
 int main13rand_uab_example2()
@@ -8,7 +8,7 @@ int main13rand_uab_example2()
     L=100;
     a=-5;
     b=10;
-    flag=randuabs(L,a,b,uab_rand);             /*µ÷ÓÃº¯Êý*/
+    flag=randuabs(L,a,b,uab_rand);             /*è°ƒç”¨å‡½æ•°*/
 
     if(!flag)
     {

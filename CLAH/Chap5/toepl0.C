@@ -1,14 +1,14 @@
-#include <stdio.h>
-#include "something.h"
+ï»¿#include <stdio.h>
+#include "../utility.h"
 
 int main5toepl0()
 {
     int i;
     double x[5];
-    double t[5]= {3.0,2.5,3.5,1.5,0.5};        /* ÍĞ²®Àû×È¾ØÕó*/
-    double b[5]= {2.0,3.0,4.0,5.0,6.0};        /* ³£Êı¾ØÕó*/
+    double t[5]= {3.0,2.5,3.5,1.5,0.5};        /* æ‰˜ä¼¯åˆ©å…¹çŸ©é˜µ*/
+    double b[5]= {2.0,3.0,4.0,5.0,6.0};        /* å¸¸æ•°çŸ©é˜µ*/
 
-    if(toepl(t,b,x,5,1e-12)>0)                     /* µ÷ÓÃº¯ÊıÇó½â²¢´òÓ¡½á¹û*/
+    if(toepl(t,b,x,5,1e-12)>0)                     /* è°ƒç”¨å‡½æ•°æ±‚è§£å¹¶æ‰“å°ç»“æœ*/
         for(i=0; i<5; i++)
         {
             printf("x(%d)=%2.5f\n",i,x[i]);

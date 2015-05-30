@@ -1,12 +1,12 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 
-#include "something.h"
+#include "../utility.h"
 
 int main11expi0()
 {
     int i,j,ni;
     double xj,y;
-    double e1=1.0e-7;               /* ÕâÁ½¸öÖµÓÃÓÚ²»ÍêÈ«Ù¤Âíº¯ÊıµÄ¼ÆËã*/
+    double e1=1.0e-7;               /* è¿™ä¸¤ä¸ªå€¼ç”¨äºä¸å®Œå…¨ä¼½é©¬å‡½æ•°çš„è®¡ç®—*/
     int n[3]= {1,2,3};
     double x[3]= {0.5,1.0,5.0};
 
@@ -14,9 +14,9 @@ int main11expi0()
     {
         for(j=0; j<3; j++)
         {
-            ni=n[i];                                 /* Ñ­»·È¡aºÍx*/
+            ni=n[i];                                 /* å¾ªç¯å–aå’Œx*/
             xj=x[j];
-            y = expi(ni,xj,e1);                      /* µ÷ÓÃº¯ÊıÇóÖµ²¢´òÓ¡½á¹û*/
+            y = expi(ni,xj,e1);                      /* è°ƒç”¨å‡½æ•°æ±‚å€¼å¹¶æ‰“å°ç»“æœ*/
             printf("E(%d,%1.1f)=%e ",ni,xj,y);
         }
 

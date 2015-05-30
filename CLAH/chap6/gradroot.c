@@ -1,12 +1,12 @@
-/*======================================================
-//º¯ÊýÃû£ºgradroot
-//¹¦ÄÜÃèÊö£ºÇó·ÇÏßÐÔ·½³Ì×éµÄÒ»×éÊµ¸ù
-//ÊäÈë²ÎÊý£º*x0£¨Ö¸Ïòµü´ú³õÖµºÍÖÕÖµµÄÖ¸Õë£©
- *          n£¨·½³Ì×é¸öÊý£©
- *          f£¨Ä¿±êº¯ÊýµÄ¼ÆËãÓëÆ«µ¼ÊýµÄ¼ÆËã£©
- *          eps£¨¾«¶ÈÒªÇó£©
- *          max£¨×î´óµü´ú´ÎÊý£©
-//·µ»ØÖµ£º0£¨µü´úÊ§°Ü£©£¬1£¨µü´ú³É¹¦£©
+ï»¿/*======================================================
+//å‡½æ•°åï¼šgradroot
+//åŠŸèƒ½æè¿°ï¼šæ±‚éžçº¿æ€§æ–¹ç¨‹ç»„çš„ä¸€ç»„å®žæ ¹
+//è¾“å…¥å‚æ•°ï¼š*x0ï¼ˆæŒ‡å‘è¿­ä»£åˆå€¼å’Œç»ˆå€¼çš„æŒ‡é’ˆï¼‰
+ *          nï¼ˆæ–¹ç¨‹ç»„ä¸ªæ•°ï¼‰
+ *          fï¼ˆç›®æ ‡å‡½æ•°çš„è®¡ç®—ä¸Žåå¯¼æ•°çš„è®¡ç®—ï¼‰
+ *          epsï¼ˆç²¾åº¦è¦æ±‚ï¼‰
+ *          maxï¼ˆæœ€å¤§è¿­ä»£æ¬¡æ•°ï¼‰
+//è¿”å›žå€¼ï¼š0ï¼ˆè¿­ä»£å¤±è´¥ï¼‰ï¼Œ1ï¼ˆè¿­ä»£æˆåŠŸï¼‰
 =========================================================*/
 #include<stdlib.h>
 #include<stdio.h>
@@ -18,7 +18,7 @@ int n,max;
 {
     double F,*FD,D,lam;
     int i,num=0;
-    FD=(double*)malloc(sizeof(double)*n);   /* ·ÖÅä¿Õ¼ä²¢¼ì²âÊÇ·ñ³É¹¦*/
+    FD=(double*)malloc(sizeof(double)*n);   /* åˆ†é…ç©ºé—´å¹¶æ£€æµ‹æ˜¯å¦æˆåŠŸ*/
 
     if(FD==NULL)
     {
@@ -29,7 +29,7 @@ int n,max;
     do
     {
         num++;
-        F=f(x0,FD);                         /* ¼ÆËãÄ¿±êº¯ÊýºÍÆ«µ¼Êý*/
+        F=f(x0,FD);                         /* è®¡ç®—ç›®æ ‡å‡½æ•°å’Œåå¯¼æ•°*/
 
         if(F>eps)
         {
@@ -37,14 +37,14 @@ int n,max;
 
             for(i=0; i<n; i++)
             {
-                D=D+FD[i]*FD[i];    /* ¼ÆËãDºÍÏµÊýlamda*/
+                D=D+FD[i]*FD[i];    /* è®¡ç®—Då’Œç³»æ•°lamda*/
             }
 
             lam=F/D;
 
             for(i=0; i<n; i++)
             {
-                x0[i]=x0[i]-lam*FD[i];    /* ÐÂÖµ*/
+                x0[i]=x0[i]-lam*FD[i];    /* æ–°å€¼*/
             }
         }
         else
@@ -56,11 +56,11 @@ int n,max;
 
     if(num==max)
     {
-        return (0);    /* µü´úÊ§°Ü*/
+        return (0);    /* è¿­ä»£å¤±è´¥*/
     }
     else
     {
-        return (1);    /* µü´ú³É¹¦*/
+        return (1);    /* è¿­ä»£æˆåŠŸ*/
     }
 }
 

@@ -1,31 +1,31 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <math.h>
 /*======================================================
- * º¯ÊýÃû£ºlfsi
- * ¹¦ÄÜÃèÊö£ºÁ¬·ÖÊ½Çó»ý·Ö
- * ÊäÈë²ÎÊý£ºa »ý·ÖÏÂÏÞ£¬b »ý·ÖÉÏÏÞ,
- *           n0 ³õÊ¼»®·ÖÊý
- *           eps ¾«¶ÈÒªÇó
- *           f Ö¸Ïò±»»ýº¯ÊýµÄÖ¸Õë
- * ·µ»ØÖµ£º  »ý·Ö½üËÆÖµ
+ * å‡½æ•°åï¼šlfsi
+ * åŠŸèƒ½æè¿°ï¼šè¿žåˆ†å¼æ±‚ç§¯åˆ†
+ * è¾“å…¥å‚æ•°ï¼ša ç§¯åˆ†ä¸‹é™ï¼Œb ç§¯åˆ†ä¸Šé™,
+ *           n0 åˆå§‹åˆ’åˆ†æ•°
+ *           eps ç²¾åº¦è¦æ±‚
+ *           f æŒ‡å‘è¢«ç§¯å‡½æ•°çš„æŒ‡é’ˆ
+ * è¿”å›žå€¼ï¼š  ç§¯åˆ†è¿‘ä¼¼å€¼
 =========================================================*/
 double lfsi(double a,double b,int n0,double eps,double(*f)(double))
 {
     int k,j,p,n,flag;
     double z,z2,u,t,d,h,x,bb[8],hx[8];
-    n = n0;                            /* ³õÊ¼µÄ»®·ÖÊý*/
-    h = (b-a)/n;                       /* ÇóµÃ³õÊ¼²½³¤*/
-    z = ((*f)(a)+(*f)(b))/2.0;         /* ¼ÆËã³õÊ¼µÄ»ý·ÖÖµ*/
+    n = n0;                            /* åˆå§‹çš„åˆ’åˆ†æ•°*/
+    h = (b-a)/n;                       /* æ±‚å¾—åˆå§‹æ­¥é•¿*/
+    z = ((*f)(a)+(*f)(b))/2.0;         /* è®¡ç®—åˆå§‹çš„ç§¯åˆ†å€¼*/
 
     for(k=1; k<n; k++)
     {
         x = a+k*h;
-        z = z+(*f)(x);                   /* ÀÛ´ÎÇóºÍ*/
+        z = z+(*f)(x);                   /* ç´¯æ¬¡æ±‚å’Œ*/
     }
 
     z = z*h;
-    bb[0] = z;                         /* ³õÊ¼»ý·ÖÖµ*/
-    u = z;                             /* uÓÃÓÚ´æ·ÅÁ¬·ÖÊ½¼ÆËãµÄ½á¹û*/
+    bb[0] = z;                         /* åˆå§‹ç§¯åˆ†å€¼*/
+    u = z;                             /* uç”¨äºŽå­˜æ”¾è¿žåˆ†å¼è®¡ç®—çš„ç»“æžœ*/
     p = 1;
     hx[0] = h;
 
@@ -39,18 +39,18 @@ double lfsi(double a,double b,int n0,double eps,double(*f)(double))
             t = t+(*f)(x);
         }
 
-        z2 = (z+h*t)/2.0;                /* ¼ÆËãÐÂµÄ»ý·ÖÖµ*/
-        z = z2;                          /* ¸üÐÂ»ý·ÖÖµ*/
-        h = h/2.0;                       /* ¸üÐÂ²½³¤*/
-        n = 2*n;                         /* ¸üÐÂ»®·ÖÊý*/
+        z2 = (z+h*t)/2.0;                /* è®¡ç®—æ–°çš„ç§¯åˆ†å€¼*/
+        z = z2;                          /* æ›´æ–°ç§¯åˆ†å€¼*/
+        h = h/2.0;                       /* æ›´æ–°æ­¥é•¿*/
+        n = 2*n;                         /* æ›´æ–°åˆ’åˆ†æ•°*/
         flag = 0;
 
-        for(j=0; j<p; j++)               /* ¼ÆËãÐÂµÄÁ¬·ÖÊ½½Úµãb[p]*/
+        for(j=0; j<p; j++)               /* è®¡ç®—æ–°çš„è¿žåˆ†å¼èŠ‚ç‚¹b[p]*/
         {
-            if(fabs(z2-bb[j])<eps)         /* Òª×ö³ýÊý£¬Òò´ËÐèÒª¼ì²é·¶Î§*/
+            if(fabs(z2-bb[j])<eps)         /* è¦åšé™¤æ•°ï¼Œå› æ­¤éœ€è¦æ£€æŸ¥èŒƒå›´*/
             {
                 flag = 1;
-                j = p;                       /* Èô³ýÊýÎª0,ÔòÁ¬·ÖÊ½µ½´ËÎªÖ¹*/
+                j = p;                       /* è‹¥é™¤æ•°ä¸º0,åˆ™è¿žåˆ†å¼åˆ°æ­¤ä¸ºæ­¢*/
             }
             else
             {
@@ -58,18 +58,18 @@ double lfsi(double a,double b,int n0,double eps,double(*f)(double))
             }
         }
 
-        hx[p] = h;                       /* ¼ÇÂ¼²½³¤£¬×öÎªÁ¬·ÖÊ½²åÖµµÄ½áµã*/
+        hx[p] = h;                       /* è®°å½•æ­¥é•¿ï¼Œåšä¸ºè¿žåˆ†å¼æ’å€¼çš„ç»“ç‚¹*/
 
         if(flag == 1)
         {
-            bb[p] = 1.0e35;    /* Õâ¸öÊý¾ÝÓÃÀ´ÖÕÖ¹Á¬·ÖÊ½*/
+            bb[p] = 1.0e35;    /* è¿™ä¸ªæ•°æ®ç”¨æ¥ç»ˆæ­¢è¿žåˆ†å¼*/
         }
         else
         {
             bb[p] = z2;
         }
 
-        z2 = bb[p];                        /* ¼ÆËãÔÚh=0´¦µÄ½üËÆÖµ*/
+        z2 = bb[p];                        /* è®¡ç®—åœ¨h=0å¤„çš„è¿‘ä¼¼å€¼*/
 
         for(j=p-1; j>=0; j--)
         {

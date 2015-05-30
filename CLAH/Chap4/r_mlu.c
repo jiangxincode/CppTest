@@ -1,12 +1,12 @@
-/*======================================================
-//��������r_mlu
-//����������ȫѡ��Ԫ��LU�ֽ�
-//���������mat ָ����ֽ�ľ����ָ��
-            n �������
-            L,U ָ�򷵻ص�������������������ָ��
-            P,Q ָ�򷵻صĳ������б任���ָ��
-            eps ����Ҫ��С�ڴ�ֵ��������Ϊ��0
-//����ֵ�����͡����гɹ��򷵻�1,ʧ���򷵻�0
+﻿/*======================================================
+//函数名：r_mlu
+//功能描述：全选主元的LU分解
+//输入参数：mat 指向待分解的矩阵的指针
+            n 矩阵阶数
+            L,U 指向返回的下三角阵和下三角阵的指针
+            P,Q 指向返回的初等行列变换阵的指针
+            eps 精度要求，小于此值的数据认为是0
+//返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
 #include <stdio.h>
 #include <stdlib.h>
@@ -19,13 +19,13 @@ int n;
     int i,j,k,is,js,l,v,kk,ii;
     double tmp, pivot;
 
-    if((mat==NULL)||(L==NULL)||(U==NULL)||(P==NULL)||(Q==NULL)) /* ���ָ���Ƿ�Ϊ��*/
+    if((mat==NULL)||(L==NULL)||(U==NULL)||(P==NULL)||(Q==NULL)) /* 检测指针是否为空*/
     {
-        printf("One of the pointer is NULL\n");            /* ��Ϊ�����ӡ������Ϣ����������*/
+        printf("One of the pointer is NULL\n");            /* 若为空则打印错误消息，函数结束*/
         return(0);
     }
 
-    for(i=0; i<n; i++)                                   /* ΪP��Q���󸳳�ֵΪ��λ��*/
+    for(i=0; i<n; i++)                                   /* 为P，Q矩阵赋初值为单位阵*/
     {
         for(j=0; j<n; j++)
         {
@@ -39,7 +39,7 @@ int n;
 
     for(k=0; k<n-1; k++)
     {
-        pivot = 0.0;                                         /* ѡȡ��Ԫ*/
+        pivot = 0.0;                                         /* 选取主元*/
 
         for(i=k; i<n; i++)
             for(j=k; j<n; j++)
@@ -54,44 +54,44 @@ int n;
                 }
             }
 
-        if(pivot < eps)                                     /* �ж���Ԫ�Ƿ�Ϊ0*/
+        if(pivot < eps)                                     /* 判断主元是否为0*/
         {
-            printf("Fail\n");                                 /* ����ԪΪ0,��������*/
+            printf("Fail\n");                                 /* 若主元为0,则函数结束*/
             return(0);
         }
 
-        if(is != k)                                         /* �ж��Ƿ���Ҫ�н���*/
+        if(is != k)                                         /* 判断是否需要行交换*/
         {
             for(j=0; j<n; j++)
             {
-                l = k*n + j;                                     /* �Դ��ֽ��������н���*/
+                l = k*n + j;                                     /* 对待分解矩阵进行行交换*/
                 v = is*n + j;
                 tmp = mat[l];
                 mat[l] = mat[v];
                 mat[v] = tmp;
-                tmp = Q[l];                                      /* ��P��������н���*/
+                tmp = Q[l];                                      /* 对P矩阵进行行交换*/
                 Q[l] = Q[v];
                 Q[v] = tmp;
             }
         }
 
-        if(js != k)                                         /* �ж��Ƿ���Ҫ�н���*/
+        if(js != k)                                         /* 判断是否需要列交换*/
         {
             for(i=0; i<n; i++)
             {
-                l = i*n + k;                                   /* �Դ��ֽ��������н���*/
+                l = i*n + k;                                   /* 对待分解矩阵进行列交换*/
                 v = i*n + js;
                 tmp = mat[l];
                 mat[l] = mat[v];
                 mat[v] = tmp;
-                tmp = P[l];                                     /* ��Q��������н���*/
+                tmp = P[l];                                     /* 对Q矩阵进行列交换*/
                 P[l] = P[v];
                 P[v] = tmp;
             }
         }
 
         kk = k*n+k;
-        tmp = 1.0/mat[kk];                                 /* ���¾���a�е�Ԫ��*/
+        tmp = 1.0/mat[kk];                                 /* 更新矩阵a中的元素*/
 
         for(i=k+1; i<n; i++)
         {
@@ -107,7 +107,7 @@ int n;
     }
 
     for(i=0; i<n; i++)
-        for(j=0; j<n; j++)                                  /* ����L�����U����*/
+        for(j=0; j<n; j++)                                  /* 计算L矩阵和U矩阵*/
         {
             l = i*n+j;
 

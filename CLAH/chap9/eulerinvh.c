@@ -1,10 +1,10 @@
-/*======================================================
-//º¯ÊýÃû£ºeulerinvh
-//¹¦ÄÜÃèÊö£º¶¨²½³¤Å·À­Ëã·¨Çó³£Î¢·Ö·½³Ì×éµÄ³õÖµÎÊÌâ
-//ÊäÈë²ÎÊý£º*y£¨ Ö¸Ïòº¯Êý³õÖµÒÔ¼°º¯Êý·µ»ØÖµµÄÖ¸Õën*(m+1)£©
- *          n£¨·½³Ì×é¸öÊý£©£¬f£¨Ä¿±êº¯ÊýµÄ¼ÆËã£©
- *          h£¨²½³¤£©£¬m£¨²½Êý£©£¬a£¨Çø¼äÆðµã£©
-//·µ»ØÖµ£º0£¨Ê§°Ü£©£¬1£¨³É¹¦£©
+ï»¿/*======================================================
+//å‡½æ•°åï¼šeulerinvh
+//åŠŸèƒ½æè¿°ï¼šå®šæ­¥é•¿æ¬§æ‹‰ç®—æ³•æ±‚å¸¸å¾®åˆ†æ–¹ç¨‹ç»„çš„åˆå€¼é—®é¢˜
+//è¾“å…¥å‚æ•°ï¼š*yï¼ˆ æŒ‡å‘å‡½æ•°åˆå€¼ä»¥åŠå‡½æ•°è¿”å›žå€¼çš„æŒ‡é’ˆn*(m+1)ï¼‰
+ *          nï¼ˆæ–¹ç¨‹ç»„ä¸ªæ•°ï¼‰ï¼Œfï¼ˆç›®æ ‡å‡½æ•°çš„è®¡ç®—ï¼‰
+ *          hï¼ˆæ­¥é•¿ï¼‰ï¼Œmï¼ˆæ­¥æ•°ï¼‰ï¼Œaï¼ˆåŒºé—´èµ·ç‚¹ï¼‰
+//è¿”å›žå€¼ï¼š0ï¼ˆå¤±è´¥ï¼‰ï¼Œ1ï¼ˆæˆåŠŸï¼‰
 =========================================================*/
 #include<stdlib.h>
 #include<stdio.h>
@@ -14,7 +14,7 @@ static int eulerinvh(double *y,int n,double(*f)(),double h,int m,double a)
 {
     double *F,x;
     int k=0,i;
-    F=(double*)malloc(sizeof(double)*n);     /* Î¢·Ö·½³Ì±í´ïÊ½µÄÖµ*/
+    F=(double*)malloc(sizeof(double)*n);     /* å¾®åˆ†æ–¹ç¨‹è¡¨è¾¾å¼çš„å€¼*/
 
     if(F==NULL)
     {
@@ -25,11 +25,11 @@ static int eulerinvh(double *y,int n,double(*f)(),double h,int m,double a)
     do
     {
         x=a+k*h;
-        f(&y[k*n],F,x);                      /* ¼ÆËãÎ¢·Ö·½³Ì±í´ïÊ½µÄÖµ*/
+        f(&y[k*n],F,x);                      /* è®¡ç®—å¾®åˆ†æ–¹ç¨‹è¡¨è¾¾å¼çš„å€¼*/
 
         for(i=0; i<n; i++)
         {
-            y[(k+1)*n+i]=y[k*n+i]+h*F[i];    /* ¼ÆËã´Ë´¦µÄº¯ÊýÖµ*/
+            y[(k+1)*n+i]=y[k*n+i]+h*F[i];    /* è®¡ç®—æ­¤å¤„çš„å‡½æ•°å€¼*/
         }
 
         k++;

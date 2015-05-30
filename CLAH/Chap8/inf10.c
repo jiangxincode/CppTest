@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include "leg1.c"
 #include "cheb.c"
 #include "gasi.c"
@@ -10,18 +10,18 @@ int main8inf10()
     b = 4.0;
     eps = 1e-8;
     h0 = 1e-5;
-    z=leg1(a,b,4,eps,h0,f1);                     /* ÓÃÀÕÈÃµÂ-¸ßË¹Çó»ı·¨»ı·Ö*/
-    printf("lagr: t=%7.6f\n",z);                 /* ´òÓ¡½á¹û*/
-    z=cheb(a,b,4,eps,h0,f1);                     /* ÓÃÇĞ±ÈÑ©·òÇó»ı·¨»ı·Ö*/
+    z=leg1(a,b,4,eps,h0,f1);                     /* ç”¨å‹’è®©å¾·-é«˜æ–¯æ±‚ç§¯æ³•ç§¯åˆ†*/
+    printf("lagr: t=%7.6f\n",z);                 /* æ‰“å°ç»“æœ*/
+    z=cheb(a,b,4,eps,h0,f1);                     /* ç”¨åˆ‡æ¯”é›ªå¤«æ±‚ç§¯æ³•ç§¯åˆ†*/
     printf("cheb: t=%7.6f\n",z);
-    z=gasi(a,b,eps,10,f1);                     /* ÓÃ×ÔÊÊÓ¦¸ßË¹Çó»ı·¨»ı·Ö*/
+    z=gasi(a,b,eps,10,f1);                     /* ç”¨è‡ªé€‚åº”é«˜æ–¯æ±‚ç§¯æ³•ç§¯åˆ†*/
     printf("gasi: t=%7.6f\n",z);
     return 0;
 }
 
 #include <math.h>
 double f1(x)
-double x;                                      /* ±»»ı·ÖµÄº¯Êı*/
+double x;                                      /* è¢«ç§¯åˆ†çš„å‡½æ•°*/
 {
     double y;
     y=exp(-x*x)/(1.0+x*x);

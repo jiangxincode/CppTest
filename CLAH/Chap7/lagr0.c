@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include "lagr1.c"
 #include "lagr2.c"
 #include "lagr7.c"
@@ -10,19 +10,19 @@ int main7lagr0()
                    3.1821,3.5038,3.8655,4.2696,4.7183
                   };
     t=0.20;
-    z=lagr1(x,y,10,t);                                /* À­¸ñÀÊÈÕÒ»´Î²åÖµ*/
-    printf("Lagrange 1: t=%2.5f,z=%2.5f\n",t,z);      /* ´òÓ¡½á¹û*/
-    z=lagr2(x,y,10,t);                                /* À­¸ñÀÊÈÕ¶ş´Î²åÖµ*/
-    printf("Lagrange 2: t=%2.5f,z=%2.5f\n",t,z);      /* ´òÓ¡½á¹û*/
-    z=lagr7(x,y,10,t);                                /* À­¸ñÀÊÈÕÆß´Î²åÖµ*/
-    printf("Lagrange 7: t=%2.5f,z=%2.5f\n",t,z);      /* ´òÓ¡½á¹û*/
+    z=lagr1(x,y,10,t);                                /* æ‹‰æ ¼æœ—æ—¥ä¸€æ¬¡æ’å€¼*/
+    printf("Lagrange 1: t=%2.5f,z=%2.5f\n",t,z);      /* æ‰“å°ç»“æœ*/
+    z=lagr2(x,y,10,t);                                /* æ‹‰æ ¼æœ—æ—¥äºŒæ¬¡æ’å€¼*/
+    printf("Lagrange 2: t=%2.5f,z=%2.5f\n",t,z);      /* æ‰“å°ç»“æœ*/
+    z=lagr7(x,y,10,t);                                /* æ‹‰æ ¼æœ—æ—¥ä¸ƒæ¬¡æ’å€¼*/
+    printf("Lagrange 7: t=%2.5f,z=%2.5f\n",t,z);      /* æ‰“å°ç»“æœ*/
     t=0.55;
     printf("\n");
-    z=lagr1(x,y,10,t);                                /* À­¸ñÀÊÈÕÒ»´Î²åÖµ*/
-    printf("Lagrange 1: t=%2.5f,z=%2.5f\n",t,z);      /* ´òÓ¡½á¹û*/
-    z=lagr2(x,y,10,t);                                /* À­¸ñÀÊÈÕ¶ş´Î²åÖµ*/
-    printf("Lagrange 2: t=%2.5f,z=%2.5f\n",t,z);      /* ´òÓ¡½á¹û*/
-    z=lagr7(x,y,10,t);                                /* À­¸ñÀÊÈÕÆß´Î²åÖµ*/
-    printf("Lagrange 7: t=%2.5f,z=%2.5f\n",t,z);      /* ´òÓ¡½á¹û*/
+    z=lagr1(x,y,10,t);                                /* æ‹‰æ ¼æœ—æ—¥ä¸€æ¬¡æ’å€¼*/
+    printf("Lagrange 1: t=%2.5f,z=%2.5f\n",t,z);      /* æ‰“å°ç»“æœ*/
+    z=lagr2(x,y,10,t);                                /* æ‹‰æ ¼æœ—æ—¥äºŒæ¬¡æ’å€¼*/
+    printf("Lagrange 2: t=%2.5f,z=%2.5f\n",t,z);      /* æ‰“å°ç»“æœ*/
+    z=lagr7(x,y,10,t);                                /* æ‹‰æ ¼æœ—æ—¥ä¸ƒæ¬¡æ’å€¼*/
+    printf("Lagrange 7: t=%2.5f,z=%2.5f\n",t,z);      /* æ‰“å°ç»“æœ*/
     return 0;
 }

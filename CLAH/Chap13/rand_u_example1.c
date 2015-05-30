@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include "randu01s.c"
 int main13rand_u_example1()
@@ -6,8 +6,8 @@ int main13rand_u_example1()
     int L;
     int flag,i,j;
     double *u_rand;
-    L=100;                                       /*Éú³É10¸öËæ»úÊı*/
-    u_rand=(double *)malloc(L*sizeof(double));  /*¶¯Ì¬·ÖÅä¿Õ¼ä*/
+    L=100;                                       /*ç”Ÿæˆ10ä¸ªéšæœºæ•°*/
+    u_rand=(double *)malloc(L*sizeof(double));  /*åŠ¨æ€åˆ†é…ç©ºé—´*/
 
     if(u_rand==NULL)
     {
@@ -15,7 +15,7 @@ int main13rand_u_example1()
         exit(0);
     }
 
-    flag=randu01s(L,u_rand);                   /*µ÷ÓÃº¯Êı*/
+    flag=randu01s(L,u_rand);                   /*è°ƒç”¨å‡½æ•°*/
 
     if(!flag)
     {

@@ -1,11 +1,11 @@
-/*======================================================
-// º¯ÊýÃû£ºbrake
-// ¹¦ÄÜÃèÊö£ºÈ·¶¨´æÔÚ¼«ÖµµÄÇø¼ä
-// ÊäÈë²ÎÊý£ºa ÊäÈë³õÊ¼Çø¼ä¶Ëµã£¬·µ»ØÊ±ÎªÇø¼äµÄ×ó¶Ëµã
-//           b ÊäÈë³õÊ¼Çø¼ä¶Ëµã£¬·µ»ØÊ±ÎªÇø¼äµÄÖÐ¼äµã
-//           c ·µ»ØÊ±ÎªÇø¼äµÄÓÒ¶Ëµã
-//           f º¯ÊýÖ¸Õë
-// ·µ»ØÖµ£º  ÎÞ
+ï»¿/*======================================================
+// å‡½æ•°åï¼šbrake
+// åŠŸèƒ½æè¿°ï¼šç¡®å®šå­˜åœ¨æžå€¼çš„åŒºé—´
+// è¾“å…¥å‚æ•°ï¼ša è¾“å…¥åˆå§‹åŒºé—´ç«¯ç‚¹ï¼Œè¿”å›žæ—¶ä¸ºåŒºé—´çš„å·¦ç«¯ç‚¹
+//           b è¾“å…¥åˆå§‹åŒºé—´ç«¯ç‚¹ï¼Œè¿”å›žæ—¶ä¸ºåŒºé—´çš„ä¸­é—´ç‚¹
+//           c è¿”å›žæ—¶ä¸ºåŒºé—´çš„å³ç«¯ç‚¹
+//           f å‡½æ•°æŒ‡é’ˆ
+// è¿”å›žå€¼ï¼š  æ— 
 =========================================================*/
 
 #include <stdio.h>
@@ -17,11 +17,11 @@
 void brake(double *a, double *b, double *c, double(*f)(double))
 {
     double u,u2,fu,fa,fb,fc, tmp;
-    double r,q,p;                          /* ÓÃÓÚÅ×ÎïÏß²åÖµ*/
+    double r,q,p;                          /* ç”¨äºŽæŠ›ç‰©çº¿æ’å€¼*/
     fa = (*f)(*a);
     fb = (*f)(*b);
 
-    if(fb > fa)                            /* È·±£a->b·½ÏòÊÇÏÂ½µµÄ*/
+    if(fb > fa)                            /* ç¡®ä¿a->bæ–¹å‘æ˜¯ä¸‹é™çš„*/
     {
         tmp = *a;
         *a = *b;
@@ -31,36 +31,36 @@ void brake(double *a, double *b, double *c, double(*f)(double))
         fb = tmp;
     }
 
-    *c = (*b)+G1*(*b - *a);                /* Çø¼äÑÓÉìµ½µãc*/
+    *c = (*b)+G1*(*b - *a);                /* åŒºé—´å»¶ä¼¸åˆ°ç‚¹c*/
     fc = (*f)(*c);
 
-    while(fb >= fc)                         /* ÕâÊ±ÐèÒª¼ÌÐøÑ°ÕÒÇø¼ä*/
+    while(fb >= fc)                         /* è¿™æ—¶éœ€è¦ç»§ç»­å¯»æ‰¾åŒºé—´*/
     {
         r = (*b-*a)*(fb-fc);                 /* fb-fc>=0*/
         q = (*b-*c)*(fb-fa);                 /* fb-fa <=0*/
-        p = (*b-*c)*q - (*b-*a)*r;           /* p<0.  qÓërÒìºÅ*/
+        p = (*b-*c)*q - (*b-*a)*r;           /* p<0.  qä¸Žrå¼‚å·*/
         tmp = q - r;
 
-        if(fabs(tmp) < TINY)                /* ·ÖÄ¸¹ýÐ¡*/
+        if(fabs(tmp) < TINY)                /* åˆ†æ¯è¿‡å°*/
         {
             tmp = TINY;
         }
 
-        u = *b-p/(2.0*tmp);                 /* Çó³öÅ×ÎïÏßµÄ¼«Öµµãu*/
-        u2 = *b+GSTEP*(*c-*b);              /* u2ÏÞÖÆÁËuÐÐ½øµÄ×î´ó²½³¤*/
+        u = *b-p/(2.0*tmp);                 /* æ±‚å‡ºæŠ›ç‰©çº¿çš„æžå€¼ç‚¹u*/
+        u2 = *b+GSTEP*(*c-*b);              /* u2é™åˆ¶äº†uè¡Œè¿›çš„æœ€å¤§æ­¥é•¿*/
 
-        if((*b-u)*(*c-u) < 0.0)             /* uÔÚb ºÍcÖ®¼ä*/
+        if((*b-u)*(*c-u) < 0.0)             /* uåœ¨b å’Œcä¹‹é—´*/
         {
             fu = (*f)(u);
 
-            if(fu < fc)                     /* b u cÈ·¶¨Ò»¸ö´æÔÚ¼«Ð¡ÖµµÄÇø¼ä*/
+            if(fu < fc)                     /* b u cç¡®å®šä¸€ä¸ªå­˜åœ¨æžå°å€¼çš„åŒºé—´*/
             {
-                if(*b < *c)                 /* µ÷Õûºó±£Ö¤a < b < c*/
+                if(*b < *c)                 /* è°ƒæ•´åŽä¿è¯a < b < c*/
                 {
                     *a = *b;
                     *b = u;
                 }
-                else                        /* µ÷Õûºó±£Ö¤a < b < c*/
+                else                        /* è°ƒæ•´åŽä¿è¯a < b < c*/
                 {
                     *a = *c;
                     *c = *b;
@@ -69,7 +69,7 @@ void brake(double *a, double *b, double *c, double(*f)(double))
 
                 return;
             }
-            else if(fu > fb)                /* a b uÈ·¶¨ÁËÒ»¸ö´æÔÚ¼«Ð¡ÖµµÄÇø¼ä*/
+            else if(fu > fb)                /* a b uç¡®å®šäº†ä¸€ä¸ªå­˜åœ¨æžå°å€¼çš„åŒºé—´*/
             {
                 if(*a < u)
                 {
@@ -84,10 +84,10 @@ void brake(double *a, double *b, double *c, double(*f)(double))
                 return;
             }
 
-            u = *c + G1*(*c-*b);             /* Å×ÎïÏßÈ·¶¨µÄuÎÞÓÃ*/
+            u = *c + G1*(*c-*b);             /* æŠ›ç‰©çº¿ç¡®å®šçš„uæ— ç”¨*/
             fu = (*f)(u);
         }
-        else if((*c-u)*(u2-u) < 0.0)         /* uÔÚcºÍu2Ö®¼ä*/
+        else if((*c-u)*(u2-u) < 0.0)         /* uåœ¨cå’Œu2ä¹‹é—´*/
         {
             fu = (*f)(u);
 
@@ -101,7 +101,7 @@ void brake(double *a, double *b, double *c, double(*f)(double))
                 fu = (*f)(u);
             }
         }
-        else if((u-u2)*(*c-u2)>=0)            /* Å×ÎïÏß¸ø³öµÄuÖµ¹ý´ó£¬Ê¹ÓÃu2´úÌæ*/
+        else if((u-u2)*(*c-u2)>=0)            /* æŠ›ç‰©çº¿ç»™å‡ºçš„uå€¼è¿‡å¤§ï¼Œä½¿ç”¨u2ä»£æ›¿*/
         {
             u = u2;
             fu = (*f)(u);
@@ -112,7 +112,7 @@ void brake(double *a, double *b, double *c, double(*f)(double))
             fu = (*f)(u);
         }
 
-        *a = *b;                               /* ¸üÐÂa,b,c*/
+        *a = *b;                               /* æ›´æ–°a,b,c*/
         *b = *c;
         *c = u;
         fa = fb;
@@ -120,9 +120,9 @@ void brake(double *a, double *b, double *c, double(*f)(double))
         fc = fu;
     }
 
-    if(*a > *c)                         /* [a,c]¾ÍÊÇ´æÔÚ¼«Ð¡ÖµµÄÇø¼ä*/
+    if(*a > *c)                         /* [a,c]å°±æ˜¯å­˜åœ¨æžå°å€¼çš„åŒºé—´*/
     {
-        tmp = *a;                       /* µ÷Õû³É a<b<c*/
+        tmp = *a;                       /* è°ƒæ•´æˆ a<b<c*/
         *a = *c;
         *c = tmp;
     }

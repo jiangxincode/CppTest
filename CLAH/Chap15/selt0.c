@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include "selt.c"
 #include "heap.c"
 int main15selt0()
@@ -6,7 +6,7 @@ int main15selt0()
     int i,j,p[50],p1[50];
     printf("Data:\n");
 
-    for(i=0; i<5; i++)                     /* Éú³ÉÒ»Ð©ÎÞÐòÊý¾Ý*/
+    for(i=0; i<5; i++)                     /* ç”Ÿæˆä¸€äº›æ— åºæ•°æ®*/
     {
         for(j=0; j<10; j++)
         {
@@ -18,7 +18,7 @@ int main15selt0()
         printf("\n");
     }
 
-    printf("Select Sort:\n");                /* Ö±½ÓÑ¡ÔñÅÅÐòµÄ½á¹û*/
+    printf("Select Sort:\n");                /* ç›´æŽ¥é€‰æ‹©æŽ’åºçš„ç»“æžœ*/
     selt(p,50);
 
     for(i=0; i<5; i++)
@@ -31,7 +31,7 @@ int main15selt0()
         printf("\n");
     }
 
-    printf("Heap Sort:\n");                /* ¶ÑÅÅÐòµÄ½á¹û*/
+    printf("Heap Sort:\n");                /* å †æŽ’åºçš„ç»“æžœ*/
     heap(p1,50);
 
     for(i=0; i<5; i++)

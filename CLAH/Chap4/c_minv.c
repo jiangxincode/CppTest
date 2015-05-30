@@ -1,14 +1,14 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
-#include "../Chap2/c_comp.h"
+#include "../utility.h"
 
 /*======================================================
- * º¯ÊıÃû£ºc_minv
- * ¹¦ÄÜÃèÊö£ºÓÃ¸ßË¹£­Ô¼µ±ÏûÈ¥·¨½øĞĞ¸´¾ØÕóÔ­µØÇóÄæ
- * ÊäÈë²ÎÊı£ºmat ´ıÇóÄæµÄ¾ØÕó£¬Çó½â³É¹¦ºó´æ·ÅÄæ¾ØÕó
- *           n ¾ØÕó½×Êı
- *           eps ¾«¶ÈÒªÇó£¬Ğ¡ÓÚepsµÄÖµ£¬ÈÏÎªÊÇ0¡£
- * ·µ»ØÖµ£ºÕûĞÍ¡£ÔËĞĞ³É¹¦Ôò·µ»Ø1,Ê§°ÜÔò·µ»Ø0
+ * å‡½æ•°åï¼šc_minv
+ * åŠŸèƒ½æè¿°ï¼šç”¨é«˜æ–¯ï¼çº¦å½“æ¶ˆå»æ³•è¿›è¡Œå¤çŸ©é˜µåŸåœ°æ±‚é€†
+ * è¾“å…¥å‚æ•°ï¼šmat å¾…æ±‚é€†çš„çŸ©é˜µï¼Œæ±‚è§£æˆåŠŸåå­˜æ”¾é€†çŸ©é˜µ
+ *           n çŸ©é˜µé˜¶æ•°
+ *           eps ç²¾åº¦è¦æ±‚ï¼Œå°äºepsçš„å€¼ï¼Œè®¤ä¸ºæ˜¯0ã€‚
+ * è¿”å›å€¼ï¼šæ•´å‹ã€‚è¿è¡ŒæˆåŠŸåˆ™è¿”å›1,å¤±è´¥åˆ™è¿”å›0
 =========================================================*/
 int c_minv(struct c_comp *mat,int n,double eps)
 {
@@ -16,13 +16,13 @@ int c_minv(struct c_comp *mat,int n,double eps)
     struct c_comp c_tmp;
     double tmp,d;
 
-    if(mat == NULL)                     /* ¼ì²âÊäÈëµÄÖ¸ÕëÊÇ·ñÎª¿Õ*/
+    if(mat == NULL)                     /* æ£€æµ‹è¾“å…¥çš„æŒ‡é’ˆæ˜¯å¦ä¸ºç©º*/
     {
         printf("The matrix pointer is NULL\n");
         return(0);
     }
 
-    is = malloc(n*sizeof(int));         /* ÎªĞĞ½»»»¼ÇÂ¼·ÖÅä¿Õ¼ä²¢¼ì²âÊÇ·ñ³É¹¦*/
+    is = malloc(n*sizeof(int));         /* ä¸ºè¡Œäº¤æ¢è®°å½•åˆ†é…ç©ºé—´å¹¶æ£€æµ‹æ˜¯å¦æˆåŠŸ*/
 
     if(is == NULL)
     {
@@ -30,7 +30,7 @@ int c_minv(struct c_comp *mat,int n,double eps)
         return(0);
     }
 
-    js = malloc(n*sizeof(int));         /* ÎªÁĞ½»»»¼ÇÂ¼·ÖÅä¿Õ¼ä²¢¼ì²âÊÇ·ñ³É¹¦*/
+    js = malloc(n*sizeof(int));         /* ä¸ºåˆ—äº¤æ¢è®°å½•åˆ†é…ç©ºé—´å¹¶æ£€æµ‹æ˜¯å¦æˆåŠŸ*/
 
     if(js == NULL)
     {
@@ -43,11 +43,11 @@ int c_minv(struct c_comp *mat,int n,double eps)
     {
         d = 0.0;
 
-        for(i=k; i<n; i++)             /* ´ËÑ­»·ÓÃÓÚÑ¡È¡Ö÷Ôª*/
+        for(i=k; i<n; i++)             /* æ­¤å¾ªç¯ç”¨äºé€‰å–ä¸»å…ƒ*/
             for(j=k; j<n; j++)
             {
                 l = i*n + j;
-                tmp = mat[l].rmz*mat[l].rmz + mat[l].imz*mat[l].imz;  /* ÇóÔªËØµÄÄ£*/
+                tmp = mat[l].rmz*mat[l].rmz + mat[l].imz*mat[l].imz;  /* æ±‚å…ƒç´ çš„æ¨¡*/
 
                 if(tmp>d)
                 {
@@ -57,16 +57,16 @@ int c_minv(struct c_comp *mat,int n,double eps)
                 }
             }
 
-        if(d < eps)                    /* ÅĞ¶ÏÖ÷ÔªÊÇ·ñ¹ıĞ¡*/
+        if(d < eps)                    /* åˆ¤æ–­ä¸»å…ƒæ˜¯å¦è¿‡å°*/
         {
-            free(is);                  /* ÈôÖ÷Ôª¹ıĞ¡ÔòÍË³ö³ÌĞò*/
+            free(is);                  /* è‹¥ä¸»å…ƒè¿‡å°åˆ™é€€å‡ºç¨‹åº*/
             free(js);
             printf("Matrix inverse failed.\n");
             return(0);
         }
 
-        if(is[k]!=k)                   /* ÅĞ¶ÏÊÇ·ñĞèÒªĞĞ½»»»*/
-            for(j=0; j<=n-1; j++)        /* ½øĞĞĞĞ½»»»*/
+        if(is[k]!=k)                   /* åˆ¤æ–­æ˜¯å¦éœ€è¦è¡Œäº¤æ¢*/
+            for(j=0; j<=n-1; j++)        /* è¿›è¡Œè¡Œäº¤æ¢*/
             {
                 l = k*n + j;
                 v = is[k]*n + j;
@@ -78,8 +78,8 @@ int c_minv(struct c_comp *mat,int n,double eps)
                 mat[v].imz = tmp;
             }
 
-        if(js[k]!=k)                   /* ÅĞ¶ÏÊÇ·ñĞèÒªÁĞ½»»»*/
-            for(i=0; i<=n-1; i++)        /* ½øĞĞÁĞ½»»»*/
+        if(js[k]!=k)                   /* åˆ¤æ–­æ˜¯å¦éœ€è¦åˆ—äº¤æ¢*/
+            for(i=0; i<=n-1; i++)        /* è¿›è¡Œåˆ—äº¤æ¢*/
             {
                 l = i*n + k;
                 v = i*n +js[k];
@@ -91,18 +91,18 @@ int c_minv(struct c_comp *mat,int n,double eps)
                 mat[v].imz = tmp;
             }
 
-        l = k*n + k;                   /* ¹éÒ»»¯¼ÆËãµÄµÚÒ»²½*/
+        l = k*n + k;                   /* å½’ä¸€åŒ–è®¡ç®—çš„ç¬¬ä¸€æ­¥*/
         mat[l].rmz = mat[l].rmz/d;
         mat[l].imz = -mat[l].imz/d;
 
-        for(j=0; j<=n-1; j++)          /* ¹éÒ»»¯¼ÆËãµÄµÚ¶ş²½£¬ĞèÒªÊ¹ÓÃ¸´ÊıµÄ³Ë·¨*/
+        for(j=0; j<=n-1; j++)          /* å½’ä¸€åŒ–è®¡ç®—çš„ç¬¬äºŒæ­¥ï¼Œéœ€è¦ä½¿ç”¨å¤æ•°çš„ä¹˜æ³•*/
             if(j!=k)
             {
                 v = k*n + j;
                 c_comp_product(&mat[v], &mat[l], &mat[v]);
             }
 
-        for(i=0; i<=n-1; i++)          /* ÏûÔª¼ÆËãµÄµÚÒ»²½*/
+        for(i=0; i<=n-1; i++)          /* æ¶ˆå…ƒè®¡ç®—çš„ç¬¬ä¸€æ­¥*/
             if(i!=k)
             {
                 for(j=0; j<=n-1; j++)
@@ -114,7 +114,7 @@ int c_minv(struct c_comp *mat,int n,double eps)
                     }
             }
 
-        for(i=0; i<=n-1; i++)          /* ÏûÔª¼ÆËãµÄµÚ¶ş²½*/
+        for(i=0; i<=n-1; i++)          /* æ¶ˆå…ƒè®¡ç®—çš„ç¬¬äºŒæ­¥*/
             if(i!=k)
             {
                 v = i*n + k;
@@ -124,10 +124,10 @@ int c_minv(struct c_comp *mat,int n,double eps)
             }
     }
 
-    for(k=n-1; k>=0; k--)             /* ÒÀÕÕĞĞ½»»»ºÍÁĞ½»»»µÄÀúÊ·½øĞĞ½á¹û»Ö¸´*/
+    for(k=n-1; k>=0; k--)             /* ä¾ç…§è¡Œäº¤æ¢å’Œåˆ—äº¤æ¢çš„å†å²è¿›è¡Œç»“æœæ¢å¤*/
     {
-        if(js[k]!=k)                  /* ÅĞ¶ÏÊÇ·ñĞèÒª»Ö¸´*/
-            for(j=0; j<=n-1; j++)       /* °´ÁĞ½»»»µÄÀúÊ·½øĞĞĞĞ½»»»*/
+        if(js[k]!=k)                  /* åˆ¤æ–­æ˜¯å¦éœ€è¦æ¢å¤*/
+            for(j=0; j<=n-1; j++)       /* æŒ‰åˆ—äº¤æ¢çš„å†å²è¿›è¡Œè¡Œäº¤æ¢*/
             {
                 l = k*n + j;
                 v=js[k]*n + j;
@@ -140,7 +140,7 @@ int c_minv(struct c_comp *mat,int n,double eps)
             }
 
         if(is[k]!=k)
-            for(i=0; i<=n-1; i++)        /* °´ĞĞ½»»»µÄÀúÊ·½øĞĞÁĞ½»»»*/
+            for(i=0; i<=n-1; i++)        /* æŒ‰è¡Œäº¤æ¢çš„å†å²è¿›è¡Œåˆ—äº¤æ¢*/
             {
                 l = i*n + k;
                 v = i*n + is[k];
@@ -153,7 +153,7 @@ int c_minv(struct c_comp *mat,int n,double eps)
             }
     }
 
-    free(is);                          /* ÊÍ·Å·ÖÅäµÄ¿Õ¼ä*/
+    free(is);                          /* é‡Šæ”¾åˆ†é…çš„ç©ºé—´*/
     free(js);
-    return(1);                         /* Çó½â³É¹¦£¬·µ»Ø1*/
+    return(1);                         /* æ±‚è§£æˆåŠŸï¼Œè¿”å›1*/
 }

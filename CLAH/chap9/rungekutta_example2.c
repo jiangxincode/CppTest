@@ -1,10 +1,10 @@
-/*======================================================
-//¹¦ÄÜÃèÊö£º3ÖÖrungekutta·½·¨Çó³£Î¢·Ö·½³Ì×éµÄ³õÖµÎÊÌâµÄÀı×Ó
+ï»¿/*======================================================
+//åŠŸèƒ½æè¿°ï¼š3ç§rungekuttaæ–¹æ³•æ±‚å¸¸å¾®åˆ†æ–¹ç¨‹ç»„çš„åˆå€¼é—®é¢˜çš„ä¾‹å­
 =========================================================*/
 #include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
-#include "something.h"
+#include "../utility.h"
 #include "rungekuttavh.c"
 #include "gillvh.c"
 
@@ -13,21 +13,21 @@ int main9rungekutta2()
 {
     double h=0.01,a=0,eps=0.000000001;
     int n=3,m=10,i,j;
-    double *y;                       /* ´æ·ÅËùÓĞº¯ÊıÖµµÄÖ¸Õë*/
+    double *y;                       /* å­˜æ”¾æ‰€æœ‰å‡½æ•°å€¼çš„æŒ‡é’ˆ*/
     y=(double*)malloc(n*(m+1)*sizeof(double));
 
-    for(i=0; i<n*(m+1); i++)                  /* ³õÊ¼»¯*/
+    for(i=0; i<n*(m+1); i++)                  /* åˆå§‹åŒ–*/
     {
         y[i]=0.0;
     }
 
-    y[0]=-1.0;                                /* ³õÖµ*/
+    y[0]=-1.0;                                /* åˆå€¼*/
     y[1]=0.0;
     y[2]=1.0;
 
     if(rungekuttainvh(y,n,f,h,m,a))
     {
-        printf("¶¨²½³¤Áú¸ñ¿âËşËã·¨ÇóÖµ\n");
+        printf("å®šæ­¥é•¿é¾™æ ¼åº“å¡”ç®—æ³•æ±‚å€¼\n");
 
         for(i=0; i<=m; i++)
         {
@@ -35,7 +35,7 @@ int main9rungekutta2()
 
             for(j=0; j<n; j++)
             {
-                printf("y[%d]=%1.9f  ",j,y[3*i+j]);    /* Êä³ö*/
+                printf("y[%d]=%1.9f  ",j,y[3*i+j]);    /* è¾“å‡º*/
             }
 
             printf("\n");
@@ -48,7 +48,7 @@ int main9rungekutta2()
 
     if(rungekuttavh(y,n,f,h,m,a,eps))
     {
-        printf("±ä²½³¤Áú¸ñ-¿âËşËã·¨ÇóÖµ\n");
+        printf("å˜æ­¥é•¿é¾™æ ¼-åº“å¡”ç®—æ³•æ±‚å€¼\n");
 
         for(i=0; i<=m; i++)
         {
@@ -56,7 +56,7 @@ int main9rungekutta2()
 
             for(j=0; j<n; j++)
             {
-                printf("y[%d]=%1.9f  ",j,y[3*i+j]);    /* Êä³ö*/
+                printf("y[%d]=%1.9f  ",j,y[3*i+j]);    /* è¾“å‡º*/
             }
 
             printf("\n");
@@ -69,7 +69,7 @@ int main9rungekutta2()
 
     if(gillvh(y,n,f,h,m,a,eps))
     {
-        printf("±ä²½³¤»ù¶ûËã·¨ÇóÖµ\n");
+        printf("å˜æ­¥é•¿åŸºå°”ç®—æ³•æ±‚å€¼\n");
 
         for(i=0; i<=m; i++)
         {
@@ -77,7 +77,7 @@ int main9rungekutta2()
 
             for(j=0; j<n; j++)
             {
-                printf("y[%d]=%1.9f  ",j,y[3*i+j]);    /* Êä³ö*/
+                printf("y[%d]=%1.9f  ",j,y[3*i+j]);    /* è¾“å‡º*/
             }
 
             printf("\n");

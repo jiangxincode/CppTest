@@ -1,8 +1,7 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <math.h>
 
-#include "../Chap2/c_comp.h"
-#include "something.h"
+#include "../utility.h"
 
 int main3cpmd0()
 {
@@ -17,7 +16,7 @@ int main3cpmd0()
         b[i].imz = i+1;
     }
 
-    i = cpmul(a,3,b,3,c);         /* µ÷ÓÃ¶àÏîÊ½Ïà³ËµÄº¯Êı£¬²¢´òÓ¡½á¹û*/
+    i = cpmul(a,3,b,3,c);         /* è°ƒç”¨å¤šé¡¹å¼ç›¸ä¹˜çš„å‡½æ•°ï¼Œå¹¶æ‰“å°ç»“æœ*/
 
     if(i)
     {
@@ -29,7 +28,7 @@ int main3cpmd0()
         }
     }
 
-    i = cpdiv(c,5,b,3,q,3,r,5);   /* µ÷ÓÃ¶àÏîÊ½Ïà³ıµÄº¯Êı£¬²¢´òÓ¡½á¹û*/
+    i = cpdiv(c,5,b,3,q,3,r,5);   /* è°ƒç”¨å¤šé¡¹å¼ç›¸é™¤çš„å‡½æ•°ï¼Œå¹¶æ‰“å°ç»“æœ*/
 
     if(i)
     {

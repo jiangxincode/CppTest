@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <math.h>
 #include "wolt.c"
 #include "hadma.c"
@@ -8,7 +8,7 @@ int main16wolt0()
     int i,n=8;
     double a[8],b[8],y[8];
 
-    for(i=0; i<n; i++)                                 /* ¸ø¶¨aºÍb*/
+    for(i=0; i<n; i++)                                 /* ç»™å®šaå’Œb*/
     {
         a[i] = i+1;
         b[i] = 2*i;
@@ -28,7 +28,7 @@ int main16wolt0()
         printf("%5.4f ",b[i]);
     }
 
-    i = wolt(a,n,y); 	                                 /*ÇóaµÄwolt±ä»»*/
+    i = wolt(a,n,y); 	                                 /*æ±‚açš„woltå˜æ¢*/
 
     if(i)
     {
@@ -40,7 +40,7 @@ int main16wolt0()
         }
     }
 
-    i = wolt(y,n,a); 	                                 /* woltÄæ±ä»»*/
+    i = wolt(y,n,a); 	                                 /* wolté€†å˜æ¢*/
 
     if(i)
     {
@@ -52,7 +52,7 @@ int main16wolt0()
         }
     }
 
-    i = wolt(b,n,y); 	                                /* ÇóbµÄwolt±ä»»*/
+    i = wolt(b,n,y); 	                                /* æ±‚bçš„woltå˜æ¢*/
 
     if(i)
     {
@@ -64,7 +64,7 @@ int main16wolt0()
         }
     }
 
-    i = wolt(y,n,b); 	                                 /*woltÄæ±ä»»*/
+    i = wolt(y,n,b); 	                                 /*wolté€†å˜æ¢*/
 
     if(i)
     {
@@ -76,7 +76,7 @@ int main16wolt0()
         }
     }
 
-    i = hadma(a,n,y); 	                                 /*ÇóaµÄ¹þ´ïÂê±ä»»*/
+    i = hadma(a,n,y); 	                                 /*æ±‚açš„å“ˆè¾¾çŽ›å˜æ¢*/
 
     if(i)
     {
@@ -88,7 +88,7 @@ int main16wolt0()
         }
     }
 
-    i = hadma(y,n,a); 	                                /*¹þ´ïÂêÄæ±ä»»*/
+    i = hadma(y,n,a); 	                                /*å“ˆè¾¾çŽ›é€†å˜æ¢*/
 
     if(i)
     {
@@ -100,7 +100,7 @@ int main16wolt0()
         }
     }
 
-    i = hadma(b,n,y); 	                                /*ÇóbµÄ¹þ´ïÂê±ä»»*/
+    i = hadma(b,n,y); 	                                /*æ±‚bçš„å“ˆè¾¾çŽ›å˜æ¢*/
 
     if(i)
     {
@@ -112,7 +112,7 @@ int main16wolt0()
         }
     }
 
-    i = hadma(y,n,b); 	                                /*¹þ´ïÂêÄæ±ä»»*/
+    i = hadma(y,n,b); 	                                /*å“ˆè¾¾çŽ›é€†å˜æ¢*/
 
     if(i)
     {

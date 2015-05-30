@@ -1,4 +1,4 @@
-#include <math.h>
+﻿#include <math.h>
 #include <stdio.h>
 #include "simp1.c"
 int main12simp10()

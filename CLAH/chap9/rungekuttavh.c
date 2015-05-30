@@ -1,15 +1,15 @@
-/*======================================================
-//º¯ÊýÃû£ºrungekuttavh
-//¹¦ÄÜÃèÊö£º±ä²½³¤Áú¸ñ-¿âËþËã·¨Çó³£Î¢·Ö·½³Ì×éµÄ³õÖµÎÊÌâ
-//ÊäÈë²ÎÊý£º*y£¨ Ö¸Ïòº¯Êý³õÖµÒÔ¼°º¯Êý·µ»ØÖµµÄÖ¸Õën*(m+1)£©
- *          n£¨·½³Ì×é¸öÊý£©£¬f£¨Ä¿±êº¯ÊýµÄ¼ÆËã£©
- *          h£¨²½³¤£©£¬m£¨²½Êý£©£¬a£¨Çø¼äÆðµã£©£¬eps£¨¾«¶È£©
-//·µ»ØÖµ£º0£¨Ê§°Ü£©£¬1£¨³É¹¦£©
+ï»¿/*======================================================
+//å‡½æ•°åï¼šrungekuttavh
+//åŠŸèƒ½æè¿°ï¼šå˜æ­¥é•¿é¾™æ ¼-åº“å¡”ç®—æ³•æ±‚å¸¸å¾®åˆ†æ–¹ç¨‹ç»„çš„åˆå€¼é—®é¢˜
+//è¾“å…¥å‚æ•°ï¼š*yï¼ˆ æŒ‡å‘å‡½æ•°åˆå€¼ä»¥åŠå‡½æ•°è¿”å›žå€¼çš„æŒ‡é’ˆn*(m+1)ï¼‰
+ *          nï¼ˆæ–¹ç¨‹ç»„ä¸ªæ•°ï¼‰ï¼Œfï¼ˆç›®æ ‡å‡½æ•°çš„è®¡ç®—ï¼‰
+ *          hï¼ˆæ­¥é•¿ï¼‰ï¼Œmï¼ˆæ­¥æ•°ï¼‰ï¼Œaï¼ˆåŒºé—´èµ·ç‚¹ï¼‰ï¼Œepsï¼ˆç²¾åº¦ï¼‰
+//è¿”å›žå€¼ï¼š0ï¼ˆå¤±è´¥ï¼‰ï¼Œ1ï¼ˆæˆåŠŸï¼‰
 =========================================================*/
 #include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
-#include"something.h"
+#include"../utility.h"
 
 static int rungekuttavh(y,n,f,h,m,a,eps)
 double *y,(*f)(),h,a,eps;
@@ -17,7 +17,7 @@ int n,m;
 {
     double x,*y1,*y2,*ytemp1,*ytemp2,dis,ht=h;
     int k=0,i,m1,m2;
-    y1=(double*)malloc(sizeof(double)*n);      /* ¶¯Ì¬·ÖÅä*/
+    y1=(double*)malloc(sizeof(double)*n);      /* åŠ¨æ€åˆ†é…*/
     y2=(double*)malloc(sizeof(double)*n);
 
     if(y1==NULL||y2==NULL)
@@ -26,13 +26,13 @@ int n,m;
         return(0);
     }
 
-    do                                         /* ¶Ôk½øÐÐÑ­»·£¬·Ö±ð¼ÆËãxk´¦µÄº¯ÊýÖµ*/
+    do                                         /* å¯¹kè¿›è¡Œå¾ªçŽ¯ï¼Œåˆ†åˆ«è®¡ç®—xkå¤„çš„å‡½æ•°å€¼*/
     {
         x=a+k*h;
 
-        do                                     /* ÔÚÃ¿¸öxk´¦£¬½øÐÐ²½³¤µÄ¶¯Ì¬Ñ¡Ôñ*/
+        do                                     /* åœ¨æ¯ä¸ªxkå¤„ï¼Œè¿›è¡Œæ­¥é•¿çš„åŠ¨æ€é€‰æ‹©*/
         {
-            m1=(int)(h/ht);                    /* htÎª²½³¤*/
+            m1=(int)(h/ht);                    /* htä¸ºæ­¥é•¿*/
             ytemp1=(double*)malloc(sizeof(double)*n*(m1+1));
 
             if(ytemp1==NULL)
@@ -43,7 +43,7 @@ int n,m;
 
             for(i=n; i<n*(m1+1); i++)
             {
-                ytemp1[i]=0.0;    /* ³õÊ¼»¯*/
+                ytemp1[i]=0.0;    /* åˆå§‹åŒ–*/
             }
 
             for(i=0; i<n; i++)
@@ -51,7 +51,7 @@ int n,m;
                 ytemp1[i]=y[k*n+i];
             }
 
-            rungekuttainvh(ytemp1,n,f,ht,m1,x);     /* µ÷ÓÃ¶¨²½³¤¹«Ê½*/
+            rungekuttainvh(ytemp1,n,f,ht,m1,x);     /* è°ƒç”¨å®šæ­¥é•¿å…¬å¼*/
 
             for(i=0; i<n; i++)
             {
@@ -59,7 +59,7 @@ int n,m;
             }
 
             free(ytemp1);
-            m2=2*m1;                                 /* ht/2Îª²½³¤*/
+            m2=2*m1;                                 /* ht/2ä¸ºæ­¥é•¿*/
             ytemp2=(double*)malloc(sizeof(double)*n*(m2+1));
 
             if(ytemp2==NULL)
@@ -86,25 +86,25 @@ int n,m;
             }
 
             free(ytemp2);
-            ht=ht/2;                                 /* ÏÂÒ»´ÎÑ­»·µÄ²½³¤*/
-            dis=0.0;                                 /* max¾àÀë*/
+            ht=ht/2;                                 /* ä¸‹ä¸€æ¬¡å¾ªçŽ¯çš„æ­¥é•¿*/
+            dis=0.0;                                 /* maxè·ç¦»*/
 
             for(i=0; i<n; i++)
-                if(dis<fabs(y1[i]-y2[i]))            /* ¼ÆËã´Ë´¦µÄº¯ÊýÖµ*/
+                if(dis<fabs(y1[i]-y2[i]))            /* è®¡ç®—æ­¤å¤„çš„å‡½æ•°å€¼*/
                 {
                     dis=fabs(y1[i]-y2[i]);
                 }
         }
-        while(dis>=eps);                             /* ¿´¾àÀëÊÇ·ñÂú×ã¾«¶È*/
+        while(dis>=eps);                             /* çœ‹è·ç¦»æ˜¯å¦æ»¡è¶³ç²¾åº¦*/
 
         for(i=0; i<n; i++)
         {
-            y[(k+1)*n+i]=y2[i];    /* ½á¹û¼ÇÂ¼*/
+            y[(k+1)*n+i]=y2[i];    /* ç»“æžœè®°å½•*/
         }
 
-        k++;                                         /* ÏÂÒ»¸öxk*/
+        k++;                                         /* ä¸‹ä¸€ä¸ªxk*/
     }
-    while(k<m);                                      /* m¸öxkµÄÑ­»·*/
+    while(k<m);                                      /* mä¸ªxkçš„å¾ªçŽ¯*/
 
     free(y1);
     free(y2);

@@ -1,25 +1,25 @@
-/*======================================================
-//º¯ÊıÃû£ºtutest.c
-//¹¦ÄÜÃèÊö£ºÓÃt·Ö²¼¼ìÑéÁ½¸ö·Ö²¼µÄ¾ùÖµÊÇ·ñÓĞÏÔÖøĞÔ²îÒì(·½²î²»ÏàÍ¬)
-//ÊäÈë²ÎÊı£ºa£¨¼òµ¥Ëæ»úÑù±¾Ò»µÄÑù±¾Öµ£©
-//	    na£¨Ñù±¾Ò»µÄ¸öÊı£©
- *          b£¨¼òµ¥Ëæ»úÑù±¾¶şµÄÑù±¾Öµ£©
-//	    nb£¨Ñù±¾¶şµÄ¸öÊı£©
-//	    alpha£¨ÏÔÖøĞÔ±ê×¼£©
-//·µ»ØÖµ£º1£¨ÏÔÖø£©£¬0£¨²»ÏÔÖø£©
+ï»¿/*======================================================
+//å‡½æ•°åï¼štutest.c
+//åŠŸèƒ½æè¿°ï¼šç”¨tåˆ†å¸ƒæ£€éªŒä¸¤ä¸ªåˆ†å¸ƒçš„å‡å€¼æ˜¯å¦æœ‰æ˜¾è‘—æ€§å·®å¼‚(æ–¹å·®ä¸ç›¸åŒ)
+//è¾“å…¥å‚æ•°ï¼šaï¼ˆç®€å•éšæœºæ ·æœ¬ä¸€çš„æ ·æœ¬å€¼ï¼‰
+//	    naï¼ˆæ ·æœ¬ä¸€çš„ä¸ªæ•°ï¼‰
+ *          bï¼ˆç®€å•éšæœºæ ·æœ¬äºŒçš„æ ·æœ¬å€¼ï¼‰
+//	    nbï¼ˆæ ·æœ¬äºŒçš„ä¸ªæ•°ï¼‰
+//	    alphaï¼ˆæ˜¾è‘—æ€§æ ‡å‡†ï¼‰
+//è¿”å›å€¼ï¼š1ï¼ˆæ˜¾è‘—ï¼‰ï¼Œ0ï¼ˆä¸æ˜¾è‘—ï¼‰
 =========================================================*/
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "something.h"
+#include "../utility.h"
 
 static int tutest(a,na,b,nb,alpha)
 double *a,*b,alpha;
 int na,nb;
 {
     int  j=0;
-    double meana=0,meanb=0,vara=0,varb=0;	//³õÊ¼»¯
+    double meana=0,meanb=0,vara=0,varb=0;	//åˆå§‹åŒ–
     double sd,d,t,x,p,v;
     double eps=0.00001;
 
@@ -28,33 +28,33 @@ int na,nb;
         meana+=a[j];
     }
 
-    meana=meana/na;							//¼ÆËãÑù±¾Ò»¾ùÖµ
+    meana=meana/na;							//è®¡ç®—æ ·æœ¬ä¸€å‡å€¼
 
     for(j=0; j<nb; j++)
     {
         meanb+=b[j];
     }
 
-    meanb=meanb/nb;							//¼ÆËãÑù±¾¶ş¾ùÖµ
+    meanb=meanb/nb;							//è®¡ç®—æ ·æœ¬äºŒå‡å€¼
 
     for(j=0; j<na; j++)
     {
-        vara+=(a[j]-meana)*(a[j]-meana);    //Ñù±¾Ò»µÄ·½²î
+        vara+=(a[j]-meana)*(a[j]-meana);    //æ ·æœ¬ä¸€çš„æ–¹å·®
     }
 
     for(j=0; j<nb; j++)
     {
-        varb+=(b[j]-meanb)*(b[j]-meanb);    //Ñù±¾¶şµÄ·½²î
+        varb+=(b[j]-meanb)*(b[j]-meanb);    //æ ·æœ¬äºŒçš„æ–¹å·®
     }
 
     vara=vara/((na-1)*na);
     varb=varb/((nb-1)*nb);
-    sd=sqrt(vara+varb);//¼ÆËãsd
-    t=(meana-meanb)/sd;						//¼ÆËãt
+    sd=sqrt(vara+varb);//è®¡ç®—sd
+    t=(meana-meanb)/sd;						//è®¡ç®—t
     d=vara*vara/(na-1)+varb*varb/(nb-1);
     v=(vara+varb)*(vara+varb)/d;
     x=v/(v+t*t);
-    p=beta2(v/2,0.5,x,eps);					//Çó¸ÅÂÊ
+    p=beta2(v/2,0.5,x,eps);					//æ±‚æ¦‚ç‡
     return(p<=alpha);
 }
 

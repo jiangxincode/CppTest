@@ -1,20 +1,20 @@
-/*======================================================
-// º¯ÊıÃû£ºdirmin
-// ¹¦ÄÜÃèÊö£ºÒ»Î¬ËÑË÷
-// ÊäÈë²ÎÊı£ºx[n] ÊäÈëËÑË÷µÄ³ö·¢µã
-//           p[n] ËÑË÷µÄ·½Ïò
-//           xmin[n] ·µ»ØÕÒµ½µÄ×îÓÅµã
-//           n ³õÊ¼Çø¼äµÄÁíÒ»¸ö¶Ëµã
-//           f ¶àÔªº¯ÊıÖ¸Õë
-//           eps ¾«¶ÈÏŞ¶È
-//           itmax ×î´óµü´ú´ÎÊı
-// ·µ»ØÖµ£º  º¯ÊıµÄ¼«Ğ¡Öµ
+ï»¿/*======================================================
+// å‡½æ•°åï¼šdirmin
+// åŠŸèƒ½æè¿°ï¼šä¸€ç»´æœç´¢
+// è¾“å…¥å‚æ•°ï¼šx[n] è¾“å…¥æœç´¢çš„å‡ºå‘ç‚¹
+//           p[n] æœç´¢çš„æ–¹å‘
+//           xmin[n] è¿”å›æ‰¾åˆ°çš„æœ€ä¼˜ç‚¹
+//           n åˆå§‹åŒºé—´çš„å¦ä¸€ä¸ªç«¯ç‚¹
+//           f å¤šå…ƒå‡½æ•°æŒ‡é’ˆ
+//           eps ç²¾åº¦é™åº¦
+//           itmax æœ€å¤§è¿­ä»£æ¬¡æ•°
+// è¿”å›å€¼ï¼š  å‡½æ•°çš„æå°å€¼
 =========================================================*/
 #include <stdlib.h>
-#include "something.h"
+#include "../utility.h"
 
 int _ndir_;
-double *_pdir_, *_xdir_, *_xtdir_,(*_myfc_)();              /* ĞèÒªÈ«¾Ö±äÁ¿*/
+double *_pdir_, *_xdir_, *_xtdir_,(*_myfc_)();              /* éœ€è¦å…¨å±€å˜é‡*/
 
 double dirmin(double *x, double *p, double *xmin, int n, double(*f)(), double eps, int itmax)
 {
@@ -24,7 +24,7 @@ double dirmin(double *x, double *p, double *xmin, int n, double(*f)(), double ep
     _pdir_ = (double*)malloc(_ndir_*sizeof(double));
     _xdir_ = (double*)malloc(_ndir_*sizeof(double));
     _xtdir_ = (double*)malloc(_ndir_*sizeof(double));
-    _myfc_ = f;                                            /* È«¾Ö±äÁ¿Ö¸Ïòº¯Êı*/
+    _myfc_ = f;                                            /* å…¨å±€å˜é‡æŒ‡å‘å‡½æ•°*/
 
     for(i=0; i<n; i++)
     {
@@ -32,12 +32,12 @@ double dirmin(double *x, double *p, double *xmin, int n, double(*f)(), double ep
         _xdir_[i] = x[i];
     }
 
-    ax = 0.0;                                             /* ³õÊ¼²ÂÏë·¶Î§*/
+    ax = 0.0;                                             /* åˆå§‹çŒœæƒ³èŒƒå›´*/
     bx = 0.5;
-    brake(&ax, &bx, &cx, fdim);                          /* ÕÒÒ»¸ö¼«Ğ¡ÖµÇø¼ä*/
-    fopt = brent(ax, bx, cx, fdim, &xopt, eps, itmax);     /* ÓÃbrentËã·¨ÕÒ¼«Ğ¡Öµ*/
+    brake(&ax, &bx, &cx, fdim);                          /* æ‰¾ä¸€ä¸ªæå°å€¼åŒºé—´*/
+    fopt = brent(ax, bx, cx, fdim, &xopt, eps, itmax);     /* ç”¨brentç®—æ³•æ‰¾æå°å€¼*/
 
-    for(i=0; i<n; i++)                                    /* ÕÒµ½ÁË×îÓÅµãx*/
+    for(i=0; i<n; i++)                                    /* æ‰¾åˆ°äº†æœ€ä¼˜ç‚¹x*/
     {
         p[i] = xopt*p[i];
         xmin[i] = x[i]+p[i];
@@ -49,7 +49,7 @@ double dirmin(double *x, double *p, double *xmin, int n, double(*f)(), double ep
     return(fopt);
 }
 
-static double fdim_jiang(double t)                                     /* ÇófÔÚÕâ¸ö·½ÏòÉÏĞĞ½øtÊ±µÄÖµ*/
+static double fdim_jiang(double t)                                     /* æ±‚fåœ¨è¿™ä¸ªæ–¹å‘ä¸Šè¡Œè¿›tæ—¶çš„å€¼*/
 {
     int i;
     double y;

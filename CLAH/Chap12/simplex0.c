@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include "simplex.c"
 int main12simplex0()
 {
@@ -14,9 +14,9 @@ int main12simplex0()
     m1 = 2;
     m2 = 1;
     m3 = 1;
-    simplex(a,n,m1,m2,m3,ixr,ixc,eps);               /* µ÷ÓÃº¯Êý*/
+    simplex(a,n,m1,m2,m3,ixr,ixc,eps);               /* è°ƒç”¨å‡½æ•°*/
 
-    for(j=1; j<=n; j++)                               /* ÌáÈ¡³öÖµÎª0µÄx±êºÅ*/
+    for(j=1; j<=n; j++)                               /* æå–å‡ºå€¼ä¸º0çš„xæ ‡å·*/
     {
         if(ixr[j] < n)
         {
@@ -24,7 +24,7 @@ int main12simplex0()
         }
     }
 
-    for(i=1; i<=n; i++)                              /* ÌáÈ¡³öÖµ²»Îª0µÄx±êºÅ*/
+    for(i=1; i<=n; i++)                              /* æå–å‡ºå€¼ä¸ä¸º0çš„xæ ‡å·*/
     {
         if(ixc[i] <n)
         {
@@ -32,13 +32,13 @@ int main12simplex0()
         }
     }
 
-    printf("fopt = %5.2f\n", a[0][0]);                /* º¯ÊýµÄ¼«Ð¡Öµ*/
-    printf("\nlast simplex:\n");                      /* ´òÓ¡×îÖÕµÄµ¥´¿ÐÎ±í*/
+    printf("fopt = %5.2f\n", a[0][0]);                /* å‡½æ•°çš„æžå°å€¼*/
+    printf("\nlast simplex:\n");                      /* æ‰“å°æœ€ç»ˆçš„å•çº¯å½¢è¡¨*/
     printf("      b    ");
 
     for(j=1; j<5; j++)
     {
-        if(ixr[j] < n+m1+m2)                         /* Ìø¹ý¸¨ÖúÎÊÌâµÄ±äÁ¿z*/
+        if(ixr[j] < n+m1+m2)                         /* è·³è¿‡è¾…åŠ©é—®é¢˜çš„å˜é‡z*/
         {
             printf("x%d    ",ixr[j]);
         }
@@ -49,7 +49,7 @@ int main12simplex0()
 
     for(j=0; j<5; j++)
     {
-        if(ixr[j] < n+m1+m2)                         /* Ìø¹ý¸¨ÖúÎÊÌâµÄ±äÁ¿z*/
+        if(ixr[j] < n+m1+m2)                         /* è·³è¿‡è¾…åŠ©é—®é¢˜çš„å˜é‡z*/
         {
             printf("%5.2f ",a[0][j]);
         }
@@ -59,11 +59,11 @@ int main12simplex0()
 
     for(i=1; i<5; i++)
     {
-        printf("x%d ", ixc[i]);                      /* ±¾ÐÐ¶ÔÓ¦µÄ±äÁ¿±êºÅ*/
+        printf("x%d ", ixc[i]);                      /* æœ¬è¡Œå¯¹åº”çš„å˜é‡æ ‡å·*/
 
         for(j=0; j<5; j++)
         {
-            if(ixr[j] < n+m1+m2)                     /* Ìø¹ý¸¨ÖúÎÊÌâµÄ±äÁ¿z*/
+            if(ixr[j] < n+m1+m2)                     /* è·³è¿‡è¾…åŠ©é—®é¢˜çš„å˜é‡z*/
             {
                 printf("%5.2f ",a[i][j]);
             }

@@ -1,6 +1,6 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 
-#include "something.h"
+#include "../utility.h"
 
 int main11bsl10()
 {
@@ -10,7 +10,7 @@ int main11bsl10()
     for(i=1; i<=8; i++)
     {
         x=1.0*i;
-        printf("x=%2.1f\n",x);                  /* µÚÒ»ÀàÕûÊý½×±´Èû¶ûº¯Êý*/
+        printf("x=%2.1f\n",x);                  /* ç¬¬ä¸€ç±»æ•´æ•°é˜¶è´å¡žå°”å‡½æ•°*/
 
         for(n=1; n<=4; n++)
         {
@@ -20,7 +20,7 @@ int main11bsl10()
 
         printf("\n");
 
-        for(n=1; n<=4; n++)                     /* µÚ¶þÀàÕûÊý½×±´Èû¶ûº¯Êý*/
+        for(n=1; n<=4; n++)                     /* ç¬¬äºŒç±»æ•´æ•°é˜¶è´å¡žå°”å‡½æ•°*/
         {
             y=bsl2(n,x);
             printf("Y(%d)=%1.8f ",n,y);

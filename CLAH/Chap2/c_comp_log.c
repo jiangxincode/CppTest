@@ -1,15 +1,15 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 
-#include "c_comp.h"
+#include "../utility.h"
 
 /**
- * º¯ÊýÃû£ºc_comp_log.c
- * ¹¦ÄÜÃèÊö£ºÇó¸´ÊýµÄ¶ÔÊý
- * ÊäÈë²ÎÊý£ºa£¨ÊäÈëµÄ½á¹¹Ìå£©
- *            c£¨¼ÆËã½á¹ûµÄ½á¹¹Ìå£©
- * ·µ»ØÖµ£º0£¨Ê§°Ü£©£¬1£¨³É¹¦£©
+ * å‡½æ•°åï¼šc_comp_log.c
+ * åŠŸèƒ½æè¿°ï¼šæ±‚å¤æ•°çš„å¯¹æ•°
+ * è¾“å…¥å‚æ•°ï¼šaï¼ˆè¾“å…¥çš„ç»“æž„ä½“ï¼‰
+ *            cï¼ˆè®¡ç®—ç»“æžœçš„ç»“æž„ä½“ï¼‰
+ * è¿”å›žå€¼ï¼š0ï¼ˆå¤±è´¥ï¼‰ï¼Œ1ï¼ˆæˆåŠŸï¼‰
  */
 int c_comp_log(struct c_comp *a,struct c_comp *c)
 {

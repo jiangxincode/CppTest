@@ -1,9 +1,9 @@
-
+ï»¿
 
 #include <stdio.h>
 #include "sech.c"
 #include "Fsech.c"
-#include "something.h"
+#include "../utility.h"
 
 int main14sech0()
 {
@@ -27,7 +27,7 @@ int main14sech0()
 
     do
     {
-        q=sech(x,16,i,a);                           /* ²éÕÒ²¢´òÓ¡*/
+        q=sech(x,16,i,a);                           /* æŸ¥æ‰¾å¹¶æ‰“å°*/
 
         if(q!=-1)
             printf("%-5d%-8s%-2c%-2d%\n",x[q].num,
@@ -38,22 +38,22 @@ int main14sech0()
     while(q!=-1);
 
     k = sizeof(STRU);
-    fp = fopen("stu.dat","w+");                       /* ´ò¿ªÎÄ¼şĞ´*/
+    fp = fopen("stu.dat","w+");                       /* æ‰“å¼€æ–‡ä»¶å†™*/
 
     for(i=0; i<16; i++)
-        if(fwrite(&x[i], k,1,fp) != 1)                /* Ğ´ÈëÎÄ¼ş*/
+        if(fwrite(&x[i], k,1,fp) != 1)                /* å†™å…¥æ–‡ä»¶*/
         {
-            printf("Cannot write file\n");           /* Ğ´ÈëÊ§°Ü*/
+            printf("Cannot write file\n");           /* å†™å…¥å¤±è´¥*/
             i = 16;
         }
 
     fclose(fp);
     printf("\nSerch from File: \n");
-    fp = fopen("stu.dat","r+");                      /* ´ò¿ªÎÄ¼ş¶Á*/
+    fp = fopen("stu.dat","r+");                      /* æ‰“å¼€æ–‡ä»¶è¯»*/
 
     do
     {
-        q = Fsech(fp,a,&str);                        /* ²éÕÒ²¢´òÓ¡*/
+        q = Fsech(fp,a,&str);                        /* æŸ¥æ‰¾å¹¶æ‰“å°*/
 
         if(q)
             printf("%-5d%-8s%-2c%-2d%\n",str.num,

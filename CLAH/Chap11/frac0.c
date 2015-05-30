@@ -1,8 +1,8 @@
-#include <math.h>
+ï»¿#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "something.h"
+#include "../utility.h"
 
 double* fab(int j,double *ab);
 
@@ -14,26 +14,26 @@ int main11frac0()
     e1 = 1.0e-7;
     e0 = 1.0e-30;
     f=frac(fab,nmax,e1,e0);
-    printf("f=%e\n",f);         /* ´òÓ¡½á¹û*/
+    printf("f=%e\n",f);         /* æ‰“å°ç»“æœ*/
     getchar();
     return 0;
 }
 
-double* fab(int j,double *ab)                /* ¼ÆËãÏµÊıµÄº¯Êı*/
+double* fab(int j,double *ab)                /* è®¡ç®—ç³»æ•°çš„å‡½æ•°*/
 {
-    double a = 0.5,x=2.5;       /* Á½¸ö²ÎÊı*/
+    double a = 0.5,x=2.5;       /* ä¸¤ä¸ªå‚æ•°*/
 
-    if(j==0)                    /*b0= 0£¬´ËÊ±µÄa0²»ÖØÒª*/
+    if(j==0)                    /*b0= 0ï¼Œæ­¤æ—¶çš„a0ä¸é‡è¦*/
     {
         ab[0] = 0.0;
         ab[1] = 0.0;
     }
-    else if(j==1)               /* a1 ºÍ b1*/
+    else if(j==1)               /* a1 å’Œ b1*/
     {
         ab[0] = 1.0;
         ab[1] = x+1.0-a;
     }
-    else                        /* aj ºÍ bj*/
+    else                        /* aj å’Œ bj*/
     {
         ab[0] = (j-1)*(a-j+1.0);
         ab[1] = x+2.0*j+1.0-a;

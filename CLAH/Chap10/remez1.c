@@ -1,27 +1,27 @@
-#include <stdlib.h>
+ï»¿#include <stdlib.h>
 
 #define PI 3.1415926
 #define REPS 1e-6
 
 void Remez(double a, double b, double p[7], double (*f)(double))
 /*
-a Ë«¾«¶ÈÊµÐÍ±äÁ¿¡£Çø¼ä×ó¶ËµãÖµ b Ë«¾«¶ÈÊµÐÍ±äÁ¿¡£Çø¼äÓÒ¶ËµãÖµ
-pË«¾«¶ÈÊµÐÍÒ»Î¬Êý×é£¬³¤¶ÈÎª7¡£·µ»Ø5´Î×î¼ÑÒ»ÖÂ±Æ½ü¶àÏîÊ½µÄ6¸öÏµÊý£¬×îºóÒ»ÏîÎª¶àÏîÊ½µÄÆ«²î(²»Ò»¶¨Îª¾ø¶ÔÖµ)
-f Ë«¾«¶ÈÊµÐÍº¯ÊýÖ¸Õë±äÁ¿¡£Ö¸Ïò¼ÆËãº¯Êýf(x)ÖµµÄº¯Êý¡£
+a åŒç²¾åº¦å®žåž‹å˜é‡ã€‚åŒºé—´å·¦ç«¯ç‚¹å€¼ b åŒç²¾åº¦å®žåž‹å˜é‡ã€‚åŒºé—´å³ç«¯ç‚¹å€¼
+påŒç²¾åº¦å®žåž‹ä¸€ç»´æ•°ç»„ï¼Œé•¿åº¦ä¸º7ã€‚è¿”å›ž5æ¬¡æœ€ä½³ä¸€è‡´é€¼è¿‘å¤šé¡¹å¼çš„6ä¸ªç³»æ•°ï¼Œæœ€åŽä¸€é¡¹ä¸ºå¤šé¡¹å¼çš„åå·®(ä¸ä¸€å®šä¸ºç»å¯¹å€¼)
+f åŒç²¾åº¦å®žåž‹å‡½æ•°æŒ‡é’ˆå˜é‡ã€‚æŒ‡å‘è®¡ç®—å‡½æ•°f(x)å€¼çš„å‡½æ•°ã€‚
 */
 {
-    int i,j,k,m,kk;//i,j¶þÎ¬Êý×éµÄÐÐÁÐ£¬kÒ»Î¬Êý×éÔªËØºÅ£¬mÐÂÖµ²åÈëµã
+    int i,j,k,m,kk;//i,jäºŒç»´æ•°ç»„çš„è¡Œåˆ—ï¼Œkä¸€ç»´æ•°ç»„å…ƒç´ å·ï¼Œmæ–°å€¼æ’å…¥ç‚¹
     double h = 0.00001*(b-a);
     double x1,newx,s,t;
     double x[7],ff[7],X[7][7],temp[7][7],tempf[7];
-    double (*xx)[7] =  X;//´æ·ÅX¾ØÕó£¬Ö¸ÕëµÄÐÎÊ½¿ÉÒÔ·½±ãµÄÍê³ÉÃ¿´Îµü´úÖÐµÄ²åÈëÐÂÒ»ÐÐµÄ²Ù×÷
+    double (*xx)[7] =  X;//å­˜æ”¾XçŸ©é˜µï¼ŒæŒ‡é’ˆçš„å½¢å¼å¯ä»¥æ–¹ä¾¿çš„å®Œæˆæ¯æ¬¡è¿­ä»£ä¸­çš„æ’å…¥æ–°ä¸€è¡Œçš„æ“ä½œ
     for (k=0; k<7; k++)
     {
         t = cos((6-k)*PI/6);
         x[k] = (b+a+(b-a)*t)/2.0;
         ff[k] = (*f)(x[i]);
-    }          //ÔÚÇø¼äÄÚÈ¡n+1´ÎÇÐ±ÈÑ©·ò¶àÏîÊ½µÄ½»´íµã×é×öÎª³õÊ¼µã¼¯
-    double pre_mu = 1.0e35; //±£Ö¤µü´úÄÜ¹»½øÐÐ
+    }          //åœ¨åŒºé—´å†…å–n+1æ¬¡åˆ‡æ¯”é›ªå¤«å¤šé¡¹å¼çš„äº¤é”™ç‚¹ç»„åšä¸ºåˆå§‹ç‚¹é›†
+    double pre_mu = 1.0e35; //ä¿è¯è¿­ä»£èƒ½å¤Ÿè¿›è¡Œ
     double mu = 1.0;
     for (i=0; i<7; i++)
     {
@@ -32,10 +32,10 @@ f Ë«¾«¶ÈÊµÐÍº¯ÊýÖ¸Õë±äÁ¿¡£Ö¸Ïò¼ÆËãº¯Êýf(x)ÖµµÄº¯Êý¡£
             xx[i][j] = x[i]*xx[i][j-1];
         xx[i][6] = mu;
         mu=-mu;
-    }         //³õÊ¼X¾ØÕó¹¹Ôì
-//ÏÂÃæ¿ªÊ¼µü´ú
-    int flagx; //¼ÇÂ¼f(newx)-P(newx)µÄ·ûºÅ
-    int times = 0; //¼ÇÂ¼µü´ú´ÎÊý
+    }         //åˆå§‹XçŸ©é˜µæž„é€ 
+//ä¸‹é¢å¼€å§‹è¿­ä»£
+    int flagx; //è®°å½•f(newx)-P(newx)çš„ç¬¦å·
+    int times = 0; //è®°å½•è¿­ä»£æ¬¡æ•°
     while (times < 100)
     {
         for (i=0; i<7; i++)
@@ -48,11 +48,11 @@ f Ë«¾«¶ÈÊµÐÍº¯ÊýÖ¸Õë±äÁ¿¡£Ö¸Ïò¼ÆËãº¯Êýf(x)ÖµµÄº¯Êý¡£
 
         mu = fabs(p[6]);
         if(fabs(mu-pre_mu)<REPS)
-            return;//Âú×ã¾«¶ÈÒªÇó£¬·µ»Ø
-        pre_mu = mu;  //Î´Âú×ã¾«¶ÈÒªÇó£¬¼ÇÂ¼ÏÂ´Ë´ÎµÄ\mu,È»ºó¿ªÊ¼ÏÂÃæµÄÔËËã
-        //É¨ÃèÑ°ÕÒ×î´óÆ«²îµãnewx
+            return;//æ»¡è¶³ç²¾åº¦è¦æ±‚ï¼Œè¿”å›ž
+        pre_mu = mu;  //æœªæ»¡è¶³ç²¾åº¦è¦æ±‚ï¼Œè®°å½•ä¸‹æ­¤æ¬¡çš„\mu,ç„¶åŽå¼€å§‹ä¸‹é¢çš„è¿ç®—
+        //æ‰«æå¯»æ‰¾æœ€å¤§åå·®ç‚¹newx
         x1 = a;
-        newx = a;   //newx¼ÇÂ¼ÐÂÕÒµ½µÄ×î´óÆ«²îµã
+        newx = a;   //newxè®°å½•æ–°æ‰¾åˆ°çš„æœ€å¤§åå·®ç‚¹
         while (x1 < b)
         {
             s = (*f)(x1);
@@ -68,19 +68,19 @@ f Ë«¾«¶ÈÊµÐÍº¯ÊýÖ¸Õë±äÁ¿¡£Ö¸Ïò¼ÆËãº¯Êýf(x)ÖµµÄº¯Êý¡£
             }
             x1 = x1+h;
         }
-        //É¨ÃèÑ°ÕÒ×î´óÆ«²îµãÓ¦´¦µÄÎ»ÖÃm
+        //æ‰«æå¯»æ‰¾æœ€å¤§åå·®ç‚¹åº”å¤„çš„ä½ç½®m
         for(i=0; i<7; i++)
             if (newx > x[i]) m=i;
-        //·ÖÇé¿öÌæ»»£¬Í¬Ê±¸ü¸ÄÏµÊý¾ØÕóxxºÍ´æ·Åº¯ÊýÖµµÄ½á¹ûÏòÁ¿ff
+        //åˆ†æƒ…å†µæ›¿æ¢ï¼ŒåŒæ—¶æ›´æ”¹ç³»æ•°çŸ©é˜µxxå’Œå­˜æ”¾å‡½æ•°å€¼çš„ç»“æžœå‘é‡ff
         if (newx < x[0])
         {
-            kk = 0;    //¼ÇÂ¼ÏÂ´ýÐÞ¸ÄµÄÐÐºÅ
+            kk = 0;    //è®°å½•ä¸‹å¾…ä¿®æ”¹çš„è¡Œå·
             s = (*f)(x[0]);
             t = p[5];
             for (i=4; i>=0; i--)
                 t = t*x[0] + p[i];
             s = s-t;
-            if (s*flagx < 0.0) //ÒìºÅ£¬Ìí¼Óµ½×îÇ°
+            if (s*flagx < 0.0) //å¼‚å·ï¼Œæ·»åŠ åˆ°æœ€å‰
             {
                 for (k=5; k>=0; k--)
                 {
@@ -95,13 +95,13 @@ f Ë«¾«¶ÈÊµÐÍº¯ÊýÖ¸Õë±äÁ¿¡£Ö¸Ïò¼ÆËãº¯Êýf(x)ÖµµÄº¯Êý¡£
         }
         else if(newx > x[6])
         {
-            kk = 6;   //¼ÇÂ¼ÏÂ´ýÐÞ¸ÄµÄÐÐºÅ
+            kk = 6;   //è®°å½•ä¸‹å¾…ä¿®æ”¹çš„è¡Œå·
             s = (*f)(x[6]);
             t = p[5];
             for (i=4; i>=0; i--)
                 t = t*x[6] + p[i];
             s = s-t;
-            if (s*flagx < 0.0) //ÒìºÅ£¬Ìí¼Óµ½×îºó
+            if (s*flagx < 0.0) //å¼‚å·ï¼Œæ·»åŠ åˆ°æœ€åŽ
             {
                 for (k=0; k<6; k++)
                 {
@@ -115,21 +115,21 @@ f Ë«¾«¶ÈÊµÐÍº¯ÊýÖ¸Õë±äÁ¿¡£Ö¸Ïò¼ÆËãº¯Êýf(x)ÖµµÄº¯Êý¡£
                 xx[6] = tempxx;
             }
         }
-        else //×î´óÖµÔÚx[m]Óëx[m+1]Ö®¼ä
+        else //æœ€å¤§å€¼åœ¨x[m]ä¸Žx[m+1]ä¹‹é—´
         {
             s = (*f)(x[m]);
             t = p[5];
             for (i=4; i>=0; i--)
                 t = t*x[m] + p[i];
             s = s-t;
-            if (s*flagx > 0.0) //Í¬ºÅ£¬ÔòÌæ»»x[m]
+            if (s*flagx > 0.0) //åŒå·ï¼Œåˆ™æ›¿æ¢x[m]
             {
-                kk = m;       //¼ÇÂ¼ÏÂ´ýÐÞ¸ÄµÄÐÐºÅ
+                kk = m;       //è®°å½•ä¸‹å¾…ä¿®æ”¹çš„è¡Œå·
                 xx[kk][6] = -xx[kk+1][6];
             }
-            else           //ÒìºÅ£¬ÔòÌæ»»x[m+1]
+            else           //å¼‚å·ï¼Œåˆ™æ›¿æ¢x[m+1]
             {
-                kk = m+1;     //¼ÇÂ¼ÏÂ´ýÐÞ¸ÄµÄÐÐºÅ
+                kk = m+1;     //è®°å½•ä¸‹å¾…ä¿®æ”¹çš„è¡Œå·
                 xx[kk][6] = -xx[m][6];
             }
         }

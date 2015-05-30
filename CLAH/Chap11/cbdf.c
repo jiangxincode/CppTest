@@ -1,13 +1,13 @@
-#include "something.h"
+ï»¿#include "../utility.h"
 
-#define EPS 1.0e-6                    /* Ê¹ÓÃ²»ÍêÈ«±´Ëþº¯ÊýÐèÒªµÄÊý¾Ý*/
+#define EPS 1.0e-6                    /* ä½¿ç”¨ä¸å®Œå…¨è´å¡”å‡½æ•°éœ€è¦çš„æ•°æ®*/
 
 /**
- * º¯ Êý Ãû£ºcbdf
- * ¹¦ÄÜÃèÊö£ºÇó½âÀÛ»ý¶þÏîÊ½·Ö²¼º¯ÊýµÄÖµ
- * ÊäÈë²ÎÊý£ºx ×Ô±äÁ¿xµÄÖµ¡£
- *           n ×Ô±äÁ¿nµÄÖµ
- * ·µ »Ø Öµ£ºÀÛ»ý¶þÏîÊ½·Ö²¼º¯ÊýµÄÖµ
+ * å‡½ æ•° åï¼šcbdf
+ * åŠŸèƒ½æè¿°ï¼šæ±‚è§£ç´¯ç§¯äºŒé¡¹å¼åˆ†å¸ƒå‡½æ•°çš„å€¼
+ * è¾“å…¥å‚æ•°ï¼šx è‡ªå˜é‡xçš„å€¼ã€‚
+ *           n è‡ªå˜é‡nçš„å€¼
+ * è¿” å›ž å€¼ï¼šç´¯ç§¯äºŒé¡¹å¼åˆ†å¸ƒå‡½æ•°çš„å€¼
  */
 double cbdf(double p,int n,int k)
 {

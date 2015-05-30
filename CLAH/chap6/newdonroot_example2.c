@@ -1,4 +1,4 @@
-#include<stdlib.h>
+ï»¿#include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
 #include "newdonroot.c"
@@ -9,7 +9,7 @@ int main6newdonroot2()
     double x0;
     double eps;
     int max;
-    x0=0.0;                         /* ³õÖµ£¬¾«¶È£¬×î´óµü´ú´ÎÊı*/
+    x0=0.0;                         /* åˆå€¼ï¼Œç²¾åº¦ï¼Œæœ€å¤§è¿­ä»£æ¬¡æ•°*/
     eps=0.00001;
     max=60;
     printf("  x(k)         x(k+1)        dis\n\n");
@@ -26,13 +26,13 @@ int main6newdonroot2()
     return 0;
 }
 
-static double f(x)                         /* ¼ÆËãº¯ÊıÖµ*/
+static double f(x)                         /* è®¡ç®—å‡½æ•°å€¼*/
 double x;
 {
     return x*x*x-3*x+1;
 }
 
-double fd(x)                        /* ¼ÆËãµ¼º¯ÊıÖµ*/
+double fd(x)                        /* è®¡ç®—å¯¼å‡½æ•°å€¼*/
 double x;
 {
     return 3*x*x-3;

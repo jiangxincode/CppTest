@@ -1,4 +1,4 @@
-//下面给出的是用两个栈算法实现的程序的源代码：
+﻿//下面给出的是用两个栈算法实现的程序的源代码：
 #include<stdio.h>
 #include<string.h>
 #include<math.h>

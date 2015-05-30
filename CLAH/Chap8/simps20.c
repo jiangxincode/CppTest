@@ -1,4 +1,4 @@
-#include <math.h>
+ï»¿#include <math.h>
 #include <stdio.h>
 #include "simps2.c"
 static   double f(double,double);
@@ -10,19 +10,19 @@ int main8simps20()
     b = 4.0;
     eps = 0.0001;
     h0 = 1e-6;
-    s = simps2(a,b,10,eps,h0,f,fy);        /* µ÷ÓÃº¯Êı½øĞĞ»ı·Ö*/
-    printf("simps2: s=%2.5f\n",s);         /* ´òÓ¡»ı·Ö½á¹û*/
+    s = simps2(a,b,10,eps,h0,f,fy);        /* è°ƒç”¨å‡½æ•°è¿›è¡Œç§¯åˆ†*/
+    printf("simps2: s=%2.5f\n",s);         /* æ‰“å°ç§¯åˆ†ç»“æœ*/
     getchar();
     return 0;
 }
-static double f(x,y)                            /* ±»»ı·ÖµÄº¯Êı*/
+static double f(x,y)                            /* è¢«ç§¯åˆ†çš„å‡½æ•°*/
 double x,y;
 {
     double z;
     z = exp(-x*y)/(1.0+x*y);
     return(z);
 }
-static void fy(x,y)                             /* Çó»ı·Ö½çµÄº¯Êı*/
+static void fy(x,y)                             /* æ±‚ç§¯åˆ†ç•Œçš„å‡½æ•°*/
 double x,y[2];
 {
     y[0] = 0;

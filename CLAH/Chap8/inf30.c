@@ -1,20 +1,20 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include "hemt.c"
 #include "gasi.c"
 static double f1(double);
 int main8inf30()
 {
     double z;
-    printf("Hermite:\n");                      /* °£¶ûÃ×ÌØ-¸ßË¹Çó»ý·¨*/
+    printf("Hermite:\n");                      /* åŸƒå°”ç±³ç‰¹-é«˜æ–¯æ±‚ç§¯æ³•*/
     z = hemt(f1);
     printf("t=%2.8f\n",z);
-    printf("Gauss:\n");                        /* ×ÔÊÊÓ¦¸ßË¹Çó»ý·¨*/
+    printf("Gauss:\n");                        /* è‡ªé€‚åº”é«˜æ–¯æ±‚ç§¯æ³•*/
     z = gasi(-1.0e35,1.0e35,1.0e-9,10,f1);
     printf("t=%2.8f\n",z);
     return 0;
 }
 
-static double f1(x)                                  /* ±»»ýº¯Êý*/
+static double f1(x)                                  /* è¢«ç§¯å‡½æ•°*/
 double x;
 {
     double y;

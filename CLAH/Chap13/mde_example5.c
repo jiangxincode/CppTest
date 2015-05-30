@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include "mde.c"
 #define pi 3.1415926
@@ -7,7 +7,7 @@ int main13mde_example5()
     int L,j;
     double *rand;
     double x,mean,adev,sddev,var,skew,kurt;
-    L=100;  /*Éú³É100¸öËæ»úÊı*/
+    L=100;  /*ç”Ÿæˆ100ä¸ªéšæœºæ•°*/
     rand=(double*)malloc(sizeof(double)*L);
 
     if(rand==NULL)

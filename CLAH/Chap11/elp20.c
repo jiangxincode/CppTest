@@ -1,7 +1,7 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <math.h>
 
-#include "something.h"
+#include "../utility.h"
 
 int main11elp20()
 {
@@ -10,18 +10,18 @@ int main11elp20()
 
     for(i=0; i<=10; i++)
     {
-        f=i*3.1415926/10.0;                           /* ¼ÆËãphi*/
+        f=i*3.1415926/10.0;                           /* è®¡ç®—phi*/
         sf = sin(f);
         cf = cos(f);
         k=0.5;
         y = sf*RD(cf*cf,(1.0+k*sf)*(1.0-k*sf),1.0);
         y = k*k*sf*sf*y/3.0;
-        y = sf*RF(cf*cf,(1.0+k*sf)*(1.0-k*sf),1.0)-y;   /* µ÷ÓÃº¯ÊýÇóÖµ²¢´òÓ¡½á¹û*/
+        y = sf*RF(cf*cf,(1.0+k*sf)*(1.0-k*sf),1.0)-y;   /* è°ƒç”¨å‡½æ•°æ±‚å€¼å¹¶æ‰“å°ç»“æžœ*/
         printf("F2(%3.2f, %6.5f)=%6.5f     ",k,f,y);
         k=1.0;
         y = sf*RD(cf*cf,(1.0+k*sf)*(1.0-k*sf),1.0);
         y = k*k*sf*sf*y/3.0;
-        y = sf*RF(cf*cf,(1.0+k*sf)*(1.0-k*sf),1.0)-y;   /* µ÷ÓÃº¯ÊýÇóÖµ²¢´òÓ¡½á¹û*/
+        y = sf*RF(cf*cf,(1.0+k*sf)*(1.0-k*sf),1.0)-y;   /* è°ƒç”¨å‡½æ•°æ±‚å€¼å¹¶æ‰“å°ç»“æžœ*/
         printf("F2(%3.2f, %6.5f)=%6.5f\n",k,f,y);
     }
 

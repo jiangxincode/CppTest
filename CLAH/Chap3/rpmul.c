@@ -1,12 +1,12 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 
 /**
- * º¯ Êý Ãû£ºrpmul(a,n,b,m,c)
- * ¹¦ÄÜÃèÊö£ºÍê³ÉÏµÊý±íÊ¾µÄÊµÏµÊýµÄ¶àÏîÊ½AÓëBÏà³Ë£¬½á¹ûÏµÊý·ÅÔÚcÀï
- * ÊäÈë²ÎÊý£ºa£¨¶àÏîÊ½AÏµÊý£©£¬n£¨ÏµÊý¸öÊý£©
- *           b£¨¶àÏîÊ½BÏµÊý£©£¬m£¨ÏµÊý¸öÊý£©
- *            c£¨·µ»ØµÄ¶àÏîÊ½CµÄÏµÊý£©
- * ·µ »Ø Öµ£ºÕûÐÍÊý×Ö¡£¼ÆËã³É¹¦Ôò·µ»Ø1£¬·ñÔò·µ»Ø0
+ * å‡½ æ•° åï¼šrpmul(a,n,b,m,c)
+ * åŠŸèƒ½æè¿°ï¼šå®Œæˆç³»æ•°è¡¨ç¤ºçš„å®žç³»æ•°çš„å¤šé¡¹å¼Aä¸ŽBç›¸ä¹˜ï¼Œç»“æžœç³»æ•°æ”¾åœ¨cé‡Œ
+ * è¾“å…¥å‚æ•°ï¼šaï¼ˆå¤šé¡¹å¼Aç³»æ•°ï¼‰ï¼Œnï¼ˆç³»æ•°ä¸ªæ•°ï¼‰
+ *           bï¼ˆå¤šé¡¹å¼Bç³»æ•°ï¼‰ï¼Œmï¼ˆç³»æ•°ä¸ªæ•°ï¼‰
+ *            cï¼ˆè¿”å›žçš„å¤šé¡¹å¼Cçš„ç³»æ•°ï¼‰
+ * è¿” å›ž å€¼ï¼šæ•´åž‹æ•°å­—ã€‚è®¡ç®—æˆåŠŸåˆ™è¿”å›ž1ï¼Œå¦åˆ™è¿”å›ž0
  */
 int rpmul(double *a,int n,double *b,int m,double *c)
 {
@@ -18,14 +18,14 @@ int rpmul(double *a,int n,double *b,int m,double *c)
         return(0);
     }
 
-    k = m+n-1;	 	/* Ïà³ËºóµÄÏµÊý¸öÊý*/
+    k = m+n-1;	 	/* ç›¸ä¹˜åŽçš„ç³»æ•°ä¸ªæ•°*/
 
-    for(i=0; i<k; i++)    /* ÏÈ½«ÏµÊýÏòÁ¿ÖÃÎª0*/
+    for(i=0; i<k; i++)    /* å…ˆå°†ç³»æ•°å‘é‡ç½®ä¸º0*/
     {
         c[i] = 0.0;
     }
 
-    for(i=0; i<n; i++)    /* ÒÀ´Î½«Ïà³ËµÄ½á¹ûÀÛ¼Óµ½¶ÔÓ¦µÄÏîÉÏ*/
+    for(i=0; i<n; i++)    /* ä¾æ¬¡å°†ç›¸ä¹˜çš„ç»“æžœç´¯åŠ åˆ°å¯¹åº”çš„é¡¹ä¸Š*/
         for(j=0; j<m; j++)
         {
             c[i+j] += a[i]*b[j];

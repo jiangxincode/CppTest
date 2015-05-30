@@ -1,9 +1,9 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <math.h>
 
 #include "tzi1.c"
 #include "simps1.c"
-#include "something.h"
+#include "../utility.h"
 
 static double f1(double);
 
@@ -14,18 +14,18 @@ int main8tzi0()
     b = 4.0;
     eps = 1e-8;
     h0 = 1e-5;
-    z=tzi1(a,b,4,eps,h0,f1);                     /* ÓÃ±ä²½³¤ÌİĞÎÇó»ı·¨»ı·Ö*/
-    printf("tzi1: t=%2.5f\n",z);                 /* ´òÓ¡½á¹û*/
-    z=tzi2(a,b,4,eps,h0,f1);                     /* ÓÃ×ÔÊÊÓ¦ÌİĞÎÇó»ı·¨»ı·Ö*/
+    z=tzi1(a,b,4,eps,h0,f1);                     /* ç”¨å˜æ­¥é•¿æ¢¯å½¢æ±‚ç§¯æ³•ç§¯åˆ†*/
+    printf("tzi1: t=%2.5f\n",z);                 /* æ‰“å°ç»“æœ*/
+    z=tzi2(a,b,4,eps,h0,f1);                     /* ç”¨è‡ªé€‚åº”æ¢¯å½¢æ±‚ç§¯æ³•ç§¯åˆ†*/
     printf("tzi2: t=%2.5f\n",z);
-    z=simps1(a,b,4,eps,h0,f1);                   /* ÓÃ±ä²½³¤ĞÁ²·ÉúÇó»ı·¨»ı·Ö*/
+    z=simps1(a,b,4,eps,h0,f1);                   /* ç”¨å˜æ­¥é•¿è¾›åœç”Ÿæ±‚ç§¯æ³•ç§¯åˆ†*/
     printf("simp: t=%2.5f\n",z);
-    z=rbg(a,b,4,eps,f1);                         /* ÓÃÁú±´¸ñ»ı·Ö·¨»ı·Ö*/
+    z=rbg(a,b,4,eps,f1);                         /* ç”¨é¾™è´æ ¼ç§¯åˆ†æ³•ç§¯åˆ†*/
     printf("robg: t=%2.5f\n",z);
     getchar();
 }
 
-static double f1(double x)                                      /* ±»»ı·ÖµÄº¯Êı*/
+static double f1(double x)                                      /* è¢«ç§¯åˆ†çš„å‡½æ•°*/
 {
     double y;
     y=exp(-x*x)/(1.0+x*x);

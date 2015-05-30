@@ -1,4 +1,4 @@
-#include <glib.h>
+﻿#include <glib.h>
 
 int main0024(int argc, char* argv[])
 {

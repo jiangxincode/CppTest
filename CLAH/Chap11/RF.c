@@ -1,13 +1,13 @@
-#include <math.h>
+ï»¿#include <math.h>
 #include <stdio.h>
 
 /**
- * º¯ Êı Ãû£ºRF
- * ¹¦ÄÜÃèÊö£ºÇó½âµÚÒ»ÀàÍÖÔ²»ı·ÖµÄÖµ
- * ÊäÈë²ÎÊı£ºx ÇóÖµµÄ×Ô±äÁ¿
- *           y ÇóÖµµÄ×Ô±äÁ¿
- *           z ÇóÖµµÄ×Ô±äÁ¿
- * ·µ »Ø Öµ£ºµÚÒ»ÀàÍÖÔ²»ı·ÖµÄÖµ
+ * å‡½ æ•° åï¼šRF
+ * åŠŸèƒ½æè¿°ï¼šæ±‚è§£ç¬¬ä¸€ç±»æ¤­åœ†ç§¯åˆ†çš„å€¼
+ * è¾“å…¥å‚æ•°ï¼šx æ±‚å€¼çš„è‡ªå˜é‡
+ *           y æ±‚å€¼çš„è‡ªå˜é‡
+ *           z æ±‚å€¼çš„è‡ªå˜é‡
+ * è¿” å› å€¼ï¼šç¬¬ä¸€ç±»æ¤­åœ†ç§¯åˆ†çš„å€¼
  */
 double RF(double x,double y,double z)
 {
@@ -15,7 +15,7 @@ double RF(double x,double y,double z)
     double xt,yt,zt;
     eps = 1.0e-30;
 
-    if(x<0||y<0||z<0||(x+y)<eps||(y+z)<eps||(x+z)<eps)         /* ¼ì²é×Ô±äÁ¿·¶Î§*/
+    if(x<0||y<0||z<0||(x+y)<eps||(y+z)<eps||(x+z)<eps)         /* æ£€æŸ¥è‡ªå˜é‡èŒƒå›´*/
     {
         printf("Parameters incorrect\n");
         return(0.0);
@@ -27,7 +27,7 @@ double RF(double x,double y,double z)
         t1 = sqrt(y);
         t2 = sqrt(z);
         ll = t*(t1+t2)+t1*t2;
-        x = (x+ll)/4.0;                                        /* ¸üĞÂx,y,z*/
+        x = (x+ll)/4.0;                                        /* æ›´æ–°x,y,z*/
         y = (y+ll)/4.0;
         z = (z+ll)/4.0;
         t = (x+y+z)/3.0;
@@ -37,9 +37,9 @@ double RF(double x,double y,double z)
         flag = fabs(zt)>fabs(yt)?fabs(zt):fabs(yt);
         flag = flag>fabs(xt)?flag:fabs(xt);
     }
-    while(flag > 0.0025);                                   /* Õâ¸öãĞÖµÓÃÓÚÅĞ¶Ïxyz³ä·Ö½Ó½ü*/
+    while(flag > 0.0025);                                   /* è¿™ä¸ªé˜ˆå€¼ç”¨äºåˆ¤æ–­xyzå……åˆ†æ¥è¿‘*/
 
-    t1 = xt*yt-zt*zt;                                        /* ÓÃÌ©ÀÕÕ¹¿ª¼ÆËã»ı·ÖÖµ*/
+    t1 = xt*yt-zt*zt;                                        /* ç”¨æ³°å‹’å±•å¼€è®¡ç®—ç§¯åˆ†å€¼*/
     t2 = xt*yt*zt;
     t = (1-t1/10.0+t2/14.0+t1*t1/24.0-3*t1*t2/44.0)/sqrt(t);
     return(t);

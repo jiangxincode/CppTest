@@ -1,4 +1,4 @@
-#include<stdlib.h>
+ï»¿#include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
 #include"disroot.c"
@@ -8,14 +8,14 @@ int main6disroot1()
     double a,b,eps,root;
     a=0.0;
     b=1.0;
-    eps=0.00001;              /* Çø¼äºÍ¾«¶ÈÒªÇó*/
+    eps=0.00001;              /* åŒºé—´å’Œç²¾åº¦è¦æ±‚*/
     printf("    a          (a+b)/2         b\n\n");
-    root=disroot(a,b,f,eps);              /* ¶ş·Ö·¨Çó¸ù²¢´òÓ¡½á¹û*/
+    root=disroot(a,b,f,eps);              /* äºŒåˆ†æ³•æ±‚æ ¹å¹¶æ‰“å°ç»“æœ*/
     printf("\nThe root is  %1.7f\n",root);
     return 0;
 }
 
-static double f(x)                               /* ´ı½âµÄ·½³Ì*/
+static double f(x)                               /* å¾…è§£çš„æ–¹ç¨‹*/
 double x;
 {
     double z;

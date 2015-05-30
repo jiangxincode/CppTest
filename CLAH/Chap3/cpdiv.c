@@ -1,16 +1,16 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 
-#include "../Chap2/c_comp.h"
+#include "../utility.h"
 
 /**
- * º¯ Êı Ãû£ºcpdiv(a,n,b,m,q,r)
- * ¹¦ÄÜÃèÊö£ºÍê³ÉÏµÊı±íÊ¾µÄ¸´ÏµÊıµÄ¶àÏîÊ½AÓëBÏà³ı
-       ÉÌ¶àÏîÊ½ÏµÊı·ÅÔÚqÀï£¬ÓàÊ½ÏµÊı·ÅÔÚrÀï
- * ÊäÈë²ÎÊı£ºa£¨¶àÏîÊ½AÏµÊı£©£¬n£¨ÏµÊı¸öÊı£©
- *            b£¨¶àÏîÊ½BÏµÊı£©£¬m£¨ÏµÊı¸öÊı£©
- *            q£¨ÉÌ¶àÏîÊ½QÏµÊı£©£¬k£¨ÏµÊı¸öÊı£©k=max(n-m+1,0)
- *            r£¨ÓàÊ½RÏµÊı£©£¬l£¨ÏµÊı¸öÊı£©ĞèÒªl=n
- * ·µ »Ø Öµ£ºÕûĞÍÊı×Ö¡£¼ÆËã³É¹¦Ôò·µ»Ø1£¬·ñÔò·µ»Ø0
+ * å‡½ æ•° åï¼šcpdiv(a,n,b,m,q,r)
+ * åŠŸèƒ½æè¿°ï¼šå®Œæˆç³»æ•°è¡¨ç¤ºçš„å¤ç³»æ•°çš„å¤šé¡¹å¼Aä¸Bç›¸é™¤
+       å•†å¤šé¡¹å¼ç³»æ•°æ”¾åœ¨qé‡Œï¼Œä½™å¼ç³»æ•°æ”¾åœ¨ré‡Œ
+ * è¾“å…¥å‚æ•°ï¼šaï¼ˆå¤šé¡¹å¼Aç³»æ•°ï¼‰ï¼Œnï¼ˆç³»æ•°ä¸ªæ•°ï¼‰
+ *            bï¼ˆå¤šé¡¹å¼Bç³»æ•°ï¼‰ï¼Œmï¼ˆç³»æ•°ä¸ªæ•°ï¼‰
+ *            qï¼ˆå•†å¤šé¡¹å¼Qç³»æ•°ï¼‰ï¼Œkï¼ˆç³»æ•°ä¸ªæ•°ï¼‰k=max(n-m+1,0)
+ *            rï¼ˆä½™å¼Rç³»æ•°ï¼‰ï¼Œlï¼ˆç³»æ•°ä¸ªæ•°ï¼‰éœ€è¦l=n
+ * è¿” å› å€¼ï¼šæ•´å‹æ•°å­—ã€‚è®¡ç®—æˆåŠŸåˆ™è¿”å›1ï¼Œå¦åˆ™è¿”å›0
  */
 int cpdiv(struct c_comp *a,int n,struct c_comp *b,int m,struct c_comp *q,int k,struct c_comp *r,int l)
 {
@@ -18,7 +18,7 @@ int cpdiv(struct c_comp *a,int n,struct c_comp *b,int m,struct c_comp *q,int k,s
     struct c_comp t1,t2;
     double tmp;
 
-    if((a==NULL)||(b==NULL)||(q==NULL)||(r==NULL))  /* ¼ì²âÖ¸ÕëÊÇ·ñÎª¿Õ*/
+    if((a==NULL)||(b==NULL)||(q==NULL)||(r==NULL))  /* æ£€æµ‹æŒ‡é’ˆæ˜¯å¦ä¸ºç©º*/
     {
         printf("(cpdiv)NULL pointer found.\n");
         return(0);
@@ -30,19 +30,19 @@ int cpdiv(struct c_comp *a,int n,struct c_comp *b,int m,struct c_comp *q,int k,s
         return(0);
     }
 
-    for(i=0; i<n; i++)			          /* ÏÈ½«a´æÈërÖĞ£¬Õâ¾ÍÊÇ¿ªÊ¼³ı·¨Ç°µÄÓàÊ½*/
+    for(i=0; i<n; i++)			          /* å…ˆå°†aå­˜å…¥rä¸­ï¼Œè¿™å°±æ˜¯å¼€å§‹é™¤æ³•å‰çš„ä½™å¼*/
     {
         r[i].rmz = a[i].rmz;
         r[i].imz = a[i].imz;
     }
 
-    for(i=0; i<k; i++)				  /* ´ËÊ±µÄÉÌÎª0*/
+    for(i=0; i<k; i++)				  /* æ­¤æ—¶çš„å•†ä¸º0*/
     {
         q[i].rmz = 0;
         q[i].imz = 0;
     }
 
-    /* ÅĞ¶Ï¶àÏîÊ½B×î¸ß´ÎÏîÏµÊıÊÇ·ñÎª0*/
+    /* åˆ¤æ–­å¤šé¡¹å¼Bæœ€é«˜æ¬¡é¡¹ç³»æ•°æ˜¯å¦ä¸º0*/
     tmp = b[m-1].rmz*b[m-1].rmz+b[m-1].imz*b[m-1].imz;
 
     if(tmp+1.0==1.0)
@@ -51,16 +51,16 @@ int cpdiv(struct c_comp *a,int n,struct c_comp *b,int m,struct c_comp *q,int k,s
         return(0);
     }
 
-    b[m-1].imz = -b[m-1].imz;  			  /* ÏÈÈ¡b[m-1]µÄ¹²éî£¬½«¸´Êı³ı·¨×ª»¯³É³Ë·¨*/
+    b[m-1].imz = -b[m-1].imz;  			  /* å…ˆå–b[m-1]çš„å…±è½­ï¼Œå°†å¤æ•°é™¤æ³•è½¬åŒ–æˆä¹˜æ³•*/
 
     for(i=0; i<k; i++)
     {
         kk = k-i-1;
         jj = n-i-1;
-        c_comp_product(&r[jj],&b[m-1],&t1);		  /* Çó³öµ±Ç°µÄÉÌ*/
+        c_comp_product(&r[jj],&b[m-1],&t1);		  /* æ±‚å‡ºå½“å‰çš„å•†*/
         q[kk].rmz = t1.rmz/tmp;
         q[kk].imz = t1.imz/tmp;
-        r[jj].rmz = 0.0;			          /* ´ÓÓàÊ½ÖĞ¼õÈ¥µ±Ç°µÄÉÌÓë¶àÏîÊ½BµÄ»ı*/
+        r[jj].rmz = 0.0;			          /* ä»ä½™å¼ä¸­å‡å»å½“å‰çš„å•†ä¸å¤šé¡¹å¼Bçš„ç§¯*/
         r[jj].imz = 0.0;
 
         for(j=0; j<m-1; j++)
@@ -70,7 +70,7 @@ int cpdiv(struct c_comp *a,int n,struct c_comp *b,int m,struct c_comp *q,int k,s
         }
     }
 
-    b[m-1].imz = -b[m-1].imz; 			  /* »Ö¸´b[m-1]*/
+    b[m-1].imz = -b[m-1].imz; 			  /* æ¢å¤b[m-1]*/
     return(1);
 }
 

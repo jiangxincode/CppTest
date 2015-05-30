@@ -1,4 +1,4 @@
-#include<stdlib.h>
+ï»¿#include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
 #include"gradroot.c"
@@ -9,15 +9,15 @@ int main6gradroot7()
     int n=3,max=600,i;
     double *x0;
     x0=(double*)malloc(n*sizeof(double));
-    x0[0]=1;                                    /* ³õÖµ*/
+    x0[0]=1;                                    /* åˆå€¼*/
     x0[1]=-3;
     x0[2]=5;
 
-    if(gradroot(x0,n,f,eps,max))                 /* µ÷ÓÃº¯ÊıÇó½â*/
+    if(gradroot(x0,n,f,eps,max))                 /* è°ƒç”¨å‡½æ•°æ±‚è§£*/
     {
         for(i=0; i<n; i++)
         {
-            printf("x[%d]=%1.7f\n",i,x0[i]);    /* Êä³ö*/
+            printf("x[%d]=%1.7f\n",i,x0[i]);    /* è¾“å‡º*/
         }
     }
     else
@@ -28,7 +28,7 @@ int main6gradroot7()
     return 0;
 }
 
-static double f(x,fd)                                   /* ·½³Ì×é*/
+static double f(x,fd)                                   /* æ–¹ç¨‹ç»„*/
 double *x,*fd;
 {
     double f1,f2,f3,df1,df2,df3;

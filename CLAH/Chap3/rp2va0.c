@@ -1,6 +1,6 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 
-#include "something.h"
+#include "../utility.h"
 
 int main3rp2va0()
 {
@@ -9,7 +9,7 @@ int main3rp2va0()
         {3.0,4.0,5.0},{5.0,6.0,7.0}
     };
     printf("\n");
-    r=rp2va(a[0],4,3,1.6,-1.4); 	/* µ÷ÓÃº¯Êý½øÐÐÇó½â*/
+    r=rp2va(a[0],4,3,1.6,-1.4); 	/* è°ƒç”¨å‡½æ•°è¿›è¡Œæ±‚è§£*/
     printf("A(1.60,-1.4)=%2.5f\n",r);
     printf("\n");
     return 0;

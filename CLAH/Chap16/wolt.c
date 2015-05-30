@@ -1,21 +1,21 @@
-/*=============================================================
- * º¯ Êý Ãû£ºwolt1 (x,n,y)
- * ¹¦ÄÜÃèÊö£ºÎÖ¶ûÊ²±ä»»
- * ÊäÈë²ÎÊý£ºx£¨±ä»»³õÊ¼Öµ£©£¬n£¨ÏµÊý¸öÊý£©¡¢y£¨±ä»»ºóÐòÁÐ£©
- * ·µ »Ø Öµ£ºÕûÐÍÊý×Ö¡£¼ÆËã³É¹¦Ôò·µ»Ø1£¬·ñÔò·µ»Ø0
+ï»¿/*=============================================================
+ * å‡½ æ•° åï¼šwolt1 (x,n,y)
+ * åŠŸèƒ½æè¿°ï¼šæ²ƒå°”ä»€å˜æ¢
+ * è¾“å…¥å‚æ•°ï¼šxï¼ˆå˜æ¢åˆå§‹å€¼ï¼‰ï¼Œnï¼ˆç³»æ•°ä¸ªæ•°ï¼‰ã€yï¼ˆå˜æ¢åŽåºåˆ—ï¼‰
+ * è¿” å›ž å€¼ï¼šæ•´åž‹æ•°å­—ã€‚è®¡ç®—æˆåŠŸåˆ™è¿”å›ž1ï¼Œå¦åˆ™è¿”å›ž0
 //==============================================================*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-static int wolt1(double *x,int n,double *y);    /* ÒòÎªÒªµÝ¹éµ÷ÓÃ£¬ËùÒÔÏÈÉùÃ÷*/
+static int wolt1(double *x,int n,double *y);    /* å› ä¸ºè¦é€’å½’è°ƒç”¨ï¼Œæ‰€ä»¥å…ˆå£°æ˜Ž*/
 static int wolt(y,n,x)
 int n;
 double *x,*y;
 {
     int i,j,k,nn;
     double t;
-    k = log(n-0.5)/log(2.0)+1;                  /* Çó³ök£¬Ê¹2^k>=n>2^(k-1) */
-    nn = 1;			                    /* ÅÐ¶ÏnÊÇ·ñÊÇ2µÄÕûÊýÃÝ£¬²»ÊÇµÄ»°ÍË³ö³ÌÐò*/
+    k = log(n-0.5)/log(2.0)+1;                  /* æ±‚å‡ºkï¼Œä½¿2^k>=n>2^(k-1) */
+    nn = 1;			                    /* åˆ¤æ–­næ˜¯å¦æ˜¯2çš„æ•´æ•°å¹‚ï¼Œä¸æ˜¯çš„è¯é€€å‡ºç¨‹åº*/
 
     for(i=0; i<k; i++)
     {
@@ -28,13 +28,13 @@ double *x,*y;
         return(0);
     }
 
-    j = wolt1(y,n,x);		                       /* µ÷ÓÃ×Óº¯ÊýÇó½âÇóºÍ·ûºÅÖÐµÄ²¿·Ö*/
+    j = wolt1(y,n,x);		                       /* è°ƒç”¨å­å‡½æ•°æ±‚è§£æ±‚å’Œç¬¦å·ä¸­çš„éƒ¨åˆ†*/
 
     if(j)
     {
         t = 1.0/sqrt(n);
 
-        for(i=0; i<n; i++)		                       /* ½«×Óº¯Êý·µ»ØµÄ½á¹û³ýÒÔn^0.5*/
+        for(i=0; i<n; i++)		                       /* å°†å­å‡½æ•°è¿”å›žçš„ç»“æžœé™¤ä»¥n^0.5*/
         {
             x[i] *= t;
         }
@@ -49,12 +49,12 @@ static int wolt1(double *x,int n,double *y)
 
     if(n==1)
     {
-        /* µ±ÐòÁÐ³¤¶ÈÎª1Ê±£¬ÎÖ¶ûÊ²±ä»»ÊÇËü±¾Éí*/
+        /* å½“åºåˆ—é•¿åº¦ä¸º1æ—¶ï¼Œæ²ƒå°”ä»€å˜æ¢æ˜¯å®ƒæœ¬èº«*/
         y[0] = x[0];
         return(1);
     }
 
-    k = n>>1;		               /* kÊÇnµÄÒ»°ë£¬¼´Á½¸öÐ¡¹æÄ£ÎÊÌâÐèÒª·ÖÅä¿Õ¼ä´óÐ¡*/
+    k = n>>1;		               /* kæ˜¯nçš„ä¸€åŠï¼Œå³ä¸¤ä¸ªå°è§„æ¨¡é—®é¢˜éœ€è¦åˆ†é…ç©ºé—´å¤§å°*/
     x0 = (double*)malloc(k*sizeof(double));
     x1 = (double*)malloc(k*sizeof(double));
     y0 = (double*)malloc(k*sizeof(double));
@@ -64,23 +64,23 @@ static int wolt1(double *x,int n,double *y)
     {
         printf("memory xlloc failed.\n");
         return(0);
-    }			                                      /* ½«ÐòÁÐ·Ö³ÉÁ½°ë*/
+    }			                                      /* å°†åºåˆ—åˆ†æˆä¸¤åŠ*/
 
     for(i=0; i<k; i++)
     {
         j=2*i;
         x0[i] = x[j];
         x1[i] = x[j+1];
-    }			                                      /* µÝ¹éµ÷ÓÃ´Ëº¯Êý*/
+    }			                                      /* é€’å½’è°ƒç”¨æ­¤å‡½æ•°*/
 
     i = wolt1(x0,k,y0);
     j = wolt1(x1,k,y1);
 
-    if(i && j)                                /* ½«µÃµ½µÄÁ½²¿·ÖÐòÁÐ×ÛºÏÆðÀ´*/
+    if(i && j)                                /* å°†å¾—åˆ°çš„ä¸¤éƒ¨åˆ†åºåˆ—ç»¼åˆèµ·æ¥*/
     {
         for(i=0; i<k; i++)
         {
-            /* Ò»¼ÓÒ»¼õ£¬Íê³ÉÁËÐòÁÐµÄ×ÛºÏ*/
+            /* ä¸€åŠ ä¸€å‡ï¼Œå®Œæˆäº†åºåˆ—çš„ç»¼åˆ*/
             y[i] = y0[i] + y1[i];
             y[i+k] = y0[i] - y1[i];
         }

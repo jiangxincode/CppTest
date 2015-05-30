@@ -1,9 +1,9 @@
-/*======================================================
-// ��������r_gaus
-// �����������ø�˹��ȥ�������Է�����
-// ���������a ��ϵ������b ��������x���صĽ�����
-//           n δ֪��������eps ����Ҫ��С��eps��ֵ����Ϊ��0��
-// ����ֵ�����͡����гɹ��򷵻�1,ʧ���򷵻�0
+﻿/*======================================================
+// 函数名：r_gaus
+// 功能描述：用高斯消去法解线性方程组
+// 输入参数：a 解系数矩阵，b 常数矩阵，x返回的解向量
+//           n 未知数个数，eps 精度要求，小于eps的值，认为是0。
+// 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,13 +16,13 @@ int n;
     int i,j,k,l,v,exis,*exjs;
     double tmp,d;
 
-    if((a==NULL)||(b==NULL)||(x==NULL))             /* ��������ָ���Ƿ�Ϊ��*/
+    if((a==NULL)||(b==NULL)||(x==NULL))             /* 检测输入的指针是否为空*/
     {
         printf("The pointer exis NULL\n");
         return(0);
     }
 
-    exjs = malloc(n*sizeof(int));          /* Ϊ�н�����¼����ռ䲢����Ƿ�ɹ�*/
+    exjs = malloc(n*sizeof(int));          /* 为列交换记录分配空间并检测是否成功*/
 
     if(exjs == NULL)
     {
@@ -34,11 +34,11 @@ int n;
     {
         d = 0.0;
 
-        for(i=k; i<n; i++)                              /* ��ѭ������ѡȡ��Ԫ*/
+        for(i=k; i<n; i++)                              /* 此循环用于选取主元*/
             for(j=k; j<n; j++)
             {
                 l = i*n + j;
-                tmp = fabs(a[l]);                             /* ��Ԫ�صľ���ֵ*/
+                tmp = fabs(a[l]);                             /* 求元素的绝对值*/
 
                 if(tmp>d)
                 {
@@ -48,16 +48,16 @@ int n;
                 }
             }
 
-        if(d < eps)                                     /* �ж���Ԫ�Ƿ��С*/
+        if(d < eps)                                     /* 判断主元是否过小*/
         {
             free(exjs);
             printf("failed.\n");
-            return(0);                                    /* ����Ԫ��С���˳�����*/
+            return(0);                                    /* 若主元过小则退出程序*/
         }
 
-        if(exis!=k)                                       /* �ж��Ƿ���Ҫ�н���*/
+        if(exis!=k)                                       /* 判断是否需要行交换*/
         {
-            for(j=0; j<n; j++)                            /* �����н���*/
+            for(j=0; j<n; j++)                            /* 进行行交换*/
             {
                 l = k*n + j;
                 v = exis*n + j;
@@ -66,13 +66,13 @@ int n;
                 a[v] = tmp;
             }
 
-            tmp = b[k];                                  /* ��������ҲҪ�����н���*/
+            tmp = b[k];                                  /* 常数向量也要进行行交换*/
             b[k] = b[exis];
             b[exis] = tmp;
         }
 
-        if(exjs[k]!=k)                                   /* �ж��Ƿ���Ҫ�н���*/
-            for(i=0; i<n; i++)                             /* �����н���*/
+        if(exjs[k]!=k)                                   /* 判断是否需要列交换*/
+            for(i=0; i<n; i++)                             /* 进行列交换*/
             {
                 l = i*n + k;
                 v = i*n + exjs[k];
@@ -82,30 +82,30 @@ int n;
             }
 
         l = k*n + k;
-        a[l] = 1.0/a[l];                              /* ȡ����������ת��Ϊ�˷�*/
+        a[l] = 1.0/a[l];                              /* 取倒数将除法转化为乘法*/
 
-        for(j=k+1; j<n; j++)                          /* ��һ������*/
+        for(j=k+1; j<n; j++)                          /* 归一化计算*/
         {
             v = k*n + j;
             a[v] = a[l]*a[v];
         }
 
-        b[k] *= a[l];                             /* ���������Ĺ�һ������*/
+        b[k] *= a[l];                             /* 常数向量的归一化计算*/
 
-        for(i=k+1; i<n; i++)                          /* ��Ԫ����*/
+        for(i=k+1; i<n; i++)                          /* 消元计算*/
         {
             for(j=k+1; j<n; j++)
             {
                 a[i*n+j] -= a[i*n+k]*a[k*n+j];
             }
 
-            b[i] -= a[i*n+k]*b[k];                     /* ��������ҲҪ������Ԫ����*/
+            b[i] -= a[i*n+k]*b[k];                     /* 常数向量也要进行消元计算*/
         }
     }
 
-    x[n-1] = b[n-1];                               /* ��һ�����ֱ�Ӷ���*/
+    x[n-1] = b[n-1];                               /* 第一个解可直接读出*/
 
-    for(i=n-2; i>=0; i--)                          /* �������лش������������*/
+    for(i=n-2; i>=0; i--)                          /* 继续进行回代，求出解向量*/
     {
         tmp = 0.0;
 
@@ -117,16 +117,16 @@ int n;
         x[i] = b[i] - tmp;
     }
 
-    for(k=n-1; k>=0; k--)                      /* �����н�������ʷ���н���ָ�*/
+    for(k=n-1; k>=0; k--)                      /* 依照列交换的历史进行结果恢复*/
     {
-        if(exjs[k]!=k)                             /* �ж��Ƿ���Ҫ�ָ�*/
+        if(exjs[k]!=k)                             /* 判断是否需要恢复*/
         {
-            tmp = x[k];                            /* �ָ����˳��*/
+            tmp = x[k];                            /* 恢复解的顺序*/
             x[k] = x[exjs[k]];
             x[exjs[k]] = tmp;
         }
     }
 
-    free(exjs);                                  /* �ͷŷ���Ŀռ�*/
-    return(1);                                 /* ���ɹ�������1*/
+    free(exjs);                                  /* 释放分配的空间*/
+    return(1);                                 /* 求解成功，返回1*/
 }

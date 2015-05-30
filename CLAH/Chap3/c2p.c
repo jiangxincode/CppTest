@@ -1,24 +1,24 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 
-#include "../Chap2/c_comp.h"
+#include "../utility.h"
 
 static int c2p0();
 
 /**
- * º¯ Êı Ãû£ºc2p (a,n,y)
- * ¹¦ÄÜÃèÊö£º½«¶àÏîÊ½ÓÉÏµÊı±íÊ¾×ª»¯Îªµã±íÊ¾
- * ÊäÈë²ÎÊı£ºa£¨¶àÏîÊ½ÏµÊı£©£¬n£¨ÏµÊı¸öÊı£©¡¢y£¨¼ÆËã³öµÄµãÖµ£©
- * ·µ »Ø Öµ£ºÕûĞÍÊı×Ö¡£¼ÆËã³É¹¦Ôò·µ»Ø1£¬·ñÔò·µ»Ø0
+ * å‡½ æ•° åï¼šc2p (a,n,y)
+ * åŠŸèƒ½æè¿°ï¼šå°†å¤šé¡¹å¼ç”±ç³»æ•°è¡¨ç¤ºè½¬åŒ–ä¸ºç‚¹è¡¨ç¤º
+ * è¾“å…¥å‚æ•°ï¼šaï¼ˆå¤šé¡¹å¼ç³»æ•°ï¼‰ï¼Œnï¼ˆç³»æ•°ä¸ªæ•°ï¼‰ã€yï¼ˆè®¡ç®—å‡ºçš„ç‚¹å€¼ï¼‰
+ * è¿” å› å€¼ï¼šæ•´å‹æ•°å­—ã€‚è®¡ç®—æˆåŠŸåˆ™è¿”å›1ï¼Œå¦åˆ™è¿”å›0
  */
 int c2p(struct c_comp *a,int n,struct c_comp *y)
 {
     int k,nn;
-    k = log(n-0.5)/log(2.0)+1;        /* Çó³ök£¬Ê¹2^k>=n>2^(k-1) */
+    k = log(n-0.5)/log(2.0)+1;        /* æ±‚å‡ºkï¼Œä½¿2^k>=n>2^(k-1) */
     nn = 1;
 
-    for(int i=0; i<k; i++)          	/* ÅĞ¶ÏnÊÇ·ñÊÇ2µÄÕûÊıÃİ£¬²»ÊÇµÄ»°ÍË³ö³ÌĞò*/
+    for(int i=0; i<k; i++)          	/* åˆ¤æ–­næ˜¯å¦æ˜¯2çš„æ•´æ•°å¹‚ï¼Œä¸æ˜¯çš„è¯é€€å‡ºç¨‹åº*/
     {
         nn = nn<<1;
     }
@@ -41,13 +41,13 @@ static int c2p0(struct c_comp *a,int n,struct c_comp *y)
 
     if(n==1)
     {
-        /* µ±Ö»ÓĞÒ»¸öÏµÊıÊ±£¬º¯ÊıÖµ¾ÍÊÇÕâ¸öÏµÊı*/
+        /* å½“åªæœ‰ä¸€ä¸ªç³»æ•°æ—¶ï¼Œå‡½æ•°å€¼å°±æ˜¯è¿™ä¸ªç³»æ•°*/
         y[0].rmz = a[0].rmz;
         y[0].imz = a[0].imz;
         return(1);
     }
 
-    k = n>>1;		    /* kÊÇnµÄÒ»°ë£¬¼´Á½¸öĞ¡¹æÄ£ÎÊÌâĞèÒª·ÖÅä¿Õ¼ä´óĞ¡*/
+    k = n>>1;		    /* kæ˜¯nçš„ä¸€åŠï¼Œå³ä¸¤ä¸ªå°è§„æ¨¡é—®é¢˜éœ€è¦åˆ†é…ç©ºé—´å¤§å°*/
     a0 = (struct c_comp*)malloc(k*sizeof(struct c_comp));
     a1 = (struct c_comp*)malloc(k*sizeof(struct c_comp));
     y0 = (struct c_comp*)malloc(k*sizeof(struct c_comp));
@@ -59,7 +59,7 @@ static int c2p0(struct c_comp *a,int n,struct c_comp *y)
         return(0);
     }
 
-    for(i=0; i<k; i++) 			    /* ½«¶àÏîÊ½·Ö³ÉÁ½°ë*/
+    for(i=0; i<k; i++) 			    /* å°†å¤šé¡¹å¼åˆ†æˆä¸¤åŠ*/
     {
         j=2*i;
         a0[i].rmz = a[j].rmz;
@@ -68,10 +68,10 @@ static int c2p0(struct c_comp *a,int n,struct c_comp *y)
         a1[i].imz = a[j+1].imz;
     }
 
-    i = c2p0(a0,k,y0);			    /* µİ¹éµ÷ÓÃ´Ëº¯Êı*/
+    i = c2p0(a0,k,y0);			    /* é€’å½’è°ƒç”¨æ­¤å‡½æ•°*/
     j = c2p0(a1,k,y1);
 
-    if(i && j) 			            /* ½«µÃµ½µÄÁ½²¿·Öº¯ÊıÖµ×ÛºÏÆğÀ´*/
+    if(i && j) 			            /* å°†å¾—åˆ°çš„ä¸¤éƒ¨åˆ†å‡½æ•°å€¼ç»¼åˆèµ·æ¥*/
     {
         xn.rmz = cos(2*PI/n);
         xn.imz = sin(2*PI/n);
@@ -80,10 +80,10 @@ static int c2p0(struct c_comp *a,int n,struct c_comp *y)
 
         for(i=0; i<k; i++)
         {
-            c_comp_product(&x,&y1[i],&t); 			    /* Ò»¼ÓÒ»¼õ£¬Íê³ÉÁËº¯ÊıÖµµÄ×ÛºÏ*/
+            c_comp_product(&x,&y1[i],&t); 			    /* ä¸€åŠ ä¸€å‡ï¼Œå®Œæˆäº†å‡½æ•°å€¼çš„ç»¼åˆ*/
             c_comp_plus(&y0[i],&t,&y[i]);
             c_comp_sub(&y0[i],&t,&y[i+k]);
-            c_comp_product(&xn,&x,&x);    /* xÓëxnÏà³Ë£¬½á¹û·ÅÔÚxÖĞ£¬µÚk´Î×ÛºÏÊ±µÄx¾ÍÊÇxn^k*/
+            c_comp_product(&xn,&x,&x);    /* xä¸xnç›¸ä¹˜ï¼Œç»“æœæ”¾åœ¨xä¸­ï¼Œç¬¬kæ¬¡ç»¼åˆæ—¶çš„xå°±æ˜¯xn^k*/
         }
     }
 

@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include "something.h"
+ï»¿#include <stdio.h>
+#include "../utility.h"
 
 int main11beta20()
 {
@@ -13,15 +13,15 @@ int main11beta20()
     {
         a0 = a[i];
         b0 = b[i];
-        printf("a = %2.1f,b=%2.1f\n",a0,b0);         /* ´òÓ¡aºÍb*/
+        printf("a = %2.1f,b=%2.1f\n",a0,b0);         /* æ‰“å°aå’Œb*/
 
-        for(j=0; j<5; j++)                           /* ´òÓ¡5ĞĞ*/
+        for(j=0; j<5; j++)                           /* æ‰“å°5è¡Œ*/
         {
-            for(k=0; k<2; k++)                         /* Ã¿ĞĞÁ½ÁĞ*/
+            for(k=0; k<2; k++)                         /* æ¯è¡Œä¸¤åˆ—*/
             {
-                x = 0.1*(2*j+k);                         /* xÔÚ0.0-0.9Ö®¼ä£¬¹²10¸ö*/
-                y=beta2(a0,b0,x,e1);                     /* µ÷ÓÃº¯Êı¼ÆËã*/
-                printf("B(x=%2.1f)=%e ",x,y);            /* ´òÓ¡½á¹û*/
+                x = 0.1*(2*j+k);                         /* xåœ¨0.0-0.9ä¹‹é—´ï¼Œå…±10ä¸ª*/
+                y=beta2(a0,b0,x,e1);                     /* è°ƒç”¨å‡½æ•°è®¡ç®—*/
+                printf("B(x=%2.1f)=%e ",x,y);            /* æ‰“å°ç»“æœ*/
             }
 
             printf("\n");

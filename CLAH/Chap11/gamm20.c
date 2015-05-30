@@ -1,12 +1,12 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 
-#include "something.h"
+#include "../utility.h"
 
 int main11gramm20()
 {
     int i,j;
     double ai,xj,y;
-    double e1=1.0e-7,e0=1.0e-30;               /* ÕâÁ½¸öÖµÓÃÓÚ²»ÍêÈ«Ù¤Âíº¯ÊıµÄ¼ÆËã*/
+    double e1=1.0e-7,e0=1.0e-30;               /* è¿™ä¸¤ä¸ªå€¼ç”¨äºä¸å®Œå…¨ä¼½é©¬å‡½æ•°çš„è®¡ç®—*/
     static double a[3]= {0.5,5.0,10.0};
     static double x[3]= {0.5,5.0,10.0};
 
@@ -14,9 +14,9 @@ int main11gramm20()
     {
         for(j=0; j<3; j++)
         {
-            ai=a[i];                                 /* Ñ­»·È¡aºÍx*/
+            ai=a[i];                                 /* å¾ªç¯å–aå’Œx*/
             xj=x[j];
-            y=gamm2(ai,xj,e1,e0);                    /* µ÷ÓÃº¯ÊıÇóÖµ²¢´òÓ¡½á¹û*/
+            y=gamm2(ai,xj,e1,e0);                    /* è°ƒç”¨å‡½æ•°æ±‚å€¼å¹¶æ‰“å°ç»“æœ*/
             printf("gamm2(%2.1f,%2.1f)=%e\n",ai,xj,y);
         }
 

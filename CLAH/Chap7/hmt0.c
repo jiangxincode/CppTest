@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include "hmt.c"
 #include "hmte.c"
 int main7hmt0()
@@ -12,15 +12,15 @@ int main7hmt0()
                     3.0221,3.4138,3.8255,4.2596,4.7183
                    };
     t=0.20;
-    z=hmt(x,y,dy,10,t);                             /* °£¶ûÃ×ÌØ²åÖµ*/
-    printf("hermite: t=%2.5f,z=%2.5f\n",t,z);      /* ´òÓ¡½á¹û*/
-    z=hmte(x[0],0.1,y,dy,10,t);                     /* °£¶ûÃ×ÌØµÈ¾à²åÖµ*/
-    printf("hermite: t=%2.5f,z=%2.5f\n",t,z);      /* ´òÓ¡½á¹û*/
+    z=hmt(x,y,dy,10,t);                             /* åŸƒå°”ç±³ç‰¹æ’å€¼*/
+    printf("hermite: t=%2.5f,z=%2.5f\n",t,z);      /* æ‰“å°ç»“æœ*/
+    z=hmte(x[0],0.1,y,dy,10,t);                     /* åŸƒå°”ç±³ç‰¹ç­‰è·æ’å€¼*/
+    printf("hermite: t=%2.5f,z=%2.5f\n",t,z);      /* æ‰“å°ç»“æœ*/
     t=0.55;
     printf("\n");
-    z=hmt(x,y,dy,10,t);                             /* °£¶ûÃ×ÌØ²åÖµ*/
-    printf("hermite: t=%2.5f,z=%2.5f\n",t,z);      /* ´òÓ¡½á¹û*/
-    z=hmte(x[0],0.1,y,dy,10,t);                     /* °£¶ûÃ×ÌØµÈ¾à²åÖµ*/
-    printf("hermite: t=%2.5f,z=%2.5f\n",t,z);      /* ´òÓ¡½á¹û*/
+    z=hmt(x,y,dy,10,t);                             /* åŸƒå°”ç±³ç‰¹æ’å€¼*/
+    printf("hermite: t=%2.5f,z=%2.5f\n",t,z);      /* æ‰“å°ç»“æœ*/
+    z=hmte(x[0],0.1,y,dy,10,t);                     /* åŸƒå°”ç±³ç‰¹ç­‰è·æ’å€¼*/
+    printf("hermite: t=%2.5f,z=%2.5f\n",t,z);      /* æ‰“å°ç»“æœ*/
     return 0;
 }

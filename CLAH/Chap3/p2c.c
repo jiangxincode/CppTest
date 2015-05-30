@@ -1,25 +1,25 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 
-#include "../Chap2/c_comp.h"
+#include "../utility.h"
 
 static int p2c1();
 
 /**
- * º¯ Êı Ãû£ºp2c (y,n,a)
- * ¹¦ÄÜÃèÊö£º½«¶àÏîÊ½ÓÉµã±íÊ¾×ª»¯ÎªÏµÊı±íÊ¾
- * ÊäÈë²ÎÊı£ºy£¨Ìá¹©µÄµãÖµ£©£¬n£¨yµÄ³¤¶È£©£¬a£¨¼ÆËãµÃµ½µÄ¶àÏîÊ½ÏµÊı£©
- * ·µ »Ø Öµ£ºÕûĞÍÊı×Ö¡£¼ÆËã³É¹¦Ôò·µ»Ø1£¬·ñÔò·µ»Ø0
+ * å‡½ æ•° åï¼šp2c (y,n,a)
+ * åŠŸèƒ½æè¿°ï¼šå°†å¤šé¡¹å¼ç”±ç‚¹è¡¨ç¤ºè½¬åŒ–ä¸ºç³»æ•°è¡¨ç¤º
+ * è¾“å…¥å‚æ•°ï¼šyï¼ˆæä¾›çš„ç‚¹å€¼ï¼‰ï¼Œnï¼ˆyçš„é•¿åº¦ï¼‰ï¼Œaï¼ˆè®¡ç®—å¾—åˆ°çš„å¤šé¡¹å¼ç³»æ•°ï¼‰
+ * è¿” å› å€¼ï¼šæ•´å‹æ•°å­—ã€‚è®¡ç®—æˆåŠŸåˆ™è¿”å›1ï¼Œå¦åˆ™è¿”å›0
  */
 int p2c(struct c_comp *y,int n,struct c_comp *a)
 {
     int i,j,k,nn;
-    /* Ê×ÏÈÉùÃ÷Ò»¸öÒªµ÷ÓÃµÄ×Óº¯Êı*/
-    k = log(n-0.5)/log(2.0)+1;	        /* Çó³ölog2(n)*/
+    /* é¦–å…ˆå£°æ˜ä¸€ä¸ªè¦è°ƒç”¨çš„å­å‡½æ•°*/
+    k = log(n-0.5)/log(2.0)+1;	        /* æ±‚å‡ºlog2(n)*/
     nn = 1;
 
-    for(i=0; i<k; i++)		            /* ¼ì²âµã¸öÊıÊÇ·ñÊÇ2µÄÕûÊı´ÎÃİ*/
+    for(i=0; i<k; i++)		            /* æ£€æµ‹ç‚¹ä¸ªæ•°æ˜¯å¦æ˜¯2çš„æ•´æ•°æ¬¡å¹‚*/
     {
         nn = nn<<1;
     }
@@ -30,11 +30,11 @@ int p2c(struct c_comp *y,int n,struct c_comp *a)
         return(0);
     }
 
-    j = p2c1(y,n,a);		                /* µ÷ÓÃ×Óº¯ÊıÇó½âÇóºÍ·ûºÅÖĞµÄ²¿·Ö*/
+    j = p2c1(y,n,a);		                /* è°ƒç”¨å­å‡½æ•°æ±‚è§£æ±‚å’Œç¬¦å·ä¸­çš„éƒ¨åˆ†*/
 
     if(j)
     {
-        for(i=0; i<n; i++)		       /* ½«×Óº¯Êı·µ»ØµÄ½á¹û³ıÒÔn*/
+        for(i=0; i<n; i++)		       /* å°†å­å‡½æ•°è¿”å›çš„ç»“æœé™¤ä»¥n*/
         {
             a[i].rmz /= n;
             a[i].imz /= n;
@@ -50,14 +50,14 @@ static int p2c1(struct c_comp *y,int n,struct c_comp *a)
     struct c_comp xn,x,t;
     struct c_comp *a0,*a1,*y0,*y1;
 
-    if(n==1)			                     /* n=1Ê±£¬Î¨Ò»ÏµÊıaÓëyÏàµÈ*/
+    if(n==1)			                     /* n=1æ—¶ï¼Œå”¯ä¸€ç³»æ•°aä¸yç›¸ç­‰*/
     {
         a[0].rmz = y[0].rmz;
         a[0].imz = y[0].imz;
         return(1);
     }
 
-    k = n>>1;			                    /*kÊÇnµÄÒ»°ë£¬¾ÍÊÇÁ½¸öĞ¡¹æÄ£ÎÊÌâ·ÖÅä¿Õ¼äµÄ´óĞ¡*/
+    k = n>>1;			                    /*kæ˜¯nçš„ä¸€åŠï¼Œå°±æ˜¯ä¸¤ä¸ªå°è§„æ¨¡é—®é¢˜åˆ†é…ç©ºé—´çš„å¤§å°*/
     a0 = (struct c_comp*)malloc(k*sizeof(struct c_comp));
     a1 = (struct c_comp*)malloc(k*sizeof(struct c_comp));
     y0 = (struct c_comp*)malloc(k*sizeof(struct c_comp));
@@ -69,7 +69,7 @@ static int p2c1(struct c_comp *y,int n,struct c_comp *a)
         return(0);
     }
 
-    for(i=0; i<k; i++)	                 /* ½«ÎÊÌâ·Ö³ÉÁ½¶Î*/
+    for(i=0; i<k; i++)	                 /* å°†é—®é¢˜åˆ†æˆä¸¤æ®µ*/
     {
         j=2*i;
         y0[i].rmz = y[j].rmz;
@@ -78,10 +78,10 @@ static int p2c1(struct c_comp *y,int n,struct c_comp *a)
         y1[i].imz = y[j+1].imz;
     }
 
-    i = p2c1(y0,k,a0); 	                 /* ¶ÔÁ½¶Î·Ö±ğÇó½â*/
+    i = p2c1(y0,k,a0); 	                 /* å¯¹ä¸¤æ®µåˆ†åˆ«æ±‚è§£*/
     j = p2c1(y1,k,a1);
 
-    if(i && j)		                     /* ÈôÁ½¶ÎÇó½â³É¹¦£¬Ôò½«Á½²¿·Ö½â×ÛºÏÆğÀ´*/
+    if(i && j)		                     /* è‹¥ä¸¤æ®µæ±‚è§£æˆåŠŸï¼Œåˆ™å°†ä¸¤éƒ¨åˆ†è§£ç»¼åˆèµ·æ¥*/
     {
         xn.rmz = cos(-2*PI/n);
         xn.imz = sin(-2*PI/n);
@@ -91,9 +91,9 @@ static int p2c1(struct c_comp *y,int n,struct c_comp *a)
         for(i=0; i<k; i++)
         {
             c_comp_product(&x,&a1[i],&t);
-            c_comp_plus(&a0[i],&t,&a[i]);    	/* Ò»¼ÓÒ»¼õ£¬Íê³ÉÁËº¯ÊıÖµµÄ×ÛºÏ*/
+            c_comp_plus(&a0[i],&t,&a[i]);    	/* ä¸€åŠ ä¸€å‡ï¼Œå®Œæˆäº†å‡½æ•°å€¼çš„ç»¼åˆ*/
             c_comp_sub(&a0[i],&t,&a[i+k]);
-            c_comp_product(&xn,&x,&x);    	/* xÓëxnÏà³Ë£¬½á¹û·ÅÔÚxÖĞ£¬µÚk´Î×ÛºÏÊ±µÄx¾ÍÊÇxn^k*/
+            c_comp_product(&xn,&x,&x);    	/* xä¸xnç›¸ä¹˜ï¼Œç»“æœæ”¾åœ¨xä¸­ï¼Œç¬¬kæ¬¡ç»¼åˆæ—¶çš„xå°±æ˜¯xn^k*/
         }
     }
 

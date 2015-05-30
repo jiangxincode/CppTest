@@ -1,14 +1,14 @@
-/*======================================================
-// º¯ÊıÃû£ºbrent
-// ¹¦ÄÜÃèÊö£ºBrentËã·¨·¨Çó¼«Öµ
-// ÊäÈë²ÎÊı£ºa ³õÊ¼Çø¼äµÄ×ó¶Ëµã
-//           b ³õÊ¼Çø¼äµÄÖĞ¼äµã
-//           c ³õÊ¼Çø¼äµÄÓÒ¶Ëµã
-//           f º¯ÊıÖ¸Õë
-//           xopt Ö¸Õë£¬Ö¸Ïò¼«ÖµµãµÄ×ø±ê
-//           eps ¾«¶ÈÏŞ¶È
-//           itmax ×î´óµü´ú´ÎÊı
-// ·µ»ØÖµ£º  º¯ÊıµÄ¼«Ğ¡Öµ
+ï»¿/*======================================================
+// å‡½æ•°åï¼šbrent
+// åŠŸèƒ½æè¿°ï¼šBrentç®—æ³•æ³•æ±‚æå€¼
+// è¾“å…¥å‚æ•°ï¼ša åˆå§‹åŒºé—´çš„å·¦ç«¯ç‚¹
+//           b åˆå§‹åŒºé—´çš„ä¸­é—´ç‚¹
+//           c åˆå§‹åŒºé—´çš„å³ç«¯ç‚¹
+//           f å‡½æ•°æŒ‡é’ˆ
+//           xopt æŒ‡é’ˆï¼ŒæŒ‡å‘æå€¼ç‚¹çš„åæ ‡
+//           eps ç²¾åº¦é™åº¦
+//           itmax æœ€å¤§è¿­ä»£æ¬¡æ•°
+// è¿”å›å€¼ï¼š  å‡½æ•°çš„æå°å€¼
 =========================================================*/
 
 #include <stdio.h>
@@ -19,7 +19,7 @@ double brent(double a, double b, double c, double(*f)(double), double *xopt, dou
 {
     int it;
     double xm,x,u,w,v,fx,fu,fw,fv,eps1,eps2,d0,d;
-    double p,q,r;                                      /* ÓÃÓÚÅ×ÎïÏß²åÖµ*/
+    double p,q,r;                                      /* ç”¨äºæŠ›ç‰©çº¿æ’å€¼*/
     x=w=v=b;
     fx=fw=fv=(*f)(b);
     d0 = 0.0;
@@ -30,20 +30,20 @@ double brent(double a, double b, double c, double(*f)(double), double *xopt, dou
         eps1 = eps*fabs(x)+1.0e-10;
         eps2 = 2.0*eps1;
 
-        if((c-a)*0.5 < (eps2-fabs(x-xm)))               /* µü´úÊÕÁ²×¼Ôò*/
+        if((c-a)*0.5 < (eps2-fabs(x-xm)))               /* è¿­ä»£æ”¶æ•›å‡†åˆ™*/
         {
             *xopt = x;
             return(fx);
         }
 
-        if(fabs(d0) <= eps1)                            /* ÉÏ´Î±ä»¯Ì«Ğ¡£¬ÓÃ»Æ½ğ·Ö¸î·¨*/
+        if(fabs(d0) <= eps1)                            /* ä¸Šæ¬¡å˜åŒ–å¤ªå°ï¼Œç”¨é»„é‡‘åˆ†å‰²æ³•*/
         {
             d0 = (x>xm)?a-x:c-x;
             d = G2*d0;
         }
         else
         {
-            r = (x-w)*(fx-fv);                         /* Å×ÎïÏß²åÖµ*/
+            r = (x-w)*(fx-fv);                         /* æŠ›ç‰©çº¿æ’å€¼*/
             q = (x-v)*(fx-fw);
             p = (x-v)*q-(x-w)*r;
             q = 2.0*(q-r);
@@ -53,11 +53,11 @@ double brent(double a, double b, double c, double(*f)(double), double *xopt, dou
                 p = -p;
             }
 
-            q = fabs(q);                                /* ĞÂ½üËÆµã²»Âú×ãÁ½¸öÌõ¼ş*/
+            q = fabs(q);                                /* æ–°è¿‘ä¼¼ç‚¹ä¸æ»¡è¶³ä¸¤ä¸ªæ¡ä»¶*/
 
             if(fabs(r)>fabs(0.5*q*d0) || p>=q*(c-x) || p<=q*(a-x))
             {
-                d0 = (x>xm)?a-x:c-x;                    /* ÓÃ»Æ½ğ·Ö¸î·¨*/
+                d0 = (x>xm)?a-x:c-x;                    /* ç”¨é»„é‡‘åˆ†å‰²æ³•*/
                 d = G2*d0;
             }
             else
@@ -66,7 +66,7 @@ double brent(double a, double b, double c, double(*f)(double), double *xopt, dou
                 d = p/q;
                 u = x+d;
 
-                if(u-a<eps2 || c-u<eps2)                 /* Å×ÎïÏß²åÖµ½á¹ûÓë¶Ëµã¹ıÓÚ½Ó½ü£¬²»½ÓÊÜ*/
+                if(u-a<eps2 || c-u<eps2)                 /* æŠ›ç‰©çº¿æ’å€¼ç»“æœä¸ç«¯ç‚¹è¿‡äºæ¥è¿‘ï¼Œä¸æ¥å—*/
                 {
                     d = fabs(eps1)*((xm-x>0)?1.0:-1.0);
                 }
@@ -84,9 +84,9 @@ double brent(double a, double b, double c, double(*f)(double), double *xopt, dou
 
         fu = (*f)(u);
 
-        if(fu <= fx)                                     /* u±ÈxÒªºÃ*/
+        if(fu <= fx)                                     /* uæ¯”xè¦å¥½*/
         {
-            if(u<x)                                      /* ×îÓÅµãuÔÚaºÍcÖ®¼ä*/
+            if(u<x)                                      /* æœ€ä¼˜ç‚¹uåœ¨aå’Œcä¹‹é—´*/
             {
                 c = x;
             }
@@ -95,16 +95,16 @@ double brent(double a, double b, double c, double(*f)(double), double *xopt, dou
                 a = x;
             }
 
-            v = w;                                       /* vÊÇÉÏÒ»´ÎµÄw*/
-            w = x;                                       /* wÊÇ´ÎÓÅµã*/
-            x = u;                                       /* xÊÇ×îÓÅµã*/
+            v = w;                                       /* væ˜¯ä¸Šä¸€æ¬¡çš„w*/
+            w = x;                                       /* wæ˜¯æ¬¡ä¼˜ç‚¹*/
+            x = u;                                       /* xæ˜¯æœ€ä¼˜ç‚¹*/
             fv = fw;
             fw = fx;
             fx = fu;
         }
-        else                                             /* x±ÈuºÃ*/
+        else                                             /* xæ¯”uå¥½*/
         {
-            if(u>=x)                                     /* ×îÓÅµãxÔÚaºÍcÖ®¼ä*/
+            if(u>=x)                                     /* æœ€ä¼˜ç‚¹xåœ¨aå’Œcä¹‹é—´*/
             {
                 c = u;
             }
@@ -113,7 +113,7 @@ double brent(double a, double b, double c, double(*f)(double), double *xopt, dou
                 a = u;
             }
 
-            if(fu <= fw||w==x)                           /* uÊÇ´ÎÓÅµã£¬¸³¸øw*/
+            if(fu <= fw||w==x)                           /* uæ˜¯æ¬¡ä¼˜ç‚¹ï¼Œèµ‹ç»™w*/
             {
                 v = w;
                 w = u;
@@ -128,7 +128,7 @@ double brent(double a, double b, double c, double(*f)(double), double *xopt, dou
         }
     }
 
-    printf("exceed max iterations\n");                   /* ³¬¹ıµü´ú´ÎÊı*/
+    printf("exceed max iterations\n");                   /* è¶…è¿‡è¿­ä»£æ¬¡æ•°*/
     *xopt = x;
     return(fx);
 }

@@ -1,18 +1,18 @@
-/*======================================================
- * º¯ÊýÃû£ºsimp1
- * ¹¦ÄÜÃèÊö£º ÇóÎÞÔ¼ÊøÌõ¼þÏÂnÎ¬¼«ÖµµÄµ¥´¿ÐÎ·¨
- * ÊäÈë²ÎÊý£ºd   ¼ÆËã³õÊ¼µ¥´¿ÐÎµÄ±äÁ¿
- *           n   ÎÊÌâµÄÎ¬Êý
- *           lam  ÊÕËõÏµÊý£¬Ò»°ãÈ¡0-1
- *           alf  ·´ÉäÏµÊý£¬Ò»°ãÈ¡1.0
- *           miu  À©ÕÅÏµÊý£¬Ò»°ãÈ¡1.2-2.0
- *           x[(n+1)*n]  ·µ»Ø×îºóµ¥´¿ÐÎµÄn+1¸ö¶¥µã×ø±ê
- *           fx[n+1]    ·µ»Ø×îºóµÄµ¥´¿ÐÎµÄn+1¸ö¶¥µãÉÏµÄÄ¿±êº¯ÊýÖµ
- *           xopt[n+1]  ÊäÈëÒ»¸öµ¥´¿ÐÎµÄ³õÊ¼½áµã£¬Ç°n¸ö·ÖÁ¿·µ»Ø¼«Ð¡ÖµµÄn¸ö×ø±ê£¬×îºóÒ»¸ö·ÖÁ¿·µ»Ø¼«Ð¡Öµ
- *           f Ö¸ÏòÄ¿±êº¯ÊýµÄÖ¸Õë
- *         eps ¿ØÖÆ¾«¶ÈÒªÇó
- *         itmax ×î´óµü´ú´ÎÊý
- * ·µ»ØÖµ£º  µü´ú´ÎÊý
+ï»¿/*======================================================
+ * å‡½æ•°åï¼šsimp1
+ * åŠŸèƒ½æè¿°ï¼š æ±‚æ— çº¦æŸæ¡ä»¶ä¸‹nç»´æžå€¼çš„å•çº¯å½¢æ³•
+ * è¾“å…¥å‚æ•°ï¼šd   è®¡ç®—åˆå§‹å•çº¯å½¢çš„å˜é‡
+ *           n   é—®é¢˜çš„ç»´æ•°
+ *           lam  æ”¶ç¼©ç³»æ•°ï¼Œä¸€èˆ¬å–0-1
+ *           alf  åå°„ç³»æ•°ï¼Œä¸€èˆ¬å–1.0
+ *           miu  æ‰©å¼ ç³»æ•°ï¼Œä¸€èˆ¬å–1.2-2.0
+ *           x[(n+1)*n]  è¿”å›žæœ€åŽå•çº¯å½¢çš„n+1ä¸ªé¡¶ç‚¹åæ ‡
+ *           fx[n+1]    è¿”å›žæœ€åŽçš„å•çº¯å½¢çš„n+1ä¸ªé¡¶ç‚¹ä¸Šçš„ç›®æ ‡å‡½æ•°å€¼
+ *           xopt[n+1]  è¾“å…¥ä¸€ä¸ªå•çº¯å½¢çš„åˆå§‹ç»“ç‚¹ï¼Œå‰nä¸ªåˆ†é‡è¿”å›žæžå°å€¼çš„nä¸ªåæ ‡ï¼Œæœ€åŽä¸€ä¸ªåˆ†é‡è¿”å›žæžå°å€¼
+ *           f æŒ‡å‘ç›®æ ‡å‡½æ•°çš„æŒ‡é’ˆ
+ *         eps æŽ§åˆ¶ç²¾åº¦è¦æ±‚
+ *         itmax æœ€å¤§è¿­ä»£æ¬¡æ•°
+ * è¿”å›žå€¼ï¼š  è¿­ä»£æ¬¡æ•°
 =========================================================*/
 
 #include <stdio.h>
@@ -28,13 +28,13 @@ int itmax,n;
     int it,i,j,h,l,g;
     double *xt,*xc,*xe,ft,fc,fe,fg,fh,fl,flag,tmp;
 
-    if(x==NULL||fx==NULL||xopt==NULL)                            /* ¼ì²éÖ¸ÕëÊÇ·ñÎª¿Õ*/
+    if(x==NULL||fx==NULL||xopt==NULL)                            /* æ£€æŸ¥æŒ‡é’ˆæ˜¯å¦ä¸ºç©º*/
     {
         printf("One of pointer is null\n");
         return(-1);
     }
 
-    xt = (double*)malloc(n*sizeof(double));                      /* ·ÖÅä¿Õ¼ä²¢¼ì²éÊÇ·ñ³É¹¦*/
+    xt = (double*)malloc(n*sizeof(double));                      /* åˆ†é…ç©ºé—´å¹¶æ£€æŸ¥æ˜¯å¦æˆåŠŸ*/
     xc = (double*)malloc(n*sizeof(double));
     xe = (double*)malloc(n*sizeof(double));
 
@@ -47,7 +47,7 @@ int itmax,n;
         return(-1);
     }
 
-    for(i=0; i<=n; i++)                                          /* ¹¹Ôì³õÊ¼µÄµ¥´¿ÐÎ*/
+    for(i=0; i<=n; i++)                                          /* æž„é€ åˆå§‹çš„å•çº¯å½¢*/
         for(j=0; j<n; j++)
         {
             x[i*n+j] = xopt[j];
@@ -58,12 +58,12 @@ int itmax,n;
         x[(j+1)*n+j] = x[j]+d;
     }
 
-    for(i=0; i<=n; i++)                                        /* Çó³öÔÚ¸÷¸ö¶¥µãÉÏµÄº¯ÊýÖµ*/
+    for(i=0; i<=n; i++)                                        /* æ±‚å‡ºåœ¨å„ä¸ªé¡¶ç‚¹ä¸Šçš„å‡½æ•°å€¼*/
     {
         fx[j] = (*f)(&x[i*n],n);
     }
 
-    flag = 1.0+eps;                                            /* flagÓÃÓÚ¼ÆËãµ¥´¿ÐÎÖÐ½áµã¾àÀë*/
+    flag = 1.0+eps;                                            /* flagç”¨äºŽè®¡ç®—å•çº¯å½¢ä¸­ç»“ç‚¹è·ç¦»*/
     it = 0;
 
     while(it++<itmax && flag>eps)
@@ -71,20 +71,20 @@ int itmax,n;
         ft = fx[0];
         fe = fx[0];
         fg = fx[0];
-        h = 0;                                                /* ×î»µµã*/
-        l = 0;                                                /* ×îºÃµã*/
-        g = 0;                                                /* ´Î»µµã*/
+        h = 0;                                                /* æœ€åç‚¹*/
+        l = 0;                                                /* æœ€å¥½ç‚¹*/
+        g = 0;                                                /* æ¬¡åç‚¹*/
 
         for(i=1; i<=n; i++)
         {
             if(fx[i] > fg)
             {
-                if(fx[i]>fh)                                /* ²éÕÒ×î»µµãºÍ´Î»µµã*/
+                if(fx[i]>fh)                                /* æŸ¥æ‰¾æœ€åç‚¹å’Œæ¬¡åç‚¹*/
                 {
                     g = h;
                     h = i;
                 }
-                else                                        /* ²éÕÒÐÂ´Î»µµã*/
+                else                                        /* æŸ¥æ‰¾æ–°æ¬¡åç‚¹*/
                 {
                     g = i;
                 }
@@ -92,7 +92,7 @@ int itmax,n;
                 fg = fx[g];
                 fh = fx[h];
             }
-            else if(fx[i] < fl)                             /* ²éÕÒ×îºÃµã*/
+            else if(fx[i] < fl)                             /* æŸ¥æ‰¾æœ€å¥½ç‚¹*/
             {
                 l = i;
                 fl = fx[l];
@@ -101,7 +101,7 @@ int itmax,n;
 
         for(j=0; j<n; j++)
         {
-            xc[j] = 0.0;                                  /* ÇóÖØÐÄµÄn¸ö×ø±ê*/
+            xc[j] = 0.0;                                  /* æ±‚é‡å¿ƒçš„nä¸ªåæ ‡*/
 
             for(i=0; i<=n; i++)
             {
@@ -109,22 +109,22 @@ int itmax,n;
             }
 
             tmp = x[h*n+j];
-            xc[j] = (xc[j]-tmp)/n;                   /* È¥³ý×î²îµãºóµÄÆ½¾ùÖµ*/
-            xt[j] = xc[j]+alf*(xc[j]-tmp);           /* ·´Éäµã*/
+            xc[j] = (xc[j]-tmp)/n;                   /* åŽ»é™¤æœ€å·®ç‚¹åŽçš„å¹³å‡å€¼*/
+            xt[j] = xc[j]+alf*(xc[j]-tmp);           /* åå°„ç‚¹*/
         }
 
         ft = (*f)(xt,n);
 
         if(ft < fx[l])
         {
-            for(j=0; j<n; j++)                       /* À©Õ¹³Éxe*/
+            for(j=0; j<n; j++)                       /* æ‰©å±•æˆxe*/
             {
                 xe[j] = xt[j]+miu*(xt[j]-xc[j]);
             }
 
             fe = (*f)(xe,n);
 
-            if(fe < fx[l])                               /* ÓÃxeÌæ»»xh*/
+            if(fe < fx[l])                               /* ç”¨xeæ›¿æ¢xh*/
             {
                 for(j=0; j<n; j++)
                 {
@@ -135,7 +135,7 @@ int itmax,n;
             }
             else
             {
-                for(j=0; j<n; j++)                    /* ÓÃxtÌæ»»xh*/
+                for(j=0; j<n; j++)                    /* ç”¨xtæ›¿æ¢xh*/
                 {
                     x[h*n+j] = xt[j];
                 }
@@ -145,7 +145,7 @@ int itmax,n;
         }
         else if(ft <= fx[g])
         {
-            for(j=0; j<n; j++)                    /* ÓÃxtÌæ»»xh*/
+            for(j=0; j<n; j++)                    /* ç”¨xtæ›¿æ¢xh*/
             {
                 x[h*n+j] = xt[j];
             }
@@ -156,7 +156,7 @@ int itmax,n;
         {
             if(ft <= fx[h])
             {
-                for(j=0; j<n; j++)                    /* ÓÃxtÌæ»»xh*/
+                for(j=0; j<n; j++)                    /* ç”¨xtæ›¿æ¢xh*/
                 {
                     x[h*n+j] = xt[j];
                 }
@@ -171,7 +171,7 @@ int itmax,n;
 
             fe = (*f)(xe,n);
 
-            if(fe > fx[h])                             /* µ¥´¿ÐÎÐèÒªÑ¹Ëõ*/
+            if(fe > fx[h])                             /* å•çº¯å½¢éœ€è¦åŽ‹ç¼©*/
             {
                 for(i=0; i<=n; i++)
                 {
@@ -197,7 +197,7 @@ int itmax,n;
         fc = 0.0;
         ft = 0.0;
 
-        for(i=0; i<=n; i++)                            /* Çó¶¥µãµÄÆ½¾ù¾àÀë*/
+        for(i=0; i<=n; i++)                            /* æ±‚é¡¶ç‚¹çš„å¹³å‡è·ç¦»*/
         {
             fc = fc+fx[i];
             ft = ft+fx[i]*fx[i];
@@ -207,7 +207,7 @@ int itmax,n;
         flag = (ft - fc)/n;
     }
 
-    for(j=0; j<n; j++)                                 /* ÇóËùÓÐ¶¥µãµÄÖØÐÄ×öÎª×îÓÅ½â*/
+    for(j=0; j<n; j++)                                 /* æ±‚æ‰€æœ‰é¡¶ç‚¹çš„é‡å¿ƒåšä¸ºæœ€ä¼˜è§£*/
     {
         xopt[j] = 0.0;
 

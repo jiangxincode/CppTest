@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include "simp2.c"
 static 	double f();
 int main12simp20()
@@ -18,7 +18,7 @@ int main12simp20()
     alf=1.3;
     d =10.0;
     itmax=200;
-    i = simp2(n,m,a,b,d,alf,eps,x,fx,xopt,sf,f,itmax);  /* µ÷ÓÃÓĞÔ¼ÊøµÄµ¥´¿ĞÎ·¨*/
+    i = simp2(n,m,a,b,d,alf,eps,x,fx,xopt,sf,f,itmax);  /* è°ƒç”¨æœ‰çº¦æŸçš„å•çº¯å½¢æ³•*/
     printf("iterations times =%d\n",i);
     printf("\n");
 

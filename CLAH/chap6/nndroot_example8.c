@@ -1,4 +1,4 @@
-#include<stdlib.h>
+Ôªø#include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
 #include"nndroot.c"
@@ -9,7 +9,7 @@ int main6nndroot8()
     int n=3,max=600,i;
     double *x0;
     x0=(double*)malloc(n*sizeof(double));
-    x0[0]=1;                                 /* ≥ı÷µ*/
+    x0[0]=1;                                 /* ÂàùÂÄº*/
     x0[1]=-3;
     x0[2]=5;
 
@@ -17,7 +17,7 @@ int main6nndroot8()
     {
         for(i=0; i<n; i++)
         {
-            printf("x[%d]=%1.7f\n",i,x0[i]);    /*  ‰≥ˆ*/
+            printf("x[%d]=%1.7f\n",i,x0[i]);    /* ËæìÂá∫*/
         }
     }
     else
@@ -28,7 +28,7 @@ int main6nndroot8()
     return 0;
 }
 
-static void f(x,f0,fi,h)							/*∑Ω≥Ã◊È∫Ø ˝*/
+static void f(x,f0,fi,h)							/*ÊñπÁ®ãÁªÑÂáΩÊï∞*/
 double *x,*f0,*fi;
 double h;
 {

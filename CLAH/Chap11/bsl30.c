@@ -1,6 +1,6 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 
-#include "something.h"
+#include "../utility.h"
 
 int main11bsl30()
 {
@@ -12,7 +12,7 @@ int main11bsl30()
         x=1.0*i;
         printf("x=%2.1f\n",x);
 
-        for(n=1; n<=4; n++)                        /* ±äÐÍµÚÒ»Àà±´Èû¶ûº¯Êý*/
+        for(n=1; n<=4; n++)                        /* å˜åž‹ç¬¬ä¸€ç±»è´å¡žå°”å‡½æ•°*/
         {
             y=bsl3(n,x);
             printf("I(%d)=%e ",n,y);
@@ -20,7 +20,7 @@ int main11bsl30()
 
         printf("\n");
 
-        for(n=1; n<=4; n++)                       /* ±äÐÍµÚ¶þÀà±´Èû¶ûº¯Êý*/
+        for(n=1; n<=4; n++)                       /* å˜åž‹ç¬¬äºŒç±»è´å¡žå°”å‡½æ•°*/
         {
             y=bsl4(n,x);
             printf("K(%d)=%e ",n,y);

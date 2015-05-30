@@ -1,24 +1,24 @@
-/*======================================================
- * º¯ÊıÃû£ºddirmin
- * ¹¦ÄÜÃèÊö£º´øµ¼ÊıµÄÒ»Î¬ËÑË÷
- * ÊäÈë²ÎÊı£ºx[n] ÊäÈëËÑË÷µÄ³ö·¢µã
- *           p[n] ËÑË÷µÄ·½Ïò
- *           xmin[n] ·µ»ØÕÒµ½µÄ×îÓÅµã
- *           n ³õÊ¼Çø¼äµÄÁíÒ»¸ö¶Ëµã
- *           f ¶àÔªº¯ÊıÖ¸Õë
- *           eps ¾«¶ÈÏŞ¶È
- *           itmax ×î´óµü´ú´ÎÊı
- * ·µ»ØÖµ£º  º¯ÊıµÄ¼«Ğ¡Öµ
+ï»¿/*======================================================
+ * å‡½æ•°åï¼šddirmin
+ * åŠŸèƒ½æè¿°ï¼šå¸¦å¯¼æ•°çš„ä¸€ç»´æœç´¢
+ * è¾“å…¥å‚æ•°ï¼šx[n] è¾“å…¥æœç´¢çš„å‡ºå‘ç‚¹
+ *           p[n] æœç´¢çš„æ–¹å‘
+ *           xmin[n] è¿”å›æ‰¾åˆ°çš„æœ€ä¼˜ç‚¹
+ *           n åˆå§‹åŒºé—´çš„å¦ä¸€ä¸ªç«¯ç‚¹
+ *           f å¤šå…ƒå‡½æ•°æŒ‡é’ˆ
+ *           eps ç²¾åº¦é™åº¦
+ *           itmax æœ€å¤§è¿­ä»£æ¬¡æ•°
+ * è¿”å›å€¼ï¼š  å‡½æ•°çš„æå°å€¼
 =========================================================*/
 #include <stdlib.h>
 #include "dbrent.c"
-#include "something.h"
+#include "../utility.h"
 static double dfdim(double t);
 
 int _ndir_;
-double *_pdir_, *_xdir_, *_xtdir_, *_dxtdir_;             /* ĞèÒªÈ«¾Ö±äÁ¿*/
+double *_pdir_, *_xdir_, *_xtdir_, *_dxtdir_;             /* éœ€è¦å…¨å±€å˜é‡*/
 double(*_myfc_)();
-void (*_mydfc_)();                             /* ĞèÒªÈ«¾Ö±äÁ¿*/
+void (*_mydfc_)();                             /* éœ€è¦å…¨å±€å˜é‡*/
 
 static double ddirmin(x, p, xmin, n, f, df, eps, itmax)
 double *x,*xmin,*p,eps,(*f)(),(*df)();
@@ -31,7 +31,7 @@ int n,itmax;
     _xdir_ = (double*)malloc(_ndir_*sizeof(double));
     _xtdir_ = (double*)malloc(_ndir_*sizeof(double));
     _dxtdir_= (double*)malloc(_ndir_*sizeof(double));
-    _myfc_ = f;                                            /* È«¾Ö±äÁ¿Ö¸Ïòº¯Êı*/
+    _myfc_ = f;                                            /* å…¨å±€å˜é‡æŒ‡å‘å‡½æ•°*/
     _mydfc_ = df;
 
     for(i=0; i<n; i++)
@@ -40,12 +40,12 @@ int n,itmax;
         _xdir_[i] = x[i];
     }
 
-    ax = 0.0;                                             /* ³õÊ¼²ÂÏë·¶Î§*/
+    ax = 0.0;                                             /* åˆå§‹çŒœæƒ³èŒƒå›´*/
     bx = 0.5;
-    brake(&ax, &bx, &cx, fdim);                          /* ÕÒÒ»¸ö¼«Ğ¡ÖµÇø¼ä*/
-    fopt = dbrent(ax, bx, cx, fdim, dfdim, &xopt, eps, itmax);     /* ÓÃbrentËã·¨ÕÒ¼«Ğ¡Öµ*/
+    brake(&ax, &bx, &cx, fdim);                          /* æ‰¾ä¸€ä¸ªæå°å€¼åŒºé—´*/
+    fopt = dbrent(ax, bx, cx, fdim, dfdim, &xopt, eps, itmax);     /* ç”¨brentç®—æ³•æ‰¾æå°å€¼*/
 
-    for(i=0; i<n; i++)                                    /* ÕÒµ½ÁË×îÓÅµãx*/
+    for(i=0; i<n; i++)                                    /* æ‰¾åˆ°äº†æœ€ä¼˜ç‚¹x*/
     {
         p[i] = xopt*p[i];
         xmin[i] = x[i]+p[i];
@@ -58,7 +58,7 @@ int n,itmax;
     return(fopt);
 }
 
-static double fdim_jiang(t)                                     /* ÇófÔÚÕâ¸ö·½ÏòÉÏĞĞ½øtÊ±µÄÖµ*/
+static double fdim_jiang(t)                                     /* æ±‚fåœ¨è¿™ä¸ªæ–¹å‘ä¸Šè¡Œè¿›tæ—¶çš„å€¼*/
 double t;
 {
     int i;
@@ -73,7 +73,7 @@ double t;
     return(y);
 }
 
-static double dfdim(double t)                                     /* ÇófÔÚÕâ¸ö·½ÏòĞĞ½øµ½t´¦µÄµ¼ÊıÖµ*/
+static double dfdim(double t)                                     /* æ±‚fåœ¨è¿™ä¸ªæ–¹å‘è¡Œè¿›åˆ°tå¤„çš„å¯¼æ•°å€¼*/
 {
     int i;
     double df;

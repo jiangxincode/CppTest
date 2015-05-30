@@ -1,11 +1,11 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include "mgst.c"
 int main15mgst0()
 {
     int i,j,p[50];
     printf("Data:\n");
 
-    for(i=0; i<5; i++)                     /* Éú³ÉÒ»Ð©ÎÞÐòÊý¾Ý*/
+    for(i=0; i<5; i++)                     /* ç”Ÿæˆä¸€äº›æ— åºæ•°æ®*/
     {
         for(j=0; j<10; j++)
         {
@@ -16,7 +16,7 @@ int main15mgst0()
         printf("\n");
     }
 
-    printf("Merge Sort:\n");                /* Ö±½ÓÑ¡ÔñÅÅÐòµÄ½á¹û*/
+    printf("Merge Sort:\n");                /* ç›´æŽ¥é€‰æ‹©æŽ’åºçš„ç»“æžœ*/
     mgst(p,50);
 
     for(i=0; i<5; i++)

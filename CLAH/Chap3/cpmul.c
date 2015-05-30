@@ -1,38 +1,37 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 
-#include "../Chap2/c_comp.h"	/*¸´ÏµÊý¶àÏîÊ½µÄ³Ë·¨º¯ÊýÐèÒªµ÷ÓÃÏµÊýºÍµã±íÊ¾Ïà»¥×ª»¯µÄÁ½¸öº¯Êý*/
-#include "something.h"
+#include "../utility.h"
 
 /**
- * º¯ Êý Ãû£ºcpmul(a,n,b,m,c)
- * ¹¦ÄÜÃèÊö£ºÍê³ÉÏµÊý±íÊ¾µÄ¸´ÏµÊýµÄ¶àÏîÊ½AÓëBÏà³Ë£¬½á¹ûÏµÊý·ÅÔÚcÀï
- * ÊäÈë²ÎÊý£ºa£¨¶àÏîÊ½AÏµÊý£©£¬n£¨ÏµÊý¸öÊý£©
- *            b£¨¶àÏîÊ½BÏµÊý£©£¬m£¨ÏµÊý¸öÊý£©
- *            c£¨·µ»ØµÄ¶àÏîÊ½CµÄÏµÊý£©
- * ·µ »Ø Öµ£ºÕûÐÍÊý×Ö¡£¼ÆËã³É¹¦Ôò·µ»Ø1£¬·ñÔò·µ»Ø0
+ * å‡½ æ•° åï¼šcpmul(a,n,b,m,c)
+ * åŠŸèƒ½æè¿°ï¼šå®Œæˆç³»æ•°è¡¨ç¤ºçš„å¤ç³»æ•°çš„å¤šé¡¹å¼Aä¸ŽBç›¸ä¹˜ï¼Œç»“æžœç³»æ•°æ”¾åœ¨cé‡Œ
+ * è¾“å…¥å‚æ•°ï¼šaï¼ˆå¤šé¡¹å¼Aç³»æ•°ï¼‰ï¼Œnï¼ˆç³»æ•°ä¸ªæ•°ï¼‰
+ *            bï¼ˆå¤šé¡¹å¼Bç³»æ•°ï¼‰ï¼Œmï¼ˆç³»æ•°ä¸ªæ•°ï¼‰
+ *            cï¼ˆè¿”å›žçš„å¤šé¡¹å¼Cçš„ç³»æ•°ï¼‰
+ * è¿” å›ž å€¼ï¼šæ•´åž‹æ•°å­—ã€‚è®¡ç®—æˆåŠŸåˆ™è¿”å›ž1ï¼Œå¦åˆ™è¿”å›ž0
  */
 int cpmul(struct c_comp *a,int n,struct c_comp *b,int m,struct c_comp *c)
 {
     int i,k,nn;
     struct c_comp *aa,*bb,*cc,*ya,*yb,*yc;
 
-    if((a==NULL) || (b==NULL) || (c==NULL))   /* ¼ì²âÊÇ·ñÓÐÖ¸ÕëÎª¿Õ*/
+    if((a==NULL) || (b==NULL) || (c==NULL))   /* æ£€æµ‹æ˜¯å¦æœ‰æŒ‡é’ˆä¸ºç©º*/
     {
         printf("(cpmul)NULL pointer found.\n");
         return(0);
     }
 
-    k = log(n+m-1-0.5)/log(2.0)+1;	/* Çó×îÐ¡µÄk£¬²¢Âú×ã2^k ²»Ð¡ÓÚ¶àÏîÊ½CµÄ½×Êý*/
-    nn = 1;				/* Çó³ö2^k*/
+    k = log(n+m-1-0.5)/log(2.0)+1;	/* æ±‚æœ€å°çš„kï¼Œå¹¶æ»¡è¶³2^k ä¸å°äºŽå¤šé¡¹å¼Cçš„é˜¶æ•°*/
+    nn = 1;				/* æ±‚å‡º2^k*/
 
     for(i=0; i<k; i++)
     {
         nn = nn<<1;
     }
 
-    /* ÎªÀ©Õ¹ºóµÄ¶àÏîÊ½·ÖÅä×ã¹»µÄ¿Õ¼ä*/
+    /* ä¸ºæ‰©å±•åŽçš„å¤šé¡¹å¼åˆ†é…è¶³å¤Ÿçš„ç©ºé—´*/
     aa = (struct c_comp*)malloc(nn*sizeof(struct c_comp));
     bb = (struct c_comp*)malloc(nn*sizeof(struct c_comp));
     cc = (struct c_comp*)malloc(nn*sizeof(struct c_comp));
@@ -40,13 +39,13 @@ int cpmul(struct c_comp *a,int n,struct c_comp *b,int m,struct c_comp *c)
     yb = (struct c_comp*)malloc(nn*sizeof(struct c_comp));
     yc = (struct c_comp*)malloc(nn*sizeof(struct c_comp));
 
-    if(!(aa && bb && cc && ya && yb && yc))   /* ¼ì²âÊÇ·ñÓÐÖ¸ÕëÎª¿Õ*/
+    if(!(aa && bb && cc && ya && yb && yc))   /* æ£€æµ‹æ˜¯å¦æœ‰æŒ‡é’ˆä¸ºç©º*/
     {
         printf("(cpmul)memory alloc failed.\n");
         return(0);
     }
 
-    for(i=0; i<n; i++) 			 /*½«A,BÁ½¸ö¶àÏîÊ½²¹×ã³É2^k½×µÄ£¬²¢×ª´æÔÚaaÓëbbÖÐ*/
+    for(i=0; i<n; i++) 			 /*å°†A,Bä¸¤ä¸ªå¤šé¡¹å¼è¡¥è¶³æˆ2^ké˜¶çš„ï¼Œå¹¶è½¬å­˜åœ¨aaä¸Žbbä¸­*/
     {
         aa[i].rmz = a[i].rmz;
         aa[i].imz = a[i].imz;
@@ -70,19 +69,19 @@ int cpmul(struct c_comp *a,int n,struct c_comp *b,int m,struct c_comp *c)
         bb[i].imz = 0;
     }
 
-    i = c2p(aa,nn,ya);			 /*Çó³öÀ©Õ¹ºó¶àÏîÊ½AµÄµã±íÊ¾ÐÎÊ½*/
-    k = c2p(bb,nn,yb);			 /*Çó³öÀ©Õ¹ºó¶àÏîÊ½BµÄµã±íÊ¾ÐÎÊ½*/
+    i = c2p(aa,nn,ya);			 /*æ±‚å‡ºæ‰©å±•åŽå¤šé¡¹å¼Açš„ç‚¹è¡¨ç¤ºå½¢å¼*/
+    k = c2p(bb,nn,yb);			 /*æ±‚å‡ºæ‰©å±•åŽå¤šé¡¹å¼Bçš„ç‚¹è¡¨ç¤ºå½¢å¼*/
 
-    if(i&&k)			  	 /* Èôµã±íÊ¾Çó½â³É¹¦£¬¼ÌÐøÔËËã¡£·ñÔò·µ»Ø0*/
+    if(i&&k)			  	 /* è‹¥ç‚¹è¡¨ç¤ºæ±‚è§£æˆåŠŸï¼Œç»§ç»­è¿ç®—ã€‚å¦åˆ™è¿”å›ž0*/
     {
-        for(i=0; i<nn; i++)			 /* ¼ÆËãÔÚ¸÷µãÉÏµÄ³Ë»ý*/
+        for(i=0; i<nn; i++)			 /* è®¡ç®—åœ¨å„ç‚¹ä¸Šçš„ä¹˜ç§¯*/
         {
             c_comp_product(&ya[i],&yb[i],&yc[i]);
         }
 
-        k = p2c(yc,nn,cc);			 /*Çó³ö¶àÏîÊ½CµÄÏµÊý*/
+        k = p2c(yc,nn,cc);			 /*æ±‚å‡ºå¤šé¡¹å¼Cçš„ç³»æ•°*/
 
-        if(k)				 /*ÌÞ³ý¶àÓàµÄ¸ß½×ÁãÏî¡£Èôp2cº¯ÊýÊ§°Ü£¬Ôò·µ»Ø0*/
+        if(k)				 /*å‰”é™¤å¤šä½™çš„é«˜é˜¶é›¶é¡¹ã€‚è‹¥p2cå‡½æ•°å¤±è´¥ï¼Œåˆ™è¿”å›ž0*/
         {
             for(i=0; i<m+n-1; i++)
             {

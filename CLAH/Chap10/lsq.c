@@ -1,14 +1,14 @@
-/*======================================================
- * ��������lsq
- * ������������С�������
- * ���������x ָ����n���������ݵ������ָ��
- *           y ָ����n�����ĺ���ֵ�������ָ��
- *           n ���ĸ���
- *           p ָ����pp����϶���ʽϵ���������ָ��
- *           pp ��϶���ʽ����+1
- *           s ָ�������ָ�룬���4�����ݣ����ص������ǣ� ����ƽ����,
- *             ���ľ���ֵ�����ֵ�����ľ���ֵ֮��,x0��ƽ��ֵ
- * ����ֵ��  ���͡�����ϳɹ��򷵻�1,���򷵻�0
+﻿/*======================================================
+ * 函数名：lsq
+ * 功能描述：最小二乘拟合
+ * 输入参数：x 指向存放n个结点的数据的数组的指针
+ *           y 指向存放n个结点的函数值的数组的指针
+ *           n 结点的个数
+ *           p 指向存放pp个拟合多项式系数的数组的指针
+ *           pp 拟合多项式次数+1
+ *           s 指向数组的指针，存放4个数据，返回的依次是： 误差的平方和,
+ *             误差的绝对值的最大值、误差的绝对值之和,x0的平均值
+ * 返回值：  整型。若拟合成功则返回1,否则返回0
 =========================================================*/
 #include <stdlib.h>
 #include <stdio.h>
@@ -19,16 +19,16 @@ int n,pp;
 {
     int i,j,k;
     double a,b,d0,d1,d2,c,t;
-    double *q0,*q1,*q2,*x0;                              /* �����������ʽQ��ϵ��*/
-    double *q0y,*q1y,*q2y;                          /* �����������ʽQ�ڸ����ϵ�ֵ*/
+    double *q0,*q1,*q2,*x0;                              /* 存放正交多项式Q的系数*/
+    double *q0y,*q1y,*q2y;                          /* 存放正交多项式Q在各点上的值*/
 
-    if(!(x && y && p && s))                           /* �������ָ���Ƿ�Ϊ��*/
+    if(!(x && y && p && s))                           /* 检测输入指针是否为空*/
     {
         printf("Pointer is Null\n");
         return(0);
     }
 
-    q0 = (double*)malloc(pp*sizeof(double));          /* ����ռ䲢����Ƿ�ɹ�*/
+    q0 = (double*)malloc(pp*sizeof(double));          /* 分配空间并检测是否成功*/
     q1 = (double*)malloc(pp*sizeof(double));
     q2 = (double*)malloc(pp*sizeof(double));
 
@@ -42,7 +42,7 @@ int n,pp;
     }
 
     x0 = (double*)malloc(n*sizeof(double));
-    q0y = (double*)malloc(n*sizeof(double));          /* ����ռ䲢����Ƿ�ɹ�*/
+    q0y = (double*)malloc(n*sizeof(double));          /* 分配空间并检测是否成功*/
     q1y = (double*)malloc(n*sizeof(double));
     q2y = (double*)malloc(n*sizeof(double));
 
@@ -70,7 +70,7 @@ int n,pp;
         x0[k] = x[k]-t;
     }
 
-    for(i=0; i<pp; i++)                               /* ���ֵ*/
+    for(i=0; i<pp; i++)                               /* 设初值*/
     {
         q0[i] = 0.0;
         q1[i] = 0.0;
@@ -83,31 +83,31 @@ int n,pp;
         q0y[k] = 1.0;
     }
 
-    q0[0] = 1;                                        /* Q0��ϵ��*/
+    q0[0] = 1;                                        /* Q0的系数*/
     c = 0.0;
     d0 = n;
 
-    for(k=0; k<n; k++)                                /* ����c0*/
+    for(k=0; k<n; k++)                                /* 计算c0*/
     {
         c = c+y[k]/d0;
     }
 
-    p[0] = c;                                      /* ��϶���ʽP(x)��ϵ��*/
+    p[0] = c;                                      /* 拟合多项式P(x)的系数*/
     q1[0] = 0.0;
-    q1[1] = 1.0;                                      /* Q1��ϵ��*/
+    q1[1] = 1.0;                                      /* Q1的系数*/
     d1 = 0.0;
     c = 0.0;
 
-    for(k=0; k<n; k++)                                /* ����d1��c1*/
+    for(k=0; k<n; k++)                                /* 计算d1和c1*/
     {
         t =  x0[k];
-        q1y[k] = t;                                     /* Q1�����ݵ��ϵ�ֵ*/
+        q1y[k] = t;                                     /* Q1在数据点上的值*/
         d1 = d1+t*t;
         c = c+t*y[k];
     }
 
     c = c/d1;
-    p[0] = p[0]+c*q1[0];                             /* ������϶���ʽ*/
+    p[0] = p[0]+c*q1[0];                             /* 更新拟合多项式*/
     p[1] = p[1]+c*q1[1];
 
     for(i=2; i<pp; i++)
@@ -124,7 +124,7 @@ int n,pp;
         d2 = 0;
         c = 0;
 
-        for(k=0; k<n; k++)                             /* ����Qi�ĺ���ֵ��c,d*/
+        for(k=0; k<n; k++)                             /* 计算Qi的函数值和c,d*/
         {
             t = (x0[k]-a)*q1y[k] - b*q0y[k];
             q2y[k] = t;
@@ -133,8 +133,8 @@ int n,pp;
         }
 
         c = c/d2;
-        q2[0] = -a*q1[0]-b*q0[0];                      /* ����Qi��ϵ��*/
-        p[0] = p[0] + c*q2[0];                         /* ����P(x)��ϵ��*/
+        q2[0] = -a*q1[0]-b*q0[0];                      /* 计算Qi的系数*/
+        p[0] = p[0] + c*q2[0];                         /* 更新P(x)的系数*/
 
         for(j=1; j<=i; j++)
         {
@@ -143,9 +143,9 @@ int n,pp;
         }
 
         d0 = d1;
-        d1 = d2;                              /* ѭ��ʹ�ñ���*/
+        d1 = d2;                              /* 循环使用变量*/
 
-        for(k=0; k<n; k++)                             /* ѭ��ʹ������*/
+        for(k=0; k<n; k++)                             /* 循环使用数组*/
         {
             q0y[k] = q1y[k];
             q1y[k] = q2y[k];
@@ -184,7 +184,7 @@ int n,pp;
 
     free(q0);
     free(q1);
-    free(q2);                  /* �ͷſռ�*/
+    free(q2);                  /* 释放空间*/
     free(x);
     free(q0y);
     free(q1y);

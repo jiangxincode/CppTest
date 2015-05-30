@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include "popo.c"
 #include "qcks.c"
 int main15qck0()
@@ -6,7 +6,7 @@ int main15qck0()
     int i,j,p[50],p1[50];
     printf("Data:\n");
 
-    for(i=0; i<5; i++)                     /* Éú³ÉÒ»Ð©ÎÞÐòÊý¾Ý*/
+    for(i=0; i<5; i++)                     /* ç”Ÿæˆä¸€äº›æ— åºæ•°æ®*/
     {
         for(j=0; j<10; j++)
         {
@@ -18,7 +18,7 @@ int main15qck0()
         printf("\n");
     }
 
-    printf("Quick Sort:\n");                /* ¿ìËÙÅÅÐòµÄ½á¹û*/
+    printf("Quick Sort:\n");                /* å¿«é€ŸæŽ’åºçš„ç»“æžœ*/
     qcks(p,0,49);
 
     for(i=0; i<5; i++)
@@ -31,7 +31,7 @@ int main15qck0()
         printf("\n");
     }
 
-    printf("Bubble Sort:\n");              /* ÆøÅÝÅÅÐòµÄ½á¹û*/
+    printf("Bubble Sort:\n");              /* æ°”æ³¡æŽ’åºçš„ç»“æžœ*/
     popo(p,50);
 
     for(i=0; i<5; i++)

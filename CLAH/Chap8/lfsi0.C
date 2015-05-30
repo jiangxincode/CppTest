@@ -1,8 +1,8 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <math.h>
 
 #include "tzi1.c"
-#include "something.h"
+#include "../utility.h"
 
 static double f1(double x) ;
 
@@ -14,14 +14,14 @@ int main8lfsi0()
     b = 4.0;
     eps = 1e-8;
     h0 = 1e-5;
-    z=tzi1(a,b,4,eps,h0,f1);                     /* ÓÃ±ä²½³¤ÌİĞÎÇó»ı·¨»ı·Ö*/
-    printf("tzi1: t=%2.5f\n",z);                 /* ´òÓ¡½á¹û*/
-    z=lfsi(a,b,4,eps,f1);                        /* ÓÃÁ¬·ÖÊ½Çó»ı·¨»ı·Ö*/
+    z=tzi1(a,b,4,eps,h0,f1);                     /* ç”¨å˜æ­¥é•¿æ¢¯å½¢æ±‚ç§¯æ³•ç§¯åˆ†*/
+    printf("tzi1: t=%2.5f\n",z);                 /* æ‰“å°ç»“æœ*/
+    z=lfsi(a,b,4,eps,f1);                        /* ç”¨è¿åˆ†å¼æ±‚ç§¯æ³•ç§¯åˆ†*/
     printf("lfsi: t=%2.5f\n",z);
     getchar();
 }
 
-static double f1(double x)                                    /* ±»»ı·ÖµÄº¯Êı*/
+static double f1(double x)                                    /* è¢«ç§¯åˆ†çš„å‡½æ•°*/
 {
     double y;
     y=exp(-x*x)/(1.0+x*x);

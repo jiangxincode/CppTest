@@ -1,8 +1,8 @@
-/*======================================================
-//º¯ÊýÃû£ºr_chdet
-//¹¦ÄÜÃèÊö£ºÇó¶Ô³ÆÕý¶¨¾ØÕóµÄÐÐÁÐÊ½Öµ
-//ÊäÈë²ÎÊý£ºmat(ÊäÈëµÄ¾ØÕó) n(¾ØÕó½×Êý) eps(¾«¶È)
-//·µ»ØÖµ£º¾ØÕóµÄÐÐÁÐÊ½Öµ
+ï»¿/*======================================================
+//å‡½æ•°åï¼šr_chdet
+//åŠŸèƒ½æè¿°ï¼šæ±‚å¯¹ç§°æ­£å®šçŸ©é˜µçš„è¡Œåˆ—å¼å€¼
+//è¾“å…¥å‚æ•°ï¼šmat(è¾“å…¥çš„çŸ©é˜µ) n(çŸ©é˜µé˜¶æ•°) eps(ç²¾åº¦)
+//è¿”å›žå€¼ï¼šçŸ©é˜µçš„è¡Œåˆ—å¼å€¼
 =========================================================*/
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,41 +16,41 @@ double *mat, eps;
     double det;
     double *cpmat;
 
-    if(mat == NULL)                                /* ¼ì²éÊäÈëµÄÖ¸ÕëÊÇ·ñÎª¿Õ*/
+    if(mat == NULL)                                /* æ£€æŸ¥è¾“å…¥çš„æŒ‡é’ˆæ˜¯å¦ä¸ºç©º*/
     {
         printf("matrix pointer is NULL.\n");
         return(0.0);
     }
 
-    cpmat = (double*)malloc(n*n*sizeof(double));   /* ½«ÊäÈë¾ØÕóµÄÄÚÈÝ¿½±´Ò»·Ý£¬ÒÔÃâÆÆ»µ*/
+    cpmat = (double*)malloc(n*n*sizeof(double));   /* å°†è¾“å…¥çŸ©é˜µçš„å†…å®¹æ‹·è´ä¸€ä»½ï¼Œä»¥å…ç ´å*/
 
     for(i=0; i<n*n; i++)
     {
         cpmat[i] = mat[i];
     }
 
-    det = 1.0;                                       /* ¸³³õÖµ*/
+    det = 1.0;                                       /* èµ‹åˆå€¼*/
 
     for(k=0; k<n; k++)
     {
         l = k*n+k;
 
-        for(j=0; j<k; j++)                           /* Çó³öLkk*/
+        for(j=0; j<k; j++)                           /* æ±‚å‡ºLkk*/
         {
             v = k*n+j;
             cpmat[l] = cpmat[l]-cpmat[v]*cpmat[v];
         }
 
-        if(cpmat[l] < eps)                           /* ÅÐ¶Ï¾ØÕóÊÇ·ñÎªÕý¶¨*/
+        if(cpmat[l] < eps)                           /* åˆ¤æ–­çŸ©é˜µæ˜¯å¦ä¸ºæ­£å®š*/
         {
             printf("matrix is Not positive definite.\n");
             return(0.0);
         }
 
         cpmat[l] = sqrt(cpmat[l]);
-        det = det*cpmat[l];                              /* ¸üÐÂdet*/
+        det = det*cpmat[l];                              /* æ›´æ–°det*/
 
-        for(i=k+1; i<n; i++)                            /* Çó³öLik*/
+        for(i=k+1; i<n; i++)                            /* æ±‚å‡ºLik*/
         {
             v = i*n+k;
 
@@ -63,7 +63,7 @@ double *mat, eps;
         }
     }
 
-    det = det*det;                                     /* ÐÐÁÐÊ½ÖµÊÇdetµÄÆ½·½*/
+    det = det*det;                                     /* è¡Œåˆ—å¼å€¼æ˜¯detçš„å¹³æ–¹*/
     free(cpmat);
     return(det);
 }

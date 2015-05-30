@@ -1,8 +1,8 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 
-#include "c_comp.h"
+#include "../utility.h"
 
 int main2c_comp_example1()
 {
@@ -14,13 +14,13 @@ int main2c_comp_example1()
 
     if(c_comp_product(&a,&b,&c))
     {
-        printf("³Ë·¨½á¹ûÎª£º");
+        printf("ä¹˜æ³•ç»“æžœä¸ºï¼š");
         printf("%1.5f+j%1.5f\n",c.rmz,c.imz);
     }
 
     if(c_comp_divide(&a,&b,&d))
     {
-        printf("³ý·¨½á¹ûÎª£º");
+        printf("é™¤æ³•ç»“æžœä¸ºï¼š");
         printf("%1.5f+j%1.5f\n",d.rmz,d.imz);
     }
 

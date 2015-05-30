@@ -1,11 +1,11 @@
-/*=============================================================
- * º¯ Êý Ãû£ºrads
- * ¹¦ÄÜÃèÊö£º»ùÊýÅÅÐò
- * ÊäÈë²ÎÊý£º x ´æ·Å´ýÅÅÐòÊý¾ÝµÄÊý×é
- *            n Êý×é³¤¶È
- *            d Êý¾ÝµÄÎ»Êý
- *            k Ã¿Î»Êý×Ö×î¶àÔÚ[0,k)Ö®¼ä£¬Ò²¾ÍÊÇËµÊÇk½øÖÆµÄ¡£
- * ·µ »Ø Öµ£ºÎÞ
+ï»¿/*=============================================================
+ * å‡½ æ•° åï¼šrads
+ * åŠŸèƒ½æè¿°ï¼šåŸºæ•°æŽ’åº
+ * è¾“å…¥å‚æ•°ï¼š x å­˜æ”¾å¾…æŽ’åºæ•°æ®çš„æ•°ç»„
+ *            n æ•°ç»„é•¿åº¦
+ *            d æ•°æ®çš„ä½æ•°
+ *            k æ¯ä½æ•°å­—æœ€å¤šåœ¨[0,k)ä¹‹é—´ï¼Œä¹Ÿå°±æ˜¯è¯´æ˜¯kè¿›åˆ¶çš„ã€‚
+ * è¿” å›ž å€¼ï¼šæ— 
 //==============================================================*/
 #include <stdlib.h>
 static void rads_cout();
@@ -14,18 +14,18 @@ int *x;
 int n,d,k;
 {
     int i,j,m,k1,*a,*y,flag;
-    a = (int*)malloc(n*sizeof(int));        /* aÊÇ´æ·ÅÒ»Î»Êý×ÖµÄÊý×é*/
-    y = (int*)malloc(n*sizeof(int));        /* yÊÇÓÃÓÚ´æ·ÅÖÐ¼ä±äÁ¿µÄ¿Õ¼ä*/
+    a = (int*)malloc(n*sizeof(int));        /* aæ˜¯å­˜æ”¾ä¸€ä½æ•°å­—çš„æ•°ç»„*/
+    y = (int*)malloc(n*sizeof(int));        /* yæ˜¯ç”¨äºŽå­˜æ”¾ä¸­é—´å˜é‡çš„ç©ºé—´*/
     flag = 0;
     k1 = 1;
 
-    for(m=0; m<d; m++)                      /* ·Ö±ð°´dÎ»½øÐÐÅÅÐò*/
+    for(m=0; m<d; m++)                      /* åˆ†åˆ«æŒ‰dä½è¿›è¡ŒæŽ’åº*/
     {
         if(flag == 0)
         {
             for(j=0; j<n; j++)
             {
-                a[j] = x[j]/k1;             /* µÃµ½ÁËµÚmÎ»*/
+                a[j] = x[j]/k1;             /* å¾—åˆ°äº†ç¬¬mä½*/
                 a[j] = a[j]%k;
             }
 
@@ -35,7 +35,7 @@ int n,d,k;
         {
             for(j=0; j<n; j++)
             {
-                a[j] = y[j]/k1;             /* µÃµ½ÁËµÚmÎ»*/
+                a[j] = y[j]/k1;             /* å¾—åˆ°äº†ç¬¬mä½*/
                 a[j] = a[j]%k;
             }
 
@@ -46,7 +46,7 @@ int n,d,k;
         k1 = k1*k;
     }
 
-    if(flag==1)							    /* ´ËÊ±ÅÅÐòºóÊý¾Ý´æ·ÅÔÚyÖÐ*/
+    if(flag==1)							    /* æ­¤æ—¶æŽ’åºåŽæ•°æ®å­˜æ”¾åœ¨yä¸­*/
         for(j=0; j<n; j++)
         {
             x[j] = y[j];
@@ -57,30 +57,30 @@ int n,d,k;
     return;
 }
 
-static void rads_cout(a,x,y,n,k)                   /* ½«x°´aÅÅÐò£¬½á¹û·ÅÔÚyÖÐ*/
+static void rads_cout(a,x,y,n,k)                   /* å°†xæŒ‰aæŽ’åºï¼Œç»“æžœæ”¾åœ¨yä¸­*/
 int *a,*x,*y;
 int n,k;
 {
     int i,j,*c;
     c = (int*)malloc((k+1)*sizeof(int));
 
-    for(i=0; i<=k; i++)                     /* ÉèÖÃ³õÖµ*/
+    for(i=0; i<=k; i++)                     /* è®¾ç½®åˆå€¼*/
     {
         c[i] = 0;
     }
 
-    for(i=0; i<n; i++)                      /* Í³¼Æ¸öÊý*/
+    for(i=0; i<n; i++)                      /* ç»Ÿè®¡ä¸ªæ•°*/
     {
         j = a[i];
         c[j] = c[j]+1;
     }
 
-    for(i=1; i<=k; i++)                     /* ¼ÆÊý£¬ÓÃÓÚ¼ÆËãÎ»ÖÃ*/
+    for(i=1; i<=k; i++)                     /* è®¡æ•°ï¼Œç”¨äºŽè®¡ç®—ä½ç½®*/
     {
         c[i] = c[i]+c[i-1];
     }
 
-    for(i=n-1; i>=0; i--)                   /* Ö±½Ó¸÷¹éÆäÎ»*/
+    for(i=n-1; i>=0; i--)                   /* ç›´æŽ¥å„å½’å…¶ä½*/
     {
         j = a[i];
         y[c[j]-1] = x[i];

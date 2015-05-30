@@ -1,11 +1,11 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include "r_mdet.c"
 #include "r_mrank.c"
 #include "r_chdet.c"
 int main4r_mdet0()
 {
-    double a[4][4] = {{2.0,1.0,3.0,5.0},    /* ¾ØÕóA£¬B£¬C·Ö±ğ¸³³õÖµ*/
+    double a[4][4] = {{2.0,1.0,3.0,5.0},    /* çŸ©é˜µAï¼ŒBï¼ŒCåˆ†åˆ«èµ‹åˆå€¼*/
         {2.0,2.0,-3.0,-1.0},
         {2.0,1.0,7.0,2.},
         {4.0,2.0,10.0,7.0}
@@ -20,17 +20,17 @@ int main4r_mdet0()
         {6.0,4.0,9.0,5.0},
         {1.0,3.0,5.0,10.0}
     };
-    double det,eps = 1e-10;                 /* ÊıÖµ¾«¶ÈÉèÎª1e-10*/
+    double det,eps = 1e-10;                 /* æ•°å€¼ç²¾åº¦è®¾ä¸º1e-10*/
     int n;
-    n = r_mrank(a,4,4,eps);                 /* Çó¾ØÕóAµÄÖÈºÍÌØÕ÷Öµ²¢´òÓ¡*/
+    n = r_mrank(a,4,4,eps);                 /* æ±‚çŸ©é˜µAçš„ç§©å’Œç‰¹å¾å€¼å¹¶æ‰“å°*/
     printf("rank(a) = %d\n", n);
     det = r_mdet(a, 4,eps);
     printf("det(a) = %2.5f\n", det);
-    n = r_mrank(b,4,4,eps);                 /* Çó¾ØÕóBµÄÖÈºÍÌØÕ÷Öµ²¢´òÓ¡*/
+    n = r_mrank(b,4,4,eps);                 /* æ±‚çŸ©é˜µBçš„ç§©å’Œç‰¹å¾å€¼å¹¶æ‰“å°*/
     printf("rank(b) = %d\n", n);
     det = r_mdet(b, 4,eps);
     printf("det(b) = %2.5f\n", det);
-    n = r_mrank(c,4,4,eps);                 /* ÇóÕı¶¨¾ØÕóCµÄÖÈºÍÌØÕ÷Öµ²¢´òÓ¡*/
+    n = r_mrank(c,4,4,eps);                 /* æ±‚æ­£å®šçŸ©é˜µCçš„ç§©å’Œç‰¹å¾å€¼å¹¶æ‰“å°*/
     printf("rank(c) = %d\n", n);
     det = r_chdet(c,4,eps);
     printf("det(c) = %2.5f\n", det);

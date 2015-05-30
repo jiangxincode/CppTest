@@ -1,15 +1,15 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include "smtr.c"
 int main4mst01()
 {
     int i,j;
     static double q[5][5];
-    static double a[5][5]= { {12.0,7.0,5.0,2.0,-1.0},         /* ¾ØÕóA*/
+    static double a[5][5]= { {12.0,7.0,5.0,2.0,-1.0},         /* çŸ©é˜µA*/
         {7.0,9.0,6.0,3.0,-2.0},{5.0,6.0,5.0,-7.0,1.0},
         {2.0,3.0,-7.0,-1.0,8.0},{-1.0,-2.0,1.0,8.0,2.0}
     };
-    smtr(a,5,q,1e-16);                                   /* AÏàËÆ±ä»»ÎªÈı¶Ô½ÇÕó*/
-    printf("MAT Q IS:\n");                                /* ´òÓ¡Q¾ØÕó*/
+    smtr(a,5,q,1e-16);                                   /* Aç›¸ä¼¼å˜æ¢ä¸ºä¸‰å¯¹è§’é˜µ*/
+    printf("MAT Q IS:\n");                                /* æ‰“å°QçŸ©é˜µ*/
 
     for(i=0; i<=4; i++)
     {
@@ -22,7 +22,7 @@ int main4mst01()
     }
 
     printf("\n");
-    printf("MAT TR IS:\n");                              /* ´òÓ¡Èı¶Ô½ÇÕó*/
+    printf("MAT TR IS:\n");                              /* æ‰“å°ä¸‰å¯¹è§’é˜µ*/
 
     for(i=0; i<=4; i++)
     {

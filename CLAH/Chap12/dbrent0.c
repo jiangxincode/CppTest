@@ -1,8 +1,8 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <math.h>
-#include "bsl1.c"
+
 #include "dbrent.c"
-#include "something.h"
+#include "../utility.h"
 
 static double f(double x);
 static double df(double x);
@@ -31,7 +31,7 @@ int main12dbrent0()
         {
             iflag = 0;
 
-            for(j=0; j<nmin; j++)                           /* Ñ°ÕÒÊÇ·ñÒÑ¾­ÓÐÏàÍ¬µÄ¼«Ð¡Öµ*/
+            for(j=0; j<nmin; j++)                           /* å¯»æ‰¾æ˜¯å¦å·²ç»æœ‰ç›¸åŒçš„æžå°å€¼*/
                 if(fabs(xopt-xmin[j]) < 0.01*xopt)
                 {
                     iflag = 1;

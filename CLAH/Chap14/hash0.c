@@ -1,17 +1,12 @@
+ï»¿#include "../utility.h"
 
-
-#include "something.h"
-
-
-
-int	KeyEqu(char* stra,char* strb);   /* ÅĞ¶Ï¹Ø¼ü×ÖÊÇ·ñÏàÍ¬*/
-void ElemCP(ElemType *a, ElemType *b);                         /* ½«ÔªËØbÖĞÄÚÈİ¿½±´µ½aÖĞ*/
-void ElemDEL(ElemType *a);                                    /* ½«ÔªËØaÉè³ÉÒÑÉ¾³ı*/
-void ElemNULL(ElemType *a);                                   /* ½«ÔªËØaÉè³É¿Õ£¬ÓÃÓÚ³õÊ¼»¯»òÇå¿Õ¹şÏ£±í*/
+int	KeyEqu(char* stra,char* strb);   /* åˆ¤æ–­å…³é”®å­—æ˜¯å¦ç›¸åŒ*/
+void ElemCP(ElemType *a, ElemType *b);                         /* å°†å…ƒç´ bä¸­å†…å®¹æ‹·è´åˆ°aä¸­*/
+void ElemDEL(ElemType *a);                                    /* å°†å…ƒç´ aè®¾æˆå·²åˆ é™¤*/
+void ElemNULL(ElemType *a);                                   /* å°†å…ƒç´ aè®¾æˆç©ºï¼Œç”¨äºåˆå§‹åŒ–æˆ–æ¸…ç©ºå“ˆå¸Œè¡¨*/
 
 #include <stdio.h>
 #include "string.h"
-#include "something.h"
 
 int main14hash0()
 {
@@ -26,21 +21,21 @@ int main14hash0()
         {114,"Lv",'F',18},{115,"Shi",'M',19},
         {110,"Zhang",'F',18}
     };
-    KeyType a = "Zhou";                                /* aÎªÒª²éÕÒµÄ¹Ø¼ü×Ö*/
-    hashlist HT;                                        /* ¶¨Òå¹şÏ£±í*/
+    KeyType a = "Zhou";                                /* aä¸ºè¦æŸ¥æ‰¾çš„å…³é”®å­—*/
+    hashlist HT;                                        /* å®šä¹‰å“ˆå¸Œè¡¨*/
     m = HashSize;
 
-    for(i=0; i<m; i++)                                  /* ³õÊ¼»¯¹şÏ£±í*/
+    for(i=0; i<m; i++)                                  /* åˆå§‹åŒ–å“ˆå¸Œè¡¨*/
     {
         ElemNULL(&HT[i]);
     }
 
-    for(i=0; i<16; i++)                                 /* ½«ÔªËØ²åÈë¹şÏ£±í*/
+    for(i=0; i<16; i++)                                 /* å°†å…ƒç´ æ’å…¥å“ˆå¸Œè¡¨*/
     {
         hashins(HT,m,x[i]);
     }
 
-    i = hashsch(HT,m,a);                                /* ÔÚ¹şÏ£±íÖĞ²éÕÒ*/
+    i = hashsch(HT,m,a);                                /* åœ¨å“ˆå¸Œè¡¨ä¸­æŸ¥æ‰¾*/
 
     if(i != -1)
     {
@@ -48,12 +43,12 @@ int main14hash0()
     }
 }
 
-int	KeyEqu(char* stra, char* strb)   /* ÅĞ¶Ï¹Ø¼ü×ÖÊÇ·ñÏàÍ¬*/
+int	KeyEqu(char* stra, char* strb)   /* åˆ¤æ–­å…³é”®å­—æ˜¯å¦ç›¸åŒ*/
 {
     return(!strcmp(stra, strb));
 }
 
-void ElemCP(ElemType *a, ElemType *b)                          /* ½«ÔªËØbÖĞÄÚÈİ¿½±´µ½aÖĞ*/
+void ElemCP(ElemType *a, ElemType *b)                          /* å°†å…ƒç´ bä¸­å†…å®¹æ‹·è´åˆ°aä¸­*/
 {
     int i;
     a->num = b->num;
@@ -68,7 +63,7 @@ void ElemCP(ElemType *a, ElemType *b)                          /* ½«ÔªËØbÖĞÄÚÈİ¿
     a->age = b->age;
 }
 
-void ElemDEL(ElemType *a)                                    /* ½«ÔªËØaÉè³ÉÒÑÉ¾³ı*/
+void ElemDEL(ElemType *a)                                    /* å°†å…ƒç´ aè®¾æˆå·²åˆ é™¤*/
 {
     int i;
     a->name[0] = '1';
@@ -79,7 +74,7 @@ void ElemDEL(ElemType *a)                                    /* ½«ÔªËØaÉè³ÉÒÑÉ¾³
     }
 }
 
-void ElemNULL(ElemType *a)                                    /* ½«ÔªËØaÉè³ÉÒÑÉ¾³ı*/
+void ElemNULL(ElemType *a)                                    /* å°†å…ƒç´ aè®¾æˆå·²åˆ é™¤*/
 {
     int i;
 

@@ -1,12 +1,12 @@
-#include <math.h>
+ï»¿#include <math.h>
 #include <stdlib.h>
 /*======================================================
- * º¯ÊýÃû£ºmont2
- * ¹¦ÄÜÃèÊö£ºÃÉÌØ¿¨ÂÞ·¨Çó¶þÖØ»ý·Ö
- * ÊäÈë²ÎÊý£ºx0 x·½Ïò»ý·ÖÏÂÏÞ£¬x1 x·½Ïò»ý·ÖÉÏÏÞ,
- *           y0 y·½Ïò»ý·ÖÏÂÏÞ£¬y1 y·½Ïò»ý·ÖÉÏÏÞ,
- *           f Ö¸Ïò±»»ýº¯ÊýµÄÖ¸Õë
- * ·µ»ØÖµ£º  »ý·Ö½üËÆÖµ
+ * å‡½æ•°åï¼šmont2
+ * åŠŸèƒ½æè¿°ï¼šè’™ç‰¹å¡ç½—æ³•æ±‚äºŒé‡ç§¯åˆ†
+ * è¾“å…¥å‚æ•°ï¼šx0 xæ–¹å‘ç§¯åˆ†ä¸‹é™ï¼Œx1 xæ–¹å‘ç§¯åˆ†ä¸Šé™,
+ *           y0 yæ–¹å‘ç§¯åˆ†ä¸‹é™ï¼Œy1 yæ–¹å‘ç§¯åˆ†ä¸Šé™,
+ *           f æŒ‡å‘è¢«ç§¯å‡½æ•°çš„æŒ‡é’ˆ
+ * è¿”å›žå€¼ï¼š  ç§¯åˆ†è¿‘ä¼¼å€¼
 =========================================================*/
 static double mont2(x0,x1,y0,y1,f)
 double x0,x1,y0,y1;
@@ -14,19 +14,19 @@ double(*f)();
 {
     int k,n;
     double z,p,x,y;
-    unsigned long r;            /* Ëæ»úÊý±äÁ¿*/
-    n = 1000;                  /* ²úÉú1000×éËæ»úÊý*/
+    unsigned long r;            /* éšæœºæ•°å˜é‡*/
+    n = 1000;                  /* äº§ç”Ÿ1000ç»„éšæœºæ•°*/
     z = 0.0;
 
     for(k=0; k<n; k++)
     {
-        r = rand();               /* Éú³ÉËæ»úÊý*/
+        r = rand();               /* ç”Ÿæˆéšæœºæ•°*/
         p = (double)r/RAND_MAX;
         x = x0+(x1-x0)*p;
         r = rand();
         p = (double)r/RAND_MAX;
         y = y0+(y1-y0)*p;
-        z = z+(*f)(x,y)/n;          /* ÇóºÍ*/
+        z = z+(*f)(x,y)/n;          /* æ±‚å’Œ*/
     }
 
     z = z*(y1-y0)*(x1-x0);

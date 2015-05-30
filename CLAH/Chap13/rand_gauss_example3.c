@@ -1,4 +1,4 @@
-#include <time.h>
+ï»¿#include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include "randgsab.c"
@@ -6,13 +6,13 @@ int main13rand_gauss_example3()
 {
     double a,b,G;
     int i;
-    a=3.0;                          /* ¾ùÖµ*/
-    b=2.2;                          /* ·½²î*/
+    a=3.0;                          /* å‡å€¼*/
+    b=2.2;                          /* æ–¹å·®*/
 
     for(i=0; i<5; i++)
     {
-        G = randgsab(a,b);          /* µ÷ÓÃº¯Êı*/
-        printf("%5.4f ",G);            /* Êä³ö½á¹û*/
+        G = randgsab(a,b);          /* è°ƒç”¨å‡½æ•°*/
+        printf("%5.4f ",G);            /* è¾“å‡ºç»“æœ*/
     }
 
     printf("\n");

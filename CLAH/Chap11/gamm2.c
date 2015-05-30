@@ -1,23 +1,23 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <math.h>
 
-#include "something.h"
+#include "../utility.h"
 #define NMAX 100
 
 /**
- * º¯ Êı Ãû£ºgamm2
- * ¹¦ÄÜÃèÊö£ºÇó½â²»ÍêÈ«Ù¤Âíº¯ÊıµÄÖµ
- * ÊäÈë²ÎÊı£ºa ×Ô±äÁ¿aµÄÖµ¡£ÒªÇóa>0¡£
- *            x ×Ô±äÁ¿xµÄÖµ£¬ÒªÇóx>=0¡£
- *            e1 ¾«¶ÈÒªÇó£¬µ±Á½´ÎµİÍÆµÄÖµ±ä»¯ÂÊĞ¡ÓÚe1Ê±£¬ÈÏÎªÒÑÊÕÁ²
- *            e0 ¼«Ğ¡µÄÊıÖµ£¬½Ó½ü¸¡µãÊıÄÜ±íÊ¾µÄ×îĞ¡Êı¾İ¡£Îª±ÜÃâ³ıÁã£¬½«³ıÊıÉèÖÃµÄÖµ
- * ·µ »Ø Öµ£º²»ÍêÈ«Ù¤Âíº¯ÊıµÄÖµ
+ * å‡½ æ•° åï¼šgamm2
+ * åŠŸèƒ½æè¿°ï¼šæ±‚è§£ä¸å®Œå…¨ä¼½é©¬å‡½æ•°çš„å€¼
+ * è¾“å…¥å‚æ•°ï¼ša è‡ªå˜é‡açš„å€¼ã€‚è¦æ±‚a>0ã€‚
+ *            x è‡ªå˜é‡xçš„å€¼ï¼Œè¦æ±‚x>=0ã€‚
+ *            e1 ç²¾åº¦è¦æ±‚ï¼Œå½“ä¸¤æ¬¡é€’æ¨çš„å€¼å˜åŒ–ç‡å°äºe1æ—¶ï¼Œè®¤ä¸ºå·²æ”¶æ•›
+ *            e0 æå°çš„æ•°å€¼ï¼Œæ¥è¿‘æµ®ç‚¹æ•°èƒ½è¡¨ç¤ºçš„æœ€å°æ•°æ®ã€‚ä¸ºé¿å…é™¤é›¶ï¼Œå°†é™¤æ•°è®¾ç½®çš„å€¼
+ * è¿” å› å€¼ï¼šä¸å®Œå…¨ä¼½é©¬å‡½æ•°çš„å€¼
  */
 double gamm2(double a,double x,double e1,double e0)
 {
     int n;
     double t,del,gln;
-    double an,bn,c,d;               /* ¼ÆËãÁ¬·ÖÊ½¼¶ÊıĞèÒªµÄ±äÁ¿*/
+    double an,bn,c,d;               /* è®¡ç®—è¿åˆ†å¼çº§æ•°éœ€è¦çš„å˜é‡*/
 
     if((x<0.0)||(a<=0))
     {
@@ -32,7 +32,7 @@ double gamm2(double a,double x,double e1,double e0)
 
     gln = gammln(a);
 
-    if(x<(a+1.0))                 /* µ÷ÓÃÇóºÍ¼¶Êı*/
+    if(x<(a+1.0))                 /* è°ƒç”¨æ±‚å’Œçº§æ•°*/
     {
         del = 1.0/a;               /*gamm(a)/gamm(a+1)=1/a*/
         t = 1.0/a;
@@ -42,31 +42,31 @@ double gamm2(double a,double x,double e1,double e0)
             del = del*x/(a+n);
             t = t+del;
 
-            if(fabs(del)<fabs(t)*e1)          /* ¼¶Êı²¿·ÖÒÑ¾­ÊÕÁ²*/
+            if(fabs(del)<fabs(t)*e1)          /* çº§æ•°éƒ¨åˆ†å·²ç»æ”¶æ•›*/
             {
                 t = t*exp(-x+a*log(x)-gln);
                 return(t);
             }
         }
 
-        printf(" iteration too many times\n");    /* ¾­¹ıNMAX´Îµü´úÃ»ÓĞÊÕÁ²*/
+        printf(" iteration too many times\n");    /* ç»è¿‡NMAXæ¬¡è¿­ä»£æ²¡æœ‰æ”¶æ•›*/
         return(0.0);
     }
-    else                          /* Ê¹ÓÃÁ¬·ÖÊ½¼¶Êı*/
+    else                          /* ä½¿ç”¨è¿åˆ†å¼çº§æ•°*/
     {
-        bn = x+1.0-a;               /* ÒÑ¾­¼ÆËãÁËµÚÒ»½ÚÁ¬·ÖÊ½*/
+        bn = x+1.0-a;               /* å·²ç»è®¡ç®—äº†ç¬¬ä¸€èŠ‚è¿åˆ†å¼*/
         c = 1.0/e0;
         d = 1.0/bn;
         t = d;
 
         for(n=1; n<NMAX; n++)
         {
-            an = n*(a-n);              /* ´Ë½ÚµÄÏµÊıa*/
-            bn = bn+2.0;               /* ´Ë½ÚµÄÏµÊıb*/
+            an = n*(a-n);              /* æ­¤èŠ‚çš„ç³»æ•°a*/
+            bn = bn+2.0;               /* æ­¤èŠ‚çš„ç³»æ•°b*/
             d = an*d+bn;
             c = bn+an/c;
 
-            if(fabs(d) < e0)           /* ÈôĞ¡ÓÚe0£¬ÔòÈÏÎªÊÇ0*/
+            if(fabs(d) < e0)           /* è‹¥å°äºe0ï¼Œåˆ™è®¤ä¸ºæ˜¯0*/
             {
                 d = e0;
             }
@@ -80,7 +80,7 @@ double gamm2(double a,double x,double e1,double e0)
             del = d*c;
             t = t*del;
 
-            if(fabs(del-1.0)<e1)          /* ¼¶Êı²¿·ÖÒÑ¾­ÊÕÁ²*/
+            if(fabs(del-1.0)<e1)          /* çº§æ•°éƒ¨åˆ†å·²ç»æ”¶æ•›*/
             {
                 t=exp(-x+a*log(x)-gln)*t;
                 t = 1.0-t;
@@ -88,7 +88,7 @@ double gamm2(double a,double x,double e1,double e0)
             }
         }
 
-        printf(" iteration too many times\n");    /* ¾­¹ıNMAX´Îµü´úÃ»ÓĞÊÕÁ²*/
+        printf(" iteration too many times\n");    /* ç»è¿‡NMAXæ¬¡è¿­ä»£æ²¡æœ‰æ”¶æ•›*/
         return(0.0);
     }
 }

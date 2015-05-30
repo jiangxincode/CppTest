@@ -1,7 +1,7 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <math.h>
 
-#include "something.h"
+#include "../utility.h"
 
 int main11factrl0()
 {
@@ -11,7 +11,7 @@ int main11factrl0()
 
     for(n=18; n<25; n++)
     {
-        x = factrl(n);                                /* µ÷ÓÃº¯ÊýÇó½â£¬²¢´òÓ¡½á¹û*/
+        x = factrl(n);                                /* è°ƒç”¨å‡½æ•°æ±‚è§£ï¼Œå¹¶æ‰“å°ç»“æžœ*/
         printf("n=%d, factorial(n)=%e\n",n,x);
     }
 

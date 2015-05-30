@@ -1,8 +1,8 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 
-#include "c_comp.h"
+#include "../utility.h"
 
 int main2c_comp_example2()
 {
@@ -14,13 +14,13 @@ int main2c_comp_example2()
 
     if(c_comp_power(&a,&c,n))
     {
-        printf("5´Î³ËÃÝµÄ½á¹ûÎª£º\n");
+        printf("5æ¬¡ä¹˜å¹‚çš„ç»“æžœä¸ºï¼š\n");
         printf("%1.5f+j%1.5f\n",c.rmz,c.imz);
     }
 
     if(c_comp_nthroot(&a,d,n))
     {
-        printf("5´Î·½¸ùµÄ½á¹ûÎª£º\n");
+        printf("5æ¬¡æ–¹æ ¹çš„ç»“æžœä¸ºï¼š\n");
 
         for(i=0; i<5; i++)
         {
@@ -30,25 +30,25 @@ int main2c_comp_example2()
 
     if(c_comp_exp(&a,&b))
     {
-        printf("Ö¸ÊýµÄ½á¹ûÎª£º\n");
+        printf("æŒ‡æ•°çš„ç»“æžœä¸ºï¼š\n");
         printf("%1.5f+j%1.5f\n",b.rmz,b.imz);
     }
 
     if(c_comp_log(&a,&f))
     {
-        printf("¶ÔÊýµÄ½á¹ûÎª£º\n");
+        printf("å¯¹æ•°çš„ç»“æžœä¸ºï¼š\n");
         printf("%1.5f+j%1.5f\n",f.rmz,f.imz);
     }
 
     if(c_comp_sin(&a,&g))
     {
-        printf("ÕýÏÒµÄ½á¹ûÎª£º\n");
+        printf("æ­£å¼¦çš„ç»“æžœä¸ºï¼š\n");
         printf("%1.5f+j%1.5f\n",g.rmz,g.imz);
     }
 
     if(c_comp_cos(&a,&h))
     {
-        printf("ÓàÏÒµÄ½á¹ûÎª£º\n");
+        printf("ä½™å¼¦çš„ç»“æžœä¸ºï¼š\n");
         printf("%1.5f+j%1.5f\n",h.rmz,h.imz);
     }
 

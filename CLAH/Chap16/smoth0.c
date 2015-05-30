@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include "smoth.c"
 int main16smoth0()
 {
@@ -10,7 +10,7 @@ int main16smoth0()
     double y[15];
     n = 15;
     smoth(x,n,y);
-    printf("ÎåµãÈý´ÎÆ½»¬£º\n");
+    printf("äº”ç‚¹ä¸‰æ¬¡å¹³æ»‘ï¼š\n");
 
     for(i=0; i<n; i++)
     {

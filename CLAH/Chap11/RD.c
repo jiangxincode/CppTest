@@ -1,13 +1,13 @@
-#include <math.h>
+ï»¿#include <math.h>
 #include <stdio.h>
 
 /**
- * º¯ Êý Ãû£ºRD
- * ¹¦ÄÜÃèÊö£ºÇó½âµÚ¶þÀàÍÖÔ²»ý·ÖµÄÖµ
- * ÊäÈë²ÎÊý£ºx ÇóÖµµÄ×Ô±äÁ¿
- *           y ÇóÖµµÄ×Ô±äÁ¿
- *           z ÇóÖµµÄ×Ô±äÁ¿
- * ·µ »Ø Öµ£ºµÚ¶þÀàÍÖÔ²»ý·ÖµÄÖµ
+ * å‡½ æ•° åï¼šRD
+ * åŠŸèƒ½æè¿°ï¼šæ±‚è§£ç¬¬äºŒç±»æ¤­åœ†ç§¯åˆ†çš„å€¼
+ * è¾“å…¥å‚æ•°ï¼šx æ±‚å€¼çš„è‡ªå˜é‡
+ *           y æ±‚å€¼çš„è‡ªå˜é‡
+ *           z æ±‚å€¼çš„è‡ªå˜é‡
+ * è¿” å›ž å€¼ï¼šç¬¬äºŒç±»æ¤­åœ†ç§¯åˆ†çš„å€¼
  */
 double RD(double x,double y,double z)
 {
@@ -16,7 +16,7 @@ double RD(double x,double y,double z)
     double xt,yt,zt;
     eps = 1.0e-25;
 
-    if(x<0||y<0||(x+y)<eps||z<eps)         /* ¼ì²é×Ô±äÁ¿·¶Î§*/
+    if(x<0||y<0||(x+y)<eps||z<eps)         /* æ£€æŸ¥è‡ªå˜é‡èŒƒå›´*/
     {
         printf("Parameters incorrect\n");
         return(0.0);
@@ -33,7 +33,7 @@ double RD(double x,double y,double z)
         ll = t1*(t2+t3)+t2*t3;
         f = f/4.0;
         s = s+f/(sqrt(z)*(z+ll));
-        x = (x+ll)/4.0;                                        /* ¸üÐÂx,y,z*/
+        x = (x+ll)/4.0;                                        /* æ›´æ–°x,y,z*/
         y = (y+ll)/4.0;
         z = (z+ll)/4.0;
         t = (x+y+3.0*z)/5.0;
@@ -43,9 +43,9 @@ double RD(double x,double y,double z)
         flag = fabs(zt)>fabs(yt)?fabs(zt):fabs(yt);
         flag = flag>fabs(xt)?flag:fabs(xt);
     }
-    while(flag > 0.0015);                                   /* Õâ¸öãÐÖµÓÃÓÚÅÐ¶Ïxyz³ä·Ö½Ó½ü*/
+    while(flag > 0.0015);                                   /* è¿™ä¸ªé˜ˆå€¼ç”¨äºŽåˆ¤æ–­xyzå……åˆ†æŽ¥è¿‘*/
 
-    t1 = xt*yt;                                              /* ÓÃÌ©ÀÕÕ¹¿ª¼ÆËã»ý·ÖÖµ*/
+    t1 = xt*yt;                                              /* ç”¨æ³°å‹’å±•å¼€è®¡ç®—ç§¯åˆ†å€¼*/
     t2 = zt*zt;
     t3 = t1-t2;
     t4 = t1-6.0*t2;

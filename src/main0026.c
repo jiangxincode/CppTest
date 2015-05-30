@@ -1,19 +1,19 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <conio.h>
 #include <time.h>
 #include <windows.h>
 
-/**Í£³µ¹ÜÀíÊÕ·ÑÏµÍ³*/
+/**åœè½¦ç®¡ç†æ”¶è´¹ç³»ç»Ÿ*/
 
-void system_start(); //ÏµÍ³µÇÂ¼½çÃæ
-void car_gui(); //Ğ¡³µ½çÃæ
-void login(); //µÇÂ¼½çÃæ
-void input(); //ÊäÈë½çÃæ
-void query(); //²éÑ¯³µÁ¾ĞÅÏ¢½ç
-void parking(int i); //Í£³µĞÅÏ¢½çÃæ
-void user_name_query(); //°´³µÖ÷ĞÕÃû²éÑ¯
-void car_no_query(); //°´³µÅÆºÅÂë²éÑ¯
-float reset(); //ÖØĞÂÉèÖÃÍ£³µ·ÑÂÊ
+void system_start(); //ç³»ç»Ÿç™»å½•ç•Œé¢
+void car_gui(); //å°è½¦ç•Œé¢
+void login(); //ç™»å½•ç•Œé¢
+void input(); //è¾“å…¥ç•Œé¢
+void query(); //æŸ¥è¯¢è½¦è¾†ä¿¡æ¯ç•Œ
+void parking(int i); //åœè½¦ä¿¡æ¯ç•Œé¢
+void user_name_query(); //æŒ‰è½¦ä¸»å§“åæŸ¥è¯¢
+void car_no_query(); //æŒ‰è½¦ç‰Œå·ç æŸ¥è¯¢
+float reset(); //é‡æ–°è®¾ç½®åœè½¦è´¹ç‡
 void quit();
 void shanchu(int i);
 void inputdiaoyong();
@@ -26,34 +26,34 @@ void xingmingquery(int i,int a,int k);
 #define MAX_HOUR 24
 #define MAX_MINUT 60
 
-/**³µÁ¾ĞÅÏ¢*/
+/**è½¦è¾†ä¿¡æ¯*/
 typedef struct CARINFO
 {
-    char carNo[10]; //³µÅÆºÅ
-    char userName[10]; //ÓÃ»§Ãû
-    char color[10]; //ÑÕÉ«
-    char type[10]; //ĞÍºÅ
-    int hour; //Ê±¼ä(h)
-    int minute; //Ê±¼ä(m)
-    int abbreviation; //¼ò³Æ
+    char carNo[10]; //è½¦ç‰Œå·
+    char userName[10]; //ç”¨æˆ·å
+    char color[10]; //é¢œè‰²
+    char type[10]; //å‹å·
+    int hour; //æ—¶é—´(h)
+    int minute; //æ—¶é—´(m)
+    int abbreviation; //ç®€ç§°
 } CarInfo;
 
 static CarInfo *carInfo = NULL;
 
-/**¶¨ÖÆµÄÊ±¼ä´òÓ¡º¯Êı*/
+/**å®šåˆ¶çš„æ—¶é—´æ‰“å°å‡½æ•°*/
 void time_print()
 {
     time_t ltime;
     time(&ltime);
-    printf("ÏÖÔÚÊ±¼ä:%s",ctime(&ltime));
+    printf("ç°åœ¨æ—¶é—´:%s",ctime(&ltime));
 }
 
-/**ÖØĞÂÉèÖÃÍ£³µ·ÑÂÊ*/
+/**é‡æ–°è®¾ç½®åœè½¦è´¹ç‡*/
 float reset()
 {
     printf("\n\n\n\n\n\n\n");
-    printf("\n\n\t\t---ÉèÖÃÍ£³µ·ÑÂÊ---");
-    printf("\n\n\t\tÇëÊäÈëĞÂµÄ·ÑÂÊ:");
+    printf("\n\n\t\t---è®¾ç½®åœè½¦è´¹ç‡---");
+    printf("\n\n\t\tè¯·è¾“å…¥æ–°çš„è´¹ç‡:");
     float a;
     scanf("%f",&a);
     return a;
@@ -64,8 +64,8 @@ void parking(int i)
     float hour,minute;
     float n=0.5;
     printf("\n\n\n\n\n\n");
-    printf("\t\t---Í£³µĞÅÏ¢²éÑ¯---");
-    printf("\n\n\tÄ¬ÈÏÍ£³µ·ÑÓÃ0.5Ôª/Ğ¡Ê±   °´ 1 ¼üÖØÉè");
+    printf("\t\t---åœè½¦ä¿¡æ¯æŸ¥è¯¢---");
+    printf("\n\n\té»˜è®¤åœè½¦è´¹ç”¨0.5å…ƒ/å°æ—¶   æŒ‰ 1 é”®é‡è®¾");
 
     if(getch()=='1')
     {
@@ -74,18 +74,18 @@ void parking(int i)
     }
 
     system("CLS");
-    printf("ÏÖÔÚÊ±¼ä:");
+    printf("ç°åœ¨æ—¶é—´:");
     time_print();
     printf("\n\n\n\n\n\n");
-    printf("\n\n\t\t---Í£³µĞÅÏ¢²éÑ¯---");
-    printf("\n\n\tÆğÊ¼Ê±¼ä:%.0dÊ±%.0d·Ö",carInfo[i].hour,carInfo[i].minute);
+    printf("\n\n\t\t---åœè½¦ä¿¡æ¯æŸ¥è¯¢---");
+    printf("\n\n\tèµ·å§‹æ—¶é—´:%.0dæ—¶%.0dåˆ†",carInfo[i].hour,carInfo[i].minute);
 n:
-    printf("\n\n\tÊäÈëÏÖÔÚÊ±¼ä:");
+    printf("\n\n\tè¾“å…¥ç°åœ¨æ—¶é—´:");
     scanf("%f,%f",&hour,&minute);
 
     if(hour<0.0||hour>24.0||minute<0.0||minute>60.0)
     {
-        printf("ÊäÈë´íÎó!");
+        printf("è¾“å…¥é”™è¯¯!");
         goto n;
     }
 
@@ -133,10 +133,10 @@ n:
         }
     }
 
-    printf("\n\tÍ£³µÊ±¼ä:%.0fÊ±%.0f·Ö",shi,fen);
-    printf("\n\n\tÍ£³µ·ÑÓÃ:%.2fÔª",n*(shi+fen/60));
-    printf("\n\n\tÊÇ·ñÉ¾³ı´Ë³µĞÅÏ¢!");
-    printf("\n\n\t1.ÊÇ   2.·ñ");
+    printf("\n\tåœè½¦æ—¶é—´:%.0fæ—¶%.0fåˆ†",shi,fen);
+    printf("\n\n\tåœè½¦è´¹ç”¨:%.2få…ƒ",n*(shi+fen/60));
+    printf("\n\n\tæ˜¯å¦åˆ é™¤æ­¤è½¦ä¿¡æ¯!");
+    printf("\n\n\t1.æ˜¯   2.å¦");
     int l;
     scanf("%d",&l);
 
@@ -154,59 +154,59 @@ void shanchu(int i)
 {
     strcpy(carInfo[i].carNo,"000000000");
     strcpy(carInfo[i].userName,"000000000");
-    printf("\n\n\n\n\n\n\n\t\t\tÇë ÉÔ ºò ¡­");
+    printf("\n\n\n\n\n\n\n\t\t\tè¯· ç¨ å€™ â€¦");
     Sleep(500);
     system("CLS");
-    printf("\n\n\n\n\n\n\n\t\t\tÇë ÉÔ ºò ¡­¡­");
+    printf("\n\n\n\n\n\n\n\t\t\tè¯· ç¨ å€™ â€¦â€¦");
     Sleep(500);
 
     if(carInfo[i].carNo[0]=='0'&&carInfo[i].userName[0]=='0')
     {
         system("CLS");
-        printf("\n\n\n\n\n\n\t\t\tÉ¾³ı³É¹¦!");
+        printf("\n\n\n\n\n\n\t\t\tåˆ é™¤æˆåŠŸ!");
         Sleep(1500);
     }
     else
     {
         system("CLS");
-        printf("\n\n\n\n\n\n\t\t\tÉ¾³ıÊ§°Ü!");
+        printf("\n\n\n\n\n\n\t\t\tåˆ é™¤å¤±è´¥!");
         Sleep(1500);
     }
 }
 
-void car_no_query()//³µÅÆºÅ²éÑ¯
+void car_no_query()//è½¦ç‰Œå·æŸ¥è¯¢
 {
     char carNo[10];
     int a;
     int i = 0;
     printf("\n\n\n\n\n\n");
-    printf("\n\n\t\t----¼ò³ÆÑ¡Ôñ----");
-    printf("\n\n\t\t1.Ïæ  2.¶õ  3.¸Ó  4.ÔÁ  5.¾©  ");
+    printf("\n\n\t\t----ç®€ç§°é€‰æ‹©----");
+    printf("\n\n\t\t1.æ¹˜  2.é„‚  3.èµ£  4.ç²¤  5.äº¬  ");
     scanf("%d",&a);
 m:
     system("CLS");
-    printf("\n\n\n\t\t\t---ÇëÊäÈë³µÅÆºÅÂë---\n\n");
+    printf("\n\n\n\t\t\t---è¯·è¾“å…¥è½¦ç‰Œå·ç ---\n\n");
 
     switch(a)
     {
     case 1:
-        printf("\n\t³µÅÆºÅÂë:Ïæ");
+        printf("\n\tè½¦ç‰Œå·ç :æ¹˜");
         break;
 
     case 2:
-        printf("\n\t³µÅÆºÅÂë:¶õ");
+        printf("\n\tè½¦ç‰Œå·ç :é„‚");
         break;
 
     case 3:
-        printf("\n\t³µÅÆºÅÂë:¸Ó");
+        printf("\n\tè½¦ç‰Œå·ç :èµ£");
         break;
 
     case 4:
-        printf("\n\t³µÅÆºÅÂë:ÔÁ");
+        printf("\n\tè½¦ç‰Œå·ç :ç²¤");
         break;
 
     case 5:
-        printf("\n\t³µÅÆºÅÂë:¾©");
+        printf("\n\tè½¦ç‰Œå·ç :äº¬");
         break;
     }
 
@@ -214,7 +214,7 @@ m:
 
     if(carNo[0]<'A'||carNo[0]>'Z')
     {
-        printf("\n\n\tÊäÈë´íÎó!");
+        printf("\n\n\tè¾“å…¥é”™è¯¯!");
         Sleep(100);
         goto m;
     }
@@ -233,40 +233,40 @@ m:
         {
         case 1:
         {
-            printf("\n\n\t³µÅÆºÅÂë:Ïæ%s",carInfo[i].carNo);
+            printf("\n\n\tè½¦ç‰Œå·ç :æ¹˜%s",carInfo[i].carNo);
             break;
         }
 
         case 2:
         {
-            printf("\n\n\t³µÅÆºÅÂë:¶õ%s",carInfo[i].carNo);
+            printf("\n\n\tè½¦ç‰Œå·ç :é„‚%s",carInfo[i].carNo);
             break;
         }
 
         case 3:
         {
-            printf("\n\n\t³µÅÆºÅÂë:¸Ó%s",carInfo[i].carNo);
+            printf("\n\n\tè½¦ç‰Œå·ç :èµ£%s",carInfo[i].carNo);
             break;
         }
 
         case 4:
         {
-            printf("\n\n\t³µÅÆºÅÂë:ÔÁ%s",carInfo[i].carNo);
+            printf("\n\n\tè½¦ç‰Œå·ç :ç²¤%s",carInfo[i].carNo);
             break;
         }
 
         case 5:
         {
-            printf("\n\n\t³µÅÆºÅÂë:¾©%s",carInfo[i].carNo);
+            printf("\n\n\tè½¦ç‰Œå·ç :äº¬%s",carInfo[i].carNo);
             break;
         }
         }
 
-        printf("\n\n\t³µÖ÷ĞÕÃû:%s",carInfo[i].userName);
-        printf("\n\n\tÆû³µĞÍºÅ:%s",carInfo[i].type);
-        printf("\n\n\tÆû³µÑÕÉ«:%s",carInfo[i].color);
-        printf("\n\n\tÆğÊ¼Ê±¼ä:%.0dÊ±%.0d·Ö",carInfo[i].hour,carInfo[i].minute);
-        printf("\n\n\n\t°´1¼ü²é¿´Í£³µĞÅÏ¢:");
+        printf("\n\n\tè½¦ä¸»å§“å:%s",carInfo[i].userName);
+        printf("\n\n\tæ±½è½¦å‹å·:%s",carInfo[i].type);
+        printf("\n\n\tæ±½è½¦é¢œè‰²:%s",carInfo[i].color);
+        printf("\n\n\tèµ·å§‹æ—¶é—´:%.0dæ—¶%.0dåˆ†",carInfo[i].hour,carInfo[i].minute);
+        printf("\n\n\n\tæŒ‰1é”®æŸ¥çœ‹åœè½¦ä¿¡æ¯:");
 
         if(getch()=='1')
         {
@@ -281,19 +281,19 @@ m:
     }
 
     {
-        printf("\n\n\tÃ»ÓĞÕâÁ¾³µµÄĞÅÏ¢!");
-        printf("\n\n\t°´ÈÎÒâ¼ü·µ»Ø");
+        printf("\n\n\tæ²¡æœ‰è¿™è¾†è½¦çš„ä¿¡æ¯!");
+        printf("\n\n\tæŒ‰ä»»æ„é”®è¿”å›");
         getch();
         system("CLS");
         query();
     }
 }
 
-void user_name_query()//³µÖ÷Ãû²éÑ¯
+void user_name_query()//è½¦ä¸»åæŸ¥è¯¢
 {
     char chezhuming[10];
     printf("\n\n\n\n\n\n");
-    printf("ÇëÊäÈë³µÖ÷ĞÕÃû:");
+    printf("è¯·è¾“å…¥è½¦ä¸»å§“å:");
     scanf("%9s",chezhuming);
     int i = 0;
 
@@ -307,46 +307,46 @@ void user_name_query()//³µÖ÷Ãû²éÑ¯
 
     if((strcmp(carInfo[i].userName,chezhuming))==0)
     {
-        int	a=carInfo[i].abbreviation;//printf("´Ë´¦Õı³£!%d",a);
+        int	a=carInfo[i].abbreviation;//printf("æ­¤å¤„æ­£å¸¸!%d",a);
 
         switch(a)
         {
         case 1:
         {
-            printf("\n\n\t³µÅÆºÅÂë:Ïæ%s",carInfo[i].carNo);
+            printf("\n\n\tè½¦ç‰Œå·ç :æ¹˜%s",carInfo[i].carNo);
             break;
         }
 
         case 2:
         {
-            printf("\n\n\t³µÅÆºÅÂë:¶õ%s",carInfo[i].carNo);
+            printf("\n\n\tè½¦ç‰Œå·ç :é„‚%s",carInfo[i].carNo);
             break;
         }
 
         case 3:
         {
-            printf("\n\n\t³µÅÆºÅÂë:¸Ó%s",carInfo[i].carNo);
+            printf("\n\n\tè½¦ç‰Œå·ç :èµ£%s",carInfo[i].carNo);
             break;
         }
 
         case 4:
         {
-            printf("\n\n\t³µÅÆºÅÂë:ÔÁ%s",carInfo[i].carNo);
+            printf("\n\n\tè½¦ç‰Œå·ç :ç²¤%s",carInfo[i].carNo);
             break;
         }
 
         case 5:
         {
-            printf("\n\n\t³µÅÆºÅÂë:¾©%s",carInfo[i].carNo);
+            printf("\n\n\tè½¦ç‰Œå·ç :äº¬%s",carInfo[i].carNo);
             break;
         }
         }
 
-        printf("\n\n\t³µÖ÷ĞÕÃû:%s",carInfo[i].userName);
-        printf("\n\n\tÆû³µĞÍºÅ:%s",carInfo[i].type);
-        printf("\n\n\tÆû³µÑÕÉ«:%s",carInfo[i].color);
-        printf("\n\n\tÆğÊ¼Ê±¼ä:%.0dÊ±%.0d·Ö",carInfo[i].hour,carInfo[i].minute);
-        printf("\n\n\n\t°´1¼ü²é¿´Í£³µĞÅÏ¢:");
+        printf("\n\n\tè½¦ä¸»å§“å:%s",carInfo[i].userName);
+        printf("\n\n\tæ±½è½¦å‹å·:%s",carInfo[i].type);
+        printf("\n\n\tæ±½è½¦é¢œè‰²:%s",carInfo[i].color);
+        printf("\n\n\tèµ·å§‹æ—¶é—´:%.0dæ—¶%.0dåˆ†",carInfo[i].hour,carInfo[i].minute);
+        printf("\n\n\n\tæŒ‰1é”®æŸ¥çœ‹åœè½¦ä¿¡æ¯:");
         int k=i;
 
         for(i=i+1; i<N; i++)
@@ -370,8 +370,8 @@ void user_name_query()//³µÖ÷Ãû²éÑ¯
     }
     else
     {
-        printf("\n\n\tÃ»ÓĞÕâÁ¾³µµÄĞÅÏ¢!");
-        printf("\n\n\t°´ÈÎÒâ¼ü·µ»Ø");
+        printf("\n\n\tæ²¡æœ‰è¿™è¾†è½¦çš„ä¿¡æ¯!");
+        printf("\n\n\tæŒ‰ä»»æ„é”®è¿”å›");
         getch();
         system("CLS");
         query();
@@ -385,40 +385,40 @@ void xingmingquery(int i,int a,int k)
         {
         case 1:
         {
-            printf("\n\n\t³µÅÆºÅÂë:Ïæ%s",carInfo[i].carNo);
+            printf("\n\n\tè½¦ç‰Œå·ç :æ¹˜%s",carInfo[i].carNo);
             break;
         }
 
         case 2:
         {
-            printf("\n\n\t³µÅÆºÅÂë:¶õ%s",carInfo[i].carNo);
+            printf("\n\n\tè½¦ç‰Œå·ç :é„‚%s",carInfo[i].carNo);
             break;
         }
 
         case 3:
         {
-            printf("\n\n\t³µÅÆºÅÂë:¸Ó%s",carInfo[i].carNo);
+            printf("\n\n\tè½¦ç‰Œå·ç :èµ£%s",carInfo[i].carNo);
             break;
         }
 
         case 4:
         {
-            printf("\n\n\t³µÅÆºÅÂë:ÔÁ%s",carInfo[i].carNo);
+            printf("\n\n\tè½¦ç‰Œå·ç :ç²¤%s",carInfo[i].carNo);
             break;
         }
 
         case 5:
         {
-            printf("\n\n\t³µÅÆºÅÂë:¾©%s",carInfo[i].carNo);
+            printf("\n\n\tè½¦ç‰Œå·ç :äº¬%s",carInfo[i].carNo);
             break;
         }
         }
 
-        printf("\n\n\t³µÖ÷ĞÕÃû:%s",carInfo[i].userName);
-        printf("\n\n\tÆû³µĞÍºÅ:%s",carInfo[i].type);
-        printf("\n\n\tÆû³µÑÕÉ«:%s",carInfo[i].color);
-        printf("\n\n\tÆğÊ¼Ê±¼ä:%.0dÊ±%.0d·Ö",carInfo[i].hour,carInfo[i].minute);
-        printf("\n\n\n\t°´2¼ü²é¿´Í£³µĞÅÏ¢:");
+        printf("\n\n\tè½¦ä¸»å§“å:%s",carInfo[i].userName);
+        printf("\n\n\tæ±½è½¦å‹å·:%s",carInfo[i].type);
+        printf("\n\n\tæ±½è½¦é¢œè‰²:%s",carInfo[i].color);
+        printf("\n\n\tèµ·å§‹æ—¶é—´:%.0dæ—¶%.0dåˆ†",carInfo[i].hour,carInfo[i].minute);
+        printf("\n\n\n\tæŒ‰2é”®æŸ¥çœ‹åœè½¦ä¿¡æ¯:");
     }
 
     int n;
@@ -441,10 +441,10 @@ void xingmingquery(int i,int a,int k)
 void query()
 {
     printf("\n\n\n\n\n\n");
-    printf("\n\t\t---³µÁ¾ĞÅÏ¢²éÑ¯---");
-    printf("\n\n\t\t1.°´³µÅÆºÅ²éÑ¯");
-    printf("\n\n\t\t2.°´³µÖ÷Ãû²éÑ¯");
-    printf("\n\n\t\t3.ÍË³ö--");
+    printf("\n\t\t---è½¦è¾†ä¿¡æ¯æŸ¥è¯¢---");
+    printf("\n\n\t\t1.æŒ‰è½¦ç‰Œå·æŸ¥è¯¢");
+    printf("\n\n\t\t2.æŒ‰è½¦ä¸»åæŸ¥è¯¢");
+    printf("\n\n\t\t3.é€€å‡º--");
     int i;
     scanf("%d",&i);
 
@@ -481,7 +481,7 @@ void input()
         if(j >= N)
         {
             system("CLS");
-            perror("\n\n\n\n\n\n\n\t\t\tÍ£³µ³¡ÒÑÂú!");
+            perror("\n\n\n\n\n\n\n\t\t\tåœè½¦åœºå·²æ»¡!");
             Sleep(2000);
             login();
         }
@@ -491,61 +491,61 @@ void input()
 
         if(fp == NULL)
         {
-            perror("´ò¿ªÎÄ¼şÊ§°Ü\n");
+            perror("æ‰“å¼€æ–‡ä»¶å¤±è´¥\n");
             exit(1);
         }
 
         fwrite(&carInfo[i],sizeof(CarInfo),1,fp);
         system("CLS");
         time_print();
-        printf("\n\n\n\tµÚ%d¸ö³µÎ»",i+1);
-        printf("\n\n\n\t\t\t---ÇëÊäÈë³µÁ¾ĞÅÏ¢---\n\n");
-        printf("\n\t°´1¼üÑ¡Ôñ¼ò³Æ");
-        printf("\n\n\t³µÅÆºÅÂë:Ïæ");
+        printf("\n\n\n\tç¬¬%dä¸ªè½¦ä½",i+1);
+        printf("\n\n\n\t\t\t---è¯·è¾“å…¥è½¦è¾†ä¿¡æ¯---\n\n");
+        printf("\n\tæŒ‰1é”®é€‰æ‹©ç®€ç§°");
+        printf("\n\n\tè½¦ç‰Œå·ç :æ¹˜");
         int j = getch();
 
         if(j == '1')
         {
             system("CLS");
-            printf("\n\n\n\tµÚ%d¸ö³µÎ»",i+1);
+            printf("\n\n\n\tç¬¬%dä¸ªè½¦ä½",i+1);
             printf("\n\n\n\n\n\n\n");
-            printf("\n\n\t\t----¼ò³ÆÑ¡Ôñ----");
-            printf("\n\n\t\t1.Ïæ  2.¶õ  3.¸Ó  4.ÔÁ  5.¾©  ");
+            printf("\n\n\t\t----ç®€ç§°é€‰æ‹©----");
+            printf("\n\n\t\t1.æ¹˜  2.é„‚  3.èµ£  4.ç²¤  5.äº¬  ");
             scanf("%d",&carInfo[i].abbreviation);
         }
 
 ab:
         system("CLS");
         time_print();
-        printf("\n\n\n\tµÚ%d¸ö³µÎ»",i+1);
-        printf("\n\n\n\t\t\t---ÇëÊäÈë³µÁ¾ĞÅÏ¢---\n\n");
+        printf("\n\n\n\tç¬¬%dä¸ªè½¦ä½",i+1);
+        printf("\n\n\n\t\t\t---è¯·è¾“å…¥è½¦è¾†ä¿¡æ¯---\n\n");
 
         if((carInfo[i].abbreviation > 0) && (carInfo[i].abbreviation < 10))
         {
             switch(carInfo[i].abbreviation)
             {
             case 1:
-                printf("\n\t³µÅÆºÅÂë:Ïæ");
+                printf("\n\tè½¦ç‰Œå·ç :æ¹˜");
                 break;
 
             case 2:
-                printf("\n\t³µÅÆºÅÂë:¶õ");
+                printf("\n\tè½¦ç‰Œå·ç :é„‚");
                 break;
 
             case 3:
-                printf("\n\t³µÅÆºÅÂë:¸Ó");
+                printf("\n\tè½¦ç‰Œå·ç :èµ£");
                 break;
 
             case 4:
-                printf("\n\t³µÅÆºÅÂë:ÔÁ");
+                printf("\n\tè½¦ç‰Œå·ç :ç²¤");
                 break;
 
             case 5:
-                printf("\n\t³µÅÆºÅÂë:¾©");
+                printf("\n\tè½¦ç‰Œå·ç :äº¬");
                 break;
 
             default:
-                printf("\n\t³µÅÆºÅÂë:Ïæ");
+                printf("\n\tè½¦ç‰Œå·ç :æ¹˜");
                 break;
             }
         }
@@ -554,7 +554,7 @@ ab:
 
         if((carInfo[i].carNo[0] < 'A') || (carInfo[i].carNo[0]>'Z'))
         {
-            perror("\n\n\tÊäÈë´íÎó!");
+            perror("\n\n\tè¾“å…¥é”™è¯¯!");
             Sleep(100);
             goto ab;
         }
@@ -565,17 +565,17 @@ ab:
             {
                 system("CLS");
                 printf("\n\n\n\n\n\n\n\n\n\n\n");
-                printf("\n\t\t\t·Ç ·¨ ³µ ÅÆ ºÅ !");
+                printf("\n\t\t\té æ³• è½¦ ç‰Œ å· !");
                 Sleep(1000);
                 goto ab;
             }
         }
 
-        printf("\n\t³µÖ÷ĞÕÃû:");
+        printf("\n\tè½¦ä¸»å§“å:");
         scanf("%9s",carInfo[i].userName);
-        printf("\n\tÆû³µĞÍºÅ:");
+        printf("\n\tæ±½è½¦å‹å·:");
         scanf("%9s",carInfo[i].type);
-        printf("\n\tÆû³µÑÕÉ«:");
+        printf("\n\tæ±½è½¦é¢œè‰²:");
         scanf("%9s",carInfo[i].color);
 
         while((carInfo[i].hour >= MAX_HOUR) ||
@@ -583,13 +583,13 @@ ab:
                 (carInfo[i].minute < 0) ||
                 (carInfo[i].minute >= MAX_MINUT))
         {
-            perror("ÊäÈë´íÎó!");
-            printf("\n\tÏÖÔÚÊ±¼ä<Ê±,·Ö>");
+            perror("è¾“å…¥é”™è¯¯!");
+            printf("\n\tç°åœ¨æ—¶é—´<æ—¶,åˆ†>");
             scanf("%d,%d",&carInfo[i].hour,&carInfo[i].minute);
         }
 
         fclose(fp);
-        printf("\n\n\t°´1¼üÍË³ö\n");
+        printf("\n\n\tæŒ‰1é”®é€€å‡º\n");
 
         if(getch() == '1')
         {
@@ -599,7 +599,7 @@ ab:
     }
 
     system("CLS");
-    perror("\n\n\n\n\n\n\n\t\t\tÍ£³µ³¡ÒÑÂú!");
+    perror("\n\n\n\n\n\n\n\t\t\tåœè½¦åœºå·²æ»¡!");
     Sleep(2000);
     login();
 }
@@ -608,12 +608,12 @@ void login()
 {
     system("CLS");
     printf("\n\n\n\n\n\n\n");
-    printf("\n\t\t\t----»¶Ó­Ê¹ÓÃĞÄÁéÈí¼ş----");
-    printf("\n\n\t1.ÊäÈë³µÁ¾ĞÅÏ¢");
-    printf("\n\n\t2.²éÑ¯³µÁ¾ĞÅÏ¢");
-    printf("\n\n\t3.²éÑ¯³µ¿âÈİÁ¿");
-    printf("\n\n\t4.ÍË³öÏµÍ³");
-    printf("\n\n\t\tÇëÑ¡Ôñ:");
+    printf("\n\t\t\t----æ¬¢è¿ä½¿ç”¨å¿ƒçµè½¯ä»¶----");
+    printf("\n\n\t1.è¾“å…¥è½¦è¾†ä¿¡æ¯");
+    printf("\n\n\t2.æŸ¥è¯¢è½¦è¾†ä¿¡æ¯");
+    printf("\n\n\t3.æŸ¥è¯¢è½¦åº“å®¹é‡");
+    printf("\n\n\t4.é€€å‡ºç³»ç»Ÿ");
+    printf("\n\n\t\tè¯·é€‰æ‹©:");
     int i;
     scanf("%d",&i);
 
@@ -658,7 +658,7 @@ void parking_ability()
         if((N-N-(N-M))==0)
         {
             printf("\n\n\n\n\n");
-            printf("\n\t\t³µ ³¡ ÎŞ ³µ !");
+            printf("\n\t\tè½¦ åœº æ—  è½¦ !");
             Sleep(1000);
             system("CLS");
             login();
@@ -666,10 +666,10 @@ void parking_ability()
         else
         {
             printf("\n\n\n\n\n");
-            printf("\t\t³µ¿â×ÜÈİÁ¿%d¸ö³µÎ»",N);
-            printf("\n\n\n\t\t\t»¹ÓĞ%d¸ö³µÎ»!",N-(N-M));
+            printf("\t\tè½¦åº“æ€»å®¹é‡%dä¸ªè½¦ä½",N);
+            printf("\n\n\n\t\t\tè¿˜æœ‰%dä¸ªè½¦ä½!",N-(N-M));
             Sleep(1000);
-            printf("\n\n\t\t1.²é¿´ËùÓĞ³µÁ¾ĞÅÏ¢\n\n\t\t2.·µ»Ø");
+            printf("\n\n\t\t1.æŸ¥çœ‹æ‰€æœ‰è½¦è¾†ä¿¡æ¯\n\n\t\t2.è¿”å›");
             printf("\n\n\t\t\t---");
             int a;
             scanf("%d",&a);
@@ -688,11 +688,11 @@ void parking_ability()
     }
     else
     {
-        printf("\n\n\n\n\n\n\t\tÍ£³µ³¡ÒÑÂú!");
+        printf("\n\n\n\n\n\n\t\tåœè½¦åœºå·²æ»¡!");
     }
 
     Sleep(1000);
-    printf("\n\n\t\t1.²é¿´ËùÓĞ³µÁ¾ĞÅÏ¢\n\n\t\t2.·µ»Ø");
+    printf("\n\n\t\t1.æŸ¥çœ‹æ‰€æœ‰è½¦è¾†ä¿¡æ¯\n\n\t\t2.è¿”å›");
     printf("\n\n\t\t\t---");
     int b;
     scanf("%d",&b);
@@ -717,49 +717,49 @@ void parking_info()
         }
 
         int	a=carInfo[i].abbreviation;
-        printf("%dºÅ³µÎ»",i+1);
+        printf("%då·è½¦ä½",i+1);
 
         switch(a)
         {
         case 1:
         {
-            printf("\n\n\t³µÅÆºÅÂë:Ïæ%s",carInfo[i].carNo);
+            printf("\n\n\tè½¦ç‰Œå·ç :æ¹˜%s",carInfo[i].carNo);
             break;
         }
 
         case 2:
         {
-            printf("\n\n\t³µÅÆºÅÂë:¶õ%s",carInfo[i].carNo);
+            printf("\n\n\tè½¦ç‰Œå·ç :é„‚%s",carInfo[i].carNo);
             break;
         }
 
         case 3:
         {
-            printf("\n\n\t³µÅÆºÅÂë:¸Ó%s",carInfo[i].carNo);
+            printf("\n\n\tè½¦ç‰Œå·ç :èµ£%s",carInfo[i].carNo);
             break;
         }
 
         case 4:
         {
-            printf("\n\n\t³µÅÆºÅÂë:ÔÁ%s",carInfo[i].carNo);
+            printf("\n\n\tè½¦ç‰Œå·ç :ç²¤%s",carInfo[i].carNo);
             break;
         }
 
         case 5:
         {
-            printf("\n\n\t³µÅÆºÅÂë:¾©%s",carInfo[i].carNo);
+            printf("\n\n\tè½¦ç‰Œå·ç :äº¬%s",carInfo[i].carNo);
             break;
         }
         }
 
-        printf("\n\n\t³µÖ÷ĞÕÃû:%s",carInfo[i].userName);
-        printf("\n\n\tÆû³µĞÍºÅ:%s",carInfo[i].type);
-        printf("\n\n\tÆû³µÑÕÉ«:%s",carInfo[i].color);
-        printf("\n\n\tÆğÊ¼Ê±¼ä:%.0dÊ±%.0d·Ö",carInfo[i].hour,carInfo[i].minute);
+        printf("\n\n\tè½¦ä¸»å§“å:%s",carInfo[i].userName);
+        printf("\n\n\tæ±½è½¦å‹å·:%s",carInfo[i].type);
+        printf("\n\n\tæ±½è½¦é¢œè‰²:%s",carInfo[i].color);
+        printf("\n\n\tèµ·å§‹æ—¶é—´:%.0dæ—¶%.0dåˆ†",carInfo[i].hour,carInfo[i].minute);
         printf("\n\n");
     }
 
-    printf("\t\t°´ÈÎÒâ¼üÍË³ö");
+    printf("\t\tæŒ‰ä»»æ„é”®é€€å‡º");
     getch();
     system("CLS");
     login();
@@ -768,179 +768,179 @@ void quit()
 {
     int sleep;
     printf("\n");
-    printf("\n\t\t\t     ¡ş¡ş");
-    printf("\n\t\t\t¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+    printf("\n\t\t\t     ã€“ã€“");
+    printf("\n\t\t\tã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
-    for(sleep=1; sleep<1000000; sleep++) //Ñ­»·´ÎÊıÍ£Ö¹µÈ´ı
+    for(sleep=1; sleep<1000000; sleep++) //å¾ªç¯æ¬¡æ•°åœæ­¢ç­‰å¾…
     {}
 
-    system("cls"); //ÇåÆÁ
+    system("cls"); //æ¸…å±
     printf("\n\n\n");
-    printf("\n\t\t\t      ¡ş¡ş");
-    printf("\n\t\t\t ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+    printf("\n\t\t\t      ã€“ã€“");
+    printf("\n\t\t\t ã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
     for(sleep=1; sleep<1000000; sleep++)
     {}
 
-    system("cls"); //ÇåÆÁ
+    system("cls"); //æ¸…å±
     printf("\n\n\n\n\n");
-    printf("\n\t\t\t       ¡ş¡ş");
-    printf("\n\t\t\t  ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+    printf("\n\t\t\t       ã€“ã€“");
+    printf("\n\t\t\t  ã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
     for(sleep=1; sleep<1000000; sleep++)
     {}
 
-    system("cls"); //ÇåÆÁ
+    system("cls"); //æ¸…å±
     printf("\n\n\n\n\n\n\n\n");
-    printf("\n\t\t\t        ¡ş¡ş");
-    printf("\n\t\t\t   ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+    printf("\n\t\t\t        ã€“ã€“");
+    printf("\n\t\t\t   ã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
     for(sleep=1; sleep<1000000; sleep++)
     {}
 
-    system("cls"); //ÇåÆÁ
+    system("cls"); //æ¸…å±
     printf("\n\n\n\n\n\n\n\n\n\n");
-    printf("\n\t\t\t         ¡ş¡ş");
-    printf("\n\t\t\t    ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+    printf("\n\t\t\t         ã€“ã€“");
+    printf("\n\t\t\t    ã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
     for(sleep=1; sleep<1000000; sleep++)
     {}
 
-    system("cls"); //ÇåÆÁ
+    system("cls"); //æ¸…å±
     printf("\n\n\n\n\n\n\n\n\n\n");
-    printf("\n\t\t\t           ¡ş¡ş");
-    printf("\n\t\t\t      ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+    printf("\n\t\t\t           ã€“ã€“");
+    printf("\n\t\t\t      ã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
     for(sleep=1; sleep<1000000; sleep++)
     {}
 
-    system("cls"); //ÇåÆÁ
+    system("cls"); //æ¸…å±
     printf("\n\n\n\n\n\n\n\n\n\n");
-    printf("\n\t\t\t            ¡ş¡ş");
-    printf("\n\t\t\t       ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+    printf("\n\t\t\t            ã€“ã€“");
+    printf("\n\t\t\t       ã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
     for(sleep=1; sleep<1000000; sleep++)
     {}
 
-    system("cls"); //ÇåÆÁ
+    system("cls"); //æ¸…å±
     printf("\n\n\n\n\n\n\n\n\n\n");
-    printf("\n\t\t\t              ¡ş¡ş");
-    printf("\n\t\t\t         ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+    printf("\n\t\t\t              ã€“ã€“");
+    printf("\n\t\t\t         ã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
     for(sleep=1; sleep<1000000; sleep++)
     {}
 
-    system("cls"); //ÇåÆÁ
+    system("cls"); //æ¸…å±
     printf("\n\n\n\n\n\n\n\n\n\n");
-    printf("\n\t\t\t                ¡ş¡ş");
-    printf("\n\t\t\t           ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+    printf("\n\t\t\t                ã€“ã€“");
+    printf("\n\t\t\t           ã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
     for(sleep=1; sleep<1000000; sleep++)
     {}
 
-    system("cls"); //ÇåÆÁ
+    system("cls"); //æ¸…å±
     printf("\n\n\n\n\n\n\n\n\n\n");
-    printf("\n\t\t\t                  ¡ş¡ş");
-    printf("\n\t\t\t             ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+    printf("\n\t\t\t                  ã€“ã€“");
+    printf("\n\t\t\t             ã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
     for(sleep=1; sleep<10000000; sleep++)
     {}
 
-    system("cls"); //ÇåÆÁ
+    system("cls"); //æ¸…å±
     printf("\n\n\n\n\n\n\n\n\n\n");
-    printf("\n\t\t\t                     ¡ş¡ş");
-    printf("\n\t\t\t                ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+    printf("\n\t\t\t                     ã€“ã€“");
+    printf("\n\t\t\t                ã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
     for(sleep=1; sleep<10000000; sleep++)
     {}
 
-    system("cls"); //ÇåÆÁ
+    system("cls"); //æ¸…å±
     printf("\n\n\n\n\n\n\n\n\n\n");
-    printf("\n\t\t\t                        ¡ş¡ş");
-    printf("\n\t\t\t                   ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+    printf("\n\t\t\t                        ã€“ã€“");
+    printf("\n\t\t\t                   ã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
     for(sleep=1; sleep<20000000; sleep++)
     {}
 
-    system("cls"); //ÇåÆÁ
+    system("cls"); //æ¸…å±
     printf("\n\n\n\n\n\n\n\n\n\n");
-    printf("\n\t\t\t                          ¡ş¡ş");
-    printf("\n\t\t\t                     ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+    printf("\n\t\t\t                          ã€“ã€“");
+    printf("\n\t\t\t                     ã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
     for(sleep=1; sleep<20000000; sleep++)
     {}
 
-    system("cls"); //ÇåÆÁ
+    system("cls"); //æ¸…å±
     printf("\n\n\n\n\n\n\n\n\n\n");
-    printf("\n\t\t\t                            ¡ş¡ş");
-    printf("\n\t\t\t                       ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+    printf("\n\t\t\t                            ã€“ã€“");
+    printf("\n\t\t\t                       ã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
     for(sleep=1; sleep<30000000; sleep++)
     {}
 
-    system("cls"); //ÇåÆÁ
+    system("cls"); //æ¸…å±
     printf("\n\n\n\n\n\n\n\n\n\n");
-    printf("\n\t\t\t                              ¡ş¡ş");
-    printf("\n\t\t\t                         ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+    printf("\n\t\t\t                              ã€“ã€“");
+    printf("\n\t\t\t                         ã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
     for(sleep=1; sleep<30000000; sleep++)
     {}
 
-    system("cls"); //ÇåÆÁ
+    system("cls"); //æ¸…å±
     printf("\n\n\n\n\n\n\n\n\n\n");
-    printf("\n\t\t\t                                ¡ş¡ş");
-    printf("\n\t\t\t                           ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+    printf("\n\t\t\t                                ã€“ã€“");
+    printf("\n\t\t\t                           ã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
     for(sleep=1; sleep<50000000; sleep++)
     {}
 
-    system("cls"); //ÇåÆÁ
+    system("cls"); //æ¸…å±
     printf("\n\n\n\n\n\n\n\n\n\n");
-    printf("\n\t\t\t                                  ¡ş¡ş");
-    printf("\n\t\t\t                             ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+    printf("\n\t\t\t                                  ã€“ã€“");
+    printf("\n\t\t\t                             ã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
     for(sleep=1; sleep<80000000; sleep++)
     {}
 
-    system("cls"); //ÇåÆÁ
+    system("cls"); //æ¸…å±
     printf("\n\n\n\n\n\n\n\n\n\n\7\7");
-    printf("\n\t\t\t                                    ¡ş¡ş");
-    printf("\n\t\t\t                               ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş  ¡ø  ");
+    printf("\n\t\t\t                                    ã€“ã€“");
+    printf("\n\t\t\t                               ã€“â—‹ã€“ã€“ã€“â—‹ã€“  â–²  ");
 
     for(sleep=1; sleep<100000000; sleep++)
     {}
 
-    system("cls"); //ÇåÆÁ
+    system("cls"); //æ¸…å±
     printf("\n\n\n\n\n\n\n\n\n\n\7\7\7");
-    printf("\n\t\t\t                                       ¡ş¡ş       Çë");
-    printf("\n\t\t\t                                  ¡ş¡ğ¡ş¡ş¡ş¡ñ¡ş  ½»");
-    printf("\n\t\t\t                                            ¡Í    ·Ñ");
+    printf("\n\t\t\t                                       ã€“ã€“       è¯·");
+    printf("\n\t\t\t                                  ã€“â—‹ã€“ã€“ã€“â—ã€“  äº¤");
+    printf("\n\t\t\t                                            âŠ¥    è´¹");
     Sleep(1000);
     system("CLS");
     system("color f1");
     printf("\n\n\n\n\n\n\n\n\n\n\n");
-    printf("\t ÓÃ !");
+    printf("\t ç”¨ !");
     Sleep(100);
     system("CLS");
     printf("\n\n\n\n\n\n\n\n\n\n\n");
-    printf("\t\tÊ¹ ÓÃ !");
+    printf("\t\tä½¿ ç”¨ !");
     ;
     Sleep(100);
     system("CLS");
     printf("\n\n\n\n\n\n\n\n\n\n\n");
-    printf("\t\t\t Ğ» Ê¹ ÓÃ !");
+    printf("\t\t\t è°¢ ä½¿ ç”¨ !");
     Sleep(100);
     system("CLS");
     printf("\n\n\n\n\n\n\n\n\n\n\n");
-    printf("\t\t\t\tĞ» Ğ» Ê¹ ÓÃ !");
+    printf("\t\t\t\tè°¢ è°¢ ä½¿ ç”¨ !");
     Sleep(100);
     system("CLS");
     printf("\n\n\n\n\n\n\n\n\n\n\n");
-    printf("\t\t\t\tĞ» Ğ» Ê¹ ÓÃ !");
+    printf("\t\t\t\tè°¢ è°¢ ä½¿ ç”¨ !");
     Sleep(100);
     system("CLS");
     printf("\n\n\n\n\n\n\n\n\n\n\n");
-    printf("\t\t\t\tĞ» Ğ» Ê¹ ÓÃ !\t\t");
+    printf("\t\t\t\tè°¢ è°¢ ä½¿ ç”¨ !\t\t");
     Sleep(500);
     exit(0);
 }
@@ -949,94 +949,94 @@ void car_gui()
 {
     int i,sleep;
 
-    /**ÍâÑ­»·Èı´ÎÊ¹ÓÃÈí¼ş½çÃæ*/
+    /**å¤–å¾ªç¯ä¸‰æ¬¡ä½¿ç”¨è½¯ä»¶ç•Œé¢*/
     for(i=1; i<=1; i++)
     {
         printf("\n\n\n\n\n\n\n\n\n\n");
-        printf("\n\t     ¡ş¡ş");
-        printf("\n\t¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+        printf("\n\t     ã€“ã€“");
+        printf("\n\tã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
-        for(sleep=1; sleep<10000000; sleep++) //Ñ­»·´ÎÊıÍ£Ö¹µÈ´ı
+        for(sleep=1; sleep<10000000; sleep++) //å¾ªç¯æ¬¡æ•°åœæ­¢ç­‰å¾…
         {}
 
-        system("cls"); //ÇåÆÁ
+        system("cls"); //æ¸…å±
         printf("\n\n\n\n\n\n\n\n\n\n");
-        printf("\n\t       ¡ş¡ş");
-        printf("\n\t  ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+        printf("\n\t       ã€“ã€“");
+        printf("\n\t  ã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
         for(sleep=1; sleep<10000000; sleep++)
         {}
 
-        system("cls"); //ÇåÆÁ
+        system("cls"); //æ¸…å±
         printf("\n\n\n\n\n\n\n\n\n\n");
-        printf("\n\t\t     ¡ş¡ş");
-        printf("\n\t\t¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+        printf("\n\t\t     ã€“ã€“");
+        printf("\n\t\tã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
         for(sleep=1; sleep<10000000; sleep++)
         {}
 
-        system("cls"); //ÇåÆÁ
+        system("cls"); //æ¸…å±
         printf("\n\n\n\n\n\n\n\n\n\n");
-        printf("\n\t\t\t     ¡ş¡ş");
-        printf("\n\t\t\t¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+        printf("\n\t\t\t     ã€“ã€“");
+        printf("\n\t\t\tã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
         for(sleep=1; sleep<10000000; sleep++)
         {}
 
-        system("cls"); //ÇåÆÁ
+        system("cls"); //æ¸…å±
         printf("\n\n\n\n\n\n\n\n\n\n");
-        printf("\n\t\t\t       ¡ş¡ş");
-        printf("\n\t\t\t  ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+        printf("\n\t\t\t       ã€“ã€“");
+        printf("\n\t\t\t  ã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
         for(sleep=1; sleep<10000000; sleep++)
         {}
 
-        system("cls"); //ÇåÆÁ
+        system("cls"); //æ¸…å±
         printf("\n\n\n\n\n\n\n\n\n\n");
-        printf("\n\t\t\t\t     ¡ş¡ş");
-        printf("\n\t\t\t\t¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+        printf("\n\t\t\t\t     ã€“ã€“");
+        printf("\n\t\t\t\tã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
         for(sleep=1; sleep<10000000; sleep++)
         {}
 
-        system("cls"); //ÇåÆÁ
+        system("cls"); //æ¸…å±
         printf("\n\n\n\n\n\n\n\n\n\n");
-        printf("\n\t\t\t\t       ¡ş¡ş");
-        printf("\n\t\t\t\t  ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+        printf("\n\t\t\t\t       ã€“ã€“");
+        printf("\n\t\t\t\t  ã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
         for(sleep=1; sleep<10000000; sleep++)
         {}
 
-        system("cls"); //ÇåÆÁ
+        system("cls"); //æ¸…å±
         printf("\n\n\n\n\n\n\n\n\n\n");
-        printf("\n\t\t\t\t\t     ¡ş¡ş");
-        printf("\n\t\t\t\t\t¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
+        printf("\n\t\t\t\t\t     ã€“ã€“");
+        printf("\n\t\t\t\t\tã€“â—‹ã€“ã€“ã€“â—‹ã€“");
 
         for(sleep=1; sleep<10000000; sleep++)
         {}
 
-        system("cls"); //ÇåÆÁ
+        system("cls"); //æ¸…å±
     }
 
     printf("\n\n\n\n\n\n\n\n\n\n\7");
-    printf("\n\t\t\t\t\t\t       ¡ş¡ş        »¶ ");
-    printf("\n\t\t\t\t\t\t  ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş");
-    printf("\n\t\t\t\t\t\t                   Ó­ ");
+    printf("\n\t\t\t\t\t\t       ã€“ã€“        æ¬¢ ");
+    printf("\n\t\t\t\t\t\t  ã€“â—‹ã€“ã€“ã€“â—‹ã€“");
+    printf("\n\t\t\t\t\t\t                   è¿ ");
     Sleep(1000);
     system("CLS");
     printf("\n\n\n\n\n\n");
-    printf("\t\t  ¡¡---------------------------------- \n");
-    printf("\t\t   £ü¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù£ü\n");
-    printf("\t\t   £ü¡ù¡¡¡¡¡¡ »¶Ó­Ê¹ÓÃ±¾Èí¼ş¡¡ ¡¡  ¡ù£ü\n");
+    printf("\t\t  ã€€---------------------------------- \n");
+    printf("\t\t   ï½œâ€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»ï½œ\n");
+    printf("\t\t   ï½œâ€»ã€€ã€€ã€€ æ¬¢è¿ä½¿ç”¨æœ¬è½¯ä»¶ã€€ ã€€  â€»ï½œ\n");
     printf("\t\t    ---------------------------------- \n");
-    printf("\t\t   £ü¡ù¡¡¡¡ Í£³µ³¡ÊÕ·Ñ¹ÜÀíÏµÍ³     ¡ù£ü\n");
-    printf("\t\t   £ü¡ù¡¡¡¡¡¡          ¡¡¡¡        ¡ù£ü\n");
-    printf("\t\t   £ü¡ù¡¡¡¡¡¡     Ñ§Éú: jiangxin      ¡ù£ü\n");
-    printf("\t\t   £ü¡ù                            ¡ù£ü\n");
-    printf("\t\t   £ü¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù£ü\n");
+    printf("\t\t   ï½œâ€»ã€€ã€€ åœè½¦åœºæ”¶è´¹ç®¡ç†ç³»ç»Ÿ     â€»ï½œ\n");
+    printf("\t\t   ï½œâ€»ã€€ã€€ã€€          ã€€ã€€        â€»ï½œ\n");
+    printf("\t\t   ï½œâ€»ã€€ã€€ã€€     å­¦ç”Ÿ: jiangxin      â€»ï½œ\n");
+    printf("\t\t   ï½œâ€»                            â€»ï½œ\n");
+    printf("\t\t   ï½œâ€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»ï½œ\n");
     printf("\t\t    ---------------------------------- \n");
 
-    for(int j=0; j<600000000; j++) //ÓÃÓÚ¿ØÖÆÍ£ÁôÊ±¼äµÄ³¤¶Ì
+    for(int j=0; j<600000000; j++) //ç”¨äºæ§åˆ¶åœç•™æ—¶é—´çš„é•¿çŸ­
     {}
 
     system("cls");
@@ -1046,129 +1046,129 @@ void system_start()
     for(int i=1; i<=3; i++)
     {
         printf("\n\n\n\n\n\n\n\n\n");
-        printf("\t\t\t\t       ¡ş¡ş\n");
-        printf("\t\t\t\t  ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş\n");
-        printf("\t\t\t\t£ß£ß£ß£ß£ß£ß£ß£ß£ß\n");
-        printf("\t\t\t\t¡ñ \n");
-        printf("\t\t\t\t£ş£ş£ş£ş£ş£ş£ş£ş£ş\n\n\n");
-        printf("\t\t\t\tÕıÔÚÆô¶¯  ÇëÉÔºò.");
+        printf("\t\t\t\t       ã€“ã€“\n");
+        printf("\t\t\t\t  ã€“â—‹ã€“ã€“ã€“â—‹ã€“\n");
+        printf("\t\t\t\tï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿\n");
+        printf("\t\t\t\tâ— \n");
+        printf("\t\t\t\tï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£\n\n\n");
+        printf("\t\t\t\tæ­£åœ¨å¯åŠ¨  è¯·ç¨å€™.");
         Sleep(100);
         system("CLS");
         printf("\n\n\n\n\n\n\n\n\n");
-        printf("\t\t\t\t       ¡ş¡ş\n");
-        printf("\t\t\t\t  ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş\n");
-        printf("\t\t\t\t£ß£ß£ß£ß£ß£ß£ß£ß£ß\n");
-        printf("\t\t\t\t¡ñ¡ñ\n ");
-        printf("\t\t\t\t£ş£ş£ş£ş£ş£ş£ş£ş£ş\n\n\n");
-        printf("\t\t\t\tÕıÔÚÆô¶¯  ÇëÉÔºò.");
+        printf("\t\t\t\t       ã€“ã€“\n");
+        printf("\t\t\t\t  ã€“â—‹ã€“ã€“ã€“â—‹ã€“\n");
+        printf("\t\t\t\tï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿\n");
+        printf("\t\t\t\tâ—â—\n ");
+        printf("\t\t\t\tï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£\n\n\n");
+        printf("\t\t\t\tæ­£åœ¨å¯åŠ¨  è¯·ç¨å€™.");
         Sleep(200);
         system("CLS");
         printf("\n\n\n\n\n\n\n\n\n");
-        printf("\t\t\t\t       ¡ş¡ş\n");
-        printf("\t\t\t\t  ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş\n");
-        printf("\t\t\t\t£ß£ß£ß£ß£ß£ß£ß£ß£ß\n");
-        printf("\t\t\t\t¡ñ¡ñ¡ñ \n");
-        printf("\t\t\t\t£ş£ş£ş£ş£ş£ş£ş£ş£ş\n\n\n");
-        printf("\t\t\t\tÕıÔÚÆô¶¯  ÇëÉÔºò..");
+        printf("\t\t\t\t       ã€“ã€“\n");
+        printf("\t\t\t\t  ã€“â—‹ã€“ã€“ã€“â—‹ã€“\n");
+        printf("\t\t\t\tï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿\n");
+        printf("\t\t\t\tâ—â—â— \n");
+        printf("\t\t\t\tï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£\n\n\n");
+        printf("\t\t\t\tæ­£åœ¨å¯åŠ¨  è¯·ç¨å€™..");
         Sleep(300);
         system("CLS");
         printf("\n\n\n\n\n\n\n\n\n");
-        printf("\t\t\t\t       ¡ş¡ş\n");
-        printf("\t\t\t\t  ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş\n");
-        printf("\t\t\t\t£ß£ß£ß£ß£ß£ß£ß£ß£ß\n");
-        printf("\t\t\t\t    ¡ñ\n ");
-        printf("\t\t\t\t£ş£ş£ş£ş£ş£ş£ş£ş£ş\n\n\n");
-        printf("\t\t\t\tÕıÔÚÆô¶¯  ÇëÉÔºò..");
+        printf("\t\t\t\t       ã€“ã€“\n");
+        printf("\t\t\t\t  ã€“â—‹ã€“ã€“ã€“â—‹ã€“\n");
+        printf("\t\t\t\tï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿\n");
+        printf("\t\t\t\t    â—\n ");
+        printf("\t\t\t\tï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£\n\n\n");
+        printf("\t\t\t\tæ­£åœ¨å¯åŠ¨  è¯·ç¨å€™..");
         Sleep(100);
         system("CLS");
         printf("\n\n\n\n\n\n\n\n\n");
-        printf("\t\t\t\t       ¡ş¡ş\n");
-        printf("\t\t\t\t  ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş\n");
-        printf("\t\t\t\t£ß£ß£ß£ß£ß£ß£ß£ß£ß\n");
-        printf("\t\t\t\t    ¡ñ¡ñ\n ");
-        printf("\t\t\t\t£ş£ş£ş£ş£ş£ş£ş£ş£ş\n\n\n");
-        printf("\t\t\t\tÕıÔÚÆô¶¯  ÇëÉÔºò...");
+        printf("\t\t\t\t       ã€“ã€“\n");
+        printf("\t\t\t\t  ã€“â—‹ã€“ã€“ã€“â—‹ã€“\n");
+        printf("\t\t\t\tï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿\n");
+        printf("\t\t\t\t    â—â—\n ");
+        printf("\t\t\t\tï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£\n\n\n");
+        printf("\t\t\t\tæ­£åœ¨å¯åŠ¨  è¯·ç¨å€™...");
         Sleep(200);
         system("CLS");
         printf("\n\n\n\n\n\n\n\n\n");
-        printf("\t\t\t\t       ¡ş¡ş\n");
-        printf("\t\t\t\t  ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş\n");
-        printf("\t\t\t\t£ß£ß£ß£ß£ß£ß£ß£ß£ß\n");
-        printf("\t\t\t\t    ¡ñ¡ñ¡ñ \n");
-        printf("\t\t\t\t£ş£ş£ş£ş£ş£ş£ş£ş£ş\n\n\n");
-        printf("\t\t\t\tÕıÔÚÆô¶¯  ÇëÉÔºò...");
+        printf("\t\t\t\t       ã€“ã€“\n");
+        printf("\t\t\t\t  ã€“â—‹ã€“ã€“ã€“â—‹ã€“\n");
+        printf("\t\t\t\tï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿\n");
+        printf("\t\t\t\t    â—â—â— \n");
+        printf("\t\t\t\tï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£\n\n\n");
+        printf("\t\t\t\tæ­£åœ¨å¯åŠ¨  è¯·ç¨å€™...");
         Sleep(300);
         system("CLS");
         printf("\n\n\n\n\n\n\n\n\n");
-        printf("\t\t\t\t       ¡ş¡ş\n");
-        printf("\t\t\t\t  ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş\n");
-        printf("\t\t\t\t£ß£ß£ß£ß£ß£ß£ß£ß£ß\n");
-        printf("\t\t\t\t        ¡ñ \n");
-        printf("\t\t\t\t£ş£ş£ş£ş£ş£ş£ş£ş£ş\n\n\n");
-        printf("\t\t\t\tÕıÔÚÆô¶¯  ÇëÉÔºò.....");
+        printf("\t\t\t\t       ã€“ã€“\n");
+        printf("\t\t\t\t  ã€“â—‹ã€“ã€“ã€“â—‹ã€“\n");
+        printf("\t\t\t\tï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿\n");
+        printf("\t\t\t\t        â— \n");
+        printf("\t\t\t\tï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£\n\n\n");
+        printf("\t\t\t\tæ­£åœ¨å¯åŠ¨  è¯·ç¨å€™.....");
         Sleep(100);
         system("CLS");
         printf("\n\n\n\n\n\n\n\n\n");
-        printf("\t\t\t\t       ¡ş¡ş\n");
-        printf("\t\t\t\t  ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş\n");
-        printf("\t\t\t\t£ß£ß£ß£ß£ß£ß£ß£ß£ß\n");
-        printf("\t\t\t\t        ¡ñ¡ñ \n");
-        printf("\t\t\t\t£ş£ş£ş£ş£ş£ş£ş£ş£ş\n\n\n");
-        printf("\t\t\t\tÕıÔÚÆô¶¯  ÇëÉÔºò....");
+        printf("\t\t\t\t       ã€“ã€“\n");
+        printf("\t\t\t\t  ã€“â—‹ã€“ã€“ã€“â—‹ã€“\n");
+        printf("\t\t\t\tï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿\n");
+        printf("\t\t\t\t        â—â— \n");
+        printf("\t\t\t\tï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£\n\n\n");
+        printf("\t\t\t\tæ­£åœ¨å¯åŠ¨  è¯·ç¨å€™....");
         Sleep(200);
         system("CLS");
         printf("\n\n\n\n\n\n\n\n\n");
-        printf("\t\t\t\t       ¡ş¡ş\n");
-        printf("\t\t\t\t  ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş\n");
-        printf("\t\t\t\t£ß£ß£ß£ß£ß£ß£ß£ß£ß\n");
-        printf("\t\t\t\t        ¡ñ¡ñ¡ñ \n");
-        printf("\t\t\t\t£ş£ş£ş£ş£ş£ş£ş£ş£ş\n\n\n");
-        printf("\t\t\t\tÕıÔÚÆô¶¯  ÇëÉÔºò.....");
+        printf("\t\t\t\t       ã€“ã€“\n");
+        printf("\t\t\t\t  ã€“â—‹ã€“ã€“ã€“â—‹ã€“\n");
+        printf("\t\t\t\tï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿\n");
+        printf("\t\t\t\t        â—â—â— \n");
+        printf("\t\t\t\tï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£\n\n\n");
+        printf("\t\t\t\tæ­£åœ¨å¯åŠ¨  è¯·ç¨å€™.....");
         Sleep(300);
         system("CLS");
         printf("\n\n\n\n\n\n\n\n\n");
-        printf("\t\t\t\t       ¡ş¡ş\n");
-        printf("\t\t\t\t  ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş\n");
-        printf("\t\t\t\t£ß£ß£ß£ß£ß£ß£ß£ß£ß\n");
-        printf("\t\t\t\t            ¡ñ\n ");
-        printf("\t\t\t\t£ş£ş£ş£ş£ş£ş£ş£ş£ş\n\n\n");
-        printf("\t\t\t\tÕıÔÚÆô¶¯  ÇëÉÔºò.....");
+        printf("\t\t\t\t       ã€“ã€“\n");
+        printf("\t\t\t\t  ã€“â—‹ã€“ã€“ã€“â—‹ã€“\n");
+        printf("\t\t\t\tï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿\n");
+        printf("\t\t\t\t            â—\n ");
+        printf("\t\t\t\tï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£\n\n\n");
+        printf("\t\t\t\tæ­£åœ¨å¯åŠ¨  è¯·ç¨å€™.....");
         Sleep(100);
         system("CLS");
         printf("\n\n\n\n\n\n\n\n\n");
-        printf("\t\t\t\t       ¡ş¡ş\n");
-        printf("\t\t\t\t  ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş\n");
-        printf("\t\t\t\t£ß£ß£ß£ß£ß£ß£ß£ß£ß\n");
-        printf("\t\t\t\t            ¡ñ¡ñ\n ");
-        printf("\t\t\t\t£ş£ş£ş£ş£ş£ş£ş£ş£ş\n\n\n");
-        printf("\t\t\t\tÕıÔÚÆô¶¯  ÇëÉÔºò......");
+        printf("\t\t\t\t       ã€“ã€“\n");
+        printf("\t\t\t\t  ã€“â—‹ã€“ã€“ã€“â—‹ã€“\n");
+        printf("\t\t\t\tï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿\n");
+        printf("\t\t\t\t            â—â—\n ");
+        printf("\t\t\t\tï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£\n\n\n");
+        printf("\t\t\t\tæ­£åœ¨å¯åŠ¨  è¯·ç¨å€™......");
         Sleep(200);
         system("CLS");
         printf("\n\n\n\n\n\n\n\n\n");
-        printf("\t\t\t\t       ¡ş¡ş\n");
-        printf("\t\t\t\t  ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş\n");
-        printf("\t\t\t\t£ß£ß£ß£ß£ß£ß£ß£ß£ß\n");
-        printf("\t\t\t\t            ¡ñ¡ñ¡ñ\n ");
-        printf("\t\t\t\t£ş£ş£ş£ş£ş£ş£ş£ş£ş\n\n\n");
-        printf("\t\t\t\tÕıÔÚÆô¶¯  ÇëÉÔºò......");
+        printf("\t\t\t\t       ã€“ã€“\n");
+        printf("\t\t\t\t  ã€“â—‹ã€“ã€“ã€“â—‹ã€“\n");
+        printf("\t\t\t\tï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿\n");
+        printf("\t\t\t\t            â—â—â—\n ");
+        printf("\t\t\t\tï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£\n\n\n");
+        printf("\t\t\t\tæ­£åœ¨å¯åŠ¨  è¯·ç¨å€™......");
         Sleep(300);
         system("CLS");
         printf("\n\n\n\n\n\n\n\n\n");
-        printf("\t\t\t\t       ¡ş¡ş\n");
-        printf("\t\t\t\t  ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş\n");
-        printf("\t\t\t\t£ß£ß£ß£ß£ß£ß£ß£ß£ß\n");
-        printf("\t\t\t\t              ¡ñ¡ñ\n");
-        printf("\t\t\t\t£ş£ş£ş£ş£ş£ş£ş£ş£ş\n\n\n");
-        printf("\t\t\t\tÕıÔÚÆô¶¯  ÇëÉÔºò.");
+        printf("\t\t\t\t       ã€“ã€“\n");
+        printf("\t\t\t\t  ã€“â—‹ã€“ã€“ã€“â—‹ã€“\n");
+        printf("\t\t\t\tï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿\n");
+        printf("\t\t\t\t              â—â—\n");
+        printf("\t\t\t\tï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£\n\n\n");
+        printf("\t\t\t\tæ­£åœ¨å¯åŠ¨  è¯·ç¨å€™.");
         Sleep(400);
         system("CLS");
         printf("\n\n\n\n\n\n\n\n\n");
-        printf("\t\t\t\t       ¡ş¡ş\n");
-        printf("\t\t\t\t  ¡ş¡ğ¡ş¡ş¡ş¡ğ¡ş\n");
-        printf("\t\t\t\t£ß£ß£ß£ß£ß£ß£ß£ß£ß\n");
-        printf("\t\t\t\t                ¡ñ \n");
-        printf("\t\t\t\t£ş£ş£ş£ş£ş£ş£ş£ş£ş\n\n\n");
-        printf("\t\t\t\tÕıÔÚÆô¶¯  ÇëÉÔºò..");
+        printf("\t\t\t\t       ã€“ã€“\n");
+        printf("\t\t\t\t  ã€“â—‹ã€“ã€“ã€“â—‹ã€“\n");
+        printf("\t\t\t\tï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿ï¼¿\n");
+        printf("\t\t\t\t                â— \n");
+        printf("\t\t\t\tï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£ï¿£\n\n\n");
+        printf("\t\t\t\tæ­£åœ¨å¯åŠ¨  è¯·ç¨å€™..");
         Sleep(500);
         system("CLS");
     }
@@ -1181,22 +1181,22 @@ int main0026()
 
     for(int i=0; i<MAX_CAR_NUM; i++)
     {
-        carInfo[i].carNo[0] = '\0'; //Î´³õÊ¼»¯µÄ±êÖ¾
-        carInfo[i].abbreviation = 1; //³õÊ¼»¯ËùÓĞµÄ¼ò³ÆÎª"Ïæ"
+        carInfo[i].carNo[0] = '\0'; //æœªåˆå§‹åŒ–çš„æ ‡å¿—
+        carInfo[i].abbreviation = 1; //åˆå§‹åŒ–æ‰€æœ‰çš„ç®€ç§°ä¸º"æ¹˜"
     }
 
-    /**³õÊ¼»¯Ò»¸öÑùÀı begin*/
+    /**åˆå§‹åŒ–ä¸€ä¸ªæ ·ä¾‹ begin*/
     strncpy(carInfo[0].carNo, "B74110", sizeof(carInfo[0].carNo));
     strncpy(carInfo[0].userName, "jiangxin", sizeof(carInfo[0].userName));
     strncpy(carInfo[0].color, "black", sizeof(carInfo[0].color));
     carInfo[0].hour = 11;
     carInfo[0].minute = 20;
-    /**³õÊ¼»¯Ò»¸öÑùÀı end*/
+    /**åˆå§‹åŒ–ä¸€ä¸ªæ ·ä¾‹ end*/
     FILE *fp = fopen("data/che.txt","w");
 
     if(fp == NULL)
     {
-        perror("´ò¿ªÎÄ¼şÊ§°Ü\n");
+        perror("æ‰“å¼€æ–‡ä»¶å¤±è´¥\n");
         exit(1);
     }
 

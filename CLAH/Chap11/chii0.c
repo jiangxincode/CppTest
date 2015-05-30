@@ -1,6 +1,6 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 
-#include "something.h"
+#include "../utility.h"
 
 int main11chii0()
 {
@@ -9,12 +9,12 @@ int main11chii0()
 
     for(i=1; i<5; i++)
     {
-        x=1.0*i;                                     /* xÖµ*/
+        x=1.0*i;                                     /* xå€¼*/
 
-        for(n=1; n<4; n++)                           /* nÖµ*/
+        for(n=1; n<4; n++)                           /* nå€¼*/
         {
-            y=chii(x,n);                               /* ¿¨·½·Ö²¼º¯Êý*/
-            printf("P(%2.1f,%d)=%e ",x,n,y);          /* ´òÓ¡½á¹û*/
+            y=chii(x,n);                               /* å¡æ–¹åˆ†å¸ƒå‡½æ•°*/
+            printf("P(%2.1f,%d)=%e ",x,n,y);          /* æ‰“å°ç»“æžœ*/
         }
 
         printf("\n");

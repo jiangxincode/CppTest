@@ -1,13 +1,13 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <math.h>
-#include "something.h"
+#include "../utility.h"
 
 int main16dct0()
 {
     int i;
     double a[4],b[4],y[4];
 
-    for(i=0; i<4; i++)                                 /* ¸ø¶¨aºÍb*/
+    for(i=0; i<4; i++)                                 /* ç»™å®šaå’Œb*/
     {
         a[i] = i+1;
         b[i] = 2*i;
@@ -27,7 +27,7 @@ int main16dct0()
         printf("%5.4f ",b[i]);
     }
 
-    i = dct(a,4,y); 	                                 /*ÇóaµÄdctt*/
+    i = dct(a,4,y); 	                                 /*æ±‚açš„dctt*/
 
     if(i)
     {
@@ -39,7 +39,7 @@ int main16dct0()
         }
     }
 
-    i = dct(b,4,y); 	                                /*ÇóbµÄdctt*/
+    i = dct(b,4,y); 	                                /*æ±‚bçš„dctt*/
 
     if(i)
     {

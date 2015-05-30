@@ -1,7 +1,7 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <math.h>
 
-#include "something.h"
+#include "../utility.h"
 
 int main11gramma0()
 {

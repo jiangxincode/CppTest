@@ -1,18 +1,18 @@
-#include <stdio.h>
-#include "something.h"
+ï»¿#include <stdio.h>
+#include "../utility.h"
 #include "r_matmul.c"
 int main4r_mqr0()
 {
     int i,j;
-    double q[4][4],mat[4][3]= {{1.0,2.0,4.0},         /* ¾ØÕóA¸³Öµ*/
+    double q[4][4],mat[4][3]= {{1.0,2.0,4.0},         /* çŸ©é˜µAèµ‹å€¼*/
         {-1.0,0.0,3.0},{2.0,-1.0,0.0},{3.0,1.0,2.0}
     };
     double mat3[4][3];
-    i=r_mqr(mat,4,3,q,1e-16);                         /* ½øĞĞQR·Ö½â*/
+    i=r_mqr(mat,4,3,q,1e-16);                         /* è¿›è¡ŒQRåˆ†è§£*/
 
     if(i!=0)
     {
-        printf("Q:\n");                                 /* ´òÓ¡Q¾ØÕó*/
+        printf("Q:\n");                                 /* æ‰“å°QçŸ©é˜µ*/
 
         for(i=0; i<4; i++)
         {
@@ -25,7 +25,7 @@ int main4r_mqr0()
         }
 
         printf("\n");
-        printf("R:\n");                                 /* ´òÓ¡·Ö½âµÃµ½µÄR*/
+        printf("R:\n");                                 /* æ‰“å°åˆ†è§£å¾—åˆ°çš„R*/
 
         for(i=0; i<4; i++)
         {
@@ -40,8 +40,8 @@ int main4r_mqr0()
         printf("\n");
     }
 
-    r_matmul(q, mat,4,4,3, mat3);                     /* Q*RÒÔÑéÖ¤½á¹û*/
-    printf("Q*R:\n");                                 /* ´òÓ¡Q*RµÄ½á¹û*/
+    r_matmul(q, mat,4,4,3, mat3);                     /* Q*Rä»¥éªŒè¯ç»“æœ*/
+    printf("Q*R:\n");                                 /* æ‰“å°Q*Rçš„ç»“æœ*/
 
     for(i=0; i<4; i++)
     {

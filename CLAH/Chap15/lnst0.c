@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include "cout.c"
 #include "rads.c"
 int main15Inst0()
@@ -6,7 +6,7 @@ int main15Inst0()
     int i,j,p[50],p1[50],y[50];
     printf("Data:\n");
 
-    for(i=0; i<5; i++)                     /* Éú³ÉÒ»Ð©ÎÞÐòÊý¾Ý*/
+    for(i=0; i<5; i++)                     /* ç”Ÿæˆä¸€äº›æ— åºæ•°æ®*/
     {
         for(j=0; j<10; j++)
         {
@@ -18,7 +18,7 @@ int main15Inst0()
         printf("\n");
     }
 
-    printf("Count Sort:\n");                /* ¼ÆÊýÅÅÐòµÄ½á¹û*/
+    printf("Count Sort:\n");                /* è®¡æ•°æŽ’åºçš„ç»“æžœ*/
     cout(p,y,50,60);
 
     for(i=0; i<5; i++)
@@ -31,7 +31,7 @@ int main15Inst0()
         printf("\n");
     }
 
-    printf("Radix Sort:\n");                /* »ùÊýÅÅÐòµÄ½á¹û*/
+    printf("Radix Sort:\n");                /* åŸºæ•°æŽ’åºçš„ç»“æžœ*/
     rads(p1,50,2,10);
 
     for(i=0; i<5; i++)

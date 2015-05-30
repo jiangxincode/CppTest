@@ -26,6 +26,7 @@
 /*Escape键*/
 #define ESC 0x011b
 
+
 /*定义全局变量*/
 struct date sysTime;
 int currentYear;

@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include "mhdqr.c"
 int main4mhdqr0()
 {
@@ -11,7 +11,7 @@ int main4mhdqr0()
         {0.0,0.0,21.0,30.0,-6.0},
         {0.0,0.0,0.0,3.0,6.0}
     };
-    i=mhdqr(a,5,u,v,eps,itmax);                       /* µ÷ÓÃº¯ÊýÇó½â²¢´òÓ¡½á¹û*/
+    i=mhdqr(a,5,u,v,eps,itmax);                       /* è°ƒç”¨å‡½æ•°æ±‚è§£å¹¶æ‰“å°ç»“æžœ*/
 
     if(i>0)
     {

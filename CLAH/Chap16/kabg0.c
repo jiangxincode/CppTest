@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
@@ -14,18 +14,18 @@ int main16kabg0()
     b=0.0285;
     c=0.0005;
     h=0.02;
-    rand_gauss_lot(200,0.0,0.25,y);                     /* ²úÉú200¸ö¸ßË¹Ëæ»úÊı*/
+    rand_gauss_lot(200,0.0,0.25,y);                     /* äº§ç”Ÿ200ä¸ªé«˜æ–¯éšæœºæ•°*/
 
     for(i=0; i<200; i++)
     {
         t = (i+1)*h;
-        z[i] = -5.0*t+3.0;                             /* 200¸öÕæÊµĞÅºÅ*/
-        x[i] = z[i]+y[i];                              /* 200¸öÓĞÔëÉùµÄĞÅºÅ*/
+        z[i] = -5.0*t+3.0;                             /* 200ä¸ªçœŸå®ä¿¡å·*/
+        x[i] = z[i]+y[i];                              /* 200ä¸ªæœ‰å™ªå£°çš„ä¿¡å·*/
     }
 
-    kabg(x,200,y,h,a,b,c);                             /* ÂË²¨¹À¼Æ*/
+    kabg(x,200,y,h,a,b,c);                             /* æ»¤æ³¢ä¼°è®¡*/
 
-    for(i=180; i<200; i++)                           /* ´òÓ¡×îºó20¸ö¹À¼ÆÖµ*/
+    for(i=180; i<200; i++)                           /* æ‰“å°æœ€å20ä¸ªä¼°è®¡å€¼*/
     {
         t=(i+1)*h;
         printf("t=%5.2f  x(t)=%5.2f  y(t)=%5.2f  z(t)=%5.2f\n",
@@ -35,23 +35,23 @@ int main16kabg0()
     return 0;
 }
 
-void rand_gauss_lot(L,a,b,G)                    /* ²úÉú¸ßË¹Ëæ»úÊıµÄº¯Êı*/
+void rand_gauss_lot(L,a,b,G)                    /* äº§ç”Ÿé«˜æ–¯éšæœºæ•°çš„å‡½æ•°*/
 int L;
 double a,b;
 double *G;
 {
     int i;
     double U1,U2;
-    srand((unsigned)time(0));                 /* ÓÃÏµÍ³Ê±ÖÓ×öÖÖ×Ó*/
+    srand((unsigned)time(0));                 /* ç”¨ç³»ç»Ÿæ—¶é’Ÿåšç§å­*/
 
     for(i=0; i<L; i=i+2)
     {
-        U1 = rand()/(double)RAND_MAX;           /* Éú³É(0,1)Ëæ»úÊıU1*/
-        U2 = rand()/(double)RAND_MAX;           /* Éú³É(0,1)Ëæ»úÊıU2*/
-        G[i]=sqrt(-2*log(U1))*sin(2*PI*U2);   /* Éú³É±ê×¼ÕıÌ¬·Ö²¼Ëæ»úÊıG1*/
-        G[i]=sqrt(b)*G[i]+a;                  /* Éú³É·ş´ÓN~(a,b)µÄËæ»úÊıG1*/
-        G[i+1]=sqrt(-2*log(U1))*cos(2*PI*U2); /* Éú³É±ê×¼ÕıÌ¬·Ö²¼Ëæ»úÊıG2*/
-        G[i+1]=sqrt(b)*G[i+1]+a;              /* Éú³É·ş´ÓN~(a,b)µÄËæ»úÊıG2*/
+        U1 = rand()/(double)RAND_MAX;           /* ç”Ÿæˆ(0,1)éšæœºæ•°U1*/
+        U2 = rand()/(double)RAND_MAX;           /* ç”Ÿæˆ(0,1)éšæœºæ•°U2*/
+        G[i]=sqrt(-2*log(U1))*sin(2*PI*U2);   /* ç”Ÿæˆæ ‡å‡†æ­£æ€åˆ†å¸ƒéšæœºæ•°G1*/
+        G[i]=sqrt(b)*G[i]+a;                  /* ç”Ÿæˆæœä»N~(a,b)çš„éšæœºæ•°G1*/
+        G[i+1]=sqrt(-2*log(U1))*cos(2*PI*U2); /* ç”Ÿæˆæ ‡å‡†æ­£æ€åˆ†å¸ƒéšæœºæ•°G2*/
+        G[i+1]=sqrt(b)*G[i+1]+a;              /* ç”Ÿæˆæœä»N~(a,b)çš„éšæœºæ•°G2*/
     }
 
     return;

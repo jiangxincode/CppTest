@@ -1,4 +1,4 @@
-#include<stdlib.h>
+ï»¿#include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
 #include"aitkenroot.c"
@@ -8,12 +8,12 @@ int main6aitkenroot4()
     double x, eps;
     double *x0 = &x;
     int max;
-    *x0=1.0;                              /* ³õÖµ£¬¾«¶È£¬×î´óµü´ú´ÎÊı*/
+    *x0=1.0;                              /* åˆå€¼ï¼Œç²¾åº¦ï¼Œæœ€å¤§è¿­ä»£æ¬¡æ•°*/
     eps=0.00001;
     max=60;
     printf("  x(k)         x(k+1)        dis\n");
 
-    if(aitkenroot(x0,f,eps,max))          /* µ÷ÓÃº¯ÊıÇó½â²¢´òÓ¡½á¹û*/
+    if(aitkenroot(x0,f,eps,max))          /* è°ƒç”¨å‡½æ•°æ±‚è§£å¹¶æ‰“å°ç»“æœ*/
     {
         printf("\n%1.5f\n\n",*x0);
     }
@@ -25,7 +25,7 @@ int main6aitkenroot4()
     return 0;
 }
 
-static double f(x)                                 /* ¼ÆËãº¯ÊıÖµ*/
+static double f(x)                                 /* è®¡ç®—å‡½æ•°å€¼*/
 double x;
 {
     return  x*x*x-2*x+1;

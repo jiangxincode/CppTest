@@ -1,17 +1,17 @@
-/*======================================================
- * º¯ÊýÃû£ºlsq2
- * ¹¦ÄÜÃèÊö£º¾ØÐÎÇøÓò×îÐ¡¶þ³ËÄâºÏ
- * ÊäÈë²ÎÊý£ºx Ö¸Ïò´æ·Ån¸öX×ø±êµÄÊý×éµÄÖ¸Õë
- *           y Ö¸Ïò´æ·Åm¸öY×ø±êµÄÊý×éµÄÖ¸Õë
- *           z Ö¸Ïò´æ·Ån*m¸ö½áµãµÄº¯ÊýÖµµÄÊý×éµÄÖ¸Õë
- *           n X×ø±êµÄ¸öÊý
- *           m Y×ø±êµÄ¸öÊý
- *           p Ö¸Ïò´æ·Åpp*qq¸öÄâºÏ¶àÏîÊ½ÏµÊýµÄÊý×éµÄÖ¸Õë
- *           pp ÄâºÏ¶àÏîÊ½ÖÐxµÄ×î¸ß´ÎÊý+1
- *           qq ÄâºÏ¶àÏîÊ½ÖÐyµÄ×î¸ß´ÎÊý+1
- *           s Ö¸ÏòÊý×éµÄÖ¸Õë£¬´æ·Å5¸öÊý¾Ý£¬ÒÀ´Î·µ»ØµÄÊÇ£º¸÷µãÎó²îµÄÆ½·½ºÍ
- *            Îó²îµÄ¾ø¶ÔÖµµÄ×î´óÖµ¡¢Îó²îµÄ¾ø¶ÔÖµÖ®ºÍ,xµÄÆ½¾ùÖµ, yµÄÆ½¾ùÖµ
- * ·µ»ØÖµ£º  ÕûÐÍ¡£ÈôÄâºÏ³É¹¦Ôò·µ»Ø1,·ñÔò·µ»Ø0
+ï»¿/*======================================================
+ * å‡½æ•°åï¼šlsq2
+ * åŠŸèƒ½æè¿°ï¼šçŸ©å½¢åŒºåŸŸæœ€å°äºŒä¹˜æ‹Ÿåˆ
+ * è¾“å…¥å‚æ•°ï¼šx æŒ‡å‘å­˜æ”¾nä¸ªXåæ ‡çš„æ•°ç»„çš„æŒ‡é’ˆ
+ *           y æŒ‡å‘å­˜æ”¾mä¸ªYåæ ‡çš„æ•°ç»„çš„æŒ‡é’ˆ
+ *           z æŒ‡å‘å­˜æ”¾n*mä¸ªç»“ç‚¹çš„å‡½æ•°å€¼çš„æ•°ç»„çš„æŒ‡é’ˆ
+ *           n Xåæ ‡çš„ä¸ªæ•°
+ *           m Yåæ ‡çš„ä¸ªæ•°
+ *           p æŒ‡å‘å­˜æ”¾pp*qqä¸ªæ‹Ÿåˆå¤šé¡¹å¼ç³»æ•°çš„æ•°ç»„çš„æŒ‡é’ˆ
+ *           pp æ‹Ÿåˆå¤šé¡¹å¼ä¸­xçš„æœ€é«˜æ¬¡æ•°+1
+ *           qq æ‹Ÿåˆå¤šé¡¹å¼ä¸­yçš„æœ€é«˜æ¬¡æ•°+1
+ *           s æŒ‡å‘æ•°ç»„çš„æŒ‡é’ˆï¼Œå­˜æ”¾5ä¸ªæ•°æ®ï¼Œä¾æ¬¡è¿”å›žçš„æ˜¯ï¼šå„ç‚¹è¯¯å·®çš„å¹³æ–¹å’Œ
+ *            è¯¯å·®çš„ç»å¯¹å€¼çš„æœ€å¤§å€¼ã€è¯¯å·®çš„ç»å¯¹å€¼ä¹‹å’Œ,xçš„å¹³å‡å€¼, yçš„å¹³å‡å€¼
+ * è¿”å›žå€¼ï¼š  æ•´åž‹ã€‚è‹¥æ‹ŸåˆæˆåŠŸåˆ™è¿”å›ž1,å¦åˆ™è¿”å›ž0
 =========================================================*/
 #include <stdlib.h>
 #include <stdio.h>
@@ -22,13 +22,13 @@ int n,m,qq,pp;
 {
     int i,j,k,l,k0,k1,k2,l0,l1,l2;
     double a,b,d0,d1,d2,t,t2,x1,y1;
-    double *x0,*y0;                              /* ´æ·ÅÔ¤´¦ÀíºóµÄX×ø±êºÍY×ø±ê*/
-    double *qx,*qy;                              /* ´æ·ÅXºÍYÉÏ¸÷¸öÕý½»¶àÏîÊ½µÄÏµÊý*/
-    double *q0x,*q1x,*q2x;                       /* ´æ·ÅXÉÏÕý½»¶àÏîÊ½ÔÚnµãÉÏµÄÖµ*/
-    double *q0y,*q1y,*q2y;                       /* ´æ·ÅYÉÏÕý½»¶àÏîÊ½ÔÚmµãÉÏµÄÖµ*/
-    double *c,*u;                                /* ´æ·ÅÏµÊýc(pp*m) ºÍ u(pp*qq)*/
+    double *x0,*y0;                              /* å­˜æ”¾é¢„å¤„ç†åŽçš„Xåæ ‡å’ŒYåæ ‡*/
+    double *qx,*qy;                              /* å­˜æ”¾Xå’ŒYä¸Šå„ä¸ªæ­£äº¤å¤šé¡¹å¼çš„ç³»æ•°*/
+    double *q0x,*q1x,*q2x;                       /* å­˜æ”¾Xä¸Šæ­£äº¤å¤šé¡¹å¼åœ¨nç‚¹ä¸Šçš„å€¼*/
+    double *q0y,*q1y,*q2y;                       /* å­˜æ”¾Yä¸Šæ­£äº¤å¤šé¡¹å¼åœ¨mç‚¹ä¸Šçš„å€¼*/
+    double *c,*u;                                /* å­˜æ”¾ç³»æ•°c(pp*m) å’Œ u(pp*qq)*/
 
-    if(!(x && y && z && p && s))                          /* ¼ì²âÊäÈëÖ¸ÕëÊÇ·ñÎª¿Õ*/
+    if(!(x && y && z && p && s))                          /* æ£€æµ‹è¾“å…¥æŒ‡é’ˆæ˜¯å¦ä¸ºç©º*/
     {
         printf("Pointer is Null\n");
         return(0);
@@ -36,7 +36,7 @@ int n,m,qq,pp;
 
     x0 = (double*)malloc(n*sizeof(double));
     y0 = (double*)malloc(m*sizeof(double));
-    qx = (double*)malloc(pp*pp*sizeof(double));       /* ·ÖÅä¿Õ¼ä²¢¼ì²âÊÇ·ñ³É¹¦*/
+    qx = (double*)malloc(pp*pp*sizeof(double));       /* åˆ†é…ç©ºé—´å¹¶æ£€æµ‹æ˜¯å¦æˆåŠŸ*/
     qy = (double*)malloc(qq*qq*sizeof(double));
     q0x = (double*)malloc(n*sizeof(double));
     q1x = (double*)malloc(n*sizeof(double));
@@ -65,7 +65,7 @@ int n,m,qq,pp;
         return(0);
     }
 
-    t=0.0;                                            /* Ô¤´¦ÀíX×ø±ê*/
+    t=0.0;                                            /* é¢„å¤„ç†Xåæ ‡*/
 
     for(i=0; i<n; i++)
     {
@@ -78,7 +78,7 @@ int n,m,qq,pp;
     }
 
     s[3] = t;
-    t=0.0;                                            /* Ô¤´¦ÀíY×ø±ê*/
+    t=0.0;                                            /* é¢„å¤„ç†Yåæ ‡*/
 
     for(j=0; j<m; j++)
     {
@@ -92,27 +92,27 @@ int n,m,qq,pp;
 
     s[4] = t;
 
-    for(i=0; i<pp; i++)                               /* Éè³õÖµ*/
+    for(i=0; i<pp; i++)                               /* è®¾åˆå€¼*/
         for(j=0; j<pp; j++)
         {
             qx[i*pp+j] = 0.0;
         }
 
-    for(i=0; i<qq; i++)                               /* Éè³õÖµ*/
+    for(i=0; i<qq; i++)                               /* è®¾åˆå€¼*/
         for(j=0; j<qq; j++)
         {
             qy[i*qq+j] = 0.0;
         }
 
-    for(i=0; i<n; i++)                                /* Q0µÄº¯ÊýÖµ*/
+    for(i=0; i<n; i++)                                /* Q0çš„å‡½æ•°å€¼*/
     {
         q0x[i] = 1.0;
     }
 
-    qx[0] = 1;                                        /* Q0µÄÏµÊý*/
+    qx[0] = 1;                                        /* Q0çš„ç³»æ•°*/
     d0 = n;
 
-    for(j=0; j<m; j++)                                /* ¼ÆËãÏµÊýc0j*/
+    for(j=0; j<m; j++)                                /* è®¡ç®—ç³»æ•°c0j*/
     {
         t = 0.0;
 
@@ -124,13 +124,13 @@ int n,m,qq,pp;
         c[j] = t;
     }
 
-    /* X·½ÏòµÄ¼ÆËã*/
-    for(i=0; i<n; i++)                                /* Q1µÄº¯ÊýÖµ*/
+    /* Xæ–¹å‘çš„è®¡ç®—*/
+    for(i=0; i<n; i++)                                /* Q1çš„å‡½æ•°å€¼*/
     {
         q1x[i] = x0[i];
     }
 
-    qx[pp+1] = 1.0;                                     /* Q1µÄÏµÊý*/
+    qx[pp+1] = 1.0;                                     /* Q1çš„ç³»æ•°*/
     d1 = 0.0;
 
     for(i=0; i<n; i++)
@@ -138,7 +138,7 @@ int n,m,qq,pp;
         d1 = d1+q1x[i]*q1x[i];
     }
 
-    for(j=0; j<m; j++)                                /* ¼ÆËãÏµÊýc1j*/
+    for(j=0; j<m; j++)                                /* è®¡ç®—ç³»æ•°c1j*/
     {
         t = 0.0;
 
@@ -153,9 +153,9 @@ int n,m,qq,pp;
     k0 = 0;
     k1 = pp;
 
-    for(k=2; k<pp; k++)                             /* ÒÀ´Î¹¹ÔìµÚk¸öXÉÏÕý½»¶àÏîÊ½*/
+    for(k=2; k<pp; k++)                             /* ä¾æ¬¡æž„é€ ç¬¬kä¸ªXä¸Šæ­£äº¤å¤šé¡¹å¼*/
     {
-        a = 0.0;                                       /* ¼ÆËãa*/
+        a = 0.0;                                       /* è®¡ç®—a*/
 
         for(i=0; i<n; i++)
         {
@@ -163,17 +163,17 @@ int n,m,qq,pp;
         }
 
         a = a/d1;
-        b = d1/d0;                                     /* ¼ÆËãb*/
+        b = d1/d0;                                     /* è®¡ç®—b*/
         d2 = 0;
 
-        for(i=0; i<n; i++)                             /* ¼ÆËãQiµÄº¯ÊýÖµºÍd*/
+        for(i=0; i<n; i++)                             /* è®¡ç®—Qiçš„å‡½æ•°å€¼å’Œd*/
         {
             t = (x0[i]-a)*q1x[i] - b*q0x[i];
             q2x[i] = t;
             d2 = d2+t*t;
         }
 
-        for(j=0; j<m; j++)                             /* ¼ÆËãÏµÊýckj*/
+        for(j=0; j<m; j++)                             /* è®¡ç®—ç³»æ•°ckj*/
         {
             t = 0.0;
 
@@ -186,7 +186,7 @@ int n,m,qq,pp;
         }
 
         k2 = k1+pp;
-        qx[k2] = -a*qx[k1]-b*qx[k0];                   /* ¼ÆËãQiµÄÏµÊý*/
+        qx[k2] = -a*qx[k1]-b*qx[k0];                   /* è®¡ç®—Qiçš„ç³»æ•°*/
         qx[k2+k] = 1.0;
 
         for(j=1; j<k; j++)
@@ -195,27 +195,27 @@ int n,m,qq,pp;
         }
 
         d0 = d1;
-        d1 = d2;                              /* Ñ­»·Ê¹ÓÃ±äÁ¿*/
+        d1 = d2;                              /* å¾ªçŽ¯ä½¿ç”¨å˜é‡*/
         k0 = k1;
         k1 = k2;
 
-        for(i=0; i<n; i++)                             /* Ñ­»·Ê¹ÓÃÊý×é*/
+        for(i=0; i<n; i++)                             /* å¾ªçŽ¯ä½¿ç”¨æ•°ç»„*/
         {
             q0x[i] = q1x[i];
             q1x[i] = q2x[i];
         }
     }
 
-    /* Y·½ÏòµÄ¼ÆËã*/
-    for(j=0; j<m; j++)                                /* Q0µÄº¯ÊýÖµ*/
+    /* Yæ–¹å‘çš„è®¡ç®—*/
+    for(j=0; j<m; j++)                                /* Q0çš„å‡½æ•°å€¼*/
     {
         q0y[j] = 1.0;
     }
 
-    qy[0] = 1;                                        /* Q0µÄÏµÊý*/
+    qy[0] = 1;                                        /* Q0çš„ç³»æ•°*/
     d0 = m;
 
-    for(k=0; k<pp; k++)                               /* ¼ÆËãÏµÊýuk0*/
+    for(k=0; k<pp; k++)                               /* è®¡ç®—ç³»æ•°uk0*/
     {
         t = 0.0;
 
@@ -227,12 +227,12 @@ int n,m,qq,pp;
         u[k*qq] = t;
     }
 
-    for(j=0; j<m; j++)                                /* Q1µÄº¯ÊýÖµ*/
+    for(j=0; j<m; j++)                                /* Q1çš„å‡½æ•°å€¼*/
     {
         q1y[j] = y0[j];
     }
 
-    qy[qq+1] = 1.0;                                   /* Q1µÄÏµÊý*/
+    qy[qq+1] = 1.0;                                   /* Q1çš„ç³»æ•°*/
     d1 = 0.0;
 
     for(j=0; j<m; j++)
@@ -240,7 +240,7 @@ int n,m,qq,pp;
         d1 = d1+q1y[j]*q1y[j];
     }
 
-    for(k=0; k<pp; k++)                                /* ¼ÆËãÏµÊýuk1*/
+    for(k=0; k<pp; k++)                                /* è®¡ç®—ç³»æ•°uk1*/
     {
         t = 0.0;
 
@@ -255,9 +255,9 @@ int n,m,qq,pp;
     l0 = 0;
     l1 = qq;
 
-    for(l=2; l<qq; l++)                             /* ÒÀ´Î¹¹ÔìµÚl¸öYÉÏÕý½»¶àÏîÊ½*/
+    for(l=2; l<qq; l++)                             /* ä¾æ¬¡æž„é€ ç¬¬lä¸ªYä¸Šæ­£äº¤å¤šé¡¹å¼*/
     {
-        a = 0.0;                                       /* ¼ÆËãa*/
+        a = 0.0;                                       /* è®¡ç®—a*/
 
         for(j=0; j<m; j++)
         {
@@ -265,17 +265,17 @@ int n,m,qq,pp;
         }
 
         a = a/d1;
-        b = d1/d0;                                     /* ¼ÆËãb*/
+        b = d1/d0;                                     /* è®¡ç®—b*/
         d2 = 0.0;
 
-        for(j=0; j<m; j++)                             /* ¼ÆËãQiµÄº¯ÊýÖµºÍd*/
+        for(j=0; j<m; j++)                             /* è®¡ç®—Qiçš„å‡½æ•°å€¼å’Œd*/
         {
             t = (y0[j]-a)*q1y[j] - b*q0y[j];
             q2y[j] = t;
             d2 = d2+t*t;
         }
 
-        for(k=0; k<pp; k++)                             /* ¼ÆËãÏµÊýukl*/
+        for(k=0; k<pp; k++)                             /* è®¡ç®—ç³»æ•°ukl*/
         {
             t = 0.0;
 
@@ -288,7 +288,7 @@ int n,m,qq,pp;
         }
 
         l2 = l1+qq;
-        qy[l2] = -a*qy[l1]-b*qy[l0];                   /* ¼ÆËãQiµÄÏµÊý*/
+        qy[l2] = -a*qy[l1]-b*qy[l0];                   /* è®¡ç®—Qiçš„ç³»æ•°*/
         qy[l2+l] = 1.0;
 
         for(j=1; j<l; j++)
@@ -297,18 +297,18 @@ int n,m,qq,pp;
         }
 
         d0 = d1;
-        d1 = d2;                              /* Ñ­»·Ê¹ÓÃ±äÁ¿*/
+        d1 = d2;                              /* å¾ªçŽ¯ä½¿ç”¨å˜é‡*/
         l0 = l1;
         l1 = l2;
 
-        for(j=0; j<m; j++)                             /* Ñ­»·Ê¹ÓÃÊý×é*/
+        for(j=0; j<m; j++)                             /* å¾ªçŽ¯ä½¿ç”¨æ•°ç»„*/
         {
             q0y[j] = q1y[j];
             q1y[j] = q2y[j];
         }
     }
 
-    for(k=0; k<pp; k++)                              /* ¼ÆËã¶àÏîÊ½P(x,y)*/
+    for(k=0; k<pp; k++)                              /* è®¡ç®—å¤šé¡¹å¼P(x,y)*/
         for(l=0; l<qq; l++)
         {
             t = 0.0;
@@ -328,14 +328,14 @@ int n,m,qq,pp;
 
     for(i=0; i<n; i++)
     {
-        x1=x0[i];                                     /* ÇóP(xi, yj)*/
+        x1=x0[i];                                     /* æ±‚P(xi, yj)*/
 
         for(j=0; j<m; j++)
         {
             y1=y0[j];
-            t2 = 0;                                     /* ½á¹û¸³³õÖµ */
+            t2 = 0;                                     /* ç»“æžœèµ‹åˆå€¼ */
 
-            for(k=pp-1; k>=0; k--)                      /* ÀÛ´ÎÏà¼Ó*/
+            for(k=pp-1; k>=0; k--)                      /* ç´¯æ¬¡ç›¸åŠ */
             {
                 t = p[k*qq+qq-1];
 
@@ -345,7 +345,7 @@ int n,m,qq,pp;
                 }
 
                 t2 = t2*x1 + t;
-            }                                           /* ´ËÊ±t2=P(xi,yj)*/
+            }                                           /* æ­¤æ—¶t2=P(xi,yj)*/
 
             t2=t2-z[i*m+j];
 
@@ -360,7 +360,7 @@ int n,m,qq,pp;
     }
 
     free(x0);
-    free(y0);                               /* ÊÍ·Å¿Õ¼ä*/
+    free(y0);                               /* é‡Šæ”¾ç©ºé—´*/
     free(qx);
     free(qy);
     free(q0x);

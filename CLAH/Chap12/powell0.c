@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <math.h>
 #include "powell.c"
 static 	double f();
@@ -6,10 +6,10 @@ int main12powell0()
 {
     double  eps,fopt,x[3];
     int itmax = 50, n = 3,it;
-    double ee[3][3] = {{1.0, 0.0, 0.0},{0.0,1.0,0.0},{0.0,0.0,1.0}};        /* ³õÊ¼µÄ·½Ïò*/
+    double ee[3][3] = {{1.0, 0.0, 0.0},{0.0,1.0,0.0},{0.0,0.0,1.0}};        /* åˆå§‹çš„æ–¹å‘*/
     eps = 1e-7;
-    x[0] = x[1] = x[2] =2.0;                                                /* ³õÊ¼µã*/
-    it = powell(x, ee, x, n, &fopt, f, eps, itmax);                         /* µ÷ÓÃº¯Êı£¬²¢´òÓ¡½á¹û*/
+    x[0] = x[1] = x[2] =2.0;                                                /* åˆå§‹ç‚¹*/
+    it = powell(x, ee, x, n, &fopt, f, eps, itmax);                         /* è°ƒç”¨å‡½æ•°ï¼Œå¹¶æ‰“å°ç»“æœ*/
     printf("iterations = %d:\n x0=%f,x1=%f,x2=%f\nfopt=%f\n",it,x[0],x[1],x[2],fopt);
     return 0;
 }

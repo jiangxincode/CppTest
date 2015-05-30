@@ -1,26 +1,26 @@
-#include <math.h>
+ï»¿#include <math.h>
 #include <stdlib.h>
 /*======================================================
- * º¯ÊýÃû£ºmont1
- * ¹¦ÄÜÃèÊö£ºÃÉÌØ¿¨ÂÞ·¨ÇóÒ»Ôª»ý·Ö
- * ÊäÈë²ÎÊý£ºa »ý·ÖÏÂÏÞ£¬b »ý·ÖÉÏÏÞ,
- *           f Ö¸Ïò±»»ýº¯ÊýµÄÖ¸Õë
- * ·µ»ØÖµ£º  »ý·Ö½üËÆÖµ
+ * å‡½æ•°åï¼šmont1
+ * åŠŸèƒ½æè¿°ï¼šè’™ç‰¹å¡ç½—æ³•æ±‚ä¸€å…ƒç§¯åˆ†
+ * è¾“å…¥å‚æ•°ï¼ša ç§¯åˆ†ä¸‹é™ï¼Œb ç§¯åˆ†ä¸Šé™,
+ *           f æŒ‡å‘è¢«ç§¯å‡½æ•°çš„æŒ‡é’ˆ
+ * è¿”å›žå€¼ï¼š  ç§¯åˆ†è¿‘ä¼¼å€¼
 =========================================================*/
 double mont1(double a,double b,double(*f)(double))
 {
     int k,n;
     double z,p,x;
-    unsigned long r;            /* Ëæ»úÊý±äÁ¿*/
-    n = 5000;                  /* ²úÉú5000¸öËæ»úÊý*/
+    unsigned long r;            /* éšæœºæ•°å˜é‡*/
+    n = 5000;                  /* äº§ç”Ÿ5000ä¸ªéšæœºæ•°*/
     z = 0.0;
 
     for(k=0; k<n; k++)
     {
-        r = rand();               /* Éú³ÉËæ»úÊý*/
+        r = rand();               /* ç”Ÿæˆéšæœºæ•°*/
         p = (double)r/RAND_MAX;
         x = a+(b-a)*p;
-        z = z+(*f)(x)/n;          /* ÇóºÍ*/
+        z = z+(*f)(x)/n;          /* æ±‚å’Œ*/
     }
 
     z = z*(b-a);

@@ -1,6 +1,6 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <math.h>
-#include "something.h"
+#include "../utility.h"
 static double f();
 int main12dirmin0()
 {

@@ -1,32 +1,32 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 
 /**
- * º¯ Êý Ãû£ºrpdiv(a,n,b,m,q,r)
- * ¹¦ÄÜÃèÊö£ºÍê³ÉÏµÊý±íÊ¾µÄÊµÏµÊýµÄ¶àÏîÊ½AÓëBÏà³ý
-       ÉÌ¶àÏîÊ½ÏµÊý·ÅÔÚqÀï£¬ÓàÊ½ÏµÊý·ÅÔÚrÀï
- * ÊäÈë²ÎÊý£ºa£¨¶àÏîÊ½AÏµÊý£©£¬n£¨ÏµÊý¸öÊý£©
-       b£¨¶àÏîÊ½BÏµÊý£©£¬m£¨ÏµÊý¸öÊý£©
-       q£¨ÉÌ¶àÏîÊ½QÏµÊý£©£¬k£¨ÏµÊý¸öÊý£©k=max(n-m+1,0)
-       r£¨ÓàÊ½RÏµÊý£©£¬l£¨ÏµÊý¸öÊý£©ÐèÒªl=n
- * ·µ »Ø Öµ£ºÕûÐÍÊý×Ö¡£¼ÆËã³É¹¦Ôò·µ»Ø1£¬·ñÔò·µ»Ø0
+ * å‡½ æ•° åï¼šrpdiv(a,n,b,m,q,r)
+ * åŠŸèƒ½æè¿°ï¼šå®Œæˆç³»æ•°è¡¨ç¤ºçš„å®žç³»æ•°çš„å¤šé¡¹å¼Aä¸ŽBç›¸é™¤
+       å•†å¤šé¡¹å¼ç³»æ•°æ”¾åœ¨qé‡Œï¼Œä½™å¼ç³»æ•°æ”¾åœ¨ré‡Œ
+ * è¾“å…¥å‚æ•°ï¼šaï¼ˆå¤šé¡¹å¼Aç³»æ•°ï¼‰ï¼Œnï¼ˆç³»æ•°ä¸ªæ•°ï¼‰
+       bï¼ˆå¤šé¡¹å¼Bç³»æ•°ï¼‰ï¼Œmï¼ˆç³»æ•°ä¸ªæ•°ï¼‰
+       qï¼ˆå•†å¤šé¡¹å¼Qç³»æ•°ï¼‰ï¼Œkï¼ˆç³»æ•°ä¸ªæ•°ï¼‰k=max(n-m+1,0)
+       rï¼ˆä½™å¼Rç³»æ•°ï¼‰ï¼Œlï¼ˆç³»æ•°ä¸ªæ•°ï¼‰éœ€è¦l=n
+ * è¿” å›ž å€¼ï¼šæ•´åž‹æ•°å­—ã€‚è®¡ç®—æˆåŠŸåˆ™è¿”å›ž1ï¼Œå¦åˆ™è¿”å›ž0
  */
 int rpdiv(double *a,int n,double *b,int m,double *q,int k,double *r,int l)
 {
     int i,j,kk,jj;
 
-    if((a==NULL)||(b==NULL)||(q==NULL)||(r==NULL)) /* ¼ì²âÖ¸ÕëÊÇ·ñÎª¿Õ*/
+    if((a==NULL)||(b==NULL)||(q==NULL)||(r==NULL)) /* æ£€æµ‹æŒ‡é’ˆæ˜¯å¦ä¸ºç©º*/
     {
         printf("(rpdiv)NULL pointer found.\n");
         return(0);
     }
 
-    if(l!=n)					/* ¼ì²âÓàÊ½µÄ¿Õ¼äÊÇ·ñ×ã¹»*/
+    if(l!=n)					/* æ£€æµ‹ä½™å¼çš„ç©ºé—´æ˜¯å¦è¶³å¤Ÿ*/
     {
         printf("(rpdiv)please set the length of r to n.\n");
         return(0);
     }
 
-    for(i=0; i<n; i++)				/* ³õÊ¼»¯ÓàÊ½ºÍÉÌ*/
+    for(i=0; i<n; i++)				/* åˆå§‹åŒ–ä½™å¼å’Œå•†*/
     {
         r[i] = a[i];
     }
@@ -36,7 +36,7 @@ int rpdiv(double *a,int n,double *b,int m,double *q,int k,double *r,int l)
         q[i] = 0.0;
     }
 
-    if(b[m-1]+1.0==1.0)				/* ¼ì²â³ýÊ½µÄÊ×ÏîÏµÊý£¬ÈôÆä¼¸ºõÎª0£¬º¯Êý½áÊø¡£*/
+    if(b[m-1]+1.0==1.0)				/* æ£€æµ‹é™¤å¼çš„é¦–é¡¹ç³»æ•°ï¼Œè‹¥å…¶å‡ ä¹Žä¸º0ï¼Œå‡½æ•°ç»“æŸã€‚*/
     {
         printf("(rpdiv)Cannot divide zero");
         return(0);
@@ -46,8 +46,8 @@ int rpdiv(double *a,int n,double *b,int m,double *q,int k,double *r,int l)
     {
         kk = k-i-1;
         jj = n-i-1;
-        q[kk] = r[jj]/b[m-1];   			/* ¼ÆËãµ±Ç°ÉÌ*/
-        r[jj] = 0.0;				/* ´ÓÓàÊ½ÖÐ¼õÈ¥µ±Ç°ÉÌÓë¶àÏîÊ½BµÄ³Ë»ý*/
+        q[kk] = r[jj]/b[m-1];   			/* è®¡ç®—å½“å‰å•†*/
+        r[jj] = 0.0;				/* ä»Žä½™å¼ä¸­å‡åŽ»å½“å‰å•†ä¸Žå¤šé¡¹å¼Bçš„ä¹˜ç§¯*/
 
         for(j=0; j<m-1; j++)
         {

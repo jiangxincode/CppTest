@@ -1,11 +1,11 @@
-/*======================================================
-//º¯ÊýÃû£ºr_chol
-//¹¦ÄÜÃèÊö£º¶Ô³ÆÕý¶¨Êµ¾ØÕóµÄCholesky·Ö½â
-//ÊäÈë²ÎÊý£ºmat Ö¸Ïò´ý·Ö½âµÄ¾ØÕóµÄÖ¸Õë
-            n ¾ØÕó½×Êý
-            u   Ö¸Ïò·µ»ØµÄÏÂÈý½ÇÕóµÄÖ¸Õë
-            eps ¾«¶ÈÒªÇó£¬Ð¡ÓÚ´ËÖµµÄÊý¾ÝÈÏÎªÊÇ0
-//·µ»ØÖµ£ºÕûÐÍ¡£ÔËÐÐ³É¹¦Ôò·µ»Ø1,Ê§°ÜÔò·µ»Ø0
+ï»¿/*======================================================
+//å‡½æ•°åï¼šr_chol
+//åŠŸèƒ½æè¿°ï¼šå¯¹ç§°æ­£å®šå®žçŸ©é˜µçš„Choleskyåˆ†è§£
+//è¾“å…¥å‚æ•°ï¼šmat æŒ‡å‘å¾…åˆ†è§£çš„çŸ©é˜µçš„æŒ‡é’ˆ
+            n çŸ©é˜µé˜¶æ•°
+            u   æŒ‡å‘è¿”å›žçš„ä¸‹ä¸‰è§’é˜µçš„æŒ‡é’ˆ
+            eps ç²¾åº¦è¦æ±‚ï¼Œå°äºŽæ­¤å€¼çš„æ•°æ®è®¤ä¸ºæ˜¯0
+//è¿”å›žå€¼ï¼šæ•´åž‹ã€‚è¿è¡ŒæˆåŠŸåˆ™è¿”å›ž1,å¤±è´¥åˆ™è¿”å›ž0
 =========================================================*/
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,13 +18,13 @@ int n;
     int i,j,k;
     double t;
 
-    if((mat==NULL)||(u==NULL))                          /* ¼ì²âÖ¸ÕëÊÇ·ñÎª¿Õ*/
+    if((mat==NULL)||(u==NULL))                          /* æ£€æµ‹æŒ‡é’ˆæ˜¯å¦ä¸ºç©º*/
     {
-        printf("One of the pointer is NULL\n");           /* ÈôÎª¿ÕÔò´òÓ¡´íÎóÏûÏ¢£¬º¯Êý½áÊø*/
+        printf("One of the pointer is NULL\n");           /* è‹¥ä¸ºç©ºåˆ™æ‰“å°é”™è¯¯æ¶ˆæ¯ï¼Œå‡½æ•°ç»“æŸ*/
         return(0);
     }
 
-    for(i=0; i<n; i++)                                  /* ½«u¾ØÕó¸³³õÖµÎªÁã¾ØÕó*/
+    for(i=0; i<n; i++)                                  /* å°†uçŸ©é˜µèµ‹åˆå€¼ä¸ºé›¶çŸ©é˜µ*/
     {
         for(j=0; j<n; j++)
         {
@@ -32,13 +32,13 @@ int n;
         }
     }
 
-    if(fabs(mat[0]) < eps)                       /* ÒòÒª×ö³ýÊý²¢¿ª¸ùºÅ£¬ÐèÒª¼ì²éÆä·¶Î§*/
+    if(fabs(mat[0]) < eps)                       /* å› è¦åšé™¤æ•°å¹¶å¼€æ ¹å·ï¼Œéœ€è¦æ£€æŸ¥å…¶èŒƒå›´*/
     {
         printf("Failed.\n");
         return(0);
     }
 
-    u[0] = sqrt(mat[0]);                                    /* µÝÍÆÇó½â*/
+    u[0] = sqrt(mat[0]);                                    /* é€’æŽ¨æ±‚è§£*/
 
     for(i=1; i<n; i++)
     {
@@ -46,12 +46,12 @@ int n;
         {
             t = 0.0;
 
-            for(k=0; k<j; k++)                            /* Çó½âU[i,j]ÖÐµÄÇóºÍ²¿·Ö*/
+            for(k=0; k<j; k++)                            /* æ±‚è§£U[i,j]ä¸­çš„æ±‚å’Œéƒ¨åˆ†*/
             {
                 t = t+u[i*n+k]*u[j*n+k];
             }
 
-            u[i*n+j] = (mat[i*n+j]-t)/u[j*n+j];           /* Çó½âU[i,j]*/
+            u[i*n+j] = (mat[i*n+j]-t)/u[j*n+j];           /* æ±‚è§£U[i,j]*/
         }
 
         t = 0.0;
@@ -63,13 +63,13 @@ int n;
 
         t = mat[i*n+i]-t;
 
-        if(t < eps)                                     /* ¼ì²éÆä·¶Î§*/
+        if(t < eps)                                     /* æ£€æŸ¥å…¶èŒƒå›´*/
         {
             printf("Failed.\n");
             return(0);
         }
 
-        u[i*n+i] = sqrt(t);                             /* Çó½âU[i,i]*/
+        u[i*n+i] = sqrt(t);                             /* æ±‚è§£U[i,i]*/
     }
 
     return(1);

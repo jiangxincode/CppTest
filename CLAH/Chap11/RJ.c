@@ -1,17 +1,17 @@
-#include <stdlib.h>
+ï»¿#include <stdlib.h>
 #include <math.h>
 #include <stdio.h>
 
-#include "something.h"
+#include "../utility.h"
 
 /**
- * º¯ Êı Ãû£ºRJ
- * ¹¦ÄÜÃèÊö£ºÇó½âµÚÈıÀàÍÖÔ²»ı·ÖµÄÍË»¯ĞÎÊ½µÄÖµ,ĞèÒªRCºÍRFº¯ÊıµÄÖ§³Ö
- * ÊäÈë²ÎÊı£ºx ÇóÖµµÄ×Ô±äÁ¿
- *           y ÇóÖµµÄ×Ô±äÁ¿
- *           z ÇóÖµµÄ×Ô±äÁ¿
- *           p ÇóÖµµÄ×Ô±äÁ¿
- * ·µ »Ø Öµ£ºµÚÈıÀàÍÖÔ²»ı·ÖµÄÍË»¯ĞÎÊ½µÄÖµ
+ * å‡½ æ•° åï¼šRJ
+ * åŠŸèƒ½æè¿°ï¼šæ±‚è§£ç¬¬ä¸‰ç±»æ¤­åœ†ç§¯åˆ†çš„é€€åŒ–å½¢å¼çš„å€¼,éœ€è¦RCå’ŒRFå‡½æ•°çš„æ”¯æŒ
+ * è¾“å…¥å‚æ•°ï¼šx æ±‚å€¼çš„è‡ªå˜é‡
+ *           y æ±‚å€¼çš„è‡ªå˜é‡
+ *           z æ±‚å€¼çš„è‡ªå˜é‡
+ *           p æ±‚å€¼çš„è‡ªå˜é‡
+ * è¿” å› å€¼ï¼šç¬¬ä¸‰ç±»æ¤­åœ†ç§¯åˆ†çš„é€€åŒ–å½¢å¼çš„å€¼
  */
 
 double RJ(double x,double y,double z,double p)
@@ -21,7 +21,7 @@ double RJ(double x,double y,double z,double p)
     double xt,yt,zt,pt;
     eps = 1.0e-10;
 
-    if(x<0||y<0||z<0||(x+y)<eps||(x+z)<eps||(z+y)<eps||fabs(p)<eps)    /* ¼ì²é×Ô±äÁ¿·¶Î§*/
+    if(x<0||y<0||z<0||(x+y)<eps||(x+z)<eps||(z+y)<eps||fabs(p)<eps)    /* æ£€æŸ¥è‡ªå˜é‡èŒƒå›´*/
     {
         printf("Parameters incorrect\n");
         return(0.0);
@@ -32,8 +32,8 @@ double RJ(double x,double y,double z,double p)
 
     if(p<0.0)
     {
-        t1 = y;                                              /* t1´æ·ÅxyzÖĞ×î´óÕß*/
-        t = x;                                               /* t ´æ·ÅxyzÖĞ×îĞ¡Õß*/
+        t1 = y;                                              /* t1å­˜æ”¾xyzä¸­æœ€å¤§è€…*/
+        t = x;                                               /* t å­˜æ”¾xyzä¸­æœ€å°è€…*/
 
         if(x>y)
         {
@@ -51,7 +51,7 @@ double RJ(double x,double y,double z,double p)
             t1 = z;
         }
 
-        y = x+y+z-t-t1;                                       /* °´x<y<zÅÅÁĞÊÇÎªÁË·ÀÖ¹¼ÆËãÒç³ö*/
+        y = x+y+z-t-t1;                                       /* æŒ‰x<y<zæ’åˆ—æ˜¯ä¸ºäº†é˜²æ­¢è®¡ç®—æº¢å‡º*/
         x = t;
         z = t1;
         a0 = 1.0/(y-p);
@@ -72,7 +72,7 @@ double RJ(double x,double y,double z,double p)
         b = p*b*b;
         f = f/4.0;
         s = s+f*RC(a,b);
-        x = (x+ll)/4.0;                                        /* ¸üĞÂx,y,z,p*/
+        x = (x+ll)/4.0;                                        /* æ›´æ–°x,y,z,p*/
         y = (y+ll)/4.0;
         z = (z+ll)/4.0;
         p = (p+ll)/4.0;
@@ -85,9 +85,9 @@ double RJ(double x,double y,double z,double p)
         t2 = fabs(zt)>fabs(pt)?fabs(zt):fabs(pt);
         flag = t1>t2?t1:t2;
     }
-    while(flag > 0.0015);                                     /* Õâ¸öãĞÖµÓÃÓÚÅĞ¶ÏxºÍy³ä·Ö½Ó½ü*/
+    while(flag > 0.0015);                                     /* è¿™ä¸ªé˜ˆå€¼ç”¨äºåˆ¤æ–­xå’Œyå……åˆ†æ¥è¿‘*/
 
-    t1 = xt*(yt+zt)+yt*zt;                                    /* ÓÃÌ©ÀÕÕ¹¿ª¼ÆËã»ı·ÖÖµ*/
+    t1 = xt*(yt+zt)+yt*zt;                                    /* ç”¨æ³°å‹’å±•å¼€è®¡ç®—ç§¯åˆ†å€¼*/
     t2 = xt*yt*zt;
     t3 = pt*pt;
     t4 = t1-3.0*t3;
@@ -96,11 +96,11 @@ double RJ(double x,double y,double z,double p)
     t = (1.0+t4*(-3.0/14.0+t4/88.0-9.0*t5/52.0)+
          t2*(1.0/6.0+t6*(-3.0/11.0+3.0*t6/26.0))+
          t1*t6*(1.0/3.0-3.0*t6/22.0)-t3*t6/3.0)/(t*sqrt(t));
-    t = 3.0*s+f*t;                                            /* ³ËÉÏÏµÊı*/
+    t = 3.0*s+f*t;                                            /* ä¹˜ä¸Šç³»æ•°*/
 
     if(p<0)
     {
-        t = a0*(b0*t+3.0*(rc0-RF(x,y,z)));    /* ×îºó¼ÆËãRF(x,y,z)£¬ËÙ¶È±È½Ï¿ì£¬ÒòÎªÒÑ¾­µü´ú¹ı*/
+        t = a0*(b0*t+3.0*(rc0-RF(x,y,z)));    /* æœ€åè®¡ç®—RF(x,y,z)ï¼Œé€Ÿåº¦æ¯”è¾ƒå¿«ï¼Œå› ä¸ºå·²ç»è¿­ä»£è¿‡*/
     }
 
     return(t);

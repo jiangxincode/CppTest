@@ -1,6 +1,6 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <math.h>
-#include "something.h"
+#include "../utility.h"
 #include "cggm1.c"
 #include "cggm2.c"
 
