@@ -7,10 +7,8 @@
  *            k 数据的范围在[0,k]之间
  * 返 回 值：无
 //==============================================================*/
-#include <stdlib.h>
-static void cout(x,y,n,k)
-int *x,*y;
-int n,k;
+
+void cout(int *x,int *y,int n,int k)
 {
     int i,j,*c;
     c = (int*)malloc((k+1)*sizeof(int));

@@ -1,19 +1,17 @@
 ﻿/*======================================================
-//函数名：jcb1
-//功能描述：对称矩阵求特征值
-//输入参数：a   指向存放对称矩阵的指针
+ * 函数名：jcb1
+ * 功能描述：对称矩阵求特征值
+ * 输入参数：a   指向存放对称矩阵的指针
 n   矩阵阶数
 u   返回的特征值
 eps 精度要求，用于判断元素是否为0
 itmax 最大迭代次数
-//返回值：整型。运行成功则返回1,失败则返回0
+ * 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-static int jcb1(a,n,u,eps,itmax)
-double *a,*u,eps;
-int n,itmax;
+int jcb1(double *a,int n,double *u,double eps,int itmax)
 {
     int i,j,p,q,it;
     double sint,cost,sin2t,cos2t,d,tmp,t1,t2,t3;

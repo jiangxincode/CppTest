@@ -1,6 +1,4 @@
-﻿#include <stdio.h>
-#include "jcb2.c"
-#include "jcb1.c"
+﻿#include "../utility.h"
 int main4jcb0()
 {
     int i,itmax=60;

@@ -1,7 +1,4 @@
-﻿#include <stdio.h>
-#include "lagr1.c"
-#include "lagr2.c"
-#include "lagr7.c"
+﻿#include "../utility.h"
 int main7lagr0()
 {
     double t,z;

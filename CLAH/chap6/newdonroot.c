@@ -1,19 +1,17 @@
 ﻿/*======================================================
-//函数名：newdonroot
-//功能描述：求出[a,b]区间内的非线性方程f(x)的一个实根
-//输入参数：x0（迭代初值以及迭代终值的初值指针）
+ * 函数名：newdonroot
+ * 功能描述：求出[a,b]区间内的非线性方程f(x)的一个实根
+ * 输入参数：x0（迭代初值以 * 返回值及迭代终值的初值指针）
  *          f（非线性方程左端函数）
  *          fd（非线性方程左端函数的导函数）
  *          eps（精度要求），max（最大迭代次数）
-//返回值：0（迭代失败）1（迭代成功）
+ * 返回值：0（迭代失败）1（迭代成功）
 =========================================================*/
 #include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
 
-static int newdonroot(x0,f,fd,eps,max)
-double *x0,(*f)(),(*fd)(),eps;
-int max;
+int newdonroot(double *x0,double(*f)(),double(*fd)(),double eps,int max)
 {
     double x,dis;
     double y0;

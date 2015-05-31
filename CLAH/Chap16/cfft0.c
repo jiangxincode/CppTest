@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include <math.h>
-#include "../utility.h"
-#include "ifft.c"
-#include "r2fft.c"
+﻿#include "../utility.h"
 
 int main16cfft0()
 {

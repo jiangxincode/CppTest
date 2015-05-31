@@ -1,10 +1,7 @@
 ﻿/*======================================================
 用插值法求非线性方程组的实根的实例
 =========================================================*/
-#include<stdlib.h>
-#include<stdio.h>
-#include<math.h>
-#include "interroot.c"
+#include "../utility.h"
 static     double f(double);
 int main6interroot3()
 {

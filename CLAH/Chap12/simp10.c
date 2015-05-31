@@ -1,6 +1,7 @@
 ﻿#include <math.h>
 #include <stdio.h>
-#include "simp1.c"
+#include "../utility.h"
+
 int main12simp10()
 {
     int i;
@@ -27,8 +28,7 @@ int main12simp10()
     return 0;
 }
 
-double simf(x,n)
-double *x;
+double simf(double *x,int n)
 {
     double y;
 

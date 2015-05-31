@@ -1,7 +1,4 @@
-﻿#include <stdio.h>
-#include "leg1.c"
-#include "cheb.c"
-#include "gasi.c"
+﻿#include "../utility.h"
 int main8inf10()
 {
     double a,b,eps,h0,z;

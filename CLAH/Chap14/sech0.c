@@ -1,15 +1,10 @@
-﻿
-
-#include <stdio.h>
-#include "sech.c"
-#include "Fsech.c"
-#include "../utility.h"
+﻿#include "../utility.h"
 
 int main14sech0()
 {
     int i,q,a;
     long int k;
-    static STRU x[16]= {{101,"Zhao",'M',19},
+    static struct student x[16]= {{101,"Zhao",'M',19},
         {102,"Qian",'F',18},{103,"Sun",'M',19},
         {104,"Li",'F',20},{105,"Zhou",'M',19},
         {106,"Wu",'F',18},{107,"Zheng",'M',17},
@@ -20,7 +15,7 @@ int main14sech0()
         {110,"Zhang",'F',18}
     };
     FILE *fp;
-    STRU str;
+    struct student str;
     printf("Serch from Array: \n");
     a=18;
     i=0;
@@ -37,7 +32,7 @@ int main14sech0()
     }
     while(q!=-1);
 
-    k = sizeof(STRU);
+    k = sizeof(struct student);
     fp = fopen("stu.dat","w+");                       /* 打开文件写*/
 
     for(i=0; i<16; i++)

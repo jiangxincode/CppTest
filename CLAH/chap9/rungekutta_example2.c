@@ -1,12 +1,7 @@
 ﻿/*======================================================
-//功能描述：3种rungekutta方法求常微分方程组的初值问题的例子
+ * 功能描述：3种rungekutta方法求常微分方程组的初值问题的例子
 =========================================================*/
-#include<stdlib.h>
-#include<stdio.h>
-#include<math.h>
 #include "../utility.h"
-#include "rungekuttavh.c"
-#include "gillvh.c"
 
 static void f(double*,double*,double);
 int main9rungekutta2()

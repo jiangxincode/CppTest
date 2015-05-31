@@ -17,10 +17,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-static int bspl1(x,y,y1,y2,n,t,m,z,z1,z2)
-double *x,*y,y1,y2,*t;
-double *z,*z1,*z2;
-int m,n;
+int bspl1(double *x,double *y,double y1,double y2,int n,double *t,int m,double *z,double *z1,double *z2)
 {
     int i,j,k;
     double *a,*b,alpha,beta,*dy;                /* 计算dy所用变量*/

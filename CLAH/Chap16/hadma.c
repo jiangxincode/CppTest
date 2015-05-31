@@ -8,9 +8,7 @@
 #include <stdlib.h>
 #include <math.h>
 static int hadma1(double *x,int n,double *y);    /* 因为要递归调用，所以先声明*/
-static int hadma(y,n,x)
-int n;
-double *x,*y;
+int hadma(double *y,int n,double *x)
 {
     int i,j,k,nn;
     double t;

@@ -1,17 +1,12 @@
-﻿/*======================================================
-//函数名：randgsab
-//功能描述：生成N~(a,b)分布的随机数
-//输入参数：a(正态分布的均值) b(正态分布的方差)
-//返回值：正态分布的随机数
-=========================================================*/
-#include <time.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
-#define PI 3.14159
+﻿#include "../utility.h"
 
-static double randgsab(a,b)
-double a,b;
+/**
+ * 函数名：randgsab
+ * 功能描述：生成N~(a,b)分布的随机数
+ * 输入参数：a(正态分布的均值) b(正态分布的方差)
+ * 返回值：正态分布的随机数
+ */
+double randgsab(double a,double b)
 {
     double U1,U2,G;
     srand((unsigned)time(0));/*用系统时钟做种子*/

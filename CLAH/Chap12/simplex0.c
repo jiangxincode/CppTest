@@ -1,5 +1,6 @@
 ﻿#include <stdio.h>
-#include "simplex.c"
+#include "../utility.h"
+
 int main12simplex0()
 {
     int i,j,n,m1,m2,m3,ixr[4],ixc[4];

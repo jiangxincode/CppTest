@@ -9,9 +9,7 @@
  *           t 指定的插值点, eps 小于此数的值认为是0
  * 返回值：  在指定插值点的函数近似值
 =========================================================*/
-static double atken(x,y,n,t,eps)
-double *x,*y,t,eps;
-int n;
+double atken(double *x,double *y,int n,double t,double eps)
 {
     int i,j,k,m;
     double z,d,xx[8],yy[8];

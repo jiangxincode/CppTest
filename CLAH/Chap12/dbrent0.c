@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include <math.h>
-
-#include "dbrent.c"
-#include "../utility.h"
+﻿#include "../utility.h"
 
 static double f(double x);
 static double df(double x);

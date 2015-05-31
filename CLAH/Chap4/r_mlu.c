@@ -1,20 +1,15 @@
-﻿/*======================================================
-//函数名：r_mlu
-//功能描述：全选主元的LU分解
-//输入参数：mat 指向待分解的矩阵的指针
+﻿#include "../utility.h"
+/*======================================================
+ * 函数名：r_mlu
+ * 功能描述：全选主元的LU分解
+ * 输入参数：mat 指向待分解 * 返回值的矩阵的指针
             n 矩阵阶数
             L,U 指向返回的下三角阵和下三角阵的指针
             P,Q 指向返回的初等行列变换阵的指针
             eps 精度要求，小于此值的数据认为是0
-//返回值：整型。运行成功则返回1,失败则返回0
+ * 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-
-static int r_mlu(mat,n,L,U,P,Q,eps)
-double *mat,*L,*U,*P,*Q,eps;
-int n;
+int r_mlu(double *mat,int n,double *L,double *U,double *P,double *Q,double eps)
 {
     int i,j,k,is,js,l,v,kk,ii;
     double tmp, pivot;

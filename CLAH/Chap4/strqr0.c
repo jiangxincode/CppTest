@@ -1,5 +1,4 @@
-﻿#include <stdio.h>
-#include "smdqr.c"
+﻿#include "../utility.h"
 int main4strqr0()
 {
     int i,jt=60;

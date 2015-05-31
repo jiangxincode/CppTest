@@ -1,4 +1,7 @@
-﻿/*======================================================
+﻿#include <stdlib.h>
+#include "../utility.h"
+
+/**
  * 函数名：ddirmin
  * 功能描述：带导数的一维搜索
  * 输入参数：x[n] 输入搜索的出发点
@@ -9,10 +12,8 @@
  *           eps 精度限度
  *           itmax 最大迭代次数
  * 返回值：  函数的极小值
-=========================================================*/
-#include <stdlib.h>
-#include "dbrent.c"
-#include "../utility.h"
+ */
+
 static double dfdim(double t);
 
 int _ndir_;
@@ -20,9 +21,7 @@ double *_pdir_, *_xdir_, *_xtdir_, *_dxtdir_;             /* 需要全局变量*
 double(*_myfc_)();
 void (*_mydfc_)();                             /* 需要全局变量*/
 
-static double ddirmin(x, p, xmin, n, f, df, eps, itmax)
-double *x,*xmin,*p,eps,(*f)(),(*df)();
-int n,itmax;
+double ddirmin(double *x, double *p, double *xmin, int n, double (*f)(double),double (*df)(double), double eps, int itmax)
 {
     int i;
     double fdim(), ax, bx, cx, fopt, xopt;

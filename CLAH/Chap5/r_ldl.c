@@ -1,17 +1,12 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include "smldl.c"                         /* LDL分解的函数*/
+﻿#include "../utility.h"
 /*======================================================
-// 函数名：r_ldl
-// 功能描述：用LDL分解法解对称方程组
-// 输入参数：a 解系数矩阵，b 常数矩阵，x返回的解向量
-//           n 未知数个数，eps 精度要求，小于eps的值，认为是0。
-// 返回值：整型。运行成功则返回1,失败则返回0
+ * 函数名：r_ldl
+ * 功能描述：用LDL分解法解对称方程组
+ * 输入参数：a 解系数矩阵，b 常数矩阵，x返回的解向量
+ *           n 未知数个数，eps 精度要求，小于eps的值，认为是0。
+ * 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-static int r_ldl(a,b,x,n,eps)
-double *a,*b,*x,eps;
-int n;
+int r_ldl(double *a,double *b,double *x,int n,double eps)
 {
     int i,k;
     double *L,*D,*y,*z,t;

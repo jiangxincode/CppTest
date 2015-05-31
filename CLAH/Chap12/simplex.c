@@ -1,4 +1,6 @@
-﻿/*======================================================
+﻿#define TINY 1.0e-7
+
+/**
  * 函数名：simplex
  * 功能描述： 求线性规划问题的单纯形法
  * 输入参数：n   问题的维数
@@ -11,17 +13,12 @@
  *           ixc[m] 单纯形表第一列的x标号
  *           eps  精度要求，一般为1.0e-6
  * 返回值：  若求解成功，则返回0。若无有限解，则返回1。若无可行解，则返回-1
-=========================================================*/
+ */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#define TINY 1.0e-7
+
 static int cmax1(), cmax2(), pivot();
 static void mswap();
-static int simplex(a,n,m1,m2,m3,ixr,ixc,eps)
-int n,m1,m2,m3,*ixr,*ixc;
-double *a,eps;
+int simplex(double *a,int n,int m1,int m2,int m3,int *ixr,int *ixc,double eps)
 {
     int i,j,k,m,mp,np,ip,jp,flag;
     int lisx[101],lism2[101],nl1;
@@ -235,7 +232,7 @@ int mp, np, mm, *ll, nll;                         /* mp,np是二维数组a的规
     return(kp);
 }
 
-#include <math.h>                 /* 计算数组a中第mm行数组ll中各列中的绝对值最大的元素cmax*/
+/* 计算数组a中第mm行数组ll中各列中的绝对值最大的元素cmax*/
 static int cmax2(a, mp, np, mm, ll, nll, cmax)
 double *a, *cmax;                                 /* 返回此最大元素的列号*/
 int mp, np, mm, *ll, nll;                         /* mp,np是二维数组a的规模*/

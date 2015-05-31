@@ -9,9 +9,7 @@
  *           eps 精度要求，小于eps的值，认为是0。
  * 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-static int r_gsband(a,b,x,n,h,eps)
-double *a,*b,*x,eps;
-int n;
+int r_gsband(double *a,double *b,double *x,int n,int h,double eps)
 {
     int i,j,k,l,v,p;
     double tmp;

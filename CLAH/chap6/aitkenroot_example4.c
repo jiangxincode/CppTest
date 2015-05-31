@@ -1,7 +1,4 @@
-﻿#include<stdlib.h>
-#include<stdio.h>
-#include<math.h>
-#include"aitkenroot.c"
+﻿#include "../utility.h"
 static double f(double);
 int main6aitkenroot4()
 {

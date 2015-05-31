@@ -1,22 +1,16 @@
-﻿/*======================================================
-//函数名：ftest.c
-//功能描述：用f分布检验两个分布的方差是否有显著性差异
-//输入参数：a（简单随机样本一的样本值）
-//	    na（样本一的个数）
+﻿#include "../utility.h"
+
+/**
+ * 函数名：ftest.c
+ * 功能描述：用f分布检验两个分布的方差是否有显著性差异
+ * 输入参数：a（简单随机样本一的样本值）
+ *     na（样本一的个数）
  *          b（简单随机样本二的样本值）
-//	    nb（样本二的个数）
-//	    alpha（显著性标准）
-//返回值：1（显著），0（不显著）
-=========================================================*/
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include "../utility.h"
-
-static int ftest(a,na,b,nb,alpha)
-double *a,*b,alpha;
-int na,nb;
+ *          nb（样本二的个数）
+ *          alpha（显著性标准）
+ * 返回值：1（显著），0（不显著）
+ */
+int ftest(double *a,int na,double *b,int nb,double alpha)
 {
     int  j=0;
     double meana=0,meanb=0,vara=0,varb=0;	//初始化

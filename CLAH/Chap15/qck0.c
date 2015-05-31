@@ -1,6 +1,5 @@
-﻿#include <stdio.h>
-#include "popo.c"
-#include "qcks.c"
+﻿#include "../utility.h"
+
 int main15qck0()
 {
     int i,j,p[50],p1[50];

@@ -4,7 +4,7 @@
 
 #include "../utility.h"
 
-/*======================================================
+/**
  * 函数名：cggm1
  * 功能描述：共轭梯度法求极值，Fletcher-Reeves形式
  * 输入参数：x[n] 输入搜索的出发点
@@ -16,12 +16,8 @@
  *           eps 精度限度
  *           itmax 最大迭代次数
  * 返回值：  迭代次数
-=========================================================*/
-static int cggm1(x, xmin, n, y0, f, df, eps, itmax)
-double *x,*xmin,*y0,eps;
-double(*f)();
-void (*df)();
-int n, itmax;
+ */
+int cggm1(double *x, double *xmin, int n, double *y0, double(*f)(), void (*df)(), double eps, int itmax)
 {
     int i,it,flag;
     double g0[21], h[21];

@@ -1,7 +1,4 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include "r_chol.c"
+﻿#include "../utility.h"
 /*======================================================
  * 函数名：r_chde
  * 功能描述：用cholesky分解法解对称正定实系数矩阵方程组
@@ -9,9 +6,7 @@
  *           n 未知数个数，eps 精度要求，小于eps的值，认为是0。
  * 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-static int r_chde(a,b,x,n,eps)
-double *a,*b,*x,eps;
-int n;
+int r_chde(double *a,double *b,double *x,int n,double eps)
 {
     int i,k;
     double *u,*y,t;

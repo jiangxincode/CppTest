@@ -1,7 +1,4 @@
-﻿#include <stdio.h>
-#include <math.h>
-#include "wolt.c"
-#include "hadma.c"
+﻿#include "../utility.h"
 
 int main16wolt0()
 {

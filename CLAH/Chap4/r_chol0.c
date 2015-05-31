@@ -1,5 +1,4 @@
-﻿#include <stdio.h>
-#include "r_chol.c"
+﻿#include "../utility.h"
 int main4r_chol0()
 {
     int i,j;

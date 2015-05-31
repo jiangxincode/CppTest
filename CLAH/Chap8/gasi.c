@@ -7,12 +7,9 @@
  *           nmax 最大迭代次数
  *           f 指向被积函数的指针
  * 返回值：  积分近似值
-=========================================================*/
+ */
 static   double subleg(), sublagr(), subhemt();  /* 声明要调用的三个子函数*/
-static double gasi(a,b,eps,nmax,f)
-double a,b,eps;
-int nmax;
-double(*f)();
+double gasi(double a,double b,double eps,int nmax,double(*f)())
 {
     double z,z1,z2;
 

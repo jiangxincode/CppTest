@@ -8,9 +8,7 @@
  *           n 未知数个数，eps 精度要求，小于eps的值，认为是0。
  * 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-static int r_trzg(a,b,x,n,eps)
-double *a,*b,*x,eps;
-int n;
+int r_trzg(double *a,double *b,double *x,int n,double eps)
 {
     int i,k,l;
 

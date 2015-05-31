@@ -1,14 +1,15 @@
 ﻿#include <stdio.h>
 #include <math.h>
 
-#include "goldsch.c"
 #include "../utility.h"
+
 static	double f();
 static double df();
+
 int main12glodch0()
 {
-    double a,b,c,xopt,eps,fx, xmin[50];
-    int i,j,itmax = 100, nmin, iflag;
+    double a,b,c,xopt,eps, xmin[50];
+    int i,j, nmin, iflag;
     eps = 1e-10;
     nmin = 0;
     printf("Gold Serch:\n");
@@ -18,7 +19,7 @@ int main12glodch0()
         a = i;
         b = i+1;
         brake(&a,&b,&c,f);
-        fx = goldsch(a,b,c,f,&xopt,eps,itmax);
+        goldsch(a,b,c,f,&xopt,eps);
 
         if(nmin == 0)
         {

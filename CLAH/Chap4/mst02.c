@@ -1,5 +1,5 @@
-﻿#include <stdio.h>
-#include "mhhbg.c"
+﻿#include "../utility.h"
+
 int mainmst02()
 {
     int i,j;

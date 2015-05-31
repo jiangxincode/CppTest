@@ -1,4 +1,8 @@
-﻿/*======================================================
+﻿#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+/**
  * 函数名：lsq2
  * 功能描述：矩形区域最小二乘拟合
  * 输入参数：x 指向存放n个X坐标的数组的指针
@@ -12,13 +16,9 @@
  *           s 指向数组的指针，存放5个数据，依次返回的是：各点误差的平方和
  *            误差的绝对值的最大值、误差的绝对值之和,x的平均值, y的平均值
  * 返回值：  整型。若拟合成功则返回1,否则返回0
-=========================================================*/
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
-int lsq2(x,y,z,n,m,p,pp,qq,s)
-double *x,*y,*z,*p,*s;
-int n,m,qq,pp;
+ */
+
+int lsq2(double *x,double *y,double *z,int n,int m,double *p,int pp,int qq,double *s)
 {
     int i,j,k,l,k0,k1,k2,l0,l1,l2;
     double a,b,d0,d1,d2,t,t2,x1,y1;

@@ -1,16 +1,14 @@
 ﻿/*======================================================
-//函数名：r_chdet
-//功能描述：求对称正定矩阵的行列式值
-//输入参数：mat(输入的矩阵) n(矩阵阶数) eps(精度)
-//返回值：矩阵的行列式值
+ * 函数名：r_chdet
+ * 功能描述：求对称正定矩阵的行列式值
+ * 输入参数：mat(输入的矩阵) n(矩阵阶数) eps(精度)
+ * 返回值：矩阵的行列式值
 =========================================================*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 
-static double r_chdet(mat,n,eps)
-int n;
-double *mat, eps;
+double r_chdet(double *mat,int n,double eps)
 {
     int i,j,k,l,v;
     double det;

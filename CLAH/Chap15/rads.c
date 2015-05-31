@@ -1,4 +1,5 @@
-﻿/*=============================================================
+﻿#include "../utility.h"
+/**
  * 函 数 名：rads
  * 功能描述：基数排序
  * 输入参数： x 存放待排序数据的数组
@@ -6,14 +7,12 @@
  *            d 数据的位数
  *            k 每位数字最多在[0,k)之间，也就是说是k进制的。
  * 返 回 值：无
-//==============================================================*/
-#include <stdlib.h>
+ */
+
 static void rads_cout();
-static void rads(x,n,d,k)
-int *x;
-int n,d,k;
+void rads(int *x,int n,int d,int k)
 {
-    int i,j,m,k1,*a,*y,flag;
+    int j,m,k1,*a,*y,flag;
     a = (int*)malloc(n*sizeof(int));        /* a是存放一位数字的数组*/
     y = (int*)malloc(n*sizeof(int));        /* y是用于存放中间变量的空间*/
     flag = 0;

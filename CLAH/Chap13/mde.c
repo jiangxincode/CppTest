@@ -1,23 +1,16 @@
-﻿/*======================================================
-//函数名：mde.c
-//功能描述：求分布的距
-//输入参数：a（简单随机样本的样本值）
-//	    n（样本个数）
+﻿/**
+ * 函数名：mde.c
+ * 功能描述：求分布的距
+ * 输入参数：a（简单随机样本的样本值）
+ * 	    n（样本个数）
  *          mean（存放均值）
-//	    adev（存放平均差）
-//	    sddev（存放标准差）
-//	    var（存放方差）
-//	    skew（存放斜差）
-//	    kurt（存放峰态）
-=========================================================*/
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-
-static void mde(a,n,mean,adev,sddev,var,skew,kurt)
-double *a,*mean,*adev,*sddev,*var,*skew,*kurt;
-int n;
+ * 	    adev（存放平均差）
+ * 	    sddev（存放标准差）
+ * 	    var（存放方差）
+ * 	    skew（存放斜差）
+ * 	    kurt（存放峰态）
+ */
+void mde(double *a,int n,double *mean,double *adev,double *sddev,double *var,double *skew,double *kurt)
 {
     int j=0;
     double *dis;

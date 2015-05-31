@@ -1,7 +1,5 @@
-﻿#include <time.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include "randgsabs.c"
+﻿#include "../utility.h"
+
 int main13rand_gauss_example4()
 {
     int L=100, i,j;

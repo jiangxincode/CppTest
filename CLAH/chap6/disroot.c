@@ -1,7 +1,7 @@
 ﻿/*======================================================
-//函数名：disroot
-//功能描述：求出[a,b]区间内的非线性方程f(x)的一个实根
-//输入参数：a（根所在区间的左端点）
+ * 函数名：disroot
+ * 功能描述：求出[a,b]区间内的非线性方程f(x)的一个实根
+ *  * 返回值 * 返回值左端点）
  *          b（根所在区间的右端点）
  *          f（非线性方程左端函数）
  *          eps（精度要求）
@@ -10,8 +10,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
-static double disroot(a,b,f,eps)
-double a,b,(*f)(),eps;
+double disroot(double a,double b,double (*f)(),double eps)
 {
     double x,ym;                   /* 定义区间中点及中点处的函数值*/
     double ya=(*f)(a);             /* 区间左端点的函数值*/

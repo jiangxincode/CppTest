@@ -1,16 +1,12 @@
-﻿/*======================================================
-//功能描述：3种线性多步方法求常微分方程组的初值问题的例子
-=========================================================*/
-#include<stdlib.h>
-#include<stdio.h>
-#include<math.h>
-#include "adams.c"
-#include "hamming.c"
-#include "bb.c"
+﻿/**
+ * 功能描述：3种线性多步方法求常微分方程组的初值问题的例子
+ */
+#include "../utility.h"
+
 static     void f(double*,double*,double);
 int main9lmu3()
 {
-    double h=0.01,a=0,eps=0.000000001;
+    double h=0.01,a=0;
     int n=3,m=10,i,j;
     double *y;                    /* 存放所有函数值的指针*/
     y=(double*)malloc(n*(m+1)*sizeof(double));

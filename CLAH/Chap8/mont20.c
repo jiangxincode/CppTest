@@ -1,7 +1,4 @@
-﻿#include <math.h>
-#include <stdio.h>
-#include "simps2.c"
-#include "mont2.c"
+﻿#include "../utility.h"
 static void  fy(double,double []);
 static double f(double,double);
 int main8mount20()

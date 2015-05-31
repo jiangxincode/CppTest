@@ -1,9 +1,5 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <time.h>
-#include "kabg.c"
-#define PI 3.1415926
+﻿#include "../utility.h"
+
 int main16kabg0()
 {
     int i;

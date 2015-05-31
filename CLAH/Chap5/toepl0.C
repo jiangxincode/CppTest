@@ -1,5 +1,4 @@
-﻿#include <stdio.h>
-#include "../utility.h"
+﻿#include "../utility.h"
 
 int main5toepl0()
 {
@@ -13,5 +12,6 @@ int main5toepl0()
         {
             printf("x(%d)=%2.5f\n",i,x[i]);
         }
+    return 0;
 }
 

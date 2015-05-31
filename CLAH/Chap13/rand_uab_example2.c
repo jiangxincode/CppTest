@@ -1,6 +1,5 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include "randuabs.c"
+﻿
+#include "../utility.h"
 int main13rand_uab_example2()
 {
     int L,a,b;

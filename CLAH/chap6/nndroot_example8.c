@@ -1,7 +1,5 @@
-﻿#include<stdlib.h>
-#include<stdio.h>
-#include<math.h>
-#include"nndroot.c"
+﻿#include "../utility.h"
+
 static     void f(double*,double*,double*,double);
 int main6nndroot8()
 {

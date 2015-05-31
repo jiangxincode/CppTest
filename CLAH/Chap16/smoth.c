@@ -7,9 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-static int smoth(x,n,y)
-int n;
-double *x,*y;
+int smoth(double *x,int n,double *y)
 {
     int i;
 

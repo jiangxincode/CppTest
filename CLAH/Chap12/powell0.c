@@ -1,7 +1,9 @@
 ﻿#include <stdio.h>
 #include <math.h>
-#include "powell.c"
+#include "../utility.h"
+
 static 	double f();
+
 int main12powell0()
 {
     double  eps,fopt,x[3];

@@ -10,10 +10,7 @@
  * 输入参数：x（变换初始值），n（系数个数）、y（变换后序列）
  * 返 回 值：整型数字。计算成功则返回1，否则返回0
 //==============================================================*/
-static int r2fft(x1,x2,n,y1,y2)
-int n;
-double *x1,*x2;
-struct c_comp *y1,*y2;
+int r2fft(double *x1,double *x2,int n,struct c_comp *y1,struct c_comp *y2)
 {
     int i,j,k,nn;
     struct c_comp *x,*y;

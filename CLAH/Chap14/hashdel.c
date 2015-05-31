@@ -8,7 +8,7 @@
  *            a 待删除的元素, a.KEY是它的关键字
  * 返 回 值：若删除成功则返回1,否则返回0
  */
-int hashdel(hashlist HT,int m,ElemType a)
+int hashdel(struct student HT[HashSize],int m,struct student a)
 {
     int temp,d,i;
     d = hashpos(a.KEY, 0, m);

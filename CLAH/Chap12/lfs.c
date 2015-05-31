@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-/*======================================================
+/**
  * 函数名：lfs
  * 功能描述：连分式插值
  * 输入参数：x 指向存放n个结点的数据的数组的指针
@@ -10,10 +10,8 @@
  *           n 结点个数
  *           t 指定的插值点, eps 小于此数的值认为是0
  * 返回值：  在指定插值点的函数近似值
-=========================================================*/
-double lfs(x,y,n,t,eps)
-double *x,*y,t,eps;
-int n;
+ */
+double lfs(double *x,double *y,int n,double t,double eps)
 {
     int i,j,k,p,flag;
     double z,u,*b;

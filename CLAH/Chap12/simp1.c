@@ -1,4 +1,8 @@
-﻿/*======================================================
+﻿#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+/**
  * 函数名：simp1
  * 功能描述： 求无约束条件下n维极值的单纯形法
  * 输入参数：d   计算初始单纯形的变量
@@ -13,17 +17,8 @@
  *         eps 控制精度要求
  *         itmax 最大迭代次数
  * 返回值：  迭代次数
-=========================================================*/
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-
-static int simp1(d,n,lam,alf,miu,x,fx,xopt,f,eps,itmax)
-double d,lam,alf,miu;
-double *x,*fx,*xopt,eps;
-double(*f)();
-int itmax,n;
+ */
+int simp1(double d,int n,double lam,double alf,double miu,double *x,double *fx,double *xopt,double(*f)(),double eps,int itmax)
 {
     int it,i,j,h,l,g;
     double *xt,*xc,*xe,ft,fc,fe,fg,fh,fl,flag,tmp;

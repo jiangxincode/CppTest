@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include <math.h>
-
-#include "tzi1.c"
-#include "../utility.h"
+﻿#include "../utility.h"
 
 static double f1(double x) ;
 

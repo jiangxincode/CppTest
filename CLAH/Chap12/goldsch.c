@@ -1,4 +1,7 @@
-﻿/*======================================================
+﻿#include <stdio.h>
+#include <math.h>
+#define G2 0.38196601
+/**
  * 函数名：goldsch
  * 功能描述：黄金分割搜索法求极值
  * 输入参数：a 初始区间的端点
@@ -8,16 +11,8 @@
  *           xopt 指针，指向极值点的坐标
  *         eps 精度限度
  * 返回值：  函数的极小值
-=========================================================*/
-
-#include <stdio.h>
-#include <math.h>
-#define G2 0.38196601
-
-static double goldsch(a, b, c, f, xopt, eps)
-double a,b,c,eps;
-double(*f)(double);
-double *xopt;
+ */
+double goldsch(double a, double b, double c, double(*f)(double), double *xopt, double eps)
 {
     double f0,f1,f2,f3,t;
 

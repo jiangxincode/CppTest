@@ -1,6 +1,4 @@
-﻿#include <stdio.h>
-#include "r_gaus.c"
-#include "r_gsjd.c"
+﻿#include "../utility.h"
 int main5rgs0()
 {
     int i;

@@ -1,7 +1,4 @@
-﻿#include "conio.h"
-#include <stdio.h>
-#include "r_mlu.c"
-#include "r_matmul.c"
+﻿#include "../utility.h"
 
 int main4r_matlu0()
 {

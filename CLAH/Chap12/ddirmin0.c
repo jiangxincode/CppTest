@@ -1,6 +1,5 @@
 ﻿#include <stdio.h>
 #include <math.h>
-#include "ddirmin.c"
 
 static double f();
 static	void df();

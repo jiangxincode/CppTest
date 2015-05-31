@@ -1,6 +1,6 @@
 ﻿#include <stdio.h>
 #include "../utility.h"
-#include "r_matmul.c"
+
 int main4r_mqr0()
 {
     int i,j;

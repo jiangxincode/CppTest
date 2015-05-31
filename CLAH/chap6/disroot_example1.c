@@ -1,7 +1,5 @@
-﻿#include<stdlib.h>
-#include<stdio.h>
-#include<math.h>
-#include"disroot.c"
+﻿#include "../utility.h"
+
 static double f(double);
 int main6disroot1()
 {

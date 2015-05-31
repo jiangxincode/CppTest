@@ -1,5 +1,5 @@
-﻿#include <stdio.h>
-#include "mgst.c"
+﻿#include "../utility.h"
+
 int main15mgst0()
 {
     int i,j,p[50];

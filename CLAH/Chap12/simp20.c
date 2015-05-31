@@ -1,6 +1,8 @@
 ﻿#include <stdio.h>
-#include "simp2.c"
+#include "../utility.h"
+
 static 	double f();
+
 int main12simp20()
 {
     int i,n,m,itmax;

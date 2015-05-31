@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include "ttest.c"
-#include "tutest.c"
-#define pi 3.1415926
+﻿#include "../utility.h"
 
 int main13ttest_example6()
 {
@@ -25,19 +21,19 @@ int main13ttest_example6()
 
     for(j=0; j<na; j++)				//随机数样本一
     {
-        x=pi*j/na;
+        x=PI*j/na;
         a[j]=sin(x);
     }
 
     for(j=0; j<nb; j++)            //随机样本二
     {
-        x=pi*j/nb;
+        x=PI*j/nb;
         b[j]=cos(x);
     }
 
     for(j=0; j<nc; j++)            //随机样本三
     {
-        x=pi*j/nc;
+        x=PI*j/nc;
         c[j]=sin(x);
     }
 

@@ -11,9 +11,7 @@
 #include <math.h>
 #include "../utility.h"
 
-static int gmqr(a,b,x,m,n,eps)
-double *a,*b,*x,eps;
-int n;
+int gmqr(double *a,double *b,double *x,int m,int n,double eps)
 {
     int i,k;
     double *c,*q,t;

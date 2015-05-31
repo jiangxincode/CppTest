@@ -1,7 +1,4 @@
-﻿#include <stdio.h>
-#include "b_gsjd.c"
-#include "r_trzg.c"
-#include "r_gsband.c"
+﻿#include "../utility.h"
 int main5gstr0()
 {
     int i,j;

@@ -9,9 +9,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-static int r_gsjd(a,b,x,n,eps)
-double *a,*b,*x,eps;
-int n;
+int r_gsjd(double *a,double *b,double *x,int n,double eps)
 {
     int i,j,k,l,v,exis,*exjs;
     double tmp,d;

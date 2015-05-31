@@ -1,20 +1,18 @@
 ﻿/*======================================================
-//函数名：smldl
-//功能描述：全选主元的LDL分解
-//输入参数：mat 指向待分解的矩阵的指针
+ * 函数名：smldl
+ * 功能描述：全选主元的LDL分解
+ * 输入参数：mat 指向待分解的矩阵的指针
             n 矩阵阶数
             L   指向返回的下三角阵的指针
             D   指向返回存放对角元素的数组的指针
             eps 精度要求，小于此值的数据认为是0
-//返回值：整型。运行成功则返回1,失败则返回0
+ * 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 
-static int smldl(mat,n,L,D,eps)
-double *mat,*L,*D,eps;
-int n;
+int smldl(double *mat,int n,double *L,double *D,double eps)
 {
     int i,j,k;
     double t;

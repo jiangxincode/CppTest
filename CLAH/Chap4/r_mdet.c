@@ -1,16 +1,14 @@
 ﻿/*======================================================
-//函数名：r_mdet
-//功能描述：求实矩阵的行列式值
-//输入参数：mat(输入的矩阵) n(矩阵阶数) eps(精度)
-//返回值：矩阵的行列式值
+ * 函数名：r_mdet
+ * 功能描述：求实矩阵的行列式值
+ * 输入参数：mat(输入的矩阵) n(矩阵阶数) eps(精度)
+ * 返回值：矩阵的行列式值
 =========================================================*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 
-static double r_mdet(mat, n, eps)
-double *mat,eps;
-int n;
+double r_mdet(double *mat, int n, double eps)
 {
     int i,j,k,is,js,l,v;
     double det, flag, tmp, pivot;

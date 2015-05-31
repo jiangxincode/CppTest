@@ -8,9 +8,7 @@
 =========================================================*/
 #include <math.h>
 
-static double lagr(a,f,p)
-double a,(*f)();
-int p;
+double lagr(double a,double (*f)(),int p)
 {
     int i;
     double z;                                   /* 5阶拉盖尔多项式的零点*/

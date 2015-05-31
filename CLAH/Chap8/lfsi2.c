@@ -11,10 +11,7 @@
  * 返回值：  积分近似值
 =========================================================*/
 static   double lfsg();
-static double lfsi2(a,b,n0,eps,f,fy)
-double a,b,eps,(*f)();
-int n0;
-void (*fy)();
+double lfsi2(double a,double b,int n0,double eps,double(*f)(),void (*fy)())
 {
     int k,j,p,n,flag;
     double z,z2,d,h,x,t1,t2;

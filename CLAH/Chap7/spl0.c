@@ -1,6 +1,4 @@
-﻿#include <stdio.h>
-#include "spl.c"
-#include "sple.c"
+﻿#include "../utility.h"
 int main7spl0()
 {
     int n;

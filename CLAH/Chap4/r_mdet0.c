@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include "r_mdet.c"
-#include "r_mrank.c"
-#include "r_chdet.c"
+﻿#include "../utility.h"
 int main4r_mdet0()
 {
     double a[4][4] = {{2.0,1.0,3.0,5.0},    /* 矩阵A，B，C分别赋初值*/

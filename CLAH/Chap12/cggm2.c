@@ -1,8 +1,6 @@
-﻿#include <stdlib.h>
-#include <math.h>
-#include <stdio.h>
+﻿#include "../utility.h"
 
-/*======================================================
+/**
  * 函数名：cggm2
  * 功能描述：共轭梯度法求极值，Polak-Ribire形式
  * 输入参数：x[n] 输入搜索的出发点
@@ -14,12 +12,8 @@
  *           eps 精度限度
  *           itmax 最大迭代次数
  * 返回值：  迭代次数
-=========================================================*/
-
-static int cggm2(x, xmin, n, y0, f, df, eps, itmax)
-double *x,*xmin,*y0,eps;
-double(*f)(),(*df)();
-int n, itmax;
+ */
+int cggm2(double *x, double *xmin, int n, double *y0, double(*f)(), void (*df)(), double eps, int itmax)
 {
     int i,it,flag;
     double g0[21], h[21], g1[21];

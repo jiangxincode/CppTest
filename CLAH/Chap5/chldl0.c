@@ -1,9 +1,7 @@
-﻿#include <stdio.h>
-#include "r_chde.c"
-#include "r_ldl.c"
+﻿#include "../utility.h"
 int main5childl0()
 {
-    int i,j;
+    int i;
     double a[5][5]= { {24.0,7.0,5.0,2.0,-1.0},
         {7.0,21.0,6.0,3.0,-2.0},{5.0,6.0,17.0,-7.0,1.0},
         {2.0,3.0,-7.0,11.0,8.0},{-1.0,-2.0,1.0,8.0,15.0}

@@ -1,22 +1,15 @@
 ﻿/*======================================================
-//函数名：nndroot
-//功能描述：求非线性方程组的一组实根
-//输入参数：*x0（指向迭代初值和终值的指针），
-//           n（方程组个数），f（ 非线性方程的计算）
-//           eps（精度要求），max（最大迭代次数）
-//           h（差商中的微小变量），t（放缩系数）
-//返回值：0（迭代失败），1（迭代成功）
+ * 函数名：nndroot
+ * 功能描述：求非线性方程组的一组实根
+ * 输入参数：*x0（指向迭代初值和终值的指针），
+ *           n（方程组个数），f（ 非线性方程的计算）
+ *           eps（精度要求），max（最大迭代次数）
+ *           h（差商中的微小变量），t（放缩系数）
+ * 返回值：0（迭代失败），1（迭代成功）
 =========================================================*/
-#include<stdlib.h>
-#include<stdio.h>
-#include<math.h>
+#include "../utility.h"
 
-#include"r_gaus.c"
-
-static int nndroot(x0,n,f,eps,max,h,t)
-double *x0,eps,h,t;
-void (*f)();
-int n,max;
+int nndroot(double *x0,int n,void (*f)(),double eps,int max,double h,double t)
 {
     double *f0,*fi,*fx,*dl,dis,sum;
     int i,num=0;

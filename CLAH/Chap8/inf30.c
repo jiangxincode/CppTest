@@ -1,6 +1,4 @@
-﻿#include <stdio.h>
-#include "hemt.c"
-#include "gasi.c"
+﻿#include "../utility.h"
 static double f1(double);
 int main8inf30()
 {

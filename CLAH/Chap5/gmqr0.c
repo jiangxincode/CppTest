@@ -1,6 +1,5 @@
-﻿#include <stdio.h>
-#include "../utility.h" /* QR分解的函数*/
-#include "gmqr.c"
+﻿#include "../utility.h"
+
 int main5gmqr0()
 {
     int i;

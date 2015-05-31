@@ -15,10 +15,7 @@
  *           z2 指向存放返回的m个插值点处的函数二阶导数的数组的指针
  * 返回值：  成功则返回整型 1，失败则返回 0
 =========================================================*/
-static int bspl3(x,y,n,t,m,z,z1,z2)
-double *x,*y;
-double *t,*z,*z1,*z2;
-int m,n;
+int bspl3(double *x,double *y,int n,double *t,int m,double *z,double *z1,double *z2)
 {
     int i,j,k;
     double y0,y1,*a,*b,*c,*p,*q,alpha,beta,*dy; /* 计算dy所用变量*/

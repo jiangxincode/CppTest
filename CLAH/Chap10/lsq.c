@@ -1,4 +1,8 @@
-﻿/*======================================================
+﻿#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+/**
  * 函数名：lsq
  * 功能描述：最小二乘拟合
  * 输入参数：x 指向存放n个结点的数据的数组的指针
@@ -9,13 +13,8 @@
  *           s 指向数组的指针，存放4个数据，返回的依次是： 误差的平方和,
  *             误差的绝对值的最大值、误差的绝对值之和,x0的平均值
  * 返回值：  整型。若拟合成功则返回1,否则返回0
-=========================================================*/
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
-int lsq(x,y,n,p,pp,s)
-double *x,*y,*p,*s;
-int n,pp;
+ */
+int lsq(double *x,double *y,int n,double *p,int pp,double *s)
 {
     int i,j,k;
     double a,b,d0,d1,d2,c,t;

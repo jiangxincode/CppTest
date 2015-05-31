@@ -1,6 +1,4 @@
-﻿#include <stdio.h>
-#include "hmt.c"
-#include "hmte.c"
+﻿#include "../utility.h"
 int main7hmt0()
 {
     double t,z;

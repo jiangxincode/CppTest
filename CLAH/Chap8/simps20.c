@@ -1,6 +1,4 @@
-﻿#include <math.h>
-#include <stdio.h>
-#include "simps2.c"
+﻿#include "../utility.h"
 static   double f(double,double);
 static  void  fy(double,double []);
 int main8simps20()

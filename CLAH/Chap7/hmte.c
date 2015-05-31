@@ -10,9 +10,7 @@
  *           t 指定的插值点
  * 返回值：  在指定插值点的函数近似值
 =========================================================*/
-static double hmte(x,h,y,dy,n,t)
-double x,h,*y,*dy,t;
-int n;
+double hmte(double x,double h,double *y,double *dy,int n,double t)
 {
     int i,j,k,p;
     double z,tmp,l,ll;

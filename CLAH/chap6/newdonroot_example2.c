@@ -1,7 +1,4 @@
-﻿#include<stdlib.h>
-#include<stdio.h>
-#include<math.h>
-#include "newdonroot.c"
+﻿#include "../utility.h"
 static   double f(double);
 static  double fd(double);
 int main6newdonroot2()

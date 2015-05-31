@@ -1,22 +1,18 @@
-﻿#include <math.h>
-#include "simps1.c"
+﻿
+#include "../utility.h"
 /*======================================================
-// 函数名：simps2
-// 功能描述：变步长辛卜生求二重积分
-// 输入参数：a 积分x下限, b 积分x上限,
-//           n0 初始划分数
-//           eps 精度要求
-//           h0 x方向的最小步长
-//           f 指向被积函数的指针
-//           fy 指向计算y方向上下限的函数的指针
-// 返回值：  积分近似值
+ * 函数名：simps2
+ * 功能描述：变步长辛卜生求二重积分
+ * 输入参数：a 积分x下限, b 积分x上限,
+ *           n0 初始划分数
+ *           eps 精度要求
+ *           h0 x方向的最小步长
+ *           f 指向被积函数的指针
+ *           fy 指向计算y方向上下限的函数的指针
+ * 返回值：  积分近似值
 =========================================================*/
 static   double g();
-static double simps2(a,b,n0,eps,h0,f,fy)
-double a,b,eps,h0;
-int n0;
-double(*f)();
-void (*fy)();
+double simps2(double a,double b,int n0,double eps,double h0,double(*f)(),void (*fy)())
 {
     int n,k;
     double z,z2,s,s2,h,d,x,t1,t2;

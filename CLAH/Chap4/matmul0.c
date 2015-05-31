@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-
-#include "../utility.h"
-#include "r_matmul.c"
+﻿#include "../utility.h"
 
 int main4matmul0()
 {

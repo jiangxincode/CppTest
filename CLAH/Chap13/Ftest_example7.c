@@ -1,6 +1,5 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include "ftest.c"
+﻿#include "../utility.h"
+
 #define pi 3.1415926
 
 int main13Ftest_example7()

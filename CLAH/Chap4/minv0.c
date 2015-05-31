@@ -1,9 +1,4 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-
-#include "r_matmul.c"
-#include "../utility.h"
-#include "sdminv.c"
+﻿#include "../utility.h"
 
 int main4minv0()
 {
@@ -61,7 +56,7 @@ int main4minv0()
         }
 
     printf("\n");
-    sdminv(r_mat,n);                         /* 正定矩阵求逆*/
+    sdminv(r_mat,n,EPS);                         /* 正定矩阵求逆*/
     printf("inv(SD):\n");                    /* 打印求得的逆矩阵*/
 
     for(i=0; i<n; i++)

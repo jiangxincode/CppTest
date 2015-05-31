@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include <math.h>
-
-#include "tzi1.c"
-#include "simps1.c"
+﻿
 #include "../utility.h"
 
 static double f1(double);
@@ -23,6 +19,7 @@ int main8tzi0()
     z=rbg(a,b,4,eps,f1);                         /* 用龙贝格积分法积分*/
     printf("robg: t=%2.5f\n",z);
     getchar();
+    return 0;
 }
 
 static double f1(double x)                                      /* 被积分的函数*/

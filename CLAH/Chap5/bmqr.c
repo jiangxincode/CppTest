@@ -1,18 +1,14 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include "../utility.h" /* QR分解的函数*/
+﻿#include "../utility.h" /* QR分解的函数*/
+
 /*======================================================
-// 函数名：bmqr
-// 功能描述：用迭代法解病态方程组
-// 输入参数：a 解系数矩阵，b 常数矩阵，x返回的解向量
-//           n 未知数个数，
-//           eps 精度要求，iter 最多迭代次数。
-// 返回值：整型。运行成功则返回迭代次数,失败则返回0
+ * 函数名：bmqr
+ * 功能描述：用迭代法解病态方程组
+ * 输入参数：a 解系数矩阵，b 常数矩阵，x返回的解向量
+ *           n 未知数个数，
+ *           eps 精度要求，iter 最多迭代次数。
+ * 返回值：整型。运行成功则返回迭代次数,失败则返回0
 =========================================================*/
-static int bmqr(a,b,x,n,eps,iter)
-double *a,*b,*x,eps;
-int n,iter;
+int bmqr(double *a,double *b,double *x,int n,double eps,int iter)
 {
     int i,k,piter;
     double *c,*q,*r,*e,t,fr;

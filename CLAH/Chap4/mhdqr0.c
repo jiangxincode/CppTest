@@ -1,5 +1,4 @@
-﻿#include <stdio.h>
-#include "mhdqr.c"
+﻿#include "../utility.h"
 int main4mhdqr0()
 {
     int i,itmax=60;

@@ -9,9 +9,7 @@
  *           eps 精度要求，iter 允许的最多迭代次数
  * 返回值：整型。运行成功则返回迭代次数,失败则返回0
 =========================================================*/
-static int orelax(a,b,x,n,w,eps,iter)
-double *a,*b,*x,eps,w;
-int n,iter;
+int orelax(double *a,double *b,double *x,int n,double w,double eps,int iter)
 {
     int i,j,piter=0;
     double fr = 1.0,t,*x2;

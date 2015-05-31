@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include "conio.h"
-#include <stdlib.h>
-#include "r_matmul.c"
-#include "sdminv.c"
+﻿#include "../utility.h"
 
 int main4sd_matinv0()
 {
@@ -30,7 +26,7 @@ int main4sd_matinv0()
     }
 
     printf("\n");
-    sdminv(r_mat,n);
+    sdminv(r_mat,n,EPS);
     printf("inv(A):\n");
 
     for(i=0; i<n; i++)

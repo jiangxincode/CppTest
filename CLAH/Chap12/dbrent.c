@@ -1,4 +1,7 @@
-﻿/*======================================================
+﻿#include <stdio.h>
+#include <math.h>
+
+/**
  * 函数名：dbrent
  * 功能描述：使用一阶导数的Brent算法法求极值
  * 输入参数：a 初始区间的左端点
@@ -10,16 +13,8 @@
  *           eps 精度限度
  *           itmax 最大迭代次数
  * 返回值：  函数的极小值
-=========================================================*/
-
-#include <stdio.h>
-#include <math.h>
-
-static double dbrent(a, b, c, f, df, xopt, eps, itmax)
-double a,b,c,eps;
-double(*f)(double),(*df)(double);
-double *xopt;
-int itmax;
+ */
+double dbrent(double a, double b, double c, double(*f)(double),double(*df)(double), double *xopt, double eps, int itmax)
 {
     int it,t1,t2;                                      /* 用于判断接受d1还是d2*/
     double xm,x,u,w,v,fx,fu,fw,fv,du,dv,dw,dx;

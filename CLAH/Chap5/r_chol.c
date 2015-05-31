@@ -2,17 +2,15 @@
 #include <stdlib.h>
 #include <math.h>
 /*======================================================
-//函数名：r_chol
-//功能描述：全选主元的Cholesky分解
-//输入参数：mat 指向待分解的矩阵的指针
+ * 函数名：r_chol
+ * 功能描述：全选主元的Cholesky分解
+ * 输入参数：mat 指向待分解的矩阵的指针
             n 矩阵阶数
             u   指向返回的下三角阵的指针
             eps 精度要求，小于此值的数据认为是0
-//返回值：整型。运行成功则返回1,失败则返回0
-=========================================================*/
-static int r_chol(mat,n,u,eps)
-double *mat,*u,eps;
-int n;
+ * 返回值：整型。运行成功则返回1,失败则返回0
+ */
+int r_chol(double *mat,int n,double *u,double eps)
 {
     int i,j,k;
     double t;

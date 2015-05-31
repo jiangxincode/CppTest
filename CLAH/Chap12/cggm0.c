@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include <math.h>
-#include "../utility.h"
-#include "cggm1.c"
-#include "cggm2.c"
+﻿#include "../utility.h"
 
 static double f();
 static void df();
@@ -35,14 +31,10 @@ static double f(double *x, int n)
 }
 void df(double *x, double *g, int n)
 {
-    double y;
-
     if(n!=3)
     {
         return;
     }
-
-    y = (x[0]-1.0)*(x[0]-1.0)+(x[1]-2.0)*(x[1]-2.0)+(x[2]-3.0)*(x[2]-3.0);
     g[0] = (2*(x[0]-1.0));
     g[1] = (2*(x[1]-2.0));
     g[2] = (2*(x[2]-3.0));

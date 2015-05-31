@@ -10,9 +10,7 @@
 #include <stdio.h>
 #include <math.h>
 
-static double sple(x,h,y,n,t,eps)
-double x,h,*y,t,eps;
-int n;
+double sple(double x,double h,double *y,int n,double t,double eps)
 {
     int k;
     double z,d[5],p[4],yy[2];

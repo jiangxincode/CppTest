@@ -1,17 +1,13 @@
 ﻿/*=============================================================
-// 函 数 名：kabg (x,n,y)
-// 功能描述：α-β-γ滤波算法
-// 输入参数：x（输入数据），n（测量点个数）、y（滤波估值）
-//           h （采样周期）
-//          alfa（结构参数α），beta（结构参数β）、gama（结构参数γ）
-// 返 回 值：无
+ * 函 数 名：kabg (x,n,y)
+ * 功能描述：α-β-γ滤波算法
+ * 输入参数：x（输入数据），n（测量点个数）、y（滤波估值）
+ *           h （采样周期）
+ *          alfa（结构参数α），beta（结构参数β）、gama（结构参数γ）
+ * 返 回 值：无
 //==============================================================*/
-#include <stdio.h>
-#include <math.h>
-static int kabg(x,n,y,h,alfa,beta,gama)
-int n;
-double *x,*y;
-double h,alfa,beta,gama;
+
+int kabg(double *x,int n,double *y,double h,double alfa,double beta,double gama)
 {
     int i;
     double a,v,z1,z,tmp,h2,invh2;

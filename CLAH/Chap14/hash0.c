@@ -1,9 +1,6 @@
 ﻿#include "../utility.h"
 
-int	KeyEqu(char* stra,char* strb);   /* 判断关键字是否相同*/
-void ElemCP(ElemType *a, ElemType *b);                         /* 将元素b中内容拷贝到a中*/
-void ElemDEL(ElemType *a);                                    /* 将元素a设成已删除*/
-void ElemNULL(ElemType *a);                                   /* 将元素a设成空，用于初始化或清空哈希表*/
+
 
 #include <stdio.h>
 #include "string.h"
@@ -11,7 +8,7 @@ void ElemNULL(ElemType *a);                                   /* 将元素a设�
 int main14hash0()
 {
     int i,m;
-    static ElemType x[16]= {{101,"Zhao",'M',19},
+    static struct student x[16]= {{101,"Zhao",'M',19},
         {102,"Qian",'F',18},{103,"Sun",'M',19},
         {104,"Li",'F',20},{105,"Zhou",'M',19},
         {106,"Wu",'F',18},{107,"Zheng",'M',17},
@@ -21,8 +18,8 @@ int main14hash0()
         {114,"Lv",'F',18},{115,"Shi",'M',19},
         {110,"Zhang",'F',18}
     };
-    KeyType a = "Zhou";                                /* a为要查找的关键字*/
-    hashlist HT;                                        /* 定义哈希表*/
+    char a[8] = "Zhou";                                /* a为要查找的关键字*/
+    struct student HT[HashSize];                                        /* 定义哈希表*/
     m = HashSize;
 
     for(i=0; i<m; i++)                                  /* 初始化哈希表*/
@@ -41,6 +38,7 @@ int main14hash0()
     {
         printf("%-5d%-8s%-2c%-2d%\n",HT[i].num,HT[i].name,HT[i].sex,HT[i].age);
     }
+    return 0;
 }
 
 int	KeyEqu(char* stra, char* strb)   /* 判断关键字是否相同*/
@@ -48,7 +46,7 @@ int	KeyEqu(char* stra, char* strb)   /* 判断关键字是否相同*/
     return(!strcmp(stra, strb));
 }
 
-void ElemCP(ElemType *a, ElemType *b)                          /* 将元素b中内容拷贝到a中*/
+void ElemCP(struct student *a, struct student *b)                          /* 将元素b中内容拷贝到a中*/
 {
     int i;
     a->num = b->num;
@@ -63,7 +61,7 @@ void ElemCP(ElemType *a, ElemType *b)                          /* 将元素b中�
     a->age = b->age;
 }
 
-void ElemDEL(ElemType *a)                                    /* 将元素a设成已删除*/
+void ElemDEL(struct student *a)                                    /* 将元素a设成已删除*/
 {
     int i;
     a->name[0] = '1';
@@ -74,7 +72,7 @@ void ElemDEL(ElemType *a)                                    /* 将元素a设成
     }
 }
 
-void ElemNULL(ElemType *a)                                    /* 将元素a设成已删除*/
+void ElemNULL(struct student *a)                                    /* 将元素a设成已删除*/
 {
     int i;
 

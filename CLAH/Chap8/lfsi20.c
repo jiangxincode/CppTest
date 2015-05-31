@@ -1,7 +1,5 @@
-﻿#include <math.h>
-#include <stdio.h>
-#include "simps2.c"
-#include "lfsi2.c"
+﻿#include "../utility.h"
+
 static double f(double,double);
 int main8lfsi20()
 {

@@ -1,7 +1,5 @@
-﻿#include<stdlib.h>
-#include<stdio.h>
-#include<math.h>
-#include"gradroot.c"
+﻿#include "../utility.h"
+
 static 	double f(double*,double*);
 int main6gradroot7()
 {

@@ -1,16 +1,14 @@
 ﻿/*======================================================
-//函数名：r_mrank
-//功能描述：求实矩阵的秩
-//输入参数：mat(输入的矩阵) m(矩阵行数) p(矩阵列数) eps(精度)
-//返回值：运行成功则返回矩阵的秩，失败则返回0
+ * 函数名：r_mrank
+ * 功能描述：求实矩阵的秩
+ * 输入参数：mat(输入的矩阵) m(矩阵行数) p(矩阵列数) eps(精度)
+ * 返回值：运行成功则返回矩阵的秩，失败则返回0
 =========================================================*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 
-static int r_mrank(mat,m, n,eps)
-double *mat, eps;
-int m,n;
+int r_mrank(double *mat,int m, int n,double eps)
 {
     int i,j,k,p,is,js,l,v,rank;
     double tmp, pivot;

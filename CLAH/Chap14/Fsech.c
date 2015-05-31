@@ -1,21 +1,19 @@
-﻿/*=============================================================
+﻿/**
  * 函 数 名：Fsech
  * 功能描述：磁盘文件中记录的顺序查找
  * 输入参数： fp 指向文件的指针
  *            a 存放要查找的关键字的值
  *            str 指向用于存放记录的结构体
  * 返 回 值：找到则返回1，如果没有找到则返回0
-//==============================================================*/
-#include <stdio.h>
+ */
+
 #include "../utility.h"
-static int Fsech(fp,a,str)
-FILE *fp;
-int a;
-STRU *str;
+
+int Fsech(FILE *fp,int a,struct student *str)
 {
     int flag,q;
     long int k;
-    k = sizeof(STRU);
+    k = sizeof(struct student);
     flag = 1;
 
     while(flag)

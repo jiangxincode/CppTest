@@ -1,7 +1,4 @@
-﻿#include <stdio.h>
-#include "../utility.h"
-#include "c_gaus.c"
-#include "c_gsjd.c"
+﻿#include "../utility.h"
 int main5cgs0()
 {
     int i,j;

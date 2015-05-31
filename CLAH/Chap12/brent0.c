@@ -7,7 +7,7 @@ static double f(double x);
 static double df(double x);
 int main12brent0()
 {
-    double a,b,c,xopt,eps,fx, xmin[50];
+    double a,b,c,xopt,eps, xmin[50];
     int i,j,itmax = 100, nmin, iflag;
     eps = 1e-10;
     nmin = 0;
@@ -18,7 +18,7 @@ int main12brent0()
         a = i;
         b = i+1;
         brake(&a,&b,&c,f);
-        fx = brent(a,b,c,f,&xopt,eps,itmax);
+        brent(a,b,c,f,&xopt,eps,itmax);
 
         if(nmin == 0)
         {

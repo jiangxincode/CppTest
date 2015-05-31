@@ -170,9 +170,6 @@
 		<Unit filename="CLAH/Chap12/brent0.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="CLAH/Chap12/bsl1.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="CLAH/Chap12/cggm0.c">
 			<Option compilerVar="CC" />
 		</Unit>

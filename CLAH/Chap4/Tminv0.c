@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include "r_matmul.c"
-#include "Tminv.c"
+﻿#include "../utility.h"
 
 int main4Tminv0()
 {

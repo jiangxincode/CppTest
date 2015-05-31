@@ -1,7 +1,9 @@
 ﻿#include <stdio.h>
 #include <math.h>
 #include "../utility.h"
+
 static double f();
+
 int main12dirmin0()
 {
     double  eps,fopt,x[3],p[3],xmin[3],t;

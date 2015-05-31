@@ -1,7 +1,5 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include "mde.c"
-#define pi 3.1415926
+﻿#include "../utility.h"
+
 int main13mde_example5()
 {
     int L,j;
@@ -18,7 +16,7 @@ int main13mde_example5()
 
     for(j=0; j<L; j++)
     {
-        x=pi*j/L;
+        x=PI*j/L;
         rand[j]=sin(x);
     }
 

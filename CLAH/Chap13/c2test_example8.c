@@ -1,7 +1,4 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include "randu01s.c"
-#include "c2test.c"
+﻿#include "../utility.h"
 
 int main13c2test_example8()
 {

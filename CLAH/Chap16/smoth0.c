@@ -1,5 +1,4 @@
-﻿#include <stdio.h>
-#include "smoth.c"
+﻿#include "../utility.h"
 int main16smoth0()
 {
     int i,n;

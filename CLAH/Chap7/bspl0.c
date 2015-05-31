@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-
-#include "bspl1.c"
-#include "bspl2.c"
-#include "bspl3.c"
+﻿#include "../utility.h"
 
 #define PI 3.1415926
 

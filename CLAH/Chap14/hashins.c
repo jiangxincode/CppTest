@@ -7,7 +7,7 @@
  * 返 回 值：若插入成功则返回1,否则返回0
 //==============================================================*/
 #include "../utility.h"
-int hashins(hashlist HT,int m,ElemType a)
+int hashins(struct student HT[HashSize],int m,struct student a)
 {
     int temp,d,i;
     d = hashpos(a.KEY, 0, m);

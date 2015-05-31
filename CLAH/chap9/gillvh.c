@@ -1,18 +1,16 @@
 ﻿/*======================================================
-//函数名：gillvh
-//功能描述：变步长基尔算法求常微分方程组的初值问题
-//输入参数：*y（ 指向函数初值以及函数返回值的指针n*(m+1)）
-//          n（方程组个数），f（目标函数的计算）
-//          h（步长），m（步数），a（区间起点），eps（精度）
-//返回值：0（失败），1（成功）
+ * 函数名：gillvh
+ * 功能描述：变步长基尔算法求常微分方程组的初值问题
+ * 输入参数：*y（ 指向函数初值以及函数返回值的指针n*(m+1)）
+ *          n（方程组个数），f（目标函数的计算）
+ *          h（步长），m（步数），a（区间起点），eps（精度）
+ * 返回值：0（失败），1（成功）
 =========================================================*/
 #include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
 static int gillinvh();                              /* 需要使用定步长基尔算法得子函数*/
-static int gillvh(y,n,f,h,m,a,eps)
-double *y,(*f)(),h,a,eps;
-int n,m;
+int gillvh(double *y,int n,double (*f)(),double h,int m,double a,double eps)
 {
     double x,*y1,*y2,*ytemp1,*ytemp2,dis,ht=h;
     int k=0,i,m1,m2;

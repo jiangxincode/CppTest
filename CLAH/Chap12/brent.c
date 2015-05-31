@@ -1,20 +1,19 @@
-﻿/*======================================================
-// 函数名：brent
-// 功能描述：Brent算法法求极值
-// 输入参数：a 初始区间的左端点
-//           b 初始区间的中间点
-//           c 初始区间的右端点
-//           f 函数指针
-//           xopt 指针，指向极值点的坐标
-//           eps 精度限度
-//           itmax 最大迭代次数
-// 返回值：  函数的极小值
-=========================================================*/
-
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <math.h>
 #define G2 0.38196601
 
+/**
+ * 函数名：brent
+ * 功能描述：Brent算法法求极值
+ * 输入参数：a 初始区间的左端点
+ *           b 初始区间的中间点
+ *           c 初始区间的右端点
+ *           f 函数指针
+ *           xopt 指针，指向极值点的坐标
+ *           eps 精度限度
+ *           itmax 最大迭代次数
+ * 返回值：  函数的极小值
+ */
 double brent(double a, double b, double c, double(*f)(double), double *xopt, double eps, int itmax)
 {
     int it;

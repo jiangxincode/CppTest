@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include "smcg.c"
-#include "jaco.c"
-#include "gssd.c"
-#include "orelax.c"
+﻿#include "../utility.h"
 int main5gsiter0()
 {
     int i,j;

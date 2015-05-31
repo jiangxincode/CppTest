@@ -1,5 +1,4 @@
-﻿#include <stdio.h>
-#include "bmqr.c"
+﻿#include "../utility.h"
 int main5bmqr0()
 {
     int i,j;

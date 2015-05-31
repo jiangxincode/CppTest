@@ -1,6 +1,5 @@
-﻿#include <stdio.h>
-#include "selt.c"
-#include "heap.c"
+﻿#include "../utility.h"
+
 int main15selt0()
 {
     int i,j,p[50],p1[50];

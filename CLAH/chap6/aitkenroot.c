@@ -1,19 +1,17 @@
 ﻿/*======================================================
-//函数名：aitkenroot
-//功能描述：求出[a,b]区间内的非线性方程f(x)的一个实根
-//输入参数：*x0（指向迭代初值和终值的指针）
+ * 函数名：aitkenroot
+ * 功能描述：求出[a,b]区间内的非线性方程f(x)的一个实根
+ * 输入参数：*x0（指向迭代初 * 返回值值和终值的指针）
  *          f（迭代函数）
  *          eps（精度要求）
  *          max（最大迭代次数）
-//返回值：0（迭代失败），1（迭代成功）
+ * 返回值：0（迭代失败），1（迭代成功）
 =========================================================*/
 #include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
 
-static int aitkenroot(x0,f,eps,max)
-double *x0,(*f)(),eps;
-int max;
+int aitkenroot(double *x0,double(*f)(),double eps,int max)
 {
     double x,x1,x2,dis;
     int num=0;

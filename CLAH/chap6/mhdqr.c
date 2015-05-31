@@ -1,20 +1,15 @@
 ﻿/*======================================================
-//函数名：mhdqr
-//功能描述：上H矩阵求特征值
-//输入参数：a   指向存放上H矩阵的指针
+ * 函数名：mhdqr
+ * 功能描述：上H矩阵求特征值
+ * 输入参数：a   指向存放上H * 返回值矩阵的指针
 			n   矩阵阶数
 			u   返回的特征值的实部
 			v   返回的特征值的虚部
 			eps 精度要求，用于判断元素是否为0
 			itmax 最大迭代次数
-//返回值：整型。运行成功则返回1,失败则返回0
+ * 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
-static int mhdqr(a,n,u,v,eps,itmax)
-double *a,*u,*v,eps;
-int n,itmax;
+int mhdqr(double *a,int n,double *u,double *v,double eps,int itmax)
 {
     int i,j,k,ii,jj,kk;
     double x,y,p,q,r;                          /* 用于进行相似变换*/

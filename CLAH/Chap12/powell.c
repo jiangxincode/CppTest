@@ -4,23 +4,20 @@
 
 #include "../utility.h"
 
-/*======================================================
-// 函数名：powell
-// 功能描述：powell方法求极值
-// 输入参数：x[n] 输入搜索的出发点
-//           ee[n*n] n组搜索的方向，每行为一个方向
-//           xmin[n] 返回找到的最优点
-//           y0      求得的极小值
-//           n 初始区间的另一个端点
-//           f 多元函数指针
-//           eps 精度限度
-//           itmax 最大迭代次数
-// 返回值：  迭代次数
-=========================================================*/
-static int powell(x, ee, xmin, n, y0, f, eps, itmax)
-double *x,*ee,*xmin,*y0,eps;
-double(*f)();
-int n, itmax;
+/**
+ * 函数名：powell
+ * 功能描述：powell方法求极值
+ * 输入参数：x[n] 输入搜索的出发点
+ *           ee[n*n] n组搜索的方向，每行为一个方向
+ *           xmin[n] 返回找到的最优点
+ *           y0      求得的极小值
+ *           n 初始区间的另一个端点
+ *           f 多元函数指针
+ *           eps 精度限度
+ *           itmax 最大迭代次数
+ * 返回值：  迭代次数
+ */
+int powell(double *x, double *ee, double *xmin, int n, double *y0, double(*f)(), double eps, int itmax)
 {
     int i,j,it,kk;
     double x0[21], x1[21], e[21];

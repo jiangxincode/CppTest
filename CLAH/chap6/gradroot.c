@@ -1,20 +1,18 @@
 ﻿/*======================================================
-//函数名：gradroot
-//功能描述：求非线性方程组的一组实根
-//输入参数：*x0（指向迭代初值和终值的指针）
+ * 函数名：gradroot
+ * 功能描述：求非线性方程组的一组实根
+ * 输入参数：*x0（指向迭代初 * 返回值值和终值的指针）
  *          n（方程组个数）
  *          f（目标函数的计算与偏导数的计算）
  *          eps（精度要求）
  *          max（最大迭代次数）
-//返回值：0（迭代失败），1（迭代成功）
+ * 返回值：0（迭代失败），1（迭代成功）
 =========================================================*/
 #include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
 
-static int gradroot(x0,n,f,eps,max)
-double *x0,(*f)(),eps;
-int n,max;
+int gradroot(double *x0,int n,double (*f)(),double eps,int max)
 {
     double F,*FD,D,lam;
     int i,num=0;

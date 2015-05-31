@@ -9,9 +9,7 @@
  *           t 指定的插值点
  * 返回值：  在指定插值点的函数近似值
 =========================================================*/
-static double lagr7(x,y,n,t)
-double *x,*y,t;
-int n;
+double lagr7(double *x,double *y,int n,double t)
 {
     int i,j,k,p;
     double z,tmp;

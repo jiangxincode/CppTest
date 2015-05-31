@@ -1,24 +1,20 @@
 ﻿/*======================================================
-//函数名：Tminv
-//功能描述：Toeplitz矩阵快速求逆
-//输入参数：t1 双精度实型一维数组的指针?
+ * 函数名：Tminv
+ * 功能描述：Toeplitz矩阵快速求逆
+ * 输入参数：t1 双精度实型一 * 返回值维数组的指针?
             数组中存放n阶T型矩阵第一个元素及上三角元素
             t2 双精度实型一维数组的指针?
             其中后n-1个元素存放n阶T型矩阵中的下三角元素
             n 矩阵阶数
             mat 返回的逆矩阵存放位置
             eps 精度要求，绝对值小于此数的值认为是0
-//返回值：整型。运行成功则返回1,失败则返回0
+ * 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
 #include "stdio.h"
 #include "stdlib.h"
 #include "math.h"
 
-static int Tminv(t1,t2,n,mat,eps)
-double *t1, *t2;
-int n;
-double *mat;
-double eps;
+int Tminv(double *t1,double *t2,int n,double *mat,double eps)
 {
     int i,j,k,l;
     double a,tmp,*c,*r,*p;

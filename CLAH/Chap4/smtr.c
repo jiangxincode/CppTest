@@ -1,19 +1,17 @@
 ﻿/*======================================================
-//函数名：smtr
-//功能描述：矩阵相似变换为三对角矩阵
-//输入参数：mat 指向待分解的矩阵的指针，返回时存放三对角阵
+ * 函数名：smtr
+ * 功能描述：矩阵相似变换为三对角矩阵
+ * 输入参数：mat 指向待分解的矩阵的指针，返回时存放三对角阵
             n   矩阵阶数
             q   指向返回Q矩阵的指针
             eps 精度要求，小于此值的数据认为是0
-//返回值：整型。运行成功则返回1,失败则返回0
+ * 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 
-static int smtr(mat,n,q,eps)
-double *mat,*q,eps;
-int n;
+int smtr(double *mat,int n,double *q,double eps)
 {
     int i,j,k,l,m,p;
     double u,alpha,t,*tmp;

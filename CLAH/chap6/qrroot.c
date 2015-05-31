@@ -1,22 +1,17 @@
 ﻿/*======================================================
-//函数名：qrroot
-//功能描述：QR方法求多项式方程全部实根
-//输入参数：a   指向存放多项式系数的指针（降幂排列）
+ * 函数名：qrroot
+ * 功能描述：QR方法求多项式方程全部实根
+ * 输入参数：a   指向存放多项式系数的指针（降幂排列）
 			n   多项式阶数
 			u   返回的根的实部
 			v   返回的根的虚部
 			eps 精度要求，用于判断元素是否为0
 			itmax 最大迭代次数
-//返回值：整型。运行成功则返回1,失败则返回0
+ * 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
-#include "mhdqr.c"
+#include "../utility.h"
 
-static int qrroot(a,n,u,v,eps,itmax)
-double *a,*u,*v,eps;
-int n,itmax;
+int qrroot(double *a,int n,double *u,double *v,double eps,int itmax)
 {
     int i;
     double *H;

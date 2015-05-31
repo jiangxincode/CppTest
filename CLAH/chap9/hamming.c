@@ -1,19 +1,17 @@
 ﻿/*======================================================
-//函数名：hamming
-//功能描述：哈明方法求常微分方程组的初值问题
-//输入参数：*y（ 指向函数初值以及函数返回值的指针n*(m+1)）
+ * 函数名：hamming
+ * 功能描述：哈明方法求常微分方程组的初值问题
+ * 输入参数：*y（ 指向函数初值以及函数返回值的指针n*(m+1)）
  *          n（方程组个数），f（斜率的计算）
  *          h（步长），m（步数），a（区间起点）
-//返回值：0（失败），1（成功）
+ * 返回值：0（失败），1（成功）
 =========================================================*/
 #include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
 #include "../utility.h"
 
-static int hamming(y,n,f,h,m,a)
-double *y,(*f)(),h,a;
-int n,m;
+int hamming(double *y,int n,double (*f)(),double h,int m,double a)
 {
     double *c,*f1,*f2,*f3,*f4,*temp,*ptemp,*p,x;
     int k=3,i;

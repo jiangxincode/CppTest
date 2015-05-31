@@ -1,5 +1,4 @@
-﻿#include <stdio.h>
-#include "smtr.c"
+﻿#include "../utility.h"
 int main4mst01()
 {
     int i,j;

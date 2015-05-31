@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include "mima.c"
-#include "mmas.c"
-#include "bist.c"
-#include "qcks.c"
+﻿#include "../utility.h"
 int main14mima0()
 {
     int i,j,p[50],ma,mi,m12;

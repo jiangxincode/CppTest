@@ -1,4 +1,9 @@
-﻿/*======================================================
+﻿#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#define TINY 1.0e-7
+
+/**
  * 函数名：simp2
  * 功能描述： 求约束条件下n维极值的单纯形法
  * 输入参数：n   问题的维数
@@ -15,19 +20,10 @@
  *         eps 控制精度要求
  *         itmax 最大迭代次数
  * 返回值：  迭代次数
-=========================================================*/
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#define TINY 1.0e-7
+ */
 static double simprn(double *rr);
-static int simp2(n,m,a,b,d,alf,eps,x,fx,xopt,sf,f,itmax)
-int itmax,n,m;
-double *a,*b,*x,*fx,*xopt;
-double d,alf,eps;
-double(*f)();
-int (*sf)();
+
+int simp2(int n,int m,double *a,double *b,double d,double alf,double eps,double *x,double *fx,double *xopt,int (*sf)(),double(*f)(),int itmax)
 {
     int it,in,i,j,h,g,iflag;
     double *xt,*xc,ft,fc,fg,fh,flag,tmp,rr;

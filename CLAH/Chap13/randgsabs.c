@@ -1,20 +1,13 @@
-﻿/*======================================================
-//函数名：randgsabs
-//功能描述：生成L个N~(a,b)分布的随机数
-//输入参数：L(序列个数) a(正态分布的均值) b(正态分布的方差)，G(指向生成随机数的指针)
-//返回值：1:生成成功。0：生成失败
-=========================================================*/
-#include <time.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
+﻿/**
+ * 函数名：randgsabs
+ * 功能描述：生成L个N~(a,b)分布的随机数
+ * 输入参数：L(序列个数) a(正态分布的均值) b(正态分布的方差)，G(指向生成随机数的指针)
+ * 返回值：1:生成成功。0：生成失败
+ */
 
-#define PI 3.14159
+#include "../utility.h"
 
-static double randgsabs(L,a,b,G)
-int L;
-double a,b;
-double *G;
+double randgsabs(int L,double a,double b,double *G)
 {
     int i;
     double U1,U2;
