@@ -1,5 +1,4 @@
-﻿#include <stdio.h>
-#include <math.h>
+﻿#include "../utility.h"
 
 #define NMAX 100
 #define EULER 0.5772156649

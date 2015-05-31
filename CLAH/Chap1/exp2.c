@@ -1,5 +1,4 @@
-﻿#include <stdio.h>
-#include <math.h>
+﻿#include "../utility.h"
 
 int main1exp2()
 {

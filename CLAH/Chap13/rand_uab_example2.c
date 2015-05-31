@@ -1,5 +1,5 @@
-﻿
-#include "../utility.h"
+﻿#include "../utility.h"
+
 int main13rand_uab_example2()
 {
     int L,a,b;

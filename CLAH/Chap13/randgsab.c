@@ -1,5 +1,7 @@
 ﻿#include "../utility.h"
 
+#include "../utility.h"
+
 /**
  * 函数名：randgsab
  * 功能描述：生成N~(a,b)分布的随机数

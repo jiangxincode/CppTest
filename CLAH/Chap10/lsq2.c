@@ -1,6 +1,4 @@
-﻿#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
+﻿#include "../utility.h"
 
 /**
  * 函数名：lsq2

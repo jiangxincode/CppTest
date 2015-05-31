@@ -1,6 +1,4 @@
-﻿#include <stdio.h>
-
-#include "../utility.h"
+﻿#include "../utility.h"
 
 int main11gramm20()
 {

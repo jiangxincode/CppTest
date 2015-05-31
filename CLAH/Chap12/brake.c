@@ -1,5 +1,5 @@
-﻿#include <stdio.h>
-#include <math.h>
+﻿#include "../utility.h"
+
 #define G1 0.61803399
 #define GSTEP 100.0
 #define TINY 1.0e-20

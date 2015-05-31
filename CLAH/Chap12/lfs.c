@@ -1,6 +1,4 @@
-﻿#include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
+﻿#include "../utility.h"
 
 /**
  * 函数名：lfs

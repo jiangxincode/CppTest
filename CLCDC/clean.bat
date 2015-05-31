@@ -1,5 +1,5 @@
 @echo off 
-echo 正在清除目标文件，请稍等...... 
+echo cleaning, please wait... 
 del /f /s /q *.obj
 del /f /s /q *.exe
-echo 清除完成！
+echo finish!

@@ -1,7 +1,4 @@
-﻿#include <stdio.h>
-#include <math.h>
-
-#include "../utility.h"
+﻿#include "../utility.h"
 
 #define EPS 1.0e-6                    /* 使用不完全伽马函数需要的数据*/
 #define DMIN 1.0e-30

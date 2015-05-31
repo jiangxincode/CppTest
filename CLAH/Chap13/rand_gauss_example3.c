@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 int main13rand_gauss_example3()
 {
     double a,b,G;

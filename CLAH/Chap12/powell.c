@@ -1,8 +1,4 @@
-﻿#include <stdlib.h>
-#include <math.h>
-#include <stdio.h>
-
-#include "../utility.h"
+﻿#include "../utility.h"
 
 /**
  * 函数名：powell

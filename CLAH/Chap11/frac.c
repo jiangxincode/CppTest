@@ -1,4 +1,4 @@
-﻿#include <math.h>
+﻿#include "../utility.h"
 
 /**
  * 函 数 名：frac

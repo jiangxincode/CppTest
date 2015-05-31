@@ -1,5 +1,5 @@
-﻿#include <stdio.h>
-#include <math.h>
+﻿#include "../utility.h"
+
 #define G2 0.38196601
 /**
  * 函数名：goldsch

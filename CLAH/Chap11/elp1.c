@@ -1,4 +1,4 @@
-﻿#include <math.h>
+﻿#include "../utility.h"
 
 /**
  * 函数名：leg1

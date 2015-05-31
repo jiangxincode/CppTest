@@ -1,4 +1,6 @@
-﻿/**
+﻿#include "../utility.h"
+
+/**
  * 函 数 名：Fsech
  * 功能描述：磁盘文件中记录的顺序查找
  * 输入参数： fp 指向文件的指针
@@ -6,8 +8,6 @@
  *            str 指向用于存放记录的结构体
  * 返 回 值：找到则返回1，如果没有找到则返回0
  */
-
-#include "../utility.h"
 
 int Fsech(FILE *fp,int a,struct student *str)
 {

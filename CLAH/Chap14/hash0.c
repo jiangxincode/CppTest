@@ -1,9 +1,5 @@
 ﻿#include "../utility.h"
-
-
-
-#include <stdio.h>
-#include "string.h"
+#include <string.h>
 
 int main14hash0()
 {

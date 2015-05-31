@@ -1,4 +1,6 @@
-﻿/**
+﻿#include "../utility.h"
+
+/**
  * 函数名：ttest.c
  * 功能描述：用t分布检验两个分布的均值是否有显著性差异(方差相同)
  * 输入参数：a（简单随机样本 * 返回值一的样本值）
@@ -8,8 +10,6 @@
  *     alpha（显著性标准）
  * 返回值：1（显著），0（不显著）
  */
-
-#include "../utility.h"
 
 int ttest(double *a,int na,double *b,int nb,double alpha)
 {

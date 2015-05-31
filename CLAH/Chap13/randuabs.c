@@ -1,11 +1,11 @@
-﻿/**
+﻿#include "../utility.h"
+
+/**
  * 函数名：randuabs
  * 功能描述：生成[a,b]区间的均匀分布的随机整数序列
  * 输入参数：L(生成随机序列的长度)，a，b（区间范围）,uab_ran(指向生成随机数序列的指针)
  * 返回值：1：成功生成。0：生成失败
  */
-#include "../utility.h"
-
 int randuabs(int L,int a,int b,int * uab_ran)
 {
     int i;

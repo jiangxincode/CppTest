@@ -1,5 +1,4 @@
-﻿#include <stdio.h>
-#include "../utility.h"
+﻿#include "../utility.h"
 
 static 	double f();
 

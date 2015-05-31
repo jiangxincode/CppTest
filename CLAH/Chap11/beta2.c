@@ -1,7 +1,4 @@
-﻿#include <stdio.h>
-#include <math.h>
-
-#include "../utility.h"
+﻿#include "../utility.h"
 
 #define NMAX 100                         /* 迭代的最大次数*/
 #define EULER 0.5772156649

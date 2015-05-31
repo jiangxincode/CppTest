@@ -13,6 +13,7 @@ static unsigned int PJWHash(char *str);     	/*  PJW Hash Function */
 static unsigned int SDBMHash(char *str);     	/*  SDBM Hash Function */
 static unsigned int DJBHash(char *str);     	/*  DJB Hash Function */
 static unsigned int APHash(char *str);       	/*  AP Hash Function */
+
 unsigned int hashk(char *str,int i)
 {
     if(i==0)                                /* 选择调用*/

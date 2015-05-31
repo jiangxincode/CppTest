@@ -1,12 +1,11 @@
-﻿/**
+﻿#include "../utility.h"
+
+/**
  * 函数名：randgsabs
  * 功能描述：生成L个N~(a,b)分布的随机数
  * 输入参数：L(序列个数) a(正态分布的均值) b(正态分布的方差)，G(指向生成随机数的指针)
  * 返回值：1:生成成功。0：生成失败
  */
-
-#include "../utility.h"
-
 double randgsabs(int L,double a,double b,double *G)
 {
     int i;

@@ -1,7 +1,5 @@
-﻿#include <stdio.h>
-#include <math.h>
+﻿#include "../utility.h"
 
-#include "../utility.h"
 #define NMAX 100
 
 /**

@@ -1,5 +1,4 @@
-﻿#include <stdio.h>
-#include <math.h>
+﻿#include "../utility.h"
 
 static double f();
 static	void df();

@@ -1,4 +1,6 @@
-﻿#define TINY 1.0e-7
+﻿#include "../utility.h"
+
+#define TINY 1.0e-7
 
 /**
  * 函数名：simplex

@@ -1,4 +1,6 @@
-﻿/*======================================================
+﻿#include "../utility.h"
+
+/**
  * 函数名：dirmin
  * 功能描述：一维搜索
  * 输入参数：x[n] 输入搜索的出发点
@@ -9,16 +11,15 @@
  *           eps 精度限度
  *           itmax 最大迭代次数
  * 返回值：  函数的极小值
-=========================================================*/
-#include "../utility.h"
-
+ */
+static double fdim_jiang(double t);
 int _ndir_;
 double *_pdir_, *_xdir_, *_xtdir_,(*_myfc_)();              /* 需要全局变量*/
 
 double dirmin(double *x, double *p, double *xmin, int n, double (*f)(), double eps, int itmax)
 {
     int i;
-    double fdim(), ax, bx, cx, fopt, xopt;
+    double ax, bx, cx, fopt, xopt;
     _ndir_ = n;
     _pdir_ = (double*)malloc(_ndir_*sizeof(double));
     _xdir_ = (double*)malloc(_ndir_*sizeof(double));
@@ -33,8 +34,8 @@ double dirmin(double *x, double *p, double *xmin, int n, double (*f)(), double e
 
     ax = 0.0;                                             /* 初始猜想范围*/
     bx = 0.5;
-    brake(&ax, &bx, &cx, fdim);                          /* 找一个极小值区间*/
-    fopt = brent(ax, bx, cx, fdim, &xopt, eps, itmax);     /* 用brent算法找极小值*/
+    brake(&ax, &bx, &cx, fdim_jiang);                          /* 找一个极小值区间*/
+    fopt = brent(ax, bx, cx, fdim_jiang, &xopt, eps, itmax);     /* 用brent算法找极小值*/
 
     for(i=0; i<n; i++)                                    /* 找到了最优点x*/
     {

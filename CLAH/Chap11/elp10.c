@@ -1,7 +1,4 @@
-﻿#include <stdio.h>
-#include <math.h>
-
-#include "../utility.h"
+﻿#include "../utility.h"
 
 int main11elp10()
 {

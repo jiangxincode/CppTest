@@ -1,6 +1,4 @@
-﻿#include <math.h>
-#include <stdio.h>
-#include "../utility.h"
+﻿#include "../utility.h"
 
 int main12simp10()
 {

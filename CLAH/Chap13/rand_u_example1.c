@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 int main13rand_u_example1()
 {
     int L;

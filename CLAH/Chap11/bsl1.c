@@ -1,8 +1,6 @@
-﻿#include <math.h>
-#include <stdio.h>
+﻿#include "../utility.h"
 
 #define ENUMB 30.0                      /* 逆向递推时计算递推起点的数据，越大结果的有效数字越多*/
-#include "../utility.h"
 
 /**
  * 函 数 名：bsl1

@@ -1,8 +1,4 @@
-﻿#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-#include "../utility.h"
+﻿#include "../utility.h"
 
 double* fab(int j,double *ab);
 
