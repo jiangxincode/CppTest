@@ -53,9 +53,6 @@
 		<Unit filename="CLAH/Chap10/lsq2.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="CLAH/Chap10/r_gaus.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="CLAH/Chap11/RC.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -357,9 +354,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="CLAH/Chap15/qck0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap15/qcks.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="CLAH/Chap15/rads.c">
@@ -677,9 +671,6 @@
 		<Unit filename="CLAH/Chap5/smcg.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="CLAH/Chap5/smldl.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="CLAH/Chap5/toepl.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -729,9 +720,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="CLAH/Chap6/qrroot_example5.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap6/r_gaus.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="CLAH/Chap7/atken.c">
@@ -1289,6 +1277,12 @@
 				<doxyfile_dot />
 				<general />
 			</DoxyBlocks>
+			<AutoVersioning>
+				<Scheme minor_max="10" build_max="0" rev_max="0" rev_rand_max="10" build_times_to_increment_minor="100" />
+				<Settings autoincrement="1" date_declarations="1" use_define="0" update_manifest="0" do_auto_increment="0" ask_to_increment="0" language="C++" svn="0" svn_directory="" header_path="version.h" />
+				<Changes_Log show_changes_editor="0" app_title="released version %M.%m.%b of %p" changeslog_path="ChangesLog.txt" />
+				<Code header_guard="VERSION_H" namespace="AutoVersion" prefix="" />
+			</AutoVersioning>
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
