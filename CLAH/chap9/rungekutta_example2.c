@@ -1,9 +1,10 @@
-﻿/*======================================================
- * 功能描述：3种rungekutta方法求常微分方程组的初值问题的例子
-=========================================================*/
-#include "../utility.h"
+﻿#include "../utility.h"
 
-static void f(double*,double*,double);
+static void f(double *y,double *F,double x);
+
+/**
+ * 功能描述：3种rungekutta方法求常微分方程组的初值问题的例子
+ */
 int main9rungekutta2()
 {
     double h=0.01,a=0,eps=0.000000001;
@@ -87,8 +88,7 @@ int main9rungekutta2()
     return 0;
 }
 
-static void f(y,F,x)
-double *y,*F,x;
+static void f(double *y,double *F,double x)
 {
     F[0]=5*x+1;
     F[1]=x+y[0];
