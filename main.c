@@ -6,33 +6,34 @@
 
 #include "getopt.h"
 
-#define MAXLENGTH 30
+#define MAX_LENGTH 30
+#define MAX_LINE_LENTHT 1024
 #define MAXNUM 30000
-#define FILENAME_MAXLENGTH 30
+#define FILENAME_MAX_LENGTH 30
 #define DEFAULT_FILENAME "idiom.txt"
 
 void show_help();
 
 struct list
 {
-    char data[MAXLENGTH];
+    char data[MAX_LENGTH];
     bool is_visited; //标记是否已经遍历
     struct list *next;
 };
 
-struct list* create_list(char array[][MAXLENGTH],int num);
+struct list* create_list(char array[][MAX_LENGTH],int num);
 void connect(char *input, char *output, struct list* pointer, int num, bool is_loop);
 
 int main(int argc, char* argv[])
 {
     extern int opterr, optopt;
     extern char *optarg;
-    char input[MAXLENGTH];
-    char output[MAXLENGTH];
-    char idiom_array[MAXNUM][MAXLENGTH];
+    char input[MAX_LENGTH];
+    char output[MAX_LENGTH];
+    char idiom_array[MAXNUM][MAX_LENGTH];
     int count = 0;
     char c;
-    char filename[FILENAME_MAXLENGTH] = DEFAULT_FILENAME;
+    char filename[FILENAME_MAX_LENGTH] = DEFAULT_FILENAME;
     int show_item_num = 10;
     bool is_loop  = false;
     bool is_every = false;
@@ -74,7 +75,7 @@ int main(int argc, char* argv[])
 
     for(int i=0; i<MAXNUM; i++)
     {
-        if(!fgets(idiom_array[i], MAXLENGTH, fp))
+        if(!fgets(idiom_array[i], MAX_LENGTH, fp))
         {
             break;
         }
@@ -105,7 +106,7 @@ int main(int argc, char* argv[])
     return 0;
 }
 
-struct list* create_list(char array[][MAXLENGTH],int num)
+struct list* create_list(char array[][MAX_LENGTH],int num)
 {
     struct list *tmp1,*tmp2,*head;
     head=(struct list *)malloc(sizeof(struct list));
@@ -131,7 +132,7 @@ void connect(char *input,char *output, struct list* head, int num, bool is_loop)
 {
     struct list * p=head;
     int count = 0;
-    char tmp[MAXLENGTH],tmp_head[3],tmp_tail[3];
+    char tmp[MAX_LENGTH],tmp_head[3],tmp_tail[3];
     strcpy(tmp,input);
 
     while(p->next!=NULL)
@@ -171,11 +172,17 @@ void connect(char *input,char *output, struct list* head, int num, bool is_loop)
 
 void show_help()
 {
-    fputs("IdiomSolitaire: A toy for idiom solitaire.\n", stdout);
-    fputs("\t-h: Show this help.\n", stdout);
-    fputs("\t-i filename: Set the dictionary file.\n", stdout);
-    fputs("\t-l: Be able to loop.\n", stdout);
-    fputs("\t-e: Show every item when you strike the key, and 'e' to quit", stdout);
-    fputs("\t-n num: Set the maximum idiom item number when output. Of course if there are not so many, It only show the exist. \n", stdout);
+    FILE *fp = fopen("README.md", "r");
+    if(fp == NULL)
+    {
+        perror("Can't open the README.md\n");
+        exit(-1);
+    }
+    char str_in[MAX_LENGTH];
+    while(fgets(str_in, MAX_LENGTH, fp) != NULL)
+    {
+        fputs(str_in, stdout);
+    }
+
     return;
 }

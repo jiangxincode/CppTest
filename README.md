@@ -14,6 +14,12 @@ Hava a good time on it.
 
 ## Usage
 
+-h: Show this help.\n", stdout);
+-i filename: Set the dictionary file. This program only support the GBK encoding dictionary!\n", stdout);
+-l: Be able to loop.\n", stdout);
+-e: Show every item when you strike the key, and 'e' to quit", stdout);
+-n num: Set the maximum idiom item number when output. Of course if there are not so many, It only show the exist. \n", stdout);
+
 ## Configuration
 
 ## Information
