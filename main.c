@@ -6,11 +6,12 @@
 
 #include "getopt.h"
 
-#define MAX_LENGTH 30
-#define MAX_LINE_LENTHT 1024
-#define MAXNUM 30000
-#define FILENAME_MAX_LENGTH 30
-#define DEFAULT_FILENAME "idiom.txt"
+#define MAX_LENGTH 30 //最大成语长度，注意一个汉字在GBK编码中占两个字符
+#define MAX_LINE_LENTHT 1024 //每行文本的最大长度
+#define MAX_NUM 30000 //最大可支持的词典条目数
+#define FILENAME_MAX_LENGTH 30 //最长文件名长度
+#define DEFAULT_OUTPUT_NUM 30 //默认每次输出成语条目数
+#define DEFAULT_FILENAME "idiom.txt" //默认词典文件名
 
 void show_help();
 
@@ -30,11 +31,11 @@ int main(int argc, char* argv[])
     extern char *optarg;
     char input[MAX_LENGTH];
     char output[MAX_LENGTH];
-    char idiom_array[MAXNUM][MAX_LENGTH];
+    char idiom_array[MAX_NUM][MAX_LENGTH];
     int count = 0;
     char c;
     char filename[FILENAME_MAX_LENGTH] = DEFAULT_FILENAME;
-    int show_item_num = 10;
+    int show_item_num = DEFAULT_OUTPUT_NUM;
     bool is_loop  = false;
     bool is_every = false;
     struct list* ptr;
@@ -45,22 +46,22 @@ int main(int argc, char* argv[])
     {
         switch(c)
         {
-        case 'f':
+        case 'f': //设置词典文件
             strcpy(filename, optarg);
             break;
 
-        case 'n':
+        case 'n': //每次输出成语条目数
             show_item_num = atoi(optarg);
             break;
 
-        case 'l':
+        case 'l': //是否允许循环
             is_loop = true;
             break;
-        case 'e':
+        case 'e': //是否需要多次输出
             is_every = true;
             break;
 
-        case 'h':
+        case 'h': //显示帮组文件
             show_help();
             exit(0);
 
@@ -73,7 +74,7 @@ int main(int argc, char* argv[])
 
     fp = fopen(filename, "r");
 
-    for(int i=0; i<MAXNUM; i++)
+    for(int i=0; i<MAX_NUM; i++)
     {
         if(!fgets(idiom_array[i], MAX_LENGTH, fp))
         {
@@ -96,12 +97,15 @@ int main(int argc, char* argv[])
             connect(input,output,ptr,show_item_num,is_loop);
             strcpy(input, output);
             ch = tolower(getchar());
+            printf("\n");
         }
     }
     else
     {
         connect(input,output,ptr,show_item_num,is_loop);
+        printf("\n");
     }
+
     fclose(fp);
     return 0;
 }
@@ -124,7 +128,6 @@ struct list* create_list(char array[][MAX_LENGTH],int num)
         tmp1->next=tmp2;
         tmp1=tmp1->next;
     }
-
     return head;
 }
 
@@ -172,7 +175,7 @@ void connect(char *input,char *output, struct list* head, int num, bool is_loop)
 
 void show_help()
 {
-    FILE *fp = fopen("README.md", "r");
+    FILE *fp = fopen("./README.md", "r");
     if(fp == NULL)
     {
         perror("Can't open the README.md\n");
