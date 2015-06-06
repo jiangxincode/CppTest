@@ -34,6 +34,7 @@ int main(int argc, char* argv[])
     char idiom_array[MAX_NUM][MAX_LENGTH];
     int count = 0;
     char c;
+    char init_char[4] = "";
     char filename[FILENAME_MAX_LENGTH] = DEFAULT_FILENAME;
     int show_item_num = DEFAULT_OUTPUT_NUM;
     bool is_loop  = false;
@@ -42,7 +43,7 @@ int main(int argc, char* argv[])
     FILE *fp;
     opterr = 0;
 
-    while((c = getopt(argc, argv, "f:n:lhe")) != -1)
+    while((c = getopt(argc, argv, "f:n:c:lhe")) != -1)
     {
         switch(c)
         {
@@ -64,6 +65,10 @@ int main(int argc, char* argv[])
         case 'h': //显示帮组文件
             show_help();
             exit(0);
+
+        case 'c': //设定初始汉字
+            strncpy(init_char, optarg, 4);
+            break;
 
         case '?':
             printf("unrecognized option: -%c", optopt);
@@ -87,8 +92,16 @@ int main(int argc, char* argv[])
 
     count--;
     ptr=create_list(idiom_array,count);
-    printf("请输入一个成语\n");
-    scanf("%s",input);
+    if(init_char[0] == '\0')
+    {
+        printf("请输入一个成语\n");
+        scanf("%s",input);
+    }
+    else
+    {
+        strncpy(input, init_char, 4);
+    }
+
     if(is_every)
     {
         char ch = '\0';
