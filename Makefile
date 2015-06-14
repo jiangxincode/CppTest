@@ -1,7 +1,7 @@
 OBJECTS = std_err_process.o wrap.o str_echo.o str_cli.o\
 		  writen.o readline.o
 BIN = daytimetcpcli daytimetcpcliv6 daytimetcpsrv daytimetcpsrv1\
-	  tcpserv01 tcpcli01
+	  tcpserv01 tcpcli01 udpserv01 udpcli01
 
 all:$(BIN)
 
@@ -16,6 +16,10 @@ daytimetcpsrv1:daytimetcpsrv1.o $(OBJECTS)
 tcpserv01:tcpserv01.o $(OBJECTS)
 	gcc -o $@ $^ -Wall
 tcpcli01:tcpcli01.o $(OBJECTS)
+	gcc -o $@ $^ -Wall
+udpserv01:udpserv01.o $(OBJECTS)
+	gcc -o $@ $^ -Wall
+udpcli01:udpcli01.o $(OBJECTS)
 	gcc -o $@ $^ -Wall
 std_err_process.o:std_err_process.c
 	gcc -c $^ -Wall

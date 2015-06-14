@@ -60,6 +60,28 @@ int Write(int fd, const void *buf, size_t count)
 	return (n);
 }
 
+ssize_t Recvfrom(int sockfd, void *buff, size_t nbytes, int flags,
+        struct sockaddr *from, socklen_t *addrlen)
+{
+    ssize_t n;
+    if((n = recvfrom(sockfd, buff, nbytes, flags, from, addrlen)) < 0)
+    {
+        err_sys("recvfrom error");
+    }
+    return n;
+}
+
+ssize_t Sendto(int sockfd, void *buff, size_t nbytes, int flags,
+        const struct sockaddr *to, socklen_t addrlen)
+{
+    ssize_t n;
+    if((n = sendto(sockfd, buff, nbytes, flags, to, addrlen)) < 0)
+    {
+        err_sys("sendto error");
+    }
+    return n;
+}
+
 int Close(int fd)
 {
 	int n;
@@ -119,4 +141,14 @@ int Fputs(const char *s, FILE *stream)
         err_sys("fputs error");
     }
     return result;
+}
+
+int Inet_pton(int family, const char *strptr, void *addrptr)
+{
+    int n;
+    if((n = inet_pton(family, strptr, addrptr)) <= 0)
+    {
+        err_sys("inet_pton error for %s", strptr);
+    }
+    return n;
 }
