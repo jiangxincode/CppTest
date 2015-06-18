@@ -3,6 +3,9 @@
 #include <string>
 
 #include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <cmath>
 
 using namespace std;
 

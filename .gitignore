@@ -5,4 +5,5 @@ doxygen/
 .cccc/
 *.layout
 *.depend
+*.swp
 CppCheckResults.xml

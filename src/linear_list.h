@@ -2,6 +2,10 @@
 #define LINEARLIST_H
 #endif // LINEARLIST_H
 
+#include <cstdio>
+
+using namespace std;
+
 template <class T>
 class linear_list
 {

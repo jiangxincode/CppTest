@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <cstdlib>
 #include "heap.h"
 
 using namespace std;

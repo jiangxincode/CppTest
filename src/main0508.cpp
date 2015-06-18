@@ -28,7 +28,8 @@ bool palindrome1(long num)
 
 int palindrome2(long num)
 {
-    string str = to_string(num);
+    string str = "" + num;
+    //string str = to_string(num);
     string str_reverse = str;
     reverse_copy(str.begin(),str.end(),str_reverse.begin());
 

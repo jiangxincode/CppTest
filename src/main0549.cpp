@@ -4,6 +4,7 @@
 */
 #include <iostream>
 #include <climits>
+#include <cstdlib>
 using namespace std;
 
 int second_max(int arr[], int num)

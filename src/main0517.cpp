@@ -14,7 +14,7 @@
 */
 
 #include <cstring>
-
+#include <cstdlib>
 #include <iostream>
 #include <queue>
 #include <vector>

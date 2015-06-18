@@ -3,6 +3,7 @@
 #include <map>
 #include <string>
 #include <climits>
+#include <cstdio>
 
 using namespace std;
 

@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Test" />
+		<Option title="CppTest" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/Test" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/CppTest" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -17,7 +17,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/Test" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/CppTest" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -45,6 +45,9 @@
 		<Unit filename="src/binary_search_tree.h" />
 		<Unit filename="src/binary_tree.cpp" />
 		<Unit filename="src/binary_tree.h" />
+		<Unit filename="src/caishenyang/Quote.cpp" />
+		<Unit filename="src/caishenyang/Quote.h" />
+		<Unit filename="src/caishenyang/main.cpp" />
 		<Unit filename="src/circ_list.h" />
 		<Unit filename="src/fibonacci.cpp" />
 		<Unit filename="src/fibonacci.h" />
@@ -126,6 +129,7 @@
 		<Unit filename="src/main0554.cpp" />
 		<Unit filename="src/main0555.cpp" />
 		<Unit filename="src/main0556.cpp" />
+		<Unit filename="src/main0557.cpp" />
 		<Unit filename="src/main1000.cpp" />
 		<Unit filename="src/main1550.cpp" />
 		<Unit filename="src/main1560.cpp" />
@@ -167,6 +171,8 @@
 		<Unit filename="src/sort.cpp" />
 		<Unit filename="src/sort.h" />
 		<Unit filename="src/static_list.h" />
+		<Unit filename="src/union_find_set.cpp" />
+		<Unit filename="src/union_find_set.h" />
 		<Unit filename="test/test_binary_search_tree.cpp" />
 		<Unit filename="test/test_binary_tree.cpp" />
 		<Unit filename="test/test_fibonacci.cpp" />

@@ -15,8 +15,8 @@ void EX_9_47();
 void test_string()
 {
     string s = "pi = 3.14";
-    double d = stod(s.substr(s.find_first_of("+-.0123456789")));
-    cout << d << endl;
+    //double d = stod(s.substr(s.find_first_of("+-.0123456789")));
+    //cout << d << endl;
 }
 void EX_9_27()
 {
