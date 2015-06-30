@@ -8,9 +8,9 @@
  *          max（最大迭代次数）
  * 返回值：0（迭代失败），1（迭代成功）
 =========================================================*/
-#include<stdlib.h>
-#include<stdio.h>
-#include<math.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
 
 int gradroot(double *x0,int n,double (*f)(),double eps,int max)
 {

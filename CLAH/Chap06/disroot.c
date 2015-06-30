@@ -7,9 +7,9 @@
  *          eps（精度要求）
 //返回值：方程的实根
 =========================================================*/
-#include<stdlib.h>
-#include<stdio.h>
-#include<math.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
 double disroot(double a,double b,double (*f)(),double eps)
 {
     double x,ym;                   /* 定义区间中点及中点处的函数值*/

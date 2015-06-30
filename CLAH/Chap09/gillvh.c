@@ -6,9 +6,9 @@
  *          h（步长），m（步数），a（区间起点），eps（精度）
  * 返回值：0（失败），1（成功）
 =========================================================*/
-#include<stdlib.h>
-#include<stdio.h>
-#include<math.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
 static int gillinvh();                              /* 需要使用定步长基尔算法得子函数*/
 int gillvh(double *y,int n,double (*f)(),double h,int m,double a,double eps)
 {
