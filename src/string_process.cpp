@@ -94,3 +94,30 @@ int time_convert(string &time24)
 
     return 0;
 }
+
+
+/**
+ * 在一个字符串中找到所有只出现一次的字符,采用hash表，复杂的为O(n)
+ */
+void FindOne(char *input, char *output)
+{
+    int HashTable[256] = {0};
+    int length = 0;
+    int k = 0;
+
+    for(int i=0; input[i]!='\0'; i++)
+    {
+        HashTable[input[i]-'\0']++;
+        length++;
+    }
+
+    for(int i=0; i<256; i++)
+    {
+        if(HashTable[i] == 1)
+        {
+            output[k++] = i;
+        }
+    }
+    output[k] = '\0';
+}
+

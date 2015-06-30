@@ -24,3 +24,11 @@ TEST_F(StringProcessTest, decode_test)
     decode(str_src);
     EXPECT_STREQ("I WOULD RATHER BE FIRST IN A LITTLE IBERIAN VILLAGE THAN SECOND IN ROME",str_src.c_str());
 }
+
+TEST_F(StringProcessTest, FindOne_test)
+{
+    char input[256] = "I love you";
+    char output[256];
+    FindOne(input, output);
+    EXPECT_STREQ(output, "Ieluvy");
+}
