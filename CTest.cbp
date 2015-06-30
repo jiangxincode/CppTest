@@ -14,9 +14,6 @@
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
-				<Linker>
-					<Add library="CLCDC\ws2_32\WS2_32.Lib" />
-				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/CTest" prefix_auto="1" extension_auto="1" />
@@ -36,7 +33,6 @@
 			<Add option="-std=c99" />
 			<Add directory="include/glib-2.0" />
 			<Add directory="lib/glib-2.0/include" />
-			<Add directory="include/dos" />
 			<Add directory="include" />
 		</Compiler>
 		<Linker>
@@ -47,6 +43,483 @@
 			<Add library="lib\gthread-2.0.lib" />
 			<Add directory="lib" />
 		</Linker>
+		<Unit filename="CLAH/Chap01/exp1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap01/exp2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap01/exp3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap01/exp4.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap02/c_comp_cos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap02/c_comp_divide.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap02/c_comp_example1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap02/c_comp_example2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap02/c_comp_exp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap02/c_comp_log.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap02/c_comp_nthroot.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap02/c_comp_plus.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap02/c_comp_power.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap02/c_comp_product.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap02/c_comp_sin.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap02/c_comp_sub.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap03/c2p.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap03/c2p0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap03/cpdiv.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap03/cpmd0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap03/cpmul.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap03/p2c.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap03/rp2va.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap03/rp2va0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap03/rpdiv.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap03/rpmd0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap03/rpmul.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap03/rpmva.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap03/rpmva0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap03/rpva.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/Tminv.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/Tminv0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/c_matinv0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/c_matmul.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/c_minv.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/jcb0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/jcb1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/jcb2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/matmul0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/mhdqr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/mhdqr0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/mhhbg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/minv0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/mst01.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/mst02.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/r_chdet.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/r_chol.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/r_chol0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/r_matlu0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/r_matmul.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/r_matsvd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/r_mdet.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/r_mdet0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/r_mlu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/r_mqr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/r_mqr0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/r_mrank.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/sd_matinv0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/sdminv.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/smdqr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/smldl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/smldl0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/smtr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap04/strqr0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/b_gsjd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/bmqr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/bmqr0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/c_gaus.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/c_gsjd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/cgs0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/chldl0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/gmqr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/gmqr0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/gsiter0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/gssd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/gstr0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/jaco.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/orelax.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/r_chde.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/r_chol.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/r_gaus.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/r_gsband.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/r_gsjd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/r_ldl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/r_mqr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/r_trzg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/rgs0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/smcg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/toepl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap05/toepl0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap06/aitkenroot.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap06/aitkenroot_example4.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap06/disroot.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap06/disroot_example1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap06/gradroot.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap06/gradroot_example7.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap06/interroot.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap06/interroot_example3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap06/mhdqr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap06/newdonroot.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap06/newdonroot_example2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap06/nndroot.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap06/nndroot_example8.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap06/qrroot.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap06/qrroot_example5.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap07/atken.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap07/atken0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap07/atkene.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap07/bspl0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap07/bspl1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap07/bspl2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap07/bspl3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap07/hmt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap07/hmt0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap07/hmte.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap07/lagr0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap07/lagr1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap07/lagr2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap07/lagr7.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap07/lfs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap07/lfs0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap07/spl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap07/spl0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap07/sple.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/cheb.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/gasi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/hemt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/inf10.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/inf20.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/inf30.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/lagr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/leg1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/lfsi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/lfsi0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/lfsi2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/lfsi20.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/mont1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/mont10.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/mont2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/mont20.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/rbg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/simps1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/simps2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/simps20.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/tzi0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/tzi1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap08/tzi2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap09/adams.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap09/bb.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap09/euler_example1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap09/euleradv.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap09/eulerinvh.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap09/eulervh.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap09/gillvh.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap09/hamming.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap09/lmu_example3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap09/rungekutta_example2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap09/rungekuttainvh.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CLAH/Chap09/rungekuttavh.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="CLAH/Chap10/lsq.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -407,483 +880,6 @@
 		<Unit filename="CLAH/Chap16/wolt0.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="CLAH/Chap1/exp1.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap1/exp2.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap1/exp3.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap1/exp4.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap2/c_comp_cos.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap2/c_comp_divide.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap2/c_comp_example1.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap2/c_comp_example2.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap2/c_comp_exp.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap2/c_comp_log.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap2/c_comp_nthroot.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap2/c_comp_plus.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap2/c_comp_power.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap2/c_comp_product.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap2/c_comp_sin.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap2/c_comp_sub.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap3/c2p.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap3/c2p0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap3/cpdiv.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap3/cpmd0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap3/cpmul.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap3/p2c.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap3/rp2va.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap3/rp2va0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap3/rpdiv.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap3/rpmd0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap3/rpmul.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap3/rpmva.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap3/rpmva0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap3/rpva.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/Tminv.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/Tminv0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/c_matinv0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/c_matmul.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/c_minv.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/jcb0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/jcb1.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/jcb2.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/matmul0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/mhdqr.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/mhdqr0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/mhhbg.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/minv0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/mst01.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/mst02.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/r_chdet.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/r_chol.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/r_chol0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/r_matlu0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/r_matmul.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/r_matsvd.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/r_mdet.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/r_mdet0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/r_mlu.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/r_mqr.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/r_mqr0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/r_mrank.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/sd_matinv0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/sdminv.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/smdqr.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/smldl.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/smldl0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/smtr.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap4/strqr0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/b_gsjd.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/bmqr.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/bmqr0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/c_gaus.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/c_gsjd.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/cgs0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/chldl0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/gmqr.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/gmqr0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/gsiter0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/gssd.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/gstr0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/jaco.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/orelax.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/r_chde.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/r_chol.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/r_gaus.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/r_gsband.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/r_gsjd.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/r_ldl.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/r_mqr.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/r_trzg.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/rgs0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/smcg.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/toepl.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap5/toepl0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap6/aitkenroot.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap6/aitkenroot_example4.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap6/disroot.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap6/disroot_example1.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap6/gradroot.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap6/gradroot_example7.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap6/interroot.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap6/interroot_example3.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap6/mhdqr.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap6/newdonroot.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap6/newdonroot_example2.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap6/nndroot.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap6/nndroot_example8.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap6/qrroot.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap6/qrroot_example5.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap7/atken.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap7/atken0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap7/atkene.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap7/bspl0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap7/bspl1.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap7/bspl2.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap7/bspl3.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap7/hmt.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap7/hmt0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap7/hmte.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap7/lagr0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap7/lagr1.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap7/lagr2.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap7/lagr7.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap7/lfs.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap7/lfs0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap7/spl.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap7/spl0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap7/sple.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/cheb.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/gasi.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/hemt.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/inf10.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/inf20.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/inf30.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/lagr.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/leg1.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/lfsi.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/lfsi0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/lfsi2.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/lfsi20.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/mont1.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/mont10.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/mont2.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/mont20.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/rbg.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/simps1.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/simps2.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/simps20.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/tzi0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/tzi1.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap8/tzi2.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap9/adams.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap9/bb.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap9/euler_example1.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap9/euleradv.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap9/eulerinvh.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap9/eulervh.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap9/gillvh.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap9/hamming.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap9/lmu_example3.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap9/rungekutta_example2.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap9/rungekuttainvh.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap9/rungekuttavh.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="CLAH/utility.h" />
 		<Unit filename="src/getopt.c">
 			<Option compilerVar="CC" />
@@ -924,13 +920,7 @@
 		<Unit filename="src/main0008.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="src/main0009.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="src/main0010.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/main0011.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/main0012.c">
@@ -1263,7 +1253,18 @@
 		<Unit filename="src/main1171.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/single_list.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/string_process.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/string_process.h" />
 		<Unit filename="src/tailor.h" />
+		<Unit filename="test/test.h" />
+		<Unit filename="test/test_string_process.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />
