@@ -1,4 +1,4 @@
-﻿#include<stdio.h>
+﻿#include <stdio.h>
 int main1029()
 {
     int a,b,c,d;

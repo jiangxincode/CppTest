@@ -1,4 +1,4 @@
-# ExerciseC
+# CTest
 
 jiangxinnju@163.com
 
@@ -28,9 +28,7 @@ http://github.com/jiangxincode
 * temp/ //临时输出文件所在的文件夹 不同步
 * data/ //测试输入文件以及其他需要长期存储的文件
 
-* SI_PROJECT/ //SourceInsight文件夹 不同步
-
-* src/ //所有源文件所在文件夹
+* src/ //源文件所在文件夹
 
 * main.c主函数
 * main.h主头文件

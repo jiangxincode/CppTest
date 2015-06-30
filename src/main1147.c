@@ -1,6 +1,6 @@
-﻿#include<stdio.h>
-#include<string.h>
-#include<ctype.h>
+﻿#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
 int  my_delete(char s[][10],int n)
 {

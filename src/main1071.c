@@ -1,5 +1,5 @@
-﻿#include<stdio.h>
-#include<math.h>
+﻿#include <stdio.h>
+#include <math.h>
 int main1071()
 {
     double term,s,x;

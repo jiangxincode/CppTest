@@ -1,5 +1,5 @@
-﻿#include<stdio.h>
-#include<math.h>
+﻿#include <stdio.h>
+#include <math.h>
 double term1112(double x,int n)
 {
     static double y=1;

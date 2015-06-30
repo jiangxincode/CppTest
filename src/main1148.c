@@ -1,6 +1,6 @@
-﻿#include<stdio.h>
-#include<string.h>
-#include<ctype.h>
+﻿#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
 int count1148(char a[], char w[][10], int n,int b[])
 {

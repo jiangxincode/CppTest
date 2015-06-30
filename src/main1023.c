@@ -1,4 +1,4 @@
-﻿#include<stdio.h>
+﻿#include <stdio.h>
 
 /**
  * 验证变量名长度的限制（与具体实现有关）

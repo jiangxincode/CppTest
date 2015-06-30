@@ -20,10 +20,10 @@
 当遇到操作符，从栈中取出两个数，进行计算后再放入栈中。
 继续扫描，知道扫描结束，此时值栈中的数值就是计算的结果，取出返回计算结果。
 */
-#include<stdio.h>
-#include<string.h>
-#include<math.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
 #define MAXSIZE 100 //定义宏，数组最大长度为100
 //函数实现中缀转后缀，将存储数学表达式的数组str传参进来，exp存储后缀表达式
 void trans(char str[],char exp[])

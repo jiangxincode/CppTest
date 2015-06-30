@@ -1,5 +1,5 @@
-﻿#include<stdio.h>
-#include<math.h>
+﻿#include <stdio.h>
+#include <math.h>
 
 
 double f1105(double a,double b,int n,double(*p)(double))

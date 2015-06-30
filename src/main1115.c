@@ -1,5 +1,5 @@
-﻿#include<stdio.h>
-#include<math.h>
+﻿#include <stdio.h>
+#include <math.h>
 int main1115()
 {
     int j,m=0,n1,n2,t[10],d[10];

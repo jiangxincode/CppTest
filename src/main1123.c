@@ -9,8 +9,8 @@
    处理前a数组： 1  2  3  4  5  6
    处理后a数组： 5  3  1  2  4  6
 */
-#include<stdio.h>
-#include<math.h>
+#include <stdio.h>
+#include <math.h>
 void movesort(int x[],int n)
 {
     int i,j,t,k,count,flag,a[3]= {0},b[3]= {0};

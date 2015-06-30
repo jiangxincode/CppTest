@@ -1,9 +1,9 @@
 ﻿/**
  * 教材实验14，第5题
  */
-#include<stdio.h>
-#include<string.h>
-#include<ctype.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
 typedef struct
 {

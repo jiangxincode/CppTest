@@ -1,5 +1,5 @@
-﻿#include<stdio.h>
-#include<math.h>
+﻿#include <stdio.h>
+#include <math.h>
 
 static int search(int x[],int low,int high,int key)
 {

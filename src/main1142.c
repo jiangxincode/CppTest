@@ -1,7 +1,7 @@
 ﻿/*编写一个程序，统计输入一行字符串中各个字母使用次数（大小写不区分），
 将次数不为零的字母及次数输出。*/
-#include<stdio.h>
-#include<ctype.h>
+#include <stdio.h>
+#include <ctype.h>
 int main1142()
 {
     int a[26]= {0},i;

@@ -3,7 +3,7 @@
  * 未解决
  */
 
-#include<stdio.h>
+#include <stdio.h>
 
 void line_sort(int a[][4],int b[],int n)
 {

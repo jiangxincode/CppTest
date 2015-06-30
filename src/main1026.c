@@ -1,4 +1,4 @@
-﻿#include<stdio.h>
+﻿#include <stdio.h>
 int main1026()
 {
     float a=11.111111111,b=66.666666666,c;

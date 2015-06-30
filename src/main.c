@@ -1,9 +1,12 @@
-﻿#include "main.h"
-#include "stdlib.h"
+﻿#include <stdlib.h>
+
+#include "main.h"
+#include "../test/test.h"
 
 /** \cond */
 int main(int argc,char* argv[])
 {
     test_string_process(argc, argv);
+    //main0001();
 }
 /** \endcond */

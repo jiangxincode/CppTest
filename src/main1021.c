@@ -1,4 +1,4 @@
-﻿#include<stdio.h>
+﻿#include <stdio.h>
 int main1021()
 {
     float x ,y ;

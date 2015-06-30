@@ -1,7 +1,7 @@
-﻿#include<stdio.h>
-#include<math.h>
-#include<ctype.h>
-#include<string.h>
+﻿#include <stdio.h>
+#include <math.h>
+#include <ctype.h>
+#include <string.h>
 
 #define MAX_YEAR_LIMIT 9999
 #define MAX_MONTH_LIMIT 12

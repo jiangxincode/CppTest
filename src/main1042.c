@@ -1,4 +1,4 @@
-﻿#include<stdio.h>
+﻿#include <stdio.h>
 
 enum color {red,green,blue};
 int main1042()

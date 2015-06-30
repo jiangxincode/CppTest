@@ -27,8 +27,8 @@ add()无法以返回值举报溢出，所以采用 strtol()的举报方法。不
 当然，应付溢出的最佳方法还是防范：充分了解数据的范围，选择恰当的变量类型。
 */
 
-#include<stdio.h>
-#include<errno.h>   /* errno, ERANGE */
+#include <stdio.h>
+#include <errno.h>   /* errno, ERANGE */
 /**
  * Returns the sum of a and b, with overflow and underflow check.
  * If overflow or underflow occurred, sets errno to ERANGE, else to 0.

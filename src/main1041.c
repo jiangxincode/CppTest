@@ -1,4 +1,4 @@
-﻿#include<stdio.h>
+﻿#include <stdio.h>
 #define  PRICE 10
 int main1041()
 {

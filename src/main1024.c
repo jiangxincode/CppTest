@@ -1,4 +1,4 @@
-﻿#include<stdio.h>
+﻿#include <stdio.h>
 int main1024()
 {
     printf("int size :%d\n",sizeof(int));

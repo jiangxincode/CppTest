@@ -1,6 +1,6 @@
-﻿#include<stdio.h>
-#include<string.h>
-#include<ctype.h>
+﻿#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 void f1144(char xx[])
 {
     int i,count=0;

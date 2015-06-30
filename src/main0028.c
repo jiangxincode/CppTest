@@ -12,10 +12,10 @@
 此时看操作符栈是否为空，若不为空，出栈，再从值栈中取出两个数值进行计算，将其结果存入值栈，一直进行此操作，
 直到操作符栈为空。此时把值栈中的数值取出，即为所得的最终计算结果。
 */
-#include<stdio.h>
-#include<string.h>
-#include<math.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
 
 #define MAXSIZE 100    //定义宏，数组最大长度为100
 

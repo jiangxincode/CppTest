@@ -1,6 +1,6 @@
-﻿#include<stdio.h>
-#include<string.h>
-#include<ctype.h>
+﻿#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
 int  find1146(char(*s1)[10],int m,char(*s2)[10],int n,char(*s3)[10])
 {

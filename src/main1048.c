@@ -1,4 +1,4 @@
-﻿#include<stdio.h>
+﻿#include <stdio.h>
 int main1048()
 {
     int i=100,n1,n2,n3,c,b;
