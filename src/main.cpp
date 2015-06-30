@@ -7,7 +7,7 @@ using namespace std;
 int main(int argc, char *argv[])
 {
 
-//#define TEST_METHOD
+#define TEST_METHOD
 
 #ifdef TEST_METHOD
     testing::InitGoogleTest(&argc, argv);

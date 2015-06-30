@@ -1,12 +1,14 @@
 ﻿//迷宫
+
 #include <stack>
 #include <iostream>
 #include <cstdio>
 
 using namespace std;
 
-// start : Postion(2, 1), end : Postion(6, 8)
-int maze[10][10] = {{ 0, 0, 0, 0,-1, 0, 0, 0, 0, 0},
+static int maze[10][10] =
+{
+    { 0, 0, 0, 0,-1, 0, 0, 0, 0, 0},
     { 0,-1,-1, 0, 0, 0, 0,-1, 0, 0},
     { 0, 0,-1, 0,-1, 0, 0,-1, 0,-1},
     { 0, 0,-1, 0,-1, 0, 0,-1, 0,-1},
@@ -18,24 +20,19 @@ int maze[10][10] = {{ 0, 0, 0, 0,-1, 0, 0, 0, 0, 0},
     { 0, 0, 0, 0, 0, 0, 0, 0, 0,-1}
 };
 
-
-
 struct Postion
 {
     int _X, _Y;
 
     Postion() {}
-    Postion(int X, int Y)
-        : _X(X), _Y(Y) {}
+    Postion(int X, int Y) : _X(X), _Y(Y) {}
 };
 
 static void printPath(stack<Postion> path)
 {
     while(!path.empty())
     {
-        printf("[%d][%d] ==>> [%2d]\n",
-               path.top()._X, path.top()._Y,
-               maze[path.top()._X][path.top()._Y]);
+        printf("[%d][%d] ==>> [%2d]\n",path.top()._X, path.top()._Y,maze[path.top()._X][path.top()._Y]);
         path.pop();
     }
 }
@@ -53,18 +50,13 @@ static void	printMat(int mat[10][10])
     }
 }
 
-static bool isCanGo(const int prePosValue,
-             const int posX,
-             const int posY)
+static bool isCanGo(const int prePosValue,const int posX,const int posY)
 {
-    if(posX < 0 || posX > 9		// 越界
-            || posY < 0 || posY > 9
-            || maze[posX][posY] == -1	// 墙
-            || maze[posX][posY] >= 1)	// 走过
+    //判定条件：不越界、不是墙，没走过
+    if(posX<0 || posX>9	|| posY<0 || posY>9 || maze[posX][posY] == -1 || maze[posX][posY] >= 1)
     {
         return false;
     }
-
     return true;
 }
 
@@ -73,12 +65,9 @@ static stack<Postion> path__;			// 路径
 
 static Postion offset[4];				// 偏移量
 
-static bool shortestPath(stack<Postion> &path,
-                  const Postion &start,
-                  const Postion &end)
+static bool shortestPath(stack<Postion> &path,const Postion &start,const Postion &end)
 {
-    if(start._X == end._X
-            && start._Y == end._Y)
+    if(start._X == end._X && start._Y == end._Y)
     {
         path__ = path;
         return true;
