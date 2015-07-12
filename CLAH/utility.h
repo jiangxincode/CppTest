@@ -10,11 +10,12 @@
 #define PI 3.1415926
 #define EPS 1.0e-6
 
-//Chapter02
+
+/* Chapter02 */
 struct c_comp
 {
-    double rmz; //real part
-    double imz; //imaginary part
+    double rmz; /* real part */
+    double imz; /* imaginary part */
 } c_comp;
 
 int c_comp_plus(const struct c_comp *a1,const struct c_comp *a2,struct c_comp *c);
@@ -29,8 +30,7 @@ int c_comp_sin(const struct c_comp *a,struct c_comp *c);
 int c_comp_cos(const struct c_comp *a,struct c_comp *c);
 
 
-
-//Chapter03
+/* Chapter03 */
 int c2p(struct c_comp *a,int n,struct c_comp *y);
 int p2c(struct c_comp *y,int n,struct c_comp *a);
 int cpmul(struct c_comp *a,int n,struct c_comp *b,int m,struct c_comp *c);
@@ -42,7 +42,7 @@ int rpmva(double *a,int n,double *x,int m,double *y);
 double rp2va(double *a,int m,int n,double x,double y);
 
 
-//Chapter04
+/* Chapter04 */
 int c_minv(struct c_comp *mat,int n,double eps);
 int c_matmul(struct c_comp *a, struct c_comp *b, int m, int p, int n, struct c_comp *c);
 int jcb1(double *a,int n,double *u,double eps,int itmax);
@@ -61,7 +61,7 @@ int smldl(double *mat,int n,double *L,double *D,double eps);
 int mhhbg(double *mat,int n,double *q,double eps);
 
 
-//Chapter05
+/* Chapter05 */
 int r_mqr(double *mat,int m,int n,double *q,double eps);
 int toepl(double *t,double *b,double *x,int n,double eps);
 int r_chol(double *mat,int n,double *u,double eps);
@@ -82,7 +82,7 @@ int r_gsjd(double *a,double *b,double *x,int n,double eps);
 int r_gaus(double *a,double *b,double *x,int n,double eps);
 
 
-//Chapter06
+/* Chapter06 */
 int interroot(double *x0,double ab,double(*f)(),double eps,int max);
 int newdonroot(double *x0,double(*f)(),double(*fd)(),double eps,int max);
 int qrroot(double *a,int n,double *u,double *v,double eps,int itmax);
@@ -92,7 +92,7 @@ int gradroot(double *x0,int n,double (*f)(),double eps,int max);
 int nndroot(double *x0,int n,void (*f)(),double eps,int max,double h,double t);
 
 
-//Chapter07
+/* Chapter07 */
 double lagr7(double *x,double *y,int n,double t);
 double atken(double *x,double *y,int n,double t,double eps);
 double atkene(double x,double h,double *y,int n,double t,double eps);
@@ -108,7 +108,7 @@ double sple(double x,double h,double *y,int n,double t,double eps);
 double lfs(double *x,double *y,int n,double t,double eps);
 
 
-//Chapter08
+/* Chapter08 */
 double lfsi(double a,double b,int n0,double eps,double(*f)(double));
 double mont1(double a,double b,double(*f)(double));
 double mont2(double x0,double x1,double y0,double y1,double(*f)());
@@ -125,7 +125,7 @@ double lfsi2(double a,double b,int n0,double eps,double(*f)(),void (*fy)());
 double leg1(double a,double b,int n0,double eps,double h0,double(*f)());
 
 
-//Chapter09
+/* Chapter09 */
 int rungekuttainvh(double *y,int n,double(*f)(),double h,int m,double a);
 int eulerinvh(double *y,int n,double(*f)(),double h,int m,double a);
 int eulervh(double *y,int n,double(*f)(),double h,int m,double a,double eps);
@@ -137,12 +137,12 @@ int rungekuttavh(double *y,int n,double (*f)(),double h,int m,double a,double ep
 int gillvh(double *y,int n,double (*f)(),double h,int m,double a,double eps);
 
 
-//Chapter10
+/* Chapter10 */
 int lsq(double *x,double *y,int n,double *p,int pp,double *s);
 int lsq2(double *x,double *y,double *z,int n,int m,double *p,int pp,int qq,double *s);
 
 
-// Chapter11
+/* Chapter11 */
 double frac(double *fab(int, double*),int nmax,double e1,double e0);
 double expi(int n,double x,double e1);
 double gammln(double x);
@@ -173,7 +173,7 @@ double Y0(double x);
 double Y1(double x);
 
 
-//Chapter12
+/* Chapter12 */
 double brent(double a, double b, double c, double(*f)(double), double *xopt, double eps, int itmax);
 void brake(double *a, double *b, double *c, double(*f)(double));
 double dirmin(double *x, double *p, double *xmin, int n, double(*f)(), double eps, int itmax);
@@ -188,7 +188,8 @@ int simp1(double d,int n,double lam,double alf,double miu,double *x,double *fx,d
 int simp2(int n,int m,double *a,double *b,double d,double alf,double eps,double *x,double *fx,double *xopt,int (*sf)(),double(*f)(),int itmax);
 int simplex(double *a,int n,int m1,int m2,int m3,int *ixr,int *ixc,double eps);
 
-//Chapter13
+
+/* Chapter13 */
 int c2test(int *a,int *e,int r,int k,int *v,double *c2,double alpha);
 int ftest(double *a,int na,double *b,int nb,double alpha);
 void mde(double *a,int n,double *mean,double *adev,double *sddev,double *var,double *skew,double *kurt);
@@ -199,10 +200,10 @@ int randuabs(int L,int a,int b,int * uab_ran);
 int ttest(double *a,int na,double *b,int nb,double alpha);
 int tutest(double *a,int na,double *b,int nb,double alpha);
 
-//Chapter14
+
+/* Chapter14 */
 #define STRU (struct student)
-#define KEY age
-//#define KEY name                                             /* 调用哈希函数需要的宏*/
+#define KEY age /* 调用哈希函数需要的宏*/
 #define NULLTag "\0"
 #define DELTag "1\0"
 #define HashSize 29
@@ -231,7 +232,7 @@ void ElemDEL(struct student *a);                                    /* 将元素
 void ElemNULL(struct student *a);                                   /* 将元素a设成空，用于初始化或清空哈希表*/
 
 
-//Chapter15
+/* Chapter15 */
 void cout(int *x,int *y,int n,int k);
 void heap(int *x,int n);
 void inst(int *x,int n);
@@ -242,7 +243,7 @@ void selt(int *x,int n);
 void shel(int *x,int n);
 
 
-//Chapter16
+/* Chapter16 */
 int dct(double * x,int n, double *y);
 int fft(struct c_comp *y,int n,struct c_comp *x);
 int wolt(double *y,int n,double *x);

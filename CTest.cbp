@@ -12,6 +12,9 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-Weffc++" />
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
 					<Add option="-g" />
 				</Compiler>
 			</Target>
@@ -280,9 +283,6 @@
 		<Unit filename="CLAH/Chap05/r_chde.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="CLAH/Chap05/r_chol.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="CLAH/Chap05/r_gaus.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -293,9 +293,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="CLAH/Chap05/r_ldl.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap05/r_mqr.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="CLAH/Chap05/r_trzg.c">
@@ -335,9 +332,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="CLAH/Chap06/interroot_example3.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap06/mhdqr.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="CLAH/Chap06/newdonroot.c">
@@ -574,9 +568,6 @@
 		<Unit filename="CLAH/Chap11/chii0.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="CLAH/Chap11/elp1.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="CLAH/Chap11/elp10.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -671,9 +662,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="CLAH/Chap12/goldsch0.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="CLAH/Chap12/lfs.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="CLAH/Chap12/powell.c">
