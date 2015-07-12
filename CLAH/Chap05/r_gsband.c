@@ -1,6 +1,5 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+﻿#include "../utility.h"
+
 /*======================================================
  * 函数名：r_sband
  * 功能描述：用高斯消去法解带型方程组
@@ -17,7 +16,7 @@ int r_gsband(double *a,double *b,double *x,int n,int h,double eps)
     if((a==NULL)||(b==NULL)||(x==NULL))             /* 检测输入的指针是否为空*/
     {
         printf("The pointer is NULL\n");
-        return(0);
+        return 0;
     }
 
     for(k=0; k<n; k++)
@@ -28,7 +27,7 @@ int r_gsband(double *a,double *b,double *x,int n,int h,double eps)
         if(fabs(a[l]) < eps)                           /* 判断主元是否过小*/
         {
             printf("failed.\n");
-            return(0);                                   /* 若主元过小则退出程序*/
+            return 0;                                   /* 若主元过小则退出程序*/
         }
 
         a[l] = 1.0/a[l];                              /* 取倒数将除法转化为乘法*/
@@ -67,5 +66,5 @@ int r_gsband(double *a,double *b,double *x,int n,int h,double eps)
         x[i] = b[i] - tmp;
     }
 
-    return(1);                                   /* 求解成功，返回1*/
+    return 1;                                   /* 求解成功，返回1*/
 }

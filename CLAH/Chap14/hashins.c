@@ -24,10 +24,10 @@ int hashins(struct student HT[HashSize],int m,struct student a)
 
         if(d == temp)                             /* 这时插入失败*/
         {
-            return(0);
+            return 0;
         }
     }
 
     ElemCP(&HT[d], &a);                             /* 将a中内容拷贝到哈希表中*/
-    return(1);
+    return 1;
 }

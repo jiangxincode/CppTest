@@ -27,5 +27,5 @@ int kabg(double *x,int n,double *y,double h,double alfa,double beta,double gama)
         a = a + 0.5*gama*tmp*invh2;              /* 递推的中间变量a*/
     }
 
-    return(1);
+    return 1;
 }

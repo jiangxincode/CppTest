@@ -1,4 +1,6 @@
-﻿/*======================================================
+﻿#include "../utility.h"
+
+/*======================================================
  * 函数名：gradroot
  * 功能描述：求非线性方程组的一组实根
  * 输入参数：*x0（指向迭代初 * 返回值值和终值的指针）
@@ -8,10 +10,6 @@
  *          max（最大迭代次数）
  * 返回值：0（迭代失败），1（迭代成功）
 =========================================================*/
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
-
 int gradroot(double *x0,int n,double (*f)(),double eps,int max)
 {
     double F,*FD,D,lam;
@@ -21,7 +19,7 @@ int gradroot(double *x0,int n,double (*f)(),double eps,int max)
     if(FD==NULL)
     {
         printf("memory alloc failed.\n");
-        return(0);
+        return 0;
     }
 
     do
@@ -47,7 +45,7 @@ int gradroot(double *x0,int n,double (*f)(),double eps,int max)
         }
         else
         {
-            return(1);
+            return 1;
         }
     }
     while(num<max);

@@ -1,4 +1,6 @@
-﻿/*======================================================
+﻿#include "../utility.h"
+
+/*======================================================
  * 函数名：gmqr
  * 功能描述：用QR分解法解对称方程组
  * 输入参数：a 解系数矩阵，b 常数矩阵，x返回的解向量
@@ -6,11 +8,6 @@
  *           eps 精度要求，小于eps的值，认为是0。
  * 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include "../utility.h"
-
 int gmqr(double *a,double *b,double *x,int m,int n,double eps)
 {
     int i,k;
@@ -19,13 +16,13 @@ int gmqr(double *a,double *b,double *x,int m,int n,double eps)
     if((a==NULL)||(b==NULL)||(x==NULL))            /* 检测输入的指针是否为空*/
     {
         printf("The pointer is NULL\n");
-        return(0);
+        return 0;
     }
 
     if(m<n)
     {
         printf("m<n, QR decomposition failed\n");
-        return(0);
+        return 0;
     }
 
     c = (double *)malloc(m*sizeof(double));
@@ -36,7 +33,7 @@ int gmqr(double *a,double *b,double *x,int m,int n,double eps)
         free(c);                                      /* 释放空间*/
         free(q);
         printf("Memory alloc failed\n");
-        return(0);
+        return 0;
     }
 
     i = r_mqr(a,m,n,q,eps);                        /* 调用函数进行QR分解*/
@@ -46,7 +43,7 @@ int gmqr(double *a,double *b,double *x,int m,int n,double eps)
         free(c);                                      /* 释放空间*/
         free(q);
         printf("QR decomposition failed\n");
-        return(0);
+        return 0;
     }
 
     for(i=0; i<n; i++)                             /* 求出c*/
@@ -75,5 +72,5 @@ int gmqr(double *a,double *b,double *x,int m,int n,double eps)
 
     free(c);                                      /* 释放空间*/
     free(q);
-    return(1);
+    return 1;
 }

@@ -10,9 +10,7 @@
  */
 int bist(int *x,int n,int a)
 {
-    int s,t,k;
-    s = 0;                             /* 设置初值*/
-    t = n-1;
+    int s = 0,t = n-1,k;
 
     do
     {
@@ -20,11 +18,11 @@ int bist(int *x,int n,int a)
         {
             if(x[t] == a)
             {
-                return(t);
+                return t;
             }
             else
             {
-                return(-1);
+                return -1;
             }
         }
 

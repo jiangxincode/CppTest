@@ -12,7 +12,7 @@ int main8mont10()
     printf("tzi1: t=%2.5f\n",z);                /* 打印结果*/
     z = mont1(a,b,f1);                          /* 用蒙特卡洛法积分*/
     printf("mont1: t=%2.5f\n",z);
-    getchar();
+    return 0;
 }
 
 static double f1(double x)                                    /* 被积分的函数*/

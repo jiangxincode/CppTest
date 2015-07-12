@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 static double f(double);
 int main6aitkenroot4()
 {

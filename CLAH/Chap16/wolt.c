@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 /*=============================================================
  * 函 数 名：wolt1 (x,n,y)
  * 功能描述：沃尔什变换
@@ -22,7 +23,7 @@ int wolt(double *y,int n,double *x)
     if(nn != n)
     {
         printf("n should be 2^k.\n");
-        return(0);
+        return 0;
     }
 
     j = wolt1(y,n,x);		                       /* 调用子函数求解求和符号中的部分*/
@@ -48,7 +49,7 @@ static int wolt1(double *x,int n,double *y)
     {
         /* 当序列长度为1时，沃尔什变换是它本身*/
         y[0] = x[0];
-        return(1);
+        return 1;
     }
 
     k = n>>1;		               /* k是n的一半，即两个小规模问题需要分配空间大小*/
@@ -60,7 +61,7 @@ static int wolt1(double *x,int n,double *y)
     if((x0==NULL)||(x1==NULL)||(y0==NULL)||(y1==NULL))
     {
         printf("memory xlloc failed.\n");
-        return(0);
+        return 0;
     }			                                      /* 将序列分成两半*/
 
     for(i=0; i<k; i++)
@@ -87,5 +88,5 @@ static int wolt1(double *x,int n,double *y)
     free(y1);
     free(x0);
     free(x1);
-    return(1);
+    return 1;
 }

@@ -1,6 +1,5 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+﻿#include "../utility.h"
+
 /*======================================================
  * 函数名：r_trzg
  * 功能描述：用追赶法解线性方程组
@@ -15,7 +14,7 @@ int r_trzg(double *a,double *b,double *x,int n,double eps)
     if((a==NULL)||(b==NULL)||(x==NULL))             /* 检测输入的指针是否为空*/
     {
         printf("The pointer is NULL\n");
-        return(0);
+        return 0;
     }
 
     for(k=0; k<n-1; k++)
@@ -25,7 +24,7 @@ int r_trzg(double *a,double *b,double *x,int n,double eps)
         if(fabs(a[l]) < eps)                          /* 判断主元是否过小*/
         {
             printf("failed.\n");                        /* 主元过小则求解失败*/
-            return(0);                                  /* 若主元过小则退出程序*/
+            return 0;                                  /* 若主元过小则退出程序*/
         }
 
         a[l+1] = a[l+1]/a[l];                         /* 归一化计算*/
@@ -41,5 +40,5 @@ int r_trzg(double *a,double *b,double *x,int n,double eps)
         x[i] = b[i] - a[i*n+i+1]*x[i+1];
     }
 
-    return(1);                                     /* 求解成功，返回1*/
+    return 1;                                     /* 求解成功，返回1*/
 }

@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 int main4jcb0()
 {
     int i,itmax=60;

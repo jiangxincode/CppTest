@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include "conio.h"
-#include <stdlib.h>
-
-#include "../utility.h"
+﻿#include "../utility.h"
 
 int main4c_matinv0()
 {

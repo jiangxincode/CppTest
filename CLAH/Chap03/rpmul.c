@@ -1,4 +1,4 @@
-﻿#include <stdio.h>
+﻿#include "../utility.h"
 
 /**
  * 函 数 名：rpmul(a,n,b,m,c)
@@ -15,7 +15,7 @@ int rpmul(double *a,int n,double *b,int m,double *c)
     if((a==NULL) || (b==NULL) || (c==NULL))
     {
         printf("rpmul)NULL pointer found.\n");
-        return(0);
+        return 0;
     }
 
     k = m+n-1;	 	/* 相乘后的系数个数*/
@@ -31,5 +31,5 @@ int rpmul(double *a,int n,double *b,int m,double *c)
             c[i+j] += a[i]*b[j];
         }
 
-    return(1);
+    return 1;
 }

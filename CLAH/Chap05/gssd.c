@@ -1,6 +1,5 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+﻿#include "../utility.h"
+
 /*======================================================
  * 函数名：gssd
  * 功能描述：用高斯－雅克比迭代法解方程组
@@ -17,7 +16,7 @@ int gssd(double *a,double *b,double *x,int n,double eps,int iter)
     if((a==NULL)||(b==NULL)||(x==NULL))            /* 检测输入的指针是否为空*/
     {
         printf("The pointer is NULL\n");
-        return(0);
+        return 0;
     }
 
     x2 = (double *)malloc(n*sizeof(double));       /* 分配空间并检测是否成功*/
@@ -25,14 +24,14 @@ int gssd(double *a,double *b,double *x,int n,double eps,int iter)
     if(x2==NULL)
     {
         printf("Memory alloc failed\n");
-        return(0);
+        return 0;
     }
 
     for(i=0; i<n; i++)
         if(fabs(a[i*n+i]) < 1e-12)               /* 因为要做除数，需要检查是否过小*/
         {
             printf("A[%d,%d] is too small,cannot converged",i,i);
-            return(0);
+            return 0;
         }
 
     for(i=0; i<n; i++)                        /* 对解向量赋初值*/

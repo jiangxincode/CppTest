@@ -1,6 +1,4 @@
-﻿#include <math.h>
-#include <stdlib.h>
-#include <stdio.h>
+﻿#include "../utility.h"
 
 /**
  * 函 数 名：rpmva(a,n,x,m,y)
@@ -28,7 +26,7 @@ int rpmva(double *a,int n,double *x,int m,double *y)
     if(a1+1.0 == 1.0)
     {
         printf("(rpmva)coefficient too small,please check.\n");
-        return(0);
+        return 0;
     }
 
     /* b用来存放系数分解的中间结果，ax用来存放迭代计算的结果*/
@@ -117,5 +115,5 @@ int rpmva(double *a,int n,double *x,int m,double *y)
 
     free(b);
     free(ax);
-    return(1);
+    return 1;
 }

@@ -1,4 +1,6 @@
-﻿/*======================================================
+﻿#include "../utility.h"
+
+/*======================================================
  * 函数名：nndroot
  * 功能描述：求非线性方程组的一组实根
  * 输入参数：*x0（指向迭代初值和终值的指针），
@@ -7,8 +9,6 @@
  *           h（差商中的微小变量），t（放缩系数）
  * 返回值：0（迭代失败），1（迭代成功）
 =========================================================*/
-#include "../utility.h"
-
 int nndroot(double *x0,int n,void (*f)(),double eps,int max,double h,double t)
 {
     double *f0,*fi,*fx,*dl,dis,sum;
@@ -21,7 +21,7 @@ int nndroot(double *x0,int n,void (*f)(),double eps,int max,double h,double t)
     if(f0==NULL||fx==NULL||fi==NULL||dl==NULL)
     {
         printf("memory alloc failed.\n");
-        return(0);
+        return 0;
     }
 
     do
@@ -42,7 +42,7 @@ int nndroot(double *x0,int n,void (*f)(),double eps,int max,double h,double t)
         {
             if(r_gaus(fi,f0,fx,n,1e-8)==0)    /* 调用高斯消去法，解线性方程组*/
             {
-                return(0);
+                return 0;
             }
             else
             {
@@ -66,7 +66,7 @@ int nndroot(double *x0,int n,void (*f)(),double eps,int max,double h,double t)
         }
         else
         {
-            return(1);
+            return 1;
         }
     }
     while(num<max);

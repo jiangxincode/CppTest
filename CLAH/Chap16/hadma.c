@@ -1,12 +1,11 @@
-﻿/*=============================================================
+﻿#include "../utility.h"
+
+/*=============================================================
  * 函 数 名：hadma1 (x,n,y)
  * 功能描述：哈达玛变换
  * 输入参数：x（变换初始值），n（系数个数）、y（变换后序列）
  * 返 回 值：整型数字。计算成功则返回1，否则返回0
 //==============================================================*/
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
 static int hadma1(double *x,int n,double *y);    /* 因为要递归调用，所以先声明*/
 int hadma(double *y,int n,double *x)
 {
@@ -23,7 +22,7 @@ int hadma(double *y,int n,double *x)
     if(nn != n)
     {
         printf("n should be 2^k.\n");
-        return(0);
+        return 0;
     }
 
     j = hadma1(y,n,x);		                       /* 调用子函数求解求和符号中的部分*/
@@ -51,7 +50,7 @@ double *x,*y;
     {
         /* 当序列长度为1时，沃尔什变换是它本身*/
         y[0] = x[0];
-        return(1);
+        return 1;
     }
 
     k = n>>1;		                     /* k是n的一半，即两个小规模问题需要分配空间大小*/
@@ -69,5 +68,5 @@ double *x,*y;
         }
     }
 
-    return(1);
+    return 1;
 }

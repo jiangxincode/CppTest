@@ -1,4 +1,6 @@
-﻿/*======================================================
+﻿#include "../utility.h"
+
+/*======================================================
  * 函数名：Tminv
  * 功能描述：Toeplitz矩阵快速求逆
  * 输入参数：t1 双精度实型一 * 返回值维数组的指针?
@@ -10,10 +12,6 @@
             eps 精度要求，绝对值小于此数的值认为是0
  * 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
-
 int Tminv(double *t1,double *t2,int n,double *mat,double eps)
 {
     int i,j,k,l;
@@ -29,7 +27,7 @@ int Tminv(double *t1,double *t2,int n,double *mat,double eps)
         free(r);
         free(p);
         printf("Fail to invert\n");
-        return(0);
+        return 0;
     }
 
     a = t1[0];                                /* 计算初值*/
@@ -69,7 +67,7 @@ int Tminv(double *t1,double *t2,int n,double *mat,double eps)
             free(r);
             free(p);
             printf("Fail to invert\n");
-            return(0);
+            return 0;
         }
     }
 
@@ -90,5 +88,5 @@ int Tminv(double *t1,double *t2,int n,double *mat,double eps)
     free(c);                            /* 释放空间*/
     free(r);
     free(p);
-    return(1);
+    return 1;
 }

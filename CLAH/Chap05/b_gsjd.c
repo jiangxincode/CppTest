@@ -1,6 +1,5 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+﻿#include "../utility.h"
+
 /*======================================================
  * 函数名：b_gsjd
  * 功能描述：用高斯消去法解线性方程组
@@ -16,7 +15,7 @@ int b_gsjd(double *a,double *b,double *x,int n,double eps)
     if((a==NULL)||(b==NULL)||(x==NULL))             /* 检测输入的指针是否为空*/
     {
         printf("The pointer is NULL\n");
-        return(0);
+        return 0;
     }
 
     js = malloc(n*sizeof(int));          /* 为列交换记录分配空间并检测是否成功*/
@@ -24,7 +23,7 @@ int b_gsjd(double *a,double *b,double *x,int n,double eps)
     if(js == NULL)
     {
         printf("Memory alloc failed\n");
-        return(0);
+        return 0;
     }
 
     for(k=0; k<n; k++)
@@ -49,7 +48,7 @@ int b_gsjd(double *a,double *b,double *x,int n,double eps)
         {
             free(js);
             printf("failed.\n");
-            return(0);                                    /* 若主元过小则退出程序*/
+            return 0;                                    /* 若主元过小则退出程序*/
         }
 
         if(is!=k)                                       /* 判断是否需要行交换*/
@@ -126,5 +125,5 @@ int b_gsjd(double *a,double *b,double *x,int n,double eps)
     }
 
     free(js);                                    /* 释放分配的空间*/
-    return(1);                                   /* 求解成功，返回1*/
+    return 1;                                   /* 求解成功，返回1*/
 }

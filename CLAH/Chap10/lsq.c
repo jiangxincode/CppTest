@@ -22,7 +22,7 @@ int lsq(double *x,double *y,int n,double *p,int pp,double *s)
     if(!(x && y && p && s))                           /* 检测输入指针是否为空*/
     {
         printf("Pointer is Null\n");
-        return(0);
+        return 0;
     }
 
     q0 = (double*)malloc(pp*sizeof(double));          /* 分配空间并检测是否成功*/
@@ -35,7 +35,7 @@ int lsq(double *x,double *y,int n,double *p,int pp,double *s)
         free(q1);
         free(q2);
         printf("Memory alloc Failed\n");
-        return(0);
+        return 0;
     }
 
     x0 = (double*)malloc(n*sizeof(double));
@@ -50,7 +50,7 @@ int lsq(double *x,double *y,int n,double *p,int pp,double *s)
         free(q1y);
         free(q2y);
         printf("Memory alloc Failed\n");
-        return(0);
+        return 0;
     }
 
     t=0.0;
@@ -186,5 +186,5 @@ int lsq(double *x,double *y,int n,double *p,int pp,double *s)
     free(q0y);
     free(q1y);
     free(q2y);
-    return(1);
+    return 1;
 }

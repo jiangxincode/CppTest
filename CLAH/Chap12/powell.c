@@ -22,7 +22,7 @@ int powell(double *x, double *ee, double *xmin, int n, double *y0, double(*f)(),
     if(n>20)                                          /* 我们处理n<＝20的情况*/
     {
         printf("you'd better simplify the problem\n");
-        return(0);
+        return 0;
     }
 
     *y0 = (*f)(x,n);                                  /* 初始的函数值*/

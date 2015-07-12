@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main1exp4()
+int exp4()
 {
     int n;
     double x;

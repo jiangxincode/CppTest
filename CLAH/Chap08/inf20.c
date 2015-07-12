@@ -1,5 +1,5 @@
-﻿
-#include "../utility.h"
+﻿#include "../utility.h"
+
 static double f1(),f2();
 int main8inf20()
 {

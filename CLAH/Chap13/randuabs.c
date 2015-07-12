@@ -15,7 +15,7 @@ int randuabs(int L,int a,int b,int * uab_ran)
     if(u_ran==NULL)
     {
         printf("memory alloc failed.\n");
-        return(0);
+        return 0;
     }
 
     srand((unsigned)time(0));                     /* 用系统时钟做种子*/
@@ -26,6 +26,6 @@ int randuabs(int L,int a,int b,int * uab_ran)
         uab_ran[i]=(int)(u_ran[i]*(b-a+1))+a;
     }
 
-    return(1);
+    return 1;
 }
 

@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 /*======================================================
  * 函数名：r_mlu
  * 功能描述：全选主元的LU分解
@@ -17,7 +18,7 @@ int r_mlu(double *mat,int n,double *L,double *U,double *P,double *Q,double eps)
     if((mat==NULL)||(L==NULL)||(U==NULL)||(P==NULL)||(Q==NULL)) /* 检测指针是否为空*/
     {
         printf("One of the pointer is NULL\n");            /* 若为空则打印错误消息，函数结束*/
-        return(0);
+        return 0;
     }
 
     for(i=0; i<n; i++)                                   /* 为P，Q矩阵赋初值为单位阵*/
@@ -52,7 +53,7 @@ int r_mlu(double *mat,int n,double *L,double *U,double *P,double *Q,double eps)
         if(pivot < eps)                                     /* 判断主元是否为0*/
         {
             printf("Fail\n");                                 /* 若主元为0,则函数结束*/
-            return(0);
+            return 0;
         }
 
         if(is != k)                                         /* 判断是否需要行交换*/
@@ -123,5 +124,5 @@ int r_mlu(double *mat,int n,double *L,double *U,double *P,double *Q,double eps)
             }
         }
 
-    return(1);
+    return 1;
 }

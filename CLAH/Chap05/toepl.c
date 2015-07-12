@@ -1,4 +1,6 @@
-﻿/*======================================================
+﻿#include "../utility.h"
+
+/*======================================================
  * 函数名：toepl
  * 功能描述：求解托伯利兹方程组
  * 输入参数：t 指向存放n阶托伯利兹矩阵元素的数组的指针
@@ -8,10 +10,6 @@
  *          eps 精度要求，小于此值的数据认为是0
  * 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-
 int toepl(double *t,double *b,double *x,int n,double eps)
 {
     int i,j,k;
@@ -20,7 +18,7 @@ int toepl(double *t,double *b,double *x,int n,double eps)
     if((t==NULL)||(b==NULL)||(x==NULL))                /* 检测指针是否为空*/
     {
         printf("One of the pointer is NULL\n");          /* 若为空则打印错误消息，函数结束*/
-        return(0);
+        return 0;
     }
 
     y = (double*)malloc(n*sizeof(double));
@@ -31,7 +29,7 @@ int toepl(double *t,double *b,double *x,int n,double eps)
         printf("Memory alloc failed\n");
         free(y);
         free(yy);
-        return(0);
+        return 0;
     }
 
     for(i=0; i<n; i++)                                 /* 将y和yy数组赋初值为零*/
@@ -45,7 +43,7 @@ int toepl(double *t,double *b,double *x,int n,double eps)
         free(y);
         free(yy);
         printf("Failed.\n");
-        return(0);
+        return 0;
     }
 
     y[0] = 1.0/t[0];                                   /* 设定初值*/
@@ -67,7 +65,7 @@ int toepl(double *t,double *b,double *x,int n,double eps)
             free(y);
             free(yy);
             printf("Failed.\n");
-            return(0);
+            return 0;
         }
 
         p = 1.0/s1;                                     /* 计算p和s*/
@@ -104,5 +102,5 @@ int toepl(double *t,double *b,double *x,int n,double eps)
 
     free(y);
     free(yy);
-    return(1);
+    return 1;
 }

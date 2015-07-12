@@ -1,4 +1,6 @@
-﻿/*======================================================
+﻿#include "../utility.h"
+
+/**
  * 函数名：r_mqr
  * 功能描述：矩阵的QR分解
  * 输入参数：mat 指向待分解的矩阵的指针，返回是存放矩阵R
@@ -6,14 +8,8 @@
             q   指向返回Q矩阵的指针
             eps 精度要求，小于此值的数据认为是0
  * 返回值：整型。运行成功则返回1,失败则返回0
-=========================================================*/
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-
-static int r_mqr(mat,m,n,q,eps)
-double *mat,*q,eps;
-int m,n;
+ */
+int r_mqr(double *mat,int m,int n,double *q,double eps)
 {
     int i,j,k,l,p;
     double u,alpha,t;
@@ -21,13 +17,13 @@ int m,n;
     if((mat==NULL) || (q==NULL))               /* 检测指针是否为空*/
     {
         printf("The matrix pointer is NULL\n");
-        return(0);
+        return 0;
     }
 
     if(m<n)                                    /* 要求矩阵维数必须满足m>n*/
     {
         printf("Fail\n");
-        return(0);
+        return 0;
     }
 
     for(i=0; i<m; i++)                         /* Q矩阵赋初值成单位阵*/
@@ -66,7 +62,7 @@ int m,n;
         if(alpha < eps)                          /* 判断alpha值是否近似为0*/
         {
             printf("Fail\n");                      /* 若alpha值过小，则计算终止*/
-            return(0);
+            return 0;
         }
 
         t = mat[l];
@@ -140,5 +136,5 @@ int m,n;
             q[l] = t;
         }
 
-    return(1);
+    return 1;
 }

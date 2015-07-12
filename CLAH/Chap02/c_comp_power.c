@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-
-#include "../utility.h"
+﻿#include "../utility.h"
 
 /**
  * 函数名：c_comp_power.c
@@ -13,12 +9,12 @@
  * 返回值：0（失败），1（成功）
  */
 
-int c_comp_power(struct c_comp *a,struct c_comp *c,int n)
+int c_comp_power(const struct c_comp *a,struct c_comp *c,const int n)
 {
     if(a == NULL || c == NULL)
     {
         printf("(c_comp_power)The c_comp pointer is NULL!\n");
-        return(0);
+        return 0;
     }
 
     double theta = atan2(a->imz,a->rmz);
@@ -27,5 +23,5 @@ int c_comp_power(struct c_comp *a,struct c_comp *c,int n)
     R = pow(R,n);
     c->rmz = R*cos(theta);
     c->imz = R*sin(theta);
-    return(1);
+    return 1;
 }

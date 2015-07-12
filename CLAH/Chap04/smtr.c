@@ -1,4 +1,6 @@
-﻿/*======================================================
+﻿#include "../utility.h"
+
+/*======================================================
  * 函数名：smtr
  * 功能描述：矩阵相似变换为三对角矩阵
  * 输入参数：mat 指向待分解的矩阵的指针，返回时存放三对角阵
@@ -7,10 +9,6 @@
             eps 精度要求，小于此值的数据认为是0
  * 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-
 int smtr(double *mat,int n,double *q,double eps)
 {
     int i,j,k,l,m,p;
@@ -19,7 +17,7 @@ int smtr(double *mat,int n,double *q,double eps)
     if((mat==NULL)||(q==NULL))      /* 检测指针是否为空*/
     {
         printf("The matrix pointer is NULL\n");
-        return(0);
+        return 0;
     }
 
     tmp = (double*)malloc(n*sizeof(double));   /* 为临时变量分配空间*/
@@ -61,7 +59,7 @@ int smtr(double *mat,int n,double *q,double eps)
         {
             printf("Fail\n");                       /* 若alpha值过小，则计算终止*/
             free(tmp);
-            return(0);
+            return 0;
         }
 
         t = mat[l];
@@ -150,6 +148,6 @@ int smtr(double *mat,int n,double *q,double eps)
         }
 
     free(tmp);
-    return(1);
+    return 1;
 }
 

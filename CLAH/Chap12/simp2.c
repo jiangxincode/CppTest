@@ -56,7 +56,7 @@ int simp2(int n,int m,double *a,double *b,double d,double alf,double eps,double 
             free(xt);
             free(xc);
             printf("imput x0 is out of range\n");
-            return(0);
+            return 0;
         }
 
     if(!(*sf)(xopt))
@@ -64,7 +64,7 @@ int simp2(int n,int m,double *a,double *b,double d,double alf,double eps,double 
         free(xt);
         free(xc);
         printf("imput x0 is out of range\n");
-        return(0);
+        return 0;
     }
 
     for(j=0; j<n; j++)
@@ -139,7 +139,7 @@ int simp2(int n,int m,double *a,double *b,double d,double alf,double eps,double 
             free(xt);
             free(xc);
             printf("simplex construction failed\n");
-            return(0);
+            return 0;
         }
 
         fx[i] = (*f)(&x[in]);                                  /* 求出在各个顶点上的函数值*/

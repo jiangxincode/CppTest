@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
-
-#include "../utility.h"
+﻿#include "../utility.h"
 
 /*=============================================================
  * 函 数 名：ifft (y,n,x)
@@ -25,7 +21,7 @@ int ifft(struct c_comp *y,int n,struct c_comp *x)
     if(nn != n)
     {
         printf("(ifft)n should be 2^k.\n");
-        return(0);
+        return 0;
     }
 
     j = ifft1(y,n,x);		                       /* 调用子函数求解求和符号中的部分*/
@@ -54,7 +50,7 @@ struct c_comp *x,*y;
     {
         x[0].rmz = y[0].rmz;
         x[0].imz = y[0].imz;
-        return(1);
+        return 1;
     }
 
     k = n>>1;			                     /*k是n的一半，就是两个小规模问题分配空间的大小*/
@@ -66,7 +62,7 @@ struct c_comp *x,*y;
     if((x0==NULL)||(x1==NULL)||(y0==NULL)||(y1==NULL))
     {
         printf("(ifft)memory xlloc fxiled.\n");
-        return(0);
+        return 0;
     }
 
     for(i=0; i<k; i++)	                         /* 将问题分成两段*/
@@ -101,5 +97,5 @@ struct c_comp *x,*y;
     free(y1);
     free(x0);
     free(x1);
-    return(1);
+    return 1;
 }

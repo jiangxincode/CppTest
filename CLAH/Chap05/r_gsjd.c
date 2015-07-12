@@ -1,14 +1,12 @@
-﻿/*======================================================
+﻿#include "../utility.h"
+
+/*======================================================
  * 函数名：r_gsjd
  * 功能描述：用高斯消去法解线性方程组
  * 输入参数：a 解系数矩阵，b 常数矩阵，x返回的解向量
  *           n 未知数个数，eps 精度要求，小于eps的值，认为是0。
  * 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-
 int r_gsjd(double *a,double *b,double *x,int n,double eps)
 {
     int i,j,k,l,v,exis,*exjs;
@@ -17,7 +15,7 @@ int r_gsjd(double *a,double *b,double *x,int n,double eps)
     if((a==NULL)||(b==NULL)||(x==NULL))             /* 检测输入的指针是否为空*/
     {
         printf("The pointer exis NULL\n");
-        return(0);
+        return 0;
     }
 
     exjs = malloc(n*sizeof(int));          /* 为列交换记录分配空间并检测是否成功*/
@@ -25,7 +23,7 @@ int r_gsjd(double *a,double *b,double *x,int n,double eps)
     if(exjs == NULL)
     {
         printf("Memory alloc failed\n");
-        return(0);
+        return 0;
     }
 
     for(k=0; k<n; k++)
@@ -50,7 +48,7 @@ int r_gsjd(double *a,double *b,double *x,int n,double eps)
         {
             free(exjs);
             printf("failed.\n");
-            return(0);                                    /* 若主元过小则退出程序*/
+            return 0;                                    /* 若主元过小则退出程序*/
         }
 
         if(exis!=k)                                       /* 判断是否需要行交换*/
@@ -120,5 +118,5 @@ int r_gsjd(double *a,double *b,double *x,int n,double eps)
     }
 
     free(exjs);                                  /* 释放分配的空间*/
-    return(1);                                 /* 求解成功，返回1*/
+    return 1;                                 /* 求解成功，返回1*/
 }

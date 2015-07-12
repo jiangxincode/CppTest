@@ -1,7 +1,4 @@
-﻿#include <stdlib.h>
-#include <stdio.h>
-
-#include "../utility.h"
+﻿#include "../utility.h"
 
 /**
  * 函数名：adams
@@ -25,7 +22,7 @@ int adams(double *y,int n,double(*f)(),double h,int m,double a)
     if(f1==NULL||f2==NULL||f3==NULL||f4==NULL||f5==NULL||ytemp==NULL)
     {
         printf("memory alloc failed.\n");
-        return(0);
+        return 0;
     }
 
     rungekuttainvh(y,n,f,h,3,a);                        /* 用龙格-库塔法计算前4个初值*/

@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 int main4smldl0()
 {
     int i,j;

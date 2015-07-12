@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 int main7spl0()
 {
     int n;

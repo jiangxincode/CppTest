@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 static double f1(double);
 int main8inf30()
 {

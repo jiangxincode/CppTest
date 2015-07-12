@@ -16,6 +16,6 @@ int randu01s(int L,double *u_ran)
         u_ran[i]=rand()/(double)RAND_MAX;    /* 生成(0,1)随机数，L次 */
     }
 
-    return(1);
+    return 1;
 }
 

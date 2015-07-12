@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
-
-#include"../utility.h"
+﻿#include"../utility.h"
 
 /*=============================================================
  * 函 数 名：fft (x,n,y)
@@ -25,7 +21,7 @@ int fft(struct c_comp *y,int n,struct c_comp *x)
     if(nn != n)
     {
         printf("n should be 2^k.\n");
-        return(0);
+        return 0;
     }
 
     j = fft0(y,n,x);		                       /* 调用子函数计算傅里叶变换*/
@@ -45,7 +41,7 @@ struct c_comp *x,*y;
         /* 当序列长度为1时，傅里叶变换是它本身*/
         y[0].rmz = x[0].rmz;
         y[0].imz = x[0].imz;
-        return(1);
+        return 1;
     }
 
     k = n>>1;		               /* k是n的一半，即两个小规模问题需要分配空间大小*/
@@ -57,7 +53,7 @@ struct c_comp *x,*y;
     if((x0==NULL)||(x1==NULL)||(y0==NULL)||(y1==NULL))
     {
         printf("memory xlloc fxiled.\n");
-        return(0);
+        return 0;
     }			                                      /* 将序列分成两半*/
 
     for(i=0; i<k; i++)
@@ -93,5 +89,5 @@ struct c_comp *x,*y;
     free(y1);
     free(x0);
     free(x1);
-    return(1);
+    return 1;
 }

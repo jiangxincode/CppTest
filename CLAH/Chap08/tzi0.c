@@ -1,5 +1,4 @@
-﻿
-#include "../utility.h"
+﻿#include "../utility.h"
 
 static double f1(double);
 

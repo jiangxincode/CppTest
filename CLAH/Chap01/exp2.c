@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main1exp2()
+int exp2_avoid_conflict()
 {
     double x1,x2;
     x1 = (pow(10,18)+1 + sqrt((pow(10,18)+1)*(pow(10,18)+1) - 4*1*pow(10,18)))/2;

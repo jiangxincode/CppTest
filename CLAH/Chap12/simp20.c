@@ -64,9 +64,9 @@ double *x;
     if(c[0]<=w[0] && w[0] <=d[0])
         if(c[1]<=w[1] && w[1] <= d[1])
         {
-            return(1);
+            return 1;
         }
 
-    return(0);
+    return 0;
 }
 

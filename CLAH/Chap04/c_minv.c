@@ -1,6 +1,4 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include "../utility.h"
+﻿#include "../utility.h"
 
 /*======================================================
  * 函数名：c_minv
@@ -19,7 +17,7 @@ int c_minv(struct c_comp *mat,int n,double eps)
     if(mat == NULL)                     /* 检测输入的指针是否为空*/
     {
         printf("The matrix pointer is NULL\n");
-        return(0);
+        return 0;
     }
 
     is = malloc(n*sizeof(int));         /* 为行交换记录分配空间并检测是否成功*/
@@ -27,7 +25,7 @@ int c_minv(struct c_comp *mat,int n,double eps)
     if(is == NULL)
     {
         printf("Memory alloc failed\n");
-        return(0);
+        return 0;
     }
 
     js = malloc(n*sizeof(int));         /* 为列交换记录分配空间并检测是否成功*/
@@ -36,7 +34,7 @@ int c_minv(struct c_comp *mat,int n,double eps)
     {
         free(is);
         printf("Memory alloc failed\n");
-        return(0);
+        return 0;
     }
 
     for(k=0; k<n; k++)
@@ -62,7 +60,7 @@ int c_minv(struct c_comp *mat,int n,double eps)
             free(is);                  /* 若主元过小则退出程序*/
             free(js);
             printf("Matrix inverse failed.\n");
-            return(0);
+            return 0;
         }
 
         if(is[k]!=k)                   /* 判断是否需要行交换*/
@@ -155,5 +153,5 @@ int c_minv(struct c_comp *mat,int n,double eps)
 
     free(is);                          /* 释放分配的空间*/
     free(js);
-    return(1);                         /* 求解成功，返回1*/
+    return 1;                         /* 求解成功，返回1*/
 }

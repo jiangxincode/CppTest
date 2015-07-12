@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 int main7hmt0()
 {
     double t,z;

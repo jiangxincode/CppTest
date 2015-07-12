@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
-
-#include "../utility.h"
+﻿#include "../utility.h"
 
 /**
  * 函 数 名：cpmul(a,n,b,m,c)
@@ -20,7 +16,7 @@ int cpmul(struct c_comp *a,int n,struct c_comp *b,int m,struct c_comp *c)
     if((a==NULL) || (b==NULL) || (c==NULL))   /* 检测是否有指针为空*/
     {
         printf("(cpmul)NULL pointer found.\n");
-        return(0);
+        return 0;
     }
 
     k = log(n+m-1-0.5)/log(2.0)+1;	/* 求最小的k，并满足2^k 不小于多项式C的阶数*/
@@ -42,7 +38,7 @@ int cpmul(struct c_comp *a,int n,struct c_comp *b,int m,struct c_comp *c)
     if(!(aa && bb && cc && ya && yb && yc))   /* 检测是否有指针为空*/
     {
         printf("(cpmul)memory alloc failed.\n");
-        return(0);
+        return 0;
     }
 
     for(i=0; i<n; i++) 			 /*将A,B两个多项式补足成2^k阶的，并转存在aa与bb中*/
@@ -89,15 +85,15 @@ int cpmul(struct c_comp *a,int n,struct c_comp *b,int m,struct c_comp *c)
                 c[i].imz = cc[i].imz;
             }
 
-            return(1);
+            return 1;
         }
         else
         {
-            return(0);
+            return 0;
         }
     }
     else
     {
-        return(0);
+        return 0;
     }
 }

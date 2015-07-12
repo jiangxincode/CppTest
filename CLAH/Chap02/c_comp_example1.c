@@ -4,7 +4,7 @@
 
 #include "../utility.h"
 
-int main2c_comp_example1()
+int c_comp_example1()
 {
     struct c_comp a,b,c,d;
     a.rmz=7.0;

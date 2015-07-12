@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 int main8inf10()
 {
     double a,b,eps,h0,z;

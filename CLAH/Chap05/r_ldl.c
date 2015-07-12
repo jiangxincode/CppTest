@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 /*======================================================
  * 函数名：r_ldl
  * 功能描述：用LDL分解法解对称方程组
@@ -14,7 +15,7 @@ int r_ldl(double *a,double *b,double *x,int n,double eps)
     if((a==NULL)||(b==NULL)||(x==NULL))            /* 检测输入的指针是否为空*/
     {
         printf("The pointer is NULL\n");
-        return(0);
+        return 0;
     }
 
     D = (double *)malloc(n*sizeof(double));        /* 分配空间并检测是否成功*/
@@ -25,7 +26,7 @@ int r_ldl(double *a,double *b,double *x,int n,double eps)
     if((D==NULL)||(L==NULL)||(y==NULL)||(z==NULL))
     {
         printf("Memory alloc failed\n");
-        return(0);
+        return 0;
     }
 
     i = smldl(a,n,L,D,eps);                        /* 调用函数进行LDL分解*/
@@ -33,7 +34,7 @@ int r_ldl(double *a,double *b,double *x,int n,double eps)
     if(i==0)                                       /* 判断是否分解成功*/
     {
         printf("LDL decomposition failed\n");
-        return(0);
+        return 0;
     }
 
     for(i=0; i<n; i++)                             /* 解出y和z*/
@@ -65,5 +66,5 @@ int r_ldl(double *a,double *b,double *x,int n,double eps)
     free(L);
     free(y);
     free(z);
-    return(1);
+    return 1;
 }

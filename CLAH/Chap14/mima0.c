@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 int main14mima0()
 {
     int i,j,p[50],ma,mi,m12;

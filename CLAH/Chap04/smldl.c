@@ -1,4 +1,6 @@
-﻿/*======================================================
+﻿#include "../utility.h"
+
+/*======================================================
  * 函数名：smldl
  * 功能描述：全选主元的LDL分解
  * 输入参数：mat 指向待分解的矩阵的指针
@@ -8,10 +10,6 @@
             eps 精度要求，小于此值的数据认为是0
  * 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-
 int smldl(double *mat,int n,double *L,double *D,double eps)
 {
     int i,j,k;
@@ -20,7 +18,7 @@ int smldl(double *mat,int n,double *L,double *D,double eps)
     if((mat==NULL)||(L==NULL)||(D==NULL)) /* 检测指针是否为空*/
     {
         printf("One of the pointer is NULL\n");            /* 若为空则打印错误消息，函数结束*/
-        return(0);
+        return 0;
     }
 
     for(i=0; i<n; i++)                                   /* 将L矩阵赋初值为单位阵*/
@@ -38,7 +36,7 @@ int smldl(double *mat,int n,double *L,double *D,double eps)
     if(fabs(D[0]) < eps)                               /* 因要做除数，需要检查其范围*/
     {
         printf("Failed.\n");
-        return(0);
+        return 0;
     }                                                 /* 递推求解*/
 
     for(i=1; i<n; i++)
@@ -67,9 +65,9 @@ int smldl(double *mat,int n,double *L,double *D,double eps)
         if(fabs(D[i]) < eps)                            /* 检查其范围*/
         {
             printf("Failed.\n");
-            return(0);
+            return 0;
         }
     }
 
-    return(1);
+    return 1;
 }

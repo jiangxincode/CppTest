@@ -1,4 +1,6 @@
-﻿/*======================================================
+﻿#include "../utility.h"
+
+/*======================================================
  * 函数名：smdqr
  * 功能描述：上H矩阵求特征值
  * 输入参数：a   指向存放上H * 返回值矩阵的指针
@@ -9,9 +11,6 @@
 			itmax 最大迭代次数
  * 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
 int smdqr(double *a,int n,double *u,double eps,int itmax)
 {
     int i,j,k,ii,jj,kk;
@@ -24,13 +23,13 @@ int smdqr(double *a,int n,double *u,double eps,int itmax)
     if(itmax == 0)                            /* 已经不能再迭代*/
     {
         printf("fail\n");
-        return(0);
+        return 0;
     }
 
     if(n==1)                                   /* 矩阵是1阶*/
     {
         u[0] = a[0];
-        return(1);
+        return 1;
     }
 
     if(n==2)                                  /* 矩阵是2阶*/
@@ -50,7 +49,7 @@ int smdqr(double *a,int n,double *u,double eps,int itmax)
         }
 
         u[1]=c/u[0];
-        return(1);
+        return 1;
     }
 
     is1 = 0;
@@ -93,11 +92,11 @@ int smdqr(double *a,int n,double *u,double eps,int itmax)
 
         smdqr(a1,n1,u+is1,eps,itmax);     /* 递归调用函数求解最后一块矩阵*/
         free(a1);
-        return(1);
+        return 1;
     }
     else if(is1  == n)
     {
-        return(1);
+        return 1;
     }
 
     for(k=0; k<n-1; k++)

@@ -1,4 +1,6 @@
-﻿/*======================================================
+﻿#include "../utility.h"
+
+/*======================================================
  * 函数名：bspl1
  * 功能描述：第一类边界条件的三次样条函数插值
  * 输入参数：x 指向存放n个结点的数据的数组的指针
@@ -13,10 +15,6 @@
  *           z2 指向存放返回的m个插值点处的函数二阶导数的数组的指针
  * 返回值：  成功则返回整型 1，失败则返回 0
 =========================================================*/
-#include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
-
 int bspl1(double *x,double *y,double y1,double y2,int n,double *t,int m,double *z,double *z1,double *z2)
 {
     int i,j,k;
@@ -28,13 +26,13 @@ int bspl1(double *x,double *y,double y1,double y2,int n,double *t,int m,double *
     if(!(x && y && t && z && z1 && z2))         /* 检测输入指针是否为空*/
     {
         printf("Pointer is Null\n");
-        return(0);
+        return 0;
     }
 
     if(n<3)                                     /* 提供结点少于3就不进行插值了*/
     {
         printf("nodes less than 3");
-        return(0);
+        return 0;
     }
 
     dy = (double*)malloc(n*sizeof(double));      /* 分配空间并检测是否成功*/
@@ -47,7 +45,7 @@ int bspl1(double *x,double *y,double y1,double y2,int n,double *t,int m,double *
         free(a);
         free(b);
         printf("Memory alloc failed\n");
-        return(0);
+        return 0;
     }
 
     h1 = x[1]-x[0];
@@ -114,5 +112,5 @@ int bspl1(double *x,double *y,double y1,double y2,int n,double *t,int m,double *
     free(dy);
     free(a);
     free(b);
-    return(1);
+    return 1;
 }

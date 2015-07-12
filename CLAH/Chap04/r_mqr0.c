@@ -1,5 +1,4 @@
-﻿#include <stdio.h>
-#include "../utility.h"
+﻿#include "../utility.h"
 
 int main4r_mqr0()
 {

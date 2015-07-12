@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
-
-#include "../utility.h"
+﻿#include "../utility.h"
 
 static int p2c1();
 
@@ -27,7 +23,7 @@ int p2c(struct c_comp *y,int n,struct c_comp *a)
     if(nn != n)
     {
         printf("(p2c)n should be 2^k.\n");
-        return(0);
+        return 0;
     }
 
     j = p2c1(y,n,a);		                /* 调用子函数求解求和符号中的部分*/
@@ -54,7 +50,7 @@ static int p2c1(struct c_comp *y,int n,struct c_comp *a)
     {
         a[0].rmz = y[0].rmz;
         a[0].imz = y[0].imz;
-        return(1);
+        return 1;
     }
 
     k = n>>1;			                    /*k是n的一半，就是两个小规模问题分配空间的大小*/
@@ -66,7 +62,7 @@ static int p2c1(struct c_comp *y,int n,struct c_comp *a)
     if((a0==NULL)||(a1==NULL)||(y0==NULL)||(y1==NULL))
     {
         printf("(p2c)memory alloc failed.\n");
-        return(0);
+        return 0;
     }
 
     for(i=0; i<k; i++)	                 /* 将问题分成两段*/
@@ -101,5 +97,5 @@ static int p2c1(struct c_comp *y,int n,struct c_comp *a)
     free(y1);
     free(a0);
     free(a1);
-    return(1);
+    return 1;
 }

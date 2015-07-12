@@ -1,4 +1,6 @@
-﻿/*======================================================
+﻿#include "../utility.h"
+
+/**
  * 函数名：mhdqr
  * 功能描述：上H矩阵求特征值
  * 输入参数：a    * 返回值 * 返回值矩阵的指针
@@ -7,14 +9,9 @@
 			v   返回的特征值的虚部
 			eps 精度要求，用于判断元素是否为0
 			itmax 最大迭代次数
-//返回值：整型。运行成功则返回1,失败则返回0
+ * 返回值：整型。运行成功则返回1,失败则返回0
  */
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
-static int mhdqr(a,n,u,v,eps,itmax)
-double *a,*u,*v,eps;
-int n,itmax;
+int mhdqr(double *a,int n,double *u,double *v,double eps,int itmax)
 {
     int i,j,k,ii,jj,kk;
     double x,y,p,q,r;                          /* 用于进行相似变换*/
@@ -26,14 +23,14 @@ int n,itmax;
     if(itmax == 0)                            /* 已经不能再迭代*/
     {
         printf("fail\n");
-        return(0);
+        return 0;
     }
 
     if(n==1)                                   /* 矩阵是1阶*/
     {
         u[0] = a[0];
         v[0] = 0.0;
-        return(1);
+        return 1;
     }
 
     if(n==2)                                  /* 矩阵是2阶*/
@@ -66,7 +63,7 @@ int n,itmax;
             v[1] = -v[0];
         }
 
-        return(1);
+        return 1;
     }
 
     is1 = 0;
@@ -109,11 +106,11 @@ int n,itmax;
 
         mhdqr(a1,n1,u+is1,v+is1,eps,itmax);     /* 递归调用函数求解最后一块矩阵*/
         free(a1);
-        return(1);
+        return 1;
     }
     else if(is1  == n)
     {
-        return(1);
+        return 1;
     }
 
     for(k=0; k<n-1; k++)

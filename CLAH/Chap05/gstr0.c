@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 int main5gstr0()
 {
     int i,j;

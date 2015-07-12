@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 static   double f(double);
 static  double fd(double);
 int main6newdonroot2()

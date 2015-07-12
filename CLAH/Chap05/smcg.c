@@ -1,6 +1,5 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+﻿#include "../utility.h"
+
 /*======================================================
  * 函数名：smcg
  * 功能描述：用共轭梯度法解对称正定方程组
@@ -18,7 +17,7 @@ int smcg(double *a,double *b,double *x,int n,double eps,int iter)
     if((a==NULL)||(b==NULL)||(x==NULL))            /* 检测输入的指针是否为空*/
     {
         printf("The pointer is NULL\n");
-        return(0);
+        return 0;
     }
 
     s = (double *)malloc(n*sizeof(double));          /* 分配空间并检测是否成功*/
@@ -27,7 +26,7 @@ int smcg(double *a,double *b,double *x,int n,double eps,int iter)
     if((s==NULL)||(r==NULL))
     {
         printf("Memory alloc failed\n");
-        return(0);
+        return 0;
     }
 
     for(i=0; i<n; i++)
@@ -101,5 +100,5 @@ int smcg(double *a,double *b,double *x,int n,double eps,int iter)
 
     free(s);
     free(r);
-    return(1);
+    return 1;
 }

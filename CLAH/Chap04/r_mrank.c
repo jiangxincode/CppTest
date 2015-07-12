@@ -1,13 +1,11 @@
-﻿/*======================================================
+﻿#include "../utility.h"
+
+/*======================================================
  * 函数名：r_mrank
  * 功能描述：求实矩阵的秩
  * 输入参数：mat(输入的矩阵) m(矩阵行数) p(矩阵列数) eps(精度)
  * 返回值：运行成功则返回矩阵的秩，失败则返回0
 =========================================================*/
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-
 int r_mrank(double *mat,int m, int n,double eps)
 {
     int i,j,k,p,is,js,l,v,rank;
@@ -17,7 +15,7 @@ int r_mrank(double *mat,int m, int n,double eps)
     if(mat == NULL)				  /* 检查输入指针是否为空*/
     {
         printf("matrix pointer is Null.\n");
-        return(0);
+        return 0;
     }
 
     cpmat = (double*)malloc(m*n*sizeof(double));  /* 将输入矩阵的内容拷贝一份，以免破坏*/

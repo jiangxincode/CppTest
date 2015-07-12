@@ -1,6 +1,4 @@
-﻿#include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
+﻿#include "../utility.h"
 
 /*======================================================
  * 函数名：bspl2
@@ -28,13 +26,13 @@ int bspl2(double *x,double *y,double y1,double y2,int n,double *t,int m,double *
     if(!(x && y && t && z && z1 && z2))         /* 检测输入指针是否为空*/
     {
         printf("Pointer is Null\n");
-        return(0);
+        return 0;
     }
 
     if(n<3)                                     /* 提供结点少于3就不进行插值了*/
     {
         printf("nodes less than 3");
-        return(0);
+        return 0;
     }
 
     dy = (double*)malloc(n*sizeof(double));      /* 分配空间并检测是否成功*/
@@ -47,7 +45,7 @@ int bspl2(double *x,double *y,double y1,double y2,int n,double *t,int m,double *
         free(a);
         free(b);
         printf("Memory alloc failed\n");
-        return(0);
+        return 0;
     }
 
     h1 = x[1]-x[0];
@@ -115,5 +113,5 @@ int bspl2(double *x,double *y,double y1,double y2,int n,double *t,int m,double *
     free(dy);
     free(a);
     free(b);
-    return(1);
+    return 1;
 }

@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
-
-#include "../utility.h"
+﻿#include "../utility.h"
 
 static int c2p0();
 
@@ -26,7 +22,7 @@ int c2p(struct c_comp *a,int n,struct c_comp *y)
     if(nn != n)
     {
         printf("n should be 2^k.\n");
-        return(0);
+        return 0;
     }
 
     k = c2p0(a,n,y);
@@ -44,7 +40,7 @@ static int c2p0(struct c_comp *a,int n,struct c_comp *y)
         /* 当只有一个系数时，函数值就是这个系数*/
         y[0].rmz = a[0].rmz;
         y[0].imz = a[0].imz;
-        return(1);
+        return 1;
     }
 
     k = n>>1;		    /* k是n的一半，即两个小规模问题需要分配空间大小*/
@@ -56,7 +52,7 @@ static int c2p0(struct c_comp *a,int n,struct c_comp *y)
     if((a0==NULL)||(a1==NULL)||(y0==NULL)||(y1==NULL))
     {
         printf("(c2p0)memory alloc failed.\n");
-        return(0);
+        return 0;
     }
 
     for(i=0; i<k; i++) 			    /* 将多项式分成两半*/
@@ -91,5 +87,5 @@ static int c2p0(struct c_comp *a,int n,struct c_comp *y)
     free(y1);
     free(a0);
     free(a1);
-    return(1);
+    return 1;
 }

@@ -1,4 +1,6 @@
-﻿/*======================================================
+﻿#include "../utility.h"
+
+/**
  * 函数名：r_chol
  * 功能描述：对称正定实矩阵的Cholesky分解
  * 输入参数：mat 指向待分解 * 返回值的矩阵的指针
@@ -6,14 +8,8 @@
             u   指向返回的下三角阵的指针
             eps 精度要求，小于此值的数据认为是0
  * 返回值：整型。运行成功则返回1,失败则返回0
-=========================================================*/
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-
-static int r_chol(mat,n,u,eps)
-double *mat,*u,eps;
-int n;
+ */
+int r_chol(double *mat,int n,double *u,double eps)
 {
     int i,j,k;
     double t;
@@ -21,7 +17,7 @@ int n;
     if((mat==NULL)||(u==NULL))                          /* 检测指针是否为空*/
     {
         printf("One of the pointer is NULL\n");           /* 若为空则打印错误消息，函数结束*/
-        return(0);
+        return 0;
     }
 
     for(i=0; i<n; i++)                                  /* 将u矩阵赋初值为零矩阵*/
@@ -35,7 +31,7 @@ int n;
     if(fabs(mat[0]) < eps)                       /* 因要做除数并开根号，需要检查其范围*/
     {
         printf("Failed.\n");
-        return(0);
+        return 0;
     }
 
     u[0] = sqrt(mat[0]);                                    /* 递推求解*/
@@ -66,11 +62,11 @@ int n;
         if(t < eps)                                     /* 检查其范围*/
         {
             printf("Failed.\n");
-            return(0);
+            return 0;
         }
 
         u[i*n+i] = sqrt(t);                             /* 求解U[i,i]*/
     }
 
-    return(1);
+    return 1;
 }

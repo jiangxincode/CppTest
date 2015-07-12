@@ -1,4 +1,6 @@
-﻿/*======================================================
+﻿#include "../utility.h"
+
+/*======================================================
  * 函数名：hamming
  * 功能描述：哈明方法求常微分方程组的初值问题
  * 输入参数：*y（ 指向函数初值以及函数返回值的指针n*(m+1)）
@@ -6,11 +8,6 @@
  *          h（步长），m（步数），a（区间起点）
  * 返回值：0（失败），1（成功）
 =========================================================*/
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
-#include "../utility.h"
-
 int hamming(double *y,int n,double (*f)(),double h,int m,double a)
 {
     double *c,*f1,*f2,*f3,*f4,*temp,*ptemp,*p,x;
@@ -26,7 +23,7 @@ int hamming(double *y,int n,double (*f)(),double h,int m,double a)
     if(c==NULL||p==NULL||f2==NULL||f3==NULL||f4==NULL||f1==NULL||ptemp==NULL)
     {
         printf("memory alloc failed.\n");
-        return(0);
+        return 0;
     }
 
     rungekuttainvh(y,n,f,h,3,a);              /* 用龙格-库塔法计算前4个初值*/

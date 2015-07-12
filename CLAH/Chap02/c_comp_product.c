@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-
-#include "../utility.h"
+﻿#include "../utility.h"
 
 /**
  * 函数名：c_comp_product.c
@@ -12,12 +8,12 @@
  *            c（计算结果的结构体）
  * 返回值：0（失败），1（成功）
  */
-int c_comp_product(struct c_comp *a1,struct c_comp *a2,struct c_comp *c)
+int c_comp_product(const struct c_comp *a1,const struct c_comp *a2,struct c_comp *c)
 {
     if(a1 == NULL || a2 == NULL || c == NULL)
     {
         printf("(c_comp_product)The c_comp pointer is NULL!\n");
-        return(0);
+        return 0;
     }
 
     double p = (a1->rmz)*(a2->rmz);
@@ -25,5 +21,5 @@ int c_comp_product(struct c_comp *a1,struct c_comp *a2,struct c_comp *c)
     double s = (a1->rmz + a1->imz)*(a2->rmz + a2->imz);
     c->rmz = p - q;
     c->imz = s - p - q;
-    return(1);
+    return 1;
 }

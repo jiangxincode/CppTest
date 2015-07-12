@@ -1,4 +1,6 @@
-﻿/*======================================================
+﻿#include "../utility.h"
+
+/*======================================================
  * 函数名：rungekuttavh
  * 功能描述：变步长龙格-库塔算法求常微分方程组的初值问题
  * 输入参数：*y（ 指向函数初值以及函数返回值的指针n*(m+1)）
@@ -6,8 +8,6 @@
  *          h（步长），m（步数），a（区间起点），eps（精度）
  * 返回值：0（失败），1（成功）
 =========================================================*/
-#include"../utility.h"
-
 int rungekuttavh(double *y,int n,double (*f)(),double h,int m,double a,double eps)
 {
     double x,*y1,*y2,*ytemp1,*ytemp2,dis,ht=h;
@@ -18,7 +18,7 @@ int rungekuttavh(double *y,int n,double (*f)(),double h,int m,double a,double ep
     if(y1==NULL||y2==NULL)
     {
         printf("memory alloc failed.\n");
-        return(0);
+        return 0;
     }
 
     do                                         /* 对k进行循环，分别计算xk处的函数值*/
@@ -33,7 +33,7 @@ int rungekuttavh(double *y,int n,double (*f)(),double h,int m,double a,double ep
             if(ytemp1==NULL)
             {
                 printf("memory alloc failed.\n");
-                return(0);
+                return 0;
             }
 
             for(i=n; i<n*(m1+1); i++)
@@ -60,7 +60,7 @@ int rungekuttavh(double *y,int n,double (*f)(),double h,int m,double a,double ep
             if(ytemp2==NULL)
             {
                 printf("memory alloc failed.\n");
-                return(0);
+                return 0;
             }
 
             for(i=n; i<n*(m2+1); i++)

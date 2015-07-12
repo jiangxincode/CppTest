@@ -1,4 +1,4 @@
-﻿#include "../utility.h" /* QR分解的函数*/
+﻿#include "../utility.h"
 
 /*======================================================
  * 函数名：bmqr
@@ -16,7 +16,7 @@ int bmqr(double *a,double *b,double *x,int n,double eps,int iter)
     if((a==NULL)||(b==NULL)||(x==NULL))            /* 检测输入的指针是否为空*/
     {
         printf("The pointer is NULL\n");
-        return(0);
+        return 0;
     }
 
     c = (double *)malloc(n*sizeof(double));
@@ -27,7 +27,7 @@ int bmqr(double *a,double *b,double *x,int n,double eps,int iter)
     if((c==NULL)||(q==NULL)||(r==NULL)||(e==NULL))
     {
         printf("Memory alloc failed\n");
-        return(0);
+        return 0;
     }
 
     i = r_mqr(a,n,n,q,eps*eps);                    /* 调用函数进行QR分解*/
@@ -35,7 +35,7 @@ int bmqr(double *a,double *b,double *x,int n,double eps,int iter)
     if(i==0)                                       /* 判断是否分解成功*/
     {
         printf("QR decomposition failed\n");
-        return(0);
+        return 0;
     }
 
     for(i=0; i<n; i++)

@@ -1,6 +1,4 @@
-﻿#include <stdio.h>
-
-#include "../utility.h"
+﻿#include "../utility.h"
 
 /**
  * 函 数 名：cpdiv(a,n,b,m,q,r)
@@ -21,13 +19,13 @@ int cpdiv(struct c_comp *a,int n,struct c_comp *b,int m,struct c_comp *q,int k,s
     if((a==NULL)||(b==NULL)||(q==NULL)||(r==NULL))  /* 检测指针是否为空*/
     {
         printf("(cpdiv)NULL pointer found.\n");
-        return(0);
+        return 0;
     }
 
     if(l!=n)
     {
         printf("(cpdiv)please set the length of r to n.\n");
-        return(0);
+        return 0;
     }
 
     for(i=0; i<n; i++)			          /* 先将a存入r中，这就是开始除法前的余式*/
@@ -48,7 +46,7 @@ int cpdiv(struct c_comp *a,int n,struct c_comp *b,int m,struct c_comp *q,int k,s
     if(tmp+1.0==1.0)
     {
         printf("(cpdiv)Cannot divide zero");
-        return(0);
+        return 0;
     }
 
     b[m-1].imz = -b[m-1].imz;  			  /* 先取b[m-1]的共轭，将复数除法转化成乘法*/
@@ -71,6 +69,6 @@ int cpdiv(struct c_comp *a,int n,struct c_comp *b,int m,struct c_comp *q,int k,s
     }
 
     b[m-1].imz = -b[m-1].imz; 			  /* 恢复b[m-1]*/
-    return(1);
+    return 1;
 }
 

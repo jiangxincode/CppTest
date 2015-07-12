@@ -1,4 +1,6 @@
-﻿/*======================================================
+﻿#include "../utility.h"
+
+/*======================================================
  * 函数名：gillvh
  * 功能描述：变步长基尔算法求常微分方程组的初值问题
  * 输入参数：*y（ 指向函数初值以及函数返回值的指针n*(m+1)）
@@ -6,9 +8,6 @@
  *          h（步长），m（步数），a（区间起点），eps（精度）
  * 返回值：0（失败），1（成功）
 =========================================================*/
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
 static int gillinvh();                              /* 需要使用定步长基尔算法得子函数*/
 int gillvh(double *y,int n,double (*f)(),double h,int m,double a,double eps)
 {
@@ -20,7 +19,7 @@ int gillvh(double *y,int n,double (*f)(),double h,int m,double a,double eps)
     if(y1==NULL||y2==NULL)
     {
         printf("memory alloc failed.\n");
-        return(0);
+        return 0;
     }
 
     do                                          /* 对k进行循环，分别计算xk处的函数值*/
@@ -35,7 +34,7 @@ int gillvh(double *y,int n,double (*f)(),double h,int m,double a,double eps)
             if(ytemp1==NULL)
             {
                 printf("memory alloc failed.\n");
-                return(0);
+                return 0;
             }
 
             for(i=n; i<n*(m1+1); i++)
@@ -62,7 +61,7 @@ int gillvh(double *y,int n,double (*f)(),double h,int m,double a,double eps)
             if(ytemp2==NULL)
             {
                 printf("memory alloc failed.\n");
-                return(0);
+                return 0;
             }
 
             for(i=n; i<n*(m2+1); i++)
@@ -124,7 +123,7 @@ int n,m;
     if(k1==NULL||k2==NULL||k3==NULL||k4==NULL||ytemp==NULL)
     {
         printf("memory alloc failed.\n");
-        return(0);
+        return 0;
     }
 
     do

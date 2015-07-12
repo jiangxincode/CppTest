@@ -22,6 +22,6 @@ double randgsabs(int L,double a,double b,double *G)
         G[i+1]=sqrt(b)*G[i+1]+a;/*生成服从N~(a,b)的随机数G2*/
     }
 
-    return(1);
+    return 1;
 }
 

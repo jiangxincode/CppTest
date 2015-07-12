@@ -1,4 +1,4 @@
-﻿#include <stdio.h>
+﻿#include "../utility.h"
 
 /**
  * 函 数 名：rpdiv(a,n,b,m,q,r)
@@ -17,13 +17,13 @@ int rpdiv(double *a,int n,double *b,int m,double *q,int k,double *r,int l)
     if((a==NULL)||(b==NULL)||(q==NULL)||(r==NULL)) /* 检测指针是否为空*/
     {
         printf("(rpdiv)NULL pointer found.\n");
-        return(0);
+        return 0;
     }
 
     if(l!=n)					/* 检测余式的空间是否足够*/
     {
         printf("(rpdiv)please set the length of r to n.\n");
-        return(0);
+        return 0;
     }
 
     for(i=0; i<n; i++)				/* 初始化余式和商*/
@@ -39,7 +39,7 @@ int rpdiv(double *a,int n,double *b,int m,double *q,int k,double *r,int l)
     if(b[m-1]+1.0==1.0)				/* 检测除式的首项系数，若其几乎为0，函数结束。*/
     {
         printf("(rpdiv)Cannot divide zero");
-        return(0);
+        return 0;
     }
 
     for(i=0; i<k; i++)
@@ -55,6 +55,6 @@ int rpdiv(double *a,int n,double *b,int m,double *q,int k,double *r,int l)
         }
     }
 
-    return(1);
+    return 1;
 }
 

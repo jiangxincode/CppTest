@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <time.h>
+#include <string.h>
 
 #define PI 3.1415926
 #define EPS 1.0e-6
@@ -16,16 +17,16 @@ struct c_comp
     double imz; //imaginary part
 } c_comp;
 
-int c_comp_plus(struct c_comp *a1,struct c_comp *a2,struct c_comp *c);
-int c_comp_sub(struct c_comp *a1,struct c_comp *a2,struct c_comp *c);
-int c_comp_product(struct c_comp *a1,struct c_comp *a2,struct c_comp *c);
-int c_comp_divide(struct c_comp *a1,struct c_comp *a2,struct c_comp *c);
-int c_comp_power(struct c_comp *a,struct c_comp *c,int n);
-int c_comp_nthroot(struct c_comp *a,struct c_comp *c,int n);
-int c_comp_exp(struct c_comp *a,struct c_comp *c);
-int c_comp_log(struct c_comp *a,struct c_comp *c);
-int c_comp_sin(struct c_comp *a,struct c_comp *c);
-int c_comp_cos(struct c_comp *a,struct c_comp *c);
+int c_comp_plus(const struct c_comp *a1,const struct c_comp *a2,struct c_comp *c);
+int c_comp_sub(const struct c_comp *a1,const struct c_comp *a2,struct c_comp *c);
+int c_comp_product(const struct c_comp *a1,const struct c_comp *a2,struct c_comp *c);
+int c_comp_divide(const struct c_comp *a1,const struct c_comp *a2,struct c_comp *c);
+int c_comp_power(const struct c_comp *a,struct c_comp *c,const int n);
+int c_comp_nthroot(const struct c_comp *a,struct c_comp *c,const int n);
+int c_comp_exp(const struct c_comp *a,struct c_comp *c);
+int c_comp_log(const struct c_comp *a,struct c_comp *c);
+int c_comp_sin(const struct c_comp *a,struct c_comp *c);
+int c_comp_cos(const struct c_comp *a,struct c_comp *c);
 
 
 
@@ -59,6 +60,7 @@ int Tminv(double *t1,double *t2,int n,double *mat,double eps);
 int smldl(double *mat,int n,double *L,double *D,double eps);
 int mhhbg(double *mat,int n,double *q,double eps);
 
+
 //Chapter05
 int r_mqr(double *mat,int m,int n,double *q,double eps);
 int toepl(double *t,double *b,double *x,int n,double eps);
@@ -80,7 +82,6 @@ int r_gsjd(double *a,double *b,double *x,int n,double eps);
 int r_gaus(double *a,double *b,double *x,int n,double eps);
 
 
-
 //Chapter06
 int interroot(double *x0,double ab,double(*f)(),double eps,int max);
 int newdonroot(double *x0,double(*f)(),double(*fd)(),double eps,int max);
@@ -89,6 +90,7 @@ int aitkenroot(double *x0,double(*f)(),double eps,int max);
 double disroot(double a,double b,double (*f)(),double eps);
 int gradroot(double *x0,int n,double (*f)(),double eps,int max);
 int nndroot(double *x0,int n,void (*f)(),double eps,int max,double h,double t);
+
 
 //Chapter07
 double lagr7(double *x,double *y,int n,double t);
@@ -103,7 +105,7 @@ double lagr1(double *x,double *y,int n,double t);
 double lagr2(double *x,double *y,int n,double t);
 double spl(double *x,double *y,int n,double t,double eps);
 double sple(double x,double h,double *y,int n,double t,double eps);
-
+double lfs(double *x,double *y,int n,double t,double eps);
 
 
 //Chapter08
@@ -120,6 +122,7 @@ double hemt(double(*f)());
 double simps1(double a,double b,int n0,double eps,double h0,double(*f)(double));
 double simps2(double a,double b,int n0,double eps,double h0,double(*f)(),void (*fy)());
 double lfsi2(double a,double b,int n0,double eps,double(*f)(),void (*fy)());
+double leg1(double a,double b,int n0,double eps,double h0,double(*f)());
 
 
 //Chapter09
@@ -137,6 +140,7 @@ int gillvh(double *y,int n,double (*f)(),double h,int m,double a,double eps);
 //Chapter10
 int lsq(double *x,double *y,int n,double *p,int pp,double *s);
 int lsq2(double *x,double *y,double *z,int n,int m,double *p,int pp,int qq,double *s);
+
 
 // Chapter11
 double frac(double *fab(int, double*),int nmax,double e1,double e0);
@@ -158,7 +162,6 @@ double RF(double x,double y,double z);
 double RC(double x,double y);
 double RD(double x,double y,double z);
 double RJ(double x,double y,double z,double p);
-double leg1(double a,double b,int n0,double eps,double h0,double(*f)());
 
 double J0(double);
 double J1(double);
@@ -180,7 +183,6 @@ int cggm2(double *x, double *xmin, int n, double *y0, double(*f)(), void (*df)()
 double dbrent(double a, double b, double c, double(*f)(double),double(*df)(double), double *xopt, double eps, int itmax);
 double ddirmin(double *x, double *p, double *xmin, int n, double (*f)(double),double (*df)(double), double eps, int itmax);
 double goldsch(double a, double b, double c, double(*f)(double), double *xopt, double eps);
-double lfs(double *x,double *y,int n,double t,double eps);
 int powell(double *x, double *ee, double *xmin, int n, double *y0, double(*f)(), double eps, int itmax);
 int simp1(double d,int n,double lam,double alf,double miu,double *x,double *fx,double *xopt,double(*f)(),double eps,int itmax);
 int simp2(int n,int m,double *a,double *b,double d,double alf,double eps,double *x,double *fx,double *xopt,int (*sf)(),double(*f)(),int itmax);
@@ -241,7 +243,6 @@ void shel(int *x,int n);
 
 
 //Chapter16
-
 int dct(double * x,int n, double *y);
 int fft(struct c_comp *y,int n,struct c_comp *x);
 int wolt(double *y,int n,double *x);
@@ -250,7 +251,6 @@ int ifft(struct c_comp *y,int n,struct c_comp *x);
 int kabg(double *x,int n,double *y,double h,double alfa,double beta,double gama);
 int smoth(double *x,int n,double *y);
 int hadma(double *y,int n,double *x);
-
 
 #endif // _UTILITY_H
 

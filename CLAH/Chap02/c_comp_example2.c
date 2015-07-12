@@ -1,10 +1,6 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+﻿#include "../utility.h"
 
-#include "../utility.h"
-
-int main2c_comp_example2()
+int c_comp_example2()
 {
     struct c_comp a,b,c,f,g,h;
     struct c_comp d[5];

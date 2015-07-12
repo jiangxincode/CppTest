@@ -22,7 +22,7 @@ int cggm2(double *x, double *xmin, int n, double *y0, double(*f)(), void (*df)()
     if(n>20)                                          /* 我们处理n<＝20的情况*/
     {
         printf("you'd better simplify the problem\n");
-        return(0);
+        return 0;
     }
 
     for(i=0; i<n; i++)

@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 int main7atken0()
 {
     double t,h,z,eps;

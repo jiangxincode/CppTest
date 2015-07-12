@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 static   double f(double,double);
 static  void  fy(double,double []);
 int main8simps20()

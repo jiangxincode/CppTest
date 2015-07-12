@@ -1,6 +1,4 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+﻿#include "../utility.h"
 
 int r_matsvd(mat,m,n,u,v,eps)
 int m,n;
@@ -323,7 +321,7 @@ double *mat,*u,*v,eps;
             free(s);
             free(e);
             free(w);
-            return(1);
+            return 1;
         }
 
         if(it==0)
@@ -593,7 +591,7 @@ double *mat,*u,*v,eps;
         }
     }
 
-    return(1);
+    return 1;
 }
 
 void ppp(mat,e,s,v,m,n)

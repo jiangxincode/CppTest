@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 /*======================================================
  * 函数名：sdminv
  * 功能描述：对称正定矩阵原地求逆
@@ -6,7 +7,6 @@
             n 矩阵阶数
  * 返回值：整型。运行成功则返回1,失败则返回0
 =========================================================*/
-
 int sdminv(double *mat, int n, double eps)
 {
     int i,j,k;
@@ -15,7 +15,7 @@ int sdminv(double *mat, int n, double eps)
     if(mat == NULL)                    /* 检查指针是否为空*/
     {
         printf("The matrix pointer is NULL\n");
-        return(0);
+        return 0;
     }
 
     c = (double *)malloc(n*sizeof(double)); /* 为临时变量分配空间并检查是否成功*/
@@ -23,7 +23,7 @@ int sdminv(double *mat, int n, double eps)
     if(c == NULL)
     {
         printf("Memory alloc failed\n");
-        return(0);
+        return 0;
     }
 
     for(k=0; k<n; k++)               /* 循环求解*/
@@ -34,7 +34,7 @@ int sdminv(double *mat, int n, double eps)
         {
             printf("Fail to invert\n");
             free(c);
-            return(0);
+            return 0;
         }
 
         p = 1.0/p;                    /* 将要进行的多次除法转化为乘法*/
@@ -76,5 +76,5 @@ int sdminv(double *mat, int n, double eps)
         }
 
     free(c);                         /* 释放分配的空间*/
-    return(1);
+    return 1;
 }

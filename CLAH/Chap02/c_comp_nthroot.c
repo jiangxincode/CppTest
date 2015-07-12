@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-
-#include "../utility.h"
+﻿#include "../utility.h"
 
 /**
  * 函数名：c_comp_nthroot.c
@@ -12,12 +8,12 @@
  *            c（计算结果的结构体，是一个数组，共n个）
  * 返回值：0（失败），1（成功）
  */
-int c_comp_nthroot(struct c_comp *a,struct c_comp *c,int n)
+int c_comp_nthroot(const struct c_comp *a,struct c_comp *c,const int n)
 {
     if(a == NULL || c == NULL)
     {
         printf("(c_comp_nthroot)The c_comp pointer is NULL!\n");
-        return(0);
+        return 0;
     }
 
     double theta = atan2(a->imz,a->rmz);
@@ -30,5 +26,5 @@ int c_comp_nthroot(struct c_comp *a,struct c_comp *c,int n)
         c[i].imz = R*sin((theta+2*i*PI)/n);
     }
 
-    return(1);
+    return 1;
 }

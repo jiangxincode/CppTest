@@ -21,7 +21,7 @@ int bb(double *y,int n,double(*f)(),double h,int m,double a)
     if(q==NULL||p==NULL||f2==NULL||f3==NULL||f1==NULL)
     {
         printf("memory alloc failed.\n");
-        return(0);
+        return 0;
     }
 
     rungekuttainvh(y,n,f,h,1,a);             /* 用龙格-库塔法计算前2个初值*/

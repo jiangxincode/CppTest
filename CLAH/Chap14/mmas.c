@@ -8,9 +8,7 @@
  */
 void mmas(int *x,int n,int m)
 {
-    int i,j,s,t,flag,tmp;
-    s = 0;                           /* 查找区间的首和尾*/
-    t = n-1;
+    int i,j,s = 0,t = n-1,flag,tmp;
 
     do
     {

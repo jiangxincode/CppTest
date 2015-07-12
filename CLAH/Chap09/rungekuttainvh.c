@@ -1,4 +1,6 @@
-﻿/*======================================================
+﻿#include "../utility.h"
+
+/*======================================================
  * 函数名：rungekuttainvh
  * 功能描述：定步长四阶龙格库塔算法求常微分方程组的初值问题
  * 输入参数：*y（  * 返回值*(m+1)）
@@ -6,9 +8,6 @@
  *          h（步长），m（步数），a（区间起点）
 //返回值：0（失败），1（成功）
 =========================================================*/
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
 
 int rungekuttainvh(double *y,int n,double(*f)(),double h,int m,double a)
 {
@@ -23,7 +22,7 @@ int rungekuttainvh(double *y,int n,double(*f)(),double h,int m,double a)
     if(k1==NULL||k2==NULL||k3==NULL||k4==NULL||ytemp==NULL)
     {
         printf("memory alloc failed.\n");
-        return(0);
+        return 0;
     }
 
     do

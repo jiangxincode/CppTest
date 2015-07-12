@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-static     void f(double*,double*,double*,double);
+static void f(double*,double*,double*,double);
 int main6nndroot8()
 {
     double eps=0.000001,h=0.1,t=0.5;

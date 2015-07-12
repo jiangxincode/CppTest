@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 int main15inst0()
 {
     int i,j,p[50],p1[50];

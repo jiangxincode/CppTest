@@ -1,7 +1,5 @@
-﻿/*======================================================
- * 功能描述：3种euler方法求常微分方程组的初值问题的例子
- */
-#include "../utility.h"
+﻿#include "../utility.h"
+
 static void f(double*,double*,double);
 int main9euler1()
 {

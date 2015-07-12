@@ -1,6 +1,4 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include "../utility.h"
+﻿#include "../utility.h"
 
 /*======================================================
  * 函数名：cmat_mul
@@ -17,13 +15,13 @@ int c_matmul(struct c_comp *a, struct c_comp *b, int m, int p, int n, struct c_c
     if(!(m>0 && p>0 && n>0))			/* 检测输入矩阵的阶数*/
     {
         printf("Err:(c_mat_mul)Dimension of a matrix is incorrect\n");
-        return(0);
+        return 0;
     }
 
     if(a == NULL || b == NULL || c == NULL)	/* 检查输入指针是否为空*/
     {
         printf("Err:(c_mat_mul)The matrix pointer is NULL\n");
-        return(0);
+        return 0;
     }
 
     for(i=0; i<m; i++)				/* 循环编历矩阵c中的每个元素*/
@@ -42,5 +40,5 @@ int c_matmul(struct c_comp *a, struct c_comp *b, int m, int p, int n, struct c_c
             c[i*n+j].imz = tmp1.imz;
         }
 
-    return(1);
+    return 1;
 }

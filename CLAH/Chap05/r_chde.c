@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 /*======================================================
  * 函数名：r_chde
  * 功能描述：用cholesky分解法解对称正定实系数矩阵方程组
@@ -14,7 +15,7 @@ int r_chde(double *a,double *b,double *x,int n,double eps)
     if((a==NULL)||(b==NULL)||(x==NULL))            /* 检测输入的指针是否为空*/
     {
         printf("The pointer is NULL\n");
-        return(0);
+        return 0;
     }
 
     u = (double *)malloc(n*n*sizeof(double));        /* 分配空间并检测是否成功*/
@@ -23,7 +24,7 @@ int r_chde(double *a,double *b,double *x,int n,double eps)
     if((u==NULL)||(y==NULL))
     {
         printf("Memory alloc failed\n");
-        return(0);
+        return 0;
     }
 
     i = r_chol(a,n,u,eps);                         /* 调用函数进行cholesky分解*/
@@ -31,7 +32,7 @@ int r_chde(double *a,double *b,double *x,int n,double eps)
     if(i==0)                                       /* 判断是否分解成功*/
     {
         printf("Cholesky decomposition failed\n");
-        return(0);
+        return 0;
     }
 
     for(i=0; i<n; i++)                             /* 解出y*/
@@ -60,5 +61,5 @@ int r_chde(double *a,double *b,double *x,int n,double eps)
 
     free(u);                                       /* 释放空间*/
     free(y);
-    return(1);
+    return 1;
 }

@@ -14,7 +14,7 @@ int main8lfsi0()
     printf("tzi1: t=%2.5f\n",z);                 /* 打印结果*/
     z=lfsi(a,b,4,eps,f1);                        /* 用连分式求积法积分*/
     printf("lfsi: t=%2.5f\n",z);
-    getchar();
+    return 0;
 }
 
 static double f1(double x)                                    /* 被积分的函数*/

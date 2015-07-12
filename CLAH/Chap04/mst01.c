@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 int main4mst01()
 {
     int i,j;

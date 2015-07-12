@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main1exp1()
+int exp1()
 {
     int k;
     double x,z;

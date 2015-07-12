@@ -194,14 +194,14 @@ int simplex(double *a,int n,int m1,int m2,int m3,int *ixr,int *ixc,double eps)
 
         if(cmax < eps)
         {
-            return(0);    /* 已经找到最优解*/
+            return 0;    /* 已经找到最优解*/
         }
 
         ip = pivot(a,mp,np,m,n,jp);                    /* 选主元*/
 
         if(ip ==0)
         {
-            return(1);    /* 没有有限解*/
+            return 1;    /* 没有有限解*/
         }
 
         mswap(a,mp,np,ip,jp);                          /* 交换*/

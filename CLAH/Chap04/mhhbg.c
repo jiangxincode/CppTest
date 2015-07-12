@@ -17,7 +17,7 @@ int mhhbg(double *mat,int n,double *q,double eps)
     if((mat==NULL)||(q==NULL))                 /* 检测指针是否为空*/
     {
         printf("The matrix pointer is NULL\n");
-        return(0);
+        return 0;
     }
 
     tmp = (double*)malloc(n*sizeof(double));   /* 为临时变量分配空间*/
@@ -60,7 +60,7 @@ int mhhbg(double *mat,int n,double *q,double eps)
         {
             printf("Fail\n");                      /* 若alpha值过小，则计算终止*/
             free(tmp);
-            return(0);
+            return 0;
         }
 
         t = mat[l];
@@ -169,6 +169,6 @@ int mhhbg(double *mat,int n,double *q,double eps)
 
     free(tmp);
     free(s);                                   /* 释放空间*/
-    return(1);
+    return 1;
 }
 

@@ -1,4 +1,5 @@
 ﻿#include "../utility.h"
+
 static void  fy(double,double []);
 static double f(double,double);
 int main8mount20()

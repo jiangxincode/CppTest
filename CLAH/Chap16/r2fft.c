@@ -1,8 +1,4 @@
-﻿#include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
-
-#include"../utility.h"
+﻿#include"../utility.h"
 
 /*=============================================================
  * 函 数 名：r2fft (x,n,y)
@@ -25,7 +21,7 @@ int r2fft(double *x1,double *x2,int n,struct c_comp *y1,struct c_comp *y2)
     if(nn != n)
     {
         printf("n should be 2^k.\n");
-        return(0);
+        return 0;
     }
 
     x = (struct c_comp*)malloc(n*sizeof(struct c_comp));
@@ -58,5 +54,5 @@ int r2fft(double *x1,double *x2,int n,struct c_comp *y1,struct c_comp *y2)
 
     free(x);
     free(y);
-    return(1);
+    return 1;
 }
