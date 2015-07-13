@@ -1,10 +1,10 @@
-﻿/*=============================================================
+﻿/**
  * 函 数 名：hashk
  * 功能描述：字符串哈希函数，将字符串转化成整数
  * 输入参数： str 指向字符串的指针
  *            i 选择算法，应在0~7之间
  * 返 回 值：无符号整数，即字符串对应的整数
-//==============================================================*/
+ */
 static unsigned int ELFHash(char *str);     	/*  ELF Hash Function */
 static unsigned int BKDRHash(char *str);     	/*  BKDR Hash Function */
 static unsigned int RSHash(char *str);     	/*  RS Hash Function */
