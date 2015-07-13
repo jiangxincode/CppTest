@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main3c2p0()
+int c2p0()
 {
     int i;
     struct c_comp a[4],y[4],b[4];

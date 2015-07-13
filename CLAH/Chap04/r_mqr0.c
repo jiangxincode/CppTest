@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main4r_mqr0()
+int r_mqr0()
 {
     int i,j;
     double q[4][4],mat[4][3]= {{1.0,2.0,4.0},         /* 矩阵A赋值*/

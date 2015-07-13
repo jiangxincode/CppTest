@@ -2,7 +2,7 @@
 
 #define pi 3.1415926
 
-int main13Ftest_example7()
+int Ftest_example7()
 {
     int j,na,nb,nc,rtab,rtbc,rtac;
     double *a,*b,*c;

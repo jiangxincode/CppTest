@@ -2,7 +2,7 @@
 
 static double f(double x);
 static double df(double x);
-int main12brent0()
+int brent0()
 {
     double a,b,c,xopt,eps, xmin[50];
     int i,j,itmax = 100, nmin, iflag;

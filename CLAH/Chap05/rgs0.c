@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main5rgs0()
+int rgs0()
 {
     int i;
     double a1[4][4]=                         /* 调用函数会破坏矩阵数据，因此需要两份*/

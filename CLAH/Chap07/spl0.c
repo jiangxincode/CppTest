@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main7spl0()
+int spl0()
 {
     int n;
     double t,z;

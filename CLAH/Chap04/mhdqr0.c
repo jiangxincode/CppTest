@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main4mhdqr0()
+int mhdqr0()
 {
     int i,itmax=60;
     double eps=1e-7;

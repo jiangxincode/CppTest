@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main11errf0()
+int errf0()
 {
     int i,j;
     double x,t;

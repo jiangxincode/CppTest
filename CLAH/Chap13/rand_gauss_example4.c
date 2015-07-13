@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main13rand_gauss_example4()
+int rand_gauss_example4()
 {
     int L=100, i,j;
     double a,b;

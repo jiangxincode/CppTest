@@ -2,7 +2,7 @@
 
 static   double f(double,double);
 static  void  fy(double,double []);
-int main8simps20()
+int simps20()
 {
     double a,b,eps,s,h0;
     a = 0.0;

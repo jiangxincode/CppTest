@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main5gstr0()
+int gstr0()
 {
     int i,j;
     double a[4][4]=

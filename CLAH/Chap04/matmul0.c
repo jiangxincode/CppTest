@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main4matmul0()
+int matmul0()
 {
     struct c_comp c_mat1[2][2], c_mat2[2][2], c_mat3[2][2];
     double r_mat1[3][2] = {{1,2},{3,4},{1,4}};   /* 为要相乘的实矩阵赋初值*/

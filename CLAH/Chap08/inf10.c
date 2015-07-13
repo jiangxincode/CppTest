@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main8inf10()
+int inf10()
 {
     double a,b,eps,h0,z;
     double f1(double);

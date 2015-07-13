@@ -1,7 +1,7 @@
 ﻿#include "../utility.h"
 
 static     void f(double*,double*,double);
-int main9lmu3()
+int lmu3()
 {
     double h=0.01,a=0;
     int n=3,m=10,i,j;

@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main12simp10()
+int simp10()
 {
     int i;
     double  simf();

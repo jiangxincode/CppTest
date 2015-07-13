@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main15Inst0()
+int Inst0()
 {
     int i,j,p[50],p1[50],y[50];
     printf("Data:\n");

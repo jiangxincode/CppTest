@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main13ttest_example6()
+int ttest_example6()
 {
     int j,na,nb,nc,rtab,rtbc,rtac;
     double *a,*b,*c;

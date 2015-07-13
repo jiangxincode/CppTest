@@ -2,7 +2,7 @@
 
 double* fab(int j,double *ab);
 
-int main11frac0()
+int frac0()
 {
     int nmax;
     double f,e0,e1;

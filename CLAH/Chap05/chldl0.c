@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main5childl0()
+int childl0()
 {
     int i;
     double a[5][5]= { {24.0,7.0,5.0,2.0,-1.0},

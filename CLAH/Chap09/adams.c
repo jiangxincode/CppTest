@@ -7,7 +7,7 @@
  *          n（方程组个数），f（斜率的计算）
  *          h（步长），m（步数），a（区间起点）
  * 返回值：0（失败），1（成功）
-=========================================================*/
+ */
 int adams(double *y,int n,double(*f)(),double h,int m,double a)
 {
     double *f1,*f2,*f3,*f4,*f5,*temp,*ytemp,x;

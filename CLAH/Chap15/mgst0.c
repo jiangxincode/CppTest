@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main15mgst0()
+int mgst0()
 {
     int i,j,p[50];
     printf("Data:\n");

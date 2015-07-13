@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main11expi0()
+int expi0()
 {
     int i,j,ni;
     double xj,y;

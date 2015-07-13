@@ -2,7 +2,7 @@
 
 static double f();
 static void df();
-int main12cggm0()
+int cggm0()
 {
     double  eps,fopt,x[3],xm[3];
     int itmax = 50, n = 3,it;

@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main11elp10()
+int elp10()
 {
     int i;
     double f,sf,cf,y,k;

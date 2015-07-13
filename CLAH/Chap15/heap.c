@@ -26,8 +26,8 @@ void heap(int *x,int n)
     return;
 }
 
-static void sift(x,n,i)                        /* 对x[n]数组中x[i]元素进行筛运算，*/
-int *x,n,i;                             /* 假定以x[i+1]到x[n-1]的每个元素为根的子树已经成为堆*/
+static void sift(int *x,int n,int i)                        /* 对x[n]数组中x[i]元素进行筛运算，*/
+                            /* 假定以x[i+1]到x[n-1]的每个元素为根的子树已经成为堆*/
 {
     int j,t;
     t = x[i];                           /* 待筛结点的值*/

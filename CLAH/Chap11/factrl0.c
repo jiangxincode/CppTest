@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main11factrl0()
+int factrl0()
 {
     int n;
     double x;

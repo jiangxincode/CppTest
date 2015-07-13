@@ -2,7 +2,7 @@
 
 static double f(double x);
 static double df(double x);
-int main12dbrent0()
+int dbrent0()
 {
     double a,b,c,xopt,eps,fx, xmin[50];
     int i,j,itmax = 100, nmin, iflag;

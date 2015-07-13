@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main3cpmd0()
+int cpmd0()
 {
     int i;
     struct c_comp a[3],b[3],c[5],q[4],r[5];

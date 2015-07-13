@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main4minv0()
+int minv0()
 {
     struct c_comp c_mat[2][2], c_mat1[2][2], c_mat2[2][2];
     double r_mat[2][2] = {{3,2},{2,5}};

@@ -1,7 +1,7 @@
 ﻿#include "../utility.h"
 
 static double f(double);
-int main6disroot1()
+int disroot1()
 {
     double a,b,eps,root;
     a=0.0;

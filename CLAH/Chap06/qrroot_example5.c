@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main6qrroot5()
+int qrroot5()
 {
     int i,itmax=60;
     double eps=0.000001;                             /* 精度*/

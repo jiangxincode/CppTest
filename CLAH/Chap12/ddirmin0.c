@@ -3,7 +3,7 @@
 static double f();
 static	void df();
 
-int main12ddirmin0()
+int ddirmin0()
 {
     double  eps,fopt,x[3],p[3],xmin[3];
     int itmax = 50, n =3;

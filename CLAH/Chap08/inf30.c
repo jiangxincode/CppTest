@@ -1,7 +1,7 @@
 ﻿#include "../utility.h"
 
 static double f1(double);
-int main8inf30()
+int inf30()
 {
     double z;
     printf("Hermite:\n");                      /* 埃尔米特-高斯求积法*/

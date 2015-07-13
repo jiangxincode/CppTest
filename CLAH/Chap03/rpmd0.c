@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main3rpmd0()
+int rpmd0()
 {
     int i;
     double a[3],b[3],c[5],q[4],r[5];

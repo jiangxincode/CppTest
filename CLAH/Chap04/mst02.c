@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int mainmst02()
+int mst02()
 {
     int i,j;
     static double q[5][5];

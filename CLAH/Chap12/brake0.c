@@ -2,7 +2,7 @@
 
 static double f(double);
 
-int main12brake0()
+int brake0()
 {
     double a,b,c,fa,fb,fc;
     int i;

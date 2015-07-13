@@ -2,7 +2,7 @@
 
 static double f1(double x) ;
 
-int main8lfsi0()
+int lfsi0()
 {
     double a,b,eps,h0,z;
     double f1(double);

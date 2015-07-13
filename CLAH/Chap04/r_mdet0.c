@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main4r_mdet0()
+int r_mdet0()
 {
     double a[4][4] = {{2.0,1.0,3.0,5.0},    /* 矩阵A，B，C分别赋初值*/
         {2.0,2.0,-3.0,-1.0},

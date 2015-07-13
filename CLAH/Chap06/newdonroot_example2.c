@@ -2,7 +2,7 @@
 
 static   double f(double);
 static  double fd(double);
-int main6newdonroot2()
+int newdonroot2()
 {
     double x0;
     double eps;

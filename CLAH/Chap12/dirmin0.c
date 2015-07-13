@@ -2,7 +2,7 @@
 
 static double f();
 
-int main12dirmin0()
+int dirmin0()
 {
     double  eps,fopt,x[3],p[3],xmin[3],t;
     int i,itmax = 50, n =3;

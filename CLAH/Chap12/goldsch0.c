@@ -3,7 +3,7 @@
 static	double f();
 static double df();
 
-int main12glodch0()
+int glodch0()
 {
     double a,b,c,xopt,eps, xmin[50];
     int i,j, nmin, iflag;

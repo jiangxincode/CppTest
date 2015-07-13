@@ -2,7 +2,7 @@
 
 static 	double f();
 
-int main12powell0()
+int powell0()
 {
     double  eps,fopt,x[3];
     int itmax = 50, n = 3,it;

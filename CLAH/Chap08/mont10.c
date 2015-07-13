@@ -1,7 +1,7 @@
 ﻿#include "../utility.h"
 
 static double f1(double);
-int main8mont10()
+int mont10()
 {
     double a,b,eps,h0,z;
     a = 0.0;

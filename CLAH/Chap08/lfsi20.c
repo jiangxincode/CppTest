@@ -1,7 +1,7 @@
 ﻿#include "../utility.h"
 
 static double f(double,double);
-int main8lfsi20()
+int lfsi20()
 {
     double a,b,eps,s,h0;
     void  fy(double,double []);

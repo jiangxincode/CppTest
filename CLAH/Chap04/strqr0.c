@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main4strqr0()
+int strqr0()
 {
     int i,jt=60;
     double eps=0.000001;

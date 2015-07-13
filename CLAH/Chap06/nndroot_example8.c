@@ -1,7 +1,7 @@
 ﻿#include "../utility.h"
 
 static void f(double*,double*,double*,double);
-int main6nndroot8()
+int nndroot8()
 {
     double eps=0.000001,h=0.1,t=0.5;
     int n=3,max=600,i;

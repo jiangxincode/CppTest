@@ -1,7 +1,7 @@
 ﻿#include "../utility.h"
 
 static 	double f(double*,double*);
-int main6gradroot7()
+int gradroot7()
 {
     double eps=0.000001;
     int n=3,max=600,i;

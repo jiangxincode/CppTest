@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main16wolt0()
+int wolt0()
 {
     int i,n=8;
     double a[8],b[8],y[8];

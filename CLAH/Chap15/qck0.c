@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main15qck0()
+int qck0()
 {
     int i,j,p[50],p1[50];
     printf("Data:\n");

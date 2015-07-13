@@ -1,7 +1,7 @@
 ﻿#include "../utility.h"
 
 static void f(double*,double*,double);
-int main9euler1()
+int euler1()
 {
     double h=0.01,a=0,eps=0.000001;
     int n=3,m=10,i,j;

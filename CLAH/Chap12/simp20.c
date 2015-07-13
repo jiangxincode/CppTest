@@ -2,7 +2,7 @@
 
 static 	double f();
 
-int main12simp20()
+int simp20()
 {
     int i,n,m,itmax;
     int  sf();

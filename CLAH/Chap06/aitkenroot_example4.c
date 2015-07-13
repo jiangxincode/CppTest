@@ -1,7 +1,7 @@
 ﻿#include "../utility.h"
 
 static double f(double);
-int main6aitkenroot4()
+int aitkenroot4()
 {
     double x, eps;
     double *x0 = &x;

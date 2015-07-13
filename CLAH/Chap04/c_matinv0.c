@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main4c_matinv0()
+int c_matinv0()
 {
     struct c_comp c_mat[2][2], c_mat1[2][2], c_mat2[2][2];
     int i,j;

@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 static     double f(double);
-int main6interroot3()
+int interroot3()
 {
     double x,eps,ab;
     double *x0 = &x;

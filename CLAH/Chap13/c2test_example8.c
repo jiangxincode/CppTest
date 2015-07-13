@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main13c2test_example8()
+int c2test_example8()
 {
     int L,i,*a,*e,r,k,v,temp;
     double *u_ran,c2,alpha;

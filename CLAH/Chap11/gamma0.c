@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main11gramma0()
+int gramma0()
 {
     int i;
     double x,y,z;

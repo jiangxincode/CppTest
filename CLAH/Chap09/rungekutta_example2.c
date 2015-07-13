@@ -5,7 +5,7 @@ static void f(double *y,double *F,double x);
 /**
  * 功能描述：3种rungekutta方法求常微分方程组的初值问题的例子
  */
-int main9rungekutta2()
+int rungekutta2()
 {
     double h=0.01,a=0,eps=0.000000001;
     int n=3,m=10,i,j;

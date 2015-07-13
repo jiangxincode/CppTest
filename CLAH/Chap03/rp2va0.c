@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main3rp2va0()
+int rp2va0()
 {
     double r;
     static double a[4][3]= {{1.0,2.0,3.0},{2.0,3.0,4.0},

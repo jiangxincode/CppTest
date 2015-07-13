@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main4jcb0()
+int jcb0()
 {
     int i,itmax=60;
     double eps=1e-7, u[5],u2[5];

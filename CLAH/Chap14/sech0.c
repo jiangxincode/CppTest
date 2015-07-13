@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main14sech0()
+int sech0()
 {
     int i,q,a;
     long int k;

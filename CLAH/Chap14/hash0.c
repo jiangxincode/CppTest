@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main14hash0()
+int hash0()
 {
     int i,m;
     static struct student x[16]= {{101,"Zhao",'M',19},

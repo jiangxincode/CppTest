@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main4r_chol0()
+int r_chol0()
 {
     int i,j;
     double u[5][5];

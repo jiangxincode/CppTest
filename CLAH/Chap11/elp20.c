@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main11elp20()
+int elp20()
 {
     int i;
     double f,sf,cf,y,k;

@@ -2,7 +2,7 @@
 
 static void  fy(double,double []);
 static double f(double,double);
-int main8mount20()
+int mount20()
 {
     double a,b,eps,s,h0;
     a = 0.0;

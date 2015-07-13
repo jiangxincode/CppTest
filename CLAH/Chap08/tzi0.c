@@ -2,7 +2,7 @@
 
 static double f1(double);
 
-int main8tzi0()
+int tzi0()
 {
     double a,b,eps,h0,z;
     a = 0.0;

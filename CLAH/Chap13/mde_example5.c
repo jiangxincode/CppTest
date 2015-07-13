@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main13mde_example5()
+int mde_example5()
 {
     int L,j;
     double *rand;

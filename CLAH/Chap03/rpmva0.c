@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main3rpmdva0()
+int rpmdva0()
 {
     int i;
     double y[6],tmp;

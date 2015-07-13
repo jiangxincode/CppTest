@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main11gramm20()
+int gramm20()
 {
     int i,j;
     double ai,xj,y;

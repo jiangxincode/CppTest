@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main11chii0()
+int chii0()
 {
     int i,n;
     double x,y;

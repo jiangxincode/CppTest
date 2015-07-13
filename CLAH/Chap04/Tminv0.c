@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main4Tminv0()
+int Tminv0()
 {
     double r_mat1[5][5], r_mat2[5][5], r_mat3[5][5];
     int i,j,m,n,p;

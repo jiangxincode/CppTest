@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main5toepl0()
+int toepl0()
 {
     int i;
     double x[5];

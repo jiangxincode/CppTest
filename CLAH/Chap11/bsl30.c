@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main11bsl30()
+int bsl30()
 {
     int n,i;
     double x,y;

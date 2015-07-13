@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main11beta20()
+int beta20()
 {
     int i,j,k;
     double x,a0,b0,y;

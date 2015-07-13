@@ -1,6 +1,6 @@
 ﻿#include "../utility.h"
 
-int main5cgs0()
+int cgs0()
 {
     int i,j;
     struct c_comp a[3][3],a1[3][3],b[3],b1[3],x[3],x1[3];  /* 复数结构体数组*/
