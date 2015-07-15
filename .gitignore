@@ -7,3 +7,4 @@ doxygen/
 *.depend
 *.swp
 CppCheckResults.xml
+/Debug/

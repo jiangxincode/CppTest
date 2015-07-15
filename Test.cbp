@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="--gtest_filter=*Fib*.*" />
+				<Option parameters="--gtest_filter=*Miscellaneous*.*" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -74,8 +74,6 @@
 		<Unit filename="src/main015.cpp" />
 		<Unit filename="src/main016.cpp" />
 		<Unit filename="src/main017.cpp" />
-		<Unit filename="src/main0500.cpp" />
-		<Unit filename="src/main0501.cpp" />
 		<Unit filename="src/main0502.cpp" />
 		<Unit filename="src/main0503.cpp" />
 		<Unit filename="src/main0504.cpp" />
@@ -86,12 +84,10 @@
 		<Unit filename="src/main0510.cpp" />
 		<Unit filename="src/main0511.cpp" />
 		<Unit filename="src/main0512.cpp" />
-		<Unit filename="src/main0513.cpp" />
 		<Unit filename="src/main0514.cpp" />
 		<Unit filename="src/main0515.cpp" />
 		<Unit filename="src/main0516.cpp" />
 		<Unit filename="src/main0517.cpp" />
-		<Unit filename="src/main0518.cpp" />
 		<Unit filename="src/main0519.cpp" />
 		<Unit filename="src/main0520.cpp" />
 		<Unit filename="src/main0521.cpp" />
@@ -141,43 +137,36 @@
 		<Unit filename="src/main1760.cpp" />
 		<Unit filename="src/main1800.cpp" />
 		<Unit filename="src/main2000.cpp" />
-		<Unit filename="src/main2001.cpp" />
-		<Unit filename="src/main2500.cpp" />
 		<Unit filename="src/main2501.cpp" />
-		<Unit filename="src/main2516.cpp" />
 		<Unit filename="src/main2517.cpp" />
 		<Unit filename="src/main2518.cpp" />
-		<Unit filename="src/main2519.cpp" />
 		<Unit filename="src/main2525.cpp" />
-		<Unit filename="src/main2526.cpp" />
-		<Unit filename="src/main2527.cpp" />
 		<Unit filename="src/main2528.cpp" />
 		<Unit filename="src/main2534.cpp" />
-		<Unit filename="src/main2535.cpp" />
 		<Unit filename="src/main2542.cpp" />
 		<Unit filename="src/main2543.cpp" />
 		<Unit filename="src/main2544.cpp" />
 		<Unit filename="src/main2545.cpp" />
-		<Unit filename="src/main2554.cpp" />
 		<Unit filename="src/main2564.cpp" />
 		<Unit filename="src/main2565.cpp" />
 		<Unit filename="src/main2566.cpp" />
-		<Unit filename="src/main2572.cpp" />
 		<Unit filename="src/main2579.cpp" />
-		<Unit filename="src/main2583.cpp" />
-		<Unit filename="src/main2584.cpp" />
-		<Unit filename="src/main2585.cpp" />
-		<Unit filename="src/main2591.cpp" />
+		<Unit filename="src/miscellaneous.cpp" />
+		<Unit filename="src/miscellaneous.h" />
 		<Unit filename="src/sort.cpp" />
 		<Unit filename="src/sort.h" />
 		<Unit filename="src/static_list.h" />
+		<Unit filename="src/string_process.cpp" />
+		<Unit filename="src/string_process.h" />
 		<Unit filename="src/union_find_set.cpp" />
 		<Unit filename="src/union_find_set.h" />
 		<Unit filename="test/test_binary_search_tree.cpp" />
 		<Unit filename="test/test_binary_tree.cpp" />
 		<Unit filename="test/test_fibonacci.cpp" />
 		<Unit filename="test/test_heap.cpp" />
+		<Unit filename="test/test_miscellaneous.cpp" />
 		<Unit filename="test/test_sort.cpp" />
+		<Unit filename="test/test_string_process.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

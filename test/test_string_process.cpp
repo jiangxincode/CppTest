@@ -1,5 +1,5 @@
 #include "../src/string_process.h"
-#include <gtest/gtest.h>
+#include "../include/gtest/gtest.h"
 #include <stdlib.h>
 
 class StringProcessTest:public testing::Test

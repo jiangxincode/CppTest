@@ -1,5 +1,5 @@
 ﻿#include "../src/heap.h"
-#include <gtest/gtest.h>
+#include "../include/gtest/gtest.h"
 
 bool compmin(int a,int b)
 {

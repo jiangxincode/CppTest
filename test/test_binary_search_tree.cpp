@@ -2,7 +2,7 @@
 #include <iomanip>
 
 #include "../src/binary_search_tree.h"
-#include <gtest/gtest.h>
+#include "../include/gtest/gtest.h"
 
 using namespace std;
 
