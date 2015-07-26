@@ -19,6 +19,56 @@ int plus_without_operator(int i_num1, int i_num2)
 }
 
 /**
+ * 两个int类型的数据，不用任何的判断语句如if、switch、?:等，找出其中的大值
+ */
+int max1(int x,int y)
+{
+    int buf[2] = {x,y};
+    unsigned int z;
+    z = x-y;
+    z >>= 31;
+    return buf[z];
+}
+
+/**
+ * 两个int类型的数据，不用任何的判断语句如if、switch、?:等，找出其中的大值
+ */
+int max2(int a, int b)
+{
+    return (a>=b)*a + (a<b)*b;
+}
+
+/**
+ * 交换两个整型变量的值，不引入第三个变量
+ */
+void swap1(int* i_num1,int* i_num2)
+{
+    *i_num1 = *i_num1 + *i_num2;
+    *i_num2 = *i_num1 - *i_num2;
+    *i_num1 = *i_num1 - *i_num2;
+}
+
+/**
+ * 交换两个整型变量的值，不引入第三个变量
+ */
+void swap2(int* i_num1,int* i_num2)
+{
+    *i_num2 = *i_num2 - *i_num1;
+    *i_num1 = *i_num2 + *i_num1;
+    *i_num2 = *i_num1 - *i_num2;
+}
+
+/**
+ * 交换两个整型变量的值，不引入第三个变量
+ */
+void swap3(int* i_num1,int* i_num2)
+{
+    *i_num1 = *i_num1 ^ *i_num2;
+    *i_num2 = *i_num1 ^ *i_num2;
+    *i_num1 = *i_num1 ^ *i_num2;
+}
+
+/**
  * 判断一个长整数为回文数
  * 测试用例：
  * input output

@@ -41,6 +41,7 @@
 			<Add directory="lib" />
 		</Linker>
 		<Unit filename="src/LinkedSet.h" />
+		<Unit filename="src/basic.cpp" />
 		<Unit filename="src/binary_search_tree.cpp" />
 		<Unit filename="src/binary_search_tree.h" />
 		<Unit filename="src/binary_tree.cpp" />
@@ -49,6 +50,8 @@
 		<Unit filename="src/caishenyang/Quote.h" />
 		<Unit filename="src/caishenyang/main.cpp" />
 		<Unit filename="src/circ_list.h" />
+		<Unit filename="src/factorial.cpp" />
+		<Unit filename="src/factorial.h" />
 		<Unit filename="src/fibonacci.cpp" />
 		<Unit filename="src/fibonacci.h" />
 		<Unit filename="src/hash.cpp" />
@@ -58,7 +61,6 @@
 		<Unit filename="src/linear_list.h" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/main.h" />
-		<Unit filename="src/main000.cpp" />
 		<Unit filename="src/main003.cpp" />
 		<Unit filename="src/main004.cpp" />
 		<Unit filename="src/main005.cpp" />
@@ -79,7 +81,6 @@
 		<Unit filename="src/main0504.cpp" />
 		<Unit filename="src/main0505.cpp" />
 		<Unit filename="src/main0507.cpp" />
-		<Unit filename="src/main0508.cpp" />
 		<Unit filename="src/main0509.cpp" />
 		<Unit filename="src/main0510.cpp" />
 		<Unit filename="src/main0511.cpp" />
@@ -118,7 +119,6 @@
 		<Unit filename="src/main0547.cpp" />
 		<Unit filename="src/main0548.cpp" />
 		<Unit filename="src/main0549.cpp" />
-		<Unit filename="src/main0550.cpp" />
 		<Unit filename="src/main0551.cpp" />
 		<Unit filename="src/main0552.cpp" />
 		<Unit filename="src/main0553.cpp" />
@@ -162,6 +162,7 @@
 		<Unit filename="src/union_find_set.h" />
 		<Unit filename="test/test_binary_search_tree.cpp" />
 		<Unit filename="test/test_binary_tree.cpp" />
+		<Unit filename="test/test_factorial.cpp" />
 		<Unit filename="test/test_fibonacci.cpp" />
 		<Unit filename="test/test_heap.cpp" />
 		<Unit filename="test/test_miscellaneous.cpp" />
