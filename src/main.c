@@ -99,6 +99,7 @@ int main(int argc, char* argv[])
     if(init_char[0] == '\0')
     {
         printf("请输入一个成语\n");
+        fflush(stdout);
         scanf("%s",input);
     }
     else
