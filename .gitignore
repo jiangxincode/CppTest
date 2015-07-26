@@ -1,6 +1,3 @@
-bin/
-obj/
-*.depend
-*.layout
-*.xml
+Debug/
 
+.settings/
