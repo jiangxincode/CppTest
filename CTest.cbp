@@ -881,19 +881,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/main.h" />
-		<Unit filename="src/main0000.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="src/main0001.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="src/main0002.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="src/main0003.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/main0004.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/main0005.c">
@@ -908,9 +899,6 @@
 		<Unit filename="src/main0008.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="src/main0010.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="src/main0012.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -918,9 +906,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/main0014.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/main0015.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/main0016.c">
@@ -933,9 +918,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/main0019.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/main0020.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/main0021.c">
@@ -962,16 +944,7 @@
 		<Unit filename="src/main0028.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="src/main0029.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/main0030.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="src/main0031.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/main0032.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/main0033.c">
@@ -1169,9 +1142,6 @@
 		<Unit filename="src/main1123.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="src/main1124.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="src/main1125.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -1187,13 +1157,7 @@
 		<Unit filename="src/main1135.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="src/main1136.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="src/main1137.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/main1141.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/main1142.c">

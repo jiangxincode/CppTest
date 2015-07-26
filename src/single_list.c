@@ -3,14 +3,6 @@
 #include <string.h>
 #include <math.h>
 
-/**
- * 链表翻转
- * 给出一个链表和一个数k，比如链表1→2→3→4→5→6
- * 若k=2，则翻转后2→1→4→3→6→5
- * 若k=3,翻转后3→2→1→6→5→4
- * 若k=4，翻转后4→3→2→1→5→6
-**/
-
 typedef struct node
 {
     struct node *next;
@@ -67,6 +59,13 @@ int linkLen(node *head)
     return len;
 }
 
+/**
+ * 链表翻转
+ * 给出一个链表和一个数k，比如链表1→2→3→4→5→6
+ * 若k=2，则翻转后2→1→4→3→6→5
+ * 若k=3,翻转后3→2→1→6→5→4
+ * 若k=4，翻转后4→3→2→1→5→6
+**/
 node* reverseK(node *head, int k)
 {
     int i, len, time, now;
@@ -118,9 +117,10 @@ node* reverseK(node *head, int k)
     return newhead;
 }
 
-/**如何判断两个单向链表是否有相交，并找出交点。
-给出两个链表的头指针pHead1 和 pHead2 ，写一个函数判断两条链表有没交叉点
-*/
+/**
+ * 如何判断两个单向链表是否有相交，并找出交点。
+ * 给出两个链表的头指针pHead1 和 pHead2 ，写一个函数判断两条链表有没交叉点
+ */
 node* checkLink(node* pHead1,node* pHead2)
 {
     node *p1=pHead1,*p2=pHead2;
