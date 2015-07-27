@@ -1,10 +1,4 @@
 # =========================
-bin/
-obj/
-doxygen/
-.cccc/
-*.layout
-*.depend
 *.swp
-CppCheckResults.xml
-/Debug/
+Debug/
+.settings/
