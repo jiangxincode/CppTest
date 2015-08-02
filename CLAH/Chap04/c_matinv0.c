@@ -35,7 +35,7 @@ int c_matinv0()
     }
 
     printf("\n");
-    c_minv(c_mat,n,0.01);
+    c_minv(&(c_mat[0][0]),n,0.01);
     printf("inv(A):\n");
 
     for(i=0; i<m; i++)
@@ -50,7 +50,7 @@ int c_matinv0()
 
     printf("\n");
     printf("A*inv(A):\n");
-    c_matmul(c_mat,c_mat1,n,n,n,c_mat2);
+    c_matmul(&(c_mat[0][0]),&(c_mat1[0][0]),n,n,n,&(c_mat2[0][0]));
 
     for(i=0; i<m; i++)
     {
