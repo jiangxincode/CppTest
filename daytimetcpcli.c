@@ -11,20 +11,14 @@ int main(int argc, char **argv)
         err_quit("usage: a.out <IPaddress>");
     }
 
-    if((sockfd = socket(AF_INET, SOCK_STREAM, 0)) < 0)
-    {
-        err_sys("socket error:");
-    }
+    sockfd = Socket(AF_INET, SOCK_STREAM, 0);
 
     bzero(&servaddr, sizeof(servaddr));
     servaddr.sin_family = AF_INET;
     servaddr.sin_port = htons(13); /* daytime server */
     Inet_pton(AF_INET, argv[1], &servaddr.sin_addr);
 
-    if(connect(sockfd, (SA*)&servaddr, sizeof(servaddr)) < 0)
-    {
-        err_sys("connect error");
-    }
+    Connect(sockfd, (SA*)&servaddr, sizeof(servaddr));
 
     while((n = read(sockfd, recvline, MAXLINE)) > 0)
     {

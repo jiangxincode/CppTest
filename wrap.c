@@ -7,7 +7,7 @@ int Socket(int family, int type, int protocol)
 	{
 		err_sys("socket error");
 	}
-	return (n);
+	return n;
 }
 
 int Connect(int sockfd, struct sockaddr *addr, socklen_t addrlen)

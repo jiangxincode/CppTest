@@ -1,7 +1,7 @@
 OBJECTS = std_err_process.o wrap.o str_echo.o str_cli.o\
 		  writen.o readline.o
 BIN = daytimetcpcli daytimetcpcliv6 daytimetcpsrv daytimetcpsrv1\
-	  tcpserv01 tcpcli01 udpserv01 udpcli01
+	  tcpserv01 tcpcli01 udpserv01 udpcli01 tcpservselect01
 
 all:$(BIN)
 
