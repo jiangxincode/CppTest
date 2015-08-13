@@ -7,7 +7,7 @@ using namespace std;
 int main(int argc, char *argv[])
 {
 
-#define TEST_METHOD
+//#define TEST_METHOD
 
 #ifdef TEST_METHOD
     testing::InitGoogleTest(&argc, argv);
@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     do
     {
         fflush(stdin); //清空输入流
-        //main2566();
+        //main0504();
         cout << "\nGo on?(n/y)";
         cin >> ch;
     }

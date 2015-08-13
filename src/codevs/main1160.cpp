@@ -1,11 +1,65 @@
 ﻿/*
-http://wikioi.com/problem/1160/
+
+1160 蛇形矩阵
+
+
+
+
+
+
+ 时间限制: 1 s
+
+
+
+ 空间限制: 128000 KB
+
+
+
+ 题目等级 : 白银 Silver
+
+
+题目描述 Description
+
+
+小明玩一个数字游戏，取个n行n列数字矩阵（其中n为不超过100的奇数），数字的填补方法为：在矩阵中心从1开始以逆时针方向绕行，逐圈扩大，直到n行n列填满数字，请输出该n行n列正方形矩阵以及其的对角线数字之和.
+
+
+输入描述 Input Description
+
+
+n（即n行n列）
+
+
+ 输出描述 Output Description
+
+
+n+1行，n行为组成的矩阵，最后一行为对角线数字之和
+
+
+ 样例输入 Sample Input
+
+
+3
+
+
+
+样例输出 Sample Output
+
+
+5 4 3
+6 1 2
+7 8 9
+25
+
+
+
+数据范围及提示 Data Size & Hint
 */
 #include <iostream>
 
 using namespace std;
 
-int main014()
+int main1160()
 {
     int n;
     cin >> n;

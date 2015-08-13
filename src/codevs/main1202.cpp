@@ -1,13 +1,31 @@
-﻿/*
-http://wikioi.com/problem/1202/
-*/
+﻿/**
+ * 1202 求和
+ * 时间限制: 1 s
+ * 空间限制: 128000 KB
+ * 题目等级 : 青铜 Bronze
+ * 题目描述 Description
+ * 求n个数的和
+ * 输入描述 Input Description
+ * 第一行一个整数n
+ * 接下来一行n个整数
+ *  输出描述 Output Description
+ *  所有数的和
+ *  样例输入 Sample Input
+ *  4
+ *  1 2 3 4
+ *  样例输出 Sample Output
+ *  10
+ *  数据范围及提示 Data Size & Hint
+ *  n<=100
+ *  所有数的和<=231-1
+ */
 #include <iostream>
 #include <vector>
 #include <algorithm>
 
 using namespace std;
 
-int main005()
+int main1202()
 {
     int input_num;
     int input_temp;
