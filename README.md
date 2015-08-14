@@ -1,4 +1,4 @@
-# Test
+# CppTest
 
 jiangxinnju@163.com
 
@@ -13,11 +13,14 @@ http://github.com/jiangxincode
 
 * test/ 单元测试文件
 * src/ 源代码文件
+    * codevs/ OJ
+    * openjudge/ OJ
+    * gtest/
+    * main.c主函数
+    * main.h主头文件
+    * ...
 * include/ 第三方依赖库头文件
-* codevs/ OJ
 
-* main.c主函数
-* main.h主头文件
 
 * 0500-1699:一些小程序
 * 2000-3000:一些小程序
@@ -26,7 +29,6 @@ http://github.com/jiangxincode
 
 	* 第i章->main(17+i)
 	* 部分常用数据结构总结到特定文件
-
 
 
 * 对于scanf的说明
