@@ -6,29 +6,13 @@ http://github.com/jiangxincode
 
 ## 文件说明
 
-* ExerciseC.cbp //codeblocks
-* ExerciseC.depend //codeblocks
-* ExerciseC.layout //codeblocks
-
-* bin/ //可运行二进制文件 不同步
-* obj/ //中间obj文件 不同步
-
-* .ccc/ //Cccc(C and C++ Code Counter)产生的关于代码信息的相关文件 不同步
-
-* .git/ //git
-* .gitattributes //git
-* .gitignore //git
-
-* CppCheckResults.xml //cppcheck 不同步
-* ExerciseC.cppcheck //cppcheck 不同步
-
-* include/ //glib所用的头文件glib-dev_2.28.8-1_win32 不同步
-* lib/ //glib所使用的库文件glib-dev_2.28.8-1_win32 不同步
-
-* temp/ //临时输出文件所在的文件夹 不同步
 * data/ //测试输入文件以及其他需要长期存储的文件
 
 * src/ //源文件所在文件夹
+
+* CLAH\ //C语言算法速查手册
+* CLCDC\ //C语言课程设计案例精编
+
 
 * main.c主函数
 * main.h主头文件
@@ -40,8 +24,6 @@ http://github.com/jiangxincode
 * 1000-1199:C语言程序设计, 2012 实验教材为《C语言程序设计教程学习指导》
 	* origin:7-4.c now:main1074
 	* origin:12-5.c now:main1125
-
-* //delete:表示已删除可重用
 
 ## 待修复问题
 
