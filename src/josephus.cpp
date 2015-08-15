@@ -10,7 +10,7 @@ using namespace std;
  * 约瑟夫问题（华为面试）
  * 输入游戏者人数、开始的序号数（从哪个人开始）和报数间隔
  */
-int main0031()
+int josephus()
 {
     int num; //the numbers of the players
     int start; //from which player to start
@@ -248,10 +248,5 @@ int main2_20()
     odd.output();
     cout<<"The even linkedlist is:"<<endl;
     even.output();
-    return 0;
-}
-int main003()
-{
-    main0031();
     return 0;
 }
