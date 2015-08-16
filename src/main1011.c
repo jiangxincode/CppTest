@@ -14,14 +14,13 @@ int main10111(void)
 
 int main10112(void) //打印乘法表
 {
-    int row,col,result;
+    int row,col;
 
     for(row=1; row<10; row++)
     {
         for(col=1; col<=row; col++)
         {
-            result=row*col;
-            printf("%d*%d=%-5d",row,col,result);
+            printf("%d*%d=%-5d",row,col,row*col);
         }
 
         printf("\n");
