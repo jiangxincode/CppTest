@@ -167,7 +167,7 @@ void jx_float_exp(char *str,int n)
 }
 
 /** \cond */
-int main0003()
+int main()
 {
     jx_float_exp("95.123",12);
     return 0;

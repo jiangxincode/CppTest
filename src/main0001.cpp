@@ -15,7 +15,7 @@ struct my_struct2
     short var3;
 };
 
-int main0001()
+int main()
 {
     printf("%d\n", sizeof(struct my_struct1));
     printf("%d\n", sizeof(struct my_struct2));
