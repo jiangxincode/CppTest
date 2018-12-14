@@ -30,7 +30,7 @@ using namespace std;
 #define MAX_WORD_LENGHT 40
 #define MAX_CHAR_PER_LINE 80
 
-int mainzz3()
+int main()
 {
 	char words[MAX_WORD_NUMBER][MAX_WORD_LENGHT]; //用于保存每一个单词
 	int wordsLen[MAX_WORD_NUMBER]; // 记录每一个单词的长度

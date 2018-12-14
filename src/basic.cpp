@@ -6,7 +6,7 @@ using namespace std;
 /**
  * 系统测试
  */
-int main000()
+int main()
 {
 #ifdef __WIN32__
     cout << "WIN32" << endl;

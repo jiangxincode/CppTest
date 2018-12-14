@@ -1,7 +1,6 @@
 ﻿#ifndef MAIN_H
 #define MAIN_H
 
-int main000();
 int main001();
 int main002();
 int main003();
@@ -92,7 +91,6 @@ int main1740();
 
 int main2000();
 int main2001();
-int main2566();
 int main2585();
 int main2591();
 int main2592();

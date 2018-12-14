@@ -17,7 +17,7 @@ int mainafsf(int argc, char *argv[])
     do
     {
         fflush(stdin); //清空输入流
-        main2566();
+        main2565();
         cout << "\nGo on?(n/y)";
         cin >> ch;
     }

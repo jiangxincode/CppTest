@@ -73,7 +73,7 @@ void freeTG(TG* total)
 }
 
 /** \cond */
-int main0016()
+int main()
 {
     int i;
     int sw;
@@ -88,6 +88,7 @@ int main0016()
     while(1)
     {
         printf("*******Tennis Ground Mallocation******************\n");
+        fflush(stdout);
 
         for(i=1; i<=100; i++)
         {

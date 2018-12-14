@@ -13,7 +13,7 @@ static int comp(const void *a, const void *b)
 }
 
 /** \cond */
-int main0006()
+int main()
 {
     const int N = 5;
     int height[N];

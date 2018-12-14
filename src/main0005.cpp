@@ -8,7 +8,7 @@
 #include <limits.h>
 
 /** \cond */
-int main0005()
+int main()
 {
     int min = INT_MAX, max = INT_MIN;
     int n = 0; //记录输入的数字个数
