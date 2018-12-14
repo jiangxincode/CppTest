@@ -2,7 +2,7 @@ CC := g++
 RM := rm -f
 LIBS =
 
-all: gtest
+all: get_max_min
 
 clean:
 	$(RM)  *.exe *.o
@@ -12,10 +12,10 @@ basic: basic.o
 basic.o: basic.cpp
 	$(CC) -c basic.cpp -o basic.o
 
-mainzz3: mainzz3.o
-	$(CC) mainzz3.o -o mainzz3
-mainzz3.o: openjudge/mainzz3.cpp
-	$(CC) -c openjudge/mainzz3.cpp -o mainzz3.o
+openjudge_zz_3: openjudge_zz_3.o
+	$(CC) openjudge_zz_3.o -o openjudge_zz_3
+openjudge_zz_3.o: openjudge_zz_3.cpp
+	$(CC) -c oopenjudge_zz_3 -o openjudge_zz_3.o
 
 main0001: main0001.o
 	$(CC) main0001.o -o main0001
@@ -47,5 +47,3 @@ get_max_min: get_max_min.o
 	$(CC) get_max_min.o -o get_max_min
 get_max_min.o: get_max_min.cpp
 	$(CC) -c get_max_min.cpp -o get_max_min.o
-	
-main

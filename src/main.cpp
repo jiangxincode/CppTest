@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int mainafsf(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 
 #define TEST_METHOD
@@ -13,15 +13,6 @@ int mainafsf(int argc, char *argv[])
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 #else
-    string ch;
-    do
-    {
-        fflush(stdin); //清空输入流
-        main2565();
-        cout << "\nGo on?(n/y)";
-        cin >> ch;
-    }
-    while(ch == "y");
     return 0;
 #endif // TEST_METHOD
 
