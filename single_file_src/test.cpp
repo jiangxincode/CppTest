@@ -8,10 +8,13 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <numeric>
+
+using namespace std;
 
 int main(int argc, char const *argv[]) {
 	std::vector<int> v = { 1, 2, 3, 4, 5, 5, 4, 3, 2, 1 };
-	std::cout << std::accumulate(v.begin(), v.end(), 0.0) << std::endl;
+	std::cout << accumulate(v.begin(), v.end(), 0.0) << std::endl;
 	return 0;
 }
 

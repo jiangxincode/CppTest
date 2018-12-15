@@ -57,7 +57,7 @@
 
 using namespace std;
 
-int main1083()
+int main()
 {
     int N,M=1;
     int numerator,denominator;

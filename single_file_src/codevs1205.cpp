@@ -59,7 +59,7 @@ you love I
 
 using namespace std;
 
-int main1205()
+int main()
 {
     string word, str_input;
     getline(cin, str_input); //注意getline的用法

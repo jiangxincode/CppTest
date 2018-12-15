@@ -59,7 +59,7 @@ n+1行，n行为组成的矩阵，最后一行为对角线数字之和
 
 using namespace std;
 
-int main1160()
+int main()
 {
     int n;
     cin >> n;

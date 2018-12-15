@@ -31,7 +31,7 @@ static int gcd(int min,int max)
     }
 }
 
-int main1212()
+int main()
 {
     int A,B;
     cin >> A >> B;

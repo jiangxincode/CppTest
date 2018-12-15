@@ -71,7 +71,7 @@
 
 using namespace std;
 
-int main1075()
+int main()
 {
     int number;
     int temp;

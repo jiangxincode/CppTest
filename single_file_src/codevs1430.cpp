@@ -83,7 +83,7 @@ c或c++的初学者注意，"＼"的意思
 
 using namespace std;
 
-int main1430()
+int main()
 {
     int input;
     cin >> input;

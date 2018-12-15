@@ -23,7 +23,7 @@
 
 using namespace std;
 
-int main1206()
+int main()
 {
     double input;
     cin >> input;

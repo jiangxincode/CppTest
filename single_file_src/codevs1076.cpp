@@ -65,7 +65,7 @@
 
 using namespace std;
 
-int main1076()
+int main()
 {
     int num;
     int temp;

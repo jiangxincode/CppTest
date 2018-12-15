@@ -60,7 +60,7 @@ Pascal用户请注意：两个字符串之间可能包含多个空格
 
 using namespace std;
 
-int main1204()
+int main()
 {
     string str_text;
     string str_query;

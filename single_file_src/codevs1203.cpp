@@ -21,7 +21,7 @@
 
 using namespace std;
 
-int main1203()
+int main()
 {
     float input_one,input_two;
     cin >> input_one >> input_two;

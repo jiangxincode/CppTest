@@ -30,7 +30,7 @@
 
 using namespace std;
 
-int main2235()
+int main()
 {
     int price;
     float discount;

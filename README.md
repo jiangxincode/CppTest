@@ -13,8 +13,6 @@ http://github.com/jiangxincode
 
 * test/ 单元测试文件
 * src/ 源代码文件
-    * codevs/ OJ
-    * openjudge/ OJ
     * gtest/
     * main.c主函数
     * main.h主头文件

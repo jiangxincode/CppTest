@@ -25,7 +25,7 @@
 
 using namespace std;
 
-int main1201()
+int main()
 {
     int input_num;
     int input_temp;

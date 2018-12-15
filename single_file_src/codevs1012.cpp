@@ -42,7 +42,7 @@ int lcm(int min,int max)
 {
     return min*max/gcd(min,max); //最小公倍数为两者之积除以两者的最大公约数
 }
-int main1012()
+int main()
 {
     int X0,Y0;
     map<int,int> map_result;

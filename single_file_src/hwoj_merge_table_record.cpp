@@ -1,23 +1,8 @@
 /*
- * MergeTableRecord.cpp
- *
- *  Created on: 2015年8月25日
- *      Author: Administrator
  * 题目：合并表记录
-
 
  描述
  数据表记录包含表索引和数值。请对表索引相同的记录进行合并，合并后表记录为相同索引表的数值求和
-
- 函数说明：
- public int mergeRecord(List oriList, List rstList)
- 数据表记录包含表索引和数值。请对表索引相同的记录进行合并，合并后表记录为相同索引表的数值求和。
-
- @param oriList 原始表记录。 以List方式存放，TableRecord定义见TableRecord.java，
- 调用者无需对leRecord.java做任何修改
- @param rstList 合并后的表记录 , 以List方式存放
- @return  返回合并后表的个数
-
 
  知识点	栈
  运行时间限制	10M
@@ -36,7 +21,7 @@
 #include<iostream>
 #include<map>
 using namespace std;
-int mainmergetablerecord()
+int main()
 {
 	int n, index, value;
 	map<int, int> imap;
@@ -46,13 +31,18 @@ int mainmergetablerecord()
 		cin >> index;
 		cin >> value;
 		if (imap.count(index))
+		{
 			imap[index] += value;
+		}
 		else
+		{
 			imap.insert(make_pair(index, value));
+		}
 	}
 	for (map<int, int>::iterator it = imap.begin(); it != imap.end(); it++)
+	{
 		cout << it->first << endl << it->second << endl;
-	//system("pause");
+	}
 	return 0;
 }
 

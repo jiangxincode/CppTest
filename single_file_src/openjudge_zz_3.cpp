@@ -35,20 +35,25 @@ int main()
 	char words[MAX_WORD_NUMBER][MAX_WORD_LENGHT]; //用于保存每一个单词
 	int wordsLen[MAX_WORD_NUMBER]; // 记录每一个单词的长度
 	int n; // 需要处理的单词总数
+
 	cin >> n;
 	for (int i = 0; i < n; i++) //输入单词数据，处理后得到每个单词的长度
 	{
 		cin >> words[i];
 		wordsLen[i] = strlen(words[i]);
+
 	}
 
-	//先输出第一个单词
-	int length = wordsLen[0];
-	cout << words[0];
-	for (int i = 1; i < n; i++)
+	//其实可以将读入过程和输出过程合并到一起，可以节省空间，提高效率，但是会导致输入和输出在一起比较混乱，所以分开处理
+	int length = 0;
+	for (int i = 0; i < n; i++)
 	{
-		//如果该单词，连同前面的一个空格加入后不换行，则输出空格和该单词
-		if (length + 1 + wordsLen[i] <= MAX_CHAR_PER_LINE)
+		if (length == 0) //当前行没有任何内容
+		{
+			length = wordsLen[i];
+			cout << words[i];
+		}
+		else if (length + 1 + wordsLen[i] <= MAX_CHAR_PER_LINE) //如果该单词，连同前面的一个空格加入后不换行，则输出空格和该单词
 		{
 			length = length + 1 + wordsLen[i];
 			cout << " " << words[i];
