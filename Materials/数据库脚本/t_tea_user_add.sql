@@ -1,0 +1,14 @@
+CREATE TRIGGER t_tea_user_add
+ON TEACHER_INFO
+FOR INSERT
+AS
+BEGIN
+	DECLARE @userid CHAR(20)
+	DECLARE @userpassword CHAR(20)
+
+	SELECT @userid=TEA_ID,@userpassword=TEA_ID
+	FROM INSERTED
+
+	INSERT INTO USERS(USER_ID,USER_PASSWORD,USER_TYPE)
+	VALUES(@userid,@userpassword,2)
+END
