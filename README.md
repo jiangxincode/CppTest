@@ -1,0 +1,2 @@
+MemeryLeakCheck.cpp
+检测内存泄露的方法，必须在VS中编译运行。
