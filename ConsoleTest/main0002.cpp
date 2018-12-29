@@ -8,11 +8,11 @@
 int main0002()
 {
     double x;
-    scanf("%lf",&x);
+    scanf_s("%lf",&x);
     printf("%lf\n",x);
 
     float y;
-    scanf("%f",&y);
+    scanf_s("%f",&y);
     printf("%f\n",y);
 
     double left=(x*x+1+(1/x))*exp(-1*x)-(1/x);

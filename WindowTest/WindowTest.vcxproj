@@ -159,7 +159,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="WindowTest.cpp" />
+    <ClCompile Include="WindowTest01.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WindowTest.rc" />

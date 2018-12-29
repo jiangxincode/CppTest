@@ -1,7 +1,8 @@
 //memory leak check
-#define _CRTDBG_MAP_ALLOC
 
 #include "pch.h"
+
+#define _CRTDBG_MAP_ALLOC
 
 #include <stdlib.h>
 #include <crtdbg.h>
