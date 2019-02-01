@@ -1,0 +1,1 @@
+sudo apt-get install libgnome-2-0
