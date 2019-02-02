@@ -93,11 +93,11 @@ void HelpAboutHandler(GtkMenuItem * item, gpointer data)
 	GtkWidget *aboutdialog;
 	const gchar *authors[] =
 	{ "Dafrog ", NULL };
-	aboutdialog = gnome_about_new(" ImageViewer", " 1 . 0 ",
-			" ( C) 2 0 00 ,Peter Wright and Wrox Press ",
+	aboutdialog = gnome_about_new(" ImageViewer", " 1.0 ",
+			" ( C) 2 0 00 ,Peter Wright and Wrox Press ","",
 			(const gchar * *) authors,
 			" Welcome to ImageViewer - an example app from Beginning GTK/GNOME",
-			NULL);
+			NULL, NULL);
 	gtk_widget_show(aboutdialog);
 }
 
@@ -108,13 +108,13 @@ void HelpAboutHandler(GtkMenuItem * item, gpointer data)
  * user to choose a file , and then loads up the image viewer form
  * with the image loaded inside .
  **/
-void FileopenHandler(GtkMenuItem * item, gpointer data)
+void FileOpenHandler(GtkMenuItem * item, gpointer data)
 {
 	gchar* filename;
 	filename = ChooseFile();
 	if (filename != NULL)
 	{
-		Showimage(filename);
+		ShowImage(filename);
 		g_free(filename);
 	}
 }
@@ -141,9 +141,9 @@ void RotateHandler(GtkButton * button, gpointer data)
 void FlipHandler(GtkButton * button, gpointer data)
 {
 	if (GPOINTER_TO_INT(data) == 0)
-		Fliplmage( TRUE);
+		FlipImage( TRUE);
 	else
-		Fliplmage( FALSE);
+		FlipImage( FALSE);
 }
 
 /**=============================== MAINWINDOW SIGNAL HANDLERS ========= **/
@@ -185,9 +185,9 @@ void BuildMainWindow(gchar * appname, gchar * appversion)
 	mainwindow = gnome_app_new(appname, "Image Viewer");
 	gtk_window_set_default_size(GTK_WINDOW(mainwindow),
 			gdk_screen_width() - 100, 80);
-	gtk_widget_setuposition(mainwindow, 0, 0);
+	gtk_widget_set_uposition(mainwindow, 0, 0);
 	/* Next , connect up the main window signal handlers */
-	gtk_signal_connect(GTK_OBJECT (mainwindow), "delete_event ",
+	gtk_signal_connect(GTK_OBJECT (mainwindow), "delete_event",
 			GTK_SIGNAL_FUNC (QueryShutdown), NULL);
 	gtk_signal_connect(GTK_OBJECT (mainwindow), "destroy",
 			GTK_SIGNAL_FUNC (CloseTheApp ), NULL);

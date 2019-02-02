@@ -5,8 +5,8 @@
  **/
 #ifndef _IMAGEVIEWER_IMAGEVIEWERUTILITY_H
 #define _IMAGEVIEWER_IMAGEVIEWERUTILITY_H
-void SetActiveWindow(GtkWidget* window, GdkImlibImage * image);
+void SetActiveWindow(GtkWidget* window, GdkPixbuf * image);
 void ClearActiveWindow();
 GtkWidget *GetActiveWindow();
-GdkImlibImage *GetActiveimage();
+GdkPixbuf *GetActiveImage();
 #endif

@@ -7,7 +7,7 @@
 
 /* Setup pointers to keep track of the last window and image used */
 GtkWidget *lastwindow;
-GdkImlibImage * lastimage;
+GdkPixbuf * lastimage;
 
 /**
  * SetActiveWindow ( )
@@ -15,7 +15,7 @@ GdkImlibImage * lastimage;
  * Used when a window becomes active . Stores its pointer so
  * the main window GUI can work with it .
  **/
-void SetActiveWindow(GtkWidget * window, Gdkimlibimage * image)
+void SetActiveWindow(GtkWidget * window, GdkPixbuf * image)
 {
 	lastimage = image;
 	lastwindow = window;
@@ -52,7 +52,7 @@ GtkWidget *GetActiveWindow()
  *
  * Returns a pointer to the last active image .
  */
-Gdkimlibimage * GetActivelmage()
+GdkPixbuf * GetActiveImage()
 {
 	return lastimage;
 }

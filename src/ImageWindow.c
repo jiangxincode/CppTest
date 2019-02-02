@@ -16,7 +16,7 @@
  */
 void DestroyWindow(GtkWidget* window, gpointer imagedata)
 {
-	gdk_imlib_kill_image((GdkImlibImage *) imagedata);
+	gdk_pixbuf_unref((GdkPixbuf *) imagedata);
 	ClearActiveWindow();
 }
 /**
@@ -29,7 +29,7 @@ void DestroyWindow(GtkWidget* window, gpointer imagedata)
  */
 void GotFocus(GtkWidget * window, GdkEvent * event, gpointer imagedata)
 {
-	SetActiveWindow(window, (GdkImlibImage *) imagedata);
+	SetActiveWindow(window, (GdkPixbuf *) imagedata);
 }
 
 /**
@@ -38,7 +38,7 @@ void GotFocus(GtkWidget * window, GdkEvent * event, gpointer imagedata)
  * A utility function that takes a GdkimLib image and puts it into
  * a specified window
  */
-void SetImageintoWindow(GtkWidget * window, GdkImlibImage * image)
+void SetImageIntoWindow(GtkWidget * window, GdkPixbuf * image)
 {
 	GtkWidget *pixmap;
 	/* Check to see if there is already a child in the window */
@@ -46,23 +46,23 @@ void SetImageintoWindow(GtkWidget * window, GdkImlibImage * image)
 		/* Destroy the child if there is one */
 		gtk_widget_destroy(gtk_bin_get_child(GTK_BIN(window)));
 	/* Create a new GnomePixmap from the passed in image */
-	pixmap = gnome_pixmap_new_from_imlib(image);
+	pixmap = gtk_image_new_from_pixbuf(image);
 	/* Add the GnomePixmap into the window and show it*/
 	gtk_container_add(GTK_CONTAINER(window), pixmap);
 	gtk_widget_show(pixmap);
 }
 
 /**
- * Flipimage ( )
+ * FlipImage ( )
  *
  * Utility function to flip an image about an axis . The second
  * parameter dictates whether the calling code wants the image
  * to be flipped horizontally, or vertically
  */
-void Flipimage(gboolean horizontal)
+void FlipImage(gboolean horizontal)
 {
 	GtkWidget *window;
-	GdkImlibImage * image;
+	GdkPixbuf * image;
 	/* Grab the active window pointer */
 
 	window = GetActiveWindow();
@@ -70,13 +70,13 @@ void Flipimage(gboolean horizontal)
 	if (window != NULL)
 	{
 		/* grab the image and perform the flip */
-		image = GetActiveimage();
+		image = GetActiveImage();
 		if (horizontal)
-			gdk_imlib_flip_image_horizontal(image);
+			gdk_pixbuf_flip(image, TRUE);
 		else
-			gdk_imlib_flip_image_vertical(image);
+			gdk_pixbuf_flip(image, FALSE);
 		/* Set the flipped image into the active window */
-		SetimageintoWindow(window, image);
+		SetImageIntoWindow(window, image);
 	}
 }
 /**
@@ -87,8 +87,8 @@ void Flipimage(gboolean horizontal)
 void Rotateimage()
 {
 	GtkWidget *window;
-	GdkImlibImage * image;
-	/* Grab the active window * /
+	GdkPixbuf * image;
+	/* Grab the active window */
 	 window = GetActiveWindow ( ) ;
 	 /* Check that the active window is valid before continuing */
 	if (window != NULL)
@@ -96,9 +96,9 @@ void Rotateimage()
 		/* Grab the active image */
 		image = GetActiveImage();
 		/* Rotate the image - second parameter is ignored at the moment*/
-		gdk_imlib_rotate_image(image, 0);
+		gdk_pixbuf_rotate_simple(image, GDK_PIXBUF_ROTATE_NONE);
 		/* Set the new image into the window */
-		SetImageintoWindow(window, image);
+		SetImageIntoWindow(window, image);
 	}
 }
 
@@ -116,20 +116,20 @@ void CloseActiveimage()
 		gtk_widget_destroy(window);
 }
 /**
- * Showimage ( )
+ * ShowImage ( )
  *
  * The main entry function for the image window.
 
  * It takes the passed in filename and attempts to
  * load it up as an image
  **/
-void Showlmage(gchar * filename)
+void ShowImage(gchar * filename)
 {
-	GdkImlibImage * image;
+	GdkPixbuf * image;
 	GtkWidget *window;
 	GtkWidget *messagebox;
 	/* Attempt to load up 吐e specified image */
-	image = gdk_imlib_load_image(filename);
+	image = gdk_pixbuf_new_from_file(filename, NULL);
 	/* If the resulting image is NULL , then the load failed ....
 	 * tell the user */
 	if (image == NULL)
@@ -145,7 +145,7 @@ void Showlmage(gchar * filename)
 	window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 	gtk_window_set_title(GTK_WINDOW(window), filename);
 	/* Setthe newly loaded image into the window */
-	SetImageintoWindow(window, image);
+	SetImageIntoWindow(window, image);
 	/* Connect up the wi ndow 's signal handlers */
 	gtk_signal_connect(GTK_OBJECT (window ), "destroy",
 			GTK_SIGNAL_FUNC (DestroyWindow ), image);

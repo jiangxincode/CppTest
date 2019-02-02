@@ -1,1 +1,4 @@
 .settings/
+*.o
+*.log
+main
