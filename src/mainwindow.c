@@ -79,7 +79,7 @@ void FileExitItemHandler(GtkMenuItem * item, gpointer data)
  **/
 void FileCloseHandler(GtkMenuItem * item, gpointer data)
 {
-	CloseActiveimage();
+	CloseActiveImage();
 }
 
 /**
@@ -93,10 +93,11 @@ void HelpAboutHandler(GtkMenuItem * item, gpointer data)
 	GtkWidget *aboutdialog;
 	const gchar *authors[] =
 	{ "Dafrog ", NULL };
+	const gchar *documenters[] =
+	{ " Welcome to ImageViewer - an example app from Beginning GTK/GNOME" };
 	aboutdialog = gnome_about_new(" ImageViewer", " 1.0 ",
-			" ( C) 2 0 00 ,Peter Wright and Wrox Press ","",
-			(const gchar * *) authors,
-			" Welcome to ImageViewer - an example app from Beginning GTK/GNOME",
+			" ( C) 2 0 00 ,Peter Wright and Wrox Press ", "",
+			(const gchar * *) authors, (const gchar * *) documenters,
 			NULL, NULL);
 	gtk_widget_show(aboutdialog);
 }
@@ -127,7 +128,7 @@ void FileOpenHandler(GtkMenuItem * item, gpointer data)
  **/
 void RotateHandler(GtkButton * button, gpointer data)
 {
-	Rotateimage();
+	RotateImage();
 }
 
 /**

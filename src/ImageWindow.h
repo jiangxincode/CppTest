@@ -5,8 +5,8 @@
  */
 #ifndef __IMAGEVIEWER_IMAGEWINDOW_H
 #define __IMAGEVIEWER_IMAGEWINDOW_H
-void Showimage(gchar * filename);
+void ShowImage(gchar * filename);
 void RotateImage();
-void CloseActiveimage();
-void Flipimage(gboolean horizontal);
+void CloseActiveImage();
+void FlipImage(gboolean horizontal);
 #endif

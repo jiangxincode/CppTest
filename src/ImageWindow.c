@@ -16,7 +16,7 @@
  */
 void DestroyWindow(GtkWidget* window, gpointer imagedata)
 {
-	gdk_pixbuf_unref((GdkPixbuf *) imagedata);
+	g_object_unref((GdkPixbuf *) imagedata);
 	ClearActiveWindow();
 }
 /**
@@ -84,7 +84,7 @@ void FlipImage(gboolean horizontal)
  *
  * Utility to rotate an image 90 degrees .
  */
-void Rotateimage()
+void RotateImage()
 {
 	GtkWidget *window;
 	GdkPixbuf * image;
@@ -107,7 +107,7 @@ void Rotateimage()
  *
  * Utility function to close down the last active window .
  */
-void CloseActiveimage()
+void CloseActiveImage()
 {
 	/* Grab the last active window pointer */
 	GtkWidget *window = GetActiveWindow();

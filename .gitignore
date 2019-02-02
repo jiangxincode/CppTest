@@ -1,4 +1,4 @@
 .settings/
 *.o
 *.log
-main
+ImageViewer

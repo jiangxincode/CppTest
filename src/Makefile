@@ -12,7 +12,7 @@ clean:
 		$(RM)  *.exe *.o ${TARGET}
 
 ImageViewer: ${OBJS}
-		$(CC) -o main ${OBJS} ${LDFLAGS}
+		$(CC) -o ${TARGET} ${OBJS} ${LDFLAGS}
 
 main.o:
 		$(CC) -c main.c ${CFLAGS}
