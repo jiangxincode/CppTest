@@ -15,7 +15,8 @@ GdkImlibImage * lastimage;
  * Used when a window becomes active . Stores its pointer so
  * the main window GUI can work with it .
  **/
-void SetActiveWindow(GtkWidget * window, Gdkimlibimage * image) {
+void SetActiveWindow(GtkWidget * window, Gdkimlibimage * image)
+{
 	lastimage = image;
 	lastwindow = window;
 }
@@ -28,7 +29,8 @@ void SetActiveWindow(GtkWidget * window, Gdkimlibimage * image) {
  * so last window is later checked out as NULL , there are no
  * graphics loaded .
  **/
-void ClearActiveWindow() {
+void ClearActiveWindow()
+{
 	lastimage = NULL;
 	lastwindow = NULL;
 }
@@ -40,7 +42,8 @@ void ClearActiveWindow() {
  * main window GUI in order for the GU工to work with the right
  * window .
  **/
-GtkWidget *GetActiveWindow() {
+GtkWidget *GetActiveWindow()
+{
 	return lastwindow;
 }
 
@@ -49,6 +52,7 @@ GtkWidget *GetActiveWindow() {
  *
  * Returns a pointer to the last active image .
  */
-Gdkimlibimage * GetActivelmage() {
+Gdkimlibimage * GetActivelmage()
+{
 	return lastimage;
 }

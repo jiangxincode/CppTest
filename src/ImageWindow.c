@@ -4,7 +4,8 @@
  * All the code to work with an image in a window
  */
 #include <gnome.h>
-#include <imageviewerutility.h>
+#include "imageviewerutility.h"
+
 /**
  * DestroyWindow ( )
  *
@@ -13,7 +14,8 @@
  * i-n order that the image can be killed , preventing a memory
  * leak from occuring. The Active window pointer is also cleared .
  */
-void DestroyWindow(GtkWidget* window, gpointer imagedata) {
+void DestroyWindow(GtkWidget* window, gpointer imagedata)
+{
 	gdk_imlib_kill_image((GdkImlibImage *) imagedata);
 	ClearActiveWindow();
 }
@@ -25,7 +27,8 @@ void DestroyWindow(GtkWidget* window, gpointer imagedata) {
  * and image , in order that main window gui can work with the
  * correct window
  */
-void GotFocus(GtkWidget * window, GdkEvent * event, gpointer imagedata) {
+void GotFocus(GtkWidget * window, GdkEvent * event, gpointer imagedata)
+{
 	SetActiveWindow(window, (GdkImlibImage *) imagedata);
 }
 
@@ -35,7 +38,8 @@ void GotFocus(GtkWidget * window, GdkEvent * event, gpointer imagedata) {
  * A utility function that takes a GdkimLib image and puts it into
  * a specified window
  */
-void SetImageintoWindow(GtkWidget * window, GdkImlibImage * image) {
+void SetImageintoWindow(GtkWidget * window, GdkImlibImage * image)
+{
 	GtkWidget *pixmap;
 	/* Check to see if there is already a child in the window */
 	if (gtk_bin_get_child(GTK_BIN(window)) != NULL)
@@ -55,14 +59,16 @@ void SetImageintoWindow(GtkWidget * window, GdkImlibImage * image) {
  * parameter dictates whether the calling code wants the image
  * to be flipped horizontally, or vertically
  */
-void Flipimage(gboolean horizontal) {
+void Flipimage(gboolean horizontal)
+{
 	GtkWidget *window;
 	GdkImlibImage * image;
 	/* Grab the active window pointer */
 
 	window = GetActiveWindow();
 	/* check the pointer isn ' t null before continuing */
-	if (window != NULL) {
+	if (window != NULL)
+	{
 		/* grab the image and perform the flip */
 		image = GetActiveimage();
 		if (horizontal)
@@ -78,13 +84,15 @@ void Flipimage(gboolean horizontal) {
  *
  * Utility to rotate an image 90 degrees .
  */
-void Rotateimage() {
+void Rotateimage()
+{
 	GtkWidget *window;
 	GdkImlibImage * image;
 	/* Grab the active window * /
 	 window = GetActiveWindow ( ) ;
 	 /* Check that the active window is valid before continuing */
-	if (window != NULL) {
+	if (window != NULL)
+	{
 		/* Grab the active image */
 		image = GetActiveImage();
 		/* Rotate the image - second parameter is ignored at the moment*/
@@ -99,7 +107,8 @@ void Rotateimage() {
  *
  * Utility function to close down the last active window .
  */
-void CloseActiveimage() {
+void CloseActiveimage()
+{
 	/* Grab the last active window pointer */
 	GtkWidget *window = GetActiveWindow();
 	/* If the pointer is valid, destroy the window */
@@ -114,7 +123,8 @@ void CloseActiveimage() {
  * It takes the passed in filename and attempts to
  * load it up as an image
  **/
-void Showlmage(gchar * filename) {
+void Showlmage(gchar * filename)
+{
 	GdkImlibImage * image;
 	GtkWidget *window;
 	GtkWidget *messagebox;
@@ -122,7 +132,8 @@ void Showlmage(gchar * filename) {
 	image = gdk_imlib_load_image(filename);
 	/* If the resulting image is NULL , then the load failed ....
 	 * tell the user */
-	if (image == NULL) {
+	if (image == NULL)
+	{
 		messagebox = gnome_message_box_new(
 				"Sorry , you specified an invalid file",
 				GNOME_MESSAGE_BOX_ERROR,

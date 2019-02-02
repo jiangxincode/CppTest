@@ -14,7 +14,8 @@ gchar * selectedfile;
  *
  * Callback triggered when dialog closes down .
  */
-void CloseTheDialog(GtkWidget * widget, gpointer data) {
+void CloseTheDialog(GtkWidget * widget, gpointer data)
+{
 	gtk_main_quit();
 }
 
@@ -26,7 +27,8 @@ void CloseTheDialog(GtkWidget * widget, gpointer data) {
  * stores a pointer to the duplicated string in ' selected file ' , ready to
  * be returned
  */
-void OKClicked(GtkButton * button, gpointer data) {
+void OKClicked(GtkButton * button, gpointer data)
+{
 	/* we need to duplicate the filename selected, since the widget is
 	 * about to be destroyed, and can take the string with it */
 	selectedfile = g_strdup(
@@ -40,7 +42,8 @@ void OKClicked(GtkButton * button, gpointer data) {
  * Callback triggered when the user clicks on the Cancel button in the
  * dialog . Does nothing more than destroy the dialog .
  */
-void CancelClicked(GtkButton * button, gpointer data) {
+void CancelClicked(GtkButton * button, gpointer data)
+{
 	gtk_widget_destroy(dialog);
 }
 
@@ -51,7 +54,8 @@ void CancelClicked(GtkButton * button, gpointer data) {
  * the file selected when the dialog closes down , assuming the user actually
  * chooses something . Otherwise , it j ust returns FALSE .
  */
-gchar * ChooseFile() {
+gchar * ChooseFile()
+{
 
 	/* Reset filename to NULL to prevent false returns */
 	selectedfile = NULL;

@@ -16,37 +16,45 @@
 GtkWidget *mainwindow;
 
 /** ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ MENUS ===================== **/
-static GnomeUIInfo file_menu[] = {
+static GnomeUIInfo file_menu[] =
+{
 GNOMEUIINFO_MENU_OPEN_ITEM ( FileOpenHandler, NULL ),
 GNOMEUIINFO_MENU_CLOSE_ITEM ( FileCloseHandler, NULL ),
 GNOMEUIINFO_SEPARATOR,
 GNOMEUIINFO_MENU_EXIT_ITEM ( FileExitItemHandler, NULL ),
 GNOMEUIINFO_END };
 
-static GnomeUIInfo help_menu[] = {
+static GnomeUIInfo help_menu[] =
+{
 GNOMEUIINFO_MENU_ABOUT_ITEM ( HelpAboutHandler, NULL ),
 GNOMEUIINFO_END };
 
-static GnomeUIInfo menu_bar[] = {
+static GnomeUIInfo menu_bar[] =
+{
 GNOMEUIINFO_SUBTREE ( "_File " , file_menu ),
 GNOMEUIINFO_SUBTREE ( "_Help ", help_menu ),
 GNOMEUIINFO_END };
 
 /**================ TOOLBARS =====================**/
-static GnomeUIInfo toolbar_icons[] = { { GNOME_APP_UI_ITEM, "Open",
-		"Load up a graphic ", FileOpenHandler, NULL, NULL,
-		GNOME_APP_PIXMAP_STOCK, GNOME_STOCK_PIXMAP_OPEN }, { GNOME_APP_UI_ITEM,
-		"Close ", "Close the current graphic ", FileCloseHandler, NULL, NULL,
-		GNOME_APP_PIXMAP_STOCK, GNOME_STOCK_PIXMAP_CLOSE },
-GNOMEUIINFO_SEPARATOR, { GNOME_APP_UI_ITEM, "Rotate ", "Rotate image ",
-		RotateHandler, NULL, NULL, GNOME_APP_PIXMAP_STOCK,
-		GNOME_STOCK_PIXMAP_REDO }, { GNOME_APP_UI_ITEM, "Flip",
-		"Flip image horizontally", FlipHandler, GINT_TO_POINTER(0), NULL,
-		GNOME_APP_PIXMAP_STOCK, GNOME_STOCK_PIXMAP_BACK }, { GNOME_APP_UI_ITEM,
-		"Flip", "Flip image vertically", FlipHandler, GINT_TO_POINTER(1), NULL,
-		GNOME_APP_PIXMAP_STOCK, GNOME_STOCK_PIXMAP_DOWN },
-GNOMEUIINFO_SEPARATOR, { GNOME_APP_UI_ITEM, "Exit", "Quit the app",
-		FileExitItemHandler, NULL, NULL, GNOME_APP_PIXMAP_STOCK,
+static GnomeUIInfo toolbar_icons[] =
+{
+{ GNOME_APP_UI_ITEM, "Open", "Load up a graphic ", FileOpenHandler, NULL, NULL,
+		GNOME_APP_PIXMAP_STOCK, GNOME_STOCK_PIXMAP_OPEN },
+{ GNOME_APP_UI_ITEM, "Close ", "Close the current graphic ", FileCloseHandler,
+NULL, NULL, GNOME_APP_PIXMAP_STOCK, GNOME_STOCK_PIXMAP_CLOSE },
+GNOMEUIINFO_SEPARATOR,
+{ GNOME_APP_UI_ITEM, "Rotate ", "Rotate image ", RotateHandler, NULL, NULL,
+		GNOME_APP_PIXMAP_STOCK,
+		GNOME_STOCK_PIXMAP_REDO },
+{ GNOME_APP_UI_ITEM, "Flip", "Flip image horizontally", FlipHandler,
+		GINT_TO_POINTER(0), NULL, GNOME_APP_PIXMAP_STOCK,
+		GNOME_STOCK_PIXMAP_BACK },
+{ GNOME_APP_UI_ITEM, "Flip", "Flip image vertically", FlipHandler,
+		GINT_TO_POINTER(1), NULL, GNOME_APP_PIXMAP_STOCK,
+		GNOME_STOCK_PIXMAP_DOWN },
+GNOMEUIINFO_SEPARATOR,
+{ GNOME_APP_UI_ITEM, "Exit", "Quit the app", FileExitItemHandler, NULL, NULL,
+		GNOME_APP_PIXMAP_STOCK,
 		GNOME_STOCK_PIXMAP_EXIT },
 GNOMEUIINFO_END };
 
@@ -58,27 +66,33 @@ GNOMEUIINFO_END };
  * application down after first checking with the user that that is what
  * they want to do
  **/
-void FileExitItemHandler(GtkMenuItem * item, gpointer data) {
+void FileExitItemHandler(GtkMenuItem * item, gpointer data)
+{
 	if (CheckUserExit())
 		gtk_widget_destroy(mainwindow);
 }
+
 /** FileCloseHandler ( )
  *
  * CallbackTriggered when user hits Close on the File menu - shuts the
  * last selected window down .
  **/
-void FileCloseHandler(GtkMenuItem * item, gpointer data) {
+void FileCloseHandler(GtkMenuItem * item, gpointer data)
+{
 	CloseActiveimage();
 }
+
 /**
  * HelpAboutHandler ( )
  *
  * Callback triggered when user hits About on the Help menu . Displays the
  * about box .
  **/
-void HelpAboutHandler(GtkMenuItem * item, gpointer data) {
+void HelpAboutHandler(GtkMenuItem * item, gpointer data)
+{
 	GtkWidget *aboutdialog;
-	const gchar *authors[] = { "Dafrog ", NULL };
+	const gchar *authors[] =
+	{ "Dafrog ", NULL };
 	aboutdialog = gnome_about_new(" ImageViewer", " 1 . 0 ",
 			" ( C) 2 0 00 ,Peter Wright and Wrox Press ",
 			(const gchar * *) authors,
@@ -94,10 +108,12 @@ void HelpAboutHandler(GtkMenuItem * item, gpointer data) {
  * user to choose a file , and then loads up the image viewer form
  * with the image loaded inside .
  **/
-void FileopenHandler(GtkMenuItem * item, gpointer data) {
+void FileopenHandler(GtkMenuItem * item, gpointer data)
+{
 	gchar* filename;
 	filename = ChooseFile();
-	if (filename != NULL) {
+	if (filename != NULL)
+	{
 		Showimage(filename);
 		g_free(filename);
 	}
@@ -109,9 +125,11 @@ void FileopenHandler(GtkMenuItem * item, gpointer data) {
  * Callback triggered when user hits the Rotate button on the toolbar .
  * The code calls the image window ' s rotate code to rotate the image
  **/
-void RotateHandler(GtkButton * button, gpointer data) {
+void RotateHandler(GtkButton * button, gpointer data)
+{
 	Rotateimage();
 }
+
 /**
  * FlipHandler ( )
  *
@@ -120,12 +138,14 @@ void RotateHandler(GtkButton * button, gpointer data) {
  * horizontal flip , 1 for a vertical flip, before the appropriate code
  * is called.
  **/
-void FlipHandler(GtkButton * button, gpointer data) {
+void FlipHandler(GtkButton * button, gpointer data)
+{
 	if (GPOINTER_TO_INT(data) == 0)
 		Fliplmage( TRUE);
 	else
 		Fliplmage( FALSE);
 }
+
 /**=============================== MAINWINDOW SIGNAL HANDLERS ========= **/
 /**
  * QueryShutdown
@@ -135,7 +155,8 @@ void FlipHandler(GtkButton * button, gpointer data) {
  * do . Assuming they are , the signal is allowed to be handler by GTK which
  * will destroy the window in the usual manner
  **/
-gboolean QueryShutdown(GtkWidget * widget, GdkEvent * event, gpointer data) {
+gboolean QueryShutdown(GtkWidget * widget, GdkEvent * event, gpointer data)
+{
 	return (!CheckUserExit());
 }
 
@@ -146,7 +167,8 @@ gboolean QueryShutdown(GtkWidget * widget, GdkEvent * event, gpointer data) {
  * This can only happen after the user has been queried as to whether or
  * not they are sure they want t0 quit the app
  **/
-void CloseTheApp(GtkWidget * widget, gpointer data) {
+void CloseTheApp(GtkWidget * widget, gpointer data)
+{
 	gtk_main_quit();
 }
 
@@ -156,7 +178,8 @@ void CloseTheApp(GtkWidget * widget, gpointer data) {
  *
  * Builds up the main window and it ' s user interface
  **/
-void BuildMainWindow(gchar * appname, gchar * appversion) {
+void BuildMainWindow(gchar * appname, gchar * appversion)
+{
 
 	/* Create the GnomeApp widget and set it up atthe top of the screen */
 	mainwindow = gnome_app_new(appname, "Image Viewer");
@@ -183,7 +206,8 @@ void BuildMainWindow(gchar * appname, gchar * appversion) {
  * Puts up a message box asking the user if they really want to quit .
  * Returns TRUE if they do .
  **/
-gboolean CheckUserExit() {
+gboolean CheckUserExit()
+{
 	GtkWidget* msgbox;
 	msgbox = gnome_message_box_new("Are you sure you want to quit？",
 	GNOME_MESSAGE_BOX_QUESTION, GNOME_STOCK_BUTTON_YES,
