@@ -94,9 +94,9 @@ void HelpAboutHandler(GtkMenuItem * item, gpointer data)
 	const gchar *authors[] =
 	{ "Dafrog ", NULL };
 	const gchar *documenters[] =
-	{ " Welcome to ImageViewer - an example app from Beginning GTK/GNOME" };
-	aboutdialog = gnome_about_new(" ImageViewer", " 1.0 ",
-			" ( C) 2 0 00 ,Peter Wright and Wrox Press ", "",
+	{ "Welcome to ImageViewer - an example app from Beginning GTK/GNOME" };
+	aboutdialog = gnome_about_new("ImageViewer", " 1.0 ",
+			"(C) 2019 ,JiangXin(Aloys)", "",
 			(const gchar * *) authors, (const gchar * *) documenters,
 			NULL, NULL);
 	gtk_widget_show(aboutdialog);
@@ -166,7 +166,7 @@ gboolean QueryShutdown(GtkWidget * widget, GdkEvent * event, gpointer data)
  *
  * Stops the application from running when the main window is destroyed .
  * This can only happen after the user has been queried as to whether or
- * not they are sure they want t0 quit the app
+ * not they are sure they want to quit the app
  **/
 void CloseTheApp(GtkWidget * widget, gpointer data)
 {
