@@ -1,4 +1,5 @@
 .settings/
+Debug/
 *.o
 *.log
 ImageViewer

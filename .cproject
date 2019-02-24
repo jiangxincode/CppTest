@@ -75,9 +75,9 @@
                                 							
                             </tool>
                             							
-                            <tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.1145697044" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug">
+                            <tool commandLinePattern="${COMMAND} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS} ${FLAGS} " id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.1145697044" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug">
                                 								
-                                <option id="gnu.c.link.option.ldflags.2090794764" name="Linker flags" superClass="gnu.c.link.option.ldflags" useByScannerDiscovery="false" value="`pkg-config  libgnome-2.0 libgnomeui-2.0 --libs`" valueType="string"/>
+                                <option id="gnu.c.link.option.ldflags.2090794764" name="Linker flags" superClass="gnu.c.link.option.ldflags" useByScannerDiscovery="false" value="`pkg-config libgnome-2.0 libgnomeui-2.0 --libs`" valueType="string"/>
                                 								
                                 <inputType id="cdt.managedbuild.tool.gnu.c.linker.input.600982290" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
                                     									
@@ -226,5 +226,7 @@
     <storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
     	
     <storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+    	
+    <storageModule moduleId="refreshScope"/>
     
 </cproject>
