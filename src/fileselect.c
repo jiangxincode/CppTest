@@ -48,11 +48,11 @@ void CancelClicked(GtkButton * button, gpointer data)
 }
 
 /**
- * Choose File ()
+ * ChooseFile()
  *
  * Pops open the GtkFileSelection dialog, and returns the name of
- * the file selected when the dialog closes down , assuming the user actually
- * chooses something . Otherwise , it j ust returns FALSE .
+ * the file selected when the dialog closes down, assuming the user actually
+ * chooses something. Otherwise , it just returns FALSE.
  */
 gchar * ChooseFile()
 {

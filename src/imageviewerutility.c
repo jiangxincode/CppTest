@@ -1,13 +1,13 @@
 /**
  * imageviewerutility.c
  *
- * Utility functions for imageviewer app .
+ * Utility functions for image viewer application .
  **/
 #include <gnome.h>
 
 /* Setup pointers to keep track of the last window and image used */
 GtkWidget *lastwindow;
-GdkPixbuf * lastimage;
+GdkPixbuf *lastimage;
 
 /**
  * SetActiveWindow ( )

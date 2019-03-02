@@ -43,9 +43,12 @@ static GnomeUIInfo toolbar_icons[] =
 { GNOME_APP_UI_ITEM, "Close ", "Close the current graphic ", FileCloseHandler,
 NULL, NULL, GNOME_APP_PIXMAP_STOCK, GNOME_STOCK_PIXMAP_CLOSE },
 GNOMEUIINFO_SEPARATOR,
-{ GNOME_APP_UI_ITEM, "Rotate ", "Rotate image ", RotateHandler, NULL, NULL,
+{ GNOME_APP_UI_ITEM, "Rotate ", "Rotate image clockwise", RotateHandler, GINT_TO_POINTER(0), NULL,
 		GNOME_APP_PIXMAP_STOCK,
 		GNOME_STOCK_PIXMAP_REDO },
+{ GNOME_APP_UI_ITEM, "Rotate ", "Rotate image counter clockwise", RotateHandler, GINT_TO_POINTER(1), NULL,
+		GNOME_APP_PIXMAP_STOCK,
+		GNOME_STOCK_PIXMAP_UNDO },
 { GNOME_APP_UI_ITEM, "Flip", "Flip image horizontally", FlipHandler,
 		GINT_TO_POINTER(0), NULL, GNOME_APP_PIXMAP_STOCK,
 		GNOME_STOCK_PIXMAP_BACK },
@@ -111,8 +114,7 @@ void HelpAboutHandler(GtkMenuItem * item, gpointer data)
  **/
 void FileOpenHandler(GtkMenuItem * item, gpointer data)
 {
-	gchar* filename;
-	filename = ChooseFile();
+	gchar* filename = ChooseFile();
 	if (filename != NULL)
 	{
 		ShowImage(filename);
@@ -128,7 +130,14 @@ void FileOpenHandler(GtkMenuItem * item, gpointer data)
  **/
 void RotateHandler(GtkButton * button, gpointer data)
 {
-	RotateImage();
+	if (GPOINTER_TO_INT(data) == 0)
+	{
+		RotateImage(TRUE);
+	}
+	else
+	{
+		RotateImage(FALSE);
+	}
 }
 
 /**
@@ -142,9 +151,13 @@ void RotateHandler(GtkButton * button, gpointer data)
 void FlipHandler(GtkButton * button, gpointer data)
 {
 	if (GPOINTER_TO_INT(data) == 0)
-		FlipImage( TRUE);
+	{
+		FlipImage(TRUE);
+	}
 	else
-		FlipImage( FALSE);
+	{
+		FlipImage(FALSE);
+	}
 }
 
 /**=============================== MAINWINDOW SIGNAL HANDLERS ========= **/
@@ -182,7 +195,7 @@ void CloseTheApp(GtkWidget * widget, gpointer data)
 void BuildMainWindow(gchar * appname, gchar * appversion)
 {
 
-	/* Create the GnomeApp widget and set it up atthe top of the screen */
+	/* Create the GnomeApp widget and set it up at the top of the screen */
 	mainwindow = gnome_app_new(appname, "Image Viewer");
 	gtk_window_set_default_size(GTK_WINDOW(mainwindow),
 			gdk_screen_width() - 100, 80);
@@ -194,7 +207,7 @@ void BuildMainWindow(gchar * appname, gchar * appversion)
 			GTK_SIGNAL_FUNC (CloseTheApp ), NULL);
 	/** Build up the menu bar **/
 	gnome_app_create_menus(GNOME_APP(mainwindow), menu_bar);
-	/** Build up the toolbar **/
+	/** Build up the tool bar **/
 	gnome_app_create_toolbar(GNOME_APP(mainwindow), toolbar_icons);
 	/* Finally , show the window */
 	gtk_widget_show(mainwindow);
