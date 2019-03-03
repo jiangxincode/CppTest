@@ -10,10 +10,10 @@ GtkWidget *lastwindow;
 GdkPixbuf *lastimage;
 
 /**
- * SetActiveWindow ( )
+ * SetActiveWindow()
  *
- * Used when a window becomes active . Stores its pointer so
- * the main window GUI can work with it .
+ * Used when a window becomes active. Stores its pointer so
+ * the main window GUI can work with it.
  **/
 void SetActiveWindow(GtkWidget * window, GdkPixbuf * image)
 {
@@ -22,11 +22,11 @@ void SetActiveWindow(GtkWidget * window, GdkPixbuf * image)
 }
 
 /**
- * ClearActiveWindow ( )
+ * ClearActiveWindow()
  *
- * Used when a window deactivates . Clears the last window
- * pointer . Normally another window comes active afterwards ,
- * so last window is later checked out as NULL , there are no
+ * Used when a window deactivates. Clears the last window
+ * pointer. Normally another window comes active afterwards,
+ * so last window is later checked out as NULL, there are no
  * graphics loaded .
  **/
 void ClearActiveWindow()

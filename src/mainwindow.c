@@ -31,7 +31,7 @@ GNOMEUIINFO_END };
 
 static GnomeUIInfo menu_bar[] =
 {
-GNOMEUIINFO_SUBTREE ( "_File " , file_menu ),
+GNOMEUIINFO_SUBTREE ( "_File ", file_menu ),
 GNOMEUIINFO_SUBTREE ( "_Help ", help_menu ),
 GNOMEUIINFO_END };
 
@@ -95,11 +95,11 @@ void HelpAboutHandler(GtkMenuItem * item, gpointer data)
 {
 	GtkWidget *aboutdialog;
 	const gchar *authors[] =
-	{ "Dafrog ", NULL };
+	{ "Aloys", NULL };
 	const gchar *documenters[] =
-	{ "Welcome to ImageViewer - an example app from Beginning GTK/GNOME" };
+	{ "Welcome to ImageViewer - an easy image viewer build on GTK+" };
 	aboutdialog = gnome_about_new("ImageViewer", " 1.0 ",
-			"(C) 2019 ,JiangXin(Aloys)", "",
+			"(C) 2019,JiangXin(Aloys)", "",
 			(const gchar * *) authors, (const gchar * *) documenters,
 			NULL, NULL);
 	gtk_widget_show(aboutdialog);
@@ -109,7 +109,7 @@ void HelpAboutHandler(GtkMenuItem * item, gpointer data)
  * FileOpenHandler ( )
  *
  * Callback triggered when user hits open on the File menu - get s the
- * user to choose a file , and then loads up the image viewer form
+ * user to choose a file, and then loads up the image viewer form
  * with the image loaded inside .
  **/
 void FileOpenHandler(GtkMenuItem * item, gpointer data)
@@ -145,7 +145,7 @@ void RotateHandler(GtkButton * button, gpointer data)
  *
  * Callback triggered when the user hits either of the flip buttons on
  * the toolbar. The data parameter i s converted to an integer, o for
- * horizontal flip , 1 for a vertical flip, before the appropriate code
+ * horizontal flip, 1 for a vertical flip, before the appropriate code
  * is called.
  **/
 void FlipHandler(GtkButton * button, gpointer data)
@@ -166,7 +166,7 @@ void FlipHandler(GtkButton * button, gpointer data)
  *
  * When the user tries to close down the main application window, this
  * callback checks whether or notthe user is sure about what they want to
- * do . Assuming they are , the signal is allowed to be handler by GTK which
+ * do . Assuming they are, the signal is allowed to be handler by GTK which
  * will destroy the window in the usual manner
  **/
 gboolean QueryShutdown(GtkWidget * widget, GdkEvent * event, gpointer data)
@@ -200,7 +200,7 @@ void BuildMainWindow(gchar * appname, gchar * appversion)
 	gtk_window_set_default_size(GTK_WINDOW(mainwindow),
 			gdk_screen_width() - 100, 80);
 	gtk_widget_set_uposition(mainwindow, 0, 0);
-	/* Next , connect up the main window signal handlers */
+	/* Next, connect up the main window signal handlers */
 	gtk_signal_connect(GTK_OBJECT (mainwindow), "delete_event",
 			GTK_SIGNAL_FUNC (QueryShutdown), NULL);
 	gtk_signal_connect(GTK_OBJECT (mainwindow), "destroy",
@@ -209,9 +209,9 @@ void BuildMainWindow(gchar * appname, gchar * appversion)
 	gnome_app_create_menus(GNOME_APP(mainwindow), menu_bar);
 	/** Build up the tool bar **/
 	gnome_app_create_toolbar(GNOME_APP(mainwindow), toolbar_icons);
-	/* Finally , show the window */
+	/* Finally, show the window */
 	gtk_widget_show(mainwindow);
-	/* Clear the active window pointer , since the app just got going */
+	/* Clear the active window pointer, since the app just got going */
 	ClearActiveWindow();
 }
 /**
@@ -226,7 +226,7 @@ gboolean CheckUserExit()
 	msgbox = gnome_message_box_new("Are you sure you want to quit？",
 	GNOME_MESSAGE_BOX_QUESTION, GNOME_STOCK_BUTTON_YES,
 	GNOME_STOCK_BUTTON_NO, NULL);
-	/* If the user clicked on the first button ( the YES button) , return
+	/* If the user clicked on the first button ( the YES button), return
 	 * TRUE */
 	return (gnome_dialog_run_and_close(GNOME_DIALOG(msgbox)) == 0);
 }

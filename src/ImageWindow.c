@@ -11,7 +11,7 @@
  *
  * Callback triggered when the image window is destroyed .
  * A pointer to the image on display i s passed into the handler
- * i-n order that the image can be killed , preventing a memory
+ * i-n order that the image can be killed, preventing a memory
  * leak from occurring. The Active window pointer is also cleared .
  */
 void DestroyWindow(GtkWidget* window, gpointer imagedata)
@@ -24,7 +24,7 @@ void DestroyWindow(GtkWidget* window, gpointer imagedata)
  *
  * Callback triggered when image window gets focus. It then
  * stores a pointer to it self and its image as the active window
- * and image , in order that main window GUI can work with the
+ * and image, in order that main window GUI can work with the
  * correct window
  */
 void GotFocus(GtkWidget * window, GdkEvent * event, gpointer imagedata)
@@ -145,12 +145,12 @@ void ShowImage(gchar * filename)
 	GtkWidget *messagebox;
 	/* Attempt to load up 吐e specified image */
 	image = gdk_pixbuf_new_from_file(filename, NULL);
-	/* If the resulting image is NULL , then the load failed ....
+	/* If the resulting image is NULL, then the load failed ....
 	 * tell the user */
 	if (image == NULL)
 	{
 		messagebox = gnome_message_box_new(
-				"Sorry , you specified an invalid file",
+				"Sorry, you specified an invalid file",
 				GNOME_MESSAGE_BOX_ERROR,
 				GNOME_STOCK_BUTTON_OK, NULL);
 		gnome_dialog_run_and_close(GNOME_DIALOG(messagebox));

@@ -6,13 +6,13 @@
 #include <gnome.h>
 
 /* Declare pointers to the dialog and the selected filename string */
-GtkWidget* dialog;
-gchar * selectedfile;
+GtkWidget *dialog;
+gchar *selectedfile;
 
 /**
- * CloseTheDialog ( )
+ * CloseTheDialog()
  *
- * Callback triggered when dialog closes down .
+ * Callback triggered when dialog closes down.
  */
 void CloseTheDialog(GtkWidget * widget, gpointer data)
 {
@@ -20,11 +20,11 @@ void CloseTheDialog(GtkWidget * widget, gpointer data)
 }
 
 /**
- * OKClicked ( )
+ * OKClicked()
  *
  * Callback triggered when the user clicks on the OK button in
- * the dialog . It duplicates the filename selected within the dialog and
- * stores a pointer to the duplicated string in ' selected file ' , ready to
+ * the dialog. It duplicates the filename selected within the dialog and
+ * stores a pointer to the duplicated string in 'selectedfile', ready to
  * be returned
  */
 void OKClicked(GtkButton * button, gpointer data)
@@ -37,10 +37,10 @@ void OKClicked(GtkButton * button, gpointer data)
 }
 
 /**
- * Cancel Clicked ( )
+ * CancelClicked()
  *
  * Callback triggered when the user clicks on the Cancel button in the
- * dialog . Does nothing more than destroy the dialog .
+ * dialog. Does nothing more than destroy the dialog.
  */
 void CancelClicked(GtkButton * button, gpointer data)
 {
@@ -52,17 +52,15 @@ void CancelClicked(GtkButton * button, gpointer data)
  *
  * Pops open the GtkFileSelection dialog, and returns the name of
  * the file selected when the dialog closes down, assuming the user actually
- * chooses something. Otherwise , it just returns FALSE.
+ * chooses something. Otherwise, it just returns FALSE.
  */
-gchar * ChooseFile()
+gchar* ChooseFile()
 {
-
 	/* Reset filename to NULL to prevent false returns */
 	selectedfile = NULL;
 	/* Create the dialog */
 	dialog = gtk_file_selection_new("Choose an image to load");
-	/** Connect up the signal handlers for the default buttons on the
-	 *dialog **/
+	/** Connect up the signal handlers for the default buttons on the dialog **/
 	gtk_signal_connect(GTK_OBJECT ( GTK_FILE_SELECTION ( dialog ) ->ok_button ),
 			"clicked", GTK_SIGNAL_FUNC (OKClicked ), NULL);
 	gtk_signal_connect(
@@ -70,8 +68,7 @@ gchar * ChooseFile()
 			"clicked", GTK_SIGNAL_FUNC ( CancelClicked ), NULL);
 	gtk_signal_connect(GTK_OBJECT (dialog ), "destroy",
 			GTK_SIGNAL_FUNC (CloseTheDialog ), NULL);
-	/* Show the dialog , then start up the gtk_main () loop again . The dialog
-	 * quits this */
+	/* Show the dialog, then start up the gtk_main () loop again . The dialog quits this */
 	gtk_widget_show(dialog);
 	gtk_window_set_modal(GTK_WINDOW(dialog), TRUE);
 	gtk_main();
