@@ -11,7 +11,7 @@ void toggle_statusbar(GtkWidget *widget, gpointer statusbar)
                 gtk_widget_hide(statusbar);
         }
 }
-int main0007(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
         GtkWidget *window;
         GtkWidget *vbox;

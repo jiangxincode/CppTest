@@ -1,6 +1,6 @@
 #include "gEmail.h"
 
-int main(int argc, char *argv[])
+int main0000(int argc, char *argv[])
 {
         GtkWidget *window;
         GtkWidget *vbox, *hbox1, *hbox2;

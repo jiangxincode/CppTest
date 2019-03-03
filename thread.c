@@ -50,7 +50,7 @@ void image_go(Ourarg *arg)
         }
 }
 
-int	main0008(int argc, char* argv[])
+int	main0007(int argc, char* argv[])
 {
         GtkWidget *window;
         GtkWidget *vbox, *viewport, *button;

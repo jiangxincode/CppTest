@@ -1,6 +1,6 @@
 #include <gtk/gtk.h>
 
-int main0010(int argc, char *argv[])
+int main0110(int argc, char *argv[])
 {
         GtkWidget *window;
         GtkWidget *vbox;

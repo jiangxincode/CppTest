@@ -9,19 +9,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <mysql.h>
 
 static GtkWidget *window1;
 static GtkWidget *button1;
 static GtkWidget *button2;
-static GtkWidget *button3;
 
 static gint num=0;
 
 
 void on_button1_clicked(void);
 void on_button2_clicked(void);
-void on_button3_clicked(void);
 
 /*按钮1的click事件*/
 void on_button1_clicked(void)
@@ -41,18 +38,6 @@ void on_button2_clicked(void)
 	gtk_window_set_title(GTK_WINDOW(window1),"MySql \346\265\213\350\257\225");
 	num=0;
 }
-/*按钮3的click事件*/
-void on_button3_clicked(void)
-{
-	MYSQL *myconnect = NULL;
-	gchar *query_buf="USE tony";
-	myconnect=mysql_init(myconnect);
-	mysql_real_connect(myconnect,"localhost",NULL,NULL,NULL,MYSQL_PORT,NULL,0);
-	mysql_query(myconnect,query_buf);
-	mysql_query(myconnect,"insert into name(name) values ('tonyvicky')");
-	mysql_close(myconnect);
-	myconnect=NULL;
-}
 
 //静态成员声明
 
@@ -67,12 +52,10 @@ int main0010(int argc,char *argv[])
 //其他控件声明
 	button1=gtk_button_new_with_label("quit");
 	button2=gtk_button_new_with_label("ok");
-	button3=gtk_button_new_with_label("Insert into mysql");
 
 //回调函数
 	g_signal_connect(GTK_BUTTON(button1),"clicked",G_CALLBACK(on_button1_clicked),NULL);
 	g_signal_connect(GTK_BUTTON(button2),"clicked",G_CALLBACK(on_button2_clicked),NULL);
-	g_signal_connect(GTK_BUTTON(button3),"clicked",G_CALLBACK(on_button3_clicked),NULL);
 
 //布局容器声明
 	hbox1=gtk_hbox_new(FALSE,0);
@@ -85,7 +68,6 @@ int main0010(int argc,char *argv[])
 	gtk_box_pack_start(GTK_BOX(hbox1),vbox2,TRUE,TRUE,3);
 	gtk_box_pack_start(GTK_BOX(vbox1),button1,FALSE,FALSE,3);
 	gtk_box_pack_start(GTK_BOX(vbox1),button2,FALSE,FALSE,3);
-	gtk_box_pack_start(GTK_BOX(vbox2),button3,FALSE,FALSE,3);
 //gtk_widget_show (hbox1);
 
 	g_signal_connect(G_OBJECT(window1),"delete_event",G_CALLBACK(gtk_main_quit),NULL);
