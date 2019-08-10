@@ -5,3 +5,6 @@
 Debug/
 .settings/
 /Release/
+
+
+cmake-build-debug/

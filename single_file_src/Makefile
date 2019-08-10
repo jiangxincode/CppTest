@@ -1,9 +1,9 @@
 CC := g++
-RM := rm -f
+RM := rm
 LIBRARY += -pthread
 LDFLAGS += -std=c++11 -Wall
-SRCS     = $(wildcard *.cpp)
-#SRCS     = hwoj_get_lights_count.cpp
+SRCS     = main2565.cpp
+#SRCS     = $(wildcard *.cpp)
 OBJS     = $(patsubst %.cpp, %.o, $(SRCS))
 TARGETS  = $(SRCS:%.cpp=%)
 
