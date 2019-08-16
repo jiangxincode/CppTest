@@ -17,6 +17,9 @@ add_executable(main2564
 add_executable(main2565
         single_file_src/main2565.cpp)
 
+add_executable(main2545
+        single_file_src/main2545.cpp)
+
 add_executable(CppTest
         include/gtest/internal/gtest-death-test-internal.h
         include/gtest/internal/gtest-filepath.h
