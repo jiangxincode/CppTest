@@ -11,6 +11,9 @@ include_directories(src)
 include_directories(src/gtest)
 include_directories(test)
 
+add_executable(main2564
+        single_file_src/main2564.cpp)
+
 add_executable(main2565
         single_file_src/main2565.cpp)
 
