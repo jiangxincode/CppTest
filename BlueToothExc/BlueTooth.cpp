@@ -130,7 +130,7 @@ int CBlueTooth::ScanNearbyBthDev (
 			RemoteBthDevInfo.pAUTHENTICATION_CALLBACK_Para->lpBlueTooth = this;
 			RemoteBthDevInfo.pAUTHENTICATION_CALLBACK_Para->hRadio = hRadio;
 		}
-		BluetoothRegisterForAuthentication ( &bdi, &RemoteBthDevInfo.hRegHandle, AUTHENTICATION_CALLBACK, RemoteBthDevInfo.pAUTHENTICATION_CALLBACK_Para );
+		BluetoothRegisterForAuthentication ( &bdi, &RemoteBthDevInfo.hRegHandle, (PFN_AUTHENTICATION_CALLBACK)AUTHENTICATION_CALLBACK, RemoteBthDevInfo.pAUTHENTICATION_CALLBACK_Para );
 
 		m_Ary_RemoteBthDevInfo.Add ( RemoteBthDevInfo );
 		if ( !BluetoothFindNextDevice(hbf, &bdi) )
