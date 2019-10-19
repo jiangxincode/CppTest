@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{a00567e3-9628-5293-b902-98c1871cc37a}</ProjectGuid>
+    <ProjectGuid>{fdd76b30-f5cf-5822-ac9d-13bbd74325ba}</ProjectGuid>
     <RootNamespace>SDKTemplate</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <AppContainerApplication>true</AppContainerApplication>
     <ApplicationType>Windows Store</ApplicationType>
     <ApplicationTypeRevision>10.0</ApplicationTypeRevision>
-    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformMinVersion>10.0.18362.0</WindowsTargetPlatformMinVersion>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
   </PropertyGroup>
@@ -42,37 +42,37 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -102,7 +102,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
-      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/bigobj /Zm128 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -114,7 +114,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/bigobj /Zm132 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -126,7 +126,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/bigobj /Zm132 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -137,6 +137,8 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Helpers\BufferConverter.h" />
+    <ClInclude Include="Helpers\ServiceStatusConverter.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="..\..\..\SharedContent\cpp\App.xaml.h">
       <DependentUpon>..\..\..\SharedContent\xaml\App.xaml</DependentUpon>
@@ -145,13 +147,23 @@
       <DependentUpon>..\..\..\SharedContent\cpp\MainPage.xaml</DependentUpon>
     </ClInclude>
     <ClInclude Include="SampleConfiguration.h" />
-    <ClInclude Include="Scenario1_Advertiser.xaml.h">
-      <DependentUpon>Scenario1_Advertiser.xaml</DependentUpon>
+    <ClInclude Include="Scenario1_AdvertiserCreate.xaml.h">
+      <DependentUpon>Scenario1_AdvertiserCreate.xaml</DependentUpon>
     </ClInclude>
-    <ClInclude Include="Scenario2_Connector.xaml.h">
-      <DependentUpon>Scenario2_Connector.xaml</DependentUpon>
+    <ClInclude Include="Scenario2_AdvertiserAccept.xaml.h">
+      <DependentUpon>Scenario2_AdvertiserAccept.xaml</DependentUpon>
     </ClInclude>
-    <ClInclude Include="SocketReaderWriter.h" />
+    <ClInclude Include="Scenario3_SeekerDiscover.xaml.h">
+      <DependentUpon>Scenario3_SeekerDiscover.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Scenario4_SeekerSession.xaml.h">
+      <DependentUpon>Scenario4_SeekerSession.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Scenario5_SendData.xaml.h">
+      <DependentUpon>Scenario5_SendData.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="WiFiDirectServicesManager.h" />
+    <ClInclude Include="WiFiDirectServicesWrappers.h" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="..\..\..\SharedContent\xaml\App.xaml">
@@ -160,8 +172,11 @@
     <Page Include="..\..\..\SharedContent\cpp\MainPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Scenario1_Advertiser.xaml" />
-    <Page Include="Scenario2_Connector.xaml" />
+    <Page Include="Scenario1_AdvertiserCreate.xaml" />
+    <Page Include="Scenario2_AdvertiserAccept.xaml" />
+    <Page Include="Scenario3_SeekerDiscover.xaml" />
+    <Page Include="Scenario4_SeekerSession.xaml" />
+    <Page Include="Scenario5_SendData.xaml" />
     <Page Include="..\..\..\SharedContent\xaml\Styles.xaml">
       <Link>Styles\Styles.xaml</Link>
     </Page>
@@ -187,29 +202,39 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="SampleConfiguration.cpp" />
-    <ClCompile Include="Scenario1_Advertiser.xaml.cpp">
-      <DependentUpon>Scenario1_Advertiser.xaml</DependentUpon>
+    <ClCompile Include="Scenario1_AdvertiserCreate.xaml.cpp">
+      <DependentUpon>Scenario1_AdvertiserCreate.xaml</DependentUpon>
     </ClCompile>
-    <ClCompile Include="Scenario2_Connector.xaml.cpp">
-      <DependentUpon>Scenario2_Connector.xaml</DependentUpon>
+    <ClCompile Include="Scenario2_AdvertiserAccept.xaml.cpp">
+      <DependentUpon>Scenario2_AdvertiserAccept.xaml</DependentUpon>
     </ClCompile>
-    <ClCompile Include="SocketReaderWriter.cpp" />
+    <ClCompile Include="Scenario3_SeekerDiscover.xaml.cpp">
+      <DependentUpon>Scenario3_SeekerDiscover.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Scenario4_SeekerSession.xaml.cpp">
+      <DependentUpon>Scenario4_SeekerSession.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Scenario5_SendData.xaml.cpp">
+      <DependentUpon>Scenario5_SendData.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="WiFiDirectServicesManager.cpp" />
+    <ClCompile Include="WiFiDirectServicesWrappers.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\SharedContent\media\microsoft-sdk.png">
       <Link>Assets\microsoft-sdk.png</Link>
     </Image>
     <Image Include="..\..\..\SharedContent\media\smalltile-sdk.png">
-      <Link>Assets\smallTile-sdk.png</Link>
+      <Link>Assets\smalltile-sdk.png</Link>
     </Image>
     <Image Include="..\..\..\SharedContent\media\splash-sdk.png">
       <Link>Assets\splash-sdk.png</Link>
     </Image>
     <Image Include="..\..\..\SharedContent\media\squaretile-sdk.png">
-      <Link>Assets\squareTile-sdk.png</Link>
+      <Link>Assets\squaretile-sdk.png</Link>
     </Image>
     <Image Include="..\..\..\SharedContent\media\storelogo-sdk.png">
-      <Link>Assets\storeLogo-sdk.png</Link>
+      <Link>Assets\storelogo-sdk.png</Link>
     </Image>
     <Image Include="..\..\..\SharedContent\media\tile-sdk.png">
       <Link>Assets\tile-sdk.png</Link>
