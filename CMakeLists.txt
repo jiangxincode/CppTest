@@ -11,6 +11,45 @@ include_directories(src)
 include_directories(src/gtest)
 include_directories(test)
 
+add_executable(luoguP1876
+        src/luogu/luoguP1876.cpp)
+
+add_executable(nowcoder0002
+        src/nowcoder/nowcoder0002.cpp)
+
+add_executable(nowcoder0003
+        src/nowcoder/nowcoder0003.cpp)
+
+add_executable(nowcoder0004
+        src/nowcoder/nowcoder0004.cpp)
+
+add_executable(nowcoder0005
+        src/nowcoder/nowcoder0005.cpp)
+
+add_executable(nowcoder0006
+        src/nowcoder/nowcoder0006.cpp)
+
+add_executable(nowcoder0007
+        src/nowcoder/nowcoder0007.cpp)
+
+add_executable(nowcoder0008
+        src/nowcoder/nowcoder0008.cpp)
+
+add_executable(nowcoder0009
+        src/nowcoder/nowcoder0009.cpp)
+
+add_executable(nowcoder0010
+        src/nowcoder/nowcoder0010.cpp)
+
+add_executable(nowcoder0011
+        src/nowcoder/nowcoder0011.cpp)
+
+add_executable(nowcoder0012
+        src/nowcoder/nowcoder0012.cpp)
+
+add_executable(nowcoder0013
+        src/nowcoder/nowcoder0013.cpp)
+
 add_executable(main2564
         single_file_src/main2564.cpp)
 
