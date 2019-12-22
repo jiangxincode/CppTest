@@ -50,6 +50,18 @@ add_executable(nowcoder0012
 add_executable(nowcoder0013
         src/nowcoder/nowcoder0013.cpp)
 
+add_executable(nowcoder0014
+        src/nowcoder/nowcoder0014.cpp)
+
+add_executable(nowcoder0015
+        src/nowcoder/nowcoder0015.cpp)
+
+add_executable(nowcoder0016
+        src/nowcoder/nowcoder0016.cpp)
+
+add_executable(nowcoder0017
+        src/nowcoder/nowcoder0017.cpp)
+
 add_executable(main2564
         single_file_src/main2564.cpp)
 
@@ -111,6 +123,7 @@ add_executable(CppTest
         src/LinkedSet.h
         src/main.cpp
         src/main.h
+        src/test.cpp
         src/miscellaneous.cpp
         src/miscellaneous.h
         src/single_list.cpp
