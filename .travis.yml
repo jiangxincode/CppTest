@@ -6,7 +6,7 @@ script:
   - cmake ..
   - build-wrapper-linux-x86-64 --out-dir ../bw_output make clean all
   - cd ..
-  - sonar-scanner -Dsonar.projectKey=jiangxincode_CppTest -Dsonar.organization=jiangxincode-github -Dsonar.cfamily.build-wrapper-output=bw_output -Dsonar.sources=src
+  - sonar-scanner
 addons:
   sonarcloud:
     organization: "jiangxincode-github"
