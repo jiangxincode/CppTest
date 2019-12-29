@@ -2,17 +2,17 @@
 
 [![Travis CI Build Status](https://travis-ci.org/jiangxincode/CppTest.svg?branch=master)](https://travis-ci.org/jiangxincode/CppTest)
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest:CppTest&metric=alert_status)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest:CppTest)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest:CppTest&metric=bugs)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest:CppTest)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest:CppTest&metric=code_smells)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest:CppTest)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest:CppTest&metric=coverage)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest:CppTest)
-[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest:CppTest&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest:CppTest)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest:CppTest&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest:CppTest)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest:CppTest&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest:CppTest)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest:CppTest&metric=security_rating)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest:CppTest)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest:CppTest&metric=ncloc)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest:CppTest)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest:CppTest&metric=sqale_index)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest:CppTest)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest:CppTest&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest:CppTest)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest&metric=alert_status)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest&metric=bugs)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest&metric=code_smells)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest&metric=coverage)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest&metric=security_rating)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest&metric=ncloc)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest&metric=sqale_index)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest)
 
 
 jiangxinnju@163.com
