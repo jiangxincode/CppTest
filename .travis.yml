@@ -1,0 +1,14 @@
+os: linux
+language: cpp
+compiler: gcc
+script:
+  - mkdir build && cd build
+  - cmake ..
+  - build-wrapper-linux-x86-64 --out-dir ../bw_output make clean all
+  - cd ..
+  - sonar-scanner -Dsonar.projectKey=jiangxincode_CppTest -Dsonar.organization=jiangxincode-github -Dsonar.cfamily.build-wrapper-output=bw_output -Dsonar.sources=src
+addons:
+  sonarcloud:
+    organization: "jiangxincode-github"
+    token:
+      secure: QbDn5o0nm6tm6TXzg3Xe9ooqB99aoWZqpaUAex6xYB6t4qL2+edn81hJy3leYfyxcc6FpnolVAFwk75aM9gQQjzvjMgdUh3MLoVgLkzFTiQZZNuZ+tT5vf3pBwwDiUIc6J4hQCWuauH3h/YvcyN8d25WVAfbkaJMhu2Yw/xkZBnP8KnPFyWiz0X/fnOySjUTlWsWiQDRAY1F8vB9lwFGhuZcNIn2j9JK8Hg1f8NRSKDZ4im2dGvkAmdRfus9Uryk1K693O49qmSqmjGoyZMfR74/wxbQMNF6KbmNuNrmtWYvMlOBDscrRLW6Ldjw5ZVzViIkZ6xs0OhYwFPmKSUefft6e9UZ2UC09QCgutu6AFKpre3/hY2QcCRvFNFaAAIzDOI/VZR9+Pqs+5CK2lrnDkWmQ4aybex7gQCqJRAw0lEWSIIrFwFzxA+dVts7aF/UhmsWGzmcfU8H3aafd6bt8QDVJZWoQTONtO+091A7jejWvlwxGz22s5C9CAmD2hH2vhNfzZPLdysWMhT927EHOgS376sZrVzZFVjnBaEQMTOOk/XCuYujXOARflU9IgCzwrCtZnMX7WgbHNuKb+cUBLayUHZ0ihmKowAZs60HiVQ3oDFcHAM47wK+NUynPRD2oJuCwLL2ILsCgtzNqFBEjKxka9S0EsATx0AeTJbNNWc=

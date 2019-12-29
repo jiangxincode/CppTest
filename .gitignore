@@ -2,9 +2,12 @@
 *.swp
 *.o
 *.exe
+CMakeSettings.json
 Debug/
 .settings/
 /Release/
 
 
 cmake-build-debug/
+out/
+.vs/

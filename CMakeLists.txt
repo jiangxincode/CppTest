@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.12)
 project(CppTest)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -32,11 +32,11 @@ add_executable(nowcoder0006
 add_executable(nowcoder0007
         src/nowcoder/nowcoder0007.cpp)
 
-add_executable(nowcoder0008
-        src/nowcoder/nowcoder0008.cpp)
+#[[add_executable(nowcoder0008
+        src/nowcoder/nowcoder0008.cpp)]]
 
-add_executable(nowcoder0009
-        src/nowcoder/nowcoder0009.cpp)
+#[[add_executable(nowcoder0009
+        src/nowcoder/nowcoder0009.cpp)]]
 
 add_executable(nowcoder0010
         src/nowcoder/nowcoder0010.cpp)
@@ -61,6 +61,9 @@ add_executable(nowcoder0016
 
 add_executable(nowcoder0017
         src/nowcoder/nowcoder0017.cpp)
+
+add_executable(nowcoder0018
+        src/nowcoder/nowcoder0018.cpp)
 
 add_executable(main2564
         single_file_src/main2564.cpp)
@@ -111,8 +114,6 @@ add_executable(CppTest
         src/contacts.cpp
         src/factorial.cpp
         src/factorial.h
-        src/fibonacci.cpp
-        src/fibonacci.h
         src/hash.cpp
         src/hash.h
         src/heap.cpp
@@ -139,9 +140,10 @@ add_executable(CppTest
         test/test_binary_search_tree.cpp
         test/test_binary_tree.cpp
         test/test_factorial.cpp
-        test/test_fibonacci.cpp
         test/test_heap.cpp
         test/test_linked_set.cpp
         test/test_miscellaneous.cpp
         test/test_sort.cpp
         test/test_string_process.cpp)
+
+target_link_libraries(CppTest pthread)
