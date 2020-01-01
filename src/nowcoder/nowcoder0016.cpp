@@ -37,10 +37,10 @@
  * 样例输出:
  * 1 0 1 0 0 2 1
  * 注意
- * 1. Mask 255.255.255.255 , 0.0.0.0 为非法。
- * 2. IP和Mask必须同时正确，才能被分类到A, B, C, D, E以及私有。
+ * 1. Mask 255.255.255.255 , 0.0.0.0 为非法
+ * 2. IP和Mask必须同时正确，才能被分类到A, B, C, D, E以及私有
  * 3. IP和Mask同时错误时，只算一次错误
- * 4. 注意0.*.*.*以及127.*.*.*不属于任何类别。
+ * 4. 注意0.*.*.*以及127.*.*.*不属于任何类别
  */
 
 #include <iostream>
@@ -56,15 +56,24 @@ int main() {
     int mask[4];
 
     while (cin >> input) {
-        bool foundmatch = false;
-        try {
-            std::regex re(
-                    R"([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}~[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})");
-            foundmatch = std::regex_match(input, re);
-        } catch (std::regex_error &e) {
-            // Syntax error in the regular expression
+
+        // R"..." is the new literal string syntax. Without it "\" would need to become "\\"
+        std::regex re(
+                R"(([0-9]{1,3}\.){3}[0-9]{1,3}~([0-9]{1,3}\.){3}[0-9]{1,3})");
+        if (!std::regex_match(input, re)) {
+            errorip++;
+            continue;
         }
-        if (!foundmatch) {
+
+        // remove like 01, 001...
+        bool invalid = false;
+        for (std::size_t i = 0; i < input.size(); i++) {
+            if (i != input.size() - 1 && input[i] == 0 && input[i + 1] != 0) {
+                invalid = true;
+                break;
+            }
+        }
+        if (invalid) {
             errorip++;
             continue;
         }

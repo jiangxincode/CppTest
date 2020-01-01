@@ -183,37 +183,37 @@ void f_save(void)
         switch(data[count].type)
         {
         case 1:
-            strcpy(TYPE,"亲属");
+            strncpy(TYPE, "亲属", sizeof(TYPE) - 1);
             break;
 
         case 2:
-            strcpy(TYPE,"朋友");
+            strncpy(TYPE,"朋友", sizeof(TYPE) - 1);
             break;
 
         case 3:
-            strcpy(TYPE,"同事");
+            strncpy(TYPE,"同事", sizeof(TYPE) - 1);
             break;
 
         case 4:
-            strcpy(TYPE,"同学");
+            strncpy(TYPE,"同学", sizeof(TYPE) - 1);
             break;
 
         default:
-            strcpy(TYPE,"其他");
+            strncpy(TYPE,"其他", sizeof(TYPE) - 1);
             break;
         }
 
         if(strncmp(data[count].sex,"m",1)==0)
         {
-            strcpy(SEX,"男");
+            strncpy(SEX,"男", sizeof(SEX) - 1));
         }
         else if(strncmp(data[count].sex,"f",1)==0)
         {
-            strcpy(SEX,"女");
+            strncpy(SEX,"女", sizeof(SEX) - 1));
         }
         else
         {
-            strcpy(SEX,"未知");
+            strncpy(SEX,"未知", sizeof(SEX) - 1));
         }
 
         fprintf(fp,"%s\t%s\t%s\t%s\n",TYPE,data[count].name,SEX,data[count].phone);
@@ -247,37 +247,37 @@ void f_open(void)
         switch(data[count].type)
         {
         case 1:
-            strcpy(TYPE,"亲属");
+            strncpy(TYPE,"亲属", sizeof(TYPE) - 1);
             break;
 
         case 2:
-            strcpy(TYPE,"朋友");
+            strncpy(TYPE,"朋友", sizeof(TYPE) - 1);
             break;
 
         case 3:
-            strcpy(TYPE,"同事");
+            strncpy(TYPE,"同事", sizeof(TYPE) - 1);
             break;
 
         case 4:
-            strcpy(TYPE,"同学");
+            strncpy(TYPE,"同学", sizeof(TYPE) - 1);
             break;
 
         default:
-            strcpy(TYPE,"其他");
+            strncpy(TYPE,"其他", sizeof(TYPE) - 1);
             break;
         }
 
         if(strncmp(data[count].sex,"m",1)==0)
         {
-            strcpy(SEX,"男");
+            strncpy(SEX,"男", sizeof(SEX) - 1);
         }
         else if(strncmp(data[count].sex,"f",1)==0)
         {
-            strcpy(SEX,"女");
+            strncpy(SEX,"女", sizeof(SEX) - 1);
         }
         else
         {
-            strcpy(SEX,"未知");
+            strncpy(SEX,"未知", sizeof(SEX) - 1);
         }
 
         fscanf(fp,"%19s%19s%1s%19s",TYPE,data[count].name,SEX,data[count].phone);

@@ -30,7 +30,7 @@ int main4418_1() {
 
 int main() {
     char s[1024];
-    while (~(scanf("%s", s)));
+    while (~(scanf("%1023s", s)));
     printf("%d\n", strlen(s));
     return 0;
 }

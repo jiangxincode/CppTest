@@ -114,8 +114,7 @@ add_executable(CppTest
         src/contacts.cpp
         src/factorial.cpp
         src/factorial.h
-        src/hash.cpp
-        src/hash.h
+        src/hash.hpp
         src/heap.cpp
         src/heap.h
         src/input.cpp
