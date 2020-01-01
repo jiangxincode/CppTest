@@ -205,15 +205,15 @@ void f_save(void)
 
         if(strncmp(data[count].sex,"m",1)==0)
         {
-            strncpy(SEX,"男", sizeof(SEX) - 1));
+            strncpy(SEX,"男", sizeof(SEX) - 1);
         }
         else if(strncmp(data[count].sex,"f",1)==0)
         {
-            strncpy(SEX,"女", sizeof(SEX) - 1));
+            strncpy(SEX,"女", sizeof(SEX) - 1);
         }
         else
         {
-            strncpy(SEX,"未知", sizeof(SEX) - 1));
+            strncpy(SEX,"未知", sizeof(SEX) - 1);
         }
 
         fprintf(fp,"%s\t%s\t%s\t%s\n",TYPE,data[count].name,SEX,data[count].phone);
