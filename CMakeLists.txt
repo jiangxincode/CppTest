@@ -66,16 +66,16 @@ add_executable(nowcoder0018
         src/nowcoder/nowcoder0018.cpp)
 
 add_executable(main2564
-        single_file_src/main2564.cpp)
+        src/single_file_src/main2564.cpp)
 
 add_executable(main2565
-        single_file_src/main2565.cpp)
+        src/single_file_src/main2565.cpp)
 
 add_executable(main2545
-        single_file_src/main2545.cpp)
+        src/single_file_src/main2545.cpp)
 
 add_executable(main2544
-        single_file_src/main2544.cpp)
+        src/single_file_src/main2544.cpp)
 
 add_executable(CppTest
         include/gtest/internal/gtest-death-test-internal.h
@@ -98,14 +98,14 @@ add_executable(CppTest
         include/gtest/gtest.h
         include/gtest/gtest_pred_impl.h
         include/gtest/gtest_prod.h
-        src/gtest/gtest-death-test.cc
-        src/gtest/gtest-filepath.cc
-        src/gtest/gtest-internal-inl.h
-        src/gtest/gtest-port.cc
-        src/gtest/gtest-printers.cc
-        src/gtest/gtest-test-part.cc
-        src/gtest/gtest-typed-test.cc
-        src/gtest/gtest.cc
+        lib/gtest/gtest-death-test.cc
+        lib/gtest/gtest-filepath.cc
+        lib/gtest/gtest-internal-inl.h
+        lib/gtest/gtest-port.cc
+        lib/gtest/gtest-printers.cc
+        lib/gtest/gtest-test-part.cc
+        lib/gtest/gtest-typed-test.cc
+        lib/gtest/gtest.cc
         src/binary_search_tree.cpp
         src/binary_search_tree.h
         src/binary_tree.cpp
