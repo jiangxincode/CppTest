@@ -123,4 +123,4 @@ add_executable(CppTest
         src/test.cpp
         src/tools.cpp)
 
-target_link_libraries(CppTest pthread)
+target_link_libraries(GTestMain pthread)
