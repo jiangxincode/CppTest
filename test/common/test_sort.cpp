@@ -1,5 +1,5 @@
-#include "../src/sort.h"
-#include "../include/gtest/gtest.h"
+#include "../../src/common/sort.h"
+#include "gtest/gtest.h"
 #include <stdlib.h>
 
 #define MAX_RANDOM_NUM 100

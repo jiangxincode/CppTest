@@ -1,8 +1,8 @@
 ﻿#include <iostream>
 #include <iomanip>
 
-#include "../src/binary_tree.h"
-#include "../include/gtest/gtest.h"
+#include "../../src/common/binary_tree.h"
+#include "gtest/gtest.h"
 
 using namespace std;
 

@@ -1,5 +1,5 @@
-#include "../src/factorial.h"
-#include "../include/gtest/gtest.h"
+#include "../../src/common/factorial.h"
+#include "gtest/gtest.h"
 
 TEST(FactorialTest, factorial_test)
 {

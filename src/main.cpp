@@ -3,16 +3,11 @@
 #include <cstdio>
 #include <cassert>
 #include "main.h"
-#include "gtest/gtest.h"
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
-#ifdef TEST_METHOD
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-#endif // TEST_METHOD
 
 #ifdef ONLINE_JUDGE
     string filename = "main4418";

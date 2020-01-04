@@ -1,6 +1,6 @@
 #include <stdlib.h>
-#include "../include/gtest/gtest.h"
-#include "../src/miscellaneous.h"
+#include "gtest/gtest.h"
+#include "../../src/common/miscellaneous.h"
 
 class MiscellaneousTest:public testing::Test
 {
