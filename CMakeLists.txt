@@ -60,16 +60,19 @@ add_executable(nowcoder0018
         src/nowcoder/nowcoder0018.cpp)
 
 add_executable(main2564
-        src/single_file_src/main2564.cpp)
+        src/others/main2564.cpp)
 
 add_executable(main2565
-        src/single_file_src/main2565.cpp)
+        src/others/main2565.cpp)
 
 add_executable(main2545
-        src/single_file_src/main2545.cpp)
+        src/others/main2545.cpp)
 
 add_executable(main2544
-        src/single_file_src/main2544.cpp)
+        src/others/main2544.cpp)
+
+add_executable(main2567
+        src/others/main2567.cpp)
 
 aux_source_directory(include/gtest gtest_h)
 aux_source_directory(lib/gtest gtest_cpp)

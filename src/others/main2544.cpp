@@ -1,4 +1,5 @@
 ﻿/**
+ * Hermit多项式
  * 分别写出计算Hermit多项式Hn(x)值的迭代和递归函数。Hn(x)定义如下：
  * H0(x) = 1
  * H1(x) = 2x
@@ -24,7 +25,7 @@ int hermit1(int n, int x) {
     } else if (n == 1) {
         return 2 * x;
     } else {
-        int result;
+        int result = 0;
         int h0 = 1, h1 = 2 * x;
 
         for (int i = 2; i <= n; i++) {

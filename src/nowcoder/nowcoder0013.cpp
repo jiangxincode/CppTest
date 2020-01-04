@@ -31,6 +31,6 @@ int main4418_1() {
 int main() {
     char s[1024];
     while (~(scanf("%1023s", s)));
-    printf("%d\n", strlen(s));
+    printf("%ud\n", strlen(s));
     return 0;
 }
