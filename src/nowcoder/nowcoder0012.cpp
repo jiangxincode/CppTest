@@ -121,7 +121,6 @@ int main() {
         delSameNode(head);
         autoInsert(head);
         displayList(head);
-        delete[] head;
     }
     return 0;
 }
