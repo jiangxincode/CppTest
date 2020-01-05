@@ -59,6 +59,9 @@ add_executable(nowcoder0017
 add_executable(nowcoder0018
         src/nowcoder/nowcoder0018.cpp)
 
+add_executable(openjudge_zz_3
+        src/openjudge/openjudge_zz_3.cpp)
+
 add_executable(main2564
         src/others/main2564.cpp)
 

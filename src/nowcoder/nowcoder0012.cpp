@@ -34,242 +34,86 @@
 using namespace std;
 
 typedef struct Node {
-    int a;
-    int b;
+    int num;
+    int data;
     struct Node *next;
-} Node, *LinkList;
+} Node;
 
-LinkList Build(LinkList L, int m) //建立单向链表
+Node *createLinkList(int m) //新建链表，指定节点个数
 {
-    LinkList p, q;
-    p = L;
-    while (m--) {
-        q = (LinkList) malloc(sizeof(Node));
-        cin >> q->a >> q->b;
-        q->next = NULL;
-        p->next = q;
-        p = q;
-    }
-    return L;
-}
-
-LinkList ListNewV1(int m) //新建链表，指定节点个数
-{
-    Node *head = (Node *) malloc(sizeof(Node));
-    head->next = NULL;
-    cin >> head->a >> head->b;
-    LinkList t = head;
-    if (head) {
+    Node *currentNode = (Node *) malloc(sizeof(Node));
+    currentNode->next = NULL;
+    cin >> currentNode->num >> currentNode->data;
+    Node *t = currentNode;
+    if (currentNode) {
         for (int i = 1; i <= m - 1; i++) {
-            Node *nextnode = (Node *) malloc(sizeof(Node));
-            nextnode->next = NULL; //新建节点
-            cin >> nextnode->a >> nextnode->b; //
-            head->next = nextnode;
-            head = nextnode;
+            Node *nextNode = (Node *) malloc(sizeof(Node));
+            nextNode->next = NULL;
+            cin >> nextNode->num >> nextNode->data; //
+            currentNode->next = nextNode;
+            currentNode = nextNode;
         }
-    } else {
-        cout << "head new comes error!" << endl;
     }
     return t;
 }
 
-LinkList DelSamEleV1(LinkList L) //删除相同标号的
+Node *delSameNode(Node *head) //删除相同标号的
 {
-    LinkList temp = L;
-    while (temp->next != NULL) {
-
-        if (temp->next->a == temp->a) {
-            temp->next = temp->next->next;
-            //free(temp->next);
+    Node *current = head;
+    while (current->next != NULL) {
+        if (current->next->num == current->num) {
+            Node *p = current->next;
+            current->next = current->next->next;
+            delete p;
         } else {
-            temp = temp->next;
+            current = current->next;
         }
     }
-    return L;
+    return head;
 }
 
-LinkList DeleteSameElem(LinkList L) //相邻的重复元素，删除后者保留前者
+void autoInsert(Node *head) //进行插值
 {
-    LinkList p, q; //,s;
-    p = L;
-    q = L->next;
-    while (q->next) {
-
-        if (q->a == q->next->a) {
-            /*
-             p->next=q->next;
-             s=q;
-             q=q->next;
-             free(s);
-             */
-            p = q->next;
-            q->next = p->next;
-            free(p);
-
-        } else {
-            //p=p->next;
-            q = q->next;
-        }
-    }
-    return L;
-}
-
-void ListInsertV1(LinkList L, int m) //进行插值
-{
-    LinkList temp = L, p;
-    while (temp->next != NULL) {
-        int chazhinum = (temp->next->a) - (temp->a);
-        if (chazhinum > 1) //出现不连续，需要插值的数量为chazhinum-1
-        { //A+( (B-A)/(N-M) )*i
-            int A = temp->b;
-            int B = temp->next->b;
-            int M = temp->a;
-            int N = temp->next->a;
-            for (int i = 1; i <= chazhinum - 1; i++) {
-                p = (LinkList) malloc(sizeof(Node));
-                p->a = temp->a + 1; //
-                p->b = A + ((B - A) / (N - M)) * i;
-                p->next = temp->next; //进行节点的插入
-                temp->next = p;
-                temp = p;
+    Node *current = head;
+    while (current->next != NULL) {
+        int insertNum = (current->next->num) - (current->num) - 1;
+        if (insertNum > 0) {
+            int data = current->data;
+            int nextData = current->next->data;
+            int num = current->num;
+            int numNext = current->next->num;
+            for (int i = 1; i <= insertNum; i++) {
+                Node *p = (Node *) malloc(sizeof(Node));
+                p->num = current->num + 1;
+                p->data = data + ((nextData - data) / (numNext - num)) * i;
+                p->next = current->next;
+                current->next = p;
+                current = p;
             }
         }
-        temp = temp->next;
+        current = current->next;
     }
 }
 
-void LineInsert(LinkList L, int m) {
-    LinkList p = L->next, q;
-    while (p->next != NULL) //注意不是while(p!=NULL) 因为后面涉及到p->next->next
-        //for(int i=1;i<m;i++)
-    { /*
-	 if(p->a==p->next->a)
-	 {
-	 q=p->next;
-	 p->next=p->next->next;
-	 free(q);
-	 }
-	 else */
-
-        if (((p->next->a) - (p->a)) > 1) {
-            int d = (p->next->a) - (p->a) - 1;
-            int A = p->b;
-            int B = p->next->b;
-            int M = p->a;
-            int N = p->next->a;
-            for (int i = 1; i <= d; i++) {
-                q = (LinkList) malloc(sizeof(Node));
-                q->a = p->a + 1; //不是 q->a=M+1;
-                q->b = A + (B - A) / (N - M) * i;
-                q->next = p->next;
-                p->next = q;
-                p = q;
-            }
-
-        }
-        p = p->next;
-    }
-}
-
-void DisplayListV1(LinkList L) {
-    LinkList temp = L;
-    while (temp) {
-        cout << temp->a << " " << temp->b << endl;
-        temp = temp->next;
-    }
-}
-
-void DisplayList(LinkList L) {
-    LinkList p = L->next;
-    while (p != NULL) //不是while(p->next!=NULL)
-    {
-        cout << p->a << " " << p->b << endl;
-        p = p->next;
+void displayList(Node *head) {
+    Node *current = head;
+    while (current) {
+        cout << current->num << " " << current->data << endl;
+        current = current->next;
     }
 }
 
 int main() {
 
-    int m, n;
-    while (cin >> m >> n) {
-        LinkList L, t;
-        L = ListNewV1(m);
-
-        DelSamEleV1(L);
-        ListInsertV1(L, m);
-        DisplayListV1(L);
-
-        //Build(L,m);
-        //DeleteSameElem(L);
-        //   //pur_LinkList(L);
-        //LineInsert(L,m);
-        //DisplayList(L);
+    int nOriMINum;
+    int nMaxMIRst; // 这个值没有用到
+    while (cin >> nOriMINum >> nMaxMIRst) {
+        Node *head = createLinkList(nOriMINum);
+        delSameNode(head);
+        autoInsert(head);
+        displayList(head);
+        delete[] head;
     }
     return 0;
-}
-
-//解法二
-#include <iostream>
-
-using namespace std;
-typedef struct node {
-
-    int a; //编号
-    int b; //测量值
-    struct node *next;
-} node, *linklist;
-
-/*m为输入的数据组数，每组数据为node结构，从第一组输入数据开始连续两两插值，总共需要循环插值操作m-1次，每次循环次数为相邻两组数据编号差-1*/
-
-int maincleanupmeasureinfo() {
-
-    int i, j, m, n, d, A, B, N, M;
-    linklist L, s, p, q;
-    L = (linklist) malloc(sizeof(node)); //头结点。动态存储数据 方便删除 插入操作
-    p = L;
-    cin >> m >> n; //将头节点用于存储m和n的值
-    for (i = 0; i < m; i++) //赋值
-    {
-        s = (linklist) malloc(sizeof(node));
-        cin >> s->a >> s->b;
-        p->next = s;
-        p = s;
-    }
-    p->next = NULL;
-    p = L->next; //第一个数据
-
-    for (i = 1; i < m; i++) //依次对两两之间进行插值
-    {
-        if (p->a == p->next->a) //编号相同 则丢弃后出现的测量结果
-        {
-            q = p->next; //缓存待丢弃的位置
-            p->next = p->next->next;
-            free(q); //释放丢弃的节点
-            p = p->next;
-        } else //编号不同 则进行插值操作 插值数为编号差减一
-        {
-            d = (p->next->a) - (p->a) - 1;
-            A = p->b;
-            B = p->next->b;
-            M = p->a;
-            N = p->next->a;
-            for (j = 1; j <= d; j++) {
-                s = (linklist) malloc(sizeof(node));
-                s->a = p->a + 1;
-                s->b = A + (B - A) / (N - M) * j;
-                s->next = p->next;
-                p->next = s;
-                p = s;
-            }
-            p = p->next;
-        }
-    }
-    p = L->next;
-    while (p) //打印
-    {
-        cout << p->a << " " << p->b << endl;
-        p = p->next;
-    }
-    return 1;
 }
 

@@ -16,7 +16,7 @@
 
 using namespace std;
 
-int main4418_1() {
+int main2() {
     string strInput;
     getline(cin, strInput);
     string strInputReverse = strInput;  //warning
@@ -30,7 +30,14 @@ int main4418_1() {
 
 int main() {
     char s[1024];
-    while (~(scanf("%1023s", s)));
-    printf("%ud\n", strlen(s));
+    int count = 0;
+    // scanf return:
+    // Number of receiving arguments successfully assigned
+    // (which may be zero in case a matching failure occurred before the first receiving argument was assigned),
+    // or EOF if input failure occurs before the first receiving argument was assigned.
+    do {
+        count = scanf("%1023s", s);
+    } while (count == 1); //
+    printf("%llu\n", strlen(s));
     return 0;
 }
