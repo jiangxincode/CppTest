@@ -38,6 +38,6 @@ int main() {
     do {
         count = scanf("%1023s", s);
     } while (count == 1); //
-    printf("%llu\n", strlen(s));
+    printf("%lu\n", strlen(s));
     return 0;
 }

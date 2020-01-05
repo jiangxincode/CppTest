@@ -64,7 +64,7 @@ Node *delSameNode(Node *head) //删除相同标号的
         if (current->next->num == current->num) {
             Node *p = current->next;
             current->next = current->next->next;
-            delete p;
+            free(p);
         } else {
             current = current->next;
         }
@@ -100,6 +100,15 @@ void displayList(Node *head) {
     while (current) {
         cout << current->num << " " << current->data << endl;
         current = current->next;
+    }
+}
+
+void free(Node *head) {
+    Node *current = head;
+    while (current) {
+        Node *p = current;
+        current = current->next;
+        free(p);
     }
 }
 
