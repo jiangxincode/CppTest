@@ -110,8 +110,8 @@ add_executable(GTestMain
         src/common/contacts.cpp
         src/common/hash.hpp
         src/common/input.cpp
-        src/common/josephus.cpp
-        #[[src/common/linear_list.h]]
+        #[[src/common/josephus.cpp
+        src/common/linear_list.h]]
         src/common/skip_list.h
         src/common/spherical_distance.cpp
         src/common/static_list.h
