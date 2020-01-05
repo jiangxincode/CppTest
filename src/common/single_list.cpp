@@ -180,7 +180,7 @@ node* checkLink(node* pHead1,node* pHead2)
 int main0009()
 {
     int i, n, k, data;
-    node *head;
+    node *head = NULL;
 
     while(scanf("%11d%11d", &n, &k) != EOF)
     {
@@ -193,6 +193,12 @@ int main0009()
         printLink(head);
         head = reverseK(head, k);
         printLink(head);
+    }
+
+    while (head != NULL) {
+        node *p = head;
+        head = head->next;
+        free(p);
     }
 
     return 0;
