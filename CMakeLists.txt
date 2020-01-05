@@ -77,6 +77,9 @@ add_executable(main2544
 add_executable(main2567
         src/others/main2567.cpp)
 
+add_executable(single_list
+        src/common/single_list.cpp)
+
 aux_source_directory(include/gtest gtest_h)
 aux_source_directory(lib/gtest gtest_cpp)
 
@@ -105,7 +108,6 @@ add_executable(GTestMain
         src/common/input.cpp
         src/common/josephus.cpp
         src/common/linear_list.h
-        src/common/single_list.cpp
         src/common/skip_list.h
         src/common/spherical_distance.cpp
         src/common/static_list.h

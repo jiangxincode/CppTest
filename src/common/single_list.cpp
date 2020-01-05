@@ -177,7 +177,7 @@ node* checkLink(node* pHead1,node* pHead2)
 }
 
 /** \cond */
-int main0009()
+int main()
 {
     int i, n, k, data;
     node *head = NULL;
@@ -193,12 +193,12 @@ int main0009()
         printLink(head);
         head = reverseK(head, k);
         printLink(head);
-    }
 
-    while (head != NULL) {
-        node *p = head;
-        head = head->next;
-        free(p);
+        while (head != NULL) {
+            node *p = head;
+            head = head->next;
+            free(p);
+        }
     }
 
     return 0;
