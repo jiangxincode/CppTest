@@ -6,6 +6,7 @@ CMakeSettings.json
 Debug/
 .settings/
 /Release/
+temp/
 
 
 cmake-build-debug/

@@ -1,4 +1,4 @@
-﻿#ifndef MAIN_H
+#ifndef MAIN_H
 #define MAIN_H
 
 bool compare_file_binary(std::string filename1, std::string filename2);
