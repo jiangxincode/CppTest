@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.12)
-project(CppTest)
+project(CppTest CXX C)
 
 set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_C_STANDARD 99)
+
 SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g -ggdb ")
 SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
 set(CMAKE_BUILD_TYPE "Debug")
@@ -130,3 +132,13 @@ add_executable(CppTest
         src/tools.cpp)
 
 target_link_libraries(GTestMain pthread)
+
+
+file(GLOB APP_SOURCES RELATIVE ${CMAKE_SOURCE_DIR}/src/MyFirstCCourse src/MyFirstCCourse/*.c)
+
+MESSAGE( STATUS "${APP_SOURCES}")
+
+foreach (sourcefile IN LISTS APP_SOURCES)
+    string(REPLACE ".c" "" program ${sourcefile})
+    add_executable(${program} ${CMAKE_SOURCE_DIR}/src/MyFirstCCourse/${sourcefile})
+endforeach (sourcefile)

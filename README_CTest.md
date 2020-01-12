@@ -20,10 +20,6 @@ http://github.com/jiangxincode
 * jiangxin.c常用自定义函数
 * jiangxin.h常用自定义函数的声明
 
-* 1000-1199:C语言程序设计, 2012 实验教材为《C语言程序设计教程学习指导》
-	* origin:7-4.c now:main1074
-	* origin:12-5.c now:main1125
-
 ## 待修复问题
 
 * 增加注释
