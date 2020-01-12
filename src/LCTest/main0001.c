@@ -3,7 +3,7 @@
 #include <netdb.h>
 #include <arpa/inet.h>
 
-int main00011() //get the local hostent information
+int main() //get the local hostent information
 {
         struct hostent *he;
          if( ( he = gethostent()) == NULL)

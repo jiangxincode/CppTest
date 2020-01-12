@@ -17,7 +17,7 @@
 void generate(int, int, double*);
 void save(char *, int , double *);
 
-int main0002(int argc, char * argv[])
+int main(int argc, char * argv[])
 {
 
 	int frequency,samplerate;

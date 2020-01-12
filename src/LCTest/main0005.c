@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main0005(int argc, char *argv[])
+void main(int argc, char *argv[])
 {
     printf("\033[10;10H"); //设置光标位置
     printf("\033[32m Hello"); //设置前景为绿色

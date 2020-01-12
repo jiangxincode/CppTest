@@ -3,7 +3,7 @@
 
 #define NUMBER 10
 
-int main0004()
+int main()
 {
         int i,a[NUMBER];
         int *p=a;

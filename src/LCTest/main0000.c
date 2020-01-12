@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <sys/socket.h>
 
-int main0000()
+int main()
 {
         printf("%d", MSG_DONTWAIT);
         return 0;

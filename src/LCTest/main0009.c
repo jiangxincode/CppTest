@@ -221,7 +221,7 @@ void tv_sub(struct timeval *recvtime,struct timeval *sendtime)
 }
 
 /*主函数*/
-int main0009()
+int main()
 {
         struct hostent *host;
         struct protoent *protocol;

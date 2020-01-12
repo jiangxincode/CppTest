@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main0007()
+void main()
 {
 	int i;
 	int k;

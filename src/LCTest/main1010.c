@@ -39,7 +39,7 @@ int main10102()
         }
         return 0;
 }
-int main1010()
+int main()
 {
         main10102();
         return 0;

@@ -3,7 +3,7 @@
 #include<sys/types.h>
 #include<stdio.h>
 
-int main0012()
+int main()
 {
 	pid_t my_pid,parent_pid;
 	uid_t my_uid,my_euid;

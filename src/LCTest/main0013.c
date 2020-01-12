@@ -5,7 +5,7 @@
 #include<errno.h>
 #include<math.h>
 #include<unistd.h>
-int main0013()
+int main()
 {
 	pid_t child;
 	int status;

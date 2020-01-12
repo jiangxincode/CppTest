@@ -42,7 +42,7 @@ void sigroutine(int dunno)
 	}
 	return;
 }
-int main0011()
+int main()
 {
 	printf("process id is %d \n",getpid());
 	signal(SIGHUP, sigroutine); //* 下面设置三个信号的处理方法

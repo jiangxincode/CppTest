@@ -19,7 +19,7 @@ gcvt试图以十进制格式产生digits数字,如果不可能,它以指数格�
 */
 #include <stdlib.h>
 #include <stdio.h>
-int main0010()
+int main()
 {
         char str[25];
         double num;

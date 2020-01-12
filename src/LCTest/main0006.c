@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <sys/select.h>
 
-void main0006()
+void main()
 {
     int i,k;
     fd_set file_rd;

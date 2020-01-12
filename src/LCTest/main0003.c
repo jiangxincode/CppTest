@@ -1,7 +1,7 @@
 #include <sys/time.h>
 #include <stdio.h>
 
-int main0003()
+int main()
 {
     struct timeval tv;
     struct timezone tz;

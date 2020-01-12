@@ -2,7 +2,7 @@
 #include <sys/select.h>
 #include <unistd.h>
 
-int main0008()
+int main()
 {
     int x, y, k;
     x = 10;

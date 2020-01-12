@@ -135,11 +135,28 @@ target_link_libraries(GTestMain pthread)
 
 
 file(GLOB APP_SOURCES RELATIVE ${CMAKE_SOURCE_DIR}/src/MyFirstCCourse src/MyFirstCCourse/*.c)
-
 MESSAGE( STATUS "${APP_SOURCES}")
-
 foreach (sourcefile IN LISTS APP_SOURCES)
     string(REPLACE ".c" "" program ${sourcefile})
     add_executable(${program} ${CMAKE_SOURCE_DIR}/src/MyFirstCCourse/${sourcefile})
     target_link_libraries(${program} m)
 endforeach (sourcefile)
+
+
+MESSAGE(STATUS "operation system is ${CMAKE_SYSTEM}")
+
+IF (CMAKE_SYSTEM_NAME MATCHES "Linux")
+    file(GLOB APP_SOURCES RELATIVE ${CMAKE_SOURCE_DIR}/src/LCTest src/LCTest/*.c)
+    MESSAGE( STATUS "${APP_SOURCES}")
+    foreach (sourcefile IN LISTS APP_SOURCES)
+        string(REPLACE ".c" "" program ${sourcefile})
+        add_executable(${program} ${CMAKE_SOURCE_DIR}/src/LCTest/${sourcefile})
+        target_link_libraries(${program} m)
+    endforeach (sourcefile)
+ELSEIF (CMAKE_SYSTEM_NAME MATCHES "Windows")
+    MESSAGE(STATUS "current platform: Windows")
+ELSEIF (CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+    MESSAGE(STATUS "current platform: FreeBSD")
+ELSE ()
+    MESSAGE(STATUS "other platform: ${CMAKE_SYSTEM_NAME}")
+ENDIF (CMAKE_SYSTEM_NAME MATCHES "Linux")
