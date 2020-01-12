@@ -1,0 +1,1 @@
+Some exercises for C in Linux environment
