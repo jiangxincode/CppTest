@@ -31,8 +31,8 @@ add_executable(nowcoder0006
 add_executable(nowcoder0007
         src/nowcoder/nowcoder0007.cpp)
 
-#[[add_executable(nowcoder0008
-        src/nowcoder/nowcoder0008.cpp)]]
+add_executable(nowcoder0008
+        src/nowcoder/nowcoder0008.cpp)
 
 #[[add_executable(nowcoder0009
         src/nowcoder/nowcoder0009.cpp)]]
@@ -63,6 +63,9 @@ add_executable(nowcoder0017
 
 add_executable(nowcoder0018
         src/nowcoder/nowcoder0018.cpp)
+
+add_executable(nowcoder0019
+        src/nowcoder/nowcoder0019.cpp)
 
 add_executable(openjudge_zz_3
         src/openjudge/openjudge_zz_3.cpp)
