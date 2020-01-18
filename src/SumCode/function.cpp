@@ -8,7 +8,7 @@ void PrintVec(vector<string> vecStr)
         cout << vecStr[i] << endl;
 }
 
-#ifdef _LINUX
+#ifdef __linux__
 vector<string> ReadDir(string dirName)
 {
     DIR *dp;
@@ -46,7 +46,7 @@ vector<string> ReadDir(string dirName)
 }
 #endif
 
-//#ifdef _WIN32
+#ifdef _WIN32
 vector<string> ReadDir(string dirName)
 {
     LPSTR fileName;
@@ -122,7 +122,7 @@ vector<string> ReadDir(string dirName)
 	}
     return ret;
 }
-//#endif
+#endif
 
 long int ProcessFile(string fileName)
 {

@@ -1,5 +1,3 @@
-// libjiangxin.cpp
-
 #include "stdio.h"
 #include "ctype.h"
 #include "stdlib.h"
@@ -45,10 +43,10 @@ void jx_PrintAuthorInfo()
     }
     if(ch == 'y')
     {
-        #ifdef _windows_
+        #ifdef _WIN32
             system("notepad.exe README.txt");
         #endif
-        #ifdef _linux_
+        #ifdef __linux__
             system("vim README.txt");
         #endif
     }
