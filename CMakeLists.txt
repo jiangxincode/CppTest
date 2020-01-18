@@ -82,6 +82,9 @@ add_executable(CppTest
 
 target_link_libraries(GTestMain pthread)
 
+add_executable(FlappyBird
+        src/FlappyBird.cpp)
+
 file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/nowcoder src/nowcoder/*.cpp)
 foreach (source IN LISTS sources)
     string(REPLACE ".cpp" "" program ${source})
