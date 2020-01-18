@@ -13,60 +13,6 @@ include_directories(include)
 add_executable(luoguP1876
         src/luogu/luoguP1876.cpp)
 
-add_executable(nowcoder0002
-        src/nowcoder/nowcoder0002.cpp)
-
-add_executable(nowcoder0003
-        src/nowcoder/nowcoder0003.cpp)
-
-add_executable(nowcoder0004
-        src/nowcoder/nowcoder0004.cpp)
-
-add_executable(nowcoder0005
-        src/nowcoder/nowcoder0005.cpp)
-
-add_executable(nowcoder0006
-        src/nowcoder/nowcoder0006.cpp)
-
-add_executable(nowcoder0007
-        src/nowcoder/nowcoder0007.cpp)
-
-add_executable(nowcoder0008
-        src/nowcoder/nowcoder0008.cpp)
-
-#[[add_executable(nowcoder0009
-        src/nowcoder/nowcoder0009.cpp)]]
-
-add_executable(nowcoder0010
-        src/nowcoder/nowcoder0010.cpp)
-
-add_executable(nowcoder0011
-        src/nowcoder/nowcoder0011.cpp)
-
-add_executable(nowcoder0012
-        src/nowcoder/nowcoder0012.cpp)
-
-add_executable(nowcoder0013
-        src/nowcoder/nowcoder0013.cpp)
-
-add_executable(nowcoder0014
-        src/nowcoder/nowcoder0014.cpp)
-
-add_executable(nowcoder0015
-        src/nowcoder/nowcoder0015.cpp)
-
-add_executable(nowcoder0016
-        src/nowcoder/nowcoder0016.cpp)
-
-add_executable(nowcoder0017
-        src/nowcoder/nowcoder0017.cpp)
-
-add_executable(nowcoder0018
-        src/nowcoder/nowcoder0018.cpp)
-
-add_executable(nowcoder0019
-        src/nowcoder/nowcoder0019.cpp)
-
 add_executable(openjudge_zz_3
         src/openjudge/openjudge_zz_3.cpp)
 
@@ -136,26 +82,27 @@ add_executable(CppTest
 
 target_link_libraries(GTestMain pthread)
 
-
-file(GLOB APP_SOURCES RELATIVE ${CMAKE_SOURCE_DIR}/src/MyFirstCCourse src/MyFirstCCourse/*.c)
-MESSAGE( STATUS "${APP_SOURCES}")
-foreach (sourcefile IN LISTS APP_SOURCES)
-    string(REPLACE ".c" "" program ${sourcefile})
-    add_executable(${program} ${CMAKE_SOURCE_DIR}/src/MyFirstCCourse/${sourcefile})
+file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/nowcoder src/nowcoder/*.cpp)
+foreach (source IN LISTS sources)
+    string(REPLACE ".cpp" "" program ${source})
+    add_executable(${program} ${CMAKE_SOURCE_DIR}/src/nowcoder/${source})
     target_link_libraries(${program} m)
-endforeach (sourcefile)
+endforeach (source)
 
-
-MESSAGE(STATUS "operation system is ${CMAKE_SYSTEM}")
+file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/MyFirstCCourse src/MyFirstCCourse/*.c)
+foreach (source IN LISTS sources)
+    string(REPLACE ".c" "" program ${source})
+    add_executable(${program} ${CMAKE_SOURCE_DIR}/src/MyFirstCCourse/${source})
+    target_link_libraries(${program} m)
+endforeach (source)
 
 IF (CMAKE_SYSTEM_NAME MATCHES "Linux")
-    file(GLOB APP_SOURCES RELATIVE ${CMAKE_SOURCE_DIR}/src/LCTest src/LCTest/*.c)
-    MESSAGE( STATUS "${APP_SOURCES}")
-    foreach (sourcefile IN LISTS APP_SOURCES)
-        string(REPLACE ".c" "" program ${sourcefile})
-        add_executable(${program} ${CMAKE_SOURCE_DIR}/src/LCTest/${sourcefile})
+    file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/LCTest src/LCTest/*.c)
+    foreach (source IN LISTS sources)
+        string(REPLACE ".c" "" program ${source})
+        add_executable(${program} ${CMAKE_SOURCE_DIR}/src/LCTest/${source})
         target_link_libraries(${program} m)
-    endforeach (sourcefile)
+    endforeach (source)
 ELSEIF (CMAKE_SYSTEM_NAME MATCHES "Windows")
     MESSAGE(STATUS "current platform: Windows")
 ELSEIF (CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
