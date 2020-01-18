@@ -82,6 +82,13 @@ add_executable(CppTest
 
 target_link_libraries(GTestMain pthread)
 
+add_executable(SumCode
+        src/SumCode/main.cpp
+        src/SumCode/libjiangxin.cpp
+        src/SumCode/base.h
+        src/SumCode/function.cpp
+        src/SumCode/function.h)
+
 file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/nowcoder src/nowcoder/*.cpp)
 foreach (source IN LISTS sources)
     string(REPLACE ".cpp" "" program ${source})
