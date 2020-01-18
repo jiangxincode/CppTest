@@ -82,9 +82,6 @@ add_executable(CppTest
 
 target_link_libraries(GTestMain pthread)
 
-add_executable(FlappyBird
-        src/FlappyBird.cpp)
-
 file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/nowcoder src/nowcoder/*.cpp)
 foreach (source IN LISTS sources)
     string(REPLACE ".cpp" "" program ${source})
@@ -107,7 +104,8 @@ IF (CMAKE_SYSTEM_NAME MATCHES "Linux")
         target_link_libraries(${program} m)
     endforeach (source)
 ELSEIF (CMAKE_SYSTEM_NAME MATCHES "Windows")
-    MESSAGE(STATUS "current platform: Windows")
+    add_executable(FlappyBird
+            src/FlappyBird.cpp)
 ELSEIF (CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
     MESSAGE(STATUS "current platform: FreeBSD")
 ELSE ()
