@@ -35,7 +35,11 @@ int main()
         exit(1);
     }
 
-    int matrix[n][n]; //用来存储魔方数组
+	int** matrix = (int**)malloc(n * sizeof(int*));
+	for (int i = 0; i < n; ++i)
+	{
+		matrix[i] = (int*)malloc(sizeof(int) * n);
+	}
 
     for(i=0; i<n; i++) //初始化数组
     {
@@ -78,6 +82,7 @@ int main()
 
         printf("\n");
     }
+	free(matrix);
 
     return 0;
 }

@@ -1,6 +1,7 @@
 # CppTest
 
 [![Travis CI Build Status](https://travis-ci.org/jiangxincode/CppTest.svg?branch=master)](https://travis-ci.org/jiangxincode/CppTest)
+[![Build status](https://ci.appveyor.com/api/projects/status/bmh3cjv2wchq5esl?svg=true)](https://ci.appveyor.com/project/jiangxincode/cpptest)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest&metric=alert_status)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest&metric=bugs)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest)

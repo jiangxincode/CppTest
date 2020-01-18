@@ -64,7 +64,7 @@ int stoi(char *str)
 int main(int argc,char*argv[])
 {
     const int MAX_NUM = 100;
-    int arr[MAX_NUM];
+    int* arr = (int*)malloc(sizeof(int) * MAX_NUM);
     int i,j;
     int count = 0;
 
@@ -104,5 +104,6 @@ int main(int argc,char*argv[])
     }
 
     printf("\n");
+	free(arr);
     return 0;
 }

@@ -4,11 +4,11 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 void line_sort(int a[][4],int b[],int n)
 {
     int temp;
-    int c[n]; //存储改行在排序后所在的函数
 
     for(int i=0; i<5; i++)
     {
@@ -26,6 +26,9 @@ void line_sort(int a[][4],int b[],int n)
     }
 
     printf("\n");
+
+	int* c = (int*)malloc(n * sizeof(int));
+	//int c[n];
 
     //考虑效率问题，应该先对b进行排序
     for(int i=0; i<n; i++)
@@ -69,6 +72,7 @@ void line_sort(int a[][4],int b[],int n)
             a[pos][j] = temp;
         }
     }
+	free(c);
 }
 int main(void)
 {

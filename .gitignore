@@ -10,6 +10,7 @@ temp/
 
 
 cmake-build-debug/
+cmake-vs/
 out/
 .vs/
 
