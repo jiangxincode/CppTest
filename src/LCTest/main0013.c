@@ -1,10 +1,12 @@
-#include<stdio.h>
+#include <string.h>
+#include <stdio.h>
 #include <stdlib.h>
-#include<sys/types.h>
-#include<sys/wait.h>
-#include<errno.h>
-#include<math.h>
-#include<unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <errno.h>
+#include <math.h>
+#include <unistd.h>
+
 int main()
 {
 	pid_t child;

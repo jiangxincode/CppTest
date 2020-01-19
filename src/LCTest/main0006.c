@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <sys/select.h>
 
-void main()
+int main()
 {
     int i,k;
     fd_set file_rd;
@@ -26,5 +26,6 @@ void main()
         printf("%d\n", k);
         sleep(1);
     }
+    return 0;
 }
 

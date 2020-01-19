@@ -58,7 +58,7 @@ void display1161(NODE *head)
 
     while(p!=NULL)
     {
-        printf("The date of the member %d:%d\tThe first address:%s \n",++i,p->x,p);
+        printf("The date of the member %d:%d\n",++i,p->x);
         p=p->next;
     }
 }

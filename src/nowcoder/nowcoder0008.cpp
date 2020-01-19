@@ -13,8 +13,6 @@
 #include <stdio.h>
 #include <string.h>
 
-using namespace std;
-
 /**
  * 反转字符串
  *

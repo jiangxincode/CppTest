@@ -85,7 +85,7 @@ int main(int argc, char *argv[]) {
 
     size_t begin;
     size_t end;
-    while (scanf("%u %u", &begin, &end) > 0) {
+    while (scanf("%zu %zu", &begin, &end) > 0) {
         bool isFirst = true;
         for (size_t i = begin; i <= end; i++) {
             if (isArmstrong(i) == 1) {

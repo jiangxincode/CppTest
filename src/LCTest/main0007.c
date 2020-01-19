@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main()
+int main()
 {
 	int i;
 	int k;
@@ -8,5 +8,6 @@ void main()
 		k = getchar();
 		printf("%d\n", k);
 	}
+    return 0;
 }
 

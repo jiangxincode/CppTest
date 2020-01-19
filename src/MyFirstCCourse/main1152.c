@@ -37,7 +37,7 @@ static void sort(ST x[],int n,char key[][10],int m)
             }
         }
 }
-void main()
+int main()
 {
     ST s[5]= {{"Andy","master"},{"Beth","bachelor"},{"Can","doctor"},
         {"Deo","bachelor"},{"Emy","master"}
@@ -50,4 +50,5 @@ void main()
     {
         printf("\n%s    %s",s[i].name,s[i].degree);
     }
+    return 0;
 }
