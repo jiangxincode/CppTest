@@ -83,11 +83,11 @@ int main(int argc, char *argv[]) {
     //cout << isArmstrong(153) << endl; // 1
     //cout << isArmstrong(151) << endl; // 0
 
-    size_t begin;
-    size_t end;
-    while (scanf("%zu %zu", &begin, &end) > 0) {
+    int begin;
+    int end;
+    while (scanf("%d %d", &begin, &end) > 0) {
         bool isFirst = true;
-        for (size_t i = begin; i <= end; i++) {
+        for (int i = begin; i <= end; i++) {
             if (isArmstrong(i) == 1) {
                 if (isFirst) {
                     cout << i;

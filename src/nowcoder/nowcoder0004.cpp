@@ -66,7 +66,7 @@ int main() {
     getline(cin, str_input);
 
 
-    int pos = str_input.find('-');
+    size_t pos = str_input.find('-');
 
     str_first = str_input.substr(0, pos);
     str_second = str_input.substr(pos + 1, str_input.size() - pos);

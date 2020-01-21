@@ -22,30 +22,30 @@
  */
 #include <iostream>
 #include <cstring>
+#include <cstddef>
 
 using namespace std;
 
 #define MAX_WORD_NUMBER 1000
-#define MAX_WORD_LENGHT 40
+#define MAX_WORD_LENGTH 40
 #define MAX_CHAR_PER_LINE 80
 
 int main()
 {
-	char words[MAX_WORD_NUMBER][MAX_WORD_LENGHT]; //用于保存每一个单词
-	int wordsLen[MAX_WORD_NUMBER]; // 记录每一个单词的长度
-	int n; // 需要处理的单词总数
+	char words[MAX_WORD_NUMBER][MAX_WORD_LENGTH]; //用于保存每一个单词
+	size_t wordsLen[MAX_WORD_NUMBER]; // 记录每一个单词的长度
+	size_t n; // 需要处理的单词总数
 
 	cin >> n;
-	for (int i = 0; i < n; i++) //输入单词数据，处理后得到每个单词的长度
+	for (size_t i = 0; i < n; i++) //输入单词数据，处理后得到每个单词的长度
 	{
 		cin >> words[i];
 		wordsLen[i] = strlen(words[i]);
-
 	}
 
 	//其实可以将读入过程和输出过程合并到一起，可以节省空间，提高效率，但是会导致输入和输出在一起比较混乱，所以分开处理
-	int length = 0;
-	for (int i = 0; i < n; i++)
+	size_t length = 0;
+	for (size_t i = 0; i < n; i++)
 	{
 		if (length == 0) //当前行没有任何内容
 		{

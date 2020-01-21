@@ -20,7 +20,7 @@
  * @param length 字符串长度（不含结束符）
  */
 void reverseStr(char *str, size_t length) {
-    for (int i = 0, j = length - 1; i < j; i++, j--) {
+    for (size_t i = 0, j = length - 1; i < j; i++, j--) {
         char tmp = str[i];
         str[i] = str[j];
         str[j] = tmp;

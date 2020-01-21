@@ -19,14 +19,15 @@
 
 using namespace std;
 
-void reverseStr(char *str, int i, int j) {
-    for (; i < j; i++, j--) {
+void reverseStr(char *str, size_t i, size_t j) {
+    while (i < j) {
         char tmp;
         tmp = str[i];
         str[i] = str[j];
         str[j] = tmp;
+        i++;
+        j--;
     }
-    return;
 }
 
 
@@ -37,18 +38,18 @@ int main(int argc, char **argv) {
     while (fgets(str, sizeof(str) - 1, stdin) != NULL) {
         // 处理多读取的'\n'
         str[strlen(str) - 1] = '\0';
-        reverseStr(str, 0, strlen(str)-1);
-        int i = 0;
+        reverseStr(str, 0, strlen(str) - 1);
+        size_t i = 0;
         while (str[i] != '\0') {
             if (str[i] == ' ') {
                 i++;
                 continue;
             }
-            int start = i;
+            size_t start = i;
             while (str[i] != ' ' && str[i] != '\0') {
                 i++;
             }
-            int end = i-1;
+            size_t end = i - 1;
             reverseStr(str, start, end);
         }
         printf("%s\n", str);
