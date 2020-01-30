@@ -1,0 +1,2 @@
+FILE_PATTERNS = *.h *.cpp *.c *.md
+USE_MDFILE_AS_MAINPAGE = ./README.md

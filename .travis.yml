@@ -1,3 +1,9 @@
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "QDQy4YNv3muQ9KQG4b3ofuaX5HSpjGJBJkVn1E+XxqWjCXpxmugbotM2fiHVOWIAx9EH9v0mYLbyJiB35vA93sRixIcT/FwPmFdY7qngWi3NcILbVQAlgyaUyBHm3JTBnP825IWCNzwt6aXDHOKc19BwTmYjo2g34DONq0icFKj0IPGcheE8LfQxitGYRk8GvAnI1gmhe0jUG0kBG2TyoooFxkc/K08Wc9ESTeqsbMyFrINSALwZZ9QWQHDKDNOIkC+1PmrT0MB6Jjy2J6ujEJ8bvE7zTsppSpiraIvpqROFLi9PguNIjWg1Y0k8rGIpbr0NxF3s14vjEEd9KUu9nuoeTKIAvwnfX1Io+kJ7Le4DCrZVWIs6AKbcYP/pW6Q4YJwRHnIztHhZ2wO12z8oXhiEsnqfTclWQJ/pGgKgI9BNKjrgaiw3rUwvdMosOxZ4V+PjOA/cCFz63L77VAoWG0kibfbHwAZ5gDcruBNOf84FquaneSQW6wBu8XtIQ7a71bkH66rifD/cowoo3i32S7tm02A+eYa4B9jBB4UwGjPJW9EEadEF+P23/m1mc9CCkn3LTSRftGmT1IuGRQbgM1WWriBlUHUiDzps+uQ+Wb8E3Gv8b12FwPks/T7ajvVsp+dNOj5dVljNOR2OP7dMiTEQwYeWTYbF3JhpjWjckcA="
+
 os: linux
 language: cpp
 compiler:
@@ -9,8 +15,30 @@ script:
   - build-wrapper-linux-x86-64 --out-dir ../bw_output make clean all
   - cd ..
   - sonar-scanner
+
+before_install:
+  # coverity_scan
+  - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
+
 addons:
   sonarcloud:
     organization: "jiangxincode-github"
     token:
       secure: QbDn5o0nm6tm6TXzg3Xe9ooqB99aoWZqpaUAex6xYB6t4qL2+edn81hJy3leYfyxcc6FpnolVAFwk75aM9gQQjzvjMgdUh3MLoVgLkzFTiQZZNuZ+tT5vf3pBwwDiUIc6J4hQCWuauH3h/YvcyN8d25WVAfbkaJMhu2Yw/xkZBnP8KnPFyWiz0X/fnOySjUTlWsWiQDRAY1F8vB9lwFGhuZcNIn2j9JK8Hg1f8NRSKDZ4im2dGvkAmdRfus9Uryk1K693O49qmSqmjGoyZMfR74/wxbQMNF6KbmNuNrmtWYvMlOBDscrRLW6Ldjw5ZVzViIkZ6xs0OhYwFPmKSUefft6e9UZ2UC09QCgutu6AFKpre3/hY2QcCRvFNFaAAIzDOI/VZR9+Pqs+5CK2lrnDkWmQ4aybex7gQCqJRAw0lEWSIIrFwFzxA+dVts7aF/UhmsWGzmcfU8H3aafd6bt8QDVJZWoQTONtO+091A7jejWvlwxGz22s5C9CAmD2hH2vhNfzZPLdysWMhT927EHOgS376sZrVzZFVjnBaEQMTOOk/XCuYujXOARflU9IgCzwrCtZnMX7WgbHNuKb+cUBLayUHZ0ihmKowAZs60HiVQ3oDFcHAM47wK+NUynPRD2oJuCwLL2ILsCgtzNqFBEjKxka9S0EsATx0AeTJbNNWc=
+
+  coverity_scan:
+    project:
+      name: "jiangxincode/CppTest"
+      description: "CppTest"
+    notification_email: jiangxinnju@163.com
+    build_command_prepend: ""
+    build_command: "bash ./coverity_check.sh"
+    branch_pattern: master
+
+
+
+
+
+
+
+

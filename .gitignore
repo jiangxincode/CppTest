@@ -3,6 +3,7 @@
 *.o
 *.exe
 CMakeSettings.json
+build/
 Debug/
 .settings/
 /Release/
@@ -13,6 +14,7 @@ cmake-build-debug/
 cmake-vs/
 out/
 .vs/
+.vscode/
 
 *~
 
