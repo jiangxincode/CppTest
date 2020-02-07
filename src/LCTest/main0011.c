@@ -1,28 +1,3 @@
-/**
-signal函数详细解释说明
-位于 <signal.h> 中
-void ( *signal( int sig, void (* handler)( int ))) ( int );
-这个函数的声明很是吓人, 一看就难弄懂. 下面是解释用法.
-一步一步解释:
-int (*p)();
-这是一个函数指针, p所指向的函数是一个不带任何参数, 并且返回值为int的一个函数.
-int (*fun())();
-这个式子与上面式子的区别在于用fun()代替了p,而fun()是一个函数,
-所以说就可以看成是fun()这个函数执行之后,它的返回值是一个函数指针,
-这个函数指针(其实就是上面的p)所指向的函数是一个不带任何参数,并且返回值为int的一个函数.
-所以说对于void (*signal(int signo,void(*handler)(int)))(int);
-就可以看成是signal()函数(它自己是带两个参数,一个为整型,一个为函数指针的函数),
-而这个signal()函数的返回值也为一个函数指针,这个函数指针指向一个带一个整型参数,并且返回值为void的一个函数.
-而你在写信号处理函数时对于信号处理的函数也是void sig_fun(int signo);这种类型,
-恰好与上面signal()函数所返回的函数指针所指向的函数是一样的.
-注意, void ( *signal() )( int );
-signal是一个函数, 它返回一个函数指针,后者所指向的函数接受一个整型参数 且没有返回值,
-仔细看, 是不是siganal( int signo, void(*handler)(int) )的第2个参数了,
-对了, 其实他所返回的就是 signal的第2个信号处理函数,
-指向信号处理函数,就可以执行函数了
-( signal内部时, signal把信号做为参数传递给handler信号处理函数, 接着 signal函数返回指针,
-并且又指向信号处理函数, 就开始执行它)
-*/
 #include <signal.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -31,12 +6,21 @@ void sigroutine(int dunno)
 	switch(dunno)
 	{
 	case SIGHUP:
+	    // SIGHUP，hang up ，挂断。
+		// 本信号在用户终端连接(正常或非正常)结束时发出, 通常是在终端的控制进程结束时, 通知同一session内的各个作业, 这时它们与控制终端不再关联。
+        // 登录Linux时，系统会分配给登录用户一个终端(Session)。在这个终端运行的所有程序，包括前台进程组和 后台进程组，一般都属于这个 Session。
+		// 当用户退出Linux登录时，前台进程组和后台有对终端输出的进程将会收到SIGHUP信号。
+		// 这个信号的默认操作为终止进程，因此前台进 程组和后台有终端输出的进程就会中止。不过可以捕获这个信号，比如wget能捕获SIGHUP信号，并忽略它，这样就算退出了Linux登录，wget也 能继续下载。
+        // 此外，对于与终端脱离关系的守护进程，这个信号用于通知它重新读取配置文件。
+		// 要想模拟该信号，可以Ctrl-Z将进程置于后台，然后kill -HUP PID，向进程发送SIGHUP信号
 		perror("Get a signal -- SIGHUP ");
 		break;
 	case SIGINT:
+	    // 程序终止(interrupt)信号, 在用户键入INTR字符(通常是Ctrl+C)时发出，用于通知前台进程组终止进程。
 		perror("Get a signal -- SIGINT ");
 		break;
 	case SIGQUIT:
+	    // 和SIGINT类似, 但由QUIT字符(通常是Ctrl+\)来控制. 进程在因收到SIGQUIT退出时会产生core文件, 在这个意义上类似于一个程序错误信号。
 		perror("Get a signal -- SIGQUIT ");
 		break;
 	}
@@ -50,18 +34,3 @@ int main()
 	signal(SIGQUIT, sigroutine);
 	for(;;) ;
 }
-/**
-其中信号SIGINT由按下Ctrl-C发出，信号SIGQUIT由按下Ctrl-/发出。该程序执行的结果如下：
-localhost:~$ ./sig_test
-process id is 463
-Get a signal -SIGINT //按下Ctrl-C得到的结果
-Get a signal -SIGQUIT //按下Ctrl-/得到的结果
-//按下Ctrl-z将进程置于后台
-[1]+ Stopped ./sig_test
-localhost:~$ bg
-[1]+ ./sig_test &
-localhost:~$ kill -HUP 463 //向进程发送SIGHUP信号
-localhost:~$ Get a signal – SIGHUP
-kill -9 463 //向进程发送SIGKILL信号，终止进程
-localhost:~$
-*/
