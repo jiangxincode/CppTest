@@ -1,2 +1,12 @@
-MemeryLeakCheck.cpp
-¼ì²âÄÚ´æĞ¹Â¶µÄ·½·¨£¬±ØĞëÔÚVSÖĞ±àÒëÔËĞĞ¡£
+# VCTest
+
+å®‰è£…vcpgkï¼š
+
+vcpkg: <https://github.com/Microsoft/vcpkg/>
+
+å®‰è£…ä¾èµ–åŒ…ï¼š
+
+.\vcpkg.exe install openssl-windows
+.\vcpkg.exe install freeglut
+
+MemeryLeakCheck.cpp æ£€æµ‹å†…å­˜æ³„éœ²çš„æ–¹æ³•ï¼Œå¿…é¡»åœ¨VSä¸­ç¼–è¯‘è¿è¡Œã€‚

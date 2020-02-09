@@ -21,6 +21,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WiFiDirect", "WifiDirect\Wi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WiFiDirectServices", "WifiDirect\WiFiDirectServices\cpp\WiFiDirectServices.vcxproj", "{FDD76B30-F5CF-5822-AC9D-13BBD74325BA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenSSLTest", "OpenSSLTest\OpenSSLTest.vcxproj", "{9D9C1C62-4181-41F8-B43C-AA771A3B4109}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenGL", "OpenGL\OpenGL.vcxproj", "{AC6AC00D-2C6A-4CBA-BDC0-236CC69EE2D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -161,6 +165,30 @@ Global
 		{FDD76B30-F5CF-5822-AC9D-13BBD74325BA}.Release|x86.ActiveCfg = Release|Win32
 		{FDD76B30-F5CF-5822-AC9D-13BBD74325BA}.Release|x86.Build.0 = Release|Win32
 		{FDD76B30-F5CF-5822-AC9D-13BBD74325BA}.Release|x86.Deploy.0 = Release|Win32
+		{9D9C1C62-4181-41F8-B43C-AA771A3B4109}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{9D9C1C62-4181-41F8-B43C-AA771A3B4109}.Debug|ARM.ActiveCfg = Debug|Win32
+		{9D9C1C62-4181-41F8-B43C-AA771A3B4109}.Debug|x64.ActiveCfg = Debug|x64
+		{9D9C1C62-4181-41F8-B43C-AA771A3B4109}.Debug|x64.Build.0 = Debug|x64
+		{9D9C1C62-4181-41F8-B43C-AA771A3B4109}.Debug|x86.ActiveCfg = Debug|Win32
+		{9D9C1C62-4181-41F8-B43C-AA771A3B4109}.Debug|x86.Build.0 = Debug|Win32
+		{9D9C1C62-4181-41F8-B43C-AA771A3B4109}.Release|Any CPU.ActiveCfg = Release|Win32
+		{9D9C1C62-4181-41F8-B43C-AA771A3B4109}.Release|ARM.ActiveCfg = Release|Win32
+		{9D9C1C62-4181-41F8-B43C-AA771A3B4109}.Release|x64.ActiveCfg = Release|x64
+		{9D9C1C62-4181-41F8-B43C-AA771A3B4109}.Release|x64.Build.0 = Release|x64
+		{9D9C1C62-4181-41F8-B43C-AA771A3B4109}.Release|x86.ActiveCfg = Release|Win32
+		{9D9C1C62-4181-41F8-B43C-AA771A3B4109}.Release|x86.Build.0 = Release|Win32
+		{AC6AC00D-2C6A-4CBA-BDC0-236CC69EE2D1}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{AC6AC00D-2C6A-4CBA-BDC0-236CC69EE2D1}.Debug|ARM.ActiveCfg = Debug|Win32
+		{AC6AC00D-2C6A-4CBA-BDC0-236CC69EE2D1}.Debug|x64.ActiveCfg = Debug|x64
+		{AC6AC00D-2C6A-4CBA-BDC0-236CC69EE2D1}.Debug|x64.Build.0 = Debug|x64
+		{AC6AC00D-2C6A-4CBA-BDC0-236CC69EE2D1}.Debug|x86.ActiveCfg = Debug|Win32
+		{AC6AC00D-2C6A-4CBA-BDC0-236CC69EE2D1}.Debug|x86.Build.0 = Debug|Win32
+		{AC6AC00D-2C6A-4CBA-BDC0-236CC69EE2D1}.Release|Any CPU.ActiveCfg = Release|Win32
+		{AC6AC00D-2C6A-4CBA-BDC0-236CC69EE2D1}.Release|ARM.ActiveCfg = Release|Win32
+		{AC6AC00D-2C6A-4CBA-BDC0-236CC69EE2D1}.Release|x64.ActiveCfg = Release|x64
+		{AC6AC00D-2C6A-4CBA-BDC0-236CC69EE2D1}.Release|x64.Build.0 = Release|x64
+		{AC6AC00D-2C6A-4CBA-BDC0-236CC69EE2D1}.Release|x86.ActiveCfg = Release|Win32
+		{AC6AC00D-2C6A-4CBA-BDC0-236CC69EE2D1}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
