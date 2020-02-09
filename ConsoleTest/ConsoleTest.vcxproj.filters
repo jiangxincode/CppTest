@@ -38,5 +38,8 @@
     <ClCompile Include="main0002.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="EncodingConverter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

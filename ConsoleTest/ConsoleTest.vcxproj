@@ -156,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleTest.cpp" />
+    <ClCompile Include="EncodingConverter.cpp" />
     <ClCompile Include="main0000.cpp" />
     <ClCompile Include="main0001.cpp" />
     <ClCompile Include="main0002.cpp" />
