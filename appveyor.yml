@@ -1,0 +1,24 @@
+version: 1.0.{build}
+
+platform: x86
+
+configuration: Debug
+
+image: Visual Studio 2019
+
+install:
+- cd C:\Tools\vcpkg
+- git pull
+- .\bootstrap-vcpkg.bat
+- .\vcpkg.exe install openssl-windows
+- .\vcpkg.exe install freeglut
+- .\vcpkg.exe install glog
+- .\vcpkg.exe integrate install
+
+before_build:
+  - cmd: cd %APPVEYOR_BUILD_FOLDER%
+
+build:
+  project: VCTest.sln
+
+cache: C:\Tools\vcpkg\installed\
