@@ -18,8 +18,10 @@ void GetMemory(char *p, int num)
 	p = (char*)malloc(sizeof(char) * num);
 }
 
-
-int main0000()
+/**
+ * 检测内存泄露的方法，必须在VS中编译运行
+ */
+int MemeryLeakCheck()
 {
 	_CrtMemCheckpoint( &s1 );
 	char *str = NULL;

@@ -8,7 +8,7 @@ int main(int argc, char* argv[])
 {
     google::InitGoogleLogging((const char*)argv[0]);  //参数为自己的可执行文件名  
     google::SetLogDestination(google::GLOG_INFO, "./jiangxin.log");
-    LOG(INFO) << "This is a <Warn> log message...";
+    LOG(INFO) << "GLog Test";
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单

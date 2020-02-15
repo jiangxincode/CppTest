@@ -31,6 +31,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibTest", "LibTest\LibTest.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GlogTest", "GlogTest\GlogTest.vcxproj", "{EDBFA726-1D08-444A-86AA-B6118BBE6B0D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opencadr", "opencadr\opencadr.vcxproj", "{CA602346-05D5-488D-854A-3829B248C29F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -228,6 +230,16 @@ Global
 		{EDBFA726-1D08-444A-86AA-B6118BBE6B0D}.Release|x64.Build.0 = Release|x64
 		{EDBFA726-1D08-444A-86AA-B6118BBE6B0D}.Release|x86.ActiveCfg = Release|Win32
 		{EDBFA726-1D08-444A-86AA-B6118BBE6B0D}.Release|x86.Build.0 = Release|Win32
+		{CA602346-05D5-488D-854A-3829B248C29F}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{CA602346-05D5-488D-854A-3829B248C29F}.Debug|ARM.ActiveCfg = Debug|Win32
+		{CA602346-05D5-488D-854A-3829B248C29F}.Debug|x64.ActiveCfg = Debug|Win32
+		{CA602346-05D5-488D-854A-3829B248C29F}.Debug|x86.ActiveCfg = Debug|Win32
+		{CA602346-05D5-488D-854A-3829B248C29F}.Debug|x86.Build.0 = Debug|Win32
+		{CA602346-05D5-488D-854A-3829B248C29F}.Release|Any CPU.ActiveCfg = Release|Win32
+		{CA602346-05D5-488D-854A-3829B248C29F}.Release|ARM.ActiveCfg = Release|Win32
+		{CA602346-05D5-488D-854A-3829B248C29F}.Release|x64.ActiveCfg = Release|Win32
+		{CA602346-05D5-488D-854A-3829B248C29F}.Release|x86.ActiveCfg = Release|Win32
+		{CA602346-05D5-488D-854A-3829B248C29F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
