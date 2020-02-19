@@ -10,10 +10,11 @@ install:
 - cd C:\Tools\vcpkg
 - git pull
 - .\bootstrap-vcpkg.bat
+- .\vcpkg.exe integrate install
 - .\vcpkg.exe install openssl-windows
 - .\vcpkg.exe install freeglut
 - .\vcpkg.exe install glog
-- .\vcpkg.exe integrate install
+- .\vcpkg.exe install duilib
 
 before_build:
   - cmd: cd %APPVEYOR_BUILD_FOLDER%
