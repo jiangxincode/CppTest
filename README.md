@@ -24,6 +24,8 @@ http://github.com/jiangxincode
 
 ## 文件说明
 
+* src/LCTest: Some exercises for C in Linux environment
+
 * //problem:表示存在问题
 * //unsolved: 表示未解决问题
 * //warning: 表示需要注意问题
@@ -39,7 +41,7 @@ http://github.com/jiangxincode
 
 
 * 0000-1699:一些小程序
-* 2000-3000:一些小程序
+* 2000-5000:一些小程序
     * main2565.cpp: swap data in array, but can not introduce new array
 
 * 1700-1999:Data Structure
