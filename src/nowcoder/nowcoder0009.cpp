@@ -33,8 +33,6 @@ void reverseStr(char *str, size_t i, size_t j) {
 
 int main(int argc, char **argv) {
     char str[1024];
-    // 由于gets是非安全函数，可能导致内存溢出，在Linux平台上已经废弃使用，所以使用scanf替代
-    // fgets和gets虽然都是读取一行，但是前者会把换行符读到，后者不会
     while (fgets(str, sizeof(str) - 1, stdin) != NULL) {
         // 处理多读取的'\n'
         str[strlen(str) - 1] = '\0';

@@ -30,18 +30,10 @@ void reverseStr(char *str, size_t length) {
 
 int main(int argc, char **argv) {
     char str[1024];
-    // 由于gets是非安全函数，可能导致内存溢出，在Linux平台上已经废弃使用，所以使用scanf替代
-    // fgets和gets虽然都是读取一行，但是前者会把换行符读到，后者不会
     while (fgets(str, sizeof(str) - 1, stdin) != NULL) {
         // 如果不让使用任何系统函数，包括strlen，可以通过遍历字符串数组找到'\0'的位置来确定length
+        str[strlen(str) - 1] = '\0';
         size_t length = strlen(str);
-
-        // 处理多读取的'\n'
-        if (str[length - 1] == '\n') {
-            str[length - 1] = '\0';
-            length--;
-        }
-
         reverseStr(str, length);
         printf("%s\n", str);
     }

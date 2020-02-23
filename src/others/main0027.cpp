@@ -225,7 +225,9 @@ int main()
 {
     char str[MAXSIZE],exps[MAXSIZE];  //定义两个数组
     printf("请输入算术表达式：\n");
-    gets(str);                        //从控制台输入算数表达式
+    fgets(str, MAXSIZE, stdin);
+    str[strlen(str)-1] = '\0';
+    //gets(str);
     printf("表达式为： %s\n",str);
     trans(str,exps);                  //调用trans函数，得到后缀表达式
     printf("后缀表达式：%s\n",exps);

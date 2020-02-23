@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 project(CppTest CXX C)
 
 set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_STANDARD 11)
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
     SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g -ggdb ")
@@ -52,10 +52,10 @@ foreach (source IN LISTS sources)
     ENDIF (CMAKE_SYSTEM_NAME MATCHES "Linux")
 endforeach (source)
 
-file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/MyFirstCCourse src/MyFirstCCourse/*.c)
+file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/CTest src/CTest/*.c)
 foreach (source IN LISTS sources)
     string(REPLACE ".c" "" program ${source})
-    add_executable(${program} ${CMAKE_SOURCE_DIR}/src/MyFirstCCourse/${source})
+    add_executable(${program} ${CMAKE_SOURCE_DIR}/src/CTest/${source})
     IF (CMAKE_SYSTEM_NAME MATCHES "Linux")
         target_link_libraries(${program} m)
     ENDIF (CMAKE_SYSTEM_NAME MATCHES "Linux")
@@ -129,7 +129,6 @@ add_executable(GTestMain
         src/common/circ_list.h
         src/common/contacts.cpp
         src/common/hash.hpp
-        src/common/input.cpp
         #[[src/common/josephus.cpp
         src/common/linear_list.h]]
         src/common/skip_list.h

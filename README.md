@@ -25,6 +25,8 @@ http://github.com/jiangxincode
 ## 文件说明
 
 * src/LCTest: Some exercises for C in Linux environment
+* src/CTest:
+    * main1xxy.c C语言程序设计, 2012 实验教材为《C语言程序设计教程学习指导》，xx代表章节，y代表该章节的习题序号
 
 * //problem:表示存在问题
 * //unsolved: 表示未解决问题

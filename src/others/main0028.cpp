@@ -188,7 +188,9 @@ int main()
 {
     char str[MAXSIZE];//定义str数组存放数学表达式
     printf("输入算术表达式：\n");
-    gets(str);       //从控制台输入算数表达式
+    fgets(str, MAXSIZE, stdin);
+    str[strlen(str)-1] = '\0';
+    //gets(str);
     printf("结果是：%lf\n",calculate(str));//调用calculate函数，计算结果
     return 0;
 }
