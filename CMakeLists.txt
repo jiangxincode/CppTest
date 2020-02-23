@@ -24,21 +24,6 @@ add_executable(luoguP1876
 add_executable(openjudge_zz_3
         src/openjudge/openjudge_zz_3.cpp)
 
-add_executable(main2564
-        src/others/main2564.cpp)
-
-add_executable(main2565
-        src/others/main2565.cpp)
-
-add_executable(main2545
-        src/others/main2545.cpp)
-
-add_executable(main2544
-        src/others/main2544.cpp)
-
-add_executable(main2567
-        src/others/main2567.cpp)
-
 add_executable(CppTest
         src/main.cpp
         src/main.h
@@ -51,6 +36,12 @@ add_executable(SumCode
         src/SumCode/function.cpp
         src/SumCode/function.h
         src/SumCode/jiangxin.h)
+
+file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/others src/others/*.cpp)
+foreach (source IN LISTS sources)
+    string(REPLACE ".cpp" "" program ${source})
+    add_executable(${program} ${CMAKE_SOURCE_DIR}/src/others/${source})
+endforeach (source)
 
 file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/nowcoder src/nowcoder/*.cpp)
 foreach (source IN LISTS sources)
