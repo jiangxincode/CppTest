@@ -84,7 +84,7 @@ protected:
     void preOrder(BinTreeNode<T>& subTree,void (*visit)(BinTreeNode<T> *p));
     void inOrder(BinTreeNode<T>& subTree,void (*visit)(BinTreeNode<T> *p));
     void postOrder(BinTreeNode<T>& subTree,void (*visit)(BinTreeNode<T> *p));
-    void *visit(BinTreeNode<T> *temp);
+    static void *visit(BinTreeNode<T> *temp);
     friend istream& operator>> (istream& in,BinaryTree<T>& Tree)
     {
         Tree.CreateBinTree(in,Tree.root);
@@ -135,7 +135,8 @@ BinTreeNode<T> * BinaryTree<T>::Parent(BinTreeNode<T> *subTree,BinTreeNode<T> *c
 
     BinTreeNode<T> *p;
 
-    if(p = Parent(subTree->leftChild,current)!=NULL)
+    p = Parent(subTree->leftChild,current);
+    if(p!=NULL)
         return p;
     else
         return Parent(subTree->rightChild,current);
