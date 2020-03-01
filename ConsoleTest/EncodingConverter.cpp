@@ -11,6 +11,9 @@
 #include <stdio.h>
 #include <locale.h>
 
+#include <string>
+#include <iostream>
+
 #define CP_GB2312 936
 
 /**
@@ -175,6 +178,20 @@ int test_encoding_convert() {
     setlocale(LC_ALL, "C");
     UnicodeToUtf8W(wunicodeStr, utf8Str);
     printf("utf8Str: %s\n", utf8Str);
+
+    setlocale(LC_ALL, "");
+    std::wstring wStr = L"你好世界";
+    std::wcout << L"wStr: " << wStr << std::endl;
+    wprintf(L"wStr: %ls\n", wStr.c_str());
+    std::wstring wStrCopy(wStr.c_str());
+    std::wcout << L"wStrCopy: " << wStrCopy << std::endl;
+
+
+    std::string str = "你好世界";
+    std::cout << "str: " << str << std::endl;
+    printf("str: %s\n", str.c_str());
+    std::string strCopy(str.c_str());
+    std::cout << "strCopy: " << strCopy << std::endl;
 
     return 0;
 }
