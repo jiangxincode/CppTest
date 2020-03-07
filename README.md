@@ -10,9 +10,4 @@
 
 ### 安装依赖包
 
-```cmd
-.\vcpkg.exe install openssl-windows
-.\vcpkg.exe install freeglut
-.\vcpkg.exe install glog
-.\vcpkg.exe install duilib
-```
+See appveyor.xml
