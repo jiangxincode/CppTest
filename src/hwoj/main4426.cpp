@@ -77,7 +77,7 @@ struct BDict {
     struct BWord *next;
 } head[MAX_DICT_WORD_NUM];
 
-int size = 0;
+int dic_size = 0;
 
 /******************************************************************************
 原    型：int AddOneWord (char* Word);
@@ -105,7 +105,7 @@ int AddOneWord(char *Word) {
     strcpy(tWord, Word);
     sort(tWord, tWord + strlen(tWord));
 
-    for (i = 0; i < size; i++) {
+    for (i = 0; i < dic_size; i++) {
         if (strcmp(tWord, head[i].key) != 0) {
             continue;
         }
@@ -141,13 +141,13 @@ int AddOneWord(char *Word) {
     }
 
 
-    if (i == size) {
-        strcpy(head[size].key, tWord);
+    if (i == dic_size) {
+        strcpy(head[dic_size].key, tWord);
         struct BWord *t = (struct BWord *) malloc(sizeof(struct BWord));
         strcpy(t->value, Word);
         t->pnext = NULL;
-        head[size].next = t;
-        size++;
+        head[dic_size].next = t;
+        dic_size++;
     }
 
     return 0;
@@ -178,7 +178,7 @@ int FindSimilarWordNum(char *Word) {
     sort(iWord, iWord + strlen(iWord));
 
     num = 0;
-    for (i = 0; i < size; i++) {
+    for (i = 0; i < dic_size; i++) {
         if (strcmp(iWord, head[i].key) != 0) {
             continue;
         }
@@ -193,7 +193,7 @@ int FindSimilarWordNum(char *Word) {
         break;
     }
 
-    if (i == size) {
+    if (i == dic_size) {
         return 0;
     }
 
@@ -228,7 +228,7 @@ int FindOneSimilarWord(char *Word, int Seq, char *SimilarWord) {
     sort(iWord, iWord + strlen(iWord));
 
     num = 0;
-    for (i = 0; i < size; i++) {
+    for (i = 0; i < dic_size; i++) {
         if (strcmp(iWord, head[i].key) != 0) {
             continue;
         }
@@ -265,7 +265,7 @@ int FindOneSimilarWord(char *Word, int Seq, char *SimilarWord) {
 void ClearAllWords(void) {
     /* 在这里实现功能 */
 
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < dic_size; i++) {
         struct BWord *p = head[i].next;
         while (p != NULL) {
             struct BWord *t = p;
@@ -273,7 +273,7 @@ void ClearAllWords(void) {
             free(t);
         }
     }
-    size = 0;
+    dic_size = 0;
 }
 
 

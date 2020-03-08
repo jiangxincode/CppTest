@@ -16,25 +16,21 @@
  * 数据范围及提示 Data Size & Hint
  */
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
-static int gcd(int min,int max)
-{
-    if(max%min == 0)
-    {
+static int gcd(int min, int max) {
+    if (max % min == 0) {
         return min;
-    }
-    else
-    {
-        return gcd(max%min,min); //牛顿迭代相除法
+    } else {
+        return gcd(max % min, min); //牛顿迭代相除法
     }
 }
 
-int main()
-{
-    int A,B;
+int main() {
+    int A, B;
     cin >> A >> B;
-    cout << gcd(min(A,B),max(A,B));
+    cout << gcd(min(A, B), max(A, B));
     return 0;
 }

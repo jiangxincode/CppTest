@@ -10,26 +10,19 @@
 
 #include <iostream>
 #include <string>
-
 #include <cstring>
-#include <cstdlib>
 
 using namespace std;
 
-int LCS1(const string& text, const string& query)
-{
+int LCS1(const string &text, const string &query) {
     string::size_type len = 0;
 
-    for(string::size_type i=0; i<query.length(); i++)
-    {
-        for(string::size_type j=query.length()-1; j>i; j--)
-        {
-            string temp = query.substr(i,j-i+1);
+    for (string::size_type i = 0; i < query.length(); i++) {
+        for (string::size_type j = query.length() - 1; j > i; j--) {
+            string temp = query.substr(i, j - i + 1);
 
-            if(text.find(temp) != string::npos)
-            {
-                if((j-i)>len)
-                {
+            if (text.find(temp) != string::npos) {
+                if ((j - i) > len) {
                     len = j - i + 1; //i和j位置之中共有(j-i+1)个元素
                 }
             }
@@ -69,73 +62,62 @@ int LCS1(const string& text, const string& query)
  * 最长子串为:21232
  */
 
-int LCS2(const char left[],const char right[],int &pos)
-{
-    int arr[strlen(right)];
+int LCS2(const char left[], const char right[], int &pos) {
+    int *arr = new int[strlen(right)];
     int len = 0;
 
-    for(size_t i=0; i<strlen(left); i++)
-    {
-        for(int j=strlen(right)-1; j>=0; j--) //此处不能使用size_t
+    for (size_t i = 0; i < strlen(left); i++) {
+        for (int j = strlen(right) - 1; j >= 0; j--) //此处不能使用size_t
         {
-            if(left[i] == right[j])
-            {
-                if(i==0||j==0)
-                    arr[j]=1;
-                else
-                {
-                    arr[j]=arr[j-1]+1;
+            if (left[i] == right[j]) {
+                if (i == 0 || j == 0)
+                    arr[j] = 1;
+                else {
+                    arr[j] = arr[j - 1] + 1;
                 }
-            }
-            else
+            } else
                 arr[j] = 0;
 
-            if(arr[j] > len)
-            {
-                len=arr[j];
+            if (arr[j] > len) {
+                len = arr[j];
                 pos = j;
             }
         }
     }
-
-    pos = pos-len+1;
+    delete[] arr;
+    pos = pos - len + 1;
     return len;
 }
 
 
-void GetMaxCommStr(char *s1,char *s2,char *s3)//s1、s2 为要对比的俩个字符串，
+void GetMaxCommStr(char *s1, char *s2, char *s3)//s1、s2 为要对比的俩个字符串，
 {
     //s3用来存储最大的公共字符串
-    // char *s1=stra,  *s2=strb;
     char len1 = strlen(s1);
     char len2 = strlen(s2);
     char maxlen = 0;
 
-    for(int i = 0; i < len1; i++)
-    {
-        for(int j = 0; j < len2; j++)
-        {
-            if(s1[i] == s2[j])     //找到了第一个相等的
+    for (int i = 0; i < len1; i++) {
+        for (int j = 0; j < len2; j++) {
+            if (s1[i] == s2[j])     //找到了第一个相等的
             {
                 int as = i, bs = j, count = 1; //保存第一个相等的首地址
 
-                while((as+1<len1) && (bs+1<len2) && (s1[++as] == s2[++bs]))     //查找最大相等长度
+                while ((as + 1 < len1) && (bs + 1 < len2) && (s1[++as] == s2[++bs]))     //查找最大相等长度
                     count++;
 
-                if(count > maxlen)  //如果大于最大长度则更新
+                if (count > maxlen)  //如果大于最大长度则更新
                 {
                     maxlen = count;
-                    //r1=i;             //存储公共子字符串的起始位
                 }
             }
         }
     }
 
-    if(maxlen>0)  //有公共子字符串
+    if (maxlen > 0)  //有公共子字符串
     {
-        for(int i=0; i<maxlen; i++)
-        {
-            *(s3+i)=*(s1+i);
+        for (int i = 0; i < maxlen; i++) {
+            *(s3 + i) = *(s1 + i);
         }
 
         cout << "maxlen is " << maxlen << endl;
@@ -144,23 +126,21 @@ void GetMaxCommStr(char *s1,char *s2,char *s3)//s1、s2 为要对比的俩个字
     }
 }
 
-int main05423()
-{
-    char strd[80]= {0};
-    char stra[80]="iojhklgklskljklngvnkldg";
-    char strb[80]="kldfjjsfgjlkjgldakfga;";
-    GetMaxCommStr(stra,strb,strd);
+int main05423() {
+    char strd[80] = {0};
+    char stra[80] = "iojhklgklskljklngvnkldg";
+    char strb[80] = "kldfjjsfgjlkjgldakfga;";
+    GetMaxCommStr(stra, strb, strd);
     cout << "stra is: " << stra << endl;
     cout << "strb is: " << strb << endl;
     cout << "strd is: " << strd << endl;
     return 0;
 }
 
-int main()
-{
-    cout << LCS1("hello","llohghdfja") << endl;
+int main() {
+    cout << LCS1("hello", "llohghdfja") << endl;
     int pos;
-    cout << LCS2("hello","llohghdfja",pos) << endl;
+    cout << LCS2("hello", "llohghdfja", pos) << endl;
     cout << pos << endl;
     return 0;
 }

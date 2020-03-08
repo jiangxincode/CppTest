@@ -37,6 +37,18 @@ add_executable(SumCode
         src/SumCode/function.h
         src/SumCode/jiangxin.h)
 
+file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/codevs src/codevs/*.cpp)
+foreach (source IN LISTS sources)
+    string(REPLACE ".cpp" "" program ${source})
+    add_executable(${program} ${CMAKE_SOURCE_DIR}/src/codevs/${source})
+endforeach (source)
+
+file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/hwoj src/hwoj/*.cpp)
+foreach (source IN LISTS sources)
+    string(REPLACE ".cpp" "" program ${source})
+    add_executable(${program} ${CMAKE_SOURCE_DIR}/src/hwoj/${source})
+endforeach (source)
+
 file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/others src/others/*.cpp)
 foreach (source IN LISTS sources)
     string(REPLACE ".cpp" "" program ${source})

@@ -11,6 +11,7 @@
  *
  */
 #include <cstdlib>
+#include <climits>
 #include <iostream>
 
 /*

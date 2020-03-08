@@ -122,7 +122,7 @@ void OrderPolynomial (char* InputString, char* OutputString)
         if (p.second != 0)
         {
             char str_temp[BUFSIZ];
-            sprintf_s(str_temp, "%+dX^%d", p.second, p.first);
+            sprintf(str_temp, "%+dX^%d", p.second, p.first);
             output.append(str_temp);
         }
     }

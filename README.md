@@ -27,30 +27,16 @@ http://github.com/jiangxincode
 * src/LCTest: Some exercises for C in Linux environment
 * src/CTest:
     * main1xxy.c C语言程序设计, 2012 实验教材为《C语言程序设计教程学习指导》，xx代表章节，y代表该章节的习题序号
-
-* //problem:表示存在问题
-* //unsolved: 表示未解决问题
-* //warning: 表示需要注意问题
-
-
+* src/codevs: <http://codevs.cn>
+* src/hwoj: 网上流传的一些华为OJ题目
+* src/others
+    * 0000-1699:一些小程序
+    * 1700-1999:Data Structure
+    	* 第i章->main(17+i)
+    	* 部分常用数据结构总结到特定文件
+    * 2000-5000:一些小程序
+        * main2565.cpp: swap data in array, but can not introduce new array
 * test/ 单元测试文件
-* src/ 源代码文件
-    * gtest/
-    * main.c主函数
-    * main.h主头文件
-    * ...
-* include/ 第三方依赖库头文件
-
-
-* 0000-1699:一些小程序
-* 2000-5000:一些小程序
-    * main2565.cpp: swap data in array, but can not introduce new array
-
-* 1700-1999:Data Structure
-
-	* 第i章->main(17+i)
-	* 部分常用数据结构总结到特定文件
-
 
 * 对于scanf的说明
 	* 32位int 11位宽(-2147483648~+2147483647)
@@ -59,6 +45,10 @@ http://github.com/jiangxincode
 	* char *(%s) 根据实际内存容量设置
 
 ## 将要进行的改进
+
+* //problem:表示存在问题
+* //unsolved: 表示未解决问题
+* //warning: 表示需要注意问题
 
 * 继续使用cppcheck修复潜藏bug
 * 完善公共类

@@ -75,7 +75,7 @@ void GetResult(char* pInput[], int Num, char *pResult)
         io >> str_temp;
 
         strcat(pResult, str_temp);
-        sprintf_s(str_temp, " %.2f\n", i_temp/5.0f);
+        sprintf(str_temp, " %.2f\n", i_temp/5.0f);
         strcat(pResult, str_temp);
     }
     pResult[strlen(pResult)-1] = '\0';

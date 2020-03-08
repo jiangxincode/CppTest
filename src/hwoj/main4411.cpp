@@ -64,7 +64,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <io.h>
 #include "iostream"
 
 /////////////////////////////////// 宏定义 ////////////////////////////////////
