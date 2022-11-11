@@ -8,16 +8,16 @@
  * 输入描述 Input Description
  * 第一行一个整数n
  * 接下来一行n个整数
- *  输出描述 Output Description
- *  所有数的和
- *  样例输入 Sample Input
- *  4
- *  1 2 3 4
- *  样例输出 Sample Output
- *  10
- *  数据范围及提示 Data Size & Hint
- *  n<=100
- *  所有数的和<=231-1
+ * 输出描述 Output Description
+ * 所有数的和
+ * 样例输入 Sample Input
+ * 4
+ * 1 2 3 4
+ * 样例输出 Sample Output
+ * 10
+ * 数据范围及提示 Data Size & Hint
+ * n<=100
+ * 所有数的和<=231-1
  */
 #include <iostream>
 #include <vector>
