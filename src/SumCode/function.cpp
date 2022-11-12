@@ -46,6 +46,44 @@ vector<string> ReadDir(string dirName)
 }
 #endif
 
+#ifdef __APPLE__
+vector<string> ReadDir(string dirName)
+{
+    DIR *dp;
+    struct dirent *ent;
+    vector<string> ret;
+
+
+    if((dp = opendir(dirName.c_str())) == NULL)
+    {
+
+        exit(1);
+    }
+
+    errno = 0;
+    while((ent = readdir(dp)) != NULL)
+    {
+        //cout << setw(8)<< ent->d_ino <<"    "<< ent->d_name << endl;
+        ret.push_back(ent->d_name);
+
+    }
+
+    if(errno != 0)
+    {
+
+        exit(1);
+    }
+
+    if(closedir(dp) != 0)
+    {
+
+        exit(1);
+
+    }
+    return ret;
+}
+#endif
+
 #ifdef _WIN32
 vector<string> ReadDir(string dirName)
 {

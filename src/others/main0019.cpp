@@ -7,7 +7,7 @@ ChineseWordSegmentation
 ***********************************************/
 
 #include <stdio.h>
-#include <malloc.h>
+#include <cstdlib>
 
 #define MAXVALUE 65536
 #define PATHLENGTH 50

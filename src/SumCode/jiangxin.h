@@ -18,6 +18,11 @@ void jx_PrintAuthorInfo(void);
 #include <dirent.h>
 #endif
 
+#ifdef __APPLE__
+#include <sys/types.h>
+#include <dirent.h>
+#endif
+
 #ifdef _WIN32
 #include <windows.h>
 #include <conio.h>

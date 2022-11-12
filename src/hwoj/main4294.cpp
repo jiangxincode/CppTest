@@ -36,23 +36,23 @@
 
 using namespace std;
 
-int search[1000002]={0};
+int searchArray[1000002]={0};
 
 int main()
 {
     int input = 0, i;
-    search[0] = 1, search[1] = 1;
+    searchArray[0] = 1, searchArray[1] = 1;
 
     for(i=1; i<=500000; i++)
     {
-        search[2*i] = (search[2*i - 2] + search[i])%1000000000;
-        search[2*i + 1] = search[2*i];
+        searchArray[2 * i] = (searchArray[2 * i - 2] + searchArray[i]) % 1000000000;
+        searchArray[2 * i + 1] = searchArray[2 * i];
     }
     while(cin >> input)
     {
         if((input >= 1) && (input <= 1000000))
         {
-            cout << search[input] << endl;
+            cout << searchArray[input] << endl;
         }
         else
         {

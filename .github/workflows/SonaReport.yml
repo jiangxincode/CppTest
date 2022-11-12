@@ -1,0 +1,35 @@
+name: Sonar Report
+on:
+  push:
+    branches: [ master ]
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: download sonar cloud client
+        working-directory: ${{github.workspace}}
+        run: |
+          wget -nv https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-linux.zip
+          unzip -q sonar-scanner-cli-4.7.0.2747-linux.zip
+          echo "${PWD}/sonar-scanner-4.7.0.2747-linux/bin" >> $GITHUB_PATH
+          wget -nv https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
+          unzip -q build-wrapper-linux-x86.zip
+          echo "${PWD}/build-wrapper-linux-x86" >> $GITHUB_PATH
+
+      - name: Configure CMake
+        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+      - name: Build SonarCloud Scan
+        working-directory: ${{github.workspace}}
+        run: |
+          build-wrapper-linux-x86-64 --out-dir bw_output cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+          sonar-scanner -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

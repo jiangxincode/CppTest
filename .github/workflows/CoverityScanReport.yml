@@ -1,0 +1,30 @@
+name: Coverity Scan Report
+
+on:
+  push:
+    branches: [ master ]
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Configure CMake
+        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+      - uses: vapier/coverity-scan-action@v1.6.0
+        with:
+          project: 'jiangxincode/CppTest'
+          token: ${{ secrets.COVERITY_SCAN_TOKEN }}
+          email: 'jiangxinnju@163.com'
+          build_language: 'cxx'
+          build_platform: 'linux64'
+          command: 'cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}'
+      - name: Print build-log.txt
+        run: |
+          cat /home/runner/work/CppTest/CppTest/cov-int/build-log.txt
