@@ -4,9 +4,6 @@
 *.exe
 CMakeSettings.json
 build/
-Debug/
-.settings/
-/Release/
 temp/
 
 
@@ -20,9 +17,10 @@ out/
 
 material/
 
-##################
+*.orig
+tags
+
 #Codeblocks
-##################
 *.bmarks
 *.cbp
 *.depend
@@ -30,6 +28,9 @@ material/
 bin/
 obj/
 
-
-*.orig
-tags
+#Eclipse
+Debug/
+Release/
+.settings/
+*.project
+*.cproject
