@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.14)
 project(CppTest CXX C)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -90,32 +90,17 @@ ELSE ()
 ENDIF (CMAKE_SYSTEM_NAME MATCHES "Linux")
 
 # GTEST BEGIN
-set(DCMAKE_SH="CMAKE_SH-NOTFOUND")
-# Download and unpack googletest at configure time
-configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
-execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
-        RESULT_VARIABLE result
-        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/googletest-download)
-if (result)
-    message(FATAL_ERROR "CMake step for googletest failed: ${result}")
-endif ()
-execute_process(COMMAND ${CMAKE_COMMAND} --build .
-        RESULT_VARIABLE result
-        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/googletest-download)
-if (result)
-    message(FATAL_ERROR "Build step for googletest failed: ${result}")
-endif ()
-
-# Prevent overriding the parent project's compiler/linker
-# settings on Windows
+include(FetchContent)
+FetchContent_Declare(
+        googletest
+        URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+)
+# For Windows: Prevent overriding the parent project's compiler/linker settings
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-
-# Add googletest directly to our build. This defines
-# the gtest and gtest_main targets.
-add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/googletest-src
-        ${CMAKE_CURRENT_BINARY_DIR}/googletest-build
-        EXCLUDE_FROM_ALL)
+FetchContent_MakeAvailable(googletest)
 # GTEST END
+
+enable_testing()
 
 add_executable(GTestMain
         src/GTestMain.cpp
@@ -155,8 +140,11 @@ add_executable(GTestMain
         test/common/test_string_process.cpp)
 
 target_link_libraries(GTestMain
-        gtest_main)
+        GTest::gtest_main)
 
 IF (CMAKE_SYSTEM_NAME MATCHES "Linux")
     target_link_libraries(GTestMain pthread)
 ENDIF (CMAKE_SYSTEM_NAME MATCHES "Linux")
+
+include(GoogleTest)
+gtest_discover_tests(GTestMain)
