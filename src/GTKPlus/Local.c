@@ -13,9 +13,8 @@ GTK/GNOME 系列widgets中, 输入和显示已经是国际化了的. 所以用�
 下面的程序在显示中文时未使用中文平台, 输入使用的是Chinput中的XIM协议支持
 */
 //file entry.c
-#define GTK_ENABLE_BROKEN
 #include <gtk/gtk.h>
-int main0009 (int argc, char *argv[])
+int main (int argc, char *argv[])
 {
         GtkWidget *window;
         GtkWidget *vbox;
@@ -23,31 +22,32 @@ int main0009 (int argc, char *argv[])
         GtkWidget *text;
         GtkWidget *button;
 
-        gtk_set_locale();
+        //gtk_set_locale();
         gtk_rc_add_default_file("./gtkrc.zh");
 
         gtk_init (&argc, &argv); /* create a new window */
 
         window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-        gtk_widget_set_usize( GTK_WIDGET (window), 200, 500);
+        gtk_widget_set_size_request( GTK_WIDGET (window), 200, 500);
         gtk_window_set_title(GTK_WINDOW (window), "GTK Entry");
-        gtk_signal_connect(GTK_OBJECT (window), "delete_event", (GtkSignalFunc) gtk_exit, NULL);
+        g_signal_connect(G_OBJECT (window), "delete_event", G_CALLBACK(exit), NULL);
 
         vbox = gtk_vbox_new (FALSE, 0);
         gtk_container_add (GTK_CONTAINER (window), vbox);
 
-        entry = gtk_entry_new_with_max_length (60);
-        gtk_entry_select_region (GTK_ENTRY (entry), 0, GTK_ENTRY(entry)->text_length);
+        entry = gtk_entry_new();
+        gtk_entry_set_max_length(entry, 60);
+        gtk_editable_select_region (GTK_ENTRY (entry), 0, strlen(gtk_entry_get_text(GTK_ENTRY(entry))));
         gtk_box_pack_start (GTK_BOX (vbox), entry, TRUE, TRUE, 0);
 
-        text = gtk_text_new (NULL, NULL);
-        gtk_text_set_editable (GTK_TEXT(text), TRUE);
+        text = gtk_text_view_new ();
+        gtk_text_view_set_editable (GTK_TEXT_VIEW(text), TRUE);
         gtk_box_pack_start (GTK_BOX (vbox), text, TRUE, TRUE, 0);
 
         button = gtk_button_new_with_label ("关闭窗口");
         gtk_box_pack_start (GTK_BOX (vbox), button, TRUE, TRUE, 0);
-        gtk_signal_connect_object (GTK_OBJECT (button), "clicked", GTK_SIGNAL_FUNC(gtk_exit), GTK_OBJECT (window));
-        GTK_WIDGET_SET_FLAGS (button, GTK_CAN_DEFAULT);
+        g_signal_connect_swapped (G_OBJECT (button), "clicked", G_CALLBACK(exit), G_OBJECT (window));
+        gtk_widget_set_can_default(button, 1);
         gtk_widget_grab_default (button);
 
         gtk_widget_show_all(window);

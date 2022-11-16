@@ -1,6 +1,6 @@
 #include <gtk/gtk.h>
 
-int main0002(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
         GtkWidget *window;
 

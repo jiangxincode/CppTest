@@ -97,7 +97,7 @@ void on_another_clicked(GtkButton *button,gpointer data)
 }
 
 
-int main0001(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	gtk_init(&argc, &argv);
 
@@ -134,13 +134,17 @@ int main0001(int argc, char *argv[])
 
 	gtk_table_attach(GTK_TABLE(table), button2, 0, 2, 4, 6,GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
 
-	entry2 = gtk_entry_new_with_max_length(6);
+	entry2 = gtk_entry_new();
+    gtk_entry_set_max_length(entry2, 6);
 
-	entry1 = gtk_entry_new_with_max_length(7);
+    entry1 = gtk_entry_new();
+    gtk_entry_set_max_length(entry1, 7);
 
-	entry3 = gtk_entry_new_with_max_length(5);
+    entry3 = gtk_entry_new();
+    gtk_entry_set_max_length(entry3, 5);
 
-	entry4 = gtk_entry_new_with_max_length(8);
+    entry4 = gtk_entry_new();
+    gtk_entry_set_max_length(entry4, 8);
 
 	/*Like the follow!*/
 	gtk_table_attach(GTK_TABLE(table), entry1, 1, 2, 0, 1,GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);

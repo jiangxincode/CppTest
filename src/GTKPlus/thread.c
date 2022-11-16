@@ -1,4 +1,3 @@
-//thread.c
 /**
 在GTK+中应用线程， 要用到gdk_thread_init来在X WINDOW中初始化线程应用，
 另外在线程中要对GTK+控件进行操作时还要在操作前执行函数gdk_thread_enter来进入，
@@ -50,7 +49,7 @@ void image_go(Ourarg *arg)
         }
 }
 
-int	main0007(int argc, char* argv[])
+int	main(int argc, char* argv[])
 {
         GtkWidget *window;
         GtkWidget *vbox, *viewport, *button;
@@ -74,7 +73,7 @@ int	main0007(int argc, char* argv[])
         gtk_container_add(GTK_CONTAINER(window),vbox);
 
         fixed = gtk_fixed_new();
-        gtk_widget_set_usize(fixed,340,340);
+        gtk_widget_set_size_request(fixed,340,340);
 
         viewport = gtk_viewport_new(NULL,NULL);
         gtk_box_pack_start(GTK_BOX(vbox),viewport,FALSE,FALSE,5);

@@ -7,18 +7,18 @@ void increase(GtkWidget *widget, gpointer label)
 {
         count ++;
         sprintf(buf, "%d", count);
-        gtk_label_set(label, buf);
+        gtk_label_set_text(label, buf);
 }
 
 void decrease(GtkWidget *widget, gpointer label)
 {
         count --;
         sprintf(buf, "%d", count);
-        gtk_label_set(label, buf);
+        gtk_label_set_text(label, buf);
 }
 
 
-int main0004(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
         GtkWidget *window;
         GtkWidget *frame;

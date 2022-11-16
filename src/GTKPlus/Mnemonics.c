@@ -1,7 +1,7 @@
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
 
-int main0006(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	GtkWidget *window;
 	GtkWidget *vbox;
@@ -38,7 +38,7 @@ int main0006(int argc, char *argv[])
 	sep = gtk_separator_menu_item_new();
 	quit = gtk_image_menu_item_new_from_stock(GTK_STOCK_QUIT, accel_group);
 
-	gtk_widget_add_accelerator(quit, "activate", accel_group, GDK_q, GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE);
+	gtk_widget_add_accelerator(quit, "activate", accel_group, GDK_KEY_q, GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE);
 
 	gtk_menu_item_set_submenu(GTK_MENU_ITEM(file),filemenu);
 

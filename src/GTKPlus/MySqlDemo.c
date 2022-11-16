@@ -41,7 +41,7 @@ void on_button2_clicked(void)
 
 //静态成员声明
 
-int main0010(int argc,char *argv[])
+int main(int argc,char *argv[])
 {
 	GtkWidget *hbox1; //横排
 	GtkWidget *vbox1; //竖排
