@@ -7,24 +7,58 @@
 
 ## 文件说明
 
-* src/LCTest: Some exercises for C in Linux environment
-* src/CTest:
-    * main1xxy.c C语言程序设计, 2012 实验教材为《C语言程序设计教程学习指导》，xx代表章节，y代表该章节的习题序号
-* src/codevs: <http://codevs.cn>
-* src/hwoj: 网上流传的一些华为OJ题目
-* src/others
-    * 0000-1699:一些小程序
-    * 1700-1999:Data Structure
-    	* 第i章->main(17+i)
-    	* 部分常用数据结构总结到特定文件
-    * 2000-5000:一些小程序
-        * main2565.cpp: swap data in array, but can not introduce new array
-* test/ 单元测试文件
+### src/LCTest
 
-* data: 测试输入文件以及其他需要长期存储的文件
-* CLAH: C语言算法速查手册
-* CLCDC: C语言课程设计案例精编
+Some exercises for C in Linux environment
 
+### src/GTKPlus
+
+Some exercises for GTK+ in Linux environment
+
+### src/ImageViewer
+
+An image viewer based upon gnome 2. 
+
+I will port gnome to GTK3 because of: <https://bugs.launchpad.net/ubuntu/+source/libgnome/+bug/1771031>
+
+### src/CTest
+
+main1xxy.c C语言程序设计, 2012 实验教材为《C语言程序设计教程学习指导》，xx代表章节，y代表该章节的习题序号
+
+### src/codevs
+
+<http://codevs.cn>
+
+### src/hwoj
+
+网上流传的一些华为OJ题目
+
+### src/others
+
+* 0000-1699:一些小程序
+* 1700-1999:Data Structure
+	* 第i章->main(17+i)
+	* 部分常用数据结构总结到特定文件
+* 2000-5000:一些小程序
+	* main2565.cpp: swap data in array, but can not introduce new array
+
+### test
+
+单元测试文件
+
+### data
+
+测试输入文件以及其他需要长期存储的文件
+
+### CLAH
+
+C语言算法速查手册
+
+### CLCDC
+
+C语言课程设计案例精编
+
+### 其它
 
 * main.c主函数
 * main.h主头文件
