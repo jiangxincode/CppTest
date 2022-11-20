@@ -13,11 +13,17 @@ Some exercises for C in Linux environment
 
 ### src/GTKPlus
 
-Some exercises for GTK+ in Linux environment
+Some exercises for GTK+ in Linux environment.
+
+* MySqlDemo.c 来自于《GTK+2.0编程范例》 9
+* gEmail.c 来自于《GTK+2.0编程范例》 10.1
+* thread.c 来自于《GTK+2.0编程范例》 11.3 
+* Local.c 来自于《GTK+2.0编程范例》 11.6
+* 其它 《GTK+程序设计中文版》
 
 ### src/ImageViewer
 
-An image viewer based upon gnome 2. 
+An image viewer based upon gnome 2. 来自于《GTK+_GNOME程序设计》 18
 
 I will port gnome to GTK3 because of: <https://bugs.launchpad.net/ubuntu/+source/libgnome/+bug/1771031>
 

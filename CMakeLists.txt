@@ -90,21 +90,22 @@ IF (CMAKE_SYSTEM_NAME MATCHES "Linux")
         target_link_libraries(${program} PkgConfig::GTK3)
     endforeach (source)
 
-#[[    find_package(PkgConfig REQUIRED)
-    pkg_check_modules(GNOME REQUIRED IMPORTED_TARGET libgnome-2.0 libgnomeui-2.0)
-    file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/GTKPlus src/GTKPlus/*.c)
-    add_executable(ImageViewer
-            src/ImageViewer/main.c
-            src/ImageViewer/fileselect.c
-            src/ImageViewer/fileselect.h
-            src/ImageViewer/imageviewerutility.c
-            src/ImageViewer/imageviewerutility.h
-            src/ImageViewer/ImageWindow.c
-            src/ImageViewer/ImageWindow.h
-            src/ImageViewer/mainwindow.c
-            src/ImageViewer/mainwindow.h
-            src/ImageViewer/mainwindowhandlers.h)
-    target_link_libraries(ImageViewer PkgConfig::GNOME)]]
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(GNOME IMPORTED_TARGET libgnome-2.0 libgnomeui-2.0)
+    if (GNOME_FOUND)
+        add_executable(ImageViewer
+                src/ImageViewer/main.c
+                src/ImageViewer/fileselect.c
+                src/ImageViewer/fileselect.h
+                src/ImageViewer/imageviewerutility.c
+                src/ImageViewer/imageviewerutility.h
+                src/ImageViewer/ImageWindow.c
+                src/ImageViewer/ImageWindow.h
+                src/ImageViewer/mainwindow.c
+                src/ImageViewer/mainwindow.h
+                src/ImageViewer/mainwindowhandlers.h)
+        target_link_libraries(ImageViewer PkgConfig::GNOME)
+    endif ()
 ELSEIF (CMAKE_SYSTEM_NAME MATCHES "Windows")
     add_executable(FlappyBird
             src/FlappyBird.cpp)
