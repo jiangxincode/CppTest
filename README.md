@@ -39,6 +39,23 @@ main1xxy.c C语言程序设计, 2012 实验教材为《C语言程序设计教程
 
 网上流传的一些华为OJ题目
 
+### src/IdiomSolitaire
+
+A toy for idiom soliteaire. It is very instering.
+
+#### Usage
+
++ -h: Show this help.
++ -i filename: Set the dictionary file. This program only support the GBK encoding dictionary!
++ -l: Be able to loop.
++ -e: Show every item when you strike the key, and 'e' to quit", stdout
++ -c: Set the initiate character.
++ -n num: Set the maximum idiom item number when output. Of course if there are not so many, It only show the exist.
+
+#### TODO
+
++ add some extra features.
+
 ### src/others
 
 * 0000-1699:一些小程序
@@ -158,3 +175,16 @@ C
 ### Version 1.11
 
 * 将github上的mycode项目中的一部分纯C代码移入该项目
+
+## Contributing
+
+1. Fork it
+2. Create your feature branch(`git check -b my-new-feature`)
+3. Commit your changes(`git commit -am "Add some feature"`)
+4. Push to the branch(`git push origin my-new-feature`)
+5. Create new Pull Request
+
+## License
+
++ The MIT License (MIT) http://mit-license.org/
+

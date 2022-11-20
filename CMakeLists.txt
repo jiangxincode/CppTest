@@ -37,6 +37,12 @@ add_executable(SumCode
         src/SumCode/function.h
         src/SumCode/jiangxin.h)
 
+add_executable(IdiomSolitaire
+        src/IdiomSolitaire/main.c
+        src/IdiomSolitaire/tailor.h
+        src/IdiomSolitaire/getopt.h
+        src/IdiomSolitaire/getopt.c)
+
 file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/codevs src/codevs/*.cpp)
 foreach (source IN LISTS sources)
     string(REPLACE ".cpp" "" program ${source})
