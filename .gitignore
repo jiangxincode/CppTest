@@ -6,8 +6,6 @@ CMakeSettings.json
 build/
 temp/
 
-
-cmake-build-debug/
 cmake-vs/
 out/
 .vs/
@@ -34,3 +32,7 @@ Release/
 .settings/
 *.project
 *.cproject
+
+#Clion
+cmake-build-debug/
+cmake-build-default/
