@@ -1,34 +1,32 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
-#include<Windows.h>
+#include <cstdio>
+#include <cstdlib>
+#include <ctime>
+#include <Windows.h>
 
 
-#define PR_Box printf("¡ö")
-#define PR_Gold printf("¡ï")
-#define PR_Ag printf("¡î")
-#define PR_FBird printf("§À")
-#define PR_DBird printf("§¶")
-#define PR_Land printf("©×©×©Ó")
-#define PR_Bg_TL printf("¨X")
-#define PR_Bg_TR printf("¨[")
-#define PR_Bg_DL printf("¨^")
-#define PR_Bg_DR printf("¨a")
-#define PR_Bg_X printf("¨T")
-#define PR_Bg_Y printf("¨U")
+#define PR_Box printf("â– ")
+#define PR_Gold printf("â˜…")
+#define PR_Ag printf("â˜†")
+#define PR_FBird printf("Ğ®")
+#define PR_DBird printf("Ğ¤")
+#define PR_Land printf("â”³â”³â”¯")
+#define PR_Bg_TL printf("â•”")
+#define PR_Bg_TR printf("â•—")
+#define PR_Bg_DL printf("â•š")
+#define PR_Bg_DR printf("â•")
+#define PR_Bg_X printf("â•")
+#define PR_Bg_Y printf("â•‘")
 #define PR_Blank printf(" ");
 
 
 int Grade = 1, C_Gold = 0, C_Ag = 0, Score = 0, Delay_time = 1000, Max_blank = 9, Distance = 18; //init the environment
 
-struct Birds
-{
+struct Birds {
     int x, y;
     int condition;
 };
-Birds *Bird = (Birds *)malloc(sizeof(Birds));
-struct Bg
-{
+Birds *Bird = (Birds *) malloc(sizeof(Birds));
+struct Bg {
     int x, y;
     int l_blank;
     int reward[9];
@@ -36,21 +34,21 @@ struct Bg
     Bg *next;
 };
 Bg *Bg1 = new Bg[sizeof(Bg)];
-void Position(int x, int y)
-{
-    COORD pos = { x - 1, y - 1 };
+
+void Position(int x, int y) {
+    COORD pos = {x - 1, y - 1};
     HANDLE Out = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleCursorPosition(Out, pos);
 }
-void CreatBird()
-{
+
+void CreatBird() {
     Bird->x = 41;
     Bird->y = 10;
     Bird->condition = 0;
 }
-void CreatBg()
-{
-    Bg *Bg2 = (Bg *)malloc(sizeof(Bg));
+
+void CreatBg() {
+    Bg *Bg2 = (Bg *) malloc(sizeof(Bg));
 
 
     Bg1->x = 90;
@@ -68,24 +66,22 @@ void CreatBg()
     Bg2->next = Bg1;
     Bg2->pri = Bg1;
 }
-void InsertBg(Bg *p)
-{
+
+void InsertBg(Bg *p) {
     int temp;
-    Bg *Bgs = (Bg *)malloc(sizeof(Bg));
+    Bg *Bgs = (Bg *) malloc(sizeof(Bg));
     Bgs->x = p->pri->x + Distance;
     Bgs->l_blank = Max_blank - Grade;
-    srand((int)time(0));
+    srand((int) time(0));
     temp = rand();
-    if(temp % 2 == 0) //++
+    if (temp % 2 == 0) //++
     {
-        if((temp % 4 + p->pri->y + Max_blank - Grade) < 21)
+        if ((temp % 4 + p->pri->y + Max_blank - Grade) < 21)
             Bgs->y = p->pri->y + temp % 4;
         else
             Bgs->y = p->pri->y;
-    }
-    else
-    {
-        if((p->pri->y - temp % 4) > 2)
+    } else {
+        if ((p->pri->y - temp % 4) > 2)
             Bgs->y = p->pri->y - temp % 4;
         else
             Bgs->y = p->pri->y;
@@ -97,30 +93,26 @@ void InsertBg(Bg *p)
     p->pri->next = Bgs;
     p->pri = Bgs;
 }
-void Check_Bg(Bg *q)
-{
+
+void Check_Bg(Bg *q) {
     Bg *p = q;
     int i = 0, temp;
-    while(++i <= 5)
-    {
-        if(p->x > -4)
+    while (++i <= 5) {
+        if (p->x > -4)
             p = p->next;
-        else
-        {
-            srand((int)time(0));
+        else {
+            srand((int) time(0));
             temp = rand();
-            if(temp % 2 == 0) //++
+            if (temp % 2 == 0) //++
             {
-                if((temp % 4 + p->y + Max_blank - Grade) < 21)
+                if ((temp % 4 + p->y + Max_blank - Grade) < 21)
                     p->y = p->y + temp % 4;
                 else
                     p->y = p->y;
                 p->x = p->pri->x + Distance;
                 p->l_blank = Max_blank - Grade;
-            }
-            else
-            {
-                if((p->y - temp % 4) > 2)
+            } else {
+                if ((p->y - temp % 4) > 2)
                     p->y = p->y - temp % 4;
                 else
                     p->y = p->y;
@@ -132,32 +124,27 @@ void Check_Bg(Bg *q)
     }
 
 }
-void Loop_Bg(Bg *q)
-{
+
+void Loop_Bg(Bg *q) {
     Bg *p = q;
     int i = 0;
-    while(++i <= 5)
-    {
+    while (++i <= 5) {
         p->x = p->x - 1;
-        p = p->next ;
-        if(Bird->x == p->x)
-        {
+        p = p->next;
+        if (Bird->x == p->x) {
             Score += 1;
-            if(Score % 4 == 0 && Grade < 4)
+            if (Score % 4 == 0 && Grade < 4)
                 Grade++;
         }
     }
 }
-void Prt_Bg(Bg *q)
-{
+
+void Prt_Bg(Bg *q) {
     Bg *p = q;
     int i = 0, k, j;
-    while(++i <= 5)
-    {
-        if(p->x > 0 && p->x <= 78)
-        {
-            for(k = 2; k < p->y; k++)
-            {
+    while (++i <= 5) {
+        if (p->x > 0 && p->x <= 78) {
+            for (k = 2; k < p->y; k++) {
                 Position(p->x + 1, k);
                 PR_Box;
                 PR_Box;
@@ -174,22 +161,19 @@ void Prt_Bg(Bg *q)
             PR_Box;
             PR_Blank;
             k = k + p->l_blank + 1;
-            for(k; k <= 22; k++)
-            {
+            for (k; k <= 22; k++) {
                 Position(p->x + 1, k);
                 PR_Box;
                 PR_Box;
                 PR_Blank;
             }
             Position(p->x, 23);
-            for(k = 1; k < Distance / 3 - 2; k++)
+            for (k = 1; k < Distance / 3 - 2; k++)
                 PR_Land;
         }
         p = p->next;
-        if(p->x == 0)
-        {
-            for(j = 2; j < p->y; j++)
-            {
+        if (p->x == 0) {
+            for (j = 2; j < p->y; j++) {
                 Position(p->x + 1, j);
                 PR_Blank;
                 PR_Blank;
@@ -203,8 +187,7 @@ void Prt_Bg(Bg *q)
             PR_Blank;
             PR_Blank;
             j = j + Max_blank - Grade + 1;
-            for(j; j <= 22; j++)
-            {
+            for (j; j <= 22; j++) {
                 Position(p->x + 1, j);
                 PR_Blank;
                 PR_Blank;
@@ -212,8 +195,8 @@ void Prt_Bg(Bg *q)
         }
     }
 }
-void PrtBg()
-{
+
+void PrtBg() {
     int i;
     Position(1, 1);
     PR_Bg_TL;
@@ -223,8 +206,7 @@ void PrtBg()
     PR_Bg_DL;
     Position(79, 24);
     PR_Bg_DR;
-    for(i = 3; i <= 78; i += 2)
-    {
+    for (i = 3; i <= 78; i += 2) {
         Position(i, 1);
         PR_Bg_X;
         Position(i, 24);
@@ -235,8 +217,8 @@ void PrtBg()
     Position(79,i);PR_Bg_Y;
     }*/
 }
-void PrtBird()
-{
+
+void PrtBird() {
     Position(Bird->x, Bird->y - 1);
     PR_Blank;
     Position(Bird->x, Bird->y);
@@ -244,48 +226,47 @@ void PrtBird()
     Position(38, 2);
     printf("Score:%d", Score);
 }
-int CheckYN(Bg *q)
-{
+
+int CheckYN(Bg *q) {
     Bg *p = q;
     int i = 0;
-    while(++i <= 5)
-    {
-        if(Bird->y > 23)
+    while (++i <= 5) {
+        if (Bird->y > 23)
             return 0;
-        if(Bird->x == p->x && Bird->y <= p->y)
+        if (Bird->x == p->x && Bird->y <= p->y)
             return 0;
-        if((Bird->x == p->x || Bird->x == p->x + 1 || Bird->x == p->x + 2) && Bird->y == p->y)
+        if ((Bird->x == p->x || Bird->x == p->x + 1 || Bird->x == p->x + 2) && Bird->y == p->y)
             return 0;
-        if(Bird->x == p->x && Bird->y > p->y + p->l_blank)
+        if (Bird->x == p->x && Bird->y > p->y + p->l_blank)
             return 0;
-        if((Bird->x == p->x || Bird->x == p->x + 1 || Bird->x == p->x + 2) && Bird->y == p->y + p->l_blank)
+        if ((Bird->x == p->x || Bird->x == p->x + 1 || Bird->x == p->x + 2) && Bird->y == p->y + p->l_blank)
             return 0;
         p = p->next;
     }
     return 1;
 }
-void Prtfirst()
-{
-    printf("¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T\n");
-    printf(" ¡ö¡ö ¡ö¡ö\n");
-    printf(" ¡ö¡ö ¡ö¡ö\n");
-    printf(" ¡ö¡ö ¡ö¡ö\n");
-    printf(" ¡ö¡ö ¡ö¡ö\n");
-    printf(" ¡ö¡ö¡ö ¡ö¡ö ÓÎÏ·ËµÃ÷£º\n");
-    printf(" ¡ö¡ö 1-°´ÉÏ¼ıÍ·Ê¹ÄñÆğ·É\n");
-    printf(" ¡ö¡ö 2-µÈ¼¶Ô½¸ß£¬ÄÑ¶ÈÔ½´ó£¡\n");
-    printf(" §À ¡ö¡ö¡ö\n");
+
+void Prtfirst() {
+    printf("â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•\n");
+    printf(" â– â–  â– â– \n");
+    printf(" â– â–  â– â– \n");
+    printf(" â– â–  â– â– \n");
+    printf(" â– â–  â– â– \n");
+    printf(" â– â– â–  â– â–  æ¸¸æˆè¯´æ˜ï¼š\n");
+    printf(" â– â–  1-æŒ‰ä¸Šç®­å¤´ä½¿é¸Ÿèµ·é£\n");
+    printf(" â– â–  2-ç­‰çº§è¶Šé«˜ï¼Œéš¾åº¦è¶Šå¤§ï¼\n");
+    printf(" Ğ® â– â– â– \n");
     printf("\n");
     printf(" \n\n\n\n\n\n\n\n");
-    printf(" ©×©×©Ó©×©×©Ó©×©×©Ó©×©×©Ó©×©×©Ó©×©×©Ó©×©×©Ó©×©×©Ó©×©×©Ó©×©×©Ó©×©×©Ó©×©×©Ó©×\n");
+    printf(" â”³â”³â”¯â”³â”³â”¯â”³â”³â”¯â”³â”³â”¯â”³â”³â”¯â”³â”³â”¯â”³â”³â”¯â”³â”³â”¯â”³â”³â”¯â”³â”³â”¯â”³â”³â”¯â”³â”³â”¯â”³\n");
     system("pause");
     Position(1, 1);
     int i = 0;
-    while(i++ < 40 * 25)
+    while (i++ < 40 * 25)
         PR_Blank;
 }
-int main()
-{
+
+int main() {
     int i = 0;
     char ch;
     Prtfirst();
@@ -296,22 +277,20 @@ int main()
     InsertBg(Bg1);
     InsertBg(Bg1);
     CreatBird();
-    while(1)
-    {
-        if(!CheckYN(Bg1))
+    while (1) {
+        if (!CheckYN(Bg1))
             break;
         Check_Bg(Bg1);
         Prt_Bg(Bg1);
         PrtBird();
         Loop_Bg(Bg1);
         Bird->y = Bird->y + 1;
-        if(GetAsyncKeyState(VK_UP))
-        {
+        if (GetAsyncKeyState(VK_UP)) {
             Position(Bird->x, Bird->y - 1);
             PR_Blank;
             Bird->y = Bird->y - 4;
         }
-        while(i++ < 500);
+        while (i++ < 500);
         {
             Sleep(100);
         }
