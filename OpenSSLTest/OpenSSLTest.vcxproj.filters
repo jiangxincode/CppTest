@@ -18,5 +18,8 @@
     <ClCompile Include="AES_cbc_Test.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="X25519Test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
