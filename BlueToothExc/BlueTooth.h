@@ -31,7 +31,7 @@
 // for BluetoothFindFirstDevice() BluetoothFindNextDevice() etc.
 #include <bthsdpdef.h>
 #include <BluetoothAPIs.h>
-#pragma comment ( lib, "Irprops.lib")
+#pragma comment ( lib, "bthprops.lib")
 
 // 配对时用得PIN码
 #define AUTHENTICATION_PASSKEY	_T("0000")
