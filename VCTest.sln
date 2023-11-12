@@ -20,6 +20,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Libjiangxin", "Libjiangxin\Libjiangxin.vcxproj", "{AE6FDA23-4D18-4A16-8D9B-55EFC32AF895}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibTest", "LibTest\LibTest.vcxproj", "{A0AAE0C6-E2FF-4B73-BD3F-EB461DE2ECA3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AE6FDA23-4D18-4A16-8D9B-55EFC32AF895} = {AE6FDA23-4D18-4A16-8D9B-55EFC32AF895}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GlogTest", "GlogTest\GlogTest.vcxproj", "{EDBFA726-1D08-444A-86AA-B6118BBE6B0D}"
 EndProject
