@@ -1,26 +1,22 @@
 version: 1.0.{build}
-
-platform: x86
-
+image: Visual Studio 2022
 configuration: Debug
-
-image: Visual Studio 2019
-
+platform: x86
+clone_folder: C:\Code\VCTest
 install:
-- cd C:\Tools\vcpkg
-- git pull
-- .\bootstrap-vcpkg.bat
-- .\vcpkg.exe integrate install
-- .\vcpkg.exe install openssl-windows
-- .\vcpkg.exe install freeglut
-- .\vcpkg.exe install glog
-- .\vcpkg.exe install duilib
-- .\vcpkg.exe install cppunit
-
+- cmd: >-
+    cd C:\Tools\vcpkg
+    .\bootstrap-vcpkg.bat
+    .\vcpkg.exe integrate install
+    .\vcpkg.exe install openssl-windows --triplet x86-windows
+    .\vcpkg.exe install freeglut --triplet x86-windows
+    .\vcpkg.exe install glog --triplet x86-windows
+    .\vcpkg.exe install duilib --triplet x86-windows
+    .\vcpkg.exe install cppunit --triplet x86-windows
+cache: C:\Tools\vcpkg\installed\
 before_build:
-  - cmd: cd %APPVEYOR_BUILD_FOLDER%
-
+- cmd: cd C:\Code\VCTest
 build:
   project: VCTest.sln
-
-cache: C:\Tools\vcpkg\installed\
+  parallel: true
+  verbosity: detailed
