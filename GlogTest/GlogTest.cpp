@@ -1,8 +1,8 @@
 ﻿// GlogTest.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
-#include "glog/logging.h" 
-
 #define GLOG_NO_ABBREVIATED_SEVERITIES
+
+#include "glog/logging.h" 
 
 int main(int argc, char* argv[])
 {

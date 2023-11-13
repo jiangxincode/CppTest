@@ -1,6 +1,6 @@
 # VCTest
 
-[![Build status](https://ci.appveyor.com/api/projects/status/6hoc2mfahogm1gt2?svg=true)](https://ci.appveyor.com/project/jiangxincode/vctest)
+[![Build](https://github.com/jiangxincode/VCTest/actions/workflows/build.yml/badge.svg)](https://github.com/jiangxincode/VCTest/actions/workflows/build.yml)
 
 ## 构建方法
 

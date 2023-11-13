@@ -17,6 +17,7 @@ using namespace DuiLib;
 #define WM_CHANGENBTNCOLOR WM_USER+103
 #define WM_TARBTNOPEN      WM_USER+104
 #define WM_TARBTNCLOSE      WM_USER+105
+
 //#ifdef _DEBUG
 //#   ifdef _UNICODE
 //#       pragma comment(lib, "DuiLib_ud.lib")
