@@ -38,13 +38,8 @@ jobs:
 
     - name: Build dependencies
       run: |
-          bootstrap-vcpkg.bat
           vcpkg integrate install
-          vcpkg install openssl --triplet x86-windows
-          vcpkg install freeglut --triplet x86-windows
-          vcpkg install glog --triplet x86-windows
-          vcpkg install duilib --triplet x86-windows
-          vcpkg install cppunit --triplet x86-windows
+          vcpkg install @vcpkg_x86-windows.txt
 
     - name: Build
       shell: cmd

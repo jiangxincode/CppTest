@@ -1,4 +1,4 @@
-openssl-windows:x86-windows
+openssl:x86-windows
 freeglut:x86-windows
 glog:x86-windows
 duilib:x86-windows
