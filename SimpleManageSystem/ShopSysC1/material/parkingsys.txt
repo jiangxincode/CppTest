@@ -1,0 +1,539 @@
+#include <stdio.h>
+#include <string.h>
+#include "api.h"
+#include "MyList.h"
+
+
+ParkingAutoInfo g_stEachCardInfo[CARD_COUNT];
+
+AutoWholeInfo g_stAutoInfo[MAX_AUTONO - MIN_AUTONO + 1];
+
+HistoryInfoNode *g_pstInfoHead = NULL;
+
+
+ParkingInfo g_stParkingInfo;
+
+/*****************************************************************************
+ 函 数 名  : CmpSysTime
+
+ 功能描述  : 比较时间
+ 输入参数  : 时间结构体
+ 输出参数  : 如果前一个参数小与后一个参数，输出为true
+ 返 回 值  : 无
+*****************************************************************************/
+bool CmpSysTime(ParkSysTime *pSystemTime1,ParkSysTime *pSystemTime2)
+{
+    UL ulSystemTime1 = (pSystemTime1->hh)*60 + (pSystemTime1->mm);
+    UL ulSystemTime2 = (pSystemTime2->hh)*60 + (pSystemTime2->mm);
+    bool bResult = false;
+    if(ulSystemTime1<ulSystemTime2)
+    {
+         bResult = true;
+     }
+    return bResult;
+}
+
+/*****************************************************************************
+ 函 数 名  : InitialAutoInfo
+
+ 功能描述  : 初始化汽车信息
+ 输入参数  : 时间结构体
+ 输出参数  : 无
+ 返 回 值  : 无
+*****************************************************************************/
+void InitialAutoInfo(void)
+{
+    int    i = 0;
+    for (i = 0;i<(MAX_AUTONO - MIN_AUTONO +1);++i)
+    {
+        g_stAutoInfo[i].Detai_Info.AutoNo = i + MIN_AUTONO;
+        g_stAutoInfo[i].Detai_Info.EnterCount = 0;
+        g_stAutoInfo[i].Detai_Info.Status = OUTPARKING;
+    }
+}
+
+/*****************************************************************************
+ 函 数 名  : InitialParkInfo
+
+ 功能描述  : 初始化停车场信息
+ 输入参数  : 
+ 输出参数  : 无
+ 返 回 值  : 无
+*****************************************************************************/
+void InitialParkInfo(void)
+{
+    g_stParkingInfo.IdleParkSpaceNumber = CARD_COUNT;
+    g_stParkingInfo.SystemTime.hh = 0;
+    g_stParkingInfo.SystemTime.mm = 0;
+    memset(g_stParkingInfo.g_CardStatus,0,sizeof(g_stParkingInfo.g_CardStatus));
+}
+void main(int argc, char* argv[])
+{
+    /* 
+	启动Socket服务侦听5555端口(sapi_server_start函数在lib库已实现)。
+    lib库已实现从Socket接收到字符串后的命令分发处理；
+    */
+	apiServerStart(argc,argv);
+	// 此处不会执行到，注意不要在此处添加代码
+}
+
+/*****************************************************************************
+ 函 数 名  : OpReset
+ 功能描述  : 需要考生实现的接口,系统初始化
+ 输入参数  : 无
+ 输出参数  : 无
+ 返 回 值  : 无
+
+*****************************************************************************/
+void OpReset(void)
+{
+    //停车场信息初始化
+    InitialParkInfo();
+    //汽车的信息清除
+    memset(g_stAutoInfo,0,sizeof(g_stAutoInfo));
+    memset(g_stEachCardInfo,0,sizeof(g_stEachCardInfo));
+    InitialAutoInfo();
+    if(NULL != g_pstInfoHead)
+    {
+        if (!RemoveList(g_pstInfoHead))
+        {
+            api_parksys_ret(OP_INTERNAL_ERR);
+        }
+        g_pstInfoHead = NULL;
+    }
+    g_pstInfoHead = CreateList();
+    api_parksys_ret(OP_RESET_SUCC);
+}
+
+/*****************************************************************************
+ 函 数 名  : CheckParameter
+ 功能描述  : 检查基本参数是否满足
+ 输入参数  : 无
+ 输出参数  : 无
+ 返 回 值  : 无
+*****************************************************************************/
+bool CheckParameter(UL AutoNo, ParkSysAutoType AutoType, ParkSysTime InTime)
+{
+    if((CAR != AutoType&&BUS != AutoType)||(MIN_AUTONO>AutoNo || MAX_AUTONO<AutoNo)||InTime.hh>=24||InTime.mm>=60)
+    {
+           api_parksys_ret(OP_E_PARAMETER);
+           return false;
+     }
+        //空闲车位已满
+    if(1 > g_stParkingInfo.IdleParkSpaceNumber)
+    {
+        api_parksys_ret(OP_E_PARKING_FULL);
+        return false;
+    }
+    if(INPARKING == g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.Status)
+    {
+        api_parksys_ret(OP_E_EXISTED_ATUO);
+        return false;
+    }
+    return true;
+}
+
+
+
+
+/*****************************************************************************
+ 函 数 名  : CheckAutoUL
+ 功能描述  : 检查汽车的参数
+ 输入参数  : 无
+ 输出参数  : 无
+ 返 回 值  : 无
+*****************************************************************************/
+bool CheckAutoUL(UL AutoNo, ParkSysAutoType AutoType, ParkSysTime InTime)
+{
+
+     if (DISABLEAUTO == g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.Status)
+     {
+         api_parksys_ret(OP_E_MISMATCH_AUTO_TYPE);
+         return false;
+     }
+     if(!(false == g_stAutoInfo[AutoNo-MIN_AUTONO].IsEnable || g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.AutoType == AutoType))
+     {
+         api_parksys_ret(OP_E_MISMATCH_AUTO_TYPE);
+         g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.Status = DISABLEAUTO;
+         RemoveNodeByCardNo(g_pstInfoHead,AutoNo);
+         return false;
+     }
+     if(CmpSysTime(&InTime,&( g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.LastLeaveTime)))
+     {
+         api_parksys_ret(OP_E_TIME_LOGIC);
+         return false;
+    }
+     if(CmpSysTime(&InTime,&(g_stParkingInfo.SystemTime)))
+     {
+         api_parksys_ret(OP_E_TIME_LOGIC);
+         return false;
+    }
+     if(NULL == g_pstInfoHead)
+     {
+         api_parksys_ret(OP_INTERNAL_ERR);
+         return false;
+     }
+
+     return true;
+}
+
+/*****************************************************************************
+ 函 数 名  : FindIdlePark
+
+ 功能描述  : 找到最小的车位来停车
+ 输入参数  : 无
+ 输出参数  : 无
+ 返 回 值  : 输出车位下标
+*****************************************************************************/
+UL FindIdlePark(void)
+{
+    UL    i = 0;
+    for (i = 0;i<CARD_COUNT;++i)
+    {
+        if (CARD_IDLE == g_stParkingInfo.g_CardStatus[i])
+        {
+            return i;
+        }
+    }
+    api_parksys_ret(OP_INTERNAL_ERR);
+    return CARD_COUNT;
+}
+
+
+/*****************************************************************************
+ 函 数 名  : FindCardByAutoNo
+
+ 功能描述  : 找到车子停在那个位置
+ 输入参数  : 无
+ 输出参数  : 无
+ 返 回 值  : 输出车位下标
+*****************************************************************************/
+UL FindCardByAutoNo(UL AutoNo)
+{
+    UL    i = 0;
+    for (i = 0;i<CARD_COUNT;++i)
+    {
+        if (AutoNo == g_stEachCardInfo[i].AutoNo)
+        {
+            return i;
+        }
+    }
+    api_parksys_ret(OP_INTERNAL_ERR);
+    return CARD_COUNT;
+}
+
+
+/*****************************************************************************
+ 函 数 名  : OpGetin
+ 功能描述  : 需要考生实现的接口,车辆进入停车场
+ 输入参数  : UL AutoNo 车牌号
+             ParkSysAutoType AutoType 车辆类型
+             ParkSysTime InTime 车辆进入停车场时间
+ 输出参数  : 无
+ 返 回 值  : 无
+ 调用函数  : 
+ 被调函数  : 
+ 
+ 修改历史      :
+  1.日    期   : 2009年9月9日
+    作    者   : 
+    修改内容   : 新生成函数
+
+*****************************************************************************/
+void OpGetin(UL AutoNo, ParkSysAutoType AutoType, ParkSysTime InTime)
+{
+    if((!CheckParameter(AutoNo,AutoType,InTime))||(!CheckAutoUL(AutoNo,AutoType,InTime)))
+    {
+        return;
+    }
+    UL ulIndex = FindIdlePark();
+    ParkSysTime OutTime;
+    OutTime.hh = 0;
+    OutTime.mm = 0;
+    ParkingAutoHistoryInfo *pNode = (ParkingAutoHistoryInfo*)malloc(sizeof(ParkingAutoHistoryInfo));
+    HistoryInfoNode *pTempNode = NULL;
+    pNode->AutoNo = AutoNo;
+    pNode->AutoType = AutoType;
+    pNode->CardNo = ulIndex;
+    pNode->GetInTime = InTime;
+    pNode->GetOutTime = OutTime;
+    g_pstInfoHead = PushBackNode(g_pstInfoHead,pNode,&pTempNode);
+    if(NULL != g_pstInfoHead)
+    {
+        g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.AutoNo = AutoNo;
+        g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.AutoType = AutoType;
+        g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.GetInTime = InTime;
+        g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.GetOutTime = OutTime;
+        g_stAutoInfo[AutoNo-MIN_AUTONO].IsEnable = true;
+        g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.EnterCount += 1;
+        g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.Status = INPARKING;
+        g_stAutoInfo[AutoNo-MIN_AUTONO].pNewNode = pTempNode;
+        g_stEachCardInfo[ulIndex].AutoNo = AutoNo;
+        g_stEachCardInfo[ulIndex].AutoType = AutoType;
+        g_stEachCardInfo[ulIndex].CardNo = ulIndex;
+        g_stEachCardInfo[ulIndex].CurGetInTime = InTime;
+        g_stParkingInfo.g_CardStatus[ulIndex] = CARD_INUSE;
+        g_stParkingInfo.SystemTime = InTime;
+        g_stParkingInfo.IdleParkSpaceNumber--;
+        api_parksys_ret(OP_PARKING_SUCC);
+    }
+    return;
+}
+/*****************************************************************************
+ 函 数 名  : OpGetFee()
+ 功能描述  : 需要考生实现的接口,车辆离开停车场
+ 输入参数  : UL AutoNo 车牌号
+             UL CardNo 卡号
+             ParkSysTime OutTime 车辆离开停车场时间
+ 输出参数  : 无
+ 返 回 值  : 无
+*****************************************************************************/
+UL opGetFee(UL AutoNo,ParkSysAutoType AutoType,ParkSysTime OutTime,UL CardNo)
+{
+    ParkSysTime Intime = g_stEachCardInfo[CardNo].CurGetInTime;
+    UL ulStayTime = OutTime.hh*60+OutTime.mm - Intime.hh*60 - Intime.mm; 
+    UL ulPrice = 0;
+    if (ulStayTime > NOCOUNT_TIME_MIN)
+    {
+        ulPrice = 20;
+        if (CAR == AutoType)
+        {
+            ulPrice = 10;
+        }
+        if ((ulStayTime> LOWCOUNT_TIME_MIN)&&(ulStayTime <= HIGHCOUNT_TIME_MIN))
+        {
+            ulPrice += (ulStayTime-120-1)/60 + 1;
+        }
+        else if (ulStayTime> HIGHCOUNT_TIME_MIN)
+        {
+            ulPrice += 10;
+        }
+    }
+    return ulPrice;
+}
+/*****************************************************************************
+ 函 数 名  : OpGetout
+ 功能描述  : 需要考生实现的接口,车辆离开停车场
+ 输入参数  : UL AutoNo 车牌号
+             UL CardNo 卡号
+             ParkSysTime OutTime 车辆离开停车场时间
+ 输出参数  : 无
+ 返 回 值  : 无
+*****************************************************************************/
+void OpGetout(UL AutoNo, UL CardNo, ParkSysTime OutTime)
+{
+    if((MIN_AUTONO>AutoNo || MAX_AUTONO<AutoNo)||CARD_COUNT<CardNo|| MAX_AUTONO<AutoNo||OutTime.hh>=24||OutTime.mm>=60)
+    {
+        api_parksys_ret(OP_E_PARAMETER);
+        return;
+    }
+    if(INPARKING!= g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.Status)
+    {
+        api_parksys_ret(OP_E_NOT_IN_PARKING);
+        return;
+    }
+    UL ulIndex = FindCardByAutoNo(AutoNo);
+    if(g_stEachCardInfo[ulIndex].CardNo != CardNo )
+    {
+        api_parksys_ret(OP_E_AUTONO_MISMATCH_CARDNO);
+        return;
+    }
+    if(CmpSysTime(&OutTime,&(g_stParkingInfo.SystemTime)))
+    {
+        api_parksys_ret(OP_E_TIME_LOGIC);
+        return;
+    }
+
+    
+
+    if(CmpSysTime(&OutTime,&(g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.GetInTime))) 
+    {
+        api_parksys_ret(OP_E_TIME_LOGIC);
+        return;
+    }
+
+    UL ulFee = opGetFee(AutoNo,g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.AutoType,OutTime,CardNo);
+    g_stParkingInfo.g_CardStatus[CardNo] = CARD_IDLE;
+    g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.Status = OUTPARKING;
+    g_stAutoInfo[AutoNo-MIN_AUTONO].pNewNode->NodeData.Fee = ulFee;
+    g_stAutoInfo[AutoNo-MIN_AUTONO].pNewNode->NodeData.GetOutTime = OutTime;
+    g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.GetOutTime = OutTime;
+    g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.LastLeaveTime = OutTime;
+    g_stParkingInfo.SystemTime = OutTime;
+    g_stParkingInfo.IdleParkSpaceNumber++;
+    api_parksys_fee(ulFee);
+}
+
+/*****************************************************************************
+ 函 数 名  : OpListIdleParkingSpaceNumber
+ 功能描述  : 需要考生实现的接口,停车场空闲车位查询
+ 输入参数  : 无
+ 输出参数  : 无
+ 返 回 值  : 无
+ 调用函数  : 
+ 被调函数  : 
+ 
+ 修改历史      :
+  1.日    期   : 2009年9月9日
+    作    者   : 
+    修改内容   : 新生成函数
+
+*****************************************************************************/
+void OpListIdleParkingSpaceNumber(void)
+{
+    UL ulIdleNum = g_stParkingInfo.IdleParkSpaceNumber;
+    api_parksys_idle_parkingspace_number(ulIdleNum);
+    return;
+}
+
+/*****************************************************************************
+ 函 数 名  : OpListCardStatus
+ 功能描述  : 需要考生实现的接口,指定卡状态查询
+ 输入参数  : UL CardNo 卡号
+ 输出参数  : 无
+ 返 回 值  : 无
+ 调用函数  : 
+ 被调函数  : 
+ 
+ 修改历史      :
+  1.日    期   : 2009年9月9日
+    作    者   : 
+    修改内容   : 新生成函数
+
+*****************************************************************************/
+void OpListCardStatus(UL CardNo)
+{
+    if(CARD_COUNT < CardNo)
+    {
+        api_parksys_ret(OP_E_PARAMETER);
+        return;
+    }
+    api_parksys_card_status(g_stParkingInfo.g_CardStatus[CardNo]);
+}
+
+/*****************************************************************************
+ 函 数 名  : OpListParkingAuto
+ 功能描述  : 需要考生实现的接口,停车场中指定车辆信息查询
+ 输入参数  : UL AutoNo 车牌号
+ 输出参数  : 无
+ 返 回 值  : 无
+ 调用函数  : 
+ 被调函数  : 
+ 
+ 修改历史      :
+  1.日    期   : 2009年9月9日
+    作    者   : 
+    修改内容   : 新生成函数
+
+*****************************************************************************/
+void OpListParkingAuto(UL AutoNo)
+{
+    if (MIN_AUTONO>AutoNo||MAX_AUTONO<AutoNo)
+    {
+        api_parksys_ret(OP_E_PARAMETER);
+        return;
+    }
+    if(INPARKING != g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.Status)
+    {
+          api_parksys_ret(OP_E_NOT_IN_PARKING);
+          return;
+     }
+    ParkingAutoInfo stTempParkInfo;
+    stTempParkInfo.AutoNo = g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.AutoNo;
+    stTempParkInfo.AutoType = g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.AutoType;
+    stTempParkInfo.CardNo = g_stAutoInfo[AutoNo-MIN_AUTONO].pNewNode->NodeData.CardNo;
+    stTempParkInfo.CurGetInTime = g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.GetInTime;
+    stTempParkInfo.ParkingCount = g_stAutoInfo[AutoNo-MIN_AUTONO].Detai_Info.EnterCount;
+    api_parksys_parking_auto(&stTempParkInfo);
+    return;
+}
+
+/*****************************************************************************
+ 函 数 名  : OpListParkingAutoHistoryInfo
+ 功能描述  : 需要考生实现的接口,停车场中历史所有车辆停车信息查询
+ 输入参数  : UL AutoNo 车牌号
+ 输出参数  : 无
+ 返 回 值  : 无
+ 调用函数  : 
+ 被调函数  : 
+ 
+ 修改历史      :
+  1.日    期   : 2009年9月9日
+    作    者   : 
+    修改内容   : 新生成函数
+
+*****************************************************************************/
+void OpListParkingAutoHistoryInfo(UL AutoNo)
+{
+    if ((MIN_AUTONO>AutoNo||MAX_AUTONO<AutoNo)&&AutoNo!=0)
+    {
+        api_parksys_ret(OP_E_PARAMETER);
+        return;
+    }
+    bool bIsFound = false;
+    HistoryInfoNode *pNode = g_pstInfoHead;
+    ParkSysTime TempTime;
+    UL ulIndex = 0;
+    if(0 != AutoNo)
+    {
+        
+        while (NULL!=pNode)
+        {
+            pNode = FindNodeByCardNo(pNode,AutoNo);
+            
+            if (NULL != pNode)
+            {
+                TempTime.hh = pNode->NodeData.GetOutTime.hh;
+                TempTime.mm = pNode->NodeData.GetOutTime.mm;
+                if (CmpSysTime(&(pNode->NodeData.GetOutTime),&(pNode->NodeData.GetInTime)))
+                {
+
+                   pNode->NodeData.GetOutTime.hh = 99;
+                   pNode->NodeData.GetOutTime.mm = 99;
+                   pNode->NodeData.Fee = 0;
+                }
+                api_parksys_parking_auto_history_info(&(pNode->NodeData));
+                pNode->NodeData.GetOutTime.hh = TempTime.hh;
+                pNode->NodeData.GetOutTime.mm = TempTime.mm;
+                bIsFound = true;
+            }
+            
+            
+        }
+        if (!bIsFound)
+        {
+            api_parksys_ret(OP_SPEC_CAR_PARKING);
+            return;
+        }
+     }
+    else
+    {
+        pNode = pNode->pNext;
+         while (NULL!=pNode)
+        {
+             TempTime.hh = pNode->NodeData.GetOutTime.hh;
+             TempTime.mm = pNode->NodeData.GetOutTime.mm;
+             if (CmpSysTime(&(pNode->NodeData.GetOutTime),&(pNode->NodeData.GetInTime)))
+             {
+                 
+                 pNode->NodeData.GetOutTime.hh = 99;
+                 pNode->NodeData.GetOutTime.mm = 99;
+                 pNode->NodeData.Fee = 0;
+             }
+             api_parksys_parking_auto_history_info(&(pNode->NodeData));
+             pNode->NodeData.GetOutTime.hh = TempTime.hh;
+             pNode->NodeData.GetOutTime.mm = TempTime.mm;
+            bIsFound = true;
+            pNode = pNode->pNext;
+        }
+        if (!bIsFound)
+        {
+            api_parksys_ret(OP_ANY_CAR_PAKING);
+            return;
+        }
+        
+     }
+
+   // ParkingAutoHistoryInfo()
+}
+
