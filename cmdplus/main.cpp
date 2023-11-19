@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <windows.h>
 #include <string.h>
@@ -85,7 +86,7 @@ int main(int argc, char* argv[])
         }
         else
 		{
-            gets(Buff);
+            gets_s(Buff);
             if(!strcmp(Buff,"exit"))
                 break;
             strcat(Buff,"\n");
