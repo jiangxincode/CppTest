@@ -34,12 +34,12 @@ jobs:
       with:
         path: |
           C:\vcpkg\installed
-        key: ${{ runner.os }}-${{ hashFiles('vcpkg.txt') }}
+        key: ${{ runner.os }}-${{ hashFiles('vcpkg-config.txt') }}
 
     - name: Build dependencies
       run: |
           vcpkg integrate install
-          vcpkg install --triplet x86-windows --allow-unsupported @vcpkg.txt
+          vcpkg install --triplet x86-windows --allow-unsupported @vcpkg-config.txt
 
     - name: Build
       shell: cmd
