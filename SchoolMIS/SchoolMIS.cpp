@@ -1,12 +1,12 @@
 
-// ODBC.cpp : 定义应用程序的类行为。
+// SchoolMIS.cpp : 定义应用程序的类行为。
 //
 
 
 #include "stdafx.h"
 #include "afxwinappex.h"
 #include "afxdialogex.h"
-#include "ODBC.h"
+#include "SchoolMIS.h"
 #include "MainFrm.h"
 #include "MyChildFrame.h"
 
@@ -23,17 +23,17 @@ CString m_ID;
 int m_type;
 /***********************by jiangxin***********************/
 
-// CODBCApp
+// CSchoolMISApp
 
-BEGIN_MESSAGE_MAP(CODBCApp, CWinAppEx)
-	ON_COMMAND(ID_APP_ABOUT, &CODBCApp::OnAppAbout)
-	ON_COMMAND(ID_FILE_NEW, &CODBCApp::OnFileNew)
+BEGIN_MESSAGE_MAP(CSchoolMISApp, CWinAppEx)
+	ON_COMMAND(ID_APP_ABOUT, &CSchoolMISApp::OnAppAbout)
+	ON_COMMAND(ID_FILE_NEW, &CSchoolMISApp::OnFileNew)
 END_MESSAGE_MAP()
 
 
-// CODBCApp 构造
+// CSchoolMISApp 构造
 
-CODBCApp::CODBCApp()
+CSchoolMISApp::CSchoolMISApp()
 {
 	m_bHiColorIcons = TRUE;
 
@@ -48,20 +48,20 @@ CODBCApp::CODBCApp()
 
 	// TODO: 将以下应用程序 ID 字符串替换为唯一的 ID 字符串；建议的字符串格式
 	//为 CompanyName.ProductName.SubProduct.VersionInformation
-	SetAppID(_T("ODBC.AppID.NoVersion"));
+	SetAppID(_T("SchoolMIS.AppID.NoVersion"));
 
 	// TODO: 在此处添加构造代码，
 	// 将所有重要的初始化放置在 InitInstance 中
 }
 
-// 唯一的一个 CODBCApp 对象
+// 唯一的一个 CSchoolMISApp 对象
 
-CODBCApp theApp;
+CSchoolMISApp theApp;
 
 
-// CODBCApp 初始化
+// CSchoolMISApp 初始化
 
-BOOL CODBCApp::InitInstance()
+BOOL CSchoolMISApp::InitInstance()
 {
 	// 如果一个运行在 Windows XP 上的应用程序清单指定要
 	// 使用 ComCtl32.dll 版本 6 或更高版本来启用可视化方式，
@@ -137,7 +137,7 @@ BOOL CODBCApp::InitInstance()
 	return TRUE;
 }
 
-int CODBCApp::ExitInstance()
+int CSchoolMISApp::ExitInstance()
 {
 	//TODO: 处理可能已添加的附加资源
 	if (m_hMDIMenu != NULL)
@@ -150,9 +150,9 @@ int CODBCApp::ExitInstance()
 	return CWinAppEx::ExitInstance();
 }
 
-// CODBCApp 消息处理程序
+// CSchoolMISApp 消息处理程序
 
-void CODBCApp::OnFileNew() 
+void CSchoolMISApp::OnFileNew() 
 {
 	CMainFrame* pFrame = STATIC_DOWNCAST(CMainFrame, m_pMainWnd);
 	// 创建新的 MDI 子窗口
@@ -191,15 +191,15 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 // 用于运行对话框的应用程序命令
-void CODBCApp::OnAppAbout()
+void CSchoolMISApp::OnAppAbout()
 {
 	CAboutDlg aboutDlg;
 	aboutDlg.DoModal();
 }
 
-// CODBCApp 自定义加载/保存方法
+// CSchoolMISApp 自定义加载/保存方法
 
-void CODBCApp::PreLoadState()
+void CSchoolMISApp::PreLoadState()
 {
 	BOOL bNameValid;
 	CString strName;
@@ -208,14 +208,14 @@ void CODBCApp::PreLoadState()
 	GetContextMenuManager()->AddMenu(strName, IDR_POPUP_EDIT);
 }
 
-void CODBCApp::LoadCustomState()
+void CSchoolMISApp::LoadCustomState()
 {
 }
 
-void CODBCApp::SaveCustomState()
+void CSchoolMISApp::SaveCustomState()
 {
 }
 
-// CODBCApp 消息处理程序
+// CSchoolMISApp 消息处理程序
 
 

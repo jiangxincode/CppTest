@@ -19,10 +19,10 @@
     <None Include="UserImages.bmp">
       <Filter>资源文件</Filter>
     </None>
-    <None Include="res\ODBC.rc2">
+    <None Include="res\SchoolMIS.rc2">
       <Filter>资源文件</Filter>
     </None>
-    <None Include="res\ODBC.ico">
+    <None Include="res\SchoolMIS.ico">
       <Filter>资源文件</Filter>
     </None>
     <None Include="res\Toolbar.bmp">
@@ -31,10 +31,9 @@
     <None Include="res\Toolbar256.bmp">
       <Filter>资源文件</Filter>
     </None>
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ODBC.h">
+    <ClInclude Include="SchoolMIS.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
@@ -93,7 +92,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ODBC.cpp">
+    <ClCompile Include="SchoolMIS.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
@@ -146,7 +145,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="ODBC.rc">
+    <ResourceCompile Include="SchoolMIS.rc">
       <Filter>资源文件</Filter>
     </ResourceCompile>
   </ItemGroup>

@@ -2,7 +2,7 @@
 //
 
 #include "stdafx.h"
-#include "ODBC.h"
+#include "SchoolMIS.h"
 #include "DelCourse.h"
 /***********************by jiangxin***********************/
 #include "MainFrm.h"

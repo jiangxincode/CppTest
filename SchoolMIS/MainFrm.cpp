@@ -2,7 +2,7 @@
 // MainFrm.cpp : CMainFrame 类的实现
 //
 #include "stdafx.h"
-#include "ODBC.h"
+#include "SchoolMIS.h"
 
 #include "MainFrm.h"
 

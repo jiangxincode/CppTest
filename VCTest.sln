@@ -46,7 +46,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Books", "Books\Books.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cmdplus", "cmdplus\cmdplus.vcxproj", "{7CF94490-1842-4CCE-8E96-FCC67E991380}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SchoolMIS", "SchoolMIS\ODBC.vcxproj", "{36D3E674-ADA2-4A42-A670-6535BA3BF547}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SchoolMIS", "SchoolMIS\SchoolMIS.vcxproj", "{36D3E674-ADA2-4A42-A670-6535BA3BF547}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleManageSystem", "SimpleManageSystem", "{B921E8C0-5348-489B-A659-975A319664D5}"
 EndProject

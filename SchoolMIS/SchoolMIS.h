@@ -1,5 +1,5 @@
 
-// ODBC.h : ODBC 应用程序的主头文件
+// SchoolMIS.h : SchoolMIS 应用程序的主头文件
 //
 #pragma once
 
@@ -10,14 +10,14 @@
 #include "resource.h"       // 主符号
 
 
-// CODBCApp:
-// 有关此类的实现，请参阅 ODBC.cpp
+// CSchoolMISApp:
+// 有关此类的实现，请参阅 SchoolMIS.cpp
 //
 
-class CODBCApp : public CWinAppEx
+class CSchoolMISApp : public CWinAppEx
 {
 public:
-	CODBCApp();
+	CSchoolMISApp();
 
 
 // 重写
@@ -43,4 +43,4 @@ public:
 	DECLARE_MESSAGE_MAP()
 };
 
-extern CODBCApp theApp;
+extern CSchoolMISApp theApp;

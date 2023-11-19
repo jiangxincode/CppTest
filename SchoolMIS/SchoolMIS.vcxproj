@@ -12,7 +12,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{36D3E674-ADA2-4A42-A670-6535BA3BF547}</ProjectGuid>
-    <RootNamespace>ODBC</RootNamespace>
+    <RootNamespace>SchoolMIS</RootNamespace>
     <Keyword>MFCProj</Keyword>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>SchoolMIS</ProjectName>
@@ -103,10 +103,9 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
     <None Include="ReadMe.txt" />
-    <None Include="res\ODBC.ico" />
-    <None Include="res\ODBC.rc2" />
+    <None Include="res\SchoolMIS.ico" />
+    <None Include="res\SchoolMIS.rc2" />
     <None Include="res\Toolbar.bmp" />
     <None Include="res\Toolbar256.bmp" />
     <None Include="UserImages.bmp" />
@@ -122,7 +121,7 @@
     <ClInclude Include="LoginDlg.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="MyChildFrame.h" />
-    <ClInclude Include="ODBC.h" />
+    <ClInclude Include="SchoolMIS.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="StudentInfo.h" />
@@ -143,7 +142,7 @@
     <ClCompile Include="LoginDlg.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="MyChildFrame.cpp" />
-    <ClCompile Include="ODBC.cpp" />
+    <ClCompile Include="SchoolMIS.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -155,14 +154,14 @@
     <ClCompile Include="USERS.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="ODBC.rc" />
+    <ResourceCompile Include="SchoolMIS.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties RESOURCE_FILE="ODBC.rc" />
+      <UserProperties RESOURCE_FILE="SchoolMIS.rc" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
