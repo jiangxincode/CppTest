@@ -1,0 +1,6 @@
+openssl
+freeglut
+glog
+duilib
+cppunit
+libmysql

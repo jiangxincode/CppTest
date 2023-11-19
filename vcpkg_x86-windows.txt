@@ -1,6 +1,0 @@
-openssl:x86-windows
-freeglut:x86-windows
-glog:x86-windows
-duilib:x86-windows
-cppunit:x86-windows
-libmysql:x86-windows

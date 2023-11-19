@@ -4,10 +4,4 @@
 
 ## 构建方法
 
-### 安装vcpkg
-
-* vcpkg: <https://github.com/Microsoft/vcpkg/>
-
-### 安装依赖包
-
 See appveyor.xml
