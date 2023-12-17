@@ -4,4 +4,4 @@
 
 ## 构建方法
 
-See appveyor.xml
+See `.github/workflows/build.yml`
