@@ -3,7 +3,7 @@
  *
  * Utility functions for image viewer application .
  **/
-#include <gnome.h>
+#include <gtk/gtk.h>
 
 /* Setup pointers to keep track of the last window and image used */
 GtkWidget *lastwindow;

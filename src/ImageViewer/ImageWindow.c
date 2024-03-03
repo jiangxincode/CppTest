@@ -3,7 +3,7 @@
  *
  * All the code to work with an image in a window
  */
-#include <gnome.h>
+#include<gtk/gtk.h>
 #include "imageviewerutility.h"
 
 /**
@@ -47,9 +47,9 @@ void SetImageIntoWindow(GtkWidget * window, GdkPixbuf * image)
 		/* Destroy the child if there is one */
 		gtk_widget_destroy(gtk_bin_get_child(GTK_BIN(window)));
 	}
-	/* Create a new GnomePixmap from the passed in image */
+	/* Create a new pixmap from the passed in image */
 	pixmap = gtk_image_new_from_pixbuf(image);
-	/* Add the GnomePixmap into the window and show it*/
+	/* Add the pixmap into the window and show it*/
 	gtk_container_add(GTK_CONTAINER(window), pixmap);
 	gtk_widget_show(pixmap);
 	SetActiveWindow(window, image);
@@ -149,11 +149,7 @@ void ShowImage(gchar * filename)
 	 * tell the user */
 	if (image == NULL)
 	{
-		messagebox = gnome_message_box_new(
-				"Sorry, you specified an invalid file",
-				GNOME_MESSAGE_BOX_ERROR,
-				GNOME_STOCK_BUTTON_OK, NULL);
-		gnome_dialog_run_and_close(GNOME_DIALOG(messagebox));
+		//TODO
 		return;
 	}
 	/* Create a window in the usual way, with the filename as the title */
@@ -162,10 +158,8 @@ void ShowImage(gchar * filename)
 	/* Set the newly loaded image into the window */
 	SetImageIntoWindow(window, image);
 	/* Connect up the window's signal handlers */
-	gtk_signal_connect(GTK_OBJECT (window ), "destroy",
-			GTK_SIGNAL_FUNC (DestroyWindow ), image);
-	gtk_signal_connect(GTK_OBJECT (window ), "focus_in_event",
-			GTK_SIGNAL_FUNC (GotFocus ), image);
+	g_signal_connect(G_OBJECT (window ), "destroy", G_CALLBACK (DestroyWindow ), image);
+	g_signal_connect(G_OBJECT (window ), "focus_in_event", G_CALLBACK (GotFocus ), image);
 	/* Finally, show the window */
 	gtk_widget_show(window);
 }

@@ -1,6 +1,6 @@
 /**
 使用GTK编写中文软件
-GTK/GNOME 系列widgets中, 输入和显示已经是国际化了的. 所以用它们编写中文软件十分容易.
+GTK 系列widgets中, 输入和显示已经是国际化了的. 所以用它们编写中文软件十分容易.
 把西文软件改写成中文软件也十分容易.
 
 在gtk_init前设置locale: gtk_set_locale()

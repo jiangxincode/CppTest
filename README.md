@@ -23,9 +23,9 @@ Some exercises for GTK+ in Linux environment.
 
 ### src/ImageViewer
 
-An image viewer based upon gnome 2. 来自于《GTK+_GNOME程序设计》 18
+An image viewer. 
 
-I will port gnome to GTK3 because of: <https://bugs.launchpad.net/ubuntu/+source/libgnome/+bug/1771031>
+来自于《GTK+ GNOME程序设计》第18章，由于GNOME库已经废弃，我迁移到了GTK: <https://bugs.launchpad.net/ubuntu/+source/libgnome/+bug/1771031>
 
 ### src/CTest
 

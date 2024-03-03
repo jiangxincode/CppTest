@@ -3,10 +3,8 @@
  *
  * Simplifies use of the GtkFileSelection dialog
  */
-#include <gnome.h>
+#include <gtk/gtk.h>
 
-/* Declare pointers to the dialog and the selected filename string */
-GtkWidget *dialog;
 gchar *selectedfile;
 
 /**
@@ -27,12 +25,11 @@ void CloseTheDialog(GtkWidget * widget, gpointer data)
  * stores a pointer to the duplicated string in 'selectedfile', ready to
  * be returned
  */
-void OKClicked(GtkButton * button, gpointer data)
+void OKClicked(GtkWidget * dialog, gpointer data)
 {
 	/* we need to duplicate the filename selected, since the widget is
 	 * about to be destroyed, and can take the string with it */
-	selectedfile = g_strdup(
-			gtk_file_selection_get_filename(GTK_FILE_SELECTION(dialog)));
+    selectedfile = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(dialog));
 	gtk_widget_destroy(dialog);
 }
 
@@ -42,7 +39,7 @@ void OKClicked(GtkButton * button, gpointer data)
  * Callback triggered when the user clicks on the Cancel button in the
  * dialog. Does nothing more than destroy the dialog.
  */
-void CancelClicked(GtkButton * button, gpointer data)
+void CancelClicked(GtkWidget * dialog, gpointer data)
 {
 	gtk_widget_destroy(dialog);
 }
@@ -56,21 +53,24 @@ void CancelClicked(GtkButton * button, gpointer data)
  */
 gchar* ChooseFile()
 {
-	/* Reset filename to NULL to prevent false returns */
-	selectedfile = NULL;
-	/* Create the dialog */
-	dialog = gtk_file_selection_new("Choose an image to load");
-	/** Connect up the signal handlers for the default buttons on the dialog **/
-	gtk_signal_connect(GTK_OBJECT ( GTK_FILE_SELECTION ( dialog ) ->ok_button ),
-			"clicked", GTK_SIGNAL_FUNC (OKClicked ), NULL);
-	gtk_signal_connect(
-			GTK_OBJECT ( GTK_FILE_SELECTION (dialog )-> cancel_button ),
-			"clicked", GTK_SIGNAL_FUNC ( CancelClicked ), NULL);
-	gtk_signal_connect(GTK_OBJECT (dialog ), "destroy",
-			GTK_SIGNAL_FUNC (CloseTheDialog ), NULL);
-	/* Show the dialog, then start up the gtk_main () loop again . The dialog quits this */
-	gtk_widget_show(dialog);
-	gtk_window_set_modal(GTK_WINDOW(dialog), TRUE);
-	gtk_main();
+    GtkWidget *dialog;
+    GtkFileChooserAction action = GTK_FILE_CHOOSER_ACTION_OPEN;
+    gint res;
+
+    dialog = gtk_file_chooser_dialog_new("Choose an image to load",
+                                         NULL,
+                                         action,
+                                         "Cancel",
+                                         GTK_RESPONSE_CANCEL,
+                                         "Open",
+                                         GTK_RESPONSE_ACCEPT,
+                                         NULL);
+
+    res = gtk_dialog_run(GTK_DIALOG(dialog));
+    if (res == GTK_RESPONSE_ACCEPT) {
+        OKClicked(dialog, NULL);
+    } else if (res == GTK_RESPONSE_CANCEL) {
+        CancelClicked(dialog, NULL);
+    }
 	return selectedfile;
 }

@@ -6,7 +6,7 @@
  * User interface signals are responded to in their own source files
  **/
 
-#include <gnome.h>
+#include <gtk/gtk.h>
 #include "mainwindow.h"
 
 /** Statics for application name and version **/
@@ -19,8 +19,8 @@ static gchar app_version[] =
 /** The ubiquitous main() function **/
 gint main(gint argc, gchar * argv[])
 {
-	gnome_init(app_name, app_version, argc, argv);
-	BuildMainWindow(app_name, app_version);
+	gtk_init(&argc, &argv);
+    BuildMainWindow(app_name, app_version);
 	gtk_main();
 	return 0;
 }
