@@ -100,13 +100,6 @@ IF (CMAKE_SYSTEM_NAME MATCHES "Linux")
     find_package(PkgConfig REQUIRED)
     pkg_check_modules(GTK3 REQUIRED IMPORTED_TARGET gtk+-3.0)
     if (GTK3_FOUND)
-        file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/GTKPlus src/GTKPlus/*.c)
-        foreach (source IN LISTS sources)
-            string(REPLACE ".c" "" program ${source})
-            add_executable(${program} ${CMAKE_SOURCE_DIR}/src/GTKPlus/${source})
-            target_link_libraries(${program} PkgConfig::GTK3)
-        endforeach (source)
-
         add_executable(ImageViewer
                 src/ImageViewer/main.c
                 src/ImageViewer/fileselect.c
