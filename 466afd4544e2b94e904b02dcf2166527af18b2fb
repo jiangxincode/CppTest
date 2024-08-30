@@ -1,0 +1,3 @@
+将所有源码改至src文件夹，方便source insight的使用
+去除所有cppcheck检查警告
+整理了README.md和.gitignore文件
