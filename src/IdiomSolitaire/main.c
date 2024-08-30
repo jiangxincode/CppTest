@@ -25,6 +25,15 @@ struct list
 struct list* create_list(char array[][MAX_LENGTH],int num);
 void connect(char *input, char *output, struct list* pointer, int num, bool is_loop);
 
+/**
+ * Usage
+ * -h: Show this help.
+ * -i filename: Set the dictionary file. This program only support the GBK encoding dictionary!
+ * -l: Be able to loop.
+ * -e: Show every item when you strike the key, and 'e' to quit", stdout
+ * -c: Set the initiate character.
+ * -n num: Set the maximum idiom item number when output. Of course if there are not so many, It only show the exist.
+ */
 int main(int argc, char* argv[])
 {
     extern int opterr, optopt;

@@ -29,20 +29,7 @@ main1xxy.c C语言程序设计, 2012 实验教材为《C语言程序设计教程
 
 ### src/IdiomSolitaire
 
-A toy for idiom soliteaire. It is very instering.
-
-#### Usage
-
-+ -h: Show this help.
-+ -i filename: Set the dictionary file. This program only support the GBK encoding dictionary!
-+ -l: Be able to loop.
-+ -e: Show every item when you strike the key, and 'e' to quit", stdout
-+ -c: Set the initiate character.
-+ -n num: Set the maximum idiom item number when output. Of course if there are not so many, It only show the exist.
-
-#### TODO
-
-+ add some extra features.
+A toy for idiom soliteaire.
 
 ### src/others
 
@@ -70,9 +57,6 @@ C语言算法速查手册
 C语言课程设计案例精编
 
 ### 其它
-
-* main.c主函数
-* main.h主头文件
 
 * jiangxin.c常用自定义函数
 * jiangxin.h常用自定义函数的声明

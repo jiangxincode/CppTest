@@ -1,8 +1,3 @@
-#include <iostream>
-#include <string>
-#include <cstdio>
-#include <cassert>
-#include "main.h"
 #include "gtest/gtest.h"
 
 using namespace std;

@@ -25,10 +25,12 @@ add_executable(openjudge_zz_3
         src/openjudge/openjudge_zz_3.cpp)
 
 add_executable(CppTest
-        src/main.cpp
-        src/main.h
-        src/test.cpp
-        src/tools.cpp)
+        src/RepeatExecMethod/main.cpp
+)
+
+add_executable(CppOnlineJudge
+        src/CppOnlineJudge/main.cpp
+)
 
 add_executable(SumCode
         src/SumCode/main.cpp
@@ -75,6 +77,14 @@ foreach (source IN LISTS sources)
     IF (CMAKE_SYSTEM_NAME MATCHES "Linux")
         target_link_libraries(${program} m)
     ENDIF (CMAKE_SYSTEM_NAME MATCHES "Linux")
+endforeach (source)
+unset(CMAKE_RUNTIME_OUTPUT_DIRECTORY)
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/VerifyCppGrammar)
+file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/VerifyCppGrammar src/VerifyCppGrammar/*.cpp)
+foreach (source IN LISTS sources)
+    string(REPLACE ".cpp" "" program ${source})
+    add_executable(${program} ${CMAKE_SOURCE_DIR}/src/VerifyCppGrammar/${source})
 endforeach (source)
 unset(CMAKE_RUNTIME_OUTPUT_DIRECTORY)
 
