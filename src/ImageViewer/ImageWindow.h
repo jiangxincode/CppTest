@@ -1,12 +1,7 @@
-/**
- * ImageWindow .h
- *
- * Header to declare functions to work on 七he image window
- */
 #ifndef __IMAGEVIEWER_IMAGEWINDOW_H
 #define __IMAGEVIEWER_IMAGEWINDOW_H
-void ShowImage(gchar * filename);
-void RotateImage();
-void CloseActiveImage();
-void FlipImage(gboolean horizontal);
+void show_image(gchar *filename);
+void rotate_image();
+void close_active_image();
+void flip_image(gboolean horizontal);
 #endif

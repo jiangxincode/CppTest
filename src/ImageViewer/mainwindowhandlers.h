@@ -1,15 +1,10 @@
-/**
- * mainwindowhandlers.h
- *
- * Prototypes for the signal handlers
- **/
 #ifndef __IMAGEVIEWER_MAINWINDOWHANDLERS_H
 #define __IMAGEVIEWER_MAINWINDOWHANDLERS_H
-gboolean CheckUserExit();
-void FileOpenHandler(GtkMenuItem * item, gpointer data);
-void FileCloseHandler(GtkMenuItem * item, gpointer data);
-void FileExitItemHandler(GtkMenuItem * item, gpointer data);
-void RotateHandler(GtkButton * button, gpointer data);
-void FlipHandler(GtkButton * button, gpointer data);
-void HelpAboutHandler(GtkMenuItem * item, gpointer data);
+gboolean check_user_exit();
+void file_open_handler(GtkMenuItem *item, gpointer data);
+void file_close_handler(GtkMenuItem *item, gpointer data);
+void file_exit_item_handler(GtkMenuItem *item, gpointer data);
+void rotate_handler(GtkButton *button, gpointer data);
+void flip_handler(GtkButton *button, gpointer data);
+void help_about_handler(GtkMenuItem *item, gpointer data);
 #endif

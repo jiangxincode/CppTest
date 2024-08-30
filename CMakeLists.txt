@@ -122,6 +122,7 @@ IF (CMAKE_SYSTEM_NAME MATCHES "Linux")
                 src/ImageViewer/mainwindow.h
                 src/ImageViewer/mainwindowhandlers.h)
         target_link_libraries(ImageViewer PkgConfig::GTK3)
+        target_compile_options(ImageViewer PRIVATE -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED)
     endif ()
 ELSEIF (CMAKE_SYSTEM_NAME MATCHES "Windows")
     add_executable(FlappyBird
