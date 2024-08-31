@@ -25,9 +25,15 @@ main1xxy.c C语言程序设计, 2012 实验教材为《C语言程序设计教程
 
 * codevs: <http://codevs.cn>
 * hwoj: 网上流传的一些华为OJ题目
+<<<<<<< HEAD
 * luogu: 洛谷: <https://www.luogu.org>
 * nowcode: 牛客: <https://www.nowcoder.com/>
 * openjudge: <http://openjudge.cn/>
+=======
+* luogu
+* nowcode
+* openjudge
+>>>>>>> 26e8ae75e3cb06ca6a9c96a7442dd3e37a83640f
 * VerifyCppGrammar: 验证C++语法
 
 ### src/IdiomSolitaire
