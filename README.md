@@ -19,13 +19,16 @@ An image viewer. 基于`GTK+`。
 
 main1xxy.c C语言程序设计, 2012 实验教材为《C语言程序设计教程学习指导》，xx代表章节，y代表该章节的习题序号
 
-### src/codevs
+### src/SingleFileCpp
 
-<http://codevs.cn>
+各个目录下都是单个C++文件，如：
 
-### src/hwoj
-
-网上流传的一些华为OJ题目
+* codevs: <http://codevs.cn>
+* hwoj: 网上流传的一些华为OJ题目
+* luogu
+* nowcode
+* openjudge
+* VerifyCppGrammar: 验证C++语法
 
 ### src/IdiomSolitaire
 

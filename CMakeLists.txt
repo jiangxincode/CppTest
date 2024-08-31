@@ -18,12 +18,6 @@ set(CMAKE_BUILD_TYPE "Debug")
 
 include_directories(include)
 
-add_executable(luoguP1876
-        src/luogu/luoguP1876.cpp)
-
-add_executable(openjudge_zz_3
-        src/openjudge/openjudge_zz_3.cpp)
-
 add_executable(CppTest
         src/RepeatExecMethod/main.cpp
 )
@@ -45,46 +39,29 @@ add_executable(IdiomSolitaire
         src/IdiomSolitaire/getopt.h
         src/IdiomSolitaire/getopt.c)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/codevs)
-file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/codevs src/codevs/*.cpp)
-foreach (source IN LISTS sources)
-    string(REPLACE ".cpp" "" program ${source})
-    add_executable(${program} ${CMAKE_SOURCE_DIR}/src/codevs/${source})
-endforeach (source)
-unset(CMAKE_RUNTIME_OUTPUT_DIRECTORY)
-
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/hwoj)
-file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/hwoj src/hwoj/*.cpp)
-foreach (source IN LISTS sources)
-    string(REPLACE ".cpp" "" program ${source})
-    add_executable(${program} ${CMAKE_SOURCE_DIR}/src/hwoj/${source})
-endforeach (source)
-unset(CMAKE_RUNTIME_OUTPUT_DIRECTORY)
+function(add_subdir_executables subdir)
+    file(GLOB sources "${subdir}/*.cpp")
+    foreach(source ${sources})
+        get_filename_component(program ${source} NAME_WE)
+        add_executable(${program} ${source})
+        IF (CMAKE_SYSTEM_NAME MATCHES "Linux")
+            target_link_libraries(${program} m)
+        ENDIF (CMAKE_SYSTEM_NAME MATCHES "Linux")
+    endforeach()
+endfunction()
+file(GLOB subdirectories "src/SingleFileCpp/*")
+foreach(subdir ${subdirectories})
+    get_filename_component(subdir_filename "${subdir}" NAME)
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/SingleFileCpp/${subdir_filename})
+    add_subdir_executables(${subdir})
+    unset(CMAKE_RUNTIME_OUTPUT_DIRECTORY)
+endforeach()
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/others)
 file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/others src/others/*.cpp)
 foreach (source IN LISTS sources)
     string(REPLACE ".cpp" "" program ${source})
     add_executable(${program} ${CMAKE_SOURCE_DIR}/src/others/${source})
-endforeach (source)
-unset(CMAKE_RUNTIME_OUTPUT_DIRECTORY)
-
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/nowcoder)
-file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/nowcoder src/nowcoder/*.cpp)
-foreach (source IN LISTS sources)
-    string(REPLACE ".cpp" "" program ${source})
-    add_executable(${program} ${CMAKE_SOURCE_DIR}/src/nowcoder/${source})
-    IF (CMAKE_SYSTEM_NAME MATCHES "Linux")
-        target_link_libraries(${program} m)
-    ENDIF (CMAKE_SYSTEM_NAME MATCHES "Linux")
-endforeach (source)
-unset(CMAKE_RUNTIME_OUTPUT_DIRECTORY)
-
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/VerifyCppGrammar)
-file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/VerifyCppGrammar src/VerifyCppGrammar/*.cpp)
-foreach (source IN LISTS sources)
-    string(REPLACE ".cpp" "" program ${source})
-    add_executable(${program} ${CMAKE_SOURCE_DIR}/src/VerifyCppGrammar/${source})
 endforeach (source)
 unset(CMAKE_RUNTIME_OUTPUT_DIRECTORY)
 
