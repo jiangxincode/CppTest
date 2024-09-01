@@ -18,14 +18,6 @@ set(CMAKE_BUILD_TYPE "Debug")
 
 include_directories(include)
 
-add_executable(CppTest
-        src/RepeatExecMethod/main.cpp
-)
-
-add_executable(CppOnlineJudge
-        src/CppOnlineJudge/main.cpp
-)
-
 add_executable(SumCode
         src/SumCode/main.cpp
         src/SumCode/libjiangxin.cpp
@@ -56,14 +48,6 @@ foreach(subdir ${subdirectories})
     add_subdir_executables(${subdir})
     unset(CMAKE_RUNTIME_OUTPUT_DIRECTORY)
 endforeach()
-
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/others)
-file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/others src/others/*.cpp)
-foreach (source IN LISTS sources)
-    string(REPLACE ".cpp" "" program ${source})
-    add_executable(${program} ${CMAKE_SOURCE_DIR}/src/others/${source})
-endforeach (source)
-unset(CMAKE_RUNTIME_OUTPUT_DIRECTORY)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/CTest)
 file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/CTest src/CTest/*.c)
@@ -103,7 +87,7 @@ IF (CMAKE_SYSTEM_NAME MATCHES "Linux")
     endif ()
 ELSEIF (CMAKE_SYSTEM_NAME MATCHES "Windows")
     add_executable(FlappyBird
-            src/FlappyBird.cpp)
+            src/SingleFileCppWindows/FlappyBird.cpp)
 ELSEIF (CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
     MESSAGE(STATUS "current platform: FreeBSD")
 ELSE ()
