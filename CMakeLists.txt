@@ -13,3 +13,5 @@ project ("VSCMake")
 
 # 包含子项目。
 add_subdirectory ("cmdplus")
+add_subdirectory ("WindowTest")
+add_subdirectory ("LeafCore")

@@ -1,5 +1,4 @@
 //Copyright (c) LeafCore
-#include "stdafx.h"
 
 #include <windows.h>
 #include <math.h>
