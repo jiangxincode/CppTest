@@ -1,6 +1,7 @@
 # by jiangxin begin
 ~$*.docx
 ~$*.doc
+out/
 # by jiangxin begin
 
 ## Ignore Visual Studio temporary files, build results, and
