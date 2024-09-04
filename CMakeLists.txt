@@ -12,4 +12,4 @@ endif()
 project ("VSCMake")
 
 # 包含子项目。
-add_subdirectory ("VSCMake")
+add_subdirectory ("cmdplus")
