@@ -1,6 +1,7 @@
 {
   "dependencies": [
     "glog",
-    "libmysql"
+    "libmysql",
+    "freeglut"
   ]
 }
