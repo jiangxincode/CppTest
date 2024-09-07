@@ -2,6 +2,7 @@
   "dependencies": [
     "glog",
     "libmysql",
-    "freeglut"
+    "freeglut",
+    "openssl"
   ]
 }

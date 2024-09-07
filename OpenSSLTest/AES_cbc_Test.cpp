@@ -35,7 +35,7 @@ int aes_decrypt(char* in, AES_KEY aes, char* out)
 	return 1;
 }
 
-int main_AES_cbc_Test(int argc, char* argv[])
+int main(int argc, char* argv[])
 {
 	char plainText[MSG_LEN];
 	char encryptText[MSG_LEN];
