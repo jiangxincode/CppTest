@@ -9,7 +9,8 @@
             "installDir": "${sourceDir}/out/install/${presetName}",
             "cacheVariables": {
                 "CMAKE_C_COMPILER": "cl.exe",
-                "CMAKE_CXX_COMPILER": "cl.exe"
+                "CMAKE_CXX_COMPILER": "cl.exe",
+                "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_INSTALLATION_ROOT}/scripts/buildsystems/vcpkg.cmake"
             },
             "condition": {
                 "type": "equals",
@@ -56,6 +57,28 @@
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release"
             }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "x64-debug",
+            "configurePreset": "x64-debug",
+            "displayName": "x64 Debug"
+        },
+        {
+            "name": "x64-release",
+            "configurePreset": "x64-release",
+            "displayName": "x64 Release"
+        },
+        {
+            "name": "x86-debug",
+            "configurePreset": "x86-debug",
+            "displayName": "x86 Debug"
+        },
+        {
+            "name": "x86-release",
+            "configurePreset": "x86-release",
+            "displayName": "x86 Release"
         }
     ]
 }

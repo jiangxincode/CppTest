@@ -5,17 +5,9 @@ on:
   pull_request:
     branches: [master]
 
-env:
-  SOLUTION_FILE_PATH: ./VCTest.sln
-  BUILD_CONFIGURATION: Debug
-
 jobs:
-  VS2022-Build:
+  x86-debug:
     runs-on: windows-latest
-
-    strategy:
-      matrix:
-        TARGET_PLATFORM: [x86]
 
     steps:
     - name: Checkout repository
@@ -24,24 +16,54 @@ jobs:
         fetch-depth: 0
         submodules: recursive
 
-    - name: Add MSBuild to PATH
-      uses: microsoft/setup-msbuild@v1
+    - name: Setup MSVC
+      uses: TheMrMilchmann/setup-msvc-dev@v2
       with:
-        msbuild-architecture: x64
+        arch: x86
+
+    # https://learn.microsoft.com/zh-cn/vcpkg/get_started/get-started?pivots=shell-cmd
+    - name: Set Environment Variable
+      run: |
 
     - name: Cache vcpkg and dependencies
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
-        path: |
-          C:\vcpkg\installed
-        key: ${{ runner.os }}-${{ hashFiles('vcpkg-config.txt') }}
+        path: C:/vcpkg
+        key: ${{ runner.os }}-${{ hashFiles('vcpkg.json') }}
 
-    - name: Build dependencies
+    # https://github.com/dgcor/Diabolika/blob/0d83d46c3e86cb31ffcbc52baa0a81cf1531471c/.github/workflows/deploy_windows.yml#L43
+    - name: CMake build
       run: |
-          vcpkg integrate install
-          vcpkg install --triplet x86-windows --allow-unsupported @vcpkg-config.txt
+        cmake --preset x86-debug
+        cmake --build --preset x86-debug
 
-    - name: Build
-      shell: cmd
+  x64-debug:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        submodules: recursive
+
+    - name: Setup MSVC
+      uses: TheMrMilchmann/setup-msvc-dev@v2
+      with:
+        arch: x64
+
+    # https://learn.microsoft.com/zh-cn/vcpkg/get_started/get-started?pivots=shell-cmd
+    - name: Set Environment Variable
       run: |
-        msbuild ${{ env.SOLUTION_FILE_PATH }} /m /p:Configuration=${{ env.BUILD_CONFIGURATION }},Platform=${{ matrix.TARGET_PLATFORM }}
+
+    - name: Cache vcpkg
+      uses: actions/cache@v3
+      with:
+        path: C:/vcpkg
+        key: ${{ runner.os }}-${{ hashFiles('vcpkg.json') }}
+
+    # https://github.com/dgcor/Diabolika/blob/0d83d46c3e86cb31ffcbc52baa0a81cf1531471c/.github/workflows/deploy_windows.yml#L43
+    - name: CMake build
+      run: |
+        cmake --preset x64-debug
+        cmake --build --preset x64-debug
