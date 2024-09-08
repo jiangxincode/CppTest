@@ -1,16 +1,39 @@
-#include "pch.h"
 #include <windows.h>
 #include <tchar.h>
 #include <stdio.h>
 
-#include "DeviceIoControlDemo.h"
 #include <ntddndis.h>
+#include <winioctl.h>
+
+typedef struct _ZD_CMD_STRUCT
+{
+    union {
+        struct
+        {
+            USHORT  cmd;
+            USHORT  param0;
+            USHORT  param1;
+            USHORT  param2;
+            USHORT  param3;
+        }
+        send;
+        struct
+        {
+            USHORT  status;
+            USHORT  resp0;
+            USHORT  resp1;
+            USHORT  resp2;
+            USHORT  resp3;
+        }
+        rsp;
+    } u;
+} ZD_CMD_STRUCT, * PZD_CMD_STRUCT;
 
 /**
  * DeviceIoControl读取无线网卡mac完整实例
   * DeviceIoControl 函数详细解析: https://blog.csdn.net/li_wen01/article/details/80137566
  */
-void DeviceIoControlTest()
+void main()
 {
     DWORD   dwAccessMode = GENERIC_READ;
     DWORD   dwshareMode = FILE_SHARE_READ;

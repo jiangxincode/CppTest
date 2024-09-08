@@ -1,11 +1,9 @@
-#include "pch.h"
-
 #include <stdio.h>
 #include <math.h>
 
 #define eps (1e-8)
 
-int main0002()
+int main()
 {
     double x;
     scanf_s("%lf",&x);

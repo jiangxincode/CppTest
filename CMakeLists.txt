@@ -16,6 +16,7 @@ project ("VCTest")
 # 包含子项目。
 add_subdirectory ("cmdplus")
 add_subdirectory ("WindowTest")
+add_subdirectory ("ConsoleTest")
 add_subdirectory ("LeafCore")
 add_subdirectory ("SimpleMFC")
 add_subdirectory ("MFCTest")

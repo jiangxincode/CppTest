@@ -1,7 +1,5 @@
 //memory leak check
 
-#include "pch.h"
-
 #define _CRTDBG_MAP_ALLOC
 
 #include <stdlib.h>
@@ -21,7 +19,7 @@ void GetMemory(char *p, int num)
 /**
  * 检测内存泄露的方法，必须在VS中编译运行
  */
-int MemeryLeakCheck()
+int main()
 {
 	_CrtMemCheckpoint( &s1 );
 	char *str = NULL;

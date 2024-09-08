@@ -1,5 +1,3 @@
-#include "pch.h"
-
 #include <iostream>
 #include <stack>
 #include <string>
@@ -134,7 +132,7 @@ double Calculate(string expr)
     }
     return operand.top();
 }
-int main0001()
+int main()
 {
     string str = Convert("(35.67+4.34)*62-2+60/2");
     cout << str << endl;

@@ -1,4 +1,3 @@
-#include "pch.h"
 #include <signal.h>
 #include <stdio.h>
 void sigroutine(int dunno)
@@ -22,7 +21,8 @@ void sigroutine(int dunno)
     }
     return;
 }
-int SignalTest()
+
+int main()
 {
     signal(SIGINT, sigroutine);
     signal(SIGABRT, sigroutine);

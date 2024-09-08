@@ -6,7 +6,6 @@
 // Dword、LPSTR、LPWSTR、LPCSTR、LPCWSTR、LPTSTR、LPCTSTR: https://www.cnblogs.com/goed/archive/2011/11/11/2245702.html
 // Windows Via C／C++ Fifth Edition: Chapter 2: Working with Characters and Strings
 
-#include "pch.h"
 #include <windows.h>
 #include <stdio.h>
 #include <locale.h>
@@ -125,7 +124,7 @@ static int UnicodeToUtf8W(const wchar_t* unicode, char* utf8)
     return WideCharToMultiByte(CP_UTF8, 0, unicode, -1, utf8, len, NULL, NULL);
 }
 
-int test_encoding_convert() {
+int main() {
     // chcp查看或者设置当前控制台的CodePage
     // 936:GBK 65001:UTF8
     const char* tmp = "你好世界";
