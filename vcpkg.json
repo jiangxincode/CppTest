@@ -3,6 +3,7 @@
     "glog",
     "libmysql",
     "freeglut",
-    "openssl"
+    "openssl",
+    "cppunit"
   ]
 }
