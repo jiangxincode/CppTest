@@ -1,9 +1,6 @@
-// diti.cpp : Defines the class behaviors for the application.
-//
-
 #include "stdafx.h"
-#include "diti.h"
-#include "ditiDlg.h"
+#include "Elevator.h"
+#include "ElevatorDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -12,34 +9,28 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 /////////////////////////////////////////////////////////////////////////////
-// CDitiApp
+// CElevatorApp
 
-BEGIN_MESSAGE_MAP(CDitiApp, CWinApp)
-	//{{AFX_MSG_MAP(CDitiApp)
+BEGIN_MESSAGE_MAP(CElevatorApp, CWinApp)
+	//{{AFX_MSG_MAP(CElevatorApp)
 		// NOTE - the ClassWizard will add and remove mapping macros here.
 		//    DO NOT EDIT what you see in these blocks of generated code!
 	//}}AFX_MSG
 	ON_COMMAND(ID_HELP, CWinApp::OnHelp)
 END_MESSAGE_MAP()
 
-/////////////////////////////////////////////////////////////////////////////
-// CDitiApp construction
-
-CDitiApp::CDitiApp()
+CElevatorApp::CElevatorApp()
 {
 	// TODO: add construction code here,
 	// Place all significant initialization in InitInstance
 }
 
 /////////////////////////////////////////////////////////////////////////////
-// The one and only CDitiApp object
+// The one and only CElevatorApp object
 
-CDitiApp theApp;
+CElevatorApp theApp;
 
-/////////////////////////////////////////////////////////////////////////////
-// CDitiApp initialization
-
-BOOL CDitiApp::InitInstance()
+BOOL CElevatorApp::InitInstance()
 {
 	AfxEnableControlContainer();
 
@@ -54,7 +45,7 @@ BOOL CDitiApp::InitInstance()
 	Enable3dControlsStatic();	// Call this when linking to MFC statically
 #endif
 
-	CDitiDlg dlg;
+	CElevatorDlg dlg;
 	m_pMainWnd = &dlg;
 	int nResponse = dlg.DoModal();
 	if (nResponse == IDOK)

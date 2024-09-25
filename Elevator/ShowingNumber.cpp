@@ -1,11 +1,11 @@
-// shuzishow.cpp: implementation of the shuzishow class.
+// ShowingNumber.cpp: implementation of the ShowingNumber class.
 //
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#include "diti.h"
-#include "shuzishow.h"
-#include "ditiDlg.h"
+#include "Elevator.h"
+#include "ShowingNumber.h"
+#include "ElevatorDlg.h"
 #ifdef _DEBUG
 #undef THIS_FILE
 static char THIS_FILE[]=__FILE__;
@@ -16,17 +16,17 @@ static char THIS_FILE[]=__FILE__;
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-shuzishow::shuzishow()
+ShowingNumber::ShowingNumber()
 {
 
 }
 
-shuzishow::~shuzishow()
+ShowingNumber::~ShowingNumber()
 {
 
 }
 
-int shuzishow::change(char a)
+int ShowingNumber::change(char a)
 {
 	switch(a) 
 	{
@@ -51,7 +51,7 @@ int shuzishow::change(char a)
 
 }
 
-void shuzishow::showicon(CString temp)
+void ShowingNumber::showicon(CString temp)
 {
 	m_time=temp;
 	int mynum=m_time.GetLength();
@@ -74,9 +74,9 @@ void shuzishow::showicon(CString temp)
 
 }
 
-void shuzishow::set(CDialog *parent, int tnum, int tx, int ty, int tspace)
+void ShowingNumber::set(CDialog *parent, int tnum, int tx, int ty, int tspace)
 {
-	CDitiDlg *mypar=(CDitiDlg*)parent;
+	CElevatorDlg *mypar=(CElevatorDlg*)parent;
 	for(int i=0;i<num;i++)// 删除以前分配的
 		delete *(m_pictur+i);
 	// 设置各成员变量

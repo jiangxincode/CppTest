@@ -1,11 +1,11 @@
 //{{NO_DEPENDENCIES}}
 // Microsoft Developer Studio generated include file.
-// Used by diti.rc
+// Used by Elevator.rc
 //
 #define IDM_ABOUTBOX                    0x0010
 #define IDD_ABOUTBOX                    100
 #define IDS_ABOUTBOX                    101
-#define IDD_DITI_DIALOG                 102
+#define IDD_ELEVATOR_DIALOG                 102
 #define IDR_MAINFRAME                   128
 #define IDB_1                           129
 #define IDB_anshang                     131

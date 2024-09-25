@@ -50,7 +50,7 @@ BEGIN
     "LANGUAGE 4, 2\r\n"
     "#pragma code_page(936)\r\n"
     "#endif //_WIN32\r\n"
-    "#include ""res\\diti.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""res\\Elevator.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
     "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
     "#endif\r\n"
     "\0"
@@ -66,7 +66,7 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDR_MAINFRAME           ICON                    "res\\diti.ico"
+IDR_MAINFRAME           ICON                    "res\\Elevator.ico"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -84,7 +84,7 @@ BEGIN
     DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
 END
 
-IDD_DITI_DIALOG DIALOGEX 0, 0, 401, 276
+IDD_ELEVATOR_DIALOG DIALOGEX 0, 0, 401, 276
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
 CAPTION "电梯仿真程序"
@@ -153,11 +153,11 @@ BEGIN
     BEGIN
         BLOCK "080404b0"
         BEGIN
-            VALUE "FileDescription", "diti Microsoft 基础类应用程序"
+            VALUE "FileDescription", "Elevator Microsoft 基础类应用程序"
             VALUE "FileVersion", "1, 0, 0, 1"
             VALUE "InternalName", "电梯调度仿真"
             VALUE "LegalCopyright", "版权所有 (C) 2015"
-            VALUE "OriginalFilename", "diti.EXE"
+            VALUE "OriginalFilename", "Elevator.EXE"
             VALUE "ProductName", "电梯调度仿真"
             VALUE "ProductVersion", "1, 0, 0, 1"
         END
@@ -185,7 +185,7 @@ BEGIN
         BOTTOMMARGIN, 48
     END
 
-    IDD_DITI_DIALOG, DIALOG
+    IDD_ELEVATOR_DIALOG, DIALOG
     BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 394
@@ -202,8 +202,8 @@ END
 //
 
 IDB_1                   BITMAP                  "res\\1.bmp"
-IDB_shang               BITMAP                  "res\\shang.bmp"
-IDB_xia                 BITMAP                  "res\\xia.bmp"
+IDB_shang               BITMAP                  "res\\up.bmp"
+IDB_xia                 BITMAP                  "res\\down.bmp"
 IDB_2                   BITMAP                  "res\\2.bmp"
 IDB_3                   BITMAP                  "res\\3.bmp"
 IDB_4                   BITMAP                  "res\\4.bmp"
@@ -225,14 +225,14 @@ IDB_anshang             BITMAP                  "res\\axs.bmp"
 IDB_anxia               BITMAP                  "res\\anxx.bmp"
 IDB_open                BITMAP                  "res\\open.bmp"
 IDB_close               BITMAP                  "res\\close.bmp"
-IDB_BITMAP1             BITMAP                  "res\\loucheng.bmp"
+IDB_BITMAP1             BITMAP                  "res\\floor.bmp"
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // Dialog Info
 //
 
-IDD_DITI_DIALOG DLGINIT
+IDD_ELEVATOR_DIALOG DLGINIT
 BEGIN
     IDC_COMBOjin, 0x403, 2, 0
 0x0031, 
@@ -320,7 +320,7 @@ END
 LANGUAGE 4, 2
 #pragma code_page(936)
 #endif //_WIN32
-#include "res\diti.rc2"  // non-Microsoft Visual C++ edited resources
+#include "res\Elevator.rc2"  // non-Microsoft Visual C++ edited resources
 #include "l.chs\afxres.rc"          // Standard components
 #endif
 

@@ -1,17 +1,14 @@
-// ditiDlg.h : header file
-//
-
-#if !defined(AFX_DITIDLG_H__3F937DD7_0CCC_4BEE_B853_54F0A653B038__INCLUDED_)
-#define AFX_DITIDLG_H__3F937DD7_0CCC_4BEE_B853_54F0A653B038__INCLUDED_
+#if !defined(AFX_ELEVATOR_DLG_H__3F937DD7_0CCC_4BEE_B853_54F0A653B038__INCLUDED_)
+#define AFX_ELEVATOR_DLG_H__3F937DD7_0CCC_4BEE_B853_54F0A653B038__INCLUDED_
 
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000
-#include "shuzishow.h"
+#include "ShowingNumber.h"
 /////////////////////////////////////////////////////////////////////////////
-// CDitiDlg dialog
+// CElevatorDlg dialog
 
-class CDitiDlg : public CDialog
+class CElevatorDlg : public CDialog
 {
 // Construction
 public:
@@ -25,11 +22,11 @@ public:
 	static bool lift_moving;
 	static UINT liftmove(CWnd *pWnd);
 	static UINT OCdoor(CWnd *pWnd);
-	CDitiDlg(CWnd* pParent = NULL);	// standard constructor
+	CElevatorDlg(CWnd* pParent = NULL);	// standard constructor
 	static bool OC_flag;
 	static int doorlocation;
-	shuzishow loucheng;
-	shuzishow  m_zhuangtai;
+	ShowingNumber loucheng;
+	ShowingNumber  m_zhuangtai;
 	static UINT lift_updown;//0Í££¬1ÉÏ£¬2ÏÂ
 	static UINT floorID;
 	static UINT upqueue[8];
@@ -49,15 +46,15 @@ UINT showzt;
 CString loucengshow;
 CString zhuangtaishow;
 // Dialog Data
-	//{{AFX_DATA(CDitiDlg)
-	enum { IDD = IDD_DITI_DIALOG };
+	//{{AFX_DATA(CElevatorDlg)
+	enum { IDD = IDD_ELEVATOR_DIALOG };
 	CComboBox	m_jindianti;
 	CComboBox	m_chudianti;
 	UINT	m_people;
 	//}}AFX_DATA
 
 	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CDitiDlg)
+	//{{AFX_VIRTUAL(CElevatorDlg)
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
 	//}}AFX_VIRTUAL
@@ -67,7 +64,7 @@ protected:
 	HICON m_hIcon;
 
 	// Generated message map functions
-	//{{AFX_MSG(CDitiDlg)
+	//{{AFX_MSG(CElevatorDlg)
 	virtual BOOL OnInitDialog();
 	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
 	afx_msg void OnPaint();
@@ -106,7 +103,7 @@ protected:
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
-#endif // !defined(AFX_DITIDLG_H__3F937DD7_0CCC_4BEE_B853_54F0A653B038__INCLUDED_)
+#endif // !defined(AFX_ELEVATOR_DLG_H__3F937DD7_0CCC_4BEE_B853_54F0A653B038__INCLUDED_)
 
 
 

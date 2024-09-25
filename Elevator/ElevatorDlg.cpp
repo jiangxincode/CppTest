@@ -1,9 +1,9 @@
-// ditiDlg.cpp : implementation file
+// ElevatorDlg.cpp : implementation file
 //
 
 #include "stdafx.h"
-#include "diti.h"
-#include "ditiDlg.h"
+#include "Elevator.h"
+#include "ElevatorDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -11,20 +11,20 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 ///////////////////////////////////////
-int CDitiDlg::doorlocation=90;
-bool CDitiDlg::OC_flag=true;
-UINT CDitiDlg::lift_updown = 0;//停止
-UINT CDitiDlg::floorID = 1;
-bool CDitiDlg::lift_moving = false;//电梯停止
-UINT CDitiDlg::upqueue[8]={0};
-UINT CDitiDlg::downqueue[8]={0};
-UINT CDitiDlg::mudi[8]={0};
-	CWnd* CDitiDlg::pWnddoor;
-	CWnd* CDitiDlg::pWndlift;
-bool CDitiDlg::threadt_f = false;//线程已结束
-bool CDitiDlg::ocf=true;
-CWinThread* CDitiDlg::threadlift;
-HANDLE CDitiDlg::handle;
+int CElevatorDlg::doorlocation=90;
+bool CElevatorDlg::OC_flag=true;
+UINT CElevatorDlg::lift_updown = 0;//停止
+UINT CElevatorDlg::floorID = 1;
+bool CElevatorDlg::lift_moving = false;//电梯停止
+UINT CElevatorDlg::upqueue[8]={0};
+UINT CElevatorDlg::downqueue[8]={0};
+UINT CElevatorDlg::mudi[8]={0};
+	CWnd* CElevatorDlg::pWnddoor;
+	CWnd* CElevatorDlg::pWndlift;
+bool CElevatorDlg::threadt_f = false;//线程已结束
+bool CElevatorDlg::ocf=true;
+CWinThread* CElevatorDlg::threadlift;
+HANDLE CElevatorDlg::handle;
 ////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 // CAboutDlg dialog used for App About
@@ -71,23 +71,20 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialog)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
-/////////////////////////////////////////////////////////////////////////////
-// CDitiDlg dialog
-
-CDitiDlg::CDitiDlg(CWnd* pParent /*=NULL*/)
-	: CDialog(CDitiDlg::IDD, pParent)
+CElevatorDlg::CElevatorDlg(CWnd* pParent /*=NULL*/)
+	: CDialog(CElevatorDlg::IDD, pParent)
 {
-	//{{AFX_DATA_INIT(CDitiDlg)
+	//{{AFX_DATA_INIT(CElevatorDlg)
 	m_people = 0;
 	//}}AFX_DATA_INIT
 	// Note that LoadIcon does not require a subsequent DestroyIcon in Win32
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
 
-void CDitiDlg::DoDataExchange(CDataExchange* pDX)
+void CElevatorDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
-	//{{AFX_DATA_MAP(CDitiDlg)
+	//{{AFX_DATA_MAP(CElevatorDlg)
 	DDX_Control(pDX, IDC_COMBOjin, m_jindianti);
 	DDX_Control(pDX, IDC_COMBOchu, m_chudianti);
 	DDX_Text(pDX, IDC_EDIT1, m_people);
@@ -95,8 +92,8 @@ void CDitiDlg::DoDataExchange(CDataExchange* pDX)
 	//}}AFX_DATA_MAP
 }
 
-BEGIN_MESSAGE_MAP(CDitiDlg, CDialog)
-	//{{AFX_MSG_MAP(CDitiDlg)
+BEGIN_MESSAGE_MAP(CElevatorDlg, CDialog)
+	//{{AFX_MSG_MAP(CElevatorDlg)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
@@ -131,9 +128,9 @@ BEGIN_MESSAGE_MAP(CDitiDlg, CDialog)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
-// CDitiDlg message handlers
+// CElevatorDlg message handlers
 
-BOOL CDitiDlg::OnInitDialog()
+BOOL CElevatorDlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 
@@ -305,7 +302,7 @@ BOOL CDitiDlg::OnInitDialog()
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
-void CDitiDlg::OnSysCommand(UINT nID, LPARAM lParam)
+void CElevatorDlg::OnSysCommand(UINT nID, LPARAM lParam)
 {
 	if ((nID & 0xFFF0) == IDM_ABOUTBOX)
 	{
@@ -322,7 +319,7 @@ void CDitiDlg::OnSysCommand(UINT nID, LPARAM lParam)
 //  to draw the icon.  For MFC applications using the document/view model,
 //  this is automatically done for you by the framework.
 
-void CDitiDlg::OnPaint() 
+void CElevatorDlg::OnPaint() 
 {
 	if (IsIconic())
 	{
@@ -380,12 +377,12 @@ void CDitiDlg::OnPaint()
 
 // The system calls this to obtain the cursor to display while the user drags
 //  the minimized window.
-HCURSOR CDitiDlg::OnQueryDragIcon()
+HCURSOR CElevatorDlg::OnQueryDragIcon()
 {
 	return (HCURSOR) m_hIcon;
 }
 
-void CDitiDlg::On1() 
+void CElevatorDlg::On1() 
 {
 
 /*
@@ -394,7 +391,7 @@ void CDitiDlg::On1()
 	CButton *pButton = (CButton*)GetDlgItem(IDC_1);
 	pButton->SetBitmap(hBitmap);	*/
  
-	CDitiDlg::insertqueue(1,mudi);
+	CElevatorDlg::insertqueue(1,mudi);
 	orderqueue_j(upqueue);
 	
 
@@ -406,7 +403,7 @@ void CDitiDlg::On1()
 
 }
 
-void CDitiDlg::On8() 
+void CElevatorDlg::On8() 
 {
 
 /*
@@ -416,7 +413,7 @@ void CDitiDlg::On8()
 	pButton = (CButton*)GetDlgItem(IDC_8);
 	pButton->SetBitmap(hBitmap);*/
 	// TODO: Add your control notification handler code here
-		CDitiDlg::insertqueue(8,mudi);
+		CElevatorDlg::insertqueue(8,mudi);
 			orderqueue_j(upqueue);
 
 	pWndlift=GetDlgItem(IDC_STATIC)	;	
@@ -429,7 +426,7 @@ void CDitiDlg::On8()
 	}
 }
 
-void CDitiDlg::On2() 
+void CElevatorDlg::On2() 
 {
 
 /*
@@ -439,7 +436,7 @@ void CDitiDlg::On2()
 	pButton = (CButton*)GetDlgItem(IDC_2);
 	pButton->SetBitmap(hBitmap);	// TODO: Add your control notification handler code here*/
 
-	CDitiDlg::insertqueue(2,mudi);
+	CElevatorDlg::insertqueue(2,mudi);
 	orderqueue_j(upqueue);
 	pWndlift=GetDlgItem(IDC_STATIC)	;	
 	pWnddoor=GetDlgItem(IDC_STATIC1);
@@ -451,7 +448,7 @@ void CDitiDlg::On2()
 	}
 }
 
-void CDitiDlg::On3() 
+void CElevatorDlg::On3() 
 {
 
 	/*
@@ -461,7 +458,7 @@ void CDitiDlg::On3()
 		pButton = (CButton*)GetDlgItem(IDC_3);
 		pButton->SetBitmap(hBitmap);*/
 		// TODO: Add your control notification handler code here
-		CDitiDlg::insertqueue(3,mudi);
+		CElevatorDlg::insertqueue(3,mudi);
 	orderqueue_j(upqueue);
 	pWndlift=GetDlgItem(IDC_STATIC)	;	
 	pWnddoor=GetDlgItem(IDC_STATIC1);
@@ -473,7 +470,7 @@ void CDitiDlg::On3()
 	}
 }
 
-void CDitiDlg::On4() 
+void CElevatorDlg::On4() 
 {
 
 	/*
@@ -483,7 +480,7 @@ void CDitiDlg::On4()
 		pButton = (CButton*)GetDlgItem(IDC_4);
 		pButton->SetBitmap(hBitmap);*/
 		// TODO: Add your control notification handler code here
-		CDitiDlg::insertqueue(4,mudi);
+		CElevatorDlg::insertqueue(4,mudi);
 	orderqueue_j(upqueue);
 	pWndlift=GetDlgItem(IDC_STATIC)	;	
 	pWnddoor=GetDlgItem(IDC_STATIC1);
@@ -495,7 +492,7 @@ void CDitiDlg::On4()
 	}
 }
 
-void CDitiDlg::On5() 
+void CElevatorDlg::On5() 
 {
 
 /*
@@ -505,7 +502,7 @@ void CDitiDlg::On5()
 	pButton = (CButton*)GetDlgItem(IDC_5);
 	pButton->SetBitmap(hBitmap);*/
 	// TODO: Add your control notification handler code here
-		CDitiDlg::insertqueue(5,mudi);
+		CElevatorDlg::insertqueue(5,mudi);
 	orderqueue_j(upqueue);
 	pWndlift=GetDlgItem(IDC_STATIC)	;	
 	pWnddoor=GetDlgItem(IDC_STATIC1);
@@ -517,7 +514,7 @@ void CDitiDlg::On5()
 	}
 }
 
-void CDitiDlg::On6() 
+void CElevatorDlg::On6() 
 {
 
 	/*
@@ -527,7 +524,7 @@ void CDitiDlg::On6()
 		pButton = (CButton*)GetDlgItem(IDC_6);
 		pButton->SetBitmap(hBitmap);*/
 		// TODO: Add your control notification handler code here
-		CDitiDlg::insertqueue(6,mudi);
+		CElevatorDlg::insertqueue(6,mudi);
 	orderqueue_j(upqueue);
 	pWndlift=GetDlgItem(IDC_STATIC)	;	
 	pWnddoor=GetDlgItem(IDC_STATIC1);
@@ -539,7 +536,7 @@ void CDitiDlg::On6()
 	}
 }
 
-void CDitiDlg::On7() 
+void CElevatorDlg::On7() 
 {
 
 /*
@@ -549,7 +546,7 @@ void CDitiDlg::On7()
 	pButton = (CButton*)GetDlgItem(IDC_7);
 	pButton->SetBitmap(hBitmap);*/
 	// TODO: Add your control notification handler code here
-		CDitiDlg::insertqueue(7,mudi);
+		CElevatorDlg::insertqueue(7,mudi);
 	orderqueue_j(upqueue);
 	pWndlift=GetDlgItem(IDC_STATIC)	;	
 	pWnddoor=GetDlgItem(IDC_STATIC1);
@@ -562,7 +559,7 @@ void CDitiDlg::On7()
 
 }
 
-void CDitiDlg::On8xia() 
+void CElevatorDlg::On8xia() 
 {
 
 /*
@@ -572,7 +569,7 @@ void CDitiDlg::On8xia()
 	pButton = (CButton*)GetDlgItem(IDC_8xia);
 	pButton->SetBitmap(hBitmap);*/
 
-	CDitiDlg::insertqueue(8,downqueue);
+	CElevatorDlg::insertqueue(8,downqueue);
 			orderqueue_s(downqueue);
 	pWndlift=GetDlgItem(IDC_STATIC)	;	
 	pWnddoor=GetDlgItem(IDC_STATIC1);
@@ -584,7 +581,7 @@ void CDitiDlg::On8xia()
 	}
 }
 
-void CDitiDlg::On7xia() 
+void CElevatorDlg::On7xia() 
 {
 
 /*
@@ -594,8 +591,8 @@ void CDitiDlg::On7xia()
 	pButton = (CButton*)GetDlgItem(IDC_7xia);
 	pButton->SetBitmap(hBitmap);	*/
 // TODO: Add your control notification handler code here
-		CDitiDlg::insertqueue(7,downqueue);
-		CDitiDlg::orderqueue_s(downqueue);
+		CElevatorDlg::insertqueue(7,downqueue);
+		CElevatorDlg::orderqueue_s(downqueue);
 	pWndlift=GetDlgItem(IDC_STATIC)	;	
 	pWnddoor=GetDlgItem(IDC_STATIC1);
 	if(threadt_f==false)
@@ -605,7 +602,7 @@ void CDitiDlg::On7xia()
 	}
 }
 
-void CDitiDlg::On6xia() 
+void CElevatorDlg::On6xia() 
 {
 /*
 	CButton *pButton;
@@ -614,7 +611,7 @@ void CDitiDlg::On6xia()
 	pButton = (CButton*)GetDlgItem(IDC_6xia);
 	pButton->SetBitmap(hBitmap);*/
 	// TODO: Add your control notification handler code here
-		CDitiDlg::insertqueue(6,downqueue);
+		CElevatorDlg::insertqueue(6,downqueue);
 				orderqueue_s(downqueue);
 	pWndlift=GetDlgItem(IDC_STATIC)	;	
 	pWnddoor=GetDlgItem(IDC_STATIC1);
@@ -625,7 +622,7 @@ void CDitiDlg::On6xia()
 	}
 }
 
-void CDitiDlg::On5xia() 
+void CElevatorDlg::On5xia() 
 {
 
 /*
@@ -635,7 +632,7 @@ void CDitiDlg::On5xia()
 	pButton = (CButton*)GetDlgItem(IDC_5xia);
 	pButton->SetBitmap(hBitmap);	*/
 // TODO: Add your control notification handler code here
-		CDitiDlg::insertqueue(5,downqueue);
+		CElevatorDlg::insertqueue(5,downqueue);
 				orderqueue_s(downqueue);
 	pWndlift=GetDlgItem(IDC_STATIC)	;	
 	pWnddoor=GetDlgItem(IDC_STATIC1);
@@ -646,7 +643,7 @@ void CDitiDlg::On5xia()
 	}
 }
 
-void CDitiDlg::On4xia() 
+void CElevatorDlg::On4xia() 
 {
 
 	/*
@@ -656,7 +653,7 @@ void CDitiDlg::On4xia()
 		pButton = (CButton*)GetDlgItem(IDC_4xia);
 		pButton->SetBitmap(hBitmap);*/
 		// TODO: Add your control notification handler code here
-		CDitiDlg::insertqueue(4,downqueue);
+		CElevatorDlg::insertqueue(4,downqueue);
 				orderqueue_s(downqueue);
 	pWndlift=GetDlgItem(IDC_STATIC)	;	
 	pWnddoor=GetDlgItem(IDC_STATIC1);
@@ -667,7 +664,7 @@ void CDitiDlg::On4xia()
 	}
 }
 
-void CDitiDlg::On3xia() 
+void CElevatorDlg::On3xia() 
 {
 
 	/*
@@ -677,8 +674,8 @@ void CDitiDlg::On3xia()
 		pButton = (CButton*)GetDlgItem(IDC_3xia);
 		pButton->SetBitmap(hBitmap);*/
 		// TODO: Add your control notification handler code here
-	CDitiDlg::insertqueue(3,downqueue);
-	CDitiDlg::orderqueue_s(downqueue);
+	CElevatorDlg::insertqueue(3,downqueue);
+	CElevatorDlg::orderqueue_s(downqueue);
 	pWndlift=GetDlgItem(IDC_STATIC)	;	
 	pWnddoor=GetDlgItem(IDC_STATIC1);
 	if(threadt_f==false)
@@ -688,7 +685,7 @@ void CDitiDlg::On3xia()
 	}
 }
 
-void CDitiDlg::On2xia() 
+void CElevatorDlg::On2xia() 
 {
 
 	/*
@@ -698,7 +695,7 @@ void CDitiDlg::On2xia()
 		pButton = (CButton*)GetDlgItem(IDC_2xia);
 		pButton->SetBitmap(hBitmap);	// TODO: Add your control notification handler code here*/
 	
-		CDitiDlg::insertqueue(2,downqueue);
+		CElevatorDlg::insertqueue(2,downqueue);
 		orderqueue_s(downqueue);
 	pWndlift=GetDlgItem(IDC_STATIC)	;	
 	pWnddoor=GetDlgItem(IDC_STATIC1);
@@ -709,7 +706,7 @@ void CDitiDlg::On2xia()
 	}
 }
 
-void CDitiDlg::On7shang() 
+void CElevatorDlg::On7shang() 
 {
 
 /*
@@ -719,7 +716,7 @@ void CDitiDlg::On7shang()
 	pButton = (CButton*)GetDlgItem(IDC_7shang);
 	pButton->SetBitmap(hBitmap);*/
 	// TODO: Add your control notification handler code here
-		CDitiDlg::insertqueue(7,upqueue);
+		CElevatorDlg::insertqueue(7,upqueue);
 		orderqueue_j(upqueue);
 		
 	pWndlift=GetDlgItem(IDC_STATIC)	;	
@@ -731,7 +728,7 @@ void CDitiDlg::On7shang()
 	}
 }
 
-void CDitiDlg::On6shang() 
+void CElevatorDlg::On6shang() 
 {
 /*
 
@@ -741,7 +738,7 @@ void CDitiDlg::On6shang()
 	pButton = (CButton*)GetDlgItem(IDC_6shang);
 	pButton->SetBitmap(hBitmap);	*/
 // TODO: Add your control notification handler code here
-			CDitiDlg::insertqueue(6,upqueue);
+			CElevatorDlg::insertqueue(6,upqueue);
 			orderqueue_j(upqueue);
 			
 	pWndlift=GetDlgItem(IDC_STATIC)	;	
@@ -753,7 +750,7 @@ void CDitiDlg::On6shang()
 	}
 }
 
-void CDitiDlg::On5shang() 
+void CElevatorDlg::On5shang() 
 {
 
 	/*
@@ -763,7 +760,7 @@ void CDitiDlg::On5shang()
 		pButton = (CButton*)GetDlgItem(IDC_5shang);
 		pButton->SetBitmap(hBitmap);*/
 		// TODO: Add your control notification handler code here
-			CDitiDlg::insertqueue(5,upqueue);
+			CElevatorDlg::insertqueue(5,upqueue);
 			orderqueue_j(upqueue);
 			
 	pWndlift=GetDlgItem(IDC_STATIC)	;	
@@ -775,7 +772,7 @@ void CDitiDlg::On5shang()
 	}
 }
 
-void CDitiDlg::On4shang() 
+void CElevatorDlg::On4shang() 
 {
 
 /*
@@ -785,7 +782,7 @@ void CDitiDlg::On4shang()
 	pButton = (CButton*)GetDlgItem(IDC_4shang);
 	pButton->SetBitmap(hBitmap);*/
 	// TODO: Add your control notification handler code here
-			CDitiDlg::insertqueue(4,upqueue);
+			CElevatorDlg::insertqueue(4,upqueue);
 			orderqueue_j(upqueue);
 			
 	pWndlift=GetDlgItem(IDC_STATIC)	;	
@@ -797,7 +794,7 @@ void CDitiDlg::On4shang()
 	}
 }
 
-void CDitiDlg::On3shang() 
+void CElevatorDlg::On3shang() 
 {
 
 	/*
@@ -818,7 +815,7 @@ void CDitiDlg::On3shang()
 	}
 }
 
-void CDitiDlg::On2shang() 
+void CElevatorDlg::On2shang() 
 {
 
 /*
@@ -828,7 +825,7 @@ void CDitiDlg::On2shang()
 	pButton = (CButton*)GetDlgItem(IDC_2shang);
 	pButton->SetBitmap(hBitmap);	*/
 
-	CDitiDlg::insertqueue(2,upqueue);
+	CElevatorDlg::insertqueue(2,upqueue);
 	orderqueue_j(upqueue);
 	
 	pWndlift=GetDlgItem(IDC_STATIC)	;	
@@ -842,7 +839,7 @@ void CDitiDlg::On2shang()
 	}
 }
 
-void CDitiDlg::On1shang() 
+void CElevatorDlg::On1shang() 
 {
 
 /*
@@ -852,7 +849,7 @@ void CDitiDlg::On1shang()
 		pButton = (CButton*)GetDlgItem(IDC_1shang);
 		pButton->SetBitmap(hBitmap);*/
 		
-	CDitiDlg::insertqueue(1,upqueue);
+	CElevatorDlg::insertqueue(1,upqueue);
 	orderqueue_j(upqueue);
 		pWndlift=GetDlgItem(IDC_STATIC)	;	
 	pWnddoor=GetDlgItem(IDC_STATIC1);
@@ -860,7 +857,7 @@ void CDitiDlg::On1shang()
 
 }
 
-void CDitiDlg::Onopen() 
+void CElevatorDlg::Onopen() 
 {
    	if(lift_moving)
 	{
@@ -887,7 +884,7 @@ void CDitiDlg::Onopen()
 	}
 }
 
-void CDitiDlg::Onclose() 
+void CElevatorDlg::Onclose() 
 {
 
 
@@ -920,7 +917,7 @@ void CDitiDlg::Onclose()
 
 }
 
-UINT CDitiDlg::OCdoor(CWnd *pWnd)//开关们线程函数
+UINT CElevatorDlg::OCdoor(CWnd *pWnd)//开关们线程函数
 {
 	//		threadt_f=true;
 		CClientDC pControlDC(pWnd);
@@ -964,7 +961,7 @@ UINT CDitiDlg::OCdoor(CWnd *pWnd)//开关们线程函数
 
 }
 
-UINT CDitiDlg::liftmove(CWnd *pWnd)//电梯移动线程函数
+UINT CElevatorDlg::liftmove(CWnd *pWnd)//电梯移动线程函数
 {
 
 	while (upqueue[0]!=0||downqueue[0]!=0||mudi[0]!=0)
@@ -1161,7 +1158,7 @@ UINT CDitiDlg::liftmove(CWnd *pWnd)//电梯移动线程函数
 	return 0;
 }
 
-void CDitiDlg::insertqueue(UINT m, UINT queue[])
+void CElevatorDlg::insertqueue(UINT m, UINT queue[])
 {
 	for(int i=0;i<=7;i++)
 	{
@@ -1183,7 +1180,7 @@ void CDitiDlg::insertqueue(UINT m, UINT queue[])
 
 }
 
-void CDitiDlg::deletequeue(UINT m, UINT queue[])
+void CElevatorDlg::deletequeue(UINT m, UINT queue[])
 {
 		for(int i=0;i<=7;i++)
 	{
@@ -1198,7 +1195,7 @@ void CDitiDlg::deletequeue(UINT m, UINT queue[])
 
 }
 
-void CDitiDlg::orderqueue_s(UINT queue[])
+void CElevatorDlg::orderqueue_s(UINT queue[])
 {
 	int que[8]={0};
 	int pos;
@@ -1249,7 +1246,7 @@ void CDitiDlg::orderqueue_s(UINT queue[])
 
 }
 
-void CDitiDlg::orderqueue_j(UINT queue[])
+void CElevatorDlg::orderqueue_j(UINT queue[])
 {
 	int t=0;
 	int que[8]={0,0,0,0,0,0,0,0};
@@ -1270,7 +1267,7 @@ void CDitiDlg::orderqueue_j(UINT queue[])
 
 }
 
-void CDitiDlg::liftup(UINT &floor,CWnd *pWnd)
+void CElevatorDlg::liftup(UINT &floor,CWnd *pWnd)
 {
 	CClientDC pControlDC(pWnd);	
 	lift_moving=true;
@@ -1299,7 +1296,7 @@ void CDitiDlg::liftup(UINT &floor,CWnd *pWnd)
 
 }
 
-void CDitiDlg::liftdown(UINT &floor,CWnd *pWnd)
+void CElevatorDlg::liftdown(UINT &floor,CWnd *pWnd)
 {
 	CClientDC pControlDC(pWnd);	
 	lift_moving=true;
@@ -1328,7 +1325,7 @@ void CDitiDlg::liftdown(UINT &floor,CWnd *pWnd)
 
 }
 
-void CDitiDlg::OnSelchangeCOMBOchu() 
+void CElevatorDlg::OnSelchangeCOMBOchu() 
 {
 	// TODO: Add your control notification handler code here
 	int nindex=m_chudianti.GetCurSel();
@@ -1424,7 +1421,7 @@ void CDitiDlg::OnSelchangeCOMBOchu()
 	
 }
 
-void CDitiDlg::OnSelchangeCOMBOjin() 
+void CElevatorDlg::OnSelchangeCOMBOjin() 
 {
 	// TODO: Add your control notification handler code here
 	int nindex=m_jindianti.GetCurSel();
@@ -1521,7 +1518,7 @@ void CDitiDlg::OnSelchangeCOMBOjin()
 	
 }
 
-void CDitiDlg::OnTimer(UINT_PTR nIDEvent)
+void CElevatorDlg::OnTimer(UINT_PTR nIDEvent)
 {
 	// TODO: Add your message handler code here and/or call default
 

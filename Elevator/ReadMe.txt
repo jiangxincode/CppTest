@@ -1,46 +1,35 @@
 ========================================================================
-       MICROSOFT FOUNDATION CLASS LIBRARY : diti
+       MICROSOFT FOUNDATION CLASS LIBRARY : Elevator
 ========================================================================
 
 
-AppWizard has created this diti application for you.  This application
+AppWizard has created this Elevator application for you.  This application
 not only demonstrates the basics of using the Microsoft Foundation classes
 but is also a starting point for writing your application.
 
 This file contains a summary of what you will find in each of the files that
-make up your diti application.
+make up your Elevator application.
 
-diti.dsp
-    This file (the project file) contains information at the project level and
-    is used to build a single project or subproject. Other users can share the
-    project (.dsp) file, but they should export the makefiles locally.
-
-diti.h
+Elevator.h
     This is the main header file for the application.  It includes other
     project specific headers (including Resource.h) and declares the
-    CDitiApp application class.
+    CElevatorApp application class.
 
-diti.cpp
+Elevator.cpp
     This is the main application source file that contains the application
-    class CDitiApp.
+    class CElevatorApp.
 
-diti.rc
+Elevator.rc
     This is a listing of all of the Microsoft Windows resources that the
     program uses.  It includes the icons, bitmaps, and cursors that are stored
     in the RES subdirectory.  This file can be directly edited in Microsoft
 	Visual C++.
 
-diti.clw
-    This file contains information used by ClassWizard to edit existing
-    classes or add new classes.  ClassWizard also uses this file to store
-    information needed to create and edit message maps and dialog data
-    maps and to create prototype member functions.
-
-res\diti.ico
+res\Elevator.ico
     This is an icon file, which is used as the application's icon.  This
-    icon is included by the main resource file diti.rc.
+    icon is included by the main resource file Elevator.rc.
 
-res\diti.rc2
+res\Elevator.rc2
     This file contains resources that are not edited by Microsoft 
 	Visual C++.  You should place all resources not editable by
 	the resource editor in this file.
@@ -52,10 +41,10 @@ res\diti.rc2
 
 AppWizard creates one dialog class:
 
-ditiDlg.h, ditiDlg.cpp - the dialog
-    These files contain your CDitiDlg class.  This class defines
+ElevatorDlg.h, ElevatorDlg.cpp - the dialog
+    These files contain your CElevatorDlg class.  This class defines
     the behavior of your application's main dialog.  The dialog's
-    template is in diti.rc, which can be edited in Microsoft
+    template is in Elevator.rc, which can be edited in Microsoft
 	Visual C++.
 
 
@@ -64,7 +53,7 @@ Other standard files:
 
 StdAfx.h, StdAfx.cpp
     These files are used to build a precompiled header (PCH) file
-    named diti.pch and a precompiled types file named StdAfx.obj.
+    named Elevator.pch and a precompiled types file named StdAfx.obj.
 
 Resource.h
     This is the standard header file, which defines new resource IDs.
