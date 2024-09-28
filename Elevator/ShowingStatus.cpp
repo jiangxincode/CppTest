@@ -2,11 +2,6 @@
 #include "Elevator.h"
 #include "ShowingStatus.h"
 #include "ElevatorDlg.h"
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[] = __FILE__;
-#define new DEBUG_NEW
-#endif
 
 ShowingStatus::ShowingStatus()
 {
@@ -31,14 +26,12 @@ int ShowingStatus::getIconIndex(char a)
     case '8':
     case '9':return a - '0';
         break;
-    case '<':return 10;//shang
+    case '<':return 10;
         break;
-    case '>':return 11;//xia
-
+    case '>':return 11;
         break;
     default: return 0;
     }
-
 }
 
 void ShowingStatus::showIcon(CString iconType)
@@ -76,5 +69,4 @@ void ShowingStatus::set(CDialog* parent, int tnum, int tx, int ty, int tspace)
         pictureList[k]->Create(NULL, SS_ICON, aa1, mypar, 1);// 创建静态图标控件
         pictureList[k]->ShowWindow(true);
     }
-
 }

@@ -5,11 +5,6 @@
 #include "Elevator.h"
 #include "ElevatorDlg.h"
 
-#ifdef _DEBUG
-#define new DEBUG_NEW
-#undef THIS_FILE
-static char THIS_FILE[] = __FILE__;
-#endif
 ///////////////////////////////////////
 int CElevatorDlg::doorlocation = 90;
 bool CElevatorDlg::OC_flag = true;
@@ -212,72 +207,72 @@ BOOL CElevatorDlg::OnInitDialog()
     pButton = (CButton*)GetDlgItem(IDC_8);
     pButton->SetBitmap(hBitmap);
     ////////////////////////////////////////////////
-    Bitmap.LoadBitmap(IDB_xia);
+    Bitmap.LoadBitmap(IDB_DOWN);
     hBitmap = (HBITMAP)Bitmap.Detach();
     pButton = (CButton*)GetDlgItem(IDC_DOWN_8);
     pButton->SetBitmap(hBitmap);
     //////////////////////////////////////////////////////	
-    Bitmap.LoadBitmap(IDB_xia);
+    Bitmap.LoadBitmap(IDB_DOWN);
     hBitmap = (HBITMAP)Bitmap.Detach();
     pButton = (CButton*)GetDlgItem(IDC_DOWN_7);
     pButton->SetBitmap(hBitmap);
     /////////////////////////////////////////////////////////
-    Bitmap.LoadBitmap(IDB_xia);
+    Bitmap.LoadBitmap(IDB_DOWN);
     hBitmap = (HBITMAP)Bitmap.Detach();
     pButton = (CButton*)GetDlgItem(IDC_DOWN_6);
     pButton->SetBitmap(hBitmap);
     ///////////////////////////////////////////////////
-    Bitmap.LoadBitmap(IDB_xia);
+    Bitmap.LoadBitmap(IDB_DOWN);
     hBitmap = (HBITMAP)Bitmap.Detach();
     pButton = (CButton*)GetDlgItem(IDC_DOWN_5);
     pButton->SetBitmap(hBitmap);
     ///////////////////////////////////////////////////
-    Bitmap.LoadBitmap(IDB_xia);
+    Bitmap.LoadBitmap(IDB_DOWN);
     hBitmap = (HBITMAP)Bitmap.Detach();
     pButton = (CButton*)GetDlgItem(IDC_DOWN_4);
     pButton->SetBitmap(hBitmap);
     //////////////////////////////////////////////
-    Bitmap.LoadBitmap(IDB_xia);
+    Bitmap.LoadBitmap(IDB_DOWN);
     hBitmap = (HBITMAP)Bitmap.Detach();
     pButton = (CButton*)GetDlgItem(IDC_DOWN_3);
     pButton->SetBitmap(hBitmap);
     ///////////////////////////////////////////////////
-    Bitmap.LoadBitmap(IDB_xia);
+    Bitmap.LoadBitmap(IDB_DOWN);
     hBitmap = (HBITMAP)Bitmap.Detach();
     pButton = (CButton*)GetDlgItem(IDC_DOWN_2);
     pButton->SetBitmap(hBitmap);
     //////////////////////////////////////////////////////
-    Bitmap.LoadBitmap(IDB_shang);
+    Bitmap.LoadBitmap(IDB_UP);
     hBitmap = (HBITMAP)Bitmap.Detach();
     pButton = (CButton*)GetDlgItem(IDC_UP_1);
     pButton->SetBitmap(hBitmap);
     //////////////////////////////////////////////////////
-    Bitmap.LoadBitmap(IDB_shang);
+    Bitmap.LoadBitmap(IDB_UP);
     hBitmap = (HBITMAP)Bitmap.Detach();
     pButton = (CButton*)GetDlgItem(IDC_UP_2);
     pButton->SetBitmap(hBitmap);
     //////////////////////////////////////////////////////
-    Bitmap.LoadBitmap(IDB_shang);
+    Bitmap.LoadBitmap(IDB_UP);
     hBitmap = (HBITMAP)Bitmap.Detach();
     pButton = (CButton*)GetDlgItem(IDC_UP_3);
     pButton->SetBitmap(hBitmap);
     //////////////////////////////////////////////////////
-    Bitmap.LoadBitmap(IDB_shang);
+    Bitmap.LoadBitmap(IDB_UP);
     hBitmap = (HBITMAP)Bitmap.Detach();
     pButton = (CButton*)GetDlgItem(IDC_UP_4);
     pButton->SetBitmap(hBitmap);
     //////////////////////////////////////////////////////
-    Bitmap.LoadBitmap(IDB_shang);
+    Bitmap.LoadBitmap(IDB_UP);
     hBitmap = (HBITMAP)Bitmap.Detach();
     pButton = (CButton*)GetDlgItem(IDC_UP_5);
     pButton->SetBitmap(hBitmap);
     //////////////////////////////////////////////////////
-    Bitmap.LoadBitmap(IDB_shang);
+    Bitmap.LoadBitmap(IDB_UP);
     hBitmap = (HBITMAP)Bitmap.Detach();
     pButton = (CButton*)GetDlgItem(IDC_UP_6);
     pButton->SetBitmap(hBitmap);
     //////////////////////////////////////////////////////
-    Bitmap.LoadBitmap(IDB_shang);
+    Bitmap.LoadBitmap(IDB_UP);
     hBitmap = (HBITMAP)Bitmap.Detach();
     pButton = (CButton*)GetDlgItem(IDC_UP_7);
     pButton->SetBitmap(hBitmap);

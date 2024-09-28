@@ -105,24 +105,3 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_ELEVATOR_DLG_H__3F937DD7_0CCC_4BEE_B853_54F0A653B038__INCLUDED_)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
