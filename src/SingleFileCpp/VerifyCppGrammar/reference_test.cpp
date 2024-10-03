@@ -1,7 +1,5 @@
 ﻿#include <iostream>
 
-using namespace std;
-
 void testReference1(int &r);
 void testReference2();
 
@@ -19,10 +17,10 @@ void testReference2() {
     int &r = i;
     int *p = &i;
     testReference1(i);
-    cout << "i = " << i << ", r = " << r << ", *p = " << *p << endl;
+    std::cout << "i = " << i << ", r = " << r << ", *p = " << *p << std::endl;
     testReference1(r);
-    cout << "i = " << i << ", r = " << r << ", *p = " << *p << endl;
+    std::cout << "i = " << i << ", r = " << r << ", *p = " << *p << std::endl;
     testReference1(*p);
-    cout << "i = " << i << ", r = " << r << ", *p = " << *p << endl;
+    std::cout << "i = " << i << ", r = " << r << ", *p = " << *p << std::endl;
 }
 

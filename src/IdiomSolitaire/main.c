@@ -6,19 +6,19 @@
 
 #include "getopt.h"
 
-#define MAX_LENGTH 30 //×î´ó³ÉÓï³¤¶È£¬×¢ÒâÒ»¸öºº×ÖÔÚGBK±àÂëÖÐÕ¼Á½¸ö×Ö·û
-#define MAX_LINE_LENTHT 1024 //Ã¿ÐÐÎÄ±¾µÄ×î´ó³¤¶È
-#define MAX_NUM 30000 //×î´ó¿ÉÖ§³ÖµÄ´ÊµäÌõÄ¿Êý
-#define FILENAME_MAX_LENGTH 30 //×î³¤ÎÄ¼þÃû³¤¶È
-#define DEFAULT_OUTPUT_NUM 30 //Ä¬ÈÏÃ¿´ÎÊä³ö³ÉÓïÌõÄ¿Êý
-#define DEFAULT_FILENAME "idiom.txt" //Ä¬ÈÏ´ÊµäÎÄ¼þÃû
+#define MAX_LENGTH 30 //æœ€å¤§æˆè¯­é•¿åº¦ï¼Œæ³¨æ„ä¸€ä¸ªæ±‰å­—åœ¨GBKç¼–ç ä¸­å ä¸¤ä¸ªå­—ç¬¦
+#define MAX_LINE_LENTHT 1024 //æ¯è¡Œæ–‡æœ¬çš„æœ€å¤§é•¿åº¦
+#define MAX_NUM 30000 //æœ€å¤§å¯æ”¯æŒçš„è¯å…¸æ¡ç›®æ•°
+#define FILENAME_MAX_LENGTH 30 //æœ€é•¿æ–‡ä»¶åé•¿åº¦
+#define DEFAULT_OUTPUT_NUM 30 //é»˜è®¤æ¯æ¬¡è¾“å‡ºæˆè¯­æ¡ç›®æ•°
+#define DEFAULT_FILENAME "idiom.txt" //é»˜è®¤è¯å…¸æ–‡ä»¶å
 
 void show_help();
 
 struct list
 {
     char data[MAX_LENGTH];
-    bool is_visited; //±ê¼ÇÊÇ·ñÒÑ¾­±éÀú
+    bool is_visited; //æ ‡è®°æ˜¯å¦å·²ç»éåŽ†
     struct list *next;
 };
 
@@ -56,26 +56,26 @@ int main(int argc, char* argv[])
     {
         switch(c)
         {
-        case 'f': //ÉèÖÃ´ÊµäÎÄ¼þ
+        case 'f': //è®¾ç½®è¯å…¸æ–‡ä»¶
             strcpy(filename, optarg);
             break;
 
-        case 'n': //Ã¿´ÎÊä³ö³ÉÓïÌõÄ¿Êý
+        case 'n': //æ¯æ¬¡è¾“å‡ºæˆè¯­æ¡ç›®æ•°
             show_item_num = atoi(optarg);
             break;
 
-        case 'l': //ÊÇ·ñÔÊÐíÑ­»·
+        case 'l': //æ˜¯å¦å…è®¸å¾ªçŽ¯
             is_loop = true;
             break;
-        case 'e': //ÊÇ·ñÐèÒª¶à´ÎÊä³ö
+        case 'e': //æ˜¯å¦éœ€è¦å¤šæ¬¡è¾“å‡º
             is_every = true;
             break;
 
-        case 'h': //ÏÔÊ¾°ï×éÎÄ¼þ
+        case 'h': //æ˜¾ç¤ºå¸®ç»„æ–‡ä»¶
             show_help();
             exit(0);
 
-        case 'c': //Éè¶¨³õÊ¼ºº×Ö
+        case 'c': //è®¾å®šåˆå§‹æ±‰å­—
             strncpy(init_char, optarg, 4);
             break;
 
@@ -99,7 +99,7 @@ int main(int argc, char* argv[])
             break;
         }
 
-        idiom_array[i][strlen(idiom_array[i])-1] = '\0'; //É¾³ýµô»»ÐÐ·û
+        idiom_array[i][strlen(idiom_array[i])-1] = '\0'; //åˆ é™¤æŽ‰æ¢è¡Œç¬¦
         count++;
     }
 
@@ -107,7 +107,7 @@ int main(int argc, char* argv[])
     ptr=create_list(idiom_array,count);
     if(init_char[0] == '\0')
     {
-        printf("ÇëÊäÈëÒ»¸ö³ÉÓï\n");
+        printf("è¯·è¾“å…¥ä¸€ä¸ªæˆè¯­\n");
         fflush(stdout);
         scanf("%s",input);
     }
@@ -174,7 +174,7 @@ void connect(char *input,char *output, struct list* head, int num, bool is_loop)
 
         if(strcmp(tmp_head,tmp_tail)==0)
         {
-            if((!is_loop) && (p->is_visited)) //Èç¹û²»ÔÊÐíÑ­»·£¬ÇÒ¸Ã½ÚµãÒÑ¾­±éÀú¹ý
+            if((!is_loop) && (p->is_visited)) //å¦‚æžœä¸å…è®¸å¾ªçŽ¯ï¼Œä¸”è¯¥èŠ‚ç‚¹å·²ç»éåŽ†è¿‡
             {
                 p=p->next;
             }

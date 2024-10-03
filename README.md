@@ -38,7 +38,7 @@ main1xxy.c C语言程序设计, 2012 实验教材为《C语言程序设计教程
 
 ### src/IdiomSolitaire
 
-A toy for idiom soliteaire.
+A toy for idiom solitaire.
 
 ### src/others
 
