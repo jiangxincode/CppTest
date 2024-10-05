@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include <iomanip>
 
-#include "../../src/common/binary_search_tree.h"
+#include "../main/binary_search_tree.h"
 #include "gtest/gtest.h"
 
 using namespace std;

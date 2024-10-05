@@ -1,4 +1,4 @@
-#include "../../src/common/factorial.h"
+#include "../main/factorial.h"
 #include "gtest/gtest.h"
 
 TEST(FactorialTest, factorial_test)

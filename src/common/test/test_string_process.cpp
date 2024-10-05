@@ -1,4 +1,4 @@
-#include "../../src/common/string_process.h"
+#include "../main/string_process.h"
 #include "gtest/gtest.h"
 #include <stdlib.h>
 

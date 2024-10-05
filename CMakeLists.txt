@@ -13,146 +13,22 @@ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
 elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
     add_definitions(-D_CRT_SECURE_NO_WARNINGS)
     add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
-    add_compile_options("/Zc:strictStrings-")
+    add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/Zc:strictStrings->")
 endif()
 
 set(CMAKE_BUILD_TYPE "Debug")
 
-include_directories(include)
-
-add_executable(SumCode
-        src/SumCode/main.cpp
-        src/SumCode/libjiangxin.cpp
-        src/SumCode/function.cpp
-        src/SumCode/function.h
-        src/SumCode/jiangxin.h)
-
-add_executable(IdiomSolitaire
-        src/IdiomSolitaire/main.c
-        src/IdiomSolitaire/tailor.h
-        src/IdiomSolitaire/getopt.h
-        src/IdiomSolitaire/getopt.c)
-
-function(add_subdir_executables subdir)
-    file(GLOB sources "${subdir}/*.cpp")
-    foreach(source ${sources})
-        get_filename_component(program ${source} NAME_WE)
-        add_executable(${program} ${source})
-        IF (CMAKE_SYSTEM_NAME MATCHES "Linux")
-            target_link_libraries(${program} m)
-        ENDIF (CMAKE_SYSTEM_NAME MATCHES "Linux")
-    endforeach()
-endfunction()
-file(GLOB subdirectories "src/SingleFileCpp/*")
-foreach(subdir ${subdirectories})
-    get_filename_component(subdir_filename "${subdir}" NAME)
-    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/SingleFileCpp/${subdir_filename})
-    add_subdir_executables(${subdir})
-    unset(CMAKE_RUNTIME_OUTPUT_DIRECTORY)
-endforeach()
-
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/CTest)
-file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/CTest src/CTest/*.c)
-foreach (source IN LISTS sources)
-    string(REPLACE ".c" "" program ${source})
-    add_executable(${program} ${CMAKE_SOURCE_DIR}/src/CTest/${source})
-    IF (CMAKE_SYSTEM_NAME MATCHES "Linux")
-        target_link_libraries(${program} m)
-    ENDIF (CMAKE_SYSTEM_NAME MATCHES "Linux")
-endforeach (source)
-unset(CMAKE_RUNTIME_OUTPUT_DIRECTORY)
-
-IF (CMAKE_SYSTEM_NAME MATCHES "Linux")
-    file(GLOB sources RELATIVE ${CMAKE_SOURCE_DIR}/src/LCTest src/LCTest/*.c)
-    foreach (source IN LISTS sources)
-        string(REPLACE ".c" "" program ${source})
-        add_executable(${program} ${CMAKE_SOURCE_DIR}/src/LCTest/${source})
-        target_link_libraries(${program} m)
-    endforeach (source)
-
-    find_package(PkgConfig REQUIRED)
-    pkg_check_modules(GTK3 REQUIRED IMPORTED_TARGET gtk+-3.0)
-    if (GTK3_FOUND)
-        add_executable(ImageViewer
-                src/ImageViewer/main.c
-                src/ImageViewer/fileselect.c
-                src/ImageViewer/fileselect.h
-                src/ImageViewer/imageviewerutility.c
-                src/ImageViewer/imageviewerutility.h
-                src/ImageViewer/ImageWindow.c
-                src/ImageViewer/ImageWindow.h
-                src/ImageViewer/mainwindow.c
-                src/ImageViewer/mainwindow.h
-                src/ImageViewer/mainwindowhandlers.h)
-        target_link_libraries(ImageViewer PkgConfig::GTK3)
-        target_compile_options(ImageViewer PRIVATE -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED)
-    endif ()
-ELSEIF (CMAKE_SYSTEM_NAME MATCHES "Windows")
-    add_executable(FlappyBird
-            src/SingleFileCppWindows/FlappyBird.cpp)
-ELSEIF (CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
-    MESSAGE(STATUS "current platform: FreeBSD")
-ELSE ()
-    MESSAGE(STATUS "other platform: ${CMAKE_SYSTEM_NAME}")
-ENDIF (CMAKE_SYSTEM_NAME MATCHES "Linux")
-
-# GTEST BEGIN
-include(FetchContent)
-FetchContent_Declare(
-        googletest
-        URL https://github.com/google/googletest/archive/refs/tags/v1.14.0.zip
-        DOWNLOAD_EXTRACT_TIMESTAMP true
-)
-# For Windows: Prevent overriding the parent project's compiler/linker settings
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-FetchContent_MakeAvailable(googletest)
-# GTEST END
-
-enable_testing()
-
-add_executable(GTestMain
-        src/GTestMain.cpp
-        #[[src/common/binary_search_tree.cpp
-        src/common/binary_search_tree.h
-        src/common/binary_tree.cpp
-        src/common/binary_tree.h
-        test/common/test_binary_search_tree.cpp
-        test/common/test_binary_tree.cpp]]
-        src/common/factorial.cpp
-        src/common/factorial.h
-        #[[src/common/heap.cpp
-        src/common/heap.h
-        test/common/test_heap.cpp
-        src/common/single_list.cpp]]
-        src/common/LinkedSet.h
-        src/common/miscellaneous.cpp
-        src/common/miscellaneous.h
-        src/common/sort.cpp
-        src/common/sort.h
-        src/common/string_process.cpp
-        src/common/string_process.h
-        src/common/circ_list.h
-        src/common/contacts.cpp
-        src/common/hash.hpp
-        #[[src/common/josephus.cpp
-        src/common/linear_list.h]]
-        src/common/skip_list.h
-        src/common/spherical_distance.cpp
-        src/common/static_list.h
-        #[[src/common/union_find_set.cpp
-        src/common/union_find_set.h]]
-        test/common/test_factorial.cpp
-        test/common/test_linked_set.cpp
-        test/common/test_miscellaneous.cpp
-        test/common/test_sort.cpp
-        test/common/test_string_process.cpp)
-
-target_link_libraries(GTestMain
-        GTest::gtest_main)
-
-IF (CMAKE_SYSTEM_NAME MATCHES "Linux")
-    target_link_libraries(GTestMain pthread)
-ENDIF (CMAKE_SYSTEM_NAME MATCHES "Linux")
-
-include(GoogleTest)
-gtest_discover_tests(GTestMain)
+add_subdirectory ("src/common")
+add_subdirectory ("src/SingleFileCpp/codevs")
+add_subdirectory ("src/SingleFileCpp/hwoj")
+add_subdirectory ("src/SingleFileCpp/luogu")
+add_subdirectory ("src/SingleFileCpp/nowcoder")
+add_subdirectory ("src/SingleFileCpp/openjudge")
+add_subdirectory ("src/SingleFileCpp/others")
+add_subdirectory ("src/SingleFileCpp/VerifyCppGrammar")
+add_subdirectory ("src/CTest")
+add_subdirectory("src/SumCode")
+add_subdirectory("src/IdiomSolitaire")
+add_subdirectory("src/SingleFileCppWindows")
+add_subdirectory("src/LCTest")
+add_subdirectory("src/ImageViewer")

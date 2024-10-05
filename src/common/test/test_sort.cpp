@@ -1,4 +1,4 @@
-#include "../../src/common/sort.h"
+#include "../main/sort.h"
 #include "gtest/gtest.h"
 #include <stdlib.h>
 

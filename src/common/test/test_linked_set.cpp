@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include "gtest/gtest.h"
-#include "../../src/common/LinkedSet.h"
+#include "../main/LinkedSet.h"
 
 
 TEST(LinkedSetTest, search_test)

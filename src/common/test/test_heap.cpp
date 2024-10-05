@@ -1,4 +1,4 @@
-﻿#include "../../src/common/heap.h"
+﻿#include "../main/heap.h"
 #include "gtest/gtest.h"
 
 bool compmin(int a,int b)
