@@ -6,16 +6,16 @@
 char jx_getchar(short option)
 {
     char ch,temp;
-	fflush(stdin); //清空输入流
+	fflush(stdin);
     ch = getchar();
-    if(ch == '\n') //直接输入回车，返回'\n'
+    if(ch == '\n')
         return '\n';
-    else if((temp=getchar())!='\n') //输入一些字符（不止一个），然后回车，清除所有字符后返回'\n'
+    else if((temp=getchar())!='\n')
     {
         while((temp=getchar())!='\n' && temp!=EOF);
         return '\n';
     }
-    else //输入一个字符，软后回车，无须清除，大小写转换后直接返回
+    else
     {
         switch(option)
         {

@@ -93,7 +93,7 @@ vector<string> ReadDir(string dirName)
     WIN32_FIND_DATA findData;
     vector<string> ret;
 
-    if( !GetFullPathNameA(dirName.c_str(), BufferLength, fullName, &fileName ) ) //将相对目录转化为绝对目录
+    if( !GetFullPathNameA(dirName.c_str(), BufferLength, fullName, &fileName ) ) //Translate the relative directory to the absolute directory.
         return ret;
 
     cout << "\nDirectory - " << fullName << endl;;

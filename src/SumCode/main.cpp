@@ -25,7 +25,7 @@ int main(int argc , char* argv[])
         }
         else if(argc == 2)
         {
-            argc = 1; //当循环一次之后，不再需要该分支
+            argc = 1; //After one loop, the branch is no longer needed.
             strVec = ReadDir(argv[1]);
         }
         cout << "the size of strVec is " << strVec.size() << endl;
