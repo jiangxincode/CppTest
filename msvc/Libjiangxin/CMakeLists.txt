@@ -1,0 +1,1 @@
+﻿add_library(libjiangxin STATIC Libjiangxin.cpp Libjiangxin.h)

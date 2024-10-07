@@ -57,6 +57,12 @@ jobs:
         with:
           arch: x64
 
+      - name: Cache vcpkg
+        uses: actions/cache@v3
+        with:
+          path: C:/vcpkg
+          key: ${{ runner.os }}-${{ hashFiles('vcpkg.json') }}
+
       - name: CMake Configure Build And Test
         run: |
           cmake --preset ${{ matrix.preset }}

@@ -1,0 +1,318 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Elevator.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\Elevator.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于"
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "电梯调度仿真程序 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "CopyRight@2015 _ Aloys",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_ELEVATOR_DIALOG DIALOGEX 0, 0, 401, 276
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "电梯仿真程序"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    LTEXT           "",IDC_STATIC,29,46,81,186
+    PUSHBUTTON      "",IDC_DOWN_8,153,48,22,21,BS_BITMAP
+    PUSHBUTTON      "",IDC_UP_7,125,75,22,21,BS_BITMAP
+    PUSHBUTTON      "",IDC_DOWN_7,153,75,22,21,BS_BITMAP
+    PUSHBUTTON      "",IDC_UP_6,125,102,22,21,BS_BITMAP
+    PUSHBUTTON      "",IDC_DOWN_6,153,102,22,21,BS_BITMAP
+    PUSHBUTTON      "",IDC_UP_5,125,129,22,21,BS_BITMAP
+    PUSHBUTTON      "",IDC_DOWN_5,153,129,22,21,BS_BITMAP
+    PUSHBUTTON      "",IDC_UP_4,125,156,22,21,BS_BITMAP
+    PUSHBUTTON      "",IDC_DOWN_4,153,156,22,21,BS_BITMAP
+    PUSHBUTTON      "",IDC_UP_3,125,183,22,21,BS_BITMAP
+    PUSHBUTTON      "",IDC_DOWN_3,153,183,22,21,BS_BITMAP
+    PUSHBUTTON      "",IDC_UP_2,125,210,22,21,BS_BITMAP
+    PUSHBUTTON      "",IDC_DOWN_2,153,210,22,21,BS_BITMAP
+    PUSHBUTTON      "",IDC_UP_1,125,237,22,21,BS_BITMAP
+    LTEXT           "",IDC_STATIC1,220,30,128,69
+    PUSHBUTTON      "",IDC_1,220,123,22,21,BS_BITMAP
+    PUSHBUTTON      "",IDC_2,258,123,22,21,BS_BITMAP
+    PUSHBUTTON      "",IDC_3,296,123,22,21,BS_BITMAP
+    PUSHBUTTON      "",IDC_4,334,123,22,21,BS_BITMAP
+    PUSHBUTTON      "",IDC_5,220,151,22,21,BS_BITMAP
+    PUSHBUTTON      "",IDC_6,258,151,22,21,BS_BITMAP
+    PUSHBUTTON      "",IDC_7,296,151,22,21,BS_BITMAP
+    PUSHBUTTON      "",IDC_8,334,151,22,21,BS_BITMAP
+    PUSHBUTTON      "Button10",IDC_open,220,176,59,20,BS_BITMAP
+    PUSHBUTTON      "",IDC_close,296,176,59,20,BS_BITMAP
+    COMBOBOX        IDC_COMBO_PEOPLE_IN,278,203,47,98,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "进入电梯",IDC_STATIC3,231,207,42,12
+    LTEXT           "人",IDC_STATIC4,335,205,9,8
+    LTEXT           "走出电梯",IDC_STATIC5,232,225,33,8
+    COMBOBOX        IDC_COMBO_PEOPLE_OUT,277,223,48,88,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "人",IDC_STATIC6,335,225,9,8
+    LTEXT           "电梯中现有",IDC_STATIC8,231,243,41,8
+    EDITTEXT        IDC_EDIT1,277,242,46,12,ES_AUTOHSCROLL
+    LTEXT           "人",IDC_STATIC7,334,243,9,8
+    GROUPBOX        "电梯内部",IDC_STATIC,207,109,156,91
+    GROUPBOX        "电梯门",IDC_STATIC,207,18,156,89
+    GROUPBOX        "电梯外部",IDC_STATIC,7,26,172,243
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "FileDescription", "Elevator Microsoft 基础类应用程序"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "电梯调度仿真"
+            VALUE "LegalCopyright", "版权所有 (C) 2015"
+            VALUE "OriginalFilename", "Elevator.EXE"
+            VALUE "ProductName", "电梯调度仿真"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_ELEVATOR_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 394
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 269
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_UP               BITMAP                  "res\\up.bmp"
+IDB_DOWN                 BITMAP                  "res\\down.bmp"
+IDB_1                   BITMAP                  "res\\1.bmp"
+IDB_2                   BITMAP                  "res\\2.bmp"
+IDB_3                   BITMAP                  "res\\3.bmp"
+IDB_4                   BITMAP                  "res\\4.bmp"
+IDB_5                   BITMAP                  "res\\5.bmp"
+IDB_6                   BITMAP                  "res\\6.bmp"
+IDB_7                   BITMAP                  "res\\7.bmp"
+IDB_8                   BITMAP                  "res\\8.bmp"
+IDB_9                   BITMAP                  "res\\9.bmp"
+IDB_open                BITMAP                  "res\\open.bmp"
+IDB_close               BITMAP                  "res\\close.bmp"
+IDB_BITMAP1             BITMAP                  "res\\floor.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_ELEVATOR_DIALOG DLGINIT
+BEGIN
+    IDC_COMBO_PEOPLE_IN, 0x403, 2, 0
+0x0031, 
+    IDC_COMBO_PEOPLE_IN, 0x403, 2, 0
+0x0032, 
+    IDC_COMBO_PEOPLE_IN, 0x403, 2, 0
+0x0033, 
+    IDC_COMBO_PEOPLE_IN, 0x403, 2, 0
+0x0034, 
+    IDC_COMBO_PEOPLE_IN, 0x403, 2, 0
+0x0035, 
+    IDC_COMBO_PEOPLE_IN, 0x403, 2, 0
+0x0036, 
+    IDC_COMBO_PEOPLE_IN, 0x403, 2, 0
+0x0037, 
+    IDC_COMBO_PEOPLE_IN, 0x403, 2, 0
+0x0038, 
+    IDC_COMBO_PEOPLE_IN, 0x403, 2, 0
+0x0039, 
+    IDC_COMBO_PEOPLE_IN, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_COMBO_PEOPLE_IN, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_COMBO_PEOPLE_IN, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_COMBO_PEOPLE_IN, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_COMBO_PEOPLE_OUT, 0x403, 2, 0
+0x0031, 
+    IDC_COMBO_PEOPLE_OUT, 0x403, 2, 0
+0x0032, 
+    IDC_COMBO_PEOPLE_OUT, 0x403, 2, 0
+0x0033, 
+    IDC_COMBO_PEOPLE_OUT, 0x403, 2, 0
+0x0034, 
+    IDC_COMBO_PEOPLE_OUT, 0x403, 2, 0
+0x0035, 
+    IDC_COMBO_PEOPLE_OUT, 0x403, 2, 0
+0x0036, 
+    IDC_COMBO_PEOPLE_OUT, 0x403, 2, 0
+0x0037, 
+    IDC_COMBO_PEOPLE_OUT, 0x403, 2, 0
+0x0038, 
+    IDC_COMBO_PEOPLE_OUT, 0x403, 2, 0
+0x0039, 
+    IDC_COMBO_PEOPLE_OUT, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_COMBO_PEOPLE_OUT, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_COMBO_PEOPLE_OUT, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_COMBO_PEOPLE_OUT, 0x403, 3, 0
+0x3331, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于(&A)..."
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\Elevator.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

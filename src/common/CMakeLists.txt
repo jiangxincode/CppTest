@@ -49,6 +49,10 @@ add_executable(GTestMain
         test/test_sort.cpp
         test/test_string_process.cpp)
 
+target_compile_options(GTestMain
+    PRIVATE "$<$<CXX_COMPILER_ID:MSVC>:/utf-8>"
+)
+
 target_link_libraries(GTestMain
         GTest::gtest_main)
 

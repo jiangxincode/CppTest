@@ -1,0 +1,14 @@
+CREATE TRIGGER t_tea_user_del
+ON TEACHER_INFO
+FOR DELETE
+AS
+BEGIN
+	DECLARE @userid CHAR(20)
+	DECLARE @userpassword CHAR(20)
+
+	SELECT @userid=TEA_ID,@userpassword=TEA_ID
+	FROM DELETED
+
+	DELETE USERS
+	WHERE USER_ID=@userid
+END
