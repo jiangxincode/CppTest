@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        build_type: [ "Debug", "Release" ]
+        preset: [ "linux-x64-debug", "linux-x64-release" ]
 
     steps:
       - uses: actions/checkout@v3
@@ -20,52 +20,45 @@ jobs:
       - name: Install GTK
         run: sudo apt-get install -y libgtk-3-dev
 
-      - name: Configure CMake
-        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
-
-      - name: Build
-        run: cmake --build ${{github.workspace}}/build --config ${{ matrix.build_type }}
-
-      - name: Test
-        working-directory: ${{github.workspace}}/build
-        run: ctest -C ${{ matrix.build_type }}
+      - name: CMake Configure Build And Test
+        run: |
+          cmake --preset ${{ matrix.preset }}
+          cmake --build --preset ${{ matrix.preset }}
+          ctest --preset ${{ matrix.preset }}
 
   build-macos:
     runs-on: macos-latest
 
     strategy:
       matrix:
-        build_type: [ "Debug", "Release" ]
+        preset: [ "macos-x64-debug", "macos-x64-release" ]
 
     steps:
       - uses: actions/checkout@v3
 
-      - name: Configure CMake
-        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
-
-      - name: Build
-        run: cmake --build ${{github.workspace}}/build --config ${{ matrix.build_type }}
-
-      - name: Test
-        working-directory: ${{github.workspace}}/build
-        run: ctest -C ${{ matrix.build_type }}
+      - name: CMake Configure Build And Test
+        run: |
+          cmake --preset ${{ matrix.preset }}
+          cmake --build --preset ${{ matrix.preset }}
+          ctest --preset ${{ matrix.preset }}
 
   build-windows:
     runs-on: windows-latest
 
     strategy:
       matrix:
-        build_type: [ "Debug", "Release" ]
+        preset: [ "windows-x64-debug", "windows-x64-release" ]
 
     steps:
       - uses: actions/checkout@v3
 
-      - name: Configure CMake
-        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+      - name: Setup MSVC
+        uses: TheMrMilchmann/setup-msvc-dev@v2
+        with:
+          arch: x64
 
-      - name: Build
-        run: cmake --build ${{github.workspace}}/build --config ${{ matrix.build_type }}
-
-      - name: Test
-        working-directory: ${{github.workspace}}/build
-        run: ctest -C ${{ matrix.build_type }}
+      - name: CMake Configure Build And Test
+        run: |
+          cmake --preset ${{ matrix.preset }}
+          cmake --build --preset ${{ matrix.preset }}
+          ctest --preset ${{ matrix.preset }}

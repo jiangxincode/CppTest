@@ -16,8 +16,6 @@ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
     add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/Zc:strictStrings->")
 endif()
 
-set(CMAKE_BUILD_TYPE "Debug")
-
 add_subdirectory ("src/common")
 add_subdirectory ("src/SingleFileCpp/codevs")
 add_subdirectory ("src/SingleFileCpp/hwoj")
