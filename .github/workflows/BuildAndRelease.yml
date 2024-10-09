@@ -60,8 +60,9 @@ jobs:
       - name: Cache vcpkg
         uses: actions/cache@v3
         with:
-          path: C:/vcpkg
-          key: ${{ runner.os }}-${{ hashFiles('vcpkg.json') }}
+          path: |
+            ${{ github.workspace }}/out/build/${{ matrix.preset }}/vcpkg_installed
+          key: "${{ runner.os }}-${{ matrix.preset }}-${{ hashFiles('vcpkg.json') }}"
 
       - name: CMake Configure Build And Test
         run: |
