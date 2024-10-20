@@ -1,7 +1,10 @@
 {
     "dependencies": [
         "glog",
-        "libmysql",
+        {
+            "name": "libmysql",
+            "platform": "windows & !mingw"
+        },
         "freeglut",
         "openssl",
         "cppunit"
