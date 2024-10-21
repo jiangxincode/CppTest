@@ -1,13 +1,24 @@
 {
+    "builtin-baseline": "86fba13068f1e8111e7d885de2aef11378435139",
+    "version": "0.0.1",
+    "name": "cpptest",
     "dependencies": [
-        "glog",
+        {
+            "name": "glog"
+        },
         {
             "name": "libmysql",
-            "platform": "windows & !mingw"
+            "platform": "!android & !mingw & !uwp & !xbox"
         },
-        "freeglut",
-        "openssl",
-        "cppunit"
-    ],
-    "builtin-baseline": "3508985146f1b1d248c67ead13f8f54be5b4f5da"
+        {
+            "name": "freeglut"
+        },
+        {
+            "name": "openssl"
+        },
+        {
+            "name": "cppunit",
+            "platform": "!mingw"
+        }
+    ]
 }
