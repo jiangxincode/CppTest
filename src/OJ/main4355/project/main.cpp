@@ -6,7 +6,6 @@
 #include <cppunit/TestResultCollector.h>
 #include <cppunit/TestRunner.h>
 #include <string>
-#include <windows.h>
 
 using namespace std;
 

@@ -1,7 +1,7 @@
 #include <cppunit/config/SourcePrefix.h>
 #include "CExampleTest.h"
-#include <stdlib.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstring>
 #include "../source/PhoneBookProcess.h"
 
 // ×¢²á²âÊÔÌ×µ½CppUnit

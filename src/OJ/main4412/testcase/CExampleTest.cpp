@@ -1,8 +1,9 @@
 #include <cppunit/config/SourcePrefix.h>
 #include "CExampleTest.h"
-#include <stdlib.h>
+#include <cstdlib>
+#include <cstring>
 
-#include "..\source\CellularDistrict.h"
+#include "../source/CellularDistrict.h"
 
 
 // ×¢²á²âÊÔÌ×µ½CppUnit

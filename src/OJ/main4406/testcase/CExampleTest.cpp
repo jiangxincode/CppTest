@@ -1,6 +1,7 @@
 #include <cppunit/config/SourcePrefix.h>
 #include "CExampleTest.h"
-#include <stdlib.h>
+#include <cstdlib>
+#include <cstring>
 
 extern int SwiCreate(unsigned int swiId, unsigned int prio, void (* proc)(void));
 extern int SwiActivate(unsigned int swiId);

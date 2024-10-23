@@ -4,17 +4,20 @@
     "name": "cpptest",
     "dependencies": [
         {
-            "name": "glog"
+            "name": "glog",
+            "platform": "windows"
         },
         {
             "name": "libmysql",
             "platform": "!android & !mingw & !uwp & !xbox"
         },
         {
-            "name": "freeglut"
+            "name": "freeglut",
+            "platform": "windows"
         },
         {
-            "name": "openssl"
+            "name": "openssl",
+            "platform": "windows"
         },
         {
             "name": "cppunit",

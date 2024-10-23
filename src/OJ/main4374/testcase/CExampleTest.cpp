@@ -1,6 +1,6 @@
 #include <cppunit/config/SourcePrefix.h>
 #include "CExampleTest.h"
-#include <stdlib.h>
+#include <cstdlib>
 
 #define MAXSIZE 50
 

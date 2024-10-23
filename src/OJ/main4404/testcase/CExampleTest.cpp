@@ -1,35 +1,35 @@
 #include <cppunit/config/SourcePrefix.h>
 #include "CExampleTest.h"
-#include <stdlib.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstring>
 #include "../source/CommonDef.h"
 #include "../source/OJ.h"
 
 using namespace std;
 
 
-// 注册测试套到CppUnit
+// 注锟斤拷锟斤拷锟斤拷椎锟紺ppUnit
 CPPUNIT_TEST_SUITE_REGISTRATION( CExampleTest );
 
-// 测试用例实现示例
+// 锟斤拷锟斤拷锟斤拷锟斤拷实锟斤拷示锟斤拷
 
-// SetUp: 在每个用例前执行一次
+// SetUp: 锟斤拷每锟斤拷锟斤拷锟斤拷前执锟斤拷一锟斤拷
 
-// 测试用例实现示例
+// 锟斤拷锟斤拷锟斤拷锟斤拷实锟斤拷示锟斤拷
 
-// SetUp: 在每个用例前执行一次
+// SetUp: 锟斤拷每锟斤拷锟斤拷锟斤拷前执锟斤拷一锟斤拷
 void CExampleTest::setUp()
 {
 
 }
 
-// tearDown: 在每个用例后执行一次
+// tearDown: 锟斤拷每锟斤拷锟斤拷锟斤拷锟斤拷执锟斤拷一锟斤拷
 void CExampleTest::tearDown()
 {
 
 }
 
-//测试增加任务(正常增加）
+//锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷(锟斤拷锟斤拷锟斤拷锟接ｏ拷
 void CExampleTest::TestCase01()
 {
 	initialize();
@@ -50,7 +50,7 @@ void CExampleTest::TestCase01()
 
 
 
-//测试运行任务（正常运行）
+//锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟叫ｏ拷
 void CExampleTest::TestCase02()
 {
 	initialize();
@@ -74,7 +74,7 @@ void CExampleTest::TestCase02()
 
 
 
-//测试删除任务（正常删除）
+//锟斤拷锟斤拷删锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷删锟斤拷锟斤拷
 void CExampleTest::TestCase03()
 {
 	initialize();
@@ -101,7 +101,7 @@ void CExampleTest::TestCase03()
 
 
 
-//测试清除一类任务（正常清除）
+//锟斤拷锟斤拷锟斤拷锟揭伙拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
 void CExampleTest::TestCase04()
 {
 	initialize();
