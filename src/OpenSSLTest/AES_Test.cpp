@@ -48,7 +48,7 @@ int main(int argc, char* argv[])
 	char dstStringTemp[MSG_LEN];
 	memset((char*)srcStringTemp, 0, MSG_LEN);
 	memset((char*)dstStringTemp, 0, MSG_LEN);
-	strcpy_s((char*)srcStringTemp, MSG_LEN, "hello world");
+	strcpy((char*)srcStringTemp, "hello world");
 	printf("%s\n", srcStringTemp);
 
 	char key[AES_BLOCK_SIZE];

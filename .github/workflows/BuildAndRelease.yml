@@ -17,8 +17,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install GTK
-        run: sudo apt-get install -y libgtk-3-dev
+      - name: Install some dependencies
+        run: |
+          sudo apt-get install -y libgtk-3-dev
+          # https://github.com/freeglut/freeglut
+          sudo apt-get install libgl-dev libglu1-mesa-dev libx11-dev libxrandr-dev libxi-dev
 
       - name: Cache vcpkg
         uses: actions/cache@v3
@@ -50,12 +53,13 @@ jobs:
           ./bootstrap-vcpkg.sh
           ./vcpkg integrate install
 
-      - name: Install GTK
-        run: brew install gtk+3 libffi
-
-      # https://github.com/microsoft/vcpkg/discussions/30813
-      - name: Install autoconf for cppunit build
-        run: brew install libtool automake
+      - name: Install some dependencies
+        run: |
+          brew install gtk+3 libffi
+          # cppunit need autoconf: https://github.com/microsoft/vcpkg/discussions/30813
+          brew install libtool automake
+          # https://github.com/freeglut/freeglut
+          brew install xquartz libx11 libxi libxrandr libxxf86vm mesa
 
       - name: Cache vcpkg
         uses: actions/cache@v3

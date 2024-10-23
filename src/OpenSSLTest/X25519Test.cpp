@@ -10,7 +10,7 @@ std::string byte_2_hex(unsigned char* pSrc, size_t length)
     char ch[3];
     for (size_t i = 0; i < length; ++i)
     {
-        sprintf_s(ch, 3, "%02x", pSrc[i]);
+        sprintf(ch,  "%02x", pSrc[i]);
         output += ch;
     }
     return output;
@@ -20,7 +20,7 @@ int main(int argc, char* argv[]) {
 
     const size_t X25519_KEY_LENGTH = 32;
 
-    // Éú³ÉÎÒ·½ÃÜÔ¿¶Ô
+    // ï¿½ï¿½ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½
     EVP_PKEY* ours = EVP_PKEY_new();
     if (ours == nullptr) {
         std::cerr << "ours is nullptr" << std::endl;
@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
     }
     EVP_PKEY_CTX_free(our_key_ctx);
 
-    // ÎÒ·½ÃÜÔ¿¶Ô×ª»»³Éunsigned charÊý×é
+    // ï¿½Ò·ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½unsigned charï¿½ï¿½ï¿½ï¿½
     size_t ours_public_key_len = X25519_KEY_LENGTH;
     unsigned char* ours_public_key = new unsigned char[ours_public_key_len];
     EVP_PKEY_get_raw_public_key(ours, ours_public_key, &ours_public_key_len);
@@ -53,7 +53,7 @@ int main(int argc, char* argv[]) {
     printf("ours_private_key: %s\n", byte_2_hex(ours_private_key, ours_private_key_len).c_str());
 
 
-    // Éú³É¶Ô·½ÃÜÔ¿¶Ô
+    // ï¿½ï¿½ï¿½É¶Ô·ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½
     EVP_PKEY* theirs = EVP_PKEY_new();
     if (theirs == nullptr) {
         std::cerr << "theirs is nullptr" << std::endl;
@@ -74,7 +74,7 @@ int main(int argc, char* argv[]) {
     }
     EVP_PKEY_CTX_free(their_key_ctx);
 
-    // ¶Ô·½ÃÜÔ¿¶Ô×ª»»³Éunsigned charÊý×é
+    // ï¿½Ô·ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½unsigned charï¿½ï¿½ï¿½ï¿½
     size_t theirs_public_key_len = X25519_KEY_LENGTH;
     unsigned char* theirs_public_key = new unsigned char[theirs_public_key_len];
     EVP_PKEY_get_raw_public_key(theirs, theirs_public_key, &theirs_public_key_len);

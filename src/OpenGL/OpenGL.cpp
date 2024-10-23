@@ -1,7 +1,6 @@
 ﻿#include <stdlib.h>
 #include <GL/glut.h>
 
-
 void background(void)
 {
     glClearColor(0.0, 0.0, 0.0, 0.0);//设置背景颜色为黑色

@@ -47,7 +47,7 @@ int main(int argc, char* argv[])
 	memset(key, 0, AES_BLOCK_SIZE);
 	memset((unsigned char*)iv, 0, AES_BLOCK_SIZE);
 
-	strcpy_s((char*)plainText, MSG_LEN, "hello world ssss");
+	strcpy((char*)plainText, "hello world ssss");
 
 	AES_KEY aes;
 	if (AES_set_encrypt_key((unsigned char*)key, AES_BLOCK_SIZE * 8, &aes) < 0)

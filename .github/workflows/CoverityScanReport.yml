@@ -11,8 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install GTK
-        run: sudo apt-get install -y libgtk-3-dev
+      - name: Install some dependencies
+        run: |
+          sudo apt-get install -y libgtk-3-dev
+          # https://github.com/freeglut/freeglut
+          sudo apt-get install libgl-dev libglu1-mesa-dev libx11-dev libxrandr-dev libxi-dev
 
       - name: Cache vcpkg
         uses: actions/cache@v3
