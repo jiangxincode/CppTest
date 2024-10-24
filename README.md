@@ -82,29 +82,6 @@ C语言课程设计案例精编
 	* float/double 20位宽
 	* char *(%s) 根据实际内存容量设置
 
-## 将要进行的改进
-
-* CMake project can't open .rc file: <https://developercommunity.visualstudio.com/t/cmake-project-cant-open-rc-file/172331>
-
-C++ 
-* //problem:表示存在问题
-* //unsolved: 表示未解决问题
-* //warning: 表示需要注意问题
-
-* 继续使用cppcheck修复潜藏bug
-* 完善公共类
-* 利用doxygen产生的文档整理各种命名
-* 逐步去除std带来的混乱
-
-C
-* 增加注释
-* 规范化代码结构
-* 综合链表问题
-* 综合主要数据结构
-* 合并常用函数
-* 减少全局变量和宏定义数量
-* 各种检测工具check
-
 ## Contributing
 
 1. Fork it
