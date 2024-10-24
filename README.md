@@ -5,13 +5,21 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest&metric=alert_status)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest)
 [![Doxygen Docs](https://codedocs.xyz/jiangxincode/CppTest.svg)](https://codedocs.xyz/jiangxincode/CppTest/)
 
+## 整体架构
+
+一些相互独立的C++/C小程序或者验证程序，通过CMake组织，大部分都可以同时运行在Windows/Linux/Mac平台。各个程序相互独立，方便拆解。
+
 ## 文件说明
 
 ### src/OpenGL
 
-通过Demo学习OpenGL+FreeGlut(Windows/Linux/Mac)
+通过Demo学习OpenGL+FreeGlut
 
 ![](https://raw.githubusercontent.com/jiangxincode/PicGo/master/20241024144017.png)
+
+### src/OpenSSLTest
+
+通过Demo学习OpenSSL中的加解密算法
 
 ### msvc/Elevator
 
@@ -44,7 +52,7 @@ main1xxy.c C语言程序设计, 2012 实验教材为《C语言程序设计教程
 
 ### src/IdiomSolitaire
 
-A toy for idiom solitaire.
+一个成语接龙小程序
 
 ### src/others
 
@@ -54,14 +62,6 @@ A toy for idiom solitaire.
 	* 部分常用数据结构总结到特定文件
 * 2000-5000:一些小程序
 	* main2565.cpp: swap data in array, but can not introduce new array
-
-### test
-
-单元测试文件
-
-### data
-
-测试输入文件以及其他需要长期存储的文件
 
 ### CLAH
 

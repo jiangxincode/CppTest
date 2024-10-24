@@ -15,3 +15,8 @@ add_definitions(-D_AFXDLL)
 target_link_options(BthCxn PRIVATE /ENTRY:wmainCRTStartup)
 
 target_link_libraries(BthCxn Ws2_32)
+
+target_compile_options(BthCxn
+        PRIVATE
+        "$<$<CXX_COMPILER_ID:MSVC>:/Zc:strictStrings->"
+)

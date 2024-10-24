@@ -12,4 +12,11 @@ add_definitions(-D_UNICODE)
 add_definitions(-DUNICODE)
 add_definitions(-D_AFXDLL)
 
-target_link_options(BlueToothExc PRIVATE /ENTRY:wWinMainCRTStartup)
+target_link_options(BlueToothExc
+        PRIVATE
+        /ENTRY:wWinMainCRTStartup
+)
+target_compile_options(BlueToothExc
+        PRIVATE
+        "$<$<CXX_COMPILER_ID:MSVC>:/Zc:strictStrings->"
+)

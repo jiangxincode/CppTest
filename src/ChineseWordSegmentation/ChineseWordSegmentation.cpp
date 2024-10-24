@@ -6,7 +6,7 @@ ChineseWordSegmentation
 程序实现:第一个中文字用hash表进行查找，之后进行森林的搜索
 ***********************************************/
 
-#include <stdio.h>
+#include <cstdio>
 #include <cstdlib>
 
 #define MAXVALUE 65536

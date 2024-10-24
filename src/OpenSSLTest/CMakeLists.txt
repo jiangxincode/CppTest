@@ -1,4 +1,4 @@
-﻿find_package(OpenSSL  REQUIRED)
+﻿find_package(OpenSSL REQUIRED)
 
 add_executable(AES_Test AES_Test.cpp)
 add_executable(AES_cbc_Test AES_cbc_Test.cpp)
