@@ -7,6 +7,18 @@
 
 ## 文件说明
 
+### src/OpenGL
+
+通过Demo学习OpenGL+FreeGlut(Windows/Linux/Mac)
+
+![](https://raw.githubusercontent.com/jiangxincode/PicGo/master/20241024144017.png)
+
+### msvc/Elevator
+
+一个基于C++和MFC的电梯调度演示程序
+
+![](https://raw.githubusercontent.com/jiangxincode/PicGo/master/20240928113329.png)
+
 ### src/LCTest
 
 Some exercises for C in Linux environment
@@ -58,12 +70,6 @@ C语言算法速查手册
 ### CLCDC
 
 C语言课程设计案例精编
-
-### Elevator
-
-一个基于C++和MFC的电梯调度演示程序
-
-![](https://raw.githubusercontent.com/jiangxincode/PicGo/master/VSTest_20240928113329.png)
 
 ### 其它
 
