@@ -63,10 +63,6 @@ main1xxy.c C语言程序设计, 2012 实验教材为《C语言程序设计教程
 * 2000-5000:一些小程序
 	* main2565.cpp: swap data in array, but can not introduce new array
 
-### CLAH
-
-C语言算法速查手册
-
 ### 其它
 
 * jiangxin.c常用自定义函数
