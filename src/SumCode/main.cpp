@@ -1,5 +1,4 @@
 #include "function.h"
-#include "jiangxin.h"
 
 using namespace std;
 
@@ -9,7 +8,6 @@ int main(int argc , char* argv[])
     vector<string> strVec;
     long int sum,temp;
 
-    jx_PrintAuthorInfo();
     char ch;
 
     do
@@ -42,7 +40,5 @@ int main(int argc , char* argv[])
         cout << "Continue/Exit(C/E): ";
 		ch=jx_getchar((short)1);
     }while(ch != 'e');
-
-    jx_PrintBye();
     return 0;
 }

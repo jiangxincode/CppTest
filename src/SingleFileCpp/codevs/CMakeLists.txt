@@ -1,3 +1,5 @@
+# Is it better to specify source files with GLOB or each file individually in CMake?
+# https://stackoverflow.com/questions/1027247/is-it-better-to-specify-source-files-with-glob-or-each-file-individually-in-cmak
 file(GLOB sources "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
 foreach(source ${sources})
     get_filename_component(program ${source} NAME_WE)

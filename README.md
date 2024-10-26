@@ -9,6 +9,12 @@
 
 一些相互独立的C++/C小程序或者验证程序，通过CMake组织，大部分都可以同时运行在Windows/Linux/Mac平台。各个程序相互独立，方便拆解。
 
+通过本项目你可以学习到如下内容：
+
+* 如何通过cmake组织工程
+* 如何使用vcpkg
+* 如何利用Github Actions进行自动化CI构建和代码质量检查
+
 ## 文件说明
 
 ### src/OpenGL
@@ -21,7 +27,7 @@
 
 通过Demo学习OpenSSL中的加解密算法
 
-### msvc/Elevator
+### src/msvc/Elevator
 
 一个基于C++和MFC的电梯调度演示程序
 
@@ -34,6 +40,14 @@ Some exercises for C in Linux environment
 ### src/ImageViewer
 
 An image viewer. 基于`GTK+`。
+
+### src/SumCode
+
+计算某个项目的代码行数
+
+* Version 0.01: 完成基本结构，能够实现基本操作。
+* Version 0.02: 实现目录更改功能，但还有一些bug待消除。
+* Version 0.03: 实现特定文件类型的统计，优化了代码结构。
 
 ### src/CTest
 
@@ -62,11 +76,6 @@ main1xxy.c C语言程序设计, 2012 实验教材为《C语言程序设计教程
 	* 部分常用数据结构总结到特定文件
 * 2000-5000:一些小程序
 	* main2565.cpp: swap data in array, but can not introduce new array
-
-### 其它
-
-* jiangxin.c常用自定义函数
-* jiangxin.h常用自定义函数的声明
 
 * 对于scanf的说明
 	* 32位int 11位宽(-2147483648~+2147483647)
