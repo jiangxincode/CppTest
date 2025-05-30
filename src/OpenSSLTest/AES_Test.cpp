@@ -14,7 +14,7 @@ int aes_encrypt(char* in, char* key, char* out)//, int olen)
 		return 0;
 	}
 	int len = strlen(in), en_len = 0;
-	while (en_len < len)//ÊäÈëÊä³ö×Ö·û´®¹»³¤£¬²¢ÇÒÊÇAES_BLOCK_SIZEµÄÕûÊı±¶£¬ĞèÒªÑÏ¸ñÏŞÖÆ
+	while (en_len < len)//è¾“å…¥è¾“å‡ºå­—ç¬¦ä¸²å¤Ÿé•¿ï¼Œå¹¶ä¸”æ˜¯AES_BLOCK_SIZEçš„æ•´æ•°å€ï¼Œéœ€è¦ä¸¥æ ¼é™åˆ¶
 	{
 		AES_encrypt((unsigned char*)in, (unsigned char*)out, &aes);
 		in += AES_BLOCK_SIZE;
@@ -52,7 +52,7 @@ int main(int argc, char* argv[])
 	printf("%s\n", srcStringTemp);
 
 	char key[AES_BLOCK_SIZE];
-	for (int i = 0; i < AES_BLOCK_SIZE; i++)//¿É×ÔÓÉÉèÖÃÃÜÔ¿
+	for (int i = 0; i < AES_BLOCK_SIZE; i++)//å¯è‡ªç”±è®¾ç½®å¯†é’¥
 	{
 		key[i] = 32 + i;
 	}
