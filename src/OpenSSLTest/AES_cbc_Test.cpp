@@ -4,31 +4,34 @@
 #include <string.h>
 #include <stdlib.h>
 #include <openssl/aes.h>
+
 #define AES_BITS 128
 #define MSG_LEN 128
 
-int aes_encrypt(char* in, AES_KEY aes, char* out)//, int olen)¿ÉÄÜ»áÉèÖÃbuf³¤¶È
+int aes_encrypt(char* in, AES_KEY aes, char* out)//, int olen)å¯èƒ½ä¼šè®¾ç½®bufé•¿åº¦
 {
 	
-	unsigned char iv[AES_BLOCK_SIZE];//¼ÓÃÜµÄ³õÊ¼»¯ÏòÁ¿
+	unsigned char iv[AES_BLOCK_SIZE];//åŠ å¯†çš„åˆå§‹åŒ–å‘é‡
 	for (int i = 0; i < AES_BLOCK_SIZE; ++i) {
 		iv[i] = 0;
 	}
 	
-	int len = strlen(in);//ÕâÀïµÄ³¤¶ÈÊÇchar*inµÄ³¤¶È£¬µ«ÊÇÈç¹ûinÖĞ¼ä°üº¬'\0'×Ö·ûµÄ»°
+	int len = strlen(in);//è¿™é‡Œçš„é•¿åº¦æ˜¯char*inçš„é•¿åº¦ï¼Œä½†æ˜¯å¦‚æœinä¸­é—´åŒ…å«'\0'å­—ç¬¦çš„è¯
 
-	//ÄÇÃ´¾ÍÖ»»á¼ÓÃÜÇ°Ãæ'\0'Ç°ÃæµÄÒ»¶Î£¬ËùÒÔ£¬Õâ¸ölen¿ÉÒÔ×÷Îª²ÎÊı´«½øÀ´£¬¼ÇÂ¼inµÄ³¤¶È
+	//é‚£ä¹ˆå°±åªä¼šåŠ å¯†å‰é¢'\0'å‰é¢çš„ä¸€æ®µï¼Œæ‰€ä»¥ï¼Œè¿™ä¸ªlenå¯ä»¥ä½œä¸ºå‚æ•°ä¼ è¿›æ¥ï¼Œè®°å½•inçš„é•¿åº¦
 
-	//ÖÁÓÚ½âÃÜÒ²ÊÇÒ»¸öµÀÀí£¬¹âÒÔ'\0'À´ÅĞ¶Ï×Ö·û´®³¤¶È£¬È·ÓĞ²»Í×£¬ºóÃæ¶¼ÊÇÒ»¸öµÀÀí¡£
+	//è‡³äºè§£å¯†ä¹Ÿæ˜¯ä¸€ä¸ªé“ç†ï¼Œå…‰ä»¥'\0'æ¥åˆ¤æ–­å­—ç¬¦ä¸²é•¿åº¦ï¼Œç¡®æœ‰ä¸å¦¥ï¼Œåé¢éƒ½æ˜¯ä¸€ä¸ªé“ç†ã€‚
 	AES_cbc_encrypt((unsigned char*)in, (unsigned char*)out, len, &aes, iv, AES_ENCRYPT);
 	return 1;
 }
 int aes_decrypt(char* in, AES_KEY aes, char* out)
 {
 	
-	unsigned char iv[AES_BLOCK_SIZE];//¼ÓÃÜµÄ³õÊ¼»¯ÏòÁ¿
-	for (int i = 0; i < AES_BLOCK_SIZE; ++i)//ivÒ»°ãÉèÖÃÎªÈ«0,¿ÉÒÔÉèÖÃÆäËû£¬µ«ÊÇ¼ÓÃÜ½âÃÜÒªÒ»Ñù¾ÍĞĞ
+	unsigned char iv[AES_BLOCK_SIZE];//åŠ å¯†çš„åˆå§‹åŒ–å‘é‡
+	for (int i = 0; i < AES_BLOCK_SIZE; ++i)//ivä¸€èˆ¬è®¾ç½®ä¸ºå…¨0,å¯ä»¥è®¾ç½®å…¶ä»–ï¼Œä½†æ˜¯åŠ å¯†è§£å¯†è¦ä¸€æ ·å°±è¡Œ
+	{
 		iv[i] = 0;
+	}
 	
 	int len = strlen(in);
 	AES_cbc_encrypt((unsigned char*)in, (unsigned char*)out, len, &aes, iv, AES_DECRYPT);

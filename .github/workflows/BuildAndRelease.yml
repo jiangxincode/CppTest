@@ -19,6 +19,10 @@ jobs:
 
       - name: Install some dependencies
         run: |
+          # https://blog.csdn.net/xiong_xin/article/details/148389435
+          sudo apt-get clean
+          sudo apt-get update
+          sudo apt-get upgrade
           sudo apt-get install -y libgtk-3-dev
           # https://github.com/freeglut/freeglut
           sudo apt-get install libgl-dev libglu1-mesa-dev libx11-dev libxrandr-dev libxi-dev

@@ -14,7 +14,8 @@
             "name": "freeglut"
         },
         {
-            "name": "openssl"
+            "name": "openssl",
+            "platform": "!mingw"
         },
         {
             "name": "cppunit",
