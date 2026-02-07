@@ -15,6 +15,46 @@
 * 如何使用vcpkg
 * 如何利用Github Actions进行自动化CI构建和代码质量检查
 
+## 如何构建
+
+一、安装vcpkg: <https://learn.microsoft.com/zh-cn/vcpkg/get_started/get-started>。
+
+注意配置环境变量`VCPKG_INSTALLATION_ROOT`为vcpkg的根目录，同时配置`PATH`环境变量
+
+二、安装依赖, 参考: <ttps://github.com/jiangxincode/CppTest/actions/workflows/BuildAndRelease.yml>
+    
+Linux: 
+
+```shell
+sudo apt install build-essential autotools-dev libtool
+sudo apt install -y libgtk-3-dev
+sudo apt install libgl-dev libglu1-mesa-dev libx11-dev libxrandr-dev libxi-dev
+```
+
+MacOS:
+
+```shell
+brew libtool automake
+brew install gtk+3 libffi
+brew install xquartz libx11 libxi libxrandr libxxf86vm mesa
+```
+
+Windows
+
+安装`Microsoft Virual C++`
+
+三、构建, 参考: <ttps://github.com/jiangxincode/CppTest/actions/workflows/BuildAndRelease.yml>
+
+```shell
+cmake --preset ${{ matrix.preset }}
+cmake --build --preset ${{ matrix.preset }}
+ctest --preset ${{ matrix.preset }}
+```
+
+Linux: ["linux-x64-debug", "linux-x64-release"]
+macos: ["macos-x64-debug", "macos-x64-release"]
+windows: ["windows-x64-debug", "windows-x64-release", "windows-x64-mingw-debug", "windows-x64-mingw-release"]
+
 ## 文件说明
 
 ### src/OpenGL
