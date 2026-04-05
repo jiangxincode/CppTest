@@ -8,6 +8,10 @@ jobs:
   build-linux:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        preset: [ "linux-x64-release" ]
+
     steps:
       - uses: actions/checkout@v3
 
@@ -29,7 +33,7 @@ jobs:
           key: "${{ runner.os }}-${{ matrix.preset }}-${{ hashFiles('vcpkg.json') }}"
 
       - name: Configure CMake
-        run: cmake --preset linux-x64-release
+        run: cmake --preset ${{ matrix.preset }}
 
       - uses: vapier/coverity-scan-action@v1.8.0
         with:
@@ -38,7 +42,7 @@ jobs:
           email: 'jiangxinnju@163.com'
           build_language: 'cxx'
           build_platform: 'linux64'
-          command: 'cmake --build --preset linux-x64-release'
+          command: 'cmake --build --preset ${{ matrix.preset }}'
       - name: Print build-log.txt
         run: |
           cat /home/runner/work/CppTest/CppTest/cov-int/build-log.txt

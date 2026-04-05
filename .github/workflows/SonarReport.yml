@@ -7,6 +7,9 @@ jobs:
   build-linux:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        preset: [ "linux-x64-release" ]
     steps:
       - uses: actions/checkout@v3
 
@@ -28,16 +31,21 @@ jobs:
           key: "${{ runner.os }}-${{ matrix.preset }}-${{ hashFiles('vcpkg.json') }}"
 
       - name: Configure CMake
-        run: cmake --preset linux-x64-release
+        run: cmake --preset ${{ matrix.preset }}
 
-      - name:  Install sonar-scanner and build-wrapper
-        uses: sonarsource/sonarcloud-github-c-cpp@v2
+      - name: Download build-wrapper
+        run: |
+          wget https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
+          unzip build-wrapper-linux-x86.zip
 
-      - name: Build SonarCloud Scan
+      - name: Build
         working-directory: ${{github.workspace}}
         run: |
-          build-wrapper-linux-x86-64 --out-dir bw_output cmake --build --preset linux-x64-release
-          sonar-scanner -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
+          ./build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir bw_output cmake --build --preset ${{ matrix.preset }}
+
+      - name: Run SonarQube Scan
+        uses: sonarsource/sonarqube-scan-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: https://sonarcloud.io
