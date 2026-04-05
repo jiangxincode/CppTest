@@ -10,8 +10,14 @@ jobs:
     strategy:
       matrix:
         preset: [ "linux-x64-release" ]
+
+    env:
+      BUILD_WRAPPER_OUT_DIR: bw_output
+
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - name: Install some dependencies
         run: |
@@ -24,7 +30,7 @@ jobs:
           sudo apt-get install libgl-dev libglu1-mesa-dev libx11-dev libxrandr-dev libxi-dev
 
       - name: Cache vcpkg
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ${{ github.workspace }}/out/build/${{ matrix.preset }}/vcpkg_installed
@@ -33,19 +39,18 @@ jobs:
       - name: Configure CMake
         run: cmake --preset ${{ matrix.preset }}
 
-      - name: Download build-wrapper
-        run: |
-          wget https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
-          unzip build-wrapper-linux-x86.zip
+      - name: Install Build Wrapper
+        uses: SonarSource/sonarqube-scan-action/install-build-wrapper@v7
 
       - name: Build
-        working-directory: ${{github.workspace}}
         run: |
-          ./build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir bw_output cmake --build --preset ${{ matrix.preset }}
+          build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} cmake --build --preset ${{ matrix.preset }}
 
       - name: Run SonarQube Scan
-        uses: sonarsource/sonarqube-scan-action@v2
+        uses: SonarSource/sonarqube-scan-action@v7
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: https://sonarcloud.io
+        with:
+          args: >
+            --define sonar.cfamily.compile-commands=${{ env.BUILD_WRAPPER_OUT_DIR }}/compile_commands.json
