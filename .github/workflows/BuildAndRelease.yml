@@ -28,7 +28,7 @@ jobs:
           sudo apt-get install libgl-dev libglu1-mesa-dev libx11-dev libxrandr-dev libxi-dev
 
       - name: Cache vcpkg
-        uses: actions/cache@v3
+        uses: actions/cache@v5
         with:
           path: |
             ${{ github.workspace }}/out/build/${{ matrix.preset }}/vcpkg_installed
@@ -66,7 +66,7 @@ jobs:
           brew install xquartz libx11 libxi libxrandr libxxf86vm mesa
 
       - name: Cache vcpkg
-        uses: actions/cache@v3
+        uses: actions/cache@v5
         with:
           path: |
             ${{ github.workspace }}/out/build/${{ matrix.preset }}/vcpkg_installed
@@ -95,7 +95,7 @@ jobs:
           arch: x64
 
       - name: Cache vcpkg
-        uses: actions/cache@v3
+        uses: actions/cache@v5
         with:
           path: |
             ${{ github.workspace }}/out/build/${{ matrix.preset }}/vcpkg_installed
