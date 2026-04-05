@@ -22,8 +22,10 @@ jobs:
           sudo apt-get update
           sudo apt-get upgrade
           sudo apt-get install -y libgtk-3-dev
-          # https://github.com/freeglut/freeglut
-          sudo apt-get install libgl-dev libglu1-mesa-dev libx11-dev libxrandr-dev libxi-dev
+          # required by freeglut
+          sudo apt-get install -y libgl-dev libglu1-mesa-dev libx11-dev libxrandr-dev libxi-dev
+          # cppunit need autoconf: https://github.com/microsoft/vcpkg/discussions/30813
+          sudo apt-get install -y autoconf autoconf-archive automake libtool
 
       - name: Cache vcpkg
         uses: actions/cache@v5
