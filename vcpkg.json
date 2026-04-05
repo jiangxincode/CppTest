@@ -1,25 +1,25 @@
 {
-    "builtin-baseline": "86fba13068f1e8111e7d885de2aef11378435139",
-    "version": "0.0.1",
-    "name": "cpptest",
-    "dependencies": [
-        {
-            "name": "glog"
-        },
-        {
-            "name": "libmysql",
-            "platform": "!android & !mingw & !uwp & !xbox"
-        },
-        {
-            "name": "freeglut"
-        },
-        {
-            "name": "openssl",
-            "platform": "!mingw"
-        },
-        {
-            "name": "cppunit",
-            "platform": "!mingw"
-        }
-    ]
+  "builtin-baseline": "c3867e714dd3a51c272826eea77267876517ed99",
+  "version": "0.0.1",
+  "name": "cpptest",
+  "dependencies": [
+    {
+      "name": "glog"
+    },
+    {
+      "name": "libmysql",
+      "platform": "windows & !mingw & !uwp & !xbox"
+    },
+    {
+      "name": "freeglut"
+    },
+    {
+      "name": "openssl",
+      "platform": "!mingw"
+    },
+    {
+      "name": "cppunit",
+      "platform": "!mingw"
+    }
+  ]
 }
