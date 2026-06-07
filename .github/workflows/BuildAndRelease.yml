@@ -17,6 +17,13 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - name: Install vcpkg
+        run: |
+          git clone https://github.com/microsoft/vcpkg.git
+          cd vcpkg
+          ./bootstrap-vcpkg.sh
+          ./vcpkg integrate install
+
       - name: Install some dependencies
         run: |
           # https://blog.csdn.net/xiong_xin/article/details/148389435
@@ -38,6 +45,7 @@ jobs:
 
       - name: CMake Configure Build And Test
         run: |
+          export VCPKG_INSTALLATION_ROOT=./vcpkg
           cmake --preset ${{ matrix.preset }}
           cmake --build --preset ${{ matrix.preset }}
           ctest --preset ${{ matrix.preset }}
