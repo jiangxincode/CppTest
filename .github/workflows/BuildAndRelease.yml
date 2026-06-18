@@ -15,7 +15,7 @@ jobs:
         preset: [ "linux-x64-debug", "linux-x64-release" ]
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Install vcpkg
         run: |
@@ -58,7 +58,7 @@ jobs:
         preset: [ "macos-x64-debug", "macos-x64-release" ]
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Install vcpkg
         run: |
@@ -97,7 +97,7 @@ jobs:
         preset: [ "windows-x64-debug", "windows-x64-release", "windows-x64-mingw-debug", "windows-x64-mingw-release" ]
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Setup MSVC
         uses: TheMrMilchmann/setup-msvc-dev@v4
