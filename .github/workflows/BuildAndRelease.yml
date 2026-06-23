@@ -37,7 +37,7 @@ jobs:
           sudo apt-get install -y autoconf autoconf-archive automake libtool
 
       - name: Cache vcpkg
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: |
             ${{ github.workspace }}/out/build/${{ matrix.preset }}/vcpkg_installed
@@ -76,7 +76,7 @@ jobs:
           brew install xquartz libx11 libxi libxrandr libxxf86vm mesa
 
       - name: Cache vcpkg
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: |
             ${{ github.workspace }}/out/build/${{ matrix.preset }}/vcpkg_installed
@@ -105,7 +105,7 @@ jobs:
           arch: x64
 
       - name: Cache vcpkg
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: |
             ${{ github.workspace }}/out/build/${{ matrix.preset }}/vcpkg_installed
