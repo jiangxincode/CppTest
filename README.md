@@ -1,8 +1,7 @@
 # CppTest
 
-[![Build and Release](https://github.com/jiangxincode/CppTest/actions/workflows/BuildAndRelease.yml/badge.svg)](https://github.com/jiangxincode/CppTest/actions/workflows/BuildAndRelease.yml)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=jiangxincode_CppTest&metric=alert_status)](https://sonarcloud.io/dashboard?id=jiangxincode_CppTest)
-[![Doxygen Docs](https://codedocs.xyz/jiangxincode/CppTest.svg)](https://codedocs.xyz/jiangxincode/CppTest/)
+[![Build and Release](https://github.com/AloysHF/CppTest/actions/workflows/BuildAndRelease.yml/badge.svg)](https://github.com/AloysHF/CppTest/actions/workflows/BuildAndRelease.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=AloysHF_CppTest&metric=alert_status)](https://sonarcloud.io/dashboard?id=AloysHF_CppTest)
 
 ## 整体架构
 
@@ -20,7 +19,7 @@
 
 注意配置环境变量`VCPKG_INSTALLATION_ROOT`为vcpkg的根目录，同时配置`PATH`环境变量
 
-二、安装依赖, 参考: <ttps://github.com/jiangxincode/CppTest/actions/workflows/BuildAndRelease.yml>
+二、安装依赖, 参考: <ttps://github.com/AloysHF/CppTest/actions/workflows/BuildAndRelease.yml>
     
 Linux: 
 
@@ -42,7 +41,7 @@ Windows
 
 安装`Microsoft Virual C++`
 
-三、构建, 参考: <ttps://github.com/jiangxincode/CppTest/actions/workflows/BuildAndRelease.yml>
+三、构建, 参考: <ttps://github.com/AloysHF/CppTest/actions/workflows/BuildAndRelease.yml>
 
 ```shell
 cmake --preset ${{ matrix.preset }}
@@ -60,7 +59,7 @@ windows: ["windows-x64-debug", "windows-x64-release", "windows-x64-mingw-debug",
 
 通过Demo学习OpenGL+FreeGlut
 
-![](https://raw.githubusercontent.com/jiangxincode/PicGo/master/20241024144017.png)
+![](https://raw.githubusercontent.com/AloysHF/PicGo/master/20241024144017.png)
 
 ### src/OpenSSLTest
 
@@ -70,7 +69,7 @@ windows: ["windows-x64-debug", "windows-x64-release", "windows-x64-mingw-debug",
 
 一个基于C++和MFC的电梯调度演示程序
 
-![](https://raw.githubusercontent.com/jiangxincode/PicGo/master/20240928113329.png)
+![](https://raw.githubusercontent.com/AloysHF/PicGo/master/20240928113329.png)
 
 ### src/LCTest
 
